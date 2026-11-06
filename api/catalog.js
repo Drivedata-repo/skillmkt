@@ -14,6 +14,7 @@ module.exports = (req, res) => {
       edition: "1.1.0",
       locale,
       originalsLanguage: "mixed",
+      triageOptions: require("../lib/triage-profile.cjs").options(locale),
     });
   } catch (e) {
     failure(res, e);

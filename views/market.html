@@ -9,6 +9,7 @@
     <link rel="icon" href="/assets/drivedata-logo.png" />
     <link rel="stylesheet" href="/deck.css" />
     <link rel="stylesheet" href="/experience.css" />
+    <link rel="stylesheet" href="/universes.css" />
     <link rel="stylesheet" href="/i18n.css" />
     <script src="/translations.js"></script>
     <script src="/i18n-core.js"></script>
@@ -62,9 +63,9 @@
             </p>
           </div>
           <div class="intro-aside">
-            <strong>10 exemplos</strong><br />para explorar antes de baixar<br /><strong
-              >137 capacidades</strong
-            ><br />em uma coleção versionada
+            <strong>137 universos</strong><br />uma missão em cada carta<br /><strong
+              >10 exemplos conferidos</strong
+            ><br />para explorar antes de baixar
           </div>
         </section>
         <form id="finder" class="finder">
@@ -76,6 +77,35 @@
             maxlength="2000"
             placeholder="Preciso juntar planilhas e conferir os totais sem duplicar pedidos…"
           ></textarea>
+          <div class="finder-refiners">
+            <div class="refiners-heading">
+              <span>Afine o encaixe</span
+              ><button type="button" class="text-button" id="reset-profile">
+                Limpar filtros da indicação
+              </button>
+            </div>
+            <div class="need-filters">
+              <label for="need-goal"
+                >O que precisa sair pronto?<select id="need-goal">
+                  <option value="any">Ainda estou descobrindo</option>
+                </select></label
+              >
+              <label for="need-tool"
+                >Ferramenta do trabalho<select id="need-tool">
+                  <option value="any">Sem preferência</option>
+                </select></label
+              >
+              <label for="need-environment"
+                >Conectores e ambiente<select id="need-environment">
+                  <option value="any">Posso avaliar os requisitos</option>
+                </select></label
+              >
+            </div>
+            <p class="fine">
+              Os filtros limitam as indicações. O acesso às ferramentas é
+              conferido antes do uso.
+            </p>
+          </div>
           <div class="finder-bottom">
             <p id="path-hint" class="fine">
               Descreva a tarefa e o resultado que você precisa.
@@ -274,10 +304,21 @@
       class="download-dialog"
       aria-labelledby="detail-title"
     >
-      <button class="close" id="close-detail" aria-label="Fechar carta">
-        ×
-      </button>
+      <div class="detail-toolbar">
+        <div data-language-copy></div>
+        <button class="close" id="close-detail" aria-label="Fechar carta">
+          ×
+        </button>
+      </div>
       <div id="skill-detail"></div>
+      <div
+        id="detail-toast"
+        class="detail-toast"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        hidden
+      ></div>
     </dialog>
     <div id="toast" class="toast" role="status" hidden></div>
     <noscript>Ative JavaScript para explorar as cartas.</noscript>

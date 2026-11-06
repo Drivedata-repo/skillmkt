@@ -50,6 +50,7 @@ function build(locale) {
         deliverables: s.deliverables,
         featured: s.featured,
         version: s.version,
+        universe: { alias: s.universe.alias, tagline: s.universe.tagline },
       },
       example: {
         kind: s.example.kind,

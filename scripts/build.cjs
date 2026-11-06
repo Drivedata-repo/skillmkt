@@ -14,6 +14,7 @@ for (const file of [
   "public-preview.js",
   "privacy.html",
   "experience.css",
+  "universes.css",
   "deck-store.js",
   "deck-sound.js",
   "login.js",

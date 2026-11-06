@@ -73,7 +73,25 @@ O banco usa o transaction pooler Supabase, com validação de certificado, pool 
 
 ## Indicação de skills
 
-`lib/match.cjs` relaciona o problema aos nomes, capacidades e descrições do catálogo. Não inventa novas skills. Falta de relação gera orientação para detalhar a tarefa. O perfil ajusta o público da recomendação.
+`lib/match.cjs` relaciona o problema às capacidades, aplicações e requisitos reais do catálogo. Há 12 objetivos de trabalho, 10 opções de ferramenta e filtro para evitar conectores específicos, além das escolhas abertas. `lib/triage-profile.cjs` valida os filtros e aplica a interseção; não relaxa restrições para preencher a lista. O ranking mostra até três indicações, com entrega e limite de uso; grupos ambíguos recebem uma pergunta contextual.
+
+O motor distingue termos HTTP de conteúdo editorial, preparação de reunião de transcrição, necessidades de segurança de criação de produto e API Next.js de servidor MCP. Exclusões explícitas de ferramentas são reconhecidas por regras nos três idiomas, com nomes excluídos visíveis no resultado. Essas regras não são compreensão semântica universal: quando não há correspondência, a interface orienta a reformular. Agendamento de eventos no Google Calendar/Outlook não é uma capacidade desta coleção e recebe resposta explícita, sem indicar a skill de documentos Google para isso.
+
+Skills de apoio úteis, como Git ou TMDL, entram somente em tarefas explícitas compatíveis; modelos internos, contexto privado e variantes de staging não são promovidos como soluções prontas. A indicação por IA opcional recebe apenas candidatos que já passaram pelos filtros.
+
+## Universos das 137 cartas
+
+- `data/universes/001-046.json`, `047-092.json` e `093-137.json`: autoria individual em PT/EN/ES. Cada registro tem identidade, frase curta, história ilustrativa, propósito, duas aplicações, missão com contexto/comando/entrega/conferência, três passos e limite real.
+- `lib/universes.cjs` valida o contrato; `lib/catalog-i18n.cjs` entrega a versão autorada de cada idioma. Não há tradução automática das narrativas nem mistura de histórias fictícias com resultados homologados.
+- Cada carta tem uma assinatura gráfica estável. O modal organiza Universo, Aplicações, Missão prática, Primeiro uso e Ficha técnica. Os dez exemplos determinísticos continuam separados dos 137 cenários ilustrativos.
+- O comando da missão reúne contexto e critérios; o guia Markdown leva o universo completo no idioma ativo. Os ZIPs originais 1.1.0 permanecem íntegros e separados desse material editorial.
+- A URL conserva carta, capítulo, etapa, giro e face durante a troca de idioma. Foco de teclado é restaurado entre capítulos e ao fechar; avisos do modal ficam em sua própria região acessível. Movimento reduzido desabilita o giro.
+
+## Revisão das instruções originais
+
+`reviews/REVISAO-137-SKILLS.md` e `reviews/skill-audit.json` consolidam a leitura individual das 137 fontes, com qualidade existente, melhoria, evidência, alteração sugerida e cenário candidato de validação. São propostas de evolução, não alegações de execução ou alterações silenciosas nas skills globais.
+
+`scripts/audit-skill-sources.cjs` confere os ZIPs locais contra os hashes distribuídos e inspeciona frontmatter, extensão e links. A revisão encontrou sete referências externas a `CONNECTORS.md` ausentes no ZIP e quatro arquivos principais acima de 5.000 palavras. Também registra incompatibilidades entre variantes e a necessidade de separar referências privadas de futuras edições distribuíveis. Os pacotes da demo seguem protegidos por autenticação.
 
 Se `GROQ_API_KEY` estiver configurada e o visitante optar por IA, **Qwen3.8-27B via Groq** refina a justificativa entre os candidatos existentes. A saída é validada por schema/IDs, com timeout e retorno ao catálogo em caso de falha. O visitante é informado antes de enviar seu relato à Groq. Sem chave, a recomendação por capacidades continua funcionando. A chamada real ao modelo exige chave própria e não foi validada nesta demo.
 
@@ -90,7 +108,7 @@ As variáveis locais não são enviadas pelo Git. Não use prefixos públicos. C
 
 ## Verificar
 
-`npm test` cobre senha, sessão, expiração, adulteração, proteção de rotas, validação de ID, seleção com refinamento, dez exemplos, importação do Deck e consentimento da lista. `node --env-file=.env.local --test tests/*.test.cjs` inclui os 137 ZIPs da versão atual, hashes por arquivo, manifests e privilégios de banco. Total: 14 testes, sem skips quando o banco está configurado.
+`npm test` cobre senha, sessão, expiração, adulteração, proteção de rotas, validação de ID, seleção com refinamento, dez exemplos, importação do Deck e consentimento da lista. `node --env-file=.env.local --test tests/*.test.cjs` inclui os 137 ZIPs da versão atual, hashes por arquivo, manifests e privilégios de banco. Total: 72 testes, sem skips quando o banco está configurado, incluindo os universos em três idiomas e regressões de precisão da triagem.
 
 ## Evolução para venda
 

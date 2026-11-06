@@ -2,6 +2,7 @@ const http = require("node:http"),
   fs = require("node:fs"),
   path = require("node:path");
 const root = path.resolve("dist");
+const port = Number(process.env.PORT || 4317);
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
@@ -61,6 +62,6 @@ http
       res.end("Server error");
     }
   })
-  .listen(4317, "127.0.0.1", () =>
-    console.log("DriveData preview http://127.0.0.1:4317"),
+  .listen(port, "127.0.0.1", () =>
+    console.log(`DriveData preview http://127.0.0.1:${port}`),
   );

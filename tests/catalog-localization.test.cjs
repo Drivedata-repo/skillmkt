@@ -68,7 +68,11 @@ function technicalString(value, path) {
 }
 
 function generatedString(path) {
-  return /^catalog\.skills\.\d+\.(?:firstPrompt|acceptance\.\d+)$/.test(path);
+  // Universe narratives have a dedicated, exhaustive path/locale contract test.
+  return (
+    /^catalog\.skills\.\d+\.(?:firstPrompt|acceptance\.\d+)$/.test(path) ||
+    /^catalog\.skills\.\d+\.universe\./.test(path)
+  );
 }
 
 function assertSameContract(source, localized, path = "catalog") {

@@ -1,7 +1,8 @@
 "use strict";
 const $ = (s) => document.querySelector(s),
   esc = DeckArt.esc,
-  t = DeckI18n.t;
+  t = DeckI18n.t,
+  motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 let skills = [],
   journeys = [],
   deck = DeckStore.empty(),
@@ -10,7 +11,10 @@ let skills = [],
   deckFilter = "all",
   limit = 12,
   selected = null,
-  detailTab = "overview",
+  detailTab = "universe",
+  detailSpin = !motionPreference.matches,
+  detailFlipped = false,
+  detailOrigin = null,
   wizardStep = 0,
   requestVersion = 0,
   refinement = null,
@@ -38,10 +42,15 @@ const progress = (id) =>
     tested: false,
   };
 function toast(text) {
-  $("#toast").textContent = text;
-  $("#toast").hidden = false;
+  const target = $("#skill-dialog").open ? $("#detail-toast") : $("#toast");
+  for (const region of [$("#toast"), $("#detail-toast")]) {
+    region.hidden = region !== target;
+    if (region !== target) region.textContent = "";
+  }
+  target.hidden = false;
+  target.textContent = t(text);
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => ($("#toast").hidden = true), 5000);
+  toastTimer = setTimeout(() => (target.hidden = true), 5000);
 }
 function errorText(error, fallback = "Não foi possível concluir.") {
   if (error?.name === "TypeError")
@@ -96,7 +105,7 @@ function badge(s) {
 }
 function slot(s) {
   const d = latest(s.id);
-  return `<article class="skill-slot"><div class="slot-top"><span class="quality-badge">${esc(badge(s))}</span><button class="favorite" data-favorite="${esc(s.id)}" aria-pressed="${favorite(s.id)}" aria-label="${esc(t(favorite(s.id) ? "Remover {code} do Meu Deck" : "Salvar {code} no Meu Deck", { code: s.code }))}">${favorite(s.id) ? "♥" : "♡"}</button></div><button class="card-open" data-open="${esc(s.id)}" aria-label="${esc(t("Explorar {code}: {title}", { code: s.code, title: s.title }))}">${DeckArt.card(s)}</button><p class="slot-context">${audience === "technical" ? esc(s.id) : esc(s.deliverables[0])}</p><p class="slot-state">${needsUpdate(s) ? "Nova versão disponível" : progress(s.id).tested ? "Conferido por você" : d ? esc(t("Baixado · v{version}", { version: d.version })) : esc(s.setup)}</p><div class="skill-actions"><button class="text-button" data-open="${esc(s.id)}">${s.example ? "Ver exemplo" : "Explorar carta"}</button><button class="download" data-start="${esc(s.id)}">Começar ↗</button></div></article>`;
+  return `<article class="skill-slot"><div class="slot-top"><span class="quality-badge">${esc(badge(s))}</span><button class="favorite" data-favorite="${esc(s.id)}" aria-pressed="${favorite(s.id)}" aria-label="${esc(t(favorite(s.id) ? "Remover {code} do Meu Deck" : "Salvar {code} no Meu Deck", { code: s.code }))}">${favorite(s.id) ? "♥" : "♡"}</button></div><button class="card-open" data-open="${esc(s.id)}" aria-label="${esc(t("Explorar {code}: {title}", { code: s.code, title: s.title }))}">${DeckArt.card(s)}</button><p class="slot-context">${audience === "technical" ? esc(s.id) : esc(s.universe.tagline)}</p><p class="slot-state">${needsUpdate(s) ? "Nova versão disponível" : progress(s.id).tested ? "Conferido por você" : d ? esc(t("Baixado · v{version}", { version: d.version })) : esc(s.setup)}</p><div class="skill-actions"><button class="text-button" data-open="${esc(s.id)}">Explorar universo</button><button class="download" data-start="${esc(s.id)}">Começar ↗</button></div></article>`;
 }
 function render() {
   const q = norm($("#search").value),
@@ -116,6 +125,9 @@ function render() {
           s.id,
           s.title,
           s.pain,
+          s.universe?.alias,
+          s.universe?.purpose,
+          ...(s.universe?.useCases || []),
           ...s.deliverables,
           ...s.compatibility.tools,
         ].join(" "),
@@ -258,8 +270,36 @@ function setAudience(next) {
 }
 const list = (items) =>
   `<ul>${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
+function missionPrompt(s) {
+  const x = s.universe.scenario;
+  return [
+    t("Cenário fictício para praticar; substitua pelos seus dados ao aplicar."),
+    t("Use a skill {id}. {task}", { id: s.id, task: x.request }),
+    `${t("Contexto da missão")}\n${x.context}`,
+    `${t("Entrega esperada")}\n${x.output}`,
+    `${t("Como conferir")}\n${x.check}`,
+    `${t("Antes de usar")}\n${s.universe.boundary}`,
+  ].join("\n\n");
+}
+function universeView(s) {
+  const u = s.universe;
+  const neighbors = skills
+    .filter((x) => x.category === s.category && x.id !== s.id)
+    .sort(
+      (a, b) =>
+        Number(a.role !== s.role) - Number(b.role !== s.role) ||
+        a.code.localeCompare(b.code),
+    )
+    .slice(0, 3);
+  return `<section class="universe-story"><div class="story-heading"><span class="story-index" aria-hidden="true">${esc(s.code.slice(3))}<span>/ 137</span></span><div><p class="universe-label">Uma cena possível</p><h3>${esc(u.alias)}</h3></div></div><p class="universe-tagline">${esc(u.tagline)}</p><p class="story-prose">${esc(u.story)}</p><p class="story-caption">Narrativa ilustrativa inspirada no uso da skill.</p><div class="universe-turn"><span aria-hidden="true">↳</span><div><h4>O problema que ela enfrenta</h4><p>${esc(s.pain)}</p></div></div><div class="universe-actions"><button class="btn" data-detail-tab="example">Entrar na missão ↗</button><button class="text-button" data-detail-tab="overview">Ver aplicações reais</button></div></section><section class="universe-route"><h3>Da carta ao trabalho</h3><ol>${u.steps.map((step, i) => `<li><span aria-hidden="true">0${i + 1}</span><p>${esc(step)}</p></li>`).join("")}</ol></section>${neighbors.length ? `<section class="universe-neighbors"><h3>Outras cartas deste universo</h3>${neighbors.map((x) => `<button data-open="${esc(x.id)}"><span class="code">${esc(x.code)}</span><span><strong>${esc(x.universe.alias)}</strong><small>${esc(x.title)}</small></span><span aria-hidden="true">↗</span></button>`).join("")}</section>` : ""}`;
+}
+function missionView(s) {
+  const u = s.universe,
+    x = u.scenario;
+  return `<section class="mission"><p class="mission-notice">Cenário fictício para praticar; substitua pelos seus dados ao aplicar.</p><h3 class="mission-title">${esc(x.title)}</h3><div class="mission-section"><span class="mission-number" aria-hidden="true">01</span><div><h4>Contexto da missão</h4><p>${esc(x.context)}</p></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">02</span><div><h4>Seu comando de partida</h4><p>${esc(x.request)}</p><button class="btn secondary" data-copy-mission="${esc(s.id)}">Copiar missão completa</button><details class="mission-command"><summary>Inspecionar comando completo</summary><pre>${esc(missionPrompt(s))}</pre></details></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">03</span><div><h4>Entrega esperada</h4><p>${esc(x.output)}</p></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">04</span><div><h4>Como conferir</h4><p>${esc(x.check)}</p></div></div><p class="scope-note">${esc(u.boundary)}</p><p class="fine">Esta missão é um roteiro ilustrativo. Não representa uma execução ou um resultado já validado.</p><div class="universe-actions"><button class="btn" data-detail-tab="start">Preparar meu ambiente ↗</button><button class="text-button" data-guide="${esc(s.id)}">Levar o universo em Markdown</button></div></section>${s.example ? `<details class="verified-reference"><summary>Também há um exemplo reproduzível nesta carta</summary>${exampleView(s)}</details>` : ""}`;
+}
 function overview(s) {
-  return `<p class="detail-pain">${esc(s.pain)}</p><h3>${audience === "technical" ? "Entregas e escopo" : "O que você pode produzir"}</h3>${list(s.deliverables)}<h3>O que você precisa ter</h3>${list(s.dependencies)}<div class="detail-primary"><button class="btn" data-detail-tab="start">Começar com esta skill ↗</button><button class="text-button" data-download="${esc(s.id)}">Baixar ZIP direto</button><button class="text-button" data-guide="${esc(s.id)}">Baixar guia no meu idioma</button></div><p class="fine">Downloads liberados na demo. O pacote será usado no seu assistente.</p><p class="fine">Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.</p>`;
+  return `<p class="application-purpose">${esc(s.universe.purpose)}</p><h3>Quando tirar esta carta do Deck</h3><ol class="use-case-list">${s.universe.useCases.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><h3>${audience === "technical" ? "Entregas e escopo" : "O que você pode produzir"}</h3>${list(s.deliverables)}<h3>O que você precisa ter</h3>${list(s.dependencies)}<h3>Antes de usar</h3><p>${esc(s.universe.boundary)}</p><div class="detail-primary"><button class="btn" data-detail-tab="start">Começar com esta skill ↗</button><button class="text-button" data-download="${esc(s.id)}">Baixar ZIP direto</button><button class="text-button" data-guide="${esc(s.id)}">Baixar guia no meu idioma</button></div><p class="fine">Downloads liberados na demo. O pacote será usado no seu assistente.</p><p class="fine">Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.</p>`;
 }
 function exampleView(s) {
   if (!s.example)
@@ -298,16 +338,33 @@ function wizard(s) {
   if (wizardStep === 2)
     content = `<h3>Leve um comando claro.</h3><p>Substitua os campos entre colchetes pelos seus dados. Anexe apenas arquivos autorizados no assistente escolhido.</p><pre class="prompt-block" id="first-prompt">${esc(s.firstPrompt)}</pre><button class="btn" id="copy-prompt">${p.promptCopied ? "Copiar novamente" : "Copiar primeiro comando"}</button><p class="fine">A execução acontece no seu assistente. O site não envia seus arquivos ou executa a skill.</p><button class="text-button" data-wizard-step="3">Já executei; quero conferir o resultado</button>`;
   if (wizardStep === 3)
-    content = `<h3>Confira antes de considerar pronto.</h3><p>Registre sua própria conferência. Isso não altera o selo de homologação da skill.</p>${(s.example ? s.example.checks : s.acceptance).map((c, i) => `<label class="check-line"><input class="result-check" type="checkbox" ${p.tested ? "checked" : ""}>${esc(c)}</label>`).join("")}<button class="btn" id="mark-tested">${p.tested ? "Atualizar minha conferência" : "Marcar como conferido por mim"}</button><p class="fine">Se algo falhou, volte ao comando e informe a diferença entre o esperado e o observado.</p><button class="text-button" data-wizard-step="2">Rever meu comando</button>`;
+    content = `<h3>Confira antes de considerar pronto.</h3><p>Registre sua própria conferência. Isso não altera o selo de homologação da skill.</p>${s.acceptance.map((c, i) => `<label class="check-line"><input class="result-check" type="checkbox" ${p.tested ? "checked" : ""}>${esc(c)}</label>`).join("")}<button class="btn" id="mark-tested">${p.tested ? "Atualizar minha conferência" : "Marcar como conferido por mim"}</button><p class="fine">Se algo falhou, volte ao comando e informe a diferença entre o esperado e o observado.</p><button class="text-button" data-wizard-step="2">Rever meu comando</button>`;
   return `<div class="wizard"><ol class="wizard-steps">${["Ambiente", "Instalação", "Primeiro comando", "Conferência"].map((x, i) => `<li><button data-wizard-step="${i}" aria-current="${wizardStep === i ? "step" : "false"}"><span>${i + 1}</span>${x}</button></li>`).join("")}</ol><div class="wizard-body">${content}</div></div>`;
 }
-function renderDetail() {
+function renderDetail(focusTarget) {
   const s = selected;
   if (!s) return;
+  const active = document.activeElement;
+  const restoreFocus = $("#skill-detail").contains(active);
+  if (!focusTarget && restoreFocus) {
+    if (active.id) focusTarget = "#" + CSS.escape(active.id);
+    else
+      for (const attr of [
+        "data-wizard-step",
+        "data-platform",
+        "data-detail-tab",
+      ])
+        if (active.hasAttribute(attr)) {
+          focusTarget = `[${attr}="${CSS.escape(active.getAttribute(attr))}"]`;
+          break;
+        }
+  }
+  if (motionPreference.matches) detailSpin = false;
   $("#skill-detail").innerHTML =
-    `<div class="detail-layout"><aside class="detail-card">${DeckArt.card(s, { spin: !matchMedia("(prefers-reduced-motion: reduce)").matches })}<div class="detail-controls"><button class="text-button" id="turn-card" aria-pressed="false">Ver verso</button><button class="text-button" id="spin-card" aria-pressed="true">Pausar giro</button></div><button class="save-detail" data-favorite="${s.id}" aria-pressed="${favorite(s.id)}">${favorite(s.id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck"}</button><span class="quality-badge">${esc(badge(s))}</span></aside><div class="detail-content"><p class="code">${esc(s.code)} · v${s.version} · ${esc(s.category)}</p><h2 id="detail-title">${esc(s.title)}</h2><div class="detail-tabs" aria-label="Detalhes da skill">${[
-      ["overview", "Visão geral"],
-      ["example", s.example ? "Ver exemplo" : "Como conferir"],
+    `<div class="detail-layout" style="--universe-hue:${DeckArt.hue(s)}"><aside class="detail-card">${DeckArt.card(s, { spin: detailSpin })}<div class="detail-controls"><button class="text-button" id="turn-card" aria-pressed="${detailFlipped}">${detailFlipped ? "Ver frente" : "Ver verso"}</button><button class="text-button" id="spin-card" aria-pressed="${detailSpin}" ${motionPreference.matches ? "disabled" : ""}>${motionPreference.matches ? "Giro desativado: movimento reduzido" : detailSpin ? "Pausar giro" : "Ativar giro"}</button></div><button class="save-detail" data-favorite="${s.id}" aria-pressed="${favorite(s.id)}">${favorite(s.id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck"}</button><span class="quality-badge">${esc(badge(s))}</span></aside><div class="detail-content"><p class="code">${esc(s.code)} · v${s.version} · ${esc(s.category)}</p><h2 id="detail-title" tabindex="-1">${esc(s.title)}</h2><div class="detail-tabs" aria-label="Detalhes da skill">${[
+      ["universe", "Universo"],
+      ["overview", "Aplicações"],
+      ["example", "Missão prática"],
       ["start", "Primeiro uso"],
       ["technical", "Ficha técnica"],
     ]
@@ -317,38 +374,100 @@ function renderDetail() {
       )
       .join(
         "",
-      )}</div><div class="detail-tab-body">${detailTab === "overview" ? overview(s) : detailTab === "example" ? exampleView(s) : detailTab === "technical" ? technical(s) : wizard(s)}</div><p id="download-status" class="download-status" role="status"></p></div></div>`;
+      )}</div><div class="detail-tab-body">${detailTab === "universe" ? universeView(s) : detailTab === "overview" ? overview(s) : detailTab === "example" ? missionView(s) : detailTab === "technical" ? technical(s) : wizard(s)}</div><p id="download-status" class="download-status" role="status"></p></div></div>`;
   DeckArt.tilt($("#skill-detail"));
+  $("#skill-detail .holo-card").classList.toggle("flipped", detailFlipped);
+  if (restoreFocus || focusTarget)
+    ($(focusTarget || "#detail-title") || $("#detail-title")).focus({
+      preventScroll: true,
+    });
   $("#turn-card").onclick = () => {
+    detailSpin = false;
     const c = $("#skill-detail .holo-card");
     c.classList.remove("is-spinning");
     const on = c.classList.toggle("flipped");
+    detailFlipped = on;
     $("#turn-card").textContent = on ? "Ver frente" : "Ver verso";
     $("#turn-card").setAttribute("aria-pressed", on);
-    $("#spin-card").textContent = "Ativar giro";
+    $("#spin-card").textContent = t(
+      motionPreference.matches
+        ? "Giro desativado: movimento reduzido"
+        : "Ativar giro",
+    );
     $("#spin-card").setAttribute("aria-pressed", "false");
+    syncDetailURL();
   };
   $("#spin-card").onclick = () => {
+    if (motionPreference.matches) return;
     const c = $("#skill-detail .holo-card");
     c.classList.remove("flipped");
+    detailFlipped = false;
     const on = c.classList.toggle("is-spinning");
+    detailSpin = on;
     $("#spin-card").textContent = on ? "Pausar giro" : "Ativar giro";
     $("#spin-card").setAttribute("aria-pressed", on);
     $("#turn-card").textContent = "Ver verso";
     $("#turn-card").setAttribute("aria-pressed", "false");
+    syncDetailURL();
   };
 }
-function openSkill(id, tab) {
+function openSkill(id, tab, state = {}) {
   const s = byId(id);
   if (!s) return;
+  const wasOpen = $("#skill-dialog").open;
+  if (!wasOpen) {
+    const opener = state.opener || document.activeElement;
+    const attr = ["data-open", "data-start", "data-mission"].find((key) =>
+      opener?.hasAttribute?.(key),
+    );
+    detailOrigin = attr
+      ? {
+          node: opener,
+          scope: opener.closest(
+            "#skill-grid,#my-deck-grid,#match-grid,#journey-grid",
+          )?.id,
+          selector: `[${attr}="${CSS.escape(opener.getAttribute(attr))}"]`,
+        }
+      : null;
+  }
   selected = s;
-  detailTab = tab || (s.example ? "example" : "overview");
-  wizardStep = 0;
-  renderDetail();
-  if (!$("#skill-dialog").open) $("#skill-dialog").showModal();
+  detailTab = tab || "universe";
+  wizardStep = /^[0-3]$/.test(String(state.step)) ? Number(state.step) : 0;
+  if (["on", "off"].includes(state.spin)) detailSpin = state.spin === "on";
+  detailFlipped = state.face === "back";
+  if (detailFlipped || motionPreference.matches) detailSpin = false;
+  $("#detail-toast").hidden = true;
+  $("#detail-toast").textContent = "";
+  renderDetail(wasOpen ? "#detail-title" : undefined);
+  if (!wasOpen) $("#skill-dialog").showModal();
   $("#skill-dialog").scrollTop = 0;
   DeckSound.play("reveal");
+  syncDetailURL();
 }
+function syncDetailURL() {
+  const url = new URL(location.href);
+  if (selected) {
+    url.searchParams.set("skill", selected.code);
+    url.searchParams.set("chapter", detailTab);
+    if (detailTab === "start") url.searchParams.set("step", String(wizardStep));
+    else url.searchParams.delete("step");
+    url.searchParams.set("spin", detailSpin ? "on" : "off");
+    url.searchParams.set("face", detailFlipped ? "back" : "front");
+  } else {
+    url.searchParams.delete("skill");
+    url.searchParams.delete("chapter");
+    for (const key of ["step", "spin", "face"]) url.searchParams.delete(key);
+  }
+  history.replaceState(null, "", url.pathname + url.search + url.hash);
+}
+document.addEventListener("deck:before-locale", syncDetailURL);
+motionPreference.addEventListener("change", () => {
+  if (motionPreference.matches) detailSpin = false;
+  if (selected) {
+    renderDetail();
+    syncDetailURL();
+  }
+});
 function toggleFavorite(id) {
   deck.favorites = favorite(id)
     ? deck.favorites.filter((x) => x !== id)
@@ -389,6 +508,21 @@ function downloadGuide(s) {
     t(
       "Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.",
     ),
+    `## ${s.universe.alias}`,
+    s.universe.tagline,
+    t("Narrativa ilustrativa inspirada no uso da skill."),
+    s.universe.story,
+    `## ${t("Para que serve")}`,
+    s.universe.purpose,
+    `## ${t("Quando tirar esta carta do Deck")}`,
+    s.universe.useCases.map((x) => `- ${x}`).join("\n"),
+    `## ${t("Da carta ao trabalho")}`,
+    s.universe.steps.map((x, i) => `${i + 1}. ${x}`).join("\n"),
+    `## ${t("Missão prática")} — ${s.universe.scenario.title}`,
+    missionPrompt(s),
+    t(
+      "Esta missão é um roteiro ilustrativo. Não representa uma execução ou um resultado já validado.",
+    ),
     `## ${t("Materiais e requisitos")}`,
     s.dependencies.map((item) => `- ${item}`).join("\n"),
     `## ${t("Como instalar")}`,
@@ -402,7 +536,7 @@ function downloadGuide(s) {
     `## ${t("Primeiro comando")}`,
     s.firstPrompt,
     `## ${t("Como conferir")}`,
-    (s.example ? s.example.checks : s.acceptance)
+    s.acceptance
       .map((item) => `- [ ] ${item}`)
       .join("\n"),
     t(
@@ -520,6 +654,12 @@ async function find() {
         problem,
         audience,
         refinement,
+        profile: Object.fromEntries(
+          ["goal", "tool", "environment"].map((key) => [
+            key,
+            $("#need-" + key).value,
+          ]),
+        ),
         useAI: $("#use-ai").checked,
       }),
       signal: AbortSignal.timeout(20000),
@@ -532,6 +672,29 @@ async function find() {
         ? " " + t("Indicação assistida por IA.")
         : " " + t("Correspondência pelo catálogo.")) +
       (result.notice ? " " + result.notice : "");
+    if (result.filterLabels?.length)
+      $("#match-summary").textContent +=
+        " " +
+        t("Filtros aplicados: {filters}.", {
+          filters: result.filterLabels.join(" · "),
+        });
+    const excludedToolLabels = [
+      ...new Set(
+        (result.excludedTools || [])
+          .map(
+            (id) =>
+              [...$("#need-tool").options].find((option) => option.value === id)
+                ?.textContent,
+          )
+          .filter(Boolean),
+      ),
+    ];
+    if (excludedToolLabels.length)
+      $("#match-summary").textContent +=
+        " " +
+        t("Ferramentas excluídas do pedido: {tools}.", {
+          tools: excludedToolLabels.join(" · "),
+        });
     $("#clarification").hidden = !result.clarification;
     $("#clarification").innerHTML = result.clarification
       ? `<h3>${esc(result.clarification.question)}</h3><div>${result.clarification.options.map((o) => `<button class="btn secondary" data-refine="${esc(o.id)}" data-question="${esc(result.clarification.id)}">${esc(o.label)}</button>`).join("")}</div>`
@@ -540,7 +703,7 @@ async function find() {
       .map((m, i) => {
         const s = byId(m.id);
         return s
-          ? `<article class="match-item"><p class="mini-heading">${esc(s.code)} / ${esc(t(i === 0 ? "Comece por aqui" : "Também pode ajudar"))}</p><h3>${esc(s.title)}</h3><p>${esc(m.reason)}</p><p class="fine">${esc(m.nextStep)}</p><span class="quality-badge">${esc(badge(s))}</span><div class="match-actions"><button class="btn" data-start="${s.id}">Começar</button><button class="btn secondary" data-open="${s.id}">${s.example ? "Ver exemplo" : "Ver carta"}</button></div></article>`
+          ? `<article class="match-item"><p class="mini-heading">${esc(s.code)} / ${esc(t(i === 0 ? "Comece por aqui" : "Também pode ajudar"))}</p><h3>${esc(s.title)}</h3><p>${esc(m.reason)}</p>${s.role === "support" ? `<p class="scope-note">Skill de apoio: orienta esta etapa e pode precisar de outras ferramentas para concluir a entrega.</p>` : ""}<dl class="match-evidence"><div><dt>Entrega sugerida</dt><dd>${esc(m.deliverable || s.deliverables[0])}</dd></div><div><dt>Verifique antes</dt><dd>${esc(m.consideration || s.universe.boundary)}</dd></div></dl><p class="fine">${esc(m.nextStep)}</p><span class="quality-badge">${esc(badge(s))}</span><div class="match-actions"><button class="btn" data-start="${s.id}">Começar</button><button class="btn secondary" data-mission="${s.id}">Experimentar a missão</button></div></article>`
           : "";
       })
       .join("");
@@ -563,11 +726,14 @@ document.addEventListener("click", async (e) => {
   if (!b) return;
   if (b.dataset.view) setView(b.dataset.view);
   if (b.dataset.audience) setAudience(b.dataset.audience);
-  if (b.dataset.open) openSkill(b.dataset.open);
-  if (b.dataset.start) openSkill(b.dataset.start, "start");
+  if (b.dataset.open) openSkill(b.dataset.open, undefined, { opener: b });
+  if (b.dataset.start) openSkill(b.dataset.start, "start", { opener: b });
+  if (b.dataset.mission) openSkill(b.dataset.mission, "example", { opener: b });
   if (b.dataset.favorite) toggleFavorite(b.dataset.favorite);
   if (b.dataset.download) download(b.dataset.download, b);
   if (b.dataset.guide) downloadGuide(byId(b.dataset.guide));
+  if (b.dataset.copyMission)
+    await copy(missionPrompt(byId(b.dataset.copyMission)));
   if (b.dataset.example) {
     $("#problem").value = b.dataset.example;
     $("#problem").setCustomValidity("");
@@ -581,11 +747,17 @@ document.addEventListener("click", async (e) => {
   if (b.dataset.detailTab) {
     detailTab = b.dataset.detailTab;
     renderDetail();
+    syncDetailURL();
+    document
+      .querySelector(`[data-detail-tab="${detailTab}"][aria-pressed]`)
+      ?.focus({ preventScroll: true });
     $("#skill-dialog").scrollTop = 0;
   }
   if (b.dataset.wizardStep !== undefined) {
+    if (!/^[0-3]$/.test(b.dataset.wizardStep)) return;
     wizardStep = Number(b.dataset.wizardStep);
-    renderDetail();
+    renderDetail(`[data-wizard-step="${wizardStep}"]`);
+    syncDetailURL();
     $("#skill-dialog").scrollTop = 0;
   }
   if (b.dataset.platform) {
@@ -604,7 +776,8 @@ document.addEventListener("click", async (e) => {
     }
     persistProgress(selected.id, { installed: true });
     wizardStep = 2;
-    renderDetail();
+    renderDetail('[data-wizard-step="2"]');
+    syncDetailURL();
   }
   if (b.id === "copy-prompt") {
     if (await copy(selected.firstPrompt)) {
@@ -686,12 +859,45 @@ document.addEventListener("click", async (e) => {
 $("#close-detail").onclick = () => $("#skill-dialog").close();
 $("#skill-dialog").addEventListener("close", () => {
   selected = null;
+  syncDetailURL();
   render();
   if (view === "deck") renderDeck();
+  $("#detail-toast").hidden = true;
+  const scope = detailOrigin?.scope ? $("#" + detailOrigin.scope) : document;
+  const origin = detailOrigin?.node?.isConnected
+    ? detailOrigin.node
+    : detailOrigin?.selector
+      ? scope?.querySelector(detailOrigin.selector)
+      : null;
+  const fallback = $(
+    view === "deck"
+      ? "#my-deck-title"
+      : view === "journeys"
+        ? "#journeys-title"
+        : "#collection-title",
+  );
+  if (!origin && fallback) fallback.tabIndex = -1;
+  (origin || fallback)?.focus({ preventScroll: true });
+  detailOrigin = null;
 });
 $("#finder").onsubmit = (e) => {
   e.preventDefault();
   find();
+};
+function resetIndication() {
+  refinement = null;
+  ++requestVersion;
+  $("#matches").hidden = true;
+  $("#finder-error").textContent = "";
+  $("#find-skills").disabled = false;
+  $("#find-skills").textContent = "Encontrar minha skill ↗";
+}
+for (const key of ["goal", "tool", "environment"])
+  $("#need-" + key).onchange = resetIndication;
+$("#reset-profile").onclick = () => {
+  for (const key of ["goal", "tool", "environment"])
+    $("#need-" + key).value = "any";
+  resetIndication();
 };
 $("#problem").oninput = () => {
   refinement = null;
@@ -795,6 +1001,10 @@ $("#logout").onclick = async () => {
     const data = await api("/api/catalog");
     skills = data.skills;
     journeys = data.journeys;
+    for (const key of ["goal", "tool", "environment"])
+      $("#need-" + key).innerHTML = data.triageOptions[key]
+        .map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`)
+        .join("");
     deck = DeckStore.load(
       deckStorage,
       skills.map((s) => s.id),
@@ -817,6 +1027,25 @@ $("#logout").onclick = async () => {
     setAudience(audience);
     const initialView = new URL(location.href).searchParams.get("view");
     if (["deck", "journeys"].includes(initialView)) setView(initialView);
+    const initialParams = new URL(location.href).searchParams;
+    const initialSkill = skills.find(
+      (s) => s.code === initialParams.get("skill"),
+    );
+    const initialChapter = initialParams.get("chapter");
+    if (initialSkill)
+      openSkill(
+        initialSkill.id,
+        ["universe", "overview", "example", "start", "technical"].includes(
+          initialChapter,
+        )
+          ? initialChapter
+          : "universe",
+        {
+          step: initialParams.get("step"),
+          spin: initialParams.get("spin"),
+          face: initialParams.get("face"),
+        },
+      );
     $("#market-sound").textContent = DeckSound.enabled
       ? "Som ativado"
       : "Som desativado";

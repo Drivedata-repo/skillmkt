@@ -144,13 +144,8 @@
       new Intl.NumberFormat(intlLocale, options).format(value),
   });
   apply();
-  document.addEventListener("DOMContentLoaded", () => {
-    const target =
-      document.querySelector(
-        ".landing-header nav,.site-header nav,.login-header,[data-language-slot]",
-      ) ||
-      document.querySelector("header") ||
-      document.querySelector("main");
+  function mountSwitcher(target) {
+    if (!target) return;
     const switcher = document.createElement("div");
     switcher.className = "language-switcher";
     switcher.setAttribute("role", "group");
@@ -188,6 +183,16 @@
     }
     if (target?.tagName === "MAIN") target.prepend(switcher);
     else if (target) target.append(switcher);
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    mountSwitcher(
+      document.querySelector(
+        ".landing-header nav,.site-header nav,.login-header,[data-language-slot]",
+      ) ||
+        document.querySelector("header") ||
+        document.querySelector("main"),
+    );
+    document.querySelectorAll("[data-language-copy]").forEach(mountSwitcher);
     apply();
   });
   document.addEventListener(

@@ -1,5 +1,117 @@
 // Authored interface translations. IDs, code and user input never enter this map.
 module.exports = {
+  "Giro desativado: movimento reduzido": [
+    "Spin disabled: reduced motion",
+    "Giro desactivado: movimiento reducido",
+  ],
+  "Ferramentas excluídas do pedido: {tools}.": [
+    "Tools excluded from the request: {tools}.",
+    "Herramientas excluidas de la solicitud: {tools}.",
+  ],
+  "Skill de apoio: orienta esta etapa e pode precisar de outras ferramentas para concluir a entrega.":
+    [
+      "Support skill: guides this step and may need other tools to complete the deliverable.",
+      "Skill de apoyo: orienta esta etapa y puede necesitar otras herramientas para completar la entrega.",
+    ],
+  "Afine o encaixe": ["Narrow the fit", "Afina la selección"],
+  "Limpar filtros da indicação": [
+    "Clear recommendation filters",
+    "Borrar filtros de recomendación",
+  ],
+  "O que precisa sair pronto?": [
+    "What needs to be ready?",
+    "¿Qué necesitas tener listo?",
+  ],
+  "Ferramenta do trabalho": [
+    "Tool used for the work",
+    "Herramienta de trabajo",
+  ],
+  "Conectores e ambiente": [
+    "Connectors and environment",
+    "Conectores y entorno",
+  ],
+  "Ainda estou descobrindo": ["I'm still exploring", "Aún estoy explorando"],
+  "Sem preferência": ["No preference", "Sin preferencia"],
+  "Posso avaliar os requisitos": [
+    "I can review the requirements",
+    "Puedo revisar los requisitos",
+  ],
+  "Os filtros limitam as indicações. O acesso às ferramentas é conferido antes do uso.":
+    [
+      "Filters limit the recommendations. Access to tools is checked before use.",
+      "Los filtros limitan las recomendaciones. El acceso a las herramientas se comprueba antes de usarlas.",
+    ],
+  "Filtros aplicados: {filters}.": [
+    "Applied filters: {filters}.",
+    "Filtros aplicados: {filters}.",
+  ],
+  "Entrega sugerida": ["Suggested deliverable", "Entrega sugerida"],
+  "Verifique antes": ["Check first", "Comprueba antes"],
+  "Experimentar a missão": ["Try the mission", "Probar la misión"],
+  "137 universos": ["137 universes", "137 universos"],
+  "uma missão em cada carta": [
+    "a mission in every card",
+    "una misión en cada carta",
+  ],
+  "10 exemplos conferidos": ["10 checked examples", "10 ejemplos comprobados"],
+  Universo: ["Universe", "Universo"],
+  Aplicações: ["Applications", "Aplicaciones"],
+  "Missão prática": ["Practice mission", "Misión práctica"],
+  "Explorar universo": ["Explore universe", "Explorar universo"],
+  "Uma cena possível": ["Picture this", "Imagina esta escena"],
+  "Narrativa ilustrativa inspirada no uso da skill.": [
+    "An illustrative story inspired by how the skill is used.",
+    "Una historia ilustrativa inspirada en el uso de la skill.",
+  ],
+  "O problema que ela enfrenta": [
+    "The problem it tackles",
+    "El problema que aborda",
+  ],
+  "Entrar na missão ↗": ["Enter the mission ↗", "Entrar en la misión ↗"],
+  "Ver aplicações reais": [
+    "Explore practical uses",
+    "Ver aplicaciones prácticas",
+  ],
+  "Da carta ao trabalho": ["From card to work", "De la carta al trabajo"],
+  "Outras cartas deste universo": [
+    "Other cards in this universe",
+    "Otras cartas de este universo",
+  ],
+  "Cenário fictício para praticar; substitua pelos seus dados ao aplicar.": [
+    "A fictional practice scenario; replace it with your own data when applying it.",
+    "Un escenario ficticio para practicar; sustitúyelo por tus datos al aplicarlo.",
+  ],
+  "Contexto da missão": ["Mission context", "Contexto de la misión"],
+  "Seu comando de partida": ["Your starting prompt", "Tu instrucción inicial"],
+  "Copiar missão completa": ["Copy full mission", "Copiar misión completa"],
+  "Inspecionar comando completo": [
+    "Inspect full prompt",
+    "Inspeccionar instrucción completa",
+  ],
+  "Entrega esperada": ["Expected deliverable", "Entrega esperada"],
+  "Antes de usar": ["Before you use it", "Antes de usarla"],
+  "Esta missão é um roteiro ilustrativo. Não representa uma execução ou um resultado já validado.":
+    [
+      "This mission is an illustrative guide. It does not represent an actual run or an already validated result.",
+      "Esta misión es una guía ilustrativa. No representa una ejecución ni un resultado ya validado.",
+    ],
+  "Preparar meu ambiente ↗": [
+    "Prepare my environment ↗",
+    "Preparar mi entorno ↗",
+  ],
+  "Levar o universo em Markdown": [
+    "Download universe as Markdown",
+    "Descargar universo en Markdown",
+  ],
+  "Também há um exemplo reproduzível nesta carta": [
+    "This card also has a reproducible example",
+    "Esta carta también tiene un ejemplo reproducible",
+  ],
+  "Quando tirar esta carta do Deck": [
+    "When to draw this card",
+    "Cuándo sacar esta carta del Deck",
+  ],
+  "Para que serve": ["What it is for", "Para qué sirve"],
   "O idioma escolhido no cadastro também é registrado na lista de espera, para orientar o contato da DriveData.":
     [
       "The language selected at signup is also recorded on the waitlist to help DriveData contact you in that language.",

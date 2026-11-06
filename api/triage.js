@@ -21,6 +21,7 @@ module.exports = async (req, res) => {
       raw.audience,
       raw.refinement || null,
       locale,
+      raw.profile,
     );
     const { candidateIds, ...publicResult } = result;
     if (

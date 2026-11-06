@@ -80,3 +80,13 @@ Três bandeiras vetoriais representam português brasileiro, inglês e espanhol,
 O cabeçalho se reorganiza em telas menores, mantendo as bandeiras visíveis na landing, no login e na coleção. Na privacidade, o seletor fica no início do conteúdo. A troca usa navegação normal, preserva página, âncora e seção da coleção; favoritos e histórico continuam associados aos IDs originais. Formulários em andamento são reiniciados ao trocar o idioma.
 
 A tradução abrange microtextos, atributos acessíveis, mensagens de erro, exemplos, metadados das cartas e conteúdo gerado para copiar/baixar. Nomes próprios, caminhos técnicos, IDs e arquivos originais das skills não são reescritos. O guia localizado é oferecido separadamente do ZIP original. Layouts conferidos em 1440, 1280, 820, 390 e 375 px; recomendações e navegação testadas em inglês e espanhol, com retorno ao português.
+
+## Universos da coleção
+
+Cada carta ganha uma identidade editorial ligada ao trabalho: Cartógrafo de Métricas, Oficina de Entregas e outras 135 identidades próprias, traduzidas para inglês e espanhol. A ilustração mantém o símbolo da família, com marca geométrica exclusiva derivada do identificador, órbitas e variação discreta de matiz. A identidade nunca representa pontuação, escassez ou desempenho inventado.
+
+O detalhe funciona como um caderno de campo: uma cena ilustrativa, o problema, aplicações concretas, uma missão copiável e um percurso de três passos. A narrativa tem tipografia maior e leitura espaçada; exemplos e limites ficam próximos da ação. O material técnico continua acessível em capítulo próprio. No celular, carta e controles ocupam uma composição compacta em duas colunas, antes do conteúdo.
+
+Os filtros da triagem usam termos de trabalho, como organizar planilhas ou conectar sistemas. As recomendações explicam a entrega e os requisitos e abrem diretamente a missão. Seleções incompatíveis produzem estado vazio explicado. Não há percentual fictício de compatibilidade.
+
+Validação desta entrega: 72 testes aprovados com banco configurado; universos completos e paridade PT/EN/ES conferidos para as 137 cartas. Fluxo integrado de triagem em espanhol, missão específica, troca de idioma no detalhe e composição móvel a 390 px conferidos no navegador, sem erros no console. Exemplos narrativos estão identificados como ilustrações, separados dos dez exemplos reproduzíveis.
