@@ -1,8 +1,9 @@
-const { body, send, failure } = require("../lib/http.cjs");
+const { body, send, failure, initializeLocale } = require("../lib/http.cjs");
 const { validateWaitlist } = require("../lib/waitlist.cjs");
 const { limit } = require("../lib/limit.cjs");
 const { db } = require("../lib/db.cjs");
 module.exports = async (req, res) => {
+  const locale = initializeLocale(req, res);
   try {
     const raw = await body(req);
     const input = validateWaitlist(raw);
@@ -13,8 +14,8 @@ module.exports = async (req, res) => {
       });
     await limit(req, "waitlist", 5);
     await db().query(
-      "INSERT INTO skillmkt.waitlist(name,email,audience,interest,consent_version) VALUES($1,$2,$3,$4,'2026-11-06') ON CONFLICT DO NOTHING",
-      [input.name, input.email, input.audience, input.interest],
+      "INSERT INTO skillmkt.waitlist(name,email,audience,interest,consent_version,preferred_language) VALUES($1,$2,$3,$4,'2026-11-06',$5) ON CONFLICT DO NOTHING",
+      [input.name, input.email, input.audience, input.interest, locale],
     );
     return send(res, 202, {
       ok: true,

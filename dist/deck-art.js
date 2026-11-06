@@ -1,5 +1,7 @@
 const DeckArt = (() => {
   let artSequence = 0;
+  const translated = (value) =>
+    typeof DeckI18n === "undefined" ? value : DeckI18n.t(value);
   const esc = (s) =>
     String(s ?? "").replace(
       /[&<>"']/g,
@@ -27,7 +29,7 @@ const DeckArt = (() => {
   function illustration(s) {
     const gradientId = `deck-gradient-${++artSequence}`;
     const n = Number(s.code?.slice(3) || 111),
-      h = tones[s.category] || 190;
+      h = tones[s.categoryKey || s.category] || 190;
     const art =
       {
         "Dados & inteligência":
@@ -50,7 +52,7 @@ const DeckArt = (() => {
           '<path d="M135 43h50m-40 0v57l-55 92c-8 16 4 25 18 25h104c14 0 26-9 18-25l-55-92V43M111 165h98"/><circle class="art-float" cx="145" cy="143" r="9"/><circle cx="175" cy="186" r="12"/><circle cx="155" cy="65" r="3"/><path d="M87 65h-22m11-11v22M230 105h22m-11-11v22"/>',
         "Apoio interno":
           '<circle cx="160" cy="130" r="72"/><circle cx="160" cy="130" r="35"/><path d="M160 39v20m0 142v20M69 130h20m142 0h20M96 66l14 14m100 100 14 14M96 194l14-14M210 80l14-14" stroke-width="12"/><path d="m147 130 10 10 19-23"/>',
-      }[s.category] || '<circle cx="160" cy="130" r="70"/>';
+      }[s.categoryKey || s.category] || '<circle cx="160" cy="130" r="70"/>';
     const dots = Array.from({ length: 8 }, (_, i) => {
       const a = ((n * 17 + i * 45) * Math.PI) / 180;
       return `<circle cx="${160 + 118 * Math.cos(a)}" cy="${130 + 105 * Math.sin(a)}" r="${(i % 3) + 1}"/>`;
@@ -58,7 +60,7 @@ const DeckArt = (() => {
     return `<svg viewBox="0 0 320 260" aria-hidden="true"><defs><radialGradient id="${gradientId}"><stop stop-color="hsl(${h} 80% 60%)" stop-opacity=".23"/><stop offset="1" stop-color="hsl(${h} 80% 60%)" stop-opacity="0"/></radialGradient></defs><circle cx="160" cy="130" r="128" fill="url(#${gradientId})"/><g class="art-symbol" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linejoin="round">${art}</g><g fill="currentColor" opacity=".6">${dots}</g><path d="M20 35V20h25M275 20h25v15M20 225v15h25M275 240h25v-15" stroke="currentColor" fill="none" opacity=".4"/></svg>`;
   }
   function card(s, opts = {}) {
-    return `<div class="holo-card ${opts.spin ? "is-spinning " : ""}${s.featured ? "featured-card" : ""}" style="--hue:${tones[s.category] || 190}" data-card-id="${esc(s.id)}"><div class="card-face front"><div class="card-edge"></div><div class="card-heading"><img src="/assets/drivedata-logo.png" alt="" width="22" height="22"><span>${esc(s.code)}</span><b>${s.featured ? "EXAMPLE EDITION" : "HOLO SERIES"}</b></div><div class="card-visual">${illustration(s)}<span class="visual-label">${esc(s.category)}</span><span class="visual-stars" aria-hidden="true">${s.featured ? "◈ ◈ ◈" : "✧ ✦ ✧"}</span></div><div class="card-info"><span class="card-type">${s.role === "platform-specific" ? "Conexão de plataforma" : s.role === "support" ? "Especialidade de apoio" : "Skill de aplicação"}</span><h3>${esc(s.title)}</h3><p>${esc(s.deliverables?.[0] || "Conhecimento para a sua próxima tarefa.")}</p></div><div class="card-bottom"><span>DRIVEDATA DECK</span><span>${esc(s.code)} · v${esc(s.version || "1.1.0")}</span></div><div class="holo-shine"></div></div><div class="card-face back" aria-hidden="true"><div class="back-orbit"></div><img src="/assets/drivedata-logo.png" alt=""><strong>DriveData Deck</strong><span>${esc(s.code)} · ${esc(s.category)}</span><p>Uma capacidade.<br>Seu próximo resultado.</p><small>${s.featured ? "EXEMPLO REPRODUZÍVEL INCLUÍDO" : "CONHECIMENTO PARA COLOCAR EM PRÁTICA"}</small></div></div>`;
+    return `<div class="holo-card ${opts.spin ? "is-spinning " : ""}${s.featured ? "featured-card" : ""}" style="--hue:${tones[s.categoryKey || s.category] || 190}" data-card-id="${esc(s.id)}"><div class="card-face front"><div class="card-edge"></div><div class="card-heading"><img src="/assets/drivedata-logo.png" alt="" width="22" height="22"><span>${esc(s.code)}</span><b>${s.featured ? "EXAMPLE EDITION" : "HOLO SERIES"}</b></div><div class="card-visual">${illustration(s)}<span class="visual-label">${esc(translated(s.category))}</span><span class="visual-stars" aria-hidden="true">${s.featured ? "◈ ◈ ◈" : "✧ ✦ ✧"}</span></div><div class="card-info"><span class="card-type">${s.role === "platform-specific" ? "Conexão de plataforma" : s.role === "support" ? "Especialidade de apoio" : "Skill de aplicação"}</span><h3>${esc(s.title)}</h3><p>${esc(s.deliverables?.[0] || "Conhecimento para a sua próxima tarefa.")}</p></div><div class="card-bottom"><span>DRIVEDATA DECK</span><span>${esc(s.code)} · v${esc(s.version || "1.1.0")}</span></div><div class="holo-shine"></div></div><div class="card-face back" aria-hidden="true"><div class="back-orbit"></div><img src="/assets/drivedata-logo.png" alt=""><strong>DriveData Deck</strong><span>${esc(s.code)} · ${esc(translated(s.category))}</span><p>Uma capacidade.<br>Seu próximo resultado.</p><small>${s.featured ? "EXEMPLO REPRODUZÍVEL INCLUÍDO" : "CONHECIMENTO PARA COLOCAR EM PRÁTICA"}</small></div></div>`;
   }
   function tilt(root) {
     root.querySelectorAll(".holo-card").forEach((c) => {

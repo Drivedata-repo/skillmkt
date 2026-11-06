@@ -1,6 +1,7 @@
 "use strict";
 const $ = (s) => document.querySelector(s),
-  esc = DeckArt.esc;
+  esc = DeckArt.esc,
+  t = DeckI18n.t;
 let skills = [],
   journeys = [],
   deck = DeckStore.empty(),
@@ -42,6 +43,15 @@ function toast(text) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => ($("#toast").hidden = true), 5000);
 }
+function errorText(error, fallback = "Não foi possível concluir.") {
+  if (error?.name === "TypeError")
+    return t(
+      "Não foi possível conectar. Confira sua conexão e tente novamente.",
+    );
+  if (error?.name === "SyntaxError" || error instanceof DOMException)
+    return t(fallback);
+  return t(error?.message || fallback);
+}
 function save() {
   const ok = DeckStore.save(deckStorage, deck);
   $("#storage-error").textContent = ok
@@ -54,9 +64,12 @@ function save() {
   return ok;
 }
 async function api(url, options) {
-  const r = await fetch(url, options);
+  const r = await fetch(DeckI18n.url(url), {
+    ...options,
+    headers: DeckI18n.headers(options?.headers),
+  });
   if (r.status === 401) {
-    location.assign("/login");
+    location.assign(DeckI18n.url("/login"));
     throw new Error("Sua sessão expirou. Entre novamente.");
   }
   const data = await r.json();
@@ -83,7 +96,7 @@ function badge(s) {
 }
 function slot(s) {
   const d = latest(s.id);
-  return `<article class="skill-slot"><div class="slot-top"><span class="quality-badge">${esc(badge(s))}</span><button class="favorite" data-favorite="${esc(s.id)}" aria-pressed="${favorite(s.id)}" aria-label="${favorite(s.id) ? "Remover" : "Salvar"} ${esc(s.code)} no Meu Deck">${favorite(s.id) ? "♥" : "♡"}</button></div><button class="card-open" data-open="${esc(s.id)}" aria-label="Explorar ${esc(s.code)}: ${esc(s.title)}">${DeckArt.card(s)}</button><p class="slot-context">${audience === "technical" ? esc(s.id) : esc(s.deliverables[0])}</p><p class="slot-state">${needsUpdate(s) ? "Nova versão disponível" : progress(s.id).tested ? "Conferido por você" : d ? "Baixado · v" + esc(d.version) : esc(s.setup)}</p><div class="skill-actions"><button class="text-button" data-open="${esc(s.id)}">${s.example ? "Ver exemplo" : "Explorar carta"}</button><button class="download" data-start="${esc(s.id)}">Começar ↗</button></div></article>`;
+  return `<article class="skill-slot"><div class="slot-top"><span class="quality-badge">${esc(badge(s))}</span><button class="favorite" data-favorite="${esc(s.id)}" aria-pressed="${favorite(s.id)}" aria-label="${esc(t(favorite(s.id) ? "Remover {code} do Meu Deck" : "Salvar {code} no Meu Deck", { code: s.code }))}">${favorite(s.id) ? "♥" : "♡"}</button></div><button class="card-open" data-open="${esc(s.id)}" aria-label="${esc(t("Explorar {code}: {title}", { code: s.code, title: s.title }))}">${DeckArt.card(s)}</button><p class="slot-context">${audience === "technical" ? esc(s.id) : esc(s.deliverables[0])}</p><p class="slot-state">${needsUpdate(s) ? "Nova versão disponível" : progress(s.id).tested ? "Conferido por você" : d ? esc(t("Baixado · v{version}", { version: d.version })) : esc(s.setup)}</p><div class="skill-actions"><button class="text-button" data-open="${esc(s.id)}">${s.example ? "Ver exemplo" : "Explorar carta"}</button><button class="download" data-start="${esc(s.id)}">Começar ↗</button></div></article>`;
 }
 function render() {
   const q = norm($("#search").value),
@@ -111,15 +124,17 @@ function render() {
   const sort = $("#sort").value;
   filtered.sort(
     sort === "name"
-      ? (a, b) => a.title.localeCompare(b.title, "pt-BR")
+      ? (a, b) => a.title.localeCompare(b.title, DeckI18n.intlLocale)
       : sort === "code"
         ? (a, b) => a.code.localeCompare(b.code)
         : (a, b) =>
             Number(b.featured) - Number(a.featured) ||
             a.code.localeCompare(b.code),
   );
-  $("#skill-count").textContent =
-    `${filtered.length} de ${skills.length} cartas`;
+  $("#skill-count").textContent = t("{count} de {total} cartas", {
+    count: filtered.length,
+    total: skills.length,
+  });
   $("#skill-grid").innerHTML = filtered.slice(0, limit).map(slot).join("");
   $("#empty").hidden = filtered.length > 0;
   $("#load-more").hidden = filtered.length <= limit;
@@ -160,7 +175,7 @@ function renderDeck() {
     .reverse()
     .map(
       (d) =>
-        `<div class="history-row"><span>${esc(byId(d.id)?.title || d.id)}<small>${esc(byId(d.id)?.code)} · v${esc(d.version)} · ${new Date(d.at).toLocaleDateString("pt-BR")}</small></span><button class="text-button" data-download="${esc(d.id)}">Baixar versão atual</button></div>`,
+        `<div class="history-row"><span>${esc(byId(d.id)?.title || d.id)}<small>${esc(byId(d.id)?.code)} · v${esc(d.version)} · ${new Date(d.at).toLocaleDateString(DeckI18n.intlLocale)}</small></span><button class="text-button" data-download="${esc(d.id)}">Baixar versão atual</button></div>`,
     )
     .join("");
   DeckArt.tilt($("#my-deck-grid"));
@@ -170,7 +185,7 @@ function renderJourneys() {
     .filter((j) => audience === "technical" || j.audience !== "technical")
     .map((j) => {
       const completed = j.steps.filter((s) => progress(s.id).tested).length;
-      return `<article class="journey"><div class="journey-header"><p class="edition-line">${j.steps.length} etapas · ${completed} conferidas</p><h2>${esc(j.title)}</h2><p>${esc(j.description)}</p></div><ol>${j.steps
+      return `<article class="journey"><div class="journey-header"><p class="edition-line">${esc(t("{count} etapas · {done} conferidas", { count: j.steps.length, done: completed }))}</p><h2>${esc(j.title)}</h2><p>${esc(j.description)}</p></div><ol>${j.steps
         .map((step, i) => {
           const s = byId(step.id);
           return `<li class="${progress(s.id).tested ? "step-complete" : ""}"><span class="step-number">${progress(s.id).tested ? "✓" : i + 1}</span><div><span class="code">${esc(s.code)}</span><h3>${esc(step.action)}</h3><p>${esc(step.handoff)}</p><button class="text-button" data-start="${esc(s.id)}">Abrir etapa</button></div></li>`;
@@ -184,6 +199,14 @@ function renderJourneys() {
 function setView(next) {
   if (!["discover", "deck", "journeys"].includes(next)) return;
   view = next;
+  const viewURL = new URL(location.href);
+  if (next === "discover") viewURL.searchParams.delete("view");
+  else viewURL.searchParams.set("view", next);
+  history.replaceState(
+    null,
+    "",
+    viewURL.pathname + viewURL.search + viewURL.hash,
+  );
   for (const name of ["discover", "deck", "journeys"])
     $("#" + name + "-view").hidden = name !== next;
   document
@@ -236,16 +259,16 @@ function setAudience(next) {
 const list = (items) =>
   `<ul>${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
 function overview(s) {
-  return `<p class="detail-pain">${esc(s.pain)}</p><h3>${audience === "technical" ? "Entregas e escopo" : "O que você pode produzir"}</h3>${list(s.deliverables)}<h3>O que você precisa ter</h3>${list(s.dependencies)}<div class="detail-primary"><button class="btn" data-detail-tab="start">Começar com esta skill ↗</button><button class="text-button" data-download="${esc(s.id)}">Baixar ZIP direto</button></div><p class="fine">Downloads liberados na demo. O pacote será usado no seu assistente.</p>`;
+  return `<p class="detail-pain">${esc(s.pain)}</p><h3>${audience === "technical" ? "Entregas e escopo" : "O que você pode produzir"}</h3>${list(s.deliverables)}<h3>O que você precisa ter</h3>${list(s.dependencies)}<div class="detail-primary"><button class="btn" data-detail-tab="start">Começar com esta skill ↗</button><button class="text-button" data-download="${esc(s.id)}">Baixar ZIP direto</button><button class="text-button" data-guide="${esc(s.id)}">Baixar guia no meu idioma</button></div><p class="fine">Downloads liberados na demo. O pacote será usado no seu assistente.</p><p class="fine">Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.</p>`;
 }
 function exampleView(s) {
   if (!s.example)
     return `<div class="empty"><h3>Monte seu primeiro teste.</h3><p>Esta carta ainda não tem um exemplo reproduzível. Use uma amostra pequena e confira os critérios abaixo antes de aplicar a dados reais.</p>${list(s.acceptance)}<button class="btn" data-detail-tab="start">Abrir primeiro uso</button></div>`;
   const x = s.example;
-  return `<div class="example-intro"><span class="quality-badge">Dados fictícios · referência conferida</span><h3>${esc(x.title)}</h3><p>${esc(x.before)}</p></div><div class="sample-columns"><section><h4>Entrada</h4><pre>${esc(JSON.stringify(x.input, null, 2))}</pre></section><section><h4>Resultado de referência</h4><p>${esc(x.expected)}</p><details><summary>Inspecionar o resultado completo</summary><pre>${esc(JSON.stringify(x.result, null, 2))}</pre></details></section></div><h4>Peça assim ao seu assistente</h4><pre class="prompt-block">${esc("Use a skill " + s.id + ". " + x.task)}</pre><div class="sample-actions"><button class="btn secondary" data-copy-example="${s.id}">Copiar comando do exemplo</button><button class="text-button" data-sample="${s.id}">Baixar dados de exemplo</button></div><h4>Como conferir</h4>${list(x.checks)}<p class="scope-note">${esc(x.limitation)} ${esc(x.verification)}</p><button class="btn" data-detail-tab="start">Usar esta skill no meu ambiente</button>`;
+  return `<div class="example-intro"><span class="quality-badge">Dados fictícios · referência conferida</span><h3>${esc(x.title)}</h3><p>${esc(x.before)}</p></div><div class="sample-columns"><section><h4>Entrada</h4><pre>${esc(JSON.stringify(x.input, null, 2))}</pre></section><section><h4>Resultado de referência</h4><p>${esc(x.expected)}</p><details><summary>Inspecionar o resultado completo</summary><pre>${esc(JSON.stringify(x.result, null, 2))}</pre></details></section></div><h4>Peça assim ao seu assistente</h4><pre class="prompt-block">${esc(t("Use a skill {id}. {task}", { id: s.id, task: x.task }))}</pre><div class="sample-actions"><button class="btn secondary" data-copy-example="${s.id}">Copiar comando do exemplo</button><button class="text-button" data-sample="${s.id}">Baixar dados de exemplo</button></div><h4>Como conferir</h4>${list(x.checks)}<p class="scope-note">${esc(x.limitation)} ${esc(x.verification)}</p><button class="btn" data-detail-tab="start">Usar esta skill no meu ambiente</button>`;
 }
 function technical(s) {
-  return `<dl class="spec-sheet"><div><dt>Identificador</dt><dd>${esc(s.code)} / ${esc(s.id)}</dd></div><div><dt>Versão</dt><dd>${esc(s.version)} · ${esc(s.release.date)}</dd></div><div><dt>Pacote</dt><dd>${s.release.fileCount} arquivos · ${(s.release.bytes / 1024).toFixed(1)} KB</dd></div><div><dt>Formato</dt><dd>${esc(s.compatibility.format)}</dd></div><div><dt>Execução</dt><dd>${esc(s.compatibility.execution)}</dd></div><div><dt>Ferramentas citadas</dt><dd>${esc(s.compatibility.tools.join(", ") || "Confira os requisitos da skill")}</dd></div><div><dt>Integridade SHA-256</dt><dd class="digest">${esc(s.release.sha256)}</dd></div></dl><details class="release-notes"><summary>O que mudou nesta versão</summary>${s.changelog.map((c) => `<h4>v${esc(c.version)}</h4>${list(c.changes)}`).join("")}</details><details class="release-notes"><summary>Origem, compatibilidade e condições de distribuição</summary><p>${esc(s.release.license)}. A revisão técnica não libera distribuição comercial. Atribuições e termos originais estão no ZIP.</p><p>${s.release.normalizedFiles} arquivos de documentação tiveram caminhos pessoais substituídos por marcadores. Scripts e integrações ainda precisam ser conferidos no ambiente de destino.</p><p>O formato foi revisado; ferramentas específicas de Claude, Figma, Office ou outros serviços não são instaladas pelo pacote.</p></details>`;
+  return `<dl class="spec-sheet"><div><dt>Identificador</dt><dd>${esc(s.code)} / ${esc(s.id)}</dd></div><div><dt>Versão</dt><dd>${esc(s.version)} · ${esc(new Date(s.release.date + "T12:00:00Z").toLocaleDateString(DeckI18n.intlLocale, { timeZone: "UTC" }))}</dd></div><div><dt>Pacote</dt><dd>${esc(t("{count} arquivos · {size} KB", { count: s.release.fileCount, size: DeckI18n.number(s.release.bytes / 1024, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) }))}</dd></div><div><dt>Formato</dt><dd>${esc(s.compatibility.format)}</dd></div><div><dt>Execução</dt><dd>${esc(s.compatibility.execution)}</dd></div><div><dt>Ferramentas citadas</dt><dd>${esc(s.compatibility.tools.join(", ") || "Confira os requisitos da skill")}</dd></div><div><dt>Integridade SHA-256</dt><dd class="digest">${esc(s.release.sha256)}</dd></div></dl><details class="release-notes"><summary>O que mudou nesta versão</summary>${s.changelog.map((c) => `<h4>v${esc(c.version)}</h4>${list(c.changes)}`).join("")}</details><details class="release-notes"><summary>Origem, compatibilidade e condições de distribuição</summary><p>${esc(s.release.license)}. ${esc(t("A revisão técnica não libera distribuição comercial. Atribuições e termos originais estão no ZIP."))}</p><p>${esc(t("{count} arquivos de documentação tiveram caminhos pessoais substituídos por marcadores. Scripts e integrações ainda precisam ser conferidos no ambiente de destino.", { count: s.release.normalizedFiles }))}</p><p>O formato foi revisado; ferramentas específicas de Claude, Figma, Office ou outros serviços não são instaladas pelo pacote.</p></details>`;
 }
 function wizard(s) {
   const p = progress(s.id);
@@ -271,7 +294,7 @@ function wizard(s) {
         "",
       )}</div><p>${platform === "other" ? "Confirme se o assistente aceita SKILL.md e tem as ferramentas citadas. Um chat comum pode não executar os scripts." : platform === "claude" ? "Instale como skill pessoal do Claude Code. Extensões e ferramentas mencionadas continuam sendo requisitos separados." : "Instale na pasta de skills do usuário. Nesta instalação, ~/.codex/skills foi reconhecida; respeite CODEX_HOME se ele estiver configurado."}</p>${s.compatibility.platformSpecific ? '<p class="scope-note">Esta skill depende de uma plataforma ou conector específico. Confirme o acesso antes de prosseguir.</p>' : ""}<h4>Prepare estes materiais</h4>${list(s.dependencies)}<button class="btn" data-wizard-step="1">Ver instalação</button>`;
   if (wizardStep === 1)
-    content = `<h3>Baixe e instale a pasta da skill.</h3><ol><li>Baixe o ZIP e extraia os arquivos.</li><li>Localize a pasta <code>${esc(s.id)}</code>.</li><li>Copie a pasta completa para <code>${esc(folder)}</code>. Preserve uma cópia da versão anterior, se houver.</li><li>Abra um novo chat e confira se a skill foi reconhecida.</li></ol><button class="btn secondary" data-download="${s.id}">Baixar v${s.version} ↓</button><label class="check-line"><input id="installed-check" type="checkbox" ${p.installed ? "checked" : ""}>Já extraí, copiei a pasta e conferi o reconhecimento.</label><button class="btn" id="next-prompt">Preparar meu comando</button>`;
+    content = `<h3>Baixe e instale a pasta da skill.</h3><ol><li>Baixe o ZIP e extraia os arquivos.</li><li>Localize a pasta <code>${esc(s.id)}</code>.</li><li>Copie a pasta completa para <code>${esc(t(folder))}</code>. Preserve uma cópia da versão anterior, se houver.</li><li>Abra um novo chat e confira se a skill foi reconhecida.</li></ol><button class="btn secondary" data-download="${s.id}">${esc(t("Baixar v{version} ↓", { version: s.version }))}</button><label class="check-line"><input id="installed-check" type="checkbox" ${p.installed ? "checked" : ""}>Já extraí, copiei a pasta e conferi o reconhecimento.</label><button class="btn" id="next-prompt">Preparar meu comando</button>`;
   if (wizardStep === 2)
     content = `<h3>Leve um comando claro.</h3><p>Substitua os campos entre colchetes pelos seus dados. Anexe apenas arquivos autorizados no assistente escolhido.</p><pre class="prompt-block" id="first-prompt">${esc(s.firstPrompt)}</pre><button class="btn" id="copy-prompt">${p.promptCopied ? "Copiar novamente" : "Copiar primeiro comando"}</button><p class="fine">A execução acontece no seu assistente. O site não envia seus arquivos ou executa a skill.</p><button class="text-button" data-wizard-step="3">Já executei; quero conferir o resultado</button>`;
   if (wizardStep === 3)
@@ -356,6 +379,42 @@ function saveFile(name, text, type = "application/json") {
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
+function downloadGuide(s) {
+  const lines = [
+    `# ${t("Guia de primeiro uso")} — ${s.title}`,
+    t("Guia para {code} · versão {version}", {
+      code: s.code,
+      version: s.version,
+    }),
+    t(
+      "Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.",
+    ),
+    `## ${t("Materiais e requisitos")}`,
+    s.dependencies.map((item) => `- ${item}`).join("\n"),
+    `## ${t("Como instalar")}`,
+    t(
+      "Extraia o ZIP e copie a pasta completa da skill para a pasta de skills do seu assistente. Preserve a versão anterior. Abra um novo chat e confirme se a skill foi reconhecida.",
+    ),
+    `- Codex: ~/.codex/skills/${s.id}\n- Claude Code: ~/.claude/skills/${s.id}`,
+    t(
+      "Para outros assistentes, confira o suporte a SKILL.md e as ferramentas necessárias antes de instalar.",
+    ),
+    `## ${t("Primeiro comando")}`,
+    s.firstPrompt,
+    `## ${t("Como conferir")}`,
+    (s.example ? s.example.checks : s.acceptance)
+      .map((item) => `- [ ] ${item}`)
+      .join("\n"),
+    t(
+      "A execução acontece no seu assistente. O site não envia seus arquivos ou executa a skill.",
+    ),
+  ];
+  saveFile(
+    `${s.code}-guide-${DeckI18n.locale}.md`,
+    lines.join("\n\n") + "\n",
+    "text/markdown",
+  );
+}
 async function copy(text) {
   try {
     await navigator.clipboard.writeText(text);
@@ -375,11 +434,15 @@ async function download(id, button) {
   button.textContent = "Verificando pacote…";
   const s = byId(id);
   try {
-    const r = await fetch("/api/download?id=" + encodeURIComponent(id), {
-      signal: AbortSignal.timeout(30000),
-    });
+    const r = await fetch(
+      DeckI18n.url("/api/download?id=" + encodeURIComponent(id)),
+      {
+        headers: DeckI18n.headers(),
+        signal: AbortSignal.timeout(30000),
+      },
+    );
     if (r.status === 401) {
-      location.assign("/login");
+      location.assign(DeckI18n.url("/login"));
       return;
     }
     if (!r.ok) {
@@ -430,7 +493,7 @@ async function download(id, button) {
     const message =
       e.name === "TimeoutError"
         ? "O download demorou. Tente novamente."
-        : e.message;
+        : errorText(e);
     if ($("#download-status")) $("#download-status").textContent = message;
     toast(message);
   } finally {
@@ -466,8 +529,8 @@ async function find() {
     $("#match-summary").textContent =
       result.summary +
       (result.mode === "ai"
-        ? " Indicação assistida por IA."
-        : " Correspondência pelo catálogo.") +
+        ? " " + t("Indicação assistida por IA.")
+        : " " + t("Correspondência pelo catálogo.")) +
       (result.notice ? " " + result.notice : "");
     $("#clarification").hidden = !result.clarification;
     $("#clarification").innerHTML = result.clarification
@@ -477,7 +540,7 @@ async function find() {
       .map((m, i) => {
         const s = byId(m.id);
         return s
-          ? `<article class="match-item"><p class="mini-heading">${esc(s.code)} / ${i === 0 ? "Comece por aqui" : "Também pode ajudar"}</p><h3>${esc(s.title)}</h3><p>${esc(m.reason)}</p><p class="fine">${esc(m.nextStep)}</p><span class="quality-badge">${esc(badge(s))}</span><div class="match-actions"><button class="btn" data-start="${s.id}">Começar</button><button class="btn secondary" data-open="${s.id}">${s.example ? "Ver exemplo" : "Ver carta"}</button></div></article>`
+          ? `<article class="match-item"><p class="mini-heading">${esc(s.code)} / ${esc(t(i === 0 ? "Comece por aqui" : "Também pode ajudar"))}</p><h3>${esc(s.title)}</h3><p>${esc(m.reason)}</p><p class="fine">${esc(m.nextStep)}</p><span class="quality-badge">${esc(badge(s))}</span><div class="match-actions"><button class="btn" data-start="${s.id}">Começar</button><button class="btn secondary" data-open="${s.id}">${s.example ? "Ver exemplo" : "Ver carta"}</button></div></article>`
           : "";
       })
       .join("");
@@ -487,7 +550,7 @@ async function find() {
     $("#finder-error").textContent =
       e.name === "TimeoutError"
         ? "A análise demorou. Tente novamente."
-        : e.message;
+        : errorText(e);
   } finally {
     if (version === requestVersion) {
       $("#find-skills").disabled = false;
@@ -504,8 +567,10 @@ document.addEventListener("click", async (e) => {
   if (b.dataset.start) openSkill(b.dataset.start, "start");
   if (b.dataset.favorite) toggleFavorite(b.dataset.favorite);
   if (b.dataset.download) download(b.dataset.download, b);
+  if (b.dataset.guide) downloadGuide(byId(b.dataset.guide));
   if (b.dataset.example) {
     $("#problem").value = b.dataset.example;
+    $("#problem").setCustomValidity("");
     refinement = null;
     find();
   }
@@ -564,7 +629,9 @@ document.addEventListener("click", async (e) => {
   }
   if (b.dataset.copyExample) {
     const s = byId(b.dataset.copyExample);
-    await copy("Use a skill " + s.id + ". " + s.example.task);
+    await copy(
+      t("Use a skill {id}. {task}", { id: s.id, task: s.example.task }),
+    );
   }
   if (b.dataset.sample) {
     const s = byId(b.dataset.sample);
@@ -572,7 +639,8 @@ document.addEventListener("click", async (e) => {
       s.code + "-exemplo.json",
       JSON.stringify(
         {
-          notice: "Dados fictícios de demonstração",
+          notice: t("Dados fictícios de demonstração"),
+          locale: DeckI18n.locale,
           input: s.example.input,
           result: s.example.result,
           checks: s.example.checks,
@@ -608,7 +676,7 @@ document.addEventListener("click", async (e) => {
         j.steps
           .map(
             (step, i) =>
-              `## ${i + 1}. ${step.action}\n\nSkill: ${step.id}\n\nEntrega para a próxima etapa: ${step.handoff}\n\n${byId(step.id).firstPrompt}\n`,
+              `## ${i + 1}. ${step.action}\n\nSkill: ${step.id}\n\n${t("Entrega para a próxima etapa:")} ${step.handoff}\n\n${byId(step.id).firstPrompt}\n`,
           )
           .join("\n"),
       "text/markdown",
@@ -701,7 +769,10 @@ $("#import-file").onchange = async (e) => {
     toast(
       error instanceof SyntaxError
         ? "Arquivo JSON inválido. Exporte um Deck pelo site."
-        : error.message,
+        : errorText(
+            error,
+            "Não foi possível ler o arquivo. Tente exportar seu Deck novamente.",
+          ),
     );
   } finally {
     e.target.value = "";
@@ -714,7 +785,7 @@ $("#logout").onclick = async () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ action: "logout" }),
     });
-    location.assign("/login");
+    location.assign(DeckI18n.url("/login"));
   } catch {
     toast("Não foi possível sair. Tente novamente.");
   }
@@ -744,6 +815,8 @@ $("#logout").onclick = async () => {
           : "business";
     } catch {}
     setAudience(audience);
+    const initialView = new URL(location.href).searchParams.get("view");
+    if (["deck", "journeys"].includes(initialView)) setView(initialView);
     $("#market-sound").textContent = DeckSound.enabled
       ? "Som ativado"
       : "Som desativado";
@@ -751,6 +824,6 @@ $("#logout").onclick = async () => {
     const status = await api("/api/status");
     $("#ai-choice").hidden = !status.aiConfigured;
   } catch (e) {
-    $("#load-error").textContent = e.message;
+    $("#load-error").textContent = errorText(e);
   }
 })();

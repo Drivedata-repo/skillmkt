@@ -14,6 +14,7 @@ Produto: **DriveData Deck**. Subdomínio `deck.drivedata.com.br` configurado e v
 - Login com portal de luz, cartas em CSS 3D, reflexo holográfico, movimento e transição de desbloqueio.
 - Assinatura sonora sintetizada com Web Audio após interação do visitante; botão para silenciar. Nenhum áudio externo.
 - Movimento pode ser pausado e respeita `prefers-reduced-motion`.
+- Português, inglês e espanhol em todo o produto: seletor com bandeiras SVG, escolha persistida, catálogo, triagem, exemplos, primeiro uso, Meu Deck, jornadas, login, privacidade e mensagens. Guias Markdown podem ser baixados no idioma selecionado.
 - Catálogo: 137 IDs permanentes `DD-001` a `DD-137`, 10 grupos, busca, filtros e frente/verso.
 - A recomendação explica a capacidade da skill e os requisitos para começar. Downloads estão liberados aos participantes da demo.
 - Pedidos ambíguos recebem uma pergunta curta. A seleção considera até 20 candidatos e apresenta até três indicações.
@@ -51,7 +52,7 @@ O servidor confere o hash cadastrado da versão e o navegador verifica o SHA-256
 `skillmkt.waitlist` tem RLS. O runtime só pode inserir; não pode consultar ou editar a lista. Não existe endpoint público de listagem, e a senha da demo não dá acesso aos inscritos. Para consultar a lista, use uma sessão administrativa do SQL Editor do Supabase:
 
 ```sql
-select name, email, audience, interest, consent_version, created_at
+select name, email, audience, interest, preferred_language, consent_version, created_at
 from skillmkt.waitlist
 order by created_at desc;
 ```
@@ -59,6 +60,16 @@ order by created_at desc;
 Exporte dados pessoais apenas pelo acesso administrativo autorizado. O formulário de demonstração foi testado com endereço fictício, removido após a verificação.
 
 O banco usa o transaction pooler Supabase, com validação de certificado, pool máximo 2 e sem prepared statements nomeados. Certificado público da CA em `certs/supabase-ca.crt`, obtido do endpoint usado pelo dashboard oficial.
+
+## Idiomas
+
+- URLs aceitam `?lang=pt`, `?lang=en` e `?lang=es`. O seletor salva a preferência em `drivedata-language` e no cookie `deck_locale`; o padrão é português. Links internos e redirecionamentos preservam a escolha, e a seção ativa da coleção é mantida na troca.
+- `data/i18n-public.cjs` e `data/i18n-market.cjs` contêm as traduções da interface. O build gera `dist/translations.js`, valida pares e placeholders. `dist/i18n-core.js` e `dist/i18n.js` aplicam texto e atributos sem converter traduções em HTML ou alterar o texto digitado pelo visitante.
+- `data/i18n/catalog-text.json` contém 1.080 frases de produto traduzidas; `lib/catalog-i18n.cjs` localiza as 137 skills, cinco jornadas e dez exemplos. IDs, versões, hashes, fórmulas, permissões e valores numéricos permanecem estáveis. `categoryKey` preserva a arte de cada grupo.
+- A API valida o idioma pela query, pelo cabeçalho `x-deck-language` ou pelo cookie. A triagem tem vocabulário e perguntas nos três idiomas; a IA opcional também recebe a preferência de idioma. O modo de catálogo funciona sem provedor de tradução externo.
+- Os ZIPs originais permanecem na língua de origem e com seus hashes originais. A tela explica isso e oferece um guia de primeiro uso no idioma escolhido. Comandos copiados, exemplos JSON e roteiros Markdown são localizados; dados informados pelo visitante não são traduzidos automaticamente.
+- A migração aditiva `20261106222629_waitlist_language.sql` registra `preferred_language` na lista de espera. Cadastros anteriores e versões antigas do site usam `pt`; novos cadastros aceitam apenas `pt/en/es`. Ela deve ser aplicada antes de publicar o código. RLS e acesso de inserção da aplicação são preservados; inscrições repetidas continuam sem alteração do registro original.
+- Regressões verificam cobertura de texto, paridade dos idiomas, integridade dos exemplos, comandos, seleção de idioma, triagem e permissões. Os testes de banco usam transações revertidas e não deixam cadastros de QA.
 
 ## Indicação de skills
 

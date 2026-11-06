@@ -1,7 +1,8 @@
-const { body, send, failure } = require("../lib/http.cjs");
+const { body, send, failure, initializeLocale } = require("../lib/http.cjs");
 const auth = require("../lib/auth.cjs");
 const { limit } = require("../lib/limit.cjs");
 module.exports = async (req, res) => {
+  initializeLocale(req, res);
   try {
     if (req.method === "GET")
       return send(res, 200, {

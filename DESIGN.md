@@ -72,3 +72,11 @@ A seção “Abra uma carta” fica entre os números do catálogo e a definiç�
 - Atualizações por `requestAnimationFrame` solicitadas por rolagem ou mudança de estado, sem loop permanente. Elementos fora da tela não são recalculados; a aba oculta interrompe as atualizações.
 - CSS e JavaScript isolados em `landing-motion.css` e `landing-motion.js`, sem dependências novas. Sem JavaScript, textos e links permanecem disponíveis e os painéis de referência usam posições estáticas.
 - Verificação visual em 1440×1000, 1280×700, 1024×821, 820×1100 e 390×844. Conferidos pausa/retomada, avanço e retorno das camadas, ausência de sobreposição com as legendas e navegação para exemplos e lista de espera. Sem erros de JavaScript observados. Preferência de redução inspecionada no código; não houve alteração da configuração do sistema operacional.
+
+## Seletor de idioma
+
+Três bandeiras vetoriais representam português brasileiro, inglês e espanhol, acompanhadas de PT/EN/ES e nomes acessíveis completos. A seleção tem contorno e sublinhado, além de mudança de cor. Uma inclinação leve no hover segue o tema das cartas; a preferência de redução de movimento remove essa transição. Contraste do texto do seletor acima de 11:1.
+
+O cabeçalho se reorganiza em telas menores, mantendo as bandeiras visíveis na landing, no login e na coleção. Na privacidade, o seletor fica no início do conteúdo. A troca usa navegação normal, preserva página, âncora e seção da coleção; favoritos e histórico continuam associados aos IDs originais. Formulários em andamento são reiniciados ao trocar o idioma.
+
+A tradução abrange microtextos, atributos acessíveis, mensagens de erro, exemplos, metadados das cartas e conteúdo gerado para copiar/baixar. Nomes próprios, caminhos técnicos, IDs e arquivos originais das skills não são reescritos. O guia localizado é oferecido separadamente do ZIP original. Layouts conferidos em 1440, 1280, 820, 390 e 375 px; recomendações e navegação testadas em inglês e espanhol, com retorno ao português.

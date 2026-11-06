@@ -1,0 +1,4070 @@
+{
+  "Aberta": ["Open", "Abierta"],
+  "Em análise": ["Under review", "En revisión"],
+  "Concluída": ["Completed", "Completada"],
+  "Gestores de operações": [
+    "Operations managers",
+    "Responsables de operaciones"
+  ],
+  "Consolidar planilhas": [
+    "Consolidate spreadsheets",
+    "Consolidar hojas de cálculo"
+  ],
+  "Revisão de regras e organização de dados": [
+    "Rule review and data organization",
+    "Revisión de reglas y organización de datos"
+  ],
+  "Conheça um exemplo de consolidação": [
+    "Explore a consolidation example",
+    "Conoce un ejemplo de consolidación"
+  ],
+  "Soluções": ["Solutions", "Soluciones"],
+  "Agentes especializados para rotinas de desenvolvimento": [
+    "Specialized agents for development workflows",
+    "Agentes especializados para rutinas de desarrollo"
+  ],
+  "Automação & IA": ["Automation & AI", "Automatización e IA"],
+  "Uma tarefa recorrente precisa de um assistente com instruções e ferramentas delimitadas.": [
+    "A recurring task needs an assistant with clearly scoped instructions and tools.",
+    "Una tarea recurrente necesita un asistente con instrucciones y herramientas delimitadas."
+  ],
+  "Definição de agente": ["Agent definition", "Definición del agente"],
+  "Critérios de ativação, ferramentas e casos de validação": [
+    "Activation criteria, tools and validation cases",
+    "Criterios de activación, herramientas y casos de validación"
+  ],
+  "Ambiente e plugin Claude Code/Cowork compatíveis; a importação no Codex não instala o runtime": [
+    "Compatible Claude Code/Cowork environment and plugin; importing into Codex does not install the runtime",
+    "Entorno y plugin de Claude Code/Cowork compatibles; la importación en Codex no instala el runtime"
+  ],
+  "Validar ferramentas e arquivos auxiliares antes de executar": [
+    "Validate tools and supporting files before running",
+    "Validar las herramientas y los archivos auxiliares antes de ejecutar"
+  ],
+  "Preparação do ambiente de desenvolvimento": [
+    "Development environment setup",
+    "Preparación del entorno de desarrollo"
+  ],
+  "Apoio interno": ["Internal support", "Apoyo interno"],
+  "Ferramentas e scripts falham por diferenças de ambiente, certificados ou configuração.": [
+    "Tools and scripts fail because of differences in environments, certificates or configuration.",
+    "Las herramientas y los scripts fallan por diferencias de entorno, certificados o configuración."
+  ],
+  "Diagnóstico de ambiente Windows": [
+    "Windows environment diagnosis",
+    "Diagnóstico del entorno Windows"
+  ],
+  "Orientações de execução e configuração de ferramentas": [
+    "Guidance on running and configuring tools",
+    "Orientaciones para ejecutar y configurar herramientas"
+  ],
+  "Acesso autorizado à máquina": [
+    "Authorized access to the computer",
+    "Acceso autorizado al equipo"
+  ],
+  "Compatibilidade dos runtimes e permissões locais": [
+    "Compatible runtimes and local permissions",
+    "Compatibilidad de los runtimes y permisos locales"
+  ],
+  "Conhecimento específico do ambiente original precisa ser revalidado": [
+    "Knowledge specific to the original environment must be revalidated",
+    "El conocimiento específico del entorno original debe validarse nuevamente"
+  ],
+  "Documentos e planilhas sem retrabalho": [
+    "Documents and spreadsheets without rework",
+    "Documentos y hojas de cálculo sin retrabajo"
+  ],
+  "A equipe perde tempo montando propostas, planilhas, apresentações e atas manualmente.": [
+    "The team wastes time preparing proposals, spreadsheets, presentations and meeting minutes manually.",
+    "El equipo pierde tiempo preparando propuestas, hojas de cálculo, presentaciones y actas manualmente."
+  ],
+  "Documentos Word e PDF a partir de modelos": [
+    "Word and PDF documents from templates",
+    "Documentos Word y PDF a partir de plantillas"
+  ],
+  "Planilhas com fórmulas e parâmetros": [
+    "Spreadsheets with formulas and parameters",
+    "Hojas de cálculo con fórmulas y parámetros"
+  ],
+  "Apresentações editáveis": [
+    "Editable presentations",
+    "Presentaciones editables"
+  ],
+  "Atas a partir de transcrições": [
+    "Meeting minutes from transcripts",
+    "Actas a partir de transcripciones"
+  ],
+  "Modelos e fontes de dados fornecidos": [
+    "Provided templates and data sources",
+    "Plantillas y fuentes de datos proporcionadas"
+  ],
+  "Ferramentas de geração e renderização compatíveis": [
+    "Compatible generation and rendering tools",
+    "Herramientas de generación y renderizado compatibles"
+  ],
+  "Validação visual e recálculo dos arquivos": [
+    "Visual validation and file recalculation",
+    "Validación visual y recálculo de los archivos"
+  ],
+  "Briefing operacional para equipes jurídicas": [
+    "Operational briefings for legal teams",
+    "Informes operativos para equipos jurídicos"
+  ],
+  "Documentos & operação": [
+    "Documents & operations",
+    "Documentos y operaciones"
+  ],
+  "Informações importantes para o jurídico estão espalhadas entre contratos e mensagens.": [
+    "Information important to the legal team is scattered across contracts and messages.",
+    "La información importante para el equipo jurídico está dispersa entre contratos y mensajes."
+  ],
+  "Resumo diário, temático ou de incidente": [
+    "Daily, topic-specific or incident summary",
+    "Resumen diario, temático o de un incidente"
+  ],
+  "Prazos, pendências e fontes consultadas": [
+    "Deadlines, outstanding items and consulted sources",
+    "Plazos, asuntos pendientes y fuentes consultadas"
+  ],
+  "Documentos e contexto fornecidos pela empresa": [
+    "Documents and context provided by the company",
+    "Documentos y contexto proporcionados por la empresa"
+  ],
+  "Revisão e responsabilidade de profissional jurídico qualificado": [
+    "Review and responsibility of a qualified legal professional",
+    "Revisión y responsabilidad de un profesional jurídico cualificado"
+  ],
+  "Regras da jurisdição e políticas internas precisam ser verificadas para cada caso": [
+    "Jurisdictional rules and internal policies must be checked for each case",
+    "Las normas de la jurisdicción y las políticas internas deben verificarse en cada caso"
+  ],
+  "Conectores de e-mail, agenda, documentos, CRM ou CLM para consulta ao vivo": [
+    "Email, calendar, document, CRM or CLM connectors for live queries",
+    "Conectores de correo, calendario, documentos, CRM o CLM para consultas en vivo"
+  ],
+  "Aplicativos interativos dentro de assistentes": [
+    "Interactive applications inside assistants",
+    "Aplicaciones interactivas dentro de asistentes"
+  ],
+  "Sistemas & integrações": [
+    "Systems & integrations",
+    "Sistemas e integraciones"
+  ],
+  "A equipe precisa de formulários, seletores ou painéis integrados à conversa.": [
+    "The team needs forms, selectors or dashboards integrated into the conversation.",
+    "El equipo necesita formularios, selectores o paneles integrados en la conversación."
+  ],
+  "Servidor MCP com recursos de interface": [
+    "MCP server with interface resources",
+    "Servidor MCP con recursos de interfaz"
+  ],
+  "Widgets interativos e plano de validação no host": [
+    "Interactive widgets and a host validation plan",
+    "Widgets interactivos y plan de validación en el host"
+  ],
+  "API ou serviço de origem": [
+    "Source API or service",
+    "API o servicio de origen"
+  ],
+  "Hospedagem e autenticação conforme arquitetura": [
+    "Hosting and authentication according to the architecture",
+    "Alojamiento y autenticación según la arquitectura"
+  ],
+  "Host compatível com MCP Apps; validar diferenças entre Claude e ChatGPT": [
+    "MCP Apps-compatible host; validate differences between Claude and ChatGPT",
+    "Host compatible con MCP Apps; validar las diferencias entre Claude y ChatGPT"
+  ],
+  "Conectores para sistemas e assistentes de IA": [
+    "Connectors for systems and AI assistants",
+    "Conectores para sistemas y asistentes de IA"
+  ],
+  "O assistente não consegue consultar ou operar os sistemas usados pela equipe.": [
+    "The assistant cannot query or operate the systems the team uses.",
+    "El asistente no puede consultar ni operar los sistemas que utiliza el equipo."
+  ],
+  "Arquitetura de integração": [
+    "Integration architecture",
+    "Arquitectura de integración"
+  ],
+  "Servidor MCP com ferramentas e autenticação": [
+    "MCP server with tools and authentication",
+    "Servidor MCP con herramientas y autenticación"
+  ],
+  "Testes de chamadas no ambiente de destino": [
+    "Call tests in the target environment",
+    "Pruebas de llamadas en el entorno de destino"
+  ],
+  "APIs e credenciais autorizadas": [
+    "Authorized APIs and credentials",
+    "APIs y credenciales autorizadas"
+  ],
+  "Hospedagem ou runtime local": [
+    "Hosting or local runtime",
+    "Alojamiento o runtime local"
+  ],
+  "Requisitos de acesso e validação do host de destino": [
+    "Access requirements and target host validation",
+    "Requisitos de acceso y validación del host de destino"
+  ],
+  "Distribuição de conectores locais": [
+    "Local connector distribution",
+    "Distribución de conectores locales"
+  ],
+  "Instalar a integração local exige preparar dependências manualmente em cada computador.": [
+    "Installing the local integration requires manually preparing dependencies on each computer.",
+    "Instalar la integración local exige preparar las dependencias manualmente en cada equipo."
+  ],
+  "Pacote MCPB com servidor e dependências": [
+    "MCPB package with server and dependencies",
+    "Paquete MCPB con servidor y dependencias"
+  ],
+  "Manifesto e instruções de instalação": [
+    "Manifest and installation instructions",
+    "Manifiesto e instrucciones de instalación"
+  ],
+  "Servidor MCP local": ["Local MCP server", "Servidor MCP local"],
+  "Host compatível com MCPB e sistema operacional definido": [
+    "MCPB-compatible host and defined operating system",
+    "Host compatible con MCPB y sistema operativo definido"
+  ],
+  "Validação de permissões, empacotamento e assinatura quando aplicável": [
+    "Permission, packaging and signing validation where applicable",
+    "Validación de permisos, empaquetado y firma cuando corresponda"
+  ],
+  "Aplicativos experimentais para dispositivos Cardputer": [
+    "Experimental applications for Cardputer devices",
+    "Aplicaciones experimentales para dispositivos Cardputer"
+  ],
+  "Inovação & experimentação": [
+    "Innovation & experimentation",
+    "Innovación y experimentación"
+  ],
+  "Um dispositivo já configurado precisa de novos aplicativos ou diagnóstico.": [
+    "An already configured device needs new applications or diagnosis.",
+    "Un dispositivo ya configurado necesita nuevas aplicaciones o diagnóstico."
+  ],
+  "Aplicativo MicroPython": [
+    "MicroPython application",
+    "Aplicación MicroPython"
+  ],
+  "Atualização de arquivos e análise de logs seriais": [
+    "File updates and serial log analysis",
+    "Actualización de archivos y análisis de registros serie"
+  ],
+  "Dispositivo Cardputer compatível previamente provisionado": [
+    "Compatible Cardputer device provisioned in advance",
+    "Dispositivo Cardputer compatible previamente aprovisionado"
+  ],
+  "Repositório build-with-claude completo e ferramentas seriais": [
+    "Complete build-with-claude repository and serial tools",
+    "Repositorio build-with-claude completo y herramientas serie"
+  ],
+  "Acesso físico USB ou BLE; integração Claude Buddy depende do host": [
+    "Physical USB or BLE access; Claude Buddy integration depends on the host",
+    "Acceso físico USB o BLE; la integración Claude Buddy depende del host"
+  ],
+  "Atas e compromissos de reunião": [
+    "Meeting minutes and commitments",
+    "Actas y compromisos de reunión"
+  ],
+  "Decisões e responsáveis se perdem após as reuniões.": [
+    "Decisions and assigned owners get lost after meetings.",
+    "Las decisiones y los responsables se pierden después de las reuniones."
+  ],
+  "Ata em Word e PDF a partir de transcrição": [
+    "Word and PDF meeting minutes from a transcript",
+    "Acta en Word y PDF a partir de una transcripción"
+  ],
+  "Quadro de compromissos, responsáveis e prazos": [
+    "Commitments, owners and deadlines table",
+    "Tabla de compromisos, responsables y plazos"
+  ],
+  "Rascunho de e-mail para encaminhamento": [
+    "Draft forwarding email",
+    "Borrador de correo para su envío"
+  ],
+  "Transcrição da reunião e identidade visual autorizada": [
+    "Meeting transcript and authorized visual identity",
+    "Transcripción de la reunión e identidad visual autorizada"
+  ],
+  "Gerador de documentos e conversor PDF": [
+    "Document generator and PDF converter",
+    "Generador de documentos y conversor PDF"
+  ],
+  "O modelo original produz em espanhol; outros idiomas exigem adaptação": [
+    "The original template produces Spanish output; other languages require adaptation",
+    "La plantilla original produce en español; otros idiomas requieren adaptación"
+  ],
+  "Envio de e-mail não está incluído na geração dos arquivos": [
+    "Sending email is not included in file generation",
+    "El envío de correo no está incluido en la generación de archivos"
+  ],
+  "Diagnóstico de automações para equipes de desenvolvimento": [
+    "Automation diagnosis for development teams",
+    "Diagnóstico de automatizaciones para equipos de desarrollo"
+  ],
+  "Qualidade & engenharia": ["Quality & engineering", "Calidad e ingeniería"],
+  "A equipe não sabe quais automações melhorariam seu fluxo no Claude Code.": [
+    "The team does not know which automations would improve its Claude Code workflow.",
+    "El equipo no sabe qué automatizaciones mejorarían su flujo en Claude Code."
+  ],
+  "Recomendações priorizadas de hooks, agentes, skills e conectores": [
+    "Prioritized recommendations for hooks, agents, skills and connectors",
+    "Recomendaciones priorizadas de hooks, agentes, skills y conectores"
+  ],
+  "Diagnóstico do repositório sem alteração de arquivos": [
+    "Repository diagnosis without changing files",
+    "Diagnóstico del repositorio sin modificar archivos"
+  ],
+  "Repositório disponível para análise": [
+    "Repository available for analysis",
+    "Repositorio disponible para análisis"
+  ],
+  "Documentação do ambiente Power BI": [
+    "Power BI environment documentation",
+    "Documentación del entorno Power BI"
+  ],
+  "Dados & inteligência": ["Data & intelligence", "Datos e inteligencia"],
+  "O conhecimento do relatório está concentrado em poucas pessoas e dificulta manutenção ou transferência.": [
+    "Report knowledge is concentrated in a few people, making maintenance or handover difficult.",
+    "El conocimiento del informe se concentra en pocas personas y dificulta el mantenimiento o la transferencia."
+  ],
+  "Documento Word com tabelas, colunas e relacionamentos": [
+    "Word document with tables, columns and relationships",
+    "Documento Word con tablas, columnas y relaciones"
+  ],
+  "Catálogo de medidas DAX e fontes de dados": [
+    "DAX measure and data source catalog",
+    "Catálogo de medidas DAX y fuentes de datos"
+  ],
+  "Inventário de páginas e convenções do projeto": [
+    "Inventory of pages and project conventions",
+    "Inventario de páginas y convenciones del proyecto"
+  ],
+  "Arquivos PBIP, PBIR e TMDL ou acesso autorizado aos metadados": [
+    "PBIP, PBIR and TMDL files or authorized access to metadata",
+    "Archivos PBIP, PBIR y TMDL o acceso autorizado a los metadatos"
+  ],
+  "Validação da cobertura dos metadados coletados": [
+    "Validation of collected metadata coverage",
+    "Validación de la cobertura de los metadatos recopilados"
+  ],
+  "Adaptação da marca do template original para a marca autorizada do cliente": [
+    "Adaptation of the original template brand to the client's authorized brand",
+    "Adaptación de la marca de la plantilla original a la marca autorizada del cliente"
+  ],
+  "Navegação assistida no navegador integrado": [
+    "Assisted navigation in the integrated browser",
+    "Navegación asistida en el navegador integrado"
+  ],
+  "Fluxos em sistemas web precisam de leitura e operação assistida.": [
+    "Web system workflows require assisted reading and operation.",
+    "Los flujos en sistemas web necesitan lectura y operación asistidas."
+  ],
+  "Procedimento de navegação, leitura de páginas e uso de sessões autorizadas": [
+    "Procedure for navigation, page reading and use of authorized sessions",
+    "Procedimiento de navegación, lectura de páginas y uso de sesiones autorizadas"
+  ],
+  "Navegador integrado do Claude e seus conectores específicos": [
+    "Claude's integrated browser and its specific connectors",
+    "Navegador integrado de Claude y sus conectores específicos"
+  ],
+  "Contas e permissões nos sistemas de destino": [
+    "Accounts and permissions in target systems",
+    "Cuentas y permisos en los sistemas de destino"
+  ],
+  "Adaptação de ferramentas antes do uso no Codex": [
+    "Tool adaptation before use in Codex",
+    "Adaptación de herramientas antes del uso en Codex"
+  ],
+  "Navegação assistida no Chrome": [
+    "Assisted navigation in Chrome",
+    "Navegación asistida en Chrome"
+  ],
+  "Atividades repetitivas em aplicações web dependem de interação manual.": [
+    "Repetitive activities in web applications rely on manual interaction.",
+    "Las actividades repetitivas en aplicaciones web dependen de la interacción manual."
+  ],
+  "Procedimento de operação e inspeção de páginas": [
+    "Procedure for operating and inspecting pages",
+    "Procedimiento de operación e inspección de páginas"
+  ],
+  "Orientação para capturar evidências de execução no navegador": [
+    "Guidance on capturing execution evidence in the browser",
+    "Orientaciones para capturar evidencias de ejecución en el navegador"
+  ],
+  "Extensão Claude in Chrome conectada ou adaptação para navegador equivalente": [
+    "Connected Claude in Chrome extension or adaptation to an equivalent browser",
+    "Extensión Claude in Chrome conectada o adaptación a un navegador equivalente"
+  ],
+  "Sessão autenticada e permissões nos sites": [
+    "Authenticated session and site permissions",
+    "Sesión autenticada y permisos en los sitios"
+  ],
+  "Não constitui uma automação instalada por si só": [
+    "This is not an installed automation on its own",
+    "No constituye por sí sola una automatización instalada"
+  ],
+  "Arquitetura e evolução de sistemas em nuvem": [
+    "Cloud system architecture and evolution",
+    "Arquitectura y evolución de sistemas en la nube"
+  ],
+  "Sistemas difíceis de manter, escalar ou recuperar de falhas.": [
+    "Systems that are difficult to maintain, scale or recover from failures.",
+    "Sistemas difíciles de mantener, escalar o recuperar ante fallos."
+  ],
+  "Revisão de decisões de arquitetura": [
+    "Review of architecture decisions",
+    "Revisión de decisiones de arquitectura"
+  ],
+  "Recomendações de organização, resiliência e idempotência": [
+    "Recommendations on organization, resilience and idempotency",
+    "Recomendaciones de organización, resiliencia e idempotencia"
+  ],
+  "Diretrizes para sistemas serverless, eventos e serviços": [
+    "Guidelines for serverless systems, events and services",
+    "Directrices para sistemas serverless, eventos y servicios"
+  ],
+  "Contexto do sistema, requisitos e acesso ao código quando aplicável": [
+    "System context, requirements and code access where applicable",
+    "Contexto del sistema, requisitos y acceso al código cuando corresponda"
+  ],
+  "Avaliação de custos e características do provedor escolhido": [
+    "Assessment of the selected provider's costs and features",
+    "Evaluación de costes y características del proveedor elegido"
+  ],
+  "A skill fornece diretrizes; implantação e testes exigem escopo próprio": [
+    "The skill provides guidelines; deployment and testing require their own scope",
+    "La skill proporciona directrices; el despliegue y las pruebas requieren un alcance propio"
+  ],
+  "Operação assistida de aplicativos": [
+    "Assisted application operation",
+    "Operación asistida de aplicaciones"
+  ],
+  "Fluxos entre aplicativos exigem muitos cliques e conferências manuais.": [
+    "Workflows across applications require many clicks and manual checks.",
+    "Los flujos entre aplicaciones requieren muchos clics y comprobaciones manuales."
+  ],
+  "Procedimento de operação assistida de aplicativos autorizados": [
+    "Procedure for assisted operation of authorized applications",
+    "Procedimiento de operación asistida de aplicaciones autorizadas"
+  ],
+  "Inspeção visual e execução de ações compatíveis com a ferramenta disponível": [
+    "Visual inspection and actions compatible with the available tool",
+    "Inspección visual y ejecución de acciones compatibles con la herramienta disponible"
+  ],
+  "Ferramentas de controle de computador do Claude ou adaptação para equivalente no Codex": [
+    "Claude computer-control tools or adaptation to a Codex equivalent",
+    "Herramientas de control del equipo de Claude o adaptación a un equivalente en Codex"
+  ],
+  "Computador conectado e autorizações por aplicativo": [
+    "Connected computer and authorization for each application",
+    "Equipo conectado y autorizaciones por aplicación"
+  ],
+  "Compatibilidade varia conforme aplicativo e nível de acesso": [
+    "Compatibility varies by application and access level",
+    "La compatibilidad varía según la aplicación y el nivel de acceso"
+  ],
+  "Operação assistida de aplicativos — variante de preparação": [
+    "Assisted application operation — staging variant",
+    "Operación asistida de aplicaciones — variante de preparación"
+  ],
+  "Tarefas manuais em aplicativos de desktop sem integração direta.": [
+    "Manual tasks in desktop applications without direct integration.",
+    "Tareas manuales en aplicaciones de escritorio sin integración directa."
+  ],
+  "Orientação de operação assistida em aplicativos autorizados": [
+    "Guidance on assisted operation in authorized applications",
+    "Orientaciones de operación asistida en aplicaciones autorizadas"
+  ],
+  "Ferramentas de controle de computador do Claude ou adaptação para ferramentas equivalentes": [
+    "Claude computer-control tools or adaptation to equivalent tools",
+    "Herramientas de control del equipo de Claude o adaptación a herramientas equivalentes"
+  ],
+  "Aplicativos acessíveis e autorização de acesso": [
+    "Accessible applications and access authorization",
+    "Aplicaciones accesibles y autorización de acceso"
+  ],
+  "Variante de preparação; não representa uma oferta adicional": [
+    "Staging variant; does not represent an additional offering",
+    "Variante de preparación; no representa una oferta adicional"
+  ],
+  "Pesquisa estratégica e comparação de alternativas": [
+    "Strategic research and comparison of alternatives",
+    "Investigación estratégica y comparación de alternativas"
+  ],
+  "Pesquisa & estratégia": [
+    "Research & strategy",
+    "Investigación y estrategia"
+  ],
+  "Decisões exigem reunir fontes dispersas e comparar opções com critérios claros.": [
+    "Decisions require gathering scattered sources and comparing options against clear criteria.",
+    "Las decisiones requieren reunir fuentes dispersas y comparar opciones con criterios claros."
+  ],
+  "Relatório narrativo de pesquisa": [
+    "Narrative research report",
+    "Informe narrativo de investigación"
+  ],
+  "Comparação de alternativas com fontes": [
+    "Comparison of alternatives with sources",
+    "Comparación de alternativas con fuentes"
+  ],
+  "Síntese de achados, lacunas e recomendações": [
+    "Summary of findings, gaps and recommendations",
+    "Síntesis de hallazgos, carencias y recomendaciones"
+  ],
+  "Pergunta e critérios de decisão definidos": [
+    "Defined question and decision criteria",
+    "Pregunta y criterios de decisión definidos"
+  ],
+  "Acesso às fontes públicas ou internas pertinentes": [
+    "Access to relevant public or internal sources",
+    "Acceso a las fuentes públicas o internas pertinentes"
+  ],
+  "O fluxo original coordena subagentes; pesquisa direta é uma alternativa quando indisponíveis": [
+    "The original workflow coordinates subagents; direct research is an alternative when they are unavailable",
+    "El flujo original coordina subagentes; la investigación directa es una alternativa cuando no están disponibles"
+  ],
+  "Conclusões dependem da qualidade e atualidade das fontes": [
+    "Conclusions depend on source quality and freshness",
+    "Las conclusiones dependen de la calidad y actualidad de las fuentes"
+  ],
+  "Documentos colaborativos no ambiente Claude": [
+    "Collaborative documents in the Claude environment",
+    "Documentos colaborativos en el entorno Claude"
+  ],
+  "Produzir e revisar documentos compartilhados dentro do ambiente do assistente.": [
+    "Produce and review shared documents within the assistant environment.",
+    "Producir y revisar documentos compartidos dentro del entorno del asistente."
+  ],
+  "Orientação para criação e edição de documentos colaborativos via conector": [
+    "Guidance on creating and editing collaborative documents through a connector",
+    "Orientaciones para crear y editar documentos colaborativos mediante un conector"
+  ],
+  "Conector de documentos do Claude": [
+    "Claude document connector",
+    "Conector de documentos de Claude"
+  ],
+  "Permissões para o documento": [
+    "Document permissions",
+    "Permisos para el documento"
+  ],
+  "O arquivo contém apenas o encaminhamento ao conector, não um gerador independente": [
+    "The file only directs the assistant to the connector; it is not a standalone generator",
+    "El archivo solo remite al conector; no es un generador independiente"
+  ],
+  "Documentos Word profissionais": [
+    "Professional Word documents",
+    "Documentos Word profesionales"
+  ],
+  "Documentos importantes exigem padronização, edição e revisão sem perder a estrutura.": [
+    "Important documents require standardization, editing and review without losing their structure.",
+    "Los documentos importantes requieren estandarización, edición y revisión sin perder su estructura."
+  ],
+  "Criação e edição de Word e templates": [
+    "Word and template creation and editing",
+    "Creación y edición de Word y plantillas"
+  ],
+  "Comentários e alterações controladas": [
+    "Comments and tracked changes",
+    "Comentarios y control de cambios"
+  ],
+  "Extração e reorganização de conteúdo": [
+    "Content extraction and reorganization",
+    "Extracción y reorganización de contenido"
+  ],
+  "Validação visual e estrutural do arquivo": [
+    "Visual and structural file validation",
+    "Validación visual y estructural del archivo"
+  ],
+  "Conteúdo e modelo de referência quando aplicável": [
+    "Content and reference template where applicable",
+    "Contenido y plantilla de referencia cuando corresponda"
+  ],
+  "Bibliotecas DOCX e ferramentas de renderização": [
+    "DOCX libraries and rendering tools",
+    "Bibliotecas DOCX y herramientas de renderizado"
+  ],
+  "Revisão dos dados e do texto pelo responsável do negócio": [
+    "Review of data and text by the business owner",
+    "Revisión de los datos y el texto por el responsable del negocio"
+  ],
+  "Documentos e planilhas no Google Workspace": [
+    "Documents and spreadsheets in Google Workspace",
+    "Documentos y hojas de cálculo en Google Workspace"
+  ],
+  "Equipes perdem tempo atualizando arquivos e apresentações compartilhados.": [
+    "Teams waste time updating shared files and presentations.",
+    "Los equipos pierden tiempo actualizando archivos y presentaciones compartidos."
+  ],
+  "Criação e edição de documentos Google": [
+    "Google document creation and editing",
+    "Creación y edición de documentos Google"
+  ],
+  "Organização e formatação de planilhas": [
+    "Spreadsheet organization and formatting",
+    "Organización y formato de hojas de cálculo"
+  ],
+  "Criação e atualização de apresentações no Drive": [
+    "Presentation creation and updates in Drive",
+    "Creación y actualización de presentaciones en Drive"
+  ],
+  "Conectores ou APIs de Google Drive, Docs, Sheets e Slides": [
+    "Google Drive, Docs, Sheets and Slides connectors or APIs",
+    "Conectores o APIs de Google Drive, Docs, Sheets y Slides"
+  ],
+  "Conta conectada e permissões de edição": [
+    "Connected account and editing permissions",
+    "Cuenta conectada y permisos de edición"
+  ],
+  "Adequação aos recursos efetivamente expostos pelos conectores disponíveis": [
+    "Adaptation to the features actually exposed by available connectors",
+    "Adaptación a las funciones realmente expuestas por los conectores disponibles"
+  ],
+  "Importação de contexto pessoal para o Claude": [
+    "Personal context import into Claude",
+    "Importación de contexto personal en Claude"
+  ],
+  "Preferências e contexto se perdem ao trocar de assistente.": [
+    "Preferences and context get lost when switching assistants.",
+    "Las preferencias y el contexto se pierden al cambiar de asistente."
+  ],
+  "Organização de uma exportação de memória": [
+    "Organization of a memory export",
+    "Organización de una exportación de memoria"
+  ],
+  "Importação aditiva na memória do Claude quando suportada": [
+    "Additive import into Claude's memory where supported",
+    "Importación aditiva en la memoria de Claude cuando sea compatible"
+  ],
+  "Exportação fornecida pelo próprio usuário": [
+    "Export provided by the user themselves",
+    "Exportación proporcionada por el propio usuario"
+  ],
+  "Ferramentas de gravação de memória específicas do Claude": [
+    "Claude-specific memory-writing tools",
+    "Herramientas de escritura de memoria específicas de Claude"
+  ],
+  "Não implementa migração genérica entre plataformas nem gravação de memória no Codex": [
+    "Does not implement generic cross-platform migration or write memory in Codex",
+    "No implementa una migración genérica entre plataformas ni escritura de memoria en Codex"
+  ],
+  "Referência de projeto especializado": [
+    "Specialized project reference",
+    "Referencia de proyecto especializado"
+  ],
+  "Capacidade interna vinculada a um contexto específico, indisponível como oferta pública.": [
+    "Internal capability tied to a specific context, unavailable as a public offering.",
+    "Capacidad interna vinculada a un contexto específico, no disponible como oferta pública."
+  ],
+  "Referência interna com conteúdo reservado": [
+    "Internal reference with restricted content",
+    "Referencia interna con contenido reservado"
+  ],
+  "Avaliação interna de autorização e aplicabilidade": [
+    "Internal authorization and applicability assessment",
+    "Evaluación interna de autorización y aplicabilidad"
+  ],
+  "Criação e avaliação de skills personalizadas": [
+    "Custom skill creation and evaluation",
+    "Creación y evaluación de skills personalizadas"
+  ],
+  "A empresa precisa transformar um processo em skill e testar a qualidade dos resultados.": [
+    "The company needs to turn a process into a skill and test the quality of its results.",
+    "La empresa necesita convertir un proceso en una skill y probar la calidad de los resultados."
+  ],
+  "Skill e recursos auxiliares": [
+    "Skill and supporting resources",
+    "Skill y recursos auxiliares"
+  ],
+  "Casos de teste e comparação com execução de referência": [
+    "Test cases and comparison with a reference execution",
+    "Casos de prueba y comparación con una ejecución de referencia"
+  ],
+  "Revisão da descrição e critérios de ativação": [
+    "Review of the description and activation criteria",
+    "Revisión de la descripción y los criterios de activación"
+  ],
+  "Runtime e ferramentas Claude para o protocolo de avaliação original": [
+    "Claude runtime and tools for the original evaluation protocol",
+    "Runtime y herramientas de Claude para el protocolo de evaluación original"
+  ],
+  "Variante do criador de skills da conta; não contar como oferta adicional": [
+    "Variant of the account's skill creator; do not count as an additional offering",
+    "Variante del creador de skills de la cuenta; no contar como oferta adicional"
+  ],
+  "Organização do contexto técnico para assistentes": [
+    "Technical context organization for assistants",
+    "Organización del contexto técnico para asistentes"
+  ],
+  "O assistente recebe instruções desatualizadas e repete erros do projeto.": [
+    "The assistant receives outdated instructions and repeats project mistakes.",
+    "El asistente recibe instrucciones desactualizadas y repite errores del proyecto."
+  ],
+  "Avaliação de qualidade das instruções CLAUDE.md": [
+    "Quality assessment of CLAUDE.md instructions",
+    "Evaluación de calidad de las instrucciones CLAUDE.md"
+  ],
+  "Atualizações direcionadas com revisão das diferenças": [
+    "Targeted updates with diff review",
+    "Actualizaciones específicas con revisión de diferencias"
+  ],
+  "Arquivos de contexto e repositório": [
+    "Context files and repository",
+    "Archivos de contexto y repositorio"
+  ],
+  "Atualização de base de conhecimento comercial": [
+    "Sales knowledge base updates",
+    "Actualización de la base de conocimiento comercial"
+  ],
+  "Catálogos em PDF mudam com frequência e deixam o assistente comercial com informações desatualizadas ou duplicadas.": [
+    "PDF catalogs change frequently, leaving the sales assistant with outdated or duplicate information.",
+    "Los catálogos PDF cambian con frecuencia y dejan al asistente comercial con información desactualizada o duplicada."
+  ],
+  "Inventário e classificação de documentos": [
+    "Document inventory and classification",
+    "Inventario y clasificación de documentos"
+  ],
+  "Conteúdo preparado para indexação em busca com IA": [
+    "Content prepared for indexing in AI-powered search",
+    "Contenido preparado para indexación en búsquedas con IA"
+  ],
+  "Deduplicação e separação entre conhecimento textual e preços estruturados": [
+    "Deduplication and separation of textual knowledge from structured pricing",
+    "Deduplicación y separación entre conocimiento textual y precios estructurados"
+  ],
+  "Rotina documentada de atualização": [
+    "Documented update routine",
+    "Rutina de actualización documentada"
+  ],
+  "PDFs originais e regras de taxonomia": [
+    "Original PDFs and taxonomy rules",
+    "PDFs originales y reglas de taxonomía"
+  ],
+  "Pipeline de ingestão, embeddings e banco vetorial quando houver publicação": [
+    "Ingestion pipeline, embeddings and vector database when publishing",
+    "Pipeline de ingesta, embeddings y base de datos vectorial cuando se publique"
+  ],
+  "A referência original é específica de telecom e deve ser adaptada ao domínio do cliente": [
+    "The original reference is telecom-specific and must be adapted to the client's domain",
+    "La referencia original es específica de telecomunicaciones y debe adaptarse al ámbito del cliente"
+  ],
+  "Geração de conteúdo não comprova indexação nem qualidade das respostas em produção": [
+    "Content generation does not prove indexing or answer quality in production",
+    "La generación de contenido no demuestra indexación ni calidad de las respuestas en producción"
+  ],
+  "Resumo executivo do dia": [
+    "Daily executive summary",
+    "Resumen ejecutivo del día"
+  ],
+  "Agenda, mensagens e pendências ficam espalhadas entre várias ferramentas.": [
+    "Calendar entries, messages and outstanding tasks are scattered across tools.",
+    "La agenda, los mensajes y los asuntos pendientes están dispersos entre varias herramientas."
+  ],
+  "Resumo visual da agenda e prioridades": [
+    "Visual summary of the schedule and priorities",
+    "Resumen visual de la agenda y las prioridades"
+  ],
+  "Lista de assuntos que precisam de atenção": [
+    "List of matters needing attention",
+    "Lista de asuntos que requieren atención"
+  ],
+  "Contexto para compromissos próximos": [
+    "Context for upcoming appointments",
+    "Contexto para próximos compromisos"
+  ],
+  "Conexões autorizadas com agenda, e-mail, mensagens ou tarefas": [
+    "Authorized connections to calendars, email, messages or tasks",
+    "Conexiones autorizadas con calendario, correo, mensajes o tareas"
+  ],
+  "Mecanismo de agendamento caso seja solicitada recorrência": [
+    "Scheduling mechanism if recurrence is requested",
+    "Mecanismo de programación si se solicita recurrencia"
+  ],
+  "O resumo deve refletir apenas fontes disponíveis; integração e recorrência exigem configuração": [
+    "The summary must reflect only available sources; integration and recurrence require configuration",
+    "El resumen debe reflejar solo las fuentes disponibles; la integración y la recurrencia requieren configuración"
+  ],
+  "Inteligência de carteira e oportunidades B2B": [
+    "Account portfolio intelligence and B2B opportunities",
+    "Inteligencia de cartera y oportunidades B2B"
+  ],
+  "Vendas & conteúdo": ["Sales & content", "Ventas y contenido"],
+  "A equipe comercial não consegue priorizar oportunidades a partir da carteira existente.": [
+    "The sales team cannot prioritize opportunities from its existing account portfolio.",
+    "El equipo comercial no consigue priorizar oportunidades a partir de su cartera actual."
+  ],
+  "Cruzamento de bases de carteira e consumo": [
+    "Cross-analysis of account and consumption data",
+    "Cruce de bases de cartera y consumo"
+  ],
+  "Rankings de oportunidade e análises de concentração": [
+    "Opportunity rankings and concentration analyses",
+    "Rankings de oportunidades y análisis de concentración"
+  ],
+  "Visualizações e simulações de receita com premissas explícitas": [
+    "Revenue visualizations and simulations with explicit assumptions",
+    "Visualizaciones y simulaciones de ingresos con supuestos explícitos"
+  ],
+  "Sinais de renovação e inconsistências nos dados": [
+    "Renewal signals and data inconsistencies",
+    "Señales de renovación e inconsistencias en los datos"
+  ],
+  "Bases comerciais autorizadas, completas e atualizadas": [
+    "Authorized, complete and up-to-date sales data",
+    "Bases comerciales autorizadas, completas y actualizadas"
+  ],
+  "Regras de negócio e critérios de priorização": [
+    "Business rules and prioritization criteria",
+    "Reglas de negocio y criterios de priorización"
+  ],
+  "O modelo original é específico de telecom e requer adaptação para outros setores": [
+    "The original model is telecom-specific and requires adaptation for other sectors",
+    "El modelo original es específico de telecomunicaciones y requiere adaptación para otros sectores"
+  ],
+  "Scores e simulações não garantem conversão; previsões exigem validação histórica": [
+    "Scores and simulations do not guarantee conversion; forecasts require historical validation",
+    "Las puntuaciones y simulaciones no garantizan conversiones; las previsiones requieren validación histórica"
+  ],
+  "Organização e versionamento de projetos Power BI": [
+    "Power BI project organization and versioning",
+    "Organización y versionado de proyectos Power BI"
+  ],
+  "Relatórios binários dificultam revisão, colaboração e controle de alterações.": [
+    "Binary reports make review, collaboration and change tracking difficult.",
+    "Los informes binarios dificultan la revisión, la colaboración y el control de cambios."
+  ],
+  "Inventário da estrutura PBIP": [
+    "PBIP structure inventory",
+    "Inventario de la estructura PBIP"
+  ],
+  "Organização de projeto para versionamento": [
+    "Project organization for version control",
+    "Organización del proyecto para control de versiones"
+  ],
+  "Orientação de migração e renomeações com verificação de referências": [
+    "Migration and renaming guidance with reference checks",
+    "Orientaciones de migración y cambio de nombres con verificación de referencias"
+  ],
+  "Arquivos do projeto": ["Project files", "Archivos del proyecto"],
+  "Power BI Desktop para conversões e validação de abertura quando necessário": [
+    "Power BI Desktop for conversions and opening validation when needed",
+    "Power BI Desktop para conversiones y validación de apertura cuando sea necesario"
+  ],
+  "Ferramentas adicionais para modelos e relatórios; esta skill cobre a estrutura do projeto": [
+    "Additional model and report tools; this skill covers the project structure",
+    "Herramientas adicionales para modelos e informes; esta skill cubre la estructura del proyecto"
+  ],
+  "Engenharia de relatórios Power BI como código": [
+    "Power BI report engineering as code",
+    "Ingeniería de informes Power BI como código"
+  ],
+  "Alterações em dashboards e modelos são difíceis de padronizar, revisar e reproduzir.": [
+    "Dashboard and model changes are difficult to standardize, review and reproduce.",
+    "Los cambios en paneles y modelos son difíciles de estandarizar, revisar y reproducir."
+  ],
+  "Leitura e edição de projetos PBIP, PBIR e TMDL": [
+    "Reading and editing PBIP, PBIR and TMDL projects",
+    "Lectura y edición de proyectos PBIP, PBIR y TMDL"
+  ],
+  "Estrutura de relatórios e modelos pronta para revisão em Git": [
+    "Report and model structure ready for Git review",
+    "Estructura de informes y modelos lista para revisión en Git"
+  ],
+  "Orientação de migração e manutenção programática": [
+    "Migration and programmatic maintenance guidance",
+    "Orientaciones de migración y mantenimiento programático"
+  ],
+  "Projeto e esquema compatíveis com a versão do Power BI": [
+    "Project and schema compatible with the Power BI version",
+    "Proyecto y esquema compatibles con la versión de Power BI"
+  ],
+  "Power BI Desktop ou ferramentas de modelagem para validação": [
+    "Power BI Desktop or modeling tools for validation",
+    "Power BI Desktop o herramientas de modelado para validación"
+  ],
+  "Mudanças precisam preservar lógica de negócio e ser homologadas com dados reais": [
+    "Changes must preserve business logic and be validated with real data",
+    "Los cambios deben preservar la lógica de negocio y validarse con datos reales"
+  ],
+  "Referência técnica do formato PBIR": [
+    "PBIR format technical reference",
+    "Referencia técnica del formato PBIR"
+  ],
+  "Erros de estrutura em arquivos de relatório comprometem manutenção e abertura no Power BI.": [
+    "Structural errors in report files compromise maintenance and opening in Power BI.",
+    "Los errores de estructura en archivos de informe comprometen el mantenimiento y la apertura en Power BI."
+  ],
+  "Referência de esquemas de páginas, visuais e configurações": [
+    "Reference for page, visual and configuration schemas",
+    "Referencia de esquemas de páginas, objetos visuales y configuraciones"
+  ],
+  "Orientação de edição e validação de metadados PBIR": [
+    "PBIR metadata editing and validation guidance",
+    "Orientaciones para editar y validar metadatos PBIR"
+  ],
+  "Arquivos no formato PBIR moderno": [
+    "Files in the modern PBIR format",
+    "Archivos en el formato PBIR moderno"
+  ],
+  "Ferramenta de edição e validação compatível": [
+    "Compatible editing and validation tool",
+    "Herramienta de edición y validación compatible"
+  ],
+  "Edição de JSON exige backup e teste de abertura; não atende diretamente formatos legados": [
+    "JSON editing requires a backup and an opening test; legacy formats are not directly supported",
+    "La edición de JSON requiere una copia de seguridad y una prueba de apertura; no admite directamente formatos heredados"
+  ],
+  "Processamento e organização de PDFs": [
+    "PDF processing and organization",
+    "Procesamiento y organización de PDFs"
+  ],
+  "Informações ficam presas em PDFs difíceis de consultar, combinar ou reaproveitar.": [
+    "Information is trapped in PDFs that are difficult to search, combine or reuse.",
+    "La información queda atrapada en PDFs difíciles de consultar, combinar o reutilizar."
+  ],
+  "Extração de texto e tabelas": [
+    "Text and table extraction",
+    "Extracción de texto y tablas"
+  ],
+  "Organização, união e divisão de PDFs": [
+    "PDF organization, merging and splitting",
+    "Organización, unión y división de PDFs"
+  ],
+  "Preenchimento de formulários e criação de documentos": [
+    "Form filling and document creation",
+    "Rellenado de formularios y creación de documentos"
+  ],
+  "OCR de documentos digitalizados": [
+    "OCR for scanned documents",
+    "OCR de documentos escaneados"
+  ],
+  "Arquivos legíveis e autorização de acesso": [
+    "Readable files and access authorization",
+    "Archivos legibles y autorización de acceso"
+  ],
+  "Bibliotecas PDF, ferramentas de renderização e OCR conforme o caso": [
+    "PDF libraries, rendering tools and OCR as appropriate",
+    "Bibliotecas PDF, herramientas de renderizado y OCR según el caso"
+  ],
+  "Qualidade de extração precisa ser conferida, principalmente em digitalizações e tabelas complexas": [
+    "Extraction quality must be checked, especially for scans and complex tables",
+    "La calidad de extracción debe comprobarse, especialmente en escaneos y tablas complejas"
+  ],
+  "Auditoria de qualidade e desempenho do Power BI": [
+    "Power BI quality and performance audit",
+    "Auditoría de calidad y rendimiento de Power BI"
+  ],
+  "Modelos lentos ou inconsistentes comprometem confiança e aumentam o custo de manutenção.": [
+    "Slow or inconsistent models undermine trust and increase maintenance costs.",
+    "Los modelos lentos o inconsistentes comprometen la confianza y aumentan el coste de mantenimiento."
+  ],
+  "Diagnóstico por severidade": [
+    "Diagnosis by severity",
+    "Diagnóstico por gravedad"
+  ],
+  "Recomendações de modelagem, DAX e padronização": [
+    "Modeling, DAX and standardization recommendations",
+    "Recomendaciones de modelado, DAX y estandarización"
+  ],
+  "Correções propostas com justificativas e plano de validação": [
+    "Proposed fixes with rationale and a validation plan",
+    "Correcciones propuestas con justificación y plan de validación"
+  ],
+  "Metadados ou arquivos do modelo": [
+    "Model metadata or files",
+    "Metadatos o archivos del modelo"
+  ],
+  "Métricas de execução para comprovar desempenho": [
+    "Execution metrics to demonstrate performance",
+    "Métricas de ejecución para demostrar el rendimiento"
+  ],
+  "Tabular Editor, Power BI MCP ou ferramentas equivalentes conforme o caso": [
+    "Tabular Editor, Power BI MCP or equivalent tools as appropriate",
+    "Tabular Editor, Power BI MCP o herramientas equivalentes según el caso"
+  ],
+  "Regras devem ser avaliadas no contexto; aplicar checklist não garante ganho de desempenho": [
+    "Rules must be assessed in context; applying a checklist does not guarantee performance gains",
+    "Las reglas deben evaluarse en contexto; aplicar una lista de comprobación no garantiza mejoras de rendimiento"
+  ],
+  "Indicadores e análise para decisões de negócio": [
+    "Metrics and analysis for business decisions",
+    "Indicadores y análisis para decisiones de negocio"
+  ],
+  "Existem dados, mas faltam indicadores claros para responder às perguntas da gestão.": [
+    "Data is available, but clear metrics to answer management's questions are missing.",
+    "Existen datos, pero faltan indicadores claros para responder a las preguntas de la dirección."
+  ],
+  "Mapa de perguntas e indicadores": [
+    "Map of questions and metrics",
+    "Mapa de preguntas e indicadores"
+  ],
+  "Proposta de modelo dimensional": [
+    "Dimensional model proposal",
+    "Propuesta de modelo dimensional"
+  ],
+  "Catálogo de medidas DAX": ["DAX measure catalog", "Catálogo de medidas DAX"],
+  "Estrutura de dashboard e recomendações analíticas": [
+    "Dashboard structure and analytical recommendations",
+    "Estructura de panel y recomendaciones analíticas"
+  ],
+  "Objetivos, definições de negócio e fontes de dados": [
+    "Objectives, business definitions and data sources",
+    "Objetivos, definiciones de negocio y fuentes de datos"
+  ],
+  "Dados reais para confirmar insights": [
+    "Real data to confirm insights",
+    "Datos reales para confirmar hallazgos"
+  ],
+  "Implementação e publicação do dashboard dependem do ambiente e do escopo contratado": [
+    "Dashboard implementation and publication depend on the environment and agreed scope",
+    "La implementación y publicación del panel dependen del entorno y del alcance contratado"
+  ],
+  "Revisão e otimização de medidas DAX": [
+    "DAX measure review and optimization",
+    "Revisión y optimización de medidas DAX"
+  ],
+  "Cálculos lentos, complexos ou difíceis de entender atrasam a evolução dos relatórios.": [
+    "Slow, complex or hard-to-understand calculations delay report evolution.",
+    "Los cálculos lentos, complejos o difíciles de entender retrasan la evolución de los informes."
+  ],
+  "Análise das fórmulas existentes": [
+    "Analysis of existing formulas",
+    "Análisis de las fórmulas existentes"
+  ],
+  "Versões refatoradas e documentadas": [
+    "Refactored and documented versions",
+    "Versiones refactorizadas y documentadas"
+  ],
+  "Justificativa das mudanças e recomendações de teste": [
+    "Rationale for changes and testing recommendations",
+    "Justificación de los cambios y recomendaciones de prueba"
+  ],
+  "Medidas originais, relacionamentos e objetivo de negócio": [
+    "Original measures, relationships and business objective",
+    "Medidas originales, relaciones y objetivo de negocio"
+  ],
+  "Modelo e dados para teste de equivalência": [
+    "Model and data for equivalence testing",
+    "Modelo y datos para pruebas de equivalencia"
+  ],
+  "Benchmarks antes e depois para afirmar melhoria de desempenho": [
+    "Before-and-after benchmarks to claim performance improvements",
+    "Benchmarks antes y después para afirmar mejoras de rendimiento"
+  ],
+  "Otimização da preparação de dados": [
+    "Data preparation optimization",
+    "Optimización de la preparación de datos"
+  ],
+  "Atualizações demoradas e consultas desorganizadas dificultam a confiabilidade dos dados.": [
+    "Lengthy refreshes and disorganized queries undermine data reliability.",
+    "Las actualizaciones lentas y las consultas desorganizadas dificultan la fiabilidad de los datos."
+  ],
+  "Auditoria de consultas Power Query": [
+    "Power Query audit",
+    "Auditoría de consultas Power Query"
+  ],
+  "Refatoração e padronização de código M": [
+    "M code refactoring and standardization",
+    "Refactorización y estandarización de código M"
+  ],
+  "Revisão de filtros, tipos, parâmetros e query folding": [
+    "Review of filters, types, parameters and query folding",
+    "Revisión de filtros, tipos, parámetros y query folding"
+  ],
+  "Relatório de problemas e correções priorizadas": [
+    "Report of issues and prioritized fixes",
+    "Informe de problemas y correcciones priorizadas"
+  ],
+  "Consultas M e informações das fontes": [
+    "M queries and source information",
+    "Consultas M e información de las fuentes"
+  ],
+  "Acesso ao ambiente para medir atualização e validar query folding": [
+    "Environment access to measure refreshes and validate query folding",
+    "Acceso al entorno para medir actualizaciones y validar query folding"
+  ],
+  "Configuração compatível para atualização incremental, quando aplicável": [
+    "Compatible configuration for incremental refresh, where applicable",
+    "Configuración compatible para actualización incremental, cuando corresponda"
+  ],
+  "Visuais personalizados para dashboards Power BI": [
+    "Custom visuals for Power BI dashboards",
+    "Objetos visuales personalizados para paneles Power BI"
+  ],
+  "Dashboards pouco claros ou inconsistentes dificultam a leitura de indicadores.": [
+    "Unclear or inconsistent dashboards make metrics difficult to read.",
+    "Los paneles poco claros o inconsistentes dificultan la lectura de indicadores."
+  ],
+  "Cards, tabelas e visuais HTML gerados por medidas DAX": [
+    "Cards, tables and HTML visuals generated by DAX measures",
+    "Tarjetas, tablas y objetos visuales HTML generados por medidas DAX"
+  ],
+  "Padronização visual de indicadores": [
+    "Visual standardization of metrics",
+    "Estandarización visual de indicadores"
+  ],
+  "Verificação de números e comportamento dos filtros": [
+    "Verification of numbers and filter behavior",
+    "Verificación de cifras y comportamiento de filtros"
+  ],
+  "Modelo e medidas existentes": [
+    "Existing model and measures",
+    "Modelo y medidas existentes"
+  ],
+  "Visual HTML compatível e política de uso de visuais personalizados": [
+    "Compatible HTML visual and custom visual usage policy",
+    "Visual HTML compatible y política de uso de objetos visuales personalizados"
+  ],
+  "Power BI Desktop e conector de modelagem para edição ao vivo, ou fluxo equivalente": [
+    "Power BI Desktop and a modeling connector for live editing, or an equivalent workflow",
+    "Power BI Desktop y conector de modelado para edición en vivo, o un flujo equivalente"
+  ],
+  "Validação visual e funcional com o relatório real": [
+    "Visual and functional validation with the actual report",
+    "Validación visual y funcional con el informe real"
+  ],
+  "Apresentações comerciais e executivas": [
+    "Sales and executive presentations",
+    "Presentaciones comerciales y ejecutivas"
+  ],
+  "Boas ideias e resultados perdem força em apresentações pouco organizadas.": [
+    "Good ideas and results lose impact in poorly organized presentations.",
+    "Las buenas ideas y los resultados pierden fuerza en presentaciones poco organizadas."
+  ],
+  "Apresentações PowerPoint editáveis": [
+    "Editable PowerPoint presentations",
+    "Presentaciones PowerPoint editables"
+  ],
+  "Adaptação de templates e atualização de slides": [
+    "Template adaptation and slide updates",
+    "Adaptación de plantillas y actualización de diapositivas"
+  ],
+  "Organização da narrativa, notas e conteúdo": [
+    "Organization of narrative, notes and content",
+    "Organización de narrativa, notas y contenido"
+  ],
+  "Revisão visual do material": [
+    "Visual review of the material",
+    "Revisión visual del material"
+  ],
+  "Conteúdo, objetivo, público e marca autorizada": [
+    "Content, objective, audience and authorized brand",
+    "Contenido, objetivo, público y marca autorizada"
+  ],
+  "Ferramentas de geração e renderização de PowerPoint": [
+    "PowerPoint generation and rendering tools",
+    "Herramientas de generación y renderizado de PowerPoint"
+  ],
+  "Validação de dados e afirmações pelo responsável do negócio": [
+    "Validation of data and claims by the business owner",
+    "Validación de datos y afirmaciones por el responsable del negocio"
+  ],
+  "Diagnóstico e evolução de soluções Protheus": [
+    "Protheus solution diagnosis and evolution",
+    "Diagnóstico y evolución de soluciones Protheus"
+  ],
+  "Processos e integrações do ERP exigem conhecimento especializado para evoluir com segurança.": [
+    "ERP processes and integrations require specialized knowledge to evolve safely.",
+    "Los procesos e integraciones del ERP requieren conocimientos especializados para evolucionar de forma segura."
+  ],
+  "Diagnóstico técnico e funcional": [
+    "Technical and functional diagnosis",
+    "Diagnóstico técnico y funcional"
+  ],
+  "Orientação e exemplos em AdvPL e TLPP": [
+    "Guidance and examples in AdvPL and TLPP",
+    "Orientaciones y ejemplos en AdvPL y TLPP"
+  ],
+  "Desenho de integrações REST e SOAP": [
+    "REST and SOAP integration design",
+    "Diseño de integraciones REST y SOAP"
+  ],
+  "Revisão de dicionário de dados, configuração e compatibilidade": [
+    "Review of data dictionary, configuration and compatibility",
+    "Revisión del diccionario de datos, configuración y compatibilidad"
+  ],
+  "Versão, módulos e customizações do ambiente": [
+    "Environment version, modules and customizations",
+    "Versión, módulos y personalizaciones del entorno"
+  ],
+  "Acesso autorizado e ambiente de homologação": [
+    "Authorized access and validation environment",
+    "Acceso autorizado y entorno de validación"
+  ],
+  "Documentação atual da TOTVS e validação por responsável do ERP": [
+    "Current TOTVS documentation and validation by the ERP owner",
+    "Documentación actual de TOTVS y validación por el responsable del ERP"
+  ],
+  "A referência não comprova execução em ambiente do cliente nem conformidade jurídica automática": [
+    "The reference does not prove execution in the client's environment or automatic legal compliance",
+    "La referencia no demuestra ejecución en el entorno del cliente ni cumplimiento jurídico automático"
+  ],
+  "Revisão de segurança assistida no Claude Security": [
+    "Assisted security review in Claude Security",
+    "Revisión de seguridad asistida en Claude Security"
+  ],
+  "O time precisa investigar possíveis vulnerabilidades no código ou nas alterações.": [
+    "The team needs to investigate potential vulnerabilities in code or changes.",
+    "El equipo necesita investigar posibles vulnerabilidades en el código o en los cambios."
+  ],
+  "Relatório de achados e evidências": [
+    "Report of findings and evidence",
+    "Informe de hallazgos y evidencias"
+  ],
+  "Propostas de patches verificadas quando suportadas": [
+    "Verified patch proposals where supported",
+    "Propuestas de parches verificadas cuando sean compatibles"
+  ],
+  "Plugin Claude Security completo, Workflow e agentes especializados": [
+    "Complete Claude Security plugin, Workflow and specialized agents",
+    "Plugin Claude Security completo, Workflow y agentes especializados"
+  ],
+  "Scripts e recursos do plugin não são instalados somente com SKILL.md": [
+    "Plugin scripts and resources are not installed by SKILL.md alone",
+    "Los scripts y recursos del plugin no se instalan solo con SKILL.md"
+  ],
+  "Repositório autorizado e ambiente compatível": [
+    "Authorized repository and compatible environment",
+    "Repositorio autorizado y entorno compatible"
+  ],
+  "Criação e avaliação de assistentes especializados": [
+    "Specialized assistant creation and evaluation",
+    "Creación y evaluación de asistentes especializados"
+  ],
+  "O uso de IA é inconsistente porque processos e critérios de qualidade não estão formalizados.": [
+    "AI usage is inconsistent because processes and quality criteria are not formalized.",
+    "El uso de IA es inconsistente porque los procesos y criterios de calidad no están formalizados."
+  ],
+  "Skills com instruções, recursos e limites definidos": [
+    "Skills with defined instructions, resources and limits",
+    "Skills con instrucciones, recursos y límites definidos"
+  ],
+  "Casos de avaliação e comparação com uma execução de referência": [
+    "Evaluation cases and comparison with a reference execution",
+    "Casos de evaluación y comparación con una ejecución de referencia"
+  ],
+  "Ajustes de descrição e critérios de acionamento": [
+    "Description and triggering criteria adjustments",
+    "Ajustes de descripción y criterios de activación"
+  ],
+  "Processo de trabalho, exemplos e critérios de sucesso": [
+    "Work process, examples and success criteria",
+    "Proceso de trabajo, ejemplos y criterios de éxito"
+  ],
+  "Ambiente de execução e recursos de avaliação compatíveis": [
+    "Compatible execution environment and evaluation resources",
+    "Entorno de ejecución y recursos de evaluación compatibles"
+  ],
+  "Scripts e rotas originais são orientados ao Claude e podem exigir adaptação": [
+    "Original scripts and routes are Claude-oriented and may require adaptation",
+    "Los scripts y rutas originales están orientados a Claude y pueden requerir adaptación"
+  ],
+  "Manutenção técnica de modelos TMDL": [
+    "Technical maintenance of TMDL models",
+    "Mantenimiento técnico de modelos TMDL"
+  ],
+  "Modelos semânticos precisam de alterações controladas em arquivos de projeto.": [
+    "Semantic models need controlled changes in project files.",
+    "Los modelos semánticos necesitan cambios controlados en los archivos del proyecto."
+  ],
+  "Edição de medidas, descrições e propriedades em TMDL": [
+    "Editing measures, descriptions and properties in TMDL",
+    "Edición de medidas, descripciones y propiedades en TMDL"
+  ],
+  "Padronização de nomes e pastas": [
+    "Name and folder standardization",
+    "Estandarización de nombres y carpetas"
+  ],
+  "Orientação para migração de BIM para TMDL": [
+    "BIM-to-TMDL migration guidance",
+    "Orientaciones para migrar de BIM a TMDL"
+  ],
+  "Arquivos do modelo e regras de negócio": [
+    "Model files and business rules",
+    "Archivos del modelo y reglas de negocio"
+  ],
+  "Ferramentas de validação e teste de abertura no Power BI": [
+    "Validation tools and opening tests in Power BI",
+    "Herramientas de validación y pruebas de apertura en Power BI"
+  ],
+  "Edição textual não comprova sintaxe DAX nem integridade do modelo; preferir ferramentas de modelagem quando disponíveis": [
+    "Text editing does not prove DAX syntax or model integrity; prefer modeling tools when available",
+    "La edición de texto no demuestra la sintaxis DAX ni la integridad del modelo; preferir herramientas de modelado cuando estén disponibles"
+  ],
+  "Planilhas estruturadas e análises em Excel": [
+    "Structured spreadsheets and Excel analysis",
+    "Hojas de cálculo estructuradas y análisis en Excel"
+  ],
+  "Planilhas manuais e inconsistentes geram retrabalho e erros de cálculo.": [
+    "Manual, inconsistent spreadsheets cause rework and calculation errors.",
+    "Las hojas de cálculo manuales e inconsistentes generan retrabajo y errores de cálculo."
+  ],
+  "Planilhas editáveis com fórmulas, tabelas e gráficos": [
+    "Editable spreadsheets with formulas, tables and charts",
+    "Hojas de cálculo editables con fórmulas, tablas y gráficos"
+  ],
+  "Limpeza e reorganização de dados": [
+    "Data cleanup and reorganization",
+    "Limpieza y reorganización de datos"
+  ],
+  "Modelos de cálculo com premissas documentadas": [
+    "Calculation models with documented assumptions",
+    "Modelos de cálculo con supuestos documentados"
+  ],
+  "Conferência de fórmulas e resultados": [
+    "Formula and result checks",
+    "Comprobación de fórmulas y resultados"
+  ],
+  "Arquivos e regras de cálculo do cliente": [
+    "Client files and calculation rules",
+    "Archivos y reglas de cálculo del cliente"
+  ],
+  "Bibliotecas de planilhas e mecanismo de recálculo": [
+    "Spreadsheet libraries and recalculation engine",
+    "Bibliotecas de hojas de cálculo y motor de recálculo"
+  ],
+  "Macros, vínculos externos e funções avançadas exigem avaliação de compatibilidade": [
+    "Macros, external links and advanced functions require compatibility assessment",
+    "Las macros, los vínculos externos y las funciones avanzadas requieren una evaluación de compatibilidad"
+  ],
+  "Planilhas estruturadas — variante de preparação": [
+    "Structured spreadsheets — staging variant",
+    "Hojas de cálculo estructuradas — variante de preparación"
+  ],
+  "Dados espalhados e planilhas com fórmulas, organização ou formatação inadequadas.": [
+    "Scattered data and spreadsheets with unsuitable formulas, organization or formatting.",
+    "Datos dispersos y hojas de cálculo con fórmulas, organización o formato inadecuados."
+  ],
+  "Planilhas editáveis com fórmulas e formatação": [
+    "Editable spreadsheets with formulas and formatting",
+    "Hojas de cálculo editables con fórmulas y formato"
+  ],
+  "Limpeza e reorganização de dados tabulares": [
+    "Tabular data cleanup and reorganization",
+    "Limpieza y reorganización de datos tabulares"
+  ],
+  "Bibliotecas de planilhas e mecanismo de recálculo compatível": [
+    "Spreadsheet libraries and a compatible recalculation engine",
+    "Bibliotecas de hojas de cálculo y motor de recálculo compatible"
+  ],
+  "Variante de preparação; utilizar a entrada principal para a oferta": [
+    "Staging variant; use the main entry for the offering",
+    "Variante de preparación; utilizar la entrada principal para la oferta"
+  ],
+  "Revisão técnica de código": [
+    "Technical code review",
+    "Revisión técnica de código"
+  ],
+  "Mudanças chegam à produção sem revisão suficiente de regras, arquitetura e manutenção.": [
+    "Changes reach production without sufficient review of rules, architecture and maintainability.",
+    "Los cambios llegan a producción sin suficiente revisión de reglas, arquitectura y mantenimiento."
+  ],
+  "Revisão de alterações ou pull requests": [
+    "Review of changes or pull requests",
+    "Revisión de cambios o pull requests"
+  ],
+  "Achados priorizados com evidências": [
+    "Prioritized findings with evidence",
+    "Hallazgos priorizados con evidencias"
+  ],
+  "Recomendações de correção e validação": [
+    "Fix and validation recommendations",
+    "Recomendaciones de corrección y validación"
+  ],
+  "Acesso ao código e contexto da mudança": [
+    "Code access and change context",
+    "Acceso al código y contexto del cambio"
+  ],
+  "Critérios de aceite e testes disponíveis": [
+    "Acceptance criteria and available tests",
+    "Criterios de aceptación y pruebas disponibles"
+  ],
+  "Cobertura limitada ao material revisado": [
+    "Coverage limited to the reviewed material",
+    "Cobertura limitada al material revisado"
+  ],
+  "Comandos personalizados para equipes técnicas": [
+    "Custom commands for technical teams",
+    "Comandos personalizados para equipos técnicos"
+  ],
+  "A equipe repete sequências de instruções e parâmetros manualmente.": [
+    "The team repeats instruction and parameter sequences manually.",
+    "El equipo repite secuencias de instrucciones y parámetros manualmente."
+  ],
+  "Comandos com argumentos e fluxo documentado": [
+    "Commands with arguments and a documented workflow",
+    "Comandos con argumentos y flujo documentado"
+  ],
+  "Validação de uso no plugin": [
+    "Plugin usage validation",
+    "Validación de uso en el plugin"
+  ],
+  "Triagem de requisitos de conformidade": [
+    "Compliance requirement triage",
+    "Evaluación inicial de requisitos de cumplimiento"
+  ],
+  "Uma iniciativa pode exigir cuidados regulatórios que ainda não foram organizados.": [
+    "An initiative may require regulatory precautions that have not yet been organized.",
+    "Una iniciativa puede requerir precauciones normativas que aún no se han organizado."
+  ],
+  "Lista preliminar de requisitos e aprovações": [
+    "Preliminary list of requirements and approvals",
+    "Lista preliminar de requisitos y aprobaciones"
+  ],
+  "Mapa de riscos e questões para revisão especializada": [
+    "Risk map and questions for specialist review",
+    "Mapa de riesgos y cuestiones para revisión especializada"
+  ],
+  "Descrição da iniciativa, dados tratados e jurisdições envolvidas": [
+    "Description of the initiative, data processed and jurisdictions involved",
+    "Descripción de la iniciativa, los datos tratados y las jurisdicciones involucradas"
+  ],
+  "Adaptação de assistentes aos processos da empresa": [
+    "Adapting assistants to company processes",
+    "Adaptación de asistentes a los procesos de la empresa"
+  ],
+  "O assistente usa instruções genéricas e não conhece os processos internos.": [
+    "The assistant uses generic instructions and does not know internal processes.",
+    "El asistente utiliza instrucciones genéricas y no conoce los procesos internos."
+  ],
+  "Levantamento de ferramentas e rotinas": [
+    "Inventory of tools and routines",
+    "Inventario de herramientas y rutinas"
+  ],
+  "Plugin adaptado e pacote para instalação": [
+    "Adapted plugin and installation package",
+    "Plugin adaptado y paquete de instalación"
+  ],
+  "Diretórios de plugins Cowork acessíveis": [
+    "Accessible Cowork plugin directories",
+    "Directorios de plugins Cowork accesibles"
+  ],
+  "Conectores para consultar fontes internas, quando necessários": [
+    "Connectors to query internal sources when needed",
+    "Conectores para consultar fuentes internas cuando sean necesarios"
+  ],
+  "Assistente de trabalho personalizado para Cowork": [
+    "Custom work assistant for Cowork",
+    "Asistente de trabajo personalizado para Cowork"
+  ],
+  "A equipe precisa repetir um fluxo de trabalho com contexto e ferramentas consistentes.": [
+    "The team needs to repeat a workflow with consistent context and tools.",
+    "El equipo necesita repetir un flujo de trabajo con contexto y herramientas coherentes."
+  ],
+  "Definição do fluxo e componentes": [
+    "Workflow and component definition",
+    "Definición del flujo y los componentes"
+  ],
+  "Pacote de plugin com skills e integrações previstas": [
+    "Plugin package with planned skills and integrations",
+    "Paquete de plugin con skills e integraciones previstas"
+  ],
+  "Ambiente Cowork e validação do pacote .plugin": [
+    "Cowork environment and .plugin package validation",
+    "Entorno Cowork y validación del paquete .plugin"
+  ],
+  "Diagnóstico e correção de falhas": [
+    "Failure diagnosis and correction",
+    "Diagnóstico y corrección de fallos"
+  ],
+  "Erros recorrentes, builds quebrados ou comportamentos inesperados consomem o tempo do time.": [
+    "Recurring errors, broken builds or unexpected behavior consume the team's time.",
+    "Los errores recurrentes, las compilaciones fallidas o los comportamientos inesperados consumen el tiempo del equipo."
+  ],
+  "Reprodução e investigação da causa": [
+    "Reproduction and root-cause investigation",
+    "Reproducción e investigación de la causa"
+  ],
+  "Correção focalizada": ["Focused fix", "Corrección focalizada"],
+  "Verificação de regressão e evidências do resultado": [
+    "Regression checks and evidence of the result",
+    "Verificación de regresión y evidencias del resultado"
+  ],
+  "Logs e cenário reproduzível": [
+    "Logs and a reproducible scenario",
+    "Registros y escenario reproducible"
+  ],
+  "Acesso ao ambiente de teste": [
+    "Access to the test environment",
+    "Acceso al entorno de pruebas"
+  ],
+  "Validação real no fluxo afetado": [
+    "Actual validation in the affected workflow",
+    "Validación real en el flujo afectado"
+  ],
+  "Interfaces claras e com identidade": [
+    "Clear interfaces with their own identity",
+    "Interfaces claras y con identidad"
+  ],
+  "Design & experiência": ["Design & experience", "Diseño y experiencia"],
+  "O produto parece genérico, é difícil de usar ou apresenta inconsistências visuais.": [
+    "The product looks generic, is difficult to use or has visual inconsistencies.",
+    "El producto parece genérico, es difícil de usar o presenta inconsistencias visuales."
+  ],
+  "Diagnóstico de experiência e interface": [
+    "Experience and interface diagnosis",
+    "Diagnóstico de experiencia e interfaz"
+  ],
+  "Redesign de telas e navegação": [
+    "Screen and navigation redesign",
+    "Rediseño de pantallas y navegación"
+  ],
+  "Sistema visual com temas e componentes": [
+    "Visual system with themes and components",
+    "Sistema visual con temas y componentes"
+  ],
+  "Ajustes de contraste, responsividade e movimento": [
+    "Contrast, responsiveness and motion adjustments",
+    "Ajustes de contraste, adaptabilidad y movimiento"
+  ],
+  "Identidade visual e prioridades do produto": [
+    "Visual identity and product priorities",
+    "Identidad visual y prioridades del producto"
+  ],
+  "Acesso às telas e fluxos": [
+    "Access to screens and workflows",
+    "Acceso a las pantallas y los flujos"
+  ],
+  "Validação em dispositivos e cenários representativos": [
+    "Validation on representative devices and scenarios",
+    "Validación en dispositivos y escenarios representativos"
+  ],
+  "Controle de acesso ao assistente pelo Discord": [
+    "Assistant access control through Discord",
+    "Control de acceso al asistente por Discord"
+  ],
+  "É preciso definir quem pode acionar o assistente por mensagens.": [
+    "You need to define who can trigger the assistant through messages.",
+    "Es necesario definir quién puede activar el asistente mediante mensajes."
+  ],
+  "Política de acesso, lista de usuários e configuração de grupos": [
+    "Access policy, user list and group configuration",
+    "Política de acceso, lista de usuarios y configuración de grupos"
+  ],
+  "Plugin de canal Discord completo, configurado e disponível": [
+    "Complete, configured and available Discord channel plugin",
+    "Plugin del canal Discord completo, configurado y disponible"
+  ],
+  "Conta/bot e credenciais configuradas em ambiente seguro": [
+    "Account/bot and credentials configured in a secure environment",
+    "Cuenta/bot y credenciales configuradas en un entorno seguro"
+  ],
+  "Configuração do canal Discord para assistentes": [
+    "Discord channel setup for assistants",
+    "Configuración del canal Discord para asistentes"
+  ],
+  "O canal de mensagens não está configurado ou não entrega mensagens ao assistente.": [
+    "The messaging channel is not configured or does not deliver messages to the assistant.",
+    "El canal de mensajes no está configurado o no entrega los mensajes al asistente."
+  ],
+  "Diagnóstico de configuração": [
+    "Configuration diagnosis",
+    "Diagnóstico de configuración"
+  ],
+  "Orientação ou configuração de credenciais e política do canal": [
+    "Guidance or configuration of credentials and channel policy",
+    "Orientaciones o configuración de credenciales y política del canal"
+  ],
+  "Padrões internos de colaboração": [
+    "Internal collaboration standards",
+    "Estándares internos de colaboración"
+  ],
+  "Comunicação e entregas precisam seguir as preferências e decisões do responsável pelo projeto.": [
+    "Communication and deliverables must follow the project owner's preferences and decisions.",
+    "La comunicación y las entregas deben seguir las preferencias y decisiones del responsable del proyecto."
+  ],
+  "Orientações internas de comunicação e formato de entrega": [
+    "Internal communication and delivery format guidelines",
+    "Orientaciones internas de comunicación y formato de entrega"
+  ],
+  "Contexto e preferências do usuário original": [
+    "Original user's context and preferences",
+    "Contexto y preferencias del usuario original"
+  ],
+  "Revisão antes de aplicar a outra organização": [
+    "Review before applying to another organization",
+    "Revisión antes de aplicar a otra organización"
+  ],
+  "Exemplo de estrutura de comando para plugins": [
+    "Example command structure for plugins",
+    "Ejemplo de estructura de comando para plugins"
+  ],
+  "Desenvolvedores precisam consultar a estrutura de um comando.": [
+    "Developers need a reference for a command's structure.",
+    "Los desarrolladores necesitan consultar la estructura de un comando."
+  ],
+  "Template de referência sem serviço final": [
+    "Reference template without a finished service",
+    "Plantilla de referencia sin servicio final"
+  ],
+  "Exemplo de estrutura de skill": [
+    "Example skill structure",
+    "Ejemplo de estructura de skill"
+  ],
+  "Desenvolvedores precisam de referência para organizar uma skill.": [
+    "Developers need a reference for organizing a skill.",
+    "Los desarrolladores necesitan una referencia para organizar una skill."
+  ],
+  "Template de definição e documentação de skill": [
+    "Skill definition and documentation template",
+    "Plantilla de definición y documentación de skill"
+  ],
+  "Conexão entre componentes de design e código": [
+    "Connecting design components to code",
+    "Conexión entre componentes de diseño y código"
+  ],
+  "O time implementa componentes diferentes dos definidos no design.": [
+    "The team implements components that differ from the design.",
+    "El equipo implementa componentes distintos de los definidos en el diseño."
+  ],
+  "Mapeamento de componentes e propriedades": [
+    "Component and property mapping",
+    "Mapeo de componentes y propiedades"
+  ],
+  "Templates Code Connect e verificação de variantes": [
+    "Code Connect templates and variant verification",
+    "Plantillas Code Connect y verificación de variantes"
+  ],
+  "Conector Figma compatível e autorizado; não disponível nesta sessão": [
+    "Compatible and authorized Figma connector; unavailable in this session",
+    "Conector Figma compatible y autorizado; no disponible en esta sesión"
+  ],
+  "Acesso aos arquivos e permissões de edição quando houver alterações": [
+    "File access and editing permissions when making changes",
+    "Acceso a los archivos y permisos de edición cuando haya cambios"
+  ],
+  "Repositório do produto": ["Product repository", "Repositorio del producto"],
+  "Componentes publicados e plano Figma com Code Connect elegível; confirmar disponibilidade": [
+    "Published components and a Figma plan eligible for Code Connect; confirm availability",
+    "Componentes publicados y plan Figma apto para Code Connect; confirmar disponibilidad"
+  ],
+  "Conexão entre componentes de design e código — variante FigQuery": [
+    "Connecting design components to code — FigQuery variant",
+    "Conexión entre componentes de diseño y código — variante FigQuery"
+  ],
+  "Variante do mesmo serviço; usar somente com a API FigQuery compatível e não contar como nova oferta": [
+    "Variant of the same service; use only with the compatible FigQuery API and do not count as a new offering",
+    "Variante del mismo servicio; usar solo con la API FigQuery compatible y no contar como una nueva oferta"
+  ],
+  "Importação de interfaces e protótipos para Figma": [
+    "Importing interfaces and prototypes into Figma",
+    "Importación de interfaces y prototipos a Figma"
+  ],
+  "O protótipo e o design estão em ambientes separados.": [
+    "The prototype and design are in separate environments.",
+    "El prototipo y el diseño están en entornos separados."
+  ],
+  "Importação como camadas editáveis ou código executável": [
+    "Import as editable layers or executable code",
+    "Importación como capas editables o código ejecutable"
+  ],
+  "Verificação do resultado no destino escolhido": [
+    "Verification of the result at the selected destination",
+    "Verificación del resultado en el destino elegido"
+  ],
+  "Projeto HTML ou aplicação funcional": [
+    "HTML project or working application",
+    "Proyecto HTML o aplicación funcional"
+  ],
+  "Recursos Code Layers/Make habilitados conforme o tipo de importação": [
+    "Code Layers/Make features enabled for the import type",
+    "Funciones Code Layers/Make habilitadas según el tipo de importación"
+  ],
+  "Preparação de arquivos de design colaborativo": [
+    "Collaborative design file setup",
+    "Preparación de archivos de diseño colaborativo"
+  ],
+  "O fluxo precisa iniciar o arquivo correto no espaço de trabalho.": [
+    "The workflow needs to start the correct file in the workspace.",
+    "El flujo necesita iniciar el archivo correcto en el espacio de trabajo."
+  ],
+  "Arquivo Figma Design, FigJam ou Slides no plano selecionado": [
+    "Figma Design, FigJam or Slides file on the selected plan",
+    "Archivo Figma Design, FigJam o Slides en el plan seleccionado"
+  ],
+  "Plano e tipo de editor definidos": [
+    "Defined plan and editor type",
+    "Plan y tipo de editor definidos"
+  ],
+  "Preparação de arquivos de design colaborativo — variante FigQuery": [
+    "Collaborative design file setup — FigQuery variant",
+    "Preparación de archivos de diseño colaborativo — variante FigQuery"
+  ],
+  "Implementação de telas a partir do Figma": [
+    "Screen implementation from Figma",
+    "Implementación de pantallas a partir de Figma"
+  ],
+  "A passagem do design para desenvolvimento gera retrabalho e diferenças visuais.": [
+    "The handoff from design to development causes rework and visual differences.",
+    "La transferencia del diseño al desarrollo genera retrabajo y diferencias visuales."
+  ],
+  "Componentes e telas implementados no projeto": [
+    "Components and screens implemented in the project",
+    "Componentes y pantallas implementados en el proyecto"
+  ],
+  "Comparação visual e ajuste de estados e responsividade": [
+    "Visual comparison and state and responsive-layout adjustments",
+    "Comparación visual y ajustes de estados y adaptabilidad"
+  ],
+  "Código-fonte e ambiente de execução do produto": [
+    "Product source code and execution environment",
+    "Código fuente y entorno de ejecución del producto"
+  ],
+  "Implementação de telas a partir do Figma — variante FigQuery": [
+    "Screen implementation from Figma — FigQuery variant",
+    "Implementación de pantallas a partir de Figma — variante FigQuery"
+  ],
+  "Prototipação de telas e jornadas": [
+    "Screen and user journey prototyping",
+    "Prototipado de pantallas y recorridos"
+  ],
+  "Uma ideia de produto ainda não tem telas claras para validação.": [
+    "A product idea does not yet have clear screens for validation.",
+    "Una idea de producto aún no tiene pantallas claras para validación."
+  ],
+  "Telas editáveis no Figma": [
+    "Editable screens in Figma",
+    "Pantallas editables en Figma"
+  ],
+  "Composição com componentes e padrões do produto": [
+    "Composition using product components and patterns",
+    "Composición con componentes y patrones del producto"
+  ],
+  "Revisão visual do fluxo": [
+    "Visual workflow review",
+    "Revisión visual del flujo"
+  ],
+  "Briefing ou interface de referência": [
+    "Brief or reference interface",
+    "Briefing o interfaz de referencia"
+  ],
+  "Biblioteca de componentes e identidade quando disponíveis": [
+    "Component library and identity when available",
+    "Biblioteca de componentes e identidad cuando estén disponibles"
+  ],
+  "Prototipação de telas e jornadas — variante FigQuery": [
+    "Screen and user journey prototyping — FigQuery variant",
+    "Prototipado de pantallas y recorridos — variante FigQuery"
+  ],
+  "Mapeamento visual de processos e arquitetura": [
+    "Visual process and architecture mapping",
+    "Mapeo visual de procesos y arquitectura"
+  ],
+  "As pessoas não entendem as etapas, decisões ou integrações de um processo.": [
+    "People do not understand a process's steps, decisions or integrations.",
+    "Las personas no entienden las etapas, decisiones o integraciones de un proceso."
+  ],
+  "Fluxogramas, diagramas de sequência ou arquitetura em FigJam": [
+    "Flowcharts, sequence or architecture diagrams in FigJam",
+    "Diagramas de flujo, secuencia o arquitectura en FigJam"
+  ],
+  "Organização visual das relações e decisões": [
+    "Visual organization of relationships and decisions",
+    "Organización visual de relaciones y decisiones"
+  ],
+  "Processo ou arquitetura descritos": [
+    "Described process or architecture",
+    "Proceso o arquitectura descritos"
+  ],
+  "Tipos de diagrama suportados pela ferramenta": [
+    "Diagram types supported by the tool",
+    "Tipos de diagrama admitidos por la herramienta"
+  ],
+  "Mapeamento visual de processos e arquitetura — variante FigQuery": [
+    "Visual process and architecture mapping — FigQuery variant",
+    "Mapeo visual de procesos y arquitectura — variante FigQuery"
+  ],
+  "Sistema de design e biblioteca de componentes": [
+    "Design system and component library",
+    "Sistema de diseño y biblioteca de componentes"
+  ],
+  "As telas têm padrões inconsistentes e componentes são refeitos a cada projeto.": [
+    "Screens have inconsistent patterns and components are rebuilt for every project.",
+    "Las pantallas tienen patrones inconsistentes y los componentes se rehacen en cada proyecto."
+  ],
+  "Tokens de cor, espaçamento e tipografia": [
+    "Color, spacing and typography tokens",
+    "Tokens de color, espaciado y tipografía"
+  ],
+  "Componentes com variantes e estados": [
+    "Components with variants and states",
+    "Componentes con variantes y estados"
+  ],
+  "Conciliação entre biblioteca visual e código": [
+    "Alignment between the visual library and code",
+    "Conciliación entre la biblioteca visual y el código"
+  ],
+  "Escopo da biblioteca e acesso ao código de referência": [
+    "Library scope and reference code access",
+    "Alcance de la biblioteca y acceso al código de referencia"
+  ],
+  "Sistema de design e biblioteca de componentes — variante FigQuery": [
+    "Design system and component library — FigQuery variant",
+    "Sistema de diseño y biblioteca de componentes — variante FigQuery"
+  ],
+  "Ferramentas generativas para Figma": [
+    "Generative tools for Figma",
+    "Herramientas generativas para Figma"
+  ],
+  "A equipe repete tarefas de criação dentro do Figma.": [
+    "The team repeats creation tasks inside Figma.",
+    "El equipo repite tareas de creación dentro de Figma."
+  ],
+  "Plugin generativo reutilizável": [
+    "Reusable generative plugin",
+    "Plugin generativo reutilizable"
+  ],
+  "Ajustes e validação do comportamento solicitado": [
+    "Adjustments and validation of the requested behavior",
+    "Ajustes y validación del comportamiento solicitado"
+  ],
+  "APIs de plugins generativos habilitadas": [
+    "Enabled generative plugin APIs",
+    "APIs de plugins generativos habilitadas"
+  ],
+  "Ferramentas generativas para Figma — variante FigQuery": [
+    "Generative tools for Figma — FigQuery variant",
+    "Herramientas generativas para Figma — variante FigQuery"
+  ],
+  "Animações de interface implementadas no produto": [
+    "Interface animations implemented in the product",
+    "Animaciones de interfaz implementadas en el producto"
+  ],
+  "As animações do protótipo não chegam corretamente à aplicação.": [
+    "Prototype animations are not correctly transferred to the application.",
+    "Las animaciones del prototipo no llegan correctamente a la aplicación."
+  ],
+  "Código de animação conectado aos estados da interface": [
+    "Animation code connected to interface states",
+    "Código de animación conectado a los estados de la interfaz"
+  ],
+  "Validação visual de duração e transições": [
+    "Visual validation of timing and transitions",
+    "Validación visual de duración y transiciones"
+  ],
+  "Dados de motion acessíveis": [
+    "Accessible motion data",
+    "Datos de movimiento accesibles"
+  ],
+  "Código e framework de destino": [
+    "Target code and framework",
+    "Código y framework de destino"
+  ],
+  "Animações de interface implementadas no produto — variante FigQuery": [
+    "Interface animations implemented in the product — FigQuery variant",
+    "Animaciones de interfaz implementadas en el producto — variante FigQuery"
+  ],
+  "Efeitos visuais personalizados para Figma": [
+    "Custom visual effects for Figma",
+    "Efectos visuales personalizados para Figma"
+  ],
+  "O design precisa de efeitos procedurais que os preenchimentos comuns não oferecem.": [
+    "The design needs procedural effects that standard fills do not provide.",
+    "El diseño necesita efectos procedurales que los rellenos comunes no ofrecen."
+  ],
+  "Shader ou efeito personalizado": [
+    "Custom shader or effect",
+    "Shader o efecto personalizado"
+  ],
+  "Prévia e ajustes no arquivo de design": [
+    "Preview and adjustments in the design file",
+    "Vista previa y ajustes en el archivo de diseño"
+  ],
+  "APIs de shaders habilitadas e compatíveis": [
+    "Enabled and compatible shader APIs",
+    "APIs de shaders habilitadas y compatibles"
+  ],
+  "Efeitos visuais personalizados para Figma — variante FigQuery": [
+    "Custom visual effects for Figma — FigQuery variant",
+    "Efectos visuales personalizados para Figma — variante FigQuery"
+  ],
+  "Especificações de produto colaborativas": [
+    "Collaborative product specifications",
+    "Especificaciones colaborativas de producto"
+  ],
+  "Requisitos e decisões ficam dispersos e difíceis de revisar.": [
+    "Requirements and decisions are scattered and difficult to review.",
+    "Los requisitos y las decisiones quedan dispersos y son difíciles de revisar."
+  ],
+  "Briefs, PRDs ou RFCs em Figma Specs": [
+    "Briefs, PRDs or RFCs in Figma Specs",
+    "Briefs, PRDs o RFCs en Figma Specs"
+  ],
+  "Comentários e atualização de documentação": [
+    "Comments and documentation updates",
+    "Comentarios y actualización de documentación"
+  ],
+  "Recurso Figma Specs disponível": [
+    "Figma Specs feature available",
+    "Función Figma Specs disponible"
+  ],
+  "Contexto de requisitos e decisões": [
+    "Requirements and decision context",
+    "Contexto de requisitos y decisiones"
+  ],
+  "Integração de design e interfaces iOS": [
+    "Design and iOS interface integration",
+    "Integración de diseño e interfaces iOS"
+  ],
+  "O aplicativo iOS e o design evoluem de forma desconectada.": [
+    "The iOS application and design evolve separately.",
+    "La aplicación iOS y el diseño evolucionan de forma desconectada."
+  ],
+  "Telas SwiftUI a partir de design": [
+    "SwiftUI screens from design",
+    "Pantallas SwiftUI a partir del diseño"
+  ],
+  "Representação de telas e tokens SwiftUI no Figma": [
+    "Representation of SwiftUI screens and tokens in Figma",
+    "Representación de pantallas y tokens SwiftUI en Figma"
+  ],
+  "Código SwiftUI e projeto iOS": [
+    "SwiftUI code and iOS project",
+    "Código SwiftUI y proyecto iOS"
+  ],
+  "Ambiente macOS/Xcode para compilação e validação iOS": [
+    "macOS/Xcode environment for iOS compilation and validation",
+    "Entorno macOS/Xcode para compilación y validación iOS"
+  ],
+  "Integração de design e interfaces iOS — variante FigQuery": [
+    "Design and iOS interface integration — FigQuery variant",
+    "Integración de diseño e interfaces iOS — variante FigQuery"
+  ],
+  "Operação assistida de arquivos Figma": [
+    "Assisted Figma file operation",
+    "Operación asistida de archivos Figma"
+  ],
+  "A produção de design precisa de operações consistentes sobre componentes e layouts.": [
+    "Design production needs consistent operations on components and layouts.",
+    "La producción de diseño necesita operaciones coherentes sobre componentes y composiciones."
+  ],
+  "Inspeção e edição de nós, estilos e variáveis": [
+    "Node, style and variable inspection and editing",
+    "Inspección y edición de nodos, estilos y variables"
+  ],
+  "Capturas e verificações incrementais": [
+    "Screenshots and incremental checks",
+    "Capturas y verificaciones incrementales"
+  ],
+  "Quadros colaborativos para planejamento": [
+    "Collaborative planning boards",
+    "Tableros colaborativos para planificación"
+  ],
+  "Planejamento e colaboração precisam de um quadro visual organizado.": [
+    "Planning and collaboration need an organized visual board.",
+    "La planificación y la colaboración necesitan un tablero visual organizado."
+  ],
+  "Quadros FigJam com textos, imagens e elementos organizados": [
+    "FigJam boards with organized text, images and elements",
+    "Tableros FigJam con textos, imágenes y elementos organizados"
+  ],
+  "Quadros colaborativos para planejamento — variante FigQuery": [
+    "Collaborative planning boards — FigQuery variant",
+    "Tableros colaborativos para planificación — variante FigQuery"
+  ],
+  "Operação assistida de arquivos Figma — variante FigQuery": [
+    "Assisted Figma file operation — FigQuery variant",
+    "Operación asistida de archivos Figma — variante FigQuery"
+  ],
+  "Prototipação de movimento e microinterações": [
+    "Motion and microinteraction prototyping",
+    "Prototipado de movimiento y microinteracciones"
+  ],
+  "A experiência visual precisa demonstrar transições e estados animados.": [
+    "The visual experience needs to demonstrate transitions and animated states.",
+    "La experiencia visual necesita demostrar transiciones y estados animados."
+  ],
+  "Keyframes e estilos de animação": [
+    "Keyframes and animation styles",
+    "Fotogramas clave y estilos de animación"
+  ],
+  "Definição de duração e curvas de movimento": [
+    "Timing and motion curve definition",
+    "Definición de duración y curvas de movimiento"
+  ],
+  "APIs de motion e estilos habilitadas na conta; a skill prevê interrupção se indisponíveis": [
+    "Motion and style APIs enabled on the account; the skill stops if they are unavailable",
+    "APIs de movimiento y estilos habilitadas en la cuenta; la skill prevé detenerse si no están disponibles"
+  ],
+  "Prototipação de movimento e microinterações — variante FigQuery": [
+    "Motion and microinteraction prototyping — FigQuery variant",
+    "Prototipado de movimiento y microinteracciones — variante FigQuery"
+  ],
+  "Apresentações colaborativas no Figma": [
+    "Collaborative presentations in Figma",
+    "Presentaciones colaborativas en Figma"
+  ],
+  "A equipe precisa apresentar informações com narrativa e consistência visual.": [
+    "The team needs to present information with a clear narrative and visual consistency.",
+    "El equipo necesita presentar información con narrativa y coherencia visual."
+  ],
+  "Deck editável em Figma Slides": [
+    "Editable deck in Figma Slides",
+    "Presentación editable en Figma Slides"
+  ],
+  "Organização de seções e notas de apresentação": [
+    "Organization of sections and presentation notes",
+    "Organización de secciones y notas de presentación"
+  ],
+  "Figma Slides e conteúdo da apresentação": [
+    "Figma Slides and presentation content",
+    "Figma Slides y contenido de la presentación"
+  ],
+  "Apresentações colaborativas no Figma — variante FigQuery": [
+    "Collaborative presentations in Figma — FigQuery variant",
+    "Presentaciones colaborativas en Figma — variante FigQuery"
+  ],
+  "Design de interfaces com identidade própria": [
+    "Interface design with its own identity",
+    "Diseño de interfaces con identidad propia"
+  ],
+  "O produto tem aparência genérica e hierarquia visual pouco clara.": [
+    "The product has a generic appearance and an unclear visual hierarchy.",
+    "El producto tiene una apariencia genérica y una jerarquía visual poco clara."
+  ],
+  "Direção visual para telas": [
+    "Visual direction for screens",
+    "Dirección visual para pantallas"
+  ],
+  "Aplicação de tipografia, cores, layout e componentes": [
+    "Application of typography, colors, layout and components",
+    "Aplicación de tipografía, colores, composición y componentes"
+  ],
+  "Briefing, público e conteúdo do produto": [
+    "Product brief, audience and content",
+    "Briefing, público y contenido del producto"
+  ],
+  "Projeto de interface ou ambiente de implementação": [
+    "Interface project or implementation environment",
+    "Proyecto de interfaz o entorno de implementación"
+  ],
+  "Aplicações web sob medida": [
+    "Custom web applications",
+    "Aplicaciones web a medida"
+  ],
+  "O negócio precisa de uma aplicação própria ou de evoluir um sistema web existente.": [
+    "The business needs its own application or improvements to an existing web system.",
+    "El negocio necesita una aplicación propia o evolucionar un sistema web existente."
+  ],
+  "Aplicação web e fluxos definidos em escopo": [
+    "Web application and workflows defined in scope",
+    "Aplicación web y flujos definidos en el alcance"
+  ],
+  "Ambientes de desenvolvimento e homologação": [
+    "Development and validation environments",
+    "Entornos de desarrollo y validación"
+  ],
+  "Configuração de publicação, domínio e idiomas": [
+    "Publication, domain and language configuration",
+    "Configuración de publicación, dominio e idiomas"
+  ],
+  "Ajustes de desempenho e estabilidade": [
+    "Performance and stability adjustments",
+    "Ajustes de rendimiento y estabilidad"
+  ],
+  "Requisitos e critérios de aceite": [
+    "Requirements and acceptance criteria",
+    "Requisitos y criterios de aceptación"
+  ],
+  "Contas de hospedagem e domínio": [
+    "Hosting and domain accounts",
+    "Cuentas de alojamiento y dominio"
+  ],
+  "Integrações e infraestrutura dimensionadas por projeto": [
+    "Integrations and infrastructure sized for each project",
+    "Integraciones e infraestructura dimensionadas por proyecto"
+  ],
+  "Plano visual de projeto e entregas": [
+    "Visual project and deliverables plan",
+    "Plan visual de proyecto y entregas"
+  ],
+  "O projeto tem requisitos, etapas e decisões difíceis de acompanhar.": [
+    "The project has requirements, stages and decisions that are difficult to track.",
+    "El proyecto tiene requisitos, etapas y decisiones difíciles de seguir."
+  ],
+  "Quadro FigJam com frentes, etapas e diagramas": [
+    "FigJam board with workstreams, stages and diagrams",
+    "Tablero FigJam con frentes, etapas y diagramas"
+  ],
+  "Plano fundamentado no PRD e no código existente": [
+    "Plan based on the PRD and existing code",
+    "Plan fundamentado en el PRD y el código existente"
+  ],
+  "PRD ou escopo inicial": ["PRD or initial scope", "PRD o alcance inicial"],
+  "Acesso ao código quando fizer parte da análise": [
+    "Code access when included in the analysis",
+    "Acceso al código cuando forme parte del análisis"
+  ],
+  "Projetos com escopo e aceite rastreáveis": [
+    "Projects with traceable scope and acceptance",
+    "Proyectos con alcance y aceptación trazables"
+  ],
+  "Demandas, pendências e entregas se perdem entre cliente, desenvolvimento e operação.": [
+    "Requests, outstanding items and deliverables get lost between clients, development and operations.",
+    "Las solicitudes, los pendientes y las entregas se pierden entre el cliente, el desarrollo y las operaciones."
+  ],
+  "Backlog e lista de ajustes versionados": [
+    "Versioned backlog and adjustment list",
+    "Backlog y lista de ajustes versionados"
+  ],
+  "Critérios de aceite e roteiro de homologação": [
+    "Acceptance criteria and validation guide",
+    "Criterios de aceptación y guía de validación"
+  ],
+  "Plano de liberação por lotes": [
+    "Batched release plan",
+    "Plan de liberación por lotes"
+  ],
+  "Relatório de andamento e pendências": [
+    "Progress and outstanding items report",
+    "Informe de avance y asuntos pendientes"
+  ],
+  "Fontes dos pedidos e responsáveis disponíveis": [
+    "Available request sources and responsible people",
+    "Fuentes de las solicitudes y responsables disponibles"
+  ],
+  "Ambiente de homologação": [
+    "Validation environment",
+    "Entorno de validación"
+  ],
+  "Participação das áreas no aceite": [
+    "Department participation in acceptance",
+    "Participación de las áreas en la aceptación"
+  ],
+  "Controle interno de versões e mudanças": [
+    "Internal version and change control",
+    "Control interno de versiones y cambios"
+  ],
+  "Trabalho paralelo e releases sem organização dificultam revisão e recuperação de mudanças.": [
+    "Unorganized parallel work and releases make change review and recovery difficult.",
+    "El trabajo paralelo y las versiones sin organización dificultan la revisión y recuperación de cambios."
+  ],
+  "Organização de branches e commits": [
+    "Branch and commit organization",
+    "Organización de ramas y commits"
+  ],
+  "Histórico de versões e mudanças": [
+    "Version and change history",
+    "Historial de versiones y cambios"
+  ],
+  "Apoio à revisão e resolução de conflitos": [
+    "Support for review and conflict resolution",
+    "Apoyo a la revisión y resolución de conflictos"
+  ],
+  "Repositório e permissões": [
+    "Repository and permissions",
+    "Repositorio y permisos"
+  ],
+  "Política de versionamento da equipe": [
+    "Team versioning policy",
+    "Política de versionado del equipo"
+  ],
+  "Verificações automáticas durante o desenvolvimento": [
+    "Automated checks during development",
+    "Verificaciones automáticas durante el desarrollo"
+  ],
+  "Regras do projeto são lembradas tarde ou de forma inconsistente.": [
+    "Project rules are remembered too late or inconsistently.",
+    "Las reglas del proyecto se recuerdan tarde o de forma inconsistente."
+  ],
+  "Hooks por evento": ["Event-based hooks", "Hooks por evento"],
+  "Validações e retorno estruturado": [
+    "Validations and structured feedback",
+    "Validaciones y respuesta estructurada"
+  ],
+  "Testes do comportamento no runtime": [
+    "Runtime behavior tests",
+    "Pruebas de comportamiento en el runtime"
+  ],
+  "Assistentes e copilotos com contexto do negócio": [
+    "Assistants and copilots with business context",
+    "Asistentes y copilotos con contexto del negocio"
+  ],
+  "Informações dispersas e tarefas de interpretação dificultam o atendimento e a operação.": [
+    "Scattered information and interpretation tasks make service and operations difficult.",
+    "La información dispersa y las tareas de interpretación dificultan la atención y las operaciones."
+  ],
+  "Assistente integrado ao produto": [
+    "Assistant integrated into the product",
+    "Asistente integrado en el producto"
+  ],
+  "Busca em bases e documentos autorizados": [
+    "Search across authorized databases and documents",
+    "Búsqueda en bases y documentos autorizados"
+  ],
+  "Extração estruturada de informações": [
+    "Structured information extraction",
+    "Extracción estructurada de información"
+  ],
+  "Fluxos assistidos com revisão humana": [
+    "Assisted workflows with human review",
+    "Flujos asistidos con revisión humana"
+  ],
+  "Base de conhecimento e dados autorizados": [
+    "Knowledge base and authorized data",
+    "Base de conocimiento y datos autorizados"
+  ],
+  "Provedor de IA e orçamento de consumo": [
+    "AI provider and usage budget",
+    "Proveedor de IA y presupuesto de consumo"
+  ],
+  "Controles de acesso e avaliação de respostas": [
+    "Access controls and answer evaluation",
+    "Controles de acceso y evaluación de respuestas"
+  ],
+  "Ações externas sujeitas à aprovação definida no fluxo": [
+    "External actions subject to the approval defined in the workflow",
+    "Acciones externas sujetas a la aprobación definida en el flujo"
+  ],
+  "Controle de acesso ao assistente pelo iMessage": [
+    "Assistant access control through iMessage",
+    "Control de acceso al asistente por iMessage"
+  ],
+  "Plugin de canal iMessage completo, configurado e disponível": [
+    "Complete, configured and available iMessage channel plugin",
+    "Plugin del canal iMessage completo, configurado y disponible"
+  ],
+  "macOS com iMessage e permissão de acesso ao banco local; incompatível com este Windows": [
+    "macOS with iMessage and local database access permission; incompatible with this Windows environment",
+    "macOS con iMessage y permiso de acceso a la base local; incompatible con este Windows"
+  ],
+  "Configuração do canal iMessage para assistentes": [
+    "iMessage channel setup for assistants",
+    "Configuración del canal iMessage para asistentes"
+  ],
+  "Sistemas financeiros conectados": [
+    "Connected financial systems",
+    "Sistemas financieros conectados"
+  ],
+  "Dados de ERP, faturamento e financeiro ficam separados e exigem conciliação manual.": [
+    "ERP, billing and financial data are separate and require manual reconciliation.",
+    "Los datos del ERP, la facturación y las finanzas están separados y requieren conciliación manual."
+  ],
+  "Integração com APIs de sistemas previstos no escopo": [
+    "Integration with system APIs included in the scope",
+    "Integración con APIs de sistemas previstos en el alcance"
+  ],
+  "Base financeira reconciliada com a origem": [
+    "Financial dataset reconciled with the source",
+    "Base financiera conciliada con el origen"
+  ],
+  "Conciliação e indicadores de caixa, resultado e margem": [
+    "Reconciliation and cash flow, earnings and margin metrics",
+    "Conciliación e indicadores de caja, resultados y margen"
+  ],
+  "Rotinas de faturamento e integração fiscal quando suportadas": [
+    "Billing routines and tax integration where supported",
+    "Rutinas de facturación e integración fiscal cuando sean compatibles"
+  ],
+  "Acesso autorizado às APIs e dados": [
+    "Authorized access to APIs and data",
+    "Acceso autorizado a las APIs y los datos"
+  ],
+  "Validação dos endpoints e permissões de leitura ou escrita": [
+    "Validation of endpoints and read or write permissions",
+    "Validación de endpoints y permisos de lectura o escritura"
+  ],
+  "Regras financeiras e fiscais confirmadas pelos responsáveis": [
+    "Financial and tax rules confirmed by the responsible people",
+    "Reglas financieras y fiscales confirmadas por los responsables"
+  ],
+  "Homologação e reconciliação antes de operar em produção": [
+    "Validation and reconciliation before operating in production",
+    "Validación y conciliación antes de operar en producción"
+  ],
+  "Minutas e padronização de respostas jurídicas": [
+    "Drafting and standardizing legal responses",
+    "Borradores y estandarización de respuestas jurídicas"
+  ],
+  "A equipe redige repetidamente respostas semelhantes sem um padrão revisado.": [
+    "The team repeatedly writes similar responses without a reviewed standard.",
+    "El equipo redacta repetidamente respuestas similares sin un estándar revisado."
+  ],
+  "Rascunhos baseados em modelos": [
+    "Template-based drafts",
+    "Borradores basados en plantillas"
+  ],
+  "Identificação de casos que exigem revisão individual": [
+    "Identification of cases requiring individual review",
+    "Identificación de casos que requieren revisión individual"
+  ],
+  "Templates aprovados e critérios de escalonamento": [
+    "Approved templates and escalation criteria",
+    "Plantillas aprobadas y criterios de escalamiento"
+  ],
+  "Conector de e-mail apenas se for necessário criar rascunhos no sistema": [
+    "Email connector only if drafts must be created in the system",
+    "Conector de correo solo si es necesario crear borradores en el sistema"
+  ],
+  "Organização e classificação de riscos contratuais": [
+    "Contract risk organization and classification",
+    "Organización y clasificación de riesgos contractuales"
+  ],
+  "Os riscos são discutidos sem critérios comuns de prioridade.": [
+    "Risks are discussed without shared prioritization criteria.",
+    "Los riesgos se discuten sin criterios comunes de prioridad."
+  ],
+  "Matriz de severidade e probabilidade": [
+    "Severity and probability matrix",
+    "Matriz de gravedad y probabilidad"
+  ],
+  "Encaminhamento e ações de mitigação para revisão": [
+    "Referral and mitigation actions for review",
+    "Derivación y acciones de mitigación para revisión"
+  ],
+  "Apetite de risco e critérios de escalonamento da organização": [
+    "The organization's risk appetite and escalation criteria",
+    "Apetito de riesgo y criterios de escalamiento de la organización"
+  ],
+  "Preparação de dispositivos M5Stack e ESP32": [
+    "M5Stack and ESP32 device setup",
+    "Preparación de dispositivos M5Stack y ESP32"
+  ],
+  "Um dispositivo conectado ainda não tem firmware e aplicativos preparados.": [
+    "A connected device does not yet have its firmware and applications prepared.",
+    "Un dispositivo conectado aún no tiene preparados el firmware y las aplicaciones."
+  ],
+  "Detecção do dispositivo": ["Device detection", "Detección del dispositivo"],
+  "Provisionamento de firmware UIFlow e aplicativos MicroPython": [
+    "UIFlow firmware and MicroPython application provisioning",
+    "Aprovisionamiento de firmware UIFlow y aplicaciones MicroPython"
+  ],
+  "Hardware M5Stack/ESP32 compatível conectado": [
+    "Connected compatible M5Stack/ESP32 hardware",
+    "Hardware M5Stack/ESP32 compatible conectado"
+  ],
+  "Scripts e firmware corretos para o modelo": [
+    "Correct scripts and firmware for the model",
+    "Scripts y firmware correctos para el modelo"
+  ],
+  "Intervenção física em botões pode ser necessária; gravação altera o dispositivo": [
+    "Physical button interaction may be required; flashing changes the device",
+    "Puede ser necesaria una intervención física en los botones; la grabación modifica el dispositivo"
+  ],
+  "Execução local de modelos com Magnitude": [
+    "Running models locally with Magnitude",
+    "Ejecución local de modelos con Magnitude"
+  ],
+  "A equipe quer avaliar modelos locais compatíveis com sua máquina.": [
+    "The team wants to evaluate local models compatible with its computer.",
+    "El equipo quiere evaluar modelos locales compatibles con su equipo."
+  ],
+  "Avaliação de compatibilidade de hardware": [
+    "Hardware compatibility assessment",
+    "Evaluación de compatibilidad de hardware"
+  ],
+  "Configuração de serviço e modelo local": [
+    "Local service and model configuration",
+    "Configuración de servicio y modelo local"
+  ],
+  "Conexão com ferramentas compatíveis": [
+    "Connection to compatible tools",
+    "Conexión con herramientas compatibles"
+  ],
+  "Magnitude instalado e suportado": [
+    "Magnitude installed and supported",
+    "Magnitude instalado y compatible"
+  ],
+  "Hardware e memória suficientes": [
+    "Sufficient hardware and memory",
+    "Hardware y memoria suficientes"
+  ],
+  "Licença e disponibilidade dos modelos": [
+    "Model licensing and availability",
+    "Licencia y disponibilidad de los modelos"
+  ],
+  "Não representa um serviço de IA pronto para qualquer máquina": [
+    "This is not a ready-to-use AI service for every computer",
+    "No representa un servicio de IA listo para cualquier equipo"
+  ],
+  "Conteúdo B2B que explica o valor da solução": [
+    "B2B content that explains the solution's value",
+    "Contenido B2B que explica el valor de la solución"
+  ],
+  "A empresa tem conhecimento técnico, mas dificuldade para transformá-lo em conteúdo relevante para compradores.": [
+    "The company has technical knowledge but struggles to turn it into relevant content for buyers.",
+    "La empresa tiene conocimientos técnicos, pero le cuesta convertirlos en contenido relevante para compradores."
+  ],
+  "Calendário e pautas editoriais": [
+    "Editorial calendar and topics",
+    "Calendario y temas editoriales"
+  ],
+  "Posts, artigos e newsletters": [
+    "Posts, articles and newsletters",
+    "Publicaciones, artículos y boletines"
+  ],
+  "Carrosséis e peças para redes sociais": [
+    "Carousels and social media assets",
+    "Carruseles y piezas para redes sociales"
+  ],
+  "Revisão de tom de voz e mensagens": [
+    "Tone of voice and messaging review",
+    "Revisión del tono de voz y los mensajes"
+  ],
+  "Posicionamento e guia de marca": [
+    "Positioning and brand guide",
+    "Posicionamiento y guía de marca"
+  ],
+  "Fatos e cases aprovados": [
+    "Approved facts and case studies",
+    "Hechos y casos aprobados"
+  ],
+  "Aprovação do conteúdo antes de publicação": [
+    "Content approval before publication",
+    "Aprobación del contenido antes de publicarlo"
+  ],
+  "Sem promessa de geração de leads ou resultado fixo": [
+    "No promise of lead generation or fixed results",
+    "Sin promesa de generación de leads ni de un resultado fijo"
+  ],
+  "Análise e verificação de problemas matemáticos": [
+    "Mathematical problem analysis and verification",
+    "Análisis y verificación de problemas matemáticos"
+  ],
+  "Uma solução matemática precisa de raciocínio estruturado e revisão independente.": [
+    "A mathematical solution needs structured reasoning and independent review.",
+    "Una solución matemática necesita razonamiento estructurado y revisión independiente."
+  ],
+  "Solução ou identificação de lacunas": [
+    "Solution or identification of gaps",
+    "Solución o identificación de lagunas"
+  ],
+  "Revisão adversarial e grau de confiança": [
+    "Adversarial review and confidence level",
+    "Revisión adversarial y grado de confianza"
+  ],
+  "PDF se LaTeX estiver disponível": [
+    "PDF if LaTeX is available",
+    "PDF si LaTeX está disponible"
+  ],
+  "Enunciado completo": ["Complete problem statement", "Enunciado completo"],
+  "Agentes independentes para o protocolo de verificação": [
+    "Independent agents for the verification protocol",
+    "Agentes independientes para el protocolo de verificación"
+  ],
+  "Não garante solução de problemas abertos; validar o resultado": [
+    "Does not guarantee solutions to open problems; validate the result",
+    "No garantiza la solución de problemas abiertos; validar el resultado"
+  ],
+  "Integração de serviços em plugins Claude Code": [
+    "Service integration in Claude Code plugins",
+    "Integración de servicios en plugins Claude Code"
+  ],
+  "O plugin precisa acessar serviços externos com autenticação e escopo definidos.": [
+    "The plugin needs access to external services with defined authentication and scope.",
+    "El plugin necesita acceder a servicios externos con autenticación y alcance definidos."
+  ],
+  "Configuração MCP do plugin": [
+    "Plugin MCP configuration",
+    "Configuración MCP del plugin"
+  ],
+  "Mapeamento de ferramentas e autenticação": [
+    "Tool and authentication mapping",
+    "Mapeo de herramientas y autenticación"
+  ],
+  "Diagnóstico de conectividade": [
+    "Connectivity diagnosis",
+    "Diagnóstico de conectividad"
+  ],
+  "Servidor MCP existente e autorização para os serviços": [
+    "Existing MCP server and authorization for the services",
+    "Servidor MCP existente y autorización para los servicios"
+  ],
+  "Preparação de reuniões e negociações": [
+    "Meeting and negotiation preparation",
+    "Preparación de reuniones y negociaciones"
+  ],
+  "A equipe entra em negociações sem contexto e não registra responsáveis pelas ações.": [
+    "The team enters negotiations without context and does not record action owners.",
+    "El equipo entra en negociaciones sin contexto y no registra a los responsables de las acciones."
+  ],
+  "Briefing com contexto, agenda e pontos de negociação": [
+    "Brief with context, agenda and negotiation points",
+    "Briefing con contexto, agenda y puntos de negociación"
+  ],
+  "Registro de ações e responsáveis": [
+    "Action and owner records",
+    "Registro de acciones y responsables"
+  ],
+  "Contexto da reunião e materiais relevantes": [
+    "Meeting context and relevant materials",
+    "Contexto de la reunión y materiales relevantes"
+  ],
+  "Cobranças e assinaturas integradas": [
+    "Integrated billing and subscriptions",
+    "Cobros y suscripciones integrados"
+  ],
+  "O produto depende de cobranças manuais ou falha ao liberar acesso após o pagamento.": [
+    "The product relies on manual billing or fails to grant access after payment.",
+    "El producto depende de cobros manuales o falla al habilitar el acceso después del pago."
+  ],
+  "Checkout e assinaturas com Asaas": [
+    "Checkout and subscriptions with Asaas",
+    "Checkout y suscripciones con Asaas"
+  ],
+  "Tratamento de webhooks e conciliação de eventos": [
+    "Webhook handling and event reconciliation",
+    "Tratamiento de webhooks y conciliación de eventos"
+  ],
+  "Liberação de acesso vinculada ao pagamento": [
+    "Access granted based on payment",
+    "Habilitación de acceso vinculada al pago"
+  ],
+  "Fluxos de alteração, cancelamento e cobrança conforme escopo": [
+    "Change, cancellation and billing workflows according to scope",
+    "Flujos de cambio, cancelación y cobro según el alcance"
+  ],
+  "Conta e credenciais do gateway": [
+    "Gateway account and credentials",
+    "Cuenta y credenciales del gateway"
+  ],
+  "Planos, preços e política comercial definidos": [
+    "Defined plans, prices and commercial policy",
+    "Planes, precios y política comercial definidos"
+  ],
+  "Validação em sandbox e homologação do ciclo de pagamento": [
+    "Sandbox validation and payment cycle acceptance testing",
+    "Validación en sandbox y pruebas de aceptación del ciclo de pago"
+  ],
+  "Taxas e condições do provedor verificadas na contratação": [
+    "Provider fees and terms verified when contracting",
+    "Tarifas y condiciones del proveedor verificadas al contratar"
+  ],
+  "Academia digital e área do aluno": [
+    "Digital academy and student area",
+    "Academia digital y área del alumno"
+  ],
+  "A organização precisa organizar cursos, acompanhar alunos e oferecer uma experiência própria de aprendizagem.": [
+    "The organization needs to organize courses, track students and offer its own learning experience.",
+    "La organización necesita organizar cursos, acompañar a los alumnos y ofrecer una experiencia propia de aprendizaje."
+  ],
+  "Catálogo, módulos, aulas e área do aluno": [
+    "Catalog, modules, lessons and student area",
+    "Catálogo, módulos, clases y área del alumno"
+  ],
+  "Acompanhamento de progresso e certificados": [
+    "Progress tracking and certificates",
+    "Seguimiento de progreso y certificados"
+  ],
+  "Lives, comunidade e recursos de engajamento conforme escopo": [
+    "Live sessions, community and engagement features according to scope",
+    "Sesiones en vivo, comunidad y funciones de participación según el alcance"
+  ],
+  "Administração de conteúdo e acesso": [
+    "Content and access administration",
+    "Administración de contenido y acceso"
+  ],
+  "Conteúdo e direitos de uso": [
+    "Content and usage rights",
+    "Contenido y derechos de uso"
+  ],
+  "Serviços de vídeo, e-mail e hospedagem": [
+    "Video, email and hosting services",
+    "Servicios de vídeo, correo y alojamiento"
+  ],
+  "Regras de matrícula e certificação": [
+    "Enrollment and certification rules",
+    "Reglas de matrícula y certificación"
+  ],
+  "Pagamentos e recursos avançados contratados conforme necessidade": [
+    "Payments and advanced features contracted as needed",
+    "Pagos y funciones avanzadas contratados según la necesidad"
+  ],
+  "Simuladores e exploradores interativos": [
+    "Interactive simulators and explorers",
+    "Simuladores y exploradores interactivos"
+  ],
+  "É difícil entender ou escolher configurações apenas por texto.": [
+    "It is difficult to understand or choose configurations through text alone.",
+    "Es difícil entender o elegir configuraciones solo mediante texto."
+  ],
+  "Ferramenta HTML com controles e prévia ao vivo": [
+    "HTML tool with controls and a live preview",
+    "Herramienta HTML con controles y vista previa en vivo"
+  ],
+  "Presets e resumo copiável da configuração": [
+    "Presets and a copyable configuration summary",
+    "Ajustes predefinidos y resumen copiable de la configuración"
+  ],
+  "Regras ou conceito a explorar": [
+    "Rules or concept to explore",
+    "Reglas o concepto que se desea explorar"
+  ],
+  "Navegador moderno; integrações ao vivo exigem desenvolvimento adicional": [
+    "Modern browser; live integrations require additional development",
+    "Navegador moderno; las integraciones en vivo requieren desarrollo adicional"
+  ],
+  "Configurações por projeto para plugins": [
+    "Per-project plugin settings",
+    "Configuraciones por proyecto para plugins"
+  ],
+  "O comportamento de um plugin precisa variar sem alterar seu código.": [
+    "A plugin's behavior needs to vary without changing its code.",
+    "El comportamiento de un plugin necesita variar sin modificar su código."
+  ],
+  "Configuração local documentada": [
+    "Documented local configuration",
+    "Configuración local documentada"
+  ],
+  "Leitura e validação dos parâmetros": [
+    "Parameter reading and validation",
+    "Lectura y validación de parámetros"
+  ],
+  "Arquitetura e organização de plugins": [
+    "Plugin architecture and organization",
+    "Arquitectura y organización de plugins"
+  ],
+  "Um plugin precisa de estrutura consistente para componentes e distribuição.": [
+    "A plugin needs a consistent structure for components and distribution.",
+    "Un plugin necesita una estructura coherente para sus componentes y distribución."
+  ],
+  "Manifesto e organização de arquivos": [
+    "Manifest and file organization",
+    "Manifiesto y organización de archivos"
+  ],
+  "Definição de skills, comandos, agentes e hooks": [
+    "Definition of skills, commands, agents and hooks",
+    "Definición de skills, comandos, agentes y hooks"
+  ],
+  "Memória interna do portfólio": [
+    "Internal portfolio memory",
+    "Memoria interna del portafolio"
+  ],
+  "A equipe precisa localizar decisões, materiais e contexto de projetos existentes.": [
+    "The team needs to find decisions, materials and context from existing projects.",
+    "El equipo necesita localizar decisiones, materiales y contexto de proyectos existentes."
+  ],
+  "Consulta interna ao histórico e referências dos projetos": [
+    "Internal lookup of project history and references",
+    "Consulta interna al historial y las referencias de los proyectos"
+  ],
+  "Acesso restrito ao histórico da organização": [
+    "Restricted access to the organization's history",
+    "Acceso restringido al historial de la organización"
+  ],
+  "Atualização e confirmação do estado atual": [
+    "Update and confirmation of the current state",
+    "Actualización y confirmación del estado actual"
+  ],
+  "Conteúdo com clientes e pessoas não deve ser publicado no marketplace": [
+    "Content involving clients and individuals must not be published in the marketplace",
+    "El contenido sobre clientes y personas no debe publicarse en el marketplace"
+  ],
+  "Portal de indicadores com a sua marca": [
+    "A branded metrics portal",
+    "Portal de indicadores con tu marca"
+  ],
+  "A empresa precisa distribuir relatórios para públicos e clientes com controle de acesso.": [
+    "The company needs to distribute reports to audiences and clients with access control.",
+    "La empresa necesita distribuir informes a públicos y clientes con control de acceso."
+  ],
+  "Portal com relatórios Power BI incorporados": [
+    "Portal with embedded Power BI reports",
+    "Portal con informes Power BI incorporados"
+  ],
+  "Organização por áreas e públicos": [
+    "Organization by department and audience",
+    "Organización por áreas y públicos"
+  ],
+  "Identidade visual e domínio próprio": [
+    "Visual identity and custom domain",
+    "Identidad visual y dominio propio"
+  ],
+  "Controle de acesso e isolamento de dados conforme modelo": [
+    "Access control and data isolation according to the model",
+    "Control de acceso y aislamiento de datos según el modelo"
+  ],
+  "Relatórios e modelo semântico existentes ou contratados": [
+    "Existing or commissioned reports and semantic model",
+    "Informes y modelo semántico existentes o contratados"
+  ],
+  "Capacidade e licenciamento Microsoft adequados": [
+    "Appropriate Microsoft capacity and licensing",
+    "Capacidad y licencias Microsoft adecuadas"
+  ],
+  "Configuração de identidade, permissões e RLS": [
+    "Identity, permission and RLS configuration",
+    "Configuración de identidad, permisos y RLS"
+  ],
+  "Economia de licenças depende de usuários, capacidade e uso": [
+    "License savings depend on users, capacity and usage",
+    "El ahorro en licencias depende de los usuarios, la capacidad y el uso"
+  ],
+  "Indicadores confiáveis e Power BI mais eficiente": [
+    "Reliable metrics and more efficient Power BI",
+    "Indicadores fiables y Power BI más eficiente"
+  ],
+  "Números não conferem, relatórios demoram ou a atualização dos dados falha.": [
+    "Numbers do not reconcile, reports are slow or data refreshes fail.",
+    "Las cifras no coinciden, los informes tardan o falla la actualización de los datos."
+  ],
+  "Diagnóstico do modelo e medidas": [
+    "Model and measure diagnosis",
+    "Diagnóstico del modelo y las medidas"
+  ],
+  "Revisão de regras e reconciliação com a fonte": [
+    "Rule review and reconciliation with the source",
+    "Revisión de reglas y conciliación con la fuente"
+  ],
+  "Otimização de DAX e atualização": [
+    "DAX and refresh optimization",
+    "Optimización de DAX y actualizaciones"
+  ],
+  "Avaliação de consumo e desempenho": [
+    "Usage and performance assessment",
+    "Evaluación de consumo y rendimiento"
+  ],
+  "Acesso ao modelo e às fontes": [
+    "Access to the model and sources",
+    "Acceso al modelo y las fuentes"
+  ],
+  "Regras de negócio confirmadas": [
+    "Confirmed business rules",
+    "Reglas de negocio confirmadas"
+  ],
+  "Ambiente para comparação de resultados": [
+    "Environment for comparing results",
+    "Entorno para comparar resultados"
+  ],
+  "Ganhos de desempenho medidos caso a caso": [
+    "Performance gains measured case by case",
+    "Mejoras de rendimiento medidas caso por caso"
+  ],
+  "Dashboards e relatórios Power BI sob medida": [
+    "Custom Power BI dashboards and reports",
+    "Paneles e informes Power BI a medida"
+  ],
+  "Relatórios são pouco claros, difíceis de manter ou não atendem ao uso de cada público.": [
+    "Reports are unclear, difficult to maintain or fail to meet each audience's needs.",
+    "Los informes son poco claros, difíciles de mantener o no satisfacen las necesidades de cada público."
+  ],
+  "Páginas, visuais e navegação de relatórios": [
+    "Report pages, visuals and navigation",
+    "Páginas, objetos visuales y navegación de informes"
+  ],
+  "Temas, layouts e versões móveis": [
+    "Themes, layouts and mobile versions",
+    "Temas, composiciones y versiones móviles"
+  ],
+  "Arquivos PBIP, PBIR ou PBIX versionados conforme projeto": [
+    "PBIP, PBIR or PBIX files versioned according to the project",
+    "Archivos PBIP, PBIR o PBIX versionados según el proyecto"
+  ],
+  "Validação dos números e interações implementadas": [
+    "Validation of implemented numbers and interactions",
+    "Validación de las cifras e interacciones implementadas"
+  ],
+  "Modelo de dados e métricas definidos": [
+    "Defined data model and metrics",
+    "Modelo de datos y métricas definidos"
+  ],
+  "Power BI e formatos compatíveis": [
+    "Compatible Power BI and formats",
+    "Power BI y formatos compatibles"
+  ],
+  "Validação de visuais e interações no ambiente real": [
+    "Validation of visuals and interactions in the real environment",
+    "Validación de objetos visuales e interacciones en el entorno real"
+  ],
+  "Recursos HTML possuem limitações de interação": [
+    "HTML features have interaction limitations",
+    "Los recursos HTML tienen limitaciones de interacción"
+  ],
+  "Aplicativos internos e automações Microsoft": [
+    "Internal applications and Microsoft automations",
+    "Aplicaciones internas y automatizaciones Microsoft"
+  ],
+  "Processos internos dependem de planilhas, e-mails e tarefas repetitivas entre sistemas.": [
+    "Internal processes rely on spreadsheets, email and repetitive tasks across systems.",
+    "Los procesos internos dependen de hojas de cálculo, correos y tareas repetitivas entre sistemas."
+  ],
+  "Apps e telas para Power Apps": [
+    "Apps and screens for Power Apps",
+    "Aplicaciones y pantallas para Power Apps"
+  ],
+  "Fluxos Power Automate": ["Power Automate flows", "Flujos Power Automate"],
+  "Estrutura de dados em SharePoint ou Dataverse conforme cenário": [
+    "Data structure in SharePoint or Dataverse according to the scenario",
+    "Estructura de datos en SharePoint o Dataverse según el escenario"
+  ],
+  "Kit de construção e documentação para a equipe técnica": [
+    "Build kit and documentation for the technical team",
+    "Kit de construcción y documentación para el equipo técnico"
+  ],
+  "Ambiente e licenças Microsoft": [
+    "Microsoft environment and licenses",
+    "Entorno y licencias Microsoft"
+  ],
+  "Conectores e permissões necessários": [
+    "Required connectors and permissions",
+    "Conectores y permisos necesarios"
+  ],
+  "Validação no Power Apps Studio": [
+    "Validation in Power Apps Studio",
+    "Validación en Power Apps Studio"
+  ],
+  "Limites de delegação e acesso da base escolhida; SharePoint não equivale a RLS": [
+    "Delegation and access limits of the selected database; SharePoint is not equivalent to RLS",
+    "Límites de delegación y acceso de la base elegida; SharePoint no equivale a RLS"
+  ],
+  "Visão compartilhada do andamento de projetos": [
+    "Shared view of project progress",
+    "Visión compartida del avance de proyectos"
+  ],
+  "Um projeto com várias frentes não cabe em atualizações isoladas.": [
+    "A project with multiple workstreams cannot be captured in isolated updates.",
+    "Un proyecto con varios frentes no cabe en actualizaciones aisladas."
+  ],
+  "Página de status com etapas, decisões e próximos passos": [
+    "Status page with stages, decisions and next steps",
+    "Página de estado con etapas, decisiones y próximos pasos"
+  ],
+  "Atualizações com diferenças em relação à versão anterior": [
+    "Updates highlighting differences from the previous version",
+    "Actualizaciones con diferencias respecto a la versión anterior"
+  ],
+  "Ferramenta Artifact e login claude.ai; não disponível no Codex por copiar a skill": [
+    "Artifact tool and claude.ai login; copying the skill does not make it available in Codex",
+    "Herramienta Artifact e inicio de sesión en claude.ai; copiar la skill no la hace disponible en Codex"
+  ],
+  "Fontes do projeto e configuração persistente do plugin": [
+    "Project sources and persistent plugin configuration",
+    "Fuentes del proyecto y configuración persistente del plugin"
+  ],
+  "Estruturação interna de propostas e estimativas": [
+    "Internal proposal and estimate structuring",
+    "Estructuración interna de propuestas y estimaciones"
+  ],
+  "Demandas precisam virar escopo, premissas e investimento coerentes antes da contratação.": [
+    "Requests need to become a coherent scope, assumptions and investment before contracting.",
+    "Las solicitudes deben convertirse en un alcance, supuestos e inversión coherentes antes de contratar."
+  ],
+  "Levantamento e organização do escopo": [
+    "Scope discovery and organization",
+    "Levantamiento y organización del alcance"
+  ],
+  "Estimativa por fases e modelo de contratação": [
+    "Phase-based estimate and contracting model",
+    "Estimación por fases y modelo de contratación"
+  ],
+  "Proposta comercial e critérios de aceite": [
+    "Commercial proposal and acceptance criteria",
+    "Propuesta comercial y criterios de aceptación"
+  ],
+  "Requisitos, taxas e preços aprovados pelos responsáveis": [
+    "Requirements, rates and prices approved by the responsible people",
+    "Requisitos, tarifas y precios aprobados por los responsables"
+  ],
+  "Custos externos atualizados": [
+    "Up-to-date external costs",
+    "Costes externos actualizados"
+  ],
+  "Decisão humana sobre preço, escopo e envio": [
+    "Human decision on price, scope and sending",
+    "Decisión humana sobre precio, alcance y envío"
+  ],
+  "Prospecção B2B orientada por sinais": [
+    "Signal-driven B2B prospecting",
+    "Prospección B2B orientada por señales"
+  ],
+  "A equipe aborda perfis sem contexto e tem dificuldade para organizar conversas comerciais qualificadas.": [
+    "The team approaches profiles without context and struggles to organize qualified sales conversations.",
+    "El equipo contacta perfiles sin contexto y tiene dificultades para organizar conversaciones comerciales cualificadas."
+  ],
+  "Definição de público e sinais de oportunidade": [
+    "Audience definition and opportunity signals",
+    "Definición de público y señales de oportunidad"
+  ],
+  "Qualificação de perfis e empresas": [
+    "Profile and company qualification",
+    "Cualificación de perfiles y empresas"
+  ],
+  "Rascunhos de abordagem contextualizados": [
+    "Contextualized outreach drafts",
+    "Borradores de contacto contextualizados"
+  ],
+  "Registro e acompanhamento do funil": [
+    "Pipeline recording and tracking",
+    "Registro y seguimiento del embudo"
+  ],
+  "Conta e acesso autorizado ao LinkedIn": [
+    "Account and authorized LinkedIn access",
+    "Cuenta y acceso autorizado a LinkedIn"
+  ],
+  "Base comercial e histórico de contatos": [
+    "Sales knowledge base and contact history",
+    "Base comercial e historial de contactos"
+  ],
+  "Aprovação de cada envio no fluxo definido": [
+    "Approval of each send within the defined workflow",
+    "Aprobación de cada envío en el flujo definido"
+  ],
+  "Limites e políticas da plataforma; sem promessa de respostas ou vendas": [
+    "Platform limits and policies; no promise of replies or sales",
+    "Límites y políticas de la plataforma; sin promesa de respuestas o ventas"
+  ],
+  "Playbook comercial interno da DriveData": [
+    "DriveData's internal sales playbook",
+    "Playbook comercial interno de DriveData"
+  ],
+  "A operação comercial precisa relacionar sinais de compra às ofertas e ao histórico da DriveData.": [
+    "Sales operations need to connect buying signals to DriveData's offerings and history.",
+    "La operación comercial necesita relacionar las señales de compra con las ofertas y el historial de DriveData."
+  ],
+  "Orientações internas de qualificação e abordagem": [
+    "Internal qualification and outreach guidance",
+    "Orientaciones internas de cualificación y contacto"
+  ],
+  "Roteamento por oferta e mercado": [
+    "Routing by offering and market",
+    "Enrutamiento por oferta y mercado"
+  ],
+  "Registro do funil comercial": [
+    "Sales pipeline records",
+    "Registro del embudo comercial"
+  ],
+  "Base comercial atualizada da DriveData": [
+    "Up-to-date DriveData sales knowledge base",
+    "Base comercial actualizada de DriveData"
+  ],
+  "Histórico de contatos e aprovações": [
+    "Contact and approval history",
+    "Historial de contactos y aprobaciones"
+  ],
+  "Sobrepõe a capacidade de prospecção B2B, sem constituir oferta adicional": [
+    "Overlaps the B2B prospecting capability without constituting an additional offering",
+    "Se superpone a la capacidad de prospección B2B sin constituir una oferta adicional"
+  ],
+  "Da ideia ao protótipo e escopo validável": [
+    "From idea to prototype and a verifiable scope",
+    "De la idea al prototipo y a un alcance verificable"
+  ],
+  "Negócio e desenvolvimento não têm uma visão comum do que deve ser construído.": [
+    "Business and development do not share a common view of what should be built.",
+    "Negocio y desarrollo no tienen una visión común de lo que debe construirse."
+  ],
+  "Protótipo navegável com dados de demonstração": [
+    "Navigable prototype with demonstration data",
+    "Prototipo navegable con datos de demostración"
+  ],
+  "Mapeamento de fluxos e perfis": [
+    "Workflow and role mapping",
+    "Mapeo de flujos y perfiles"
+  ],
+  "Especificação funcional e critérios de aceite": [
+    "Functional specification and acceptance criteria",
+    "Especificación funcional y criterios de aceptación"
+  ],
+  "Matriz de rastreabilidade entre necessidade e funcionalidade": [
+    "Traceability matrix between needs and features",
+    "Matriz de trazabilidad entre necesidades y funcionalidades"
+  ],
+  "Briefing, reuniões ou requisitos de origem": [
+    "Brief, meetings or original requirements",
+    "Briefing, reuniones o requisitos de origen"
+  ],
+  "Validação pelos responsáveis do negócio": [
+    "Validation by business owners",
+    "Validación por los responsables del negocio"
+  ],
+  "Protótipo não representa sistema operacional nem integrações prontas": [
+    "A prototype is not an operational system or ready-made integrations",
+    "Un prototipo no representa un sistema operativo ni integraciones listas"
+  ],
+  "Relatório de atividade e impacto do assistente": [
+    "Assistant activity and impact report",
+    "Informe de actividad e impacto del asistente"
+  ],
+  "A equipe quer entender como o Claude Code foi usado e que entregas apoiou.": [
+    "The team wants to understand how Claude Code was used and which deliverables it supported.",
+    "El equipo quiere entender cómo se utilizó Claude Code y qué entregas apoyó."
+  ],
+  "Relatório Markdown e HTML a partir de registros locais": [
+    "Markdown and HTML report from local records",
+    "Informe Markdown y HTML a partir de registros locales"
+  ],
+  "Correlação com histórico Git disponível": [
+    "Correlation with available Git history",
+    "Correlación con el historial Git disponible"
+  ],
+  "Transcrições locais do Claude Code e scripts de análise": [
+    "Local Claude Code transcripts and analysis scripts",
+    "Transcripciones locales de Claude Code y scripts de análisis"
+  ],
+  "Histórico Git quando disponível": [
+    "Git history when available",
+    "Historial Git cuando esté disponible"
+  ],
+  "Métricas são evidências de uso, não medição garantida de produtividade ou ROI": [
+    "Metrics are usage evidence, not a guaranteed measurement of productivity or ROI",
+    "Las métricas son evidencias de uso, no una medición garantizada de productividad o ROI"
+  ],
+  "Apoio à revisão e negociação de contratos": [
+    "Support for contract review and negotiation",
+    "Apoyo a la revisión y negociación de contratos"
+  ],
+  "A revisão de contratos demora e os desvios do padrão não ficam claros.": [
+    "Contract review is slow and deviations from the standard are unclear.",
+    "La revisión de contratos tarda y las desviaciones del estándar no quedan claras."
+  ],
+  "Comparação de cláusulas com o playbook da empresa": [
+    "Clause comparison with the company's playbook",
+    "Comparación de cláusulas con el playbook de la empresa"
+  ],
+  "Sugestões de alterações e posições alternativas": [
+    "Suggested changes and alternative positions",
+    "Sugerencias de cambios y posiciones alternativas"
+  ],
+  "Lista priorizada de questões para o jurídico": [
+    "Prioritized list of issues for the legal team",
+    "Lista priorizada de cuestiones para el equipo jurídico"
+  ],
+  "Contrato e playbook de negociação aprovado": [
+    "Contract and approved negotiation playbook",
+    "Contrato y playbook de negociación aprobado"
+  ],
+  "Plataformas com dados separados por cliente": [
+    "Platforms with separate data for each client",
+    "Plataformas con datos separados por cliente"
+  ],
+  "O produto precisa atender várias empresas sem misturar dados, acessos e regras.": [
+    "The product needs to serve multiple companies without mixing data, access or rules.",
+    "El producto necesita atender a varias empresas sin mezclar datos, accesos ni reglas."
+  ],
+  "Arquitetura de dados multiempresa": [
+    "Multi-tenant data architecture",
+    "Arquitectura de datos multiempresa"
+  ],
+  "Autenticação e políticas de acesso": [
+    "Authentication and access policies",
+    "Autenticación y políticas de acceso"
+  ],
+  "Armazenamento privado e trilhas de auditoria": [
+    "Private storage and audit trails",
+    "Almacenamiento privado y pistas de auditoría"
+  ],
+  "Migrações e rotinas de negócio previstas em escopo": [
+    "Migrations and business routines included in scope",
+    "Migraciones y rutinas de negocio previstas en el alcance"
+  ],
+  "Projeto Supabase e configuração da infraestrutura": [
+    "Supabase project and infrastructure configuration",
+    "Proyecto Supabase y configuración de infraestructura"
+  ],
+  "Regras de acesso e negócio definidas": [
+    "Defined access and business rules",
+    "Reglas de acceso y negocio definidas"
+  ],
+  "Testes de isolamento entre clientes": [
+    "Client isolation tests",
+    "Pruebas de aislamiento entre clientes"
+  ],
+  "Migrações e operação de produção com autorização e plano de recuperação": [
+    "Migrations and production operations with authorization and a recovery plan",
+    "Migraciones y operación en producción con autorización y plan de recuperación"
+  ],
+  "Fortalecimento da segurança da aplicação": [
+    "Application security hardening",
+    "Refuerzo de la seguridad de la aplicación"
+  ],
+  "Fluxos de login, dados e integrações apresentam fragilidades ou controles insuficientes.": [
+    "Login, data and integration flows have weaknesses or insufficient controls.",
+    "Los flujos de inicio de sesión, datos e integraciones presentan debilidades o controles insuficientes."
+  ],
+  "Mapeamento de ameaças do fluxo": [
+    "Workflow threat mapping",
+    "Mapeo de amenazas del flujo"
+  ],
+  "Revisão de validação de entradas e permissões": [
+    "Review of input validation and permissions",
+    "Revisión de validación de entradas y permisos"
+  ],
+  "Melhorias em autenticação, segredos e dependências": [
+    "Improvements to authentication, secrets and dependencies",
+    "Mejoras en autenticación, secretos y dependencias"
+  ],
+  "Verificação dos controles alterados": [
+    "Verification of changed controls",
+    "Verificación de los controles modificados"
+  ],
+  "Acesso autorizado ao código e ambiente": [
+    "Authorized code and environment access",
+    "Acceso autorizado al código y al entorno"
+  ],
+  "Escopo dos fluxos e dados tratados": [
+    "Scope of workflows and data processed",
+    "Alcance de los flujos y los datos tratados"
+  ],
+  "Validação dos controles; não constitui certificação de conformidade": [
+    "Control validation; does not constitute compliance certification",
+    "Validación de controles; no constituye una certificación de cumplimiento"
+  ],
+  "Auditoria de segurança com evidências": [
+    "Evidence-based security audit",
+    "Auditoría de seguridad con evidencias"
+  ],
+  "A equipe precisa saber quais falhas de segurança existem e o que corrigir primeiro.": [
+    "The team needs to know which security flaws exist and what to fix first.",
+    "El equipo necesita saber qué fallos de seguridad existen y qué corregir primero."
+  ],
+  "Revisão defensiva de código e fronteiras de confiança": [
+    "Defensive review of code and trust boundaries",
+    "Revisión defensiva del código y los límites de confianza"
+  ],
+  "Achados com evidência e prioridade": [
+    "Findings with evidence and priority",
+    "Hallazgos con evidencia y prioridad"
+  ],
+  "Reprodução segura quando viável": [
+    "Safe reproduction when feasible",
+    "Reproducción segura cuando sea viable"
+  ],
+  "Plano de correção e itens que exigem validação": [
+    "Remediation plan and items requiring validation",
+    "Plan de corrección y elementos que requieren validación"
+  ],
+  "Autorização e escopo de auditoria": [
+    "Audit authorization and scope",
+    "Autorización y alcance de auditoría"
+  ],
+  "Código disponível para inspeção": [
+    "Code available for inspection",
+    "Código disponible para inspección"
+  ],
+  "Ambiente isolado para testes executáveis": [
+    "Isolated environment for executable tests",
+    "Entorno aislado para pruebas ejecutables"
+  ],
+  "Não inclui testes contra produção ou serviços externos por padrão; não garante ausência de falhas": [
+    "Does not include testing against production or external services by default; does not guarantee the absence of flaws",
+    "No incluye pruebas contra producción o servicios externos por defecto; no garantiza la ausencia de fallos"
+  ],
+  "Análise de consumo e eficiência de sessões": [
+    "Session usage and efficiency analysis",
+    "Análisis de consumo y eficiencia de sesiones"
+  ],
+  "A equipe não sabe quais projetos e interações concentram consumo do Claude Code.": [
+    "The team does not know which projects and interactions account for Claude Code usage.",
+    "El equipo no sabe qué proyectos e interacciones concentran el consumo de Claude Code."
+  ],
+  "Relatório HTML explorável de tokens, cache e sessões": [
+    "Explorable HTML report of tokens, cache and sessions",
+    "Informe HTML explorable de tokens, caché y sesiones"
+  ],
+  "Hipóteses de otimização ligadas aos registros": [
+    "Optimization hypotheses linked to records",
+    "Hipótesis de optimización vinculadas a los registros"
+  ],
+  "Transcrições locais do Claude Code": [
+    "Local Claude Code transcripts",
+    "Transcripciones locales de Claude Code"
+  ],
+  "Node.js e analisador incluído": [
+    "Node.js and included parser",
+    "Node.js y analizador incluido"
+  ],
+  "Não é painel de faturamento oficial nem análise automática de sessões Codex": [
+    "Not an official billing dashboard or automatic Codex session analysis",
+    "No es un panel de facturación oficial ni un análisis automático de sesiones Codex"
+  ],
+  "Preparação interna para lançamento": [
+    "Internal launch preparation",
+    "Preparación interna para lanzamiento"
+  ],
+  "Publicações sem preparação dificultam detectar falhas e recuperar a operação.": [
+    "Unprepared releases make it difficult to detect failures and restore operations.",
+    "Las publicaciones sin preparación dificultan detectar fallos y recuperar la operación."
+  ],
+  "Checklist de lançamento proporcional ao risco": [
+    "Launch checklist proportionate to risk",
+    "Lista de comprobación de lanzamiento proporcional al riesgo"
+  ],
+  "Plano de monitoramento e liberação gradual": [
+    "Monitoring and gradual rollout plan",
+    "Plan de monitoreo y liberación gradual"
+  ],
+  "Estratégia de reversão e verificação após publicação": [
+    "Rollback strategy and post-publication verification",
+    "Estrategia de reversión y verificación después de publicar"
+  ],
+  "Infraestrutura e controles disponíveis": [
+    "Available infrastructure and controls",
+    "Infraestructura y controles disponibles"
+  ],
+  "Critérios de aceitação e observabilidade": [
+    "Acceptance and observability criteria",
+    "Criterios de aceptación y observabilidad"
+  ],
+  "Plano de recuperação compatível com o banco e a aplicação": [
+    "Recovery plan compatible with the database and application",
+    "Plan de recuperación compatible con la base de datos y la aplicación"
+  ],
+  "Investigação matemática em rodadas": [
+    "Mathematical investigation in rounds",
+    "Investigación matemática por rondas"
+  ],
+  "Um problema difícil precisa de exploração, revisão e registro das hipóteses.": [
+    "A difficult problem needs exploration, review and a record of hypotheses.",
+    "Un problema difícil necesita exploración, revisión y registro de hipótesis."
+  ],
+  "Registro de afirmações demonstradas, refutadas e abertas": [
+    "Record of proven, refuted and open claims",
+    "Registro de afirmaciones demostradas, refutadas y abiertas"
+  ],
+  "Documento final autocontido com limites da prova": [
+    "Self-contained final document with proof limitations",
+    "Documento final autocontenido con límites de la demostración"
+  ],
+  "Orquestração de múltiplos agentes e scripts de ledger": [
+    "Multi-agent orchestration and ledger scripts",
+    "Orquestación de múltiples agentes y scripts de registro"
+  ],
+  "Pode consumir horas e muitas execuções; escopo e orçamento precisam ser definidos": [
+    "May consume hours and many runs; scope and budget must be defined",
+    "Puede consumir horas y muchas ejecuciones; deben definirse el alcance y el presupuesto"
+  ],
+  "Preparação e organização de assinaturas": [
+    "Signature preparation and organization",
+    "Preparación y organización de firmas"
+  ],
+  "Documentos chegam para assinatura com anexos, dados ou ordem de signatários incorretos.": [
+    "Documents arrive for signature with incorrect attachments, data or signer order.",
+    "Los documentos llegan para firma con anexos, datos u orden de firmantes incorrectos."
+  ],
+  "Checklist pré-assinatura": [
+    "Pre-signature checklist",
+    "Lista de comprobación previa a la firma"
+  ],
+  "Plano de signatários e ordem de assinatura": [
+    "Signer plan and signing order",
+    "Plan de firmantes y orden de firma"
+  ],
+  "Solicitação eletrônica apenas quando houver integração autorizada": [
+    "Electronic request only with an authorized integration",
+    "Solicitud electrónica solo cuando exista una integración autorizada"
+  ],
+  "Documento final e alçadas de assinatura": [
+    "Final document and signing authorities",
+    "Documento final y facultades de firma"
+  ],
+  "Conector de assinatura eletrônica para envio; sem conector, entrega instruções de assinatura": [
+    "Electronic signature connector for sending; without a connector, provides signing instructions",
+    "Conector de firma electrónica para envío; sin conector, entrega instrucciones de firma"
+  ],
+  "Sites que organizam sua presença e captação": [
+    "Websites that organize your presence and lead capture",
+    "Sitios que organizan tu presencia y captación"
+  ],
+  "O site não comunica bem a oferta, perde oportunidades de contato ou apresenta problemas de descoberta.": [
+    "The website does not communicate the offering clearly, misses contact opportunities or is difficult to discover.",
+    "El sitio no comunica bien la oferta, pierde oportunidades de contacto o presenta problemas de descubrimiento."
+  ],
+  "Site institucional ou landing pages": [
+    "Corporate website or landing pages",
+    "Sitio corporativo o landing pages"
+  ],
+  "Estrutura de conteúdo e SEO técnico": [
+    "Content structure and technical SEO",
+    "Estructura de contenido y SEO técnico"
+  ],
+  "Formulários e fluxo de captação de interessados": [
+    "Forms and prospective customer capture flow",
+    "Formularios y flujo de captación de interesados"
+  ],
+  "Medição de conversões e conteúdo multilíngue conforme escopo": [
+    "Conversion measurement and multilingual content according to scope",
+    "Medición de conversiones y contenido multilingüe según el alcance"
+  ],
+  "Conteúdo, marca e domínio": [
+    "Content, brand and domain",
+    "Contenido, marca y dominio"
+  ],
+  "Destino de leads e integrações autorizadas": [
+    "Lead destination and authorized integrations",
+    "Destino de leads e integraciones autorizadas"
+  ],
+  "Métricas e contas de análise quando aplicáveis": [
+    "Metrics and analytics accounts where applicable",
+    "Métricas y cuentas de análisis cuando correspondan"
+  ],
+  "Sem garantia de posicionamento em buscadores ou volume de leads": [
+    "No guarantee of search rankings or lead volume",
+    "Sin garantía de posicionamiento en buscadores ni de volumen de leads"
+  ],
+  "Padronização de conhecimento operacional em skills": [
+    "Standardizing operational knowledge into skills",
+    "Estandarización del conocimiento operativo en skills"
+  ],
+  "Conhecimento do processo está disperso e não é reutilizado pelo assistente.": [
+    "Process knowledge is scattered and is not reused by the assistant.",
+    "El conocimiento del proceso está disperso y el asistente no lo reutiliza."
+  ],
+  "Skill com instruções, referências e recursos": [
+    "Skill with instructions, references and resources",
+    "Skill con instrucciones, referencias y recursos"
+  ],
+  "Critérios de uso e validação do fluxo": [
+    "Usage criteria and workflow validation",
+    "Criterios de uso y validación del flujo"
+  ],
+  "Casos de uso reais e fontes aprovadas": [
+    "Real use cases and approved sources",
+    "Casos de uso reales y fuentes aprobadas"
+  ],
+  "Pesquisa matemática com registro de evidências": [
+    "Mathematical research with recorded evidence",
+    "Investigación matemática con registro de evidencias"
+  ],
+  "Uma investigação longa precisa preservar etapas e distinguir prova de hipótese.": [
+    "A long investigation needs to preserve its steps and distinguish proof from hypothesis.",
+    "Una investigación larga necesita preservar las etapas y distinguir demostración de hipótesis."
+  ],
+  "Notas por etapa": ["Notes for each stage", "Notas por etapa"],
+  "Prova autocontida ou registro explícito do que permanece aberto": [
+    "Self-contained proof or explicit record of what remains open",
+    "Demostración autocontenida o registro explícito de lo que sigue abierto"
+  ],
+  "Revisão matemática independente antes de uso crítico": [
+    "Independent mathematical review before critical use",
+    "Revisión matemática independiente antes de un uso crítico"
+  ],
+  "Controle de acesso ao assistente pelo Telegram": [
+    "Assistant access control through Telegram",
+    "Control de acceso al asistente por Telegram"
+  ],
+  "Plugin de canal Telegram completo, configurado e disponível": [
+    "Complete, configured and available Telegram channel plugin",
+    "Plugin del canal Telegram completo, configurado y disponible"
+  ],
+  "Configuração do canal Telegram para assistentes": [
+    "Telegram channel setup for assistants",
+    "Configuración del canal Telegram para asistentes"
+  ],
+  "Triagem de acordos de confidencialidade": [
+    "Non-disclosure agreement triage",
+    "Evaluación inicial de acuerdos de confidencialidad"
+  ],
+  "O comercial precisa encaminhar NDAs para o nível correto de revisão.": [
+    "Sales needs to route NDAs to the correct level of review.",
+    "El equipo comercial necesita derivar los NDAs al nivel correcto de revisión."
+  ],
+  "Classificação preliminar de desvios": [
+    "Preliminary deviation classification",
+    "Clasificación preliminar de desviaciones"
+  ],
+  "Resumo de cláusulas e encaminhamento para revisão": [
+    "Clause summary and referral for review",
+    "Resumen de cláusulas y derivación para revisión"
+  ],
+  "NDA recebido e padrão de confidencialidade da empresa": [
+    "Received NDA and the company's confidentiality standard",
+    "NDA recibido y estándar de confidencialidad de la empresa"
+  ],
+  "Organização de contratos e pendências de fornecedores": [
+    "Organization of supplier contracts and outstanding items",
+    "Organización de contratos y asuntos pendientes de proveedores"
+  ],
+  "Não existe uma visão consolidada dos contratos e vencimentos de um fornecedor.": [
+    "There is no consolidated view of a supplier's contracts and expiration dates.",
+    "No existe una visión consolidada de los contratos y vencimientos de un proveedor."
+  ],
+  "Inventário de acordos encontrados": [
+    "Inventory of agreements found",
+    "Inventario de acuerdos encontrados"
+  ],
+  "Lacunas documentais, renovações e prazos": [
+    "Document gaps, renewals and deadlines",
+    "Lagunas documentales, renovaciones y plazos"
+  ],
+  "Documentos ou conectores de CLM, CRM, e-mail e armazenamento": [
+    "Documents or CLM, CRM, email and storage connectors",
+    "Documentos o conectores de CLM, CRM, correo y almacenamiento"
+  ],
+  "Relatório limitado às fontes efetivamente acessadas": [
+    "Report limited to sources actually accessed",
+    "Informe limitado a las fuentes realmente consultadas"
+  ],
+  "Mapeamento de jornadas a partir de gravações": [
+    "User journey mapping from recordings",
+    "Mapeo de recorridos a partir de grabaciones"
+  ],
+  "Uma interação existente precisa ser documentada antes de redesenhar ou desenvolver.": [
+    "An existing interaction needs documentation before redesign or development.",
+    "Una interacción existente necesita documentarse antes de rediseñar o desarrollar."
+  ],
+  "Storyboard de estados da interface": [
+    "Storyboard of interface states",
+    "Storyboard de estados de la interfaz"
+  ],
+  "Capturas anotadas e gatilhos de interação": [
+    "Annotated screenshots and interaction triggers",
+    "Capturas anotadas y disparadores de interacción"
+  ],
+  "Gravação de tela fornecida": [
+    "Provided screen recording",
+    "Grabación de pantalla proporcionada"
+  ],
+  "Ferramentas locais para extrair frames e enviar imagens": [
+    "Local tools to extract frames and send images",
+    "Herramientas locales para extraer fotogramas y enviar imágenes"
+  ],
+  "Vídeos de produto e conteúdo para redes": [
+    "Product videos and social content",
+    "Vídeos de producto y contenido para redes"
+  ],
+  "A empresa precisa apresentar soluções e conteúdos em vídeo com clareza e consistência.": [
+    "The company needs to present solutions and content in video clearly and consistently.",
+    "La empresa necesita presentar soluciones y contenidos en vídeo con claridad y coherencia."
+  ],
+  "Roteiro e cenas de apresentação": [
+    "Presentation script and scenes",
+    "Guion y escenas de presentación"
+  ],
+  "Vídeos verticais ou horizontais": [
+    "Vertical or horizontal videos",
+    "Vídeos verticales u horizontales"
+  ],
+  "Narração, legendas e tratamento de áudio": [
+    "Narration, captions and audio processing",
+    "Narración, subtítulos y tratamiento de audio"
+  ],
+  "Demonstrações de produto e cortes conforme material disponível": [
+    "Product demonstrations and edits based on available material",
+    "Demostraciones de producto y cortes según el material disponible"
+  ],
+  "Roteiro e identidade aprovados": [
+    "Approved script and identity",
+    "Guion e identidad aprobados"
+  ],
+  "Direitos de uso de imagens, áudio e voz": [
+    "Image, audio and voice usage rights",
+    "Derechos de uso de imágenes, audio y voz"
+  ],
+  "Ferramentas de renderização e capacidade computacional": [
+    "Rendering tools and computing capacity",
+    "Herramientas de renderizado y capacidad computacional"
+  ],
+  "Revisão audiovisual antes de divulgação": [
+    "Audiovisual review before distribution",
+    "Revisión audiovisual antes de la difusión"
+  ],
+  "Regras de automação para rotinas no Claude Code": [
+    "Automation rules for Claude Code routines",
+    "Reglas de automatización para rutinas en Claude Code"
+  ],
+  "O time precisa de lembretes e verificações recorrentes durante o desenvolvimento.": [
+    "The team needs recurring reminders and checks during development.",
+    "El equipo necesita recordatorios y verificaciones recurrentes durante el desarrollo."
+  ],
+  "Regras Hookify por evento e padrão": [
+    "Hookify rules by event and pattern",
+    "Reglas Hookify por evento y patrón"
+  ],
+  "Configuração de alertas ou bloqueios conforme escopo": [
+    "Alert or blocking configuration according to scope",
+    "Configuración de alertas o bloqueos según el alcance"
+  ],
+  "Plugin Hookify instalado": [
+    "Hookify plugin installed",
+    "Plugin Hookify instalado"
+  ],
+  "Conexão específica": ["Specific connection", "Conexión específica"],
+  "SKILL.md revisado": ["Reviewed SKILL.md", "SKILL.md revisado"],
+  "Execução da skill ainda não homologada neste ambiente": [
+    "Skill execution has not yet been validated in this environment",
+    "La ejecución de la skill aún no se ha validado en este entorno"
+  ],
+  "Python": ["Python", "Python"],
+  "Claude específico": ["Claude-specific", "Específico de Claude"],
+  "Licença de distribuição não identificada": [
+    "Distribution license not identified",
+    "Licencia de distribución no identificada"
+  ],
+  "Manifesto, integridade e dependências documentados": [
+    "Manifest, integrity and dependencies documented",
+    "Manifiesto, integridad y dependencias documentados"
+  ],
+  "Guia de primeiro uso e checklist de conferência": [
+    "First-use guide and verification checklist",
+    "Guía de primer uso y lista de comprobación"
+  ],
+  "Ambiente técnico": ["Technical environment", "Entorno técnico"],
+  "Node.js": ["Node.js", "Node.js"],
+  "Power BI": ["Power BI", "Power BI"],
+  "Figma": ["Figma", "Figma"],
+  "Conector MCP": ["MCP connector", "Conector MCP"],
+  "LibreOffice / Office": ["LibreOffice / Office", "LibreOffice / Office"],
+  "Referências locais em documentação tornadas genéricas": [
+    "Local documentation references made generic",
+    "Referencias locales de la documentación convertidas en genéricas"
+  ],
+  "Assistente + arquivos": ["Assistant + files", "Asistente + archivos"],
+  "Exemplo fictício com resultado reproduzível": [
+    "Fictional example with a reproducible result",
+    "Ejemplo ficticio con resultado reproducible"
+  ],
+  "Consolidar pedidos sem contar duas vezes": [
+    "Consolidate orders without double-counting",
+    "Consolidar pedidos sin contar dos veces"
+  ],
+  "Dois arquivos foram reunidos e o pedido P01 apareceu duas vezes.": [
+    "Two files were combined and order P01 appeared twice.",
+    "Se combinaron dos archivos y el pedido P01 apareció dos veces."
+  ],
+  "Consolide os pedidos por ID. Liste duplicatas, totalize por cliente e preserve a origem. Não elimine registros conflitantes sem me consultar.": [
+    "Consolidate orders by ID. List duplicates, total by client and preserve the source. Do not remove conflicting records without consulting me.",
+    "Consolida los pedidos por ID. Enumera los duplicados, suma por cliente y conserva el origen. No elimines registros contradictorios sin consultarme."
+  ],
+  "3 pedidos únicos; Aurora: 1700; Norte: 800; total: 2500; uma duplicata identificada.": [
+    "3 unique orders; Aurora: 1700; Norte: 800; total: 2500; one duplicate identified.",
+    "3 pedidos únicos; Aurora: 1700; Norte: 800; total: 2500; un duplicado identificado."
+  ],
+  "P01 é contado uma única vez": [
+    "P01 is counted only once",
+    "P01 se cuenta una sola vez"
+  ],
+  "O total confere com os pedidos únicos": [
+    "The total matches the unique orders",
+    "El total coincide con los pedidos únicos"
+  ],
+  "Duplicatas continuam rastreáveis": [
+    "Duplicates remain traceable",
+    "Los duplicados siguen siendo trazables"
+  ],
+  "A referência usa JSON e gera CSV. Criar Word, Excel ou PDF exige as ferramentas da skill.": [
+    "The reference uses JSON and generates CSV. Creating Word, Excel or PDF files requires the skill's tools.",
+    "La referencia utiliza JSON y genera CSV. Crear Word, Excel o PDF requiere las herramientas de la skill."
+  ],
+  "Referência determinística conferida; não é uma execução da skill por IA.": [
+    "Verified deterministic reference; this is not an AI execution of the skill.",
+    "Referencia determinista verificada; no es una ejecución de la skill mediante IA."
+  ],
+  "P01": ["P01", "P01"],
+  "Transformar decisões em compromissos claros": [
+    "Turn decisions into clear commitments",
+    "Convertir decisiones en compromisos claros"
+  ],
+  "As ações estão dispersas nas anotações; uma delas não tem prazo definido.": [
+    "Actions are scattered across notes; one has no defined deadline.",
+    "Las acciones están dispersas en las notas; una de ellas no tiene plazo definido."
+  ],
+  "Prepare uma ata em português com decisões, responsáveis e prazos. Marque informação ausente como “a confirmar”. Não envie e-mails.": [
+    "Prepare meeting minutes in English with decisions, owners and deadlines. Mark missing information as “To be confirmed”. Do not send emails.",
+    "Prepara un acta en español con decisiones, responsables y plazos. Marca la información ausente como «Por confirmar». No envíes correos."
+  ],
+  "Duas ações organizadas; a segunda com prazo “A confirmar”, sem inventar uma data.": [
+    "Two actions organized; the second has a “To be confirmed” deadline, without inventing a date.",
+    "Dos acciones organizadas; la segunda con plazo «Por confirmar», sin inventar una fecha."
+  ],
+  "As duas decisões estão presentes": [
+    "Both decisions are present",
+    "Las dos decisiones están presentes"
+  ],
+  "Responsáveis mantêm os nomes da entrada": [
+    "Owners retain the names in the input",
+    "Los responsables conservan los nombres de la entrada"
+  ],
+  "Prazo ausente é explicitado": [
+    "The missing deadline is explicit",
+    "El plazo ausente se indica explícitamente"
+  ],
+  "A referência começa com decisões estruturadas. Transcrever áudio e gerar Word/PDF são etapas separadas; o original precisa de adaptação de idioma.": [
+    "The reference starts with structured decisions. Audio transcription and Word/PDF generation are separate steps; the original requires language adaptation.",
+    "La referencia parte de decisiones estructuradas. Transcribir audio y generar Word/PDF son etapas separadas; el original requiere adaptación de idioma."
+  ],
+  "Revisão do protótipo": ["Prototype review", "Revisión del prototipo"],
+  "2026-11-06": ["2026-11-06", "2026-11-06"],
+  "Revisar o cadastro": ["Review registration", "Revisar el registro"],
+  "Ana": ["Ana", "Ana"],
+  "2026-11-10": ["2026-11-10", "2026-11-10"],
+  "Validar o relatório": ["Validate the report", "Validar el informe"],
+  "Bruno": ["Bruno", "Bruno"],
+  "A confirmar": ["To be confirmed", "Por confirmar"],
+  "Termos restritivos identificados": [
+    "Restrictive terms identified",
+    "Condiciones restrictivas identificadas"
+  ],
+  "Organizar um documento de proposta": [
+    "Organize a proposal document",
+    "Organizar un documento de propuesta"
+  ],
+  "Escopo, exclusões e aceite estão misturados em um texto informal.": [
+    "Scope, exclusions and acceptance are mixed in informal text.",
+    "El alcance, las exclusiones y la aceptación están mezclados en un texto informal."
+  ],
+  "Organize este conteúdo como proposta com objetivo, escopo, exclusões e critérios de aceite. Preserve os fatos; não invente valores ou prazos. Gere Word se as ferramentas estiverem disponíveis.": [
+    "Organize this content as a proposal with an objective, scope, exclusions and acceptance criteria. Preserve the facts; do not invent amounts or deadlines. Generate Word if the tools are available.",
+    "Organiza este contenido como una propuesta con objetivo, alcance, exclusiones y criterios de aceptación. Conserva los hechos; no inventes importes ni plazos. Genera Word si las herramientas están disponibles."
+  ],
+  "Documento estruturado em quatro seções, preservando a exclusão de integração com ERP.": [
+    "A document structured in four sections, preserving the exclusion of ERP integration.",
+    "Documento estructurado en cuatro secciones, conservando la exclusión de integración con ERP."
+  ],
+  "Escopo conserva os dois itens": [
+    "The scope retains both items",
+    "El alcance conserva los dos elementos"
+  ],
+  "Exclusões são visíveis": [
+    "Exclusions are visible",
+    "Las exclusiones son visibles"
+  ],
+  "Nenhum valor ou prazo é inventado": [
+    "No amount or deadline is invented",
+    "No se inventa ningún importe ni plazo"
+  ],
+  "A referência é Markdown. A geração e a renderização de DOCX precisam ser verificadas no seu ambiente.": [
+    "The reference is Markdown. DOCX generation and rendering need to be verified in your environment.",
+    "La referencia es Markdown. La generación y el renderizado de DOCX deben verificarse en tu entorno."
+  ],
+  "Proposta de painel operacional": [
+    "Operational dashboard proposal",
+    "Propuesta de panel operativo"
+  ],
+  "Objetivo": ["Objective", "Objetivo"],
+  "Escopo": ["Scope", "Alcance"],
+  "Mapear indicadores": ["Map metrics", "Mapear indicadores"],
+  "Construir uma página de demonstração": [
+    "Build a demonstration page",
+    "Construir una página de demostración"
+  ],
+  "Exclusões": ["Exclusions", "Exclusiones"],
+  "Integração com ERP": ["ERP integration", "Integración con ERP"],
+  "Aceite": ["Acceptance", "Aceptación"],
+  "Indicadores conferidos com uma amostra fornecida pelo cliente": [
+    "Metrics checked against a sample provided by the client",
+    "Indicadores comprobados con una muestra proporcionada por el cliente"
+  ],
+  "Termos encontrados; revisar distribuição": [
+    "Terms found; review distribution",
+    "Condiciones encontradas; revisar la distribución"
+  ],
+  "Identificar inconsistências antes da atualização": [
+    "Identify inconsistencies before refreshing",
+    "Identificar inconsistencias antes de actualizar"
+  ],
+  "Espaços, letras diferentes e um valor inválido dificultam a consolidação.": [
+    "Spaces, different letter cases and an invalid value make consolidation difficult.",
+    "Los espacios, las diferencias de mayúsculas y un valor inválido dificultan la consolidación."
+  ],
+  "Revise a preparação destes dados: normalize nomes, use a localidade pt-BR nos valores e separe erros. Mostre o código M proposto e valide a contagem; não prometa melhora sem medição.": [
+    "Review the preparation of these data: normalize names, use the pt-BR locale for values and separate errors. Show the proposed M code and validate the count; do not promise improvements without measurement.",
+    "Revisa la preparación de estos datos: normaliza los nombres, usa la configuración regional pt-BR para los valores y separa los errores. Muestra el código M propuesto y valida el recuento; no prometas mejoras sin medirlas."
+  ],
+  "ALFA totaliza 200,00; BETA permanece na lista de erros, sem ser convertido em zero.": [
+    "ALFA totals 200.00; BETA stays in the error list instead of being converted to zero.",
+    "ALFA suma 200,00; BETA permanece en la lista de errores sin convertirse en cero."
+  ],
+  "Nomes normalizados": ["Names normalized", "Nombres normalizados"],
+  "Valor inválido é separado": [
+    "The invalid value is separated",
+    "El valor inválido se separa"
+  ],
+  "Nenhum registro desaparece sem justificativa": [
+    "No record disappears without justification",
+    "Ningún registro desaparece sin justificación"
+  ],
+  "A referência reproduz a regra em JavaScript. Query folding e desempenho exigem execução na fonte e no Power Query.": [
+    "The reference reproduces the rule in JavaScript. Query folding and performance require execution at the source and in Power Query.",
+    "La referencia reproduce la regla en JavaScript. Query folding y rendimiento requieren ejecución en la fuente y en Power Query."
+  ],
+  "BETA": ["BETA", "BETA"],
+  "inválido": ["invalid", "inválido"],
+  "Dar uma sequência a uma apresentação": [
+    "Give a presentation a clear sequence",
+    "Dar una secuencia clara a una presentación"
+  ],
+  "Os fatos aparecem sem uma sequência para apoiar a decisão.": [
+    "The facts appear without a sequence to support the decision.",
+    "Los hechos aparecen sin una secuencia que apoye la decisión."
+  ],
+  "Crie uma apresentação de três slides: situação, problema e próximo passo. Use apenas os fatos fornecidos e inclua notas. Não invente economia ou resultados.": [
+    "Create a three-slide presentation: situation, problem and next step. Use only the provided facts and include notes. Do not invent savings or results.",
+    "Crea una presentación de tres diapositivas: situación, problema y próximo paso. Usa solo los hechos proporcionados e incluye notas. No inventes ahorros ni resultados."
+  ],
+  "Roteiro com três slides e notas, terminando com a conferência de 20 pedidos.": [
+    "A three-slide outline with notes, ending with the review of 20 orders.",
+    "Guion de tres diapositivas con notas, que termina con la comprobación de 20 pedidos."
+  ],
+  "Cada fato aparece em um slide": [
+    "Each fact appears on a slide",
+    "Cada hecho aparece en una diapositiva"
+  ],
+  "O piloto tem escopo claro": [
+    "The pilot has a clear scope",
+    "El piloto tiene un alcance claro"
+  ],
+  "Não há métricas de retorno inventadas": [
+    "No invented return metrics",
+    "No hay métricas de retorno inventadas"
+  ],
+  "A referência é um roteiro textual. O arquivo PPTX e sua revisão visual dependem das ferramentas disponíveis.": [
+    "The reference is a text outline. The PPTX file and its visual review depend on the available tools.",
+    "La referencia es un guion textual. El archivo PPTX y su revisión visual dependen de las herramientas disponibles."
+  ],
+  "Equipe de operações": ["Operations team", "Equipo de operaciones"],
+  "Decidir o próximo piloto": [
+    "Decide on the next pilot",
+    "Decidir el próximo piloto"
+  ],
+  "Situação": ["Situation", "Situación"],
+  "O fechamento usa três planilhas": [
+    "The closing process uses three spreadsheets",
+    "El cierre utiliza tres hojas de cálculo"
+  ],
+  "Validar este fato com o responsável antes de apresentar.": [
+    "Validate this fact with the owner before presenting it.",
+    "Valida este hecho con el responsable antes de presentarlo."
+  ],
+  "Problema": ["Problem", "Problema"],
+  "Existe duplicidade de pedidos": [
+    "There are duplicate orders",
+    "Hay pedidos duplicados"
+  ],
+  "Próximo passo": ["Next step", "Próximo paso"],
+  "O piloto vai conferir 20 pedidos": [
+    "The pilot will check 20 orders",
+    "El piloto comprobará 20 pedidos"
+  ],
+  "Conferir uma margem sem médias enganosas": [
+    "Check a margin without misleading averages",
+    "Comprobar un margen sin promedios engañosos"
+  ],
+  "A média simples das margens por produto dá 25%, mas não representa a margem consolidada.": [
+    "The simple average of product margins is 25%, but it does not represent the consolidated margin.",
+    "El promedio simple de los márgenes por producto es del 25%, pero no representa el margen consolidado."
+  ],
+  "Monte uma planilha com receita, custo, lucro e margem. Calcule a margem total por soma do lucro dividida pela soma da receita, com fórmula e tratamento de divisão por zero.": [
+    "Build a spreadsheet with revenue, cost, profit and margin. Calculate the total margin by dividing total profit by total revenue, with a formula and division-by-zero handling.",
+    "Crea una hoja de cálculo con ingresos, coste, beneficio y margen. Calcula el margen total dividiendo la suma del beneficio entre la suma de los ingresos, con fórmula y tratamiento de la división por cero."
+  ],
+  "Receita: 1100; custo: 690; lucro: 410; margem consolidada: 37,27%.": [
+    "Revenue: 1100; cost: 690; profit: 410; consolidated margin: 37.27%.",
+    "Ingresos: 1100; coste: 690; beneficio: 410; margen consolidado: 37,27%."
+  ],
+  "Lucro total é 410": ["Total profit is 410", "El beneficio total es 410"],
+  "Margem usa os totais, não média simples": [
+    "The margin uses totals, not a simple average",
+    "El margen utiliza los totales, no un promedio simple"
+  ],
+  "Receita zero não produz erro": [
+    "Zero revenue does not produce an error",
+    "Los ingresos cero no producen un error"
+  ],
+  "A referência confere a aritmética e fornece a fórmula. A criação e o recálculo do XLSX são verificados separadamente.": [
+    "The reference checks the arithmetic and provides the formula. XLSX creation and recalculation are verified separately.",
+    "La referencia comprueba la aritmética y proporciona la fórmula. La creación y el recálculo del XLSX se verifican por separado."
+  ],
+  "=IFERROR((SUM(B2:B3)-SUM(C2:C3))/SUM(B2:B3),0)": [
+    "=IFERROR((SUM(B2:B3)-SUM(C2:C3))/SUM(B2:B3),0)",
+    "=IFERROR((SUM(B2:B3)-SUM(C2:C3))/SUM(B2:B3),0)"
+  ],
+  "Comunicar uma oferta sem inventar resultados": [
+    "Communicate an offering without inventing results",
+    "Comunicar una oferta sin inventar resultados"
+  ],
+  "Uma descrição técnica longa dificulta entender a aplicação prática da oferta.": [
+    "A lengthy technical description makes the offering's practical application difficult to understand.",
+    "Una descripción técnica larga dificulta entender la aplicación práctica de la oferta."
+  ],
+  "Escreva uma publicação curta para o público informado. Conecte o problema à capacidade comprovada e ao próximo passo. Não invente clientes, depoimentos ou percentuais.": [
+    "Write a short post for the specified audience. Connect the problem to the demonstrated capability and next step. Do not invent clients, testimonials or percentages.",
+    "Escribe una publicación breve para el público indicado. Relaciona el problema con la capacidad demostrada y el próximo paso. No inventes clientes, testimonios ni porcentajes."
+  ],
+  "Texto curto que relaciona consolidação de planilhas, revisão de regras e um convite para ver o exemplo.": [
+    "A short text connecting spreadsheet consolidation, rule review and an invitation to see the example.",
+    "Texto breve que relaciona la consolidación de hojas de cálculo, la revisión de reglas y una invitación a ver el ejemplo."
+  ],
+  "Público e problema aparecem no texto": [
+    "The audience and problem appear in the text",
+    "El público y el problema aparecen en el texto"
+  ],
+  "A capacidade corresponde à entrada": [
+    "The capability matches the input",
+    "La capacidad corresponde a la entrada"
+  ],
+  "Não há promessa numérica ou depoimento inventado": [
+    "No numerical promises or invented testimonials",
+    "No hay promesas numéricas ni testimonios inventados"
+  ],
+  "A referência usa um modelo editorial determinístico. A revisão de voz da marca e a aprovação para publicação continuam necessárias.": [
+    "The reference uses a deterministic editorial template. Brand voice review and publication approval are still required.",
+    "La referencia utiliza una plantilla editorial determinista. La revisión de la voz de marca y la aprobación para publicar siguen siendo necesarias."
+  ],
+  "Gestores de operações: consolidar planilhas faz parte da sua rotina?\n\nRevisão de regras e organização de dados é um ponto de partida para entender as inconsistências.\n\nConheça um exemplo de consolidação.": [
+    "Operations managers: is consolidating spreadsheets part of your routine?\n\nReviewing rules and organizing data is a starting point for understanding inconsistencies.\n\nExplore a consolidation example.",
+    "Responsables de operaciones: ¿consolidar hojas de cálculo forma parte de tu rutina?\n\nRevisar las reglas y organizar los datos es un punto de partida para entender las inconsistencias.\n\nConoce un ejemplo de consolidación."
+  ],
+  "Rascunho para aprovação": ["Draft for approval", "Borrador para aprobación"],
+  "Reconciliar o indicador com a fonte": [
+    "Reconcile a metric with its source",
+    "Conciliar el indicador con la fuente"
+  ],
+  "O relatório e a fonte apresentam valores diferentes, mas o mês da divergência não está isolado.": [
+    "The report and source show different values, but the month with the discrepancy has not been isolated.",
+    "El informe y la fuente presentan valores distintos, pero no se ha aislado el mes de la discrepancia."
+  ],
+  "Compare a receita mensal da fonte com o relatório. Localize as diferenças, formule hipóteses verificáveis e proponha a próxima consulta. Não altere medidas antes de confirmar a regra.": [
+    "Compare monthly revenue in the source and report. Locate differences, formulate testable hypotheses and propose the next query. Do not change measures before confirming the rule.",
+    "Compara los ingresos mensuales de la fuente con el informe. Localiza las diferencias, formula hipótesis verificables y propón la próxima consulta. No modifiques medidas antes de confirmar la regla."
+  ],
+  "Jan confere; Fev apresenta diferença de +300; diferença total de +300.": [
+    "Jan matches; Feb shows a +300 difference; total difference is +300.",
+    "Ene coincide; Feb presenta una diferencia de +300; diferencia total de +300."
+  ],
+  "Comparação ocorre por mês": [
+    "Comparison is performed by month",
+    "La comparación se realiza por mes"
+  ],
+  "Diferença mantém o sinal": [
+    "The difference retains its sign",
+    "La diferencia mantiene el signo"
+  ],
+  "Hipóteses não são apresentadas como causa confirmada": [
+    "Hypotheses are not presented as confirmed causes",
+    "Las hipótesis no se presentan como causas confirmadas"
+  ],
+  "A referência compara duas amostras. Não executa DAX nem mede desempenho do Power BI.": [
+    "The reference compares two samples. It does not execute DAX or measure Power BI performance.",
+    "La referencia compara dos muestras. No ejecuta DAX ni mide el rendimiento de Power BI."
+  ],
+  "Jan": ["Jan", "Ene"],
+  "Fev": ["Feb", "Feb"],
+  "Conferir filtros, duplicidades e a regra de reconhecimento em Fev.": [
+    "Check filters, duplicates and the recognition rule in Feb.",
+    "Comprobar filtros, duplicados y la regla de reconocimiento en Feb."
+  ],
+  "Converter uma ideia em critérios verificáveis": [
+    "Turn an idea into verifiable criteria",
+    "Convertir una idea en criterios verificables"
+  ],
+  "“Quero um portal de solicitações” ainda não define perfis, estados ou critérios de aceite.": [
+    "“I want a request portal” does not yet define roles, states or acceptance criteria.",
+    "«Quiero un portal de solicitudes» aún no define perfiles, estados ni criterios de aceptación."
+  ],
+  "Proponha um protótipo com os perfis e estados fornecidos, usando dados fictícios. Relacione cada necessidade a uma tela e a um critério de aceite. Identifique decisões em aberto.": [
+    "Propose a prototype using the provided roles and states, with fictional data. Link each need to a screen and an acceptance criterion. Identify open decisions.",
+    "Propón un prototipo con los perfiles y estados proporcionados, usando datos ficticios. Relaciona cada necesidad con una pantalla y un criterio de aceptación. Identifica las decisiones pendientes."
+  ],
+  "Matriz com abertura, acompanhamento e mudança de status; permissões e persistência apontadas como decisões de implementação.": [
+    "A matrix covering creation, tracking and status changes; permissions and persistence identified as implementation decisions.",
+    "Matriz con creación, seguimiento y cambio de estado; permisos y persistencia señalados como decisiones de implementación."
+  ],
+  "Cada fluxo tem critério de aceite": [
+    "Each workflow has an acceptance criterion",
+    "Cada flujo tiene un criterio de aceptación"
+  ],
+  "Os três estados são contemplados": [
+    "All three states are covered",
+    "Se contemplan los tres estados"
+  ],
+  "Protótipo é distinguido de integração operacional": [
+    "The prototype is distinguished from an operational integration",
+    "El prototipo se distingue de una integración operativa"
+  ],
+  "A referência gera uma matriz de escopo. A navegação do protótipo é construída pelo assistente no ambiente de uso.": [
+    "The reference generates a scope matrix. Prototype navigation is built by the assistant in the usage environment.",
+    "La referencia genera una matriz de alcance. El asistente construye la navegación del prototipo en el entorno de uso."
+  ],
+  "Acompanhar solicitações de clientes": [
+    "Track customer requests",
+    "Seguir las solicitudes de clientes"
+  ],
+  "Solicitante": ["Requester", "Solicitante"],
+  "Nova solicitação": ["New request", "Nueva solicitud"],
+  "Ao salvar uma solicitação válida, exibir o estado Aberta": [
+    "When saving a valid request, display the Open state",
+    "Al guardar una solicitud válida, mostrar el estado Abierta"
+  ],
+  "Minhas solicitações": ["My requests", "Mis solicitudes"],
+  "Exibir estado e histórico de cada solicitação autorizada": [
+    "Display the state and history of each authorized request",
+    "Mostrar el estado y el historial de cada solicitud autorizada"
+  ],
+  "Gestor": ["Manager", "Responsable"],
+  "Fila de atendimento": ["Service queue", "Cola de atención"],
+  "Permitir transições entre Aberta, Em análise, Concluída": [
+    "Allow transitions between Open, Under review, Completed",
+    "Permitir transiciones entre Abierta, En revisión, Completada"
+  ],
+  "Confirmar regras de permissão": [
+    "Confirm permission rules",
+    "Confirmar las reglas de permisos"
+  ],
+  "Definir persistência e integrações": [
+    "Define persistence and integrations",
+    "Definir persistencia e integraciones"
+  ],
+  "Revisar a estrutura básica de uma página": [
+    "Review a page's basic structure",
+    "Revisar la estructura básica de una página"
+  ],
+  "A página tem título, mas falta descrição, há dois títulos principais e uma imagem sem texto alternativo.": [
+    "The page has a title but no description, two main headings and an image without alternative text.",
+    "La página tiene título, pero falta la descripción, hay dos encabezados principales y una imagen sin texto alternativo."
+  ],
+  "Faça uma revisão de conteúdo e estrutura da página. Liste evidências, prioridade e correção proposta para título, descrição, headings e imagens. Não prometa posição no Google.": [
+    "Review the page's content and structure. List evidence, priority and proposed fixes for the title, description, headings and images. Do not promise Google rankings.",
+    "Revisa el contenido y la estructura de la página. Enumera evidencias, prioridad y corrección propuesta para el título, la descripción, los encabezados y las imágenes. No prometas posiciones en Google."
+  ],
+  "Três pendências verificáveis: descrição ausente, dois H1 e imagem sem alternativa textual.": [
+    "Three verifiable issues: missing description, two H1s and an image without alternative text.",
+    "Tres problemas verificables: descripción ausente, dos H1 e imagen sin texto alternativo."
+  ],
+  "São apontadas as três pendências da amostra": [
+    "All three sample issues are identified",
+    "Se identifican los tres problemas de la muestra"
+  ],
+  "Cada problema tem uma ação sugerida": [
+    "Each issue has a suggested action",
+    "Cada problema tiene una acción sugerida"
+  ],
+  "Não há garantia de posicionamento": [
+    "There is no ranking guarantee",
+    "No hay garantía de posicionamiento"
+  ],
+  "A referência analisa metadados fictícios. Indexação, desempenho e conversões exigem testes no site real.": [
+    "The reference analyzes fictional metadata. Indexing, performance and conversions require testing on the actual website.",
+    "La referencia analiza metadatos ficticios. La indexación, el rendimiento y las conversiones requieren pruebas en el sitio real."
+  ],
+  "Serviços de dados": ["Data services", "Servicios de datos"],
+  "Descrição": ["Description", "Descripción"],
+  "Ausente": ["Missing", "Ausente"],
+  "Escrever uma descrição fiel ao conteúdo da página": [
+    "Write a description that accurately reflects the page's content",
+    "Escribir una descripción fiel al contenido de la página"
+  ],
+  "H1": ["H1", "H1"],
+  "2 títulos principais": ["2 main headings", "2 encabezados principales"],
+  "Definir um título principal e organizar os subtítulos": [
+    "Define one main heading and organize subheadings",
+    "Definir un encabezado principal y organizar los subtítulos"
+  ],
+  "equipe.png": ["equipe.png", "equipe.png"],
+  "Sem texto alternativo": ["No alternative text", "Sin texto alternativo"],
+  "Descrever o conteúdo relevante; imagem decorativa pode ter alt vazio": [
+    "Describe relevant content; decorative images may have empty alt text",
+    "Describir el contenido relevante; una imagen decorativa puede tener el alt vacío"
+  ],
+  "Revisar meu Power BI": ["Review my Power BI", "Revisar mi Power BI"],
+  "Da divergência à documentação, com evidências a cada etapa.": [
+    "From discrepancies to documentation, with evidence at every stage.",
+    "De la discrepancia a la documentación, con evidencias en cada etapa."
+  ],
+  "Localize a divergência": [
+    "Locate the discrepancy",
+    "Localiza la discrepancia"
+  ],
+  "Tabela de diferenças, regra confirmada e hipóteses verificáveis.": [
+    "Difference table, confirmed rule and testable hypotheses.",
+    "Tabla de diferencias, regla confirmada e hipótesis verificables."
+  ],
+  "Revise as medidas": ["Review the measures", "Revisa las medidas"],
+  "Medidas revisadas e comparação de resultado e execução.": [
+    "Reviewed measures and comparison of results and execution.",
+    "Medidas revisadas y comparación de resultados y ejecución."
+  ],
+  "Documente o que mudou": ["Document what changed", "Documenta los cambios"],
+  "Dicionário de métricas e decisões do modelo.": [
+    "Metric dictionary and model decisions.",
+    "Diccionario de métricas y decisiones del modelo."
+  ],
+  "Organizar minha operação": [
+    "Organize my operations",
+    "Organizar mi operación"
+  ],
+  "Transforme dados dispersos em números conferidos e comunicação clara.": [
+    "Turn scattered data into verified numbers and clear communication.",
+    "Transforma datos dispersos en cifras verificadas y comunicación clara."
+  ],
+  "Organize a base": ["Organize the data", "Organiza la base"],
+  "Planilha conferida, com fórmulas e regras documentadas.": [
+    "Verified spreadsheet with documented formulas and rules.",
+    "Hoja de cálculo verificada, con fórmulas y reglas documentadas."
+  ],
+  "Estruture o documento": [
+    "Structure the document",
+    "Estructura el documento"
+  ],
+  "Documento com fatos, decisões e pendências.": [
+    "Document with facts, decisions and outstanding items.",
+    "Documento con hechos, decisiones y asuntos pendientes."
+  ],
+  "Apresente a decisão": ["Present the decision", "Presenta la decisión"],
+  "Apresentação editável com fontes e próximo passo.": [
+    "Editable presentation with sources and a next step.",
+    "Presentación editable con fuentes y próximo paso."
+  ],
+  "Tirar uma ideia do papel": [
+    "Bring an idea to life",
+    "Hacer realidad una idea"
+  ],
+  "Valide a jornada antes de avançar para a implementação.": [
+    "Validate the journey before moving on to implementation.",
+    "Valida el recorrido antes de avanzar a la implementación."
+  ],
+  "Defina o que validar": ["Define what to validate", "Define qué validar"],
+  "Fluxos, protótipo e critérios de aceite.": [
+    "Workflows, prototype and acceptance criteria.",
+    "Flujos, prototipo y criterios de aceptación."
+  ],
+  "Defina a experiência": ["Define the experience", "Define la experiencia"],
+  "Hierarquia visual e padrões de interação.": [
+    "Visual hierarchy and interaction patterns.",
+    "Jerarquía visual y patrones de interacción."
+  ],
+  "Implemente o escopo aprovado": [
+    "Implement the approved scope",
+    "Implementa el alcance aprobado"
+  ],
+  "Aplicação testada com integrações explicitamente autorizadas.": [
+    "Tested application with explicitly authorized integrations.",
+    "Aplicación probada con integraciones explícitamente autorizadas."
+  ],
+  "Explicar minha oferta": ["Explain my offering", "Explicar mi oferta"],
+  "Conecte mensagem, presença digital e conteúdo.": [
+    "Connect messaging, digital presence and content.",
+    "Conecta mensaje, presencia digital y contenido."
+  ],
+  "Organize a mensagem": ["Organize the message", "Organiza el mensaje"],
+  "Público, fatos aprovados e pauta editorial.": [
+    "Audience, approved facts and editorial topics.",
+    "Público, hechos aprobados y temas editoriales."
+  ],
+  "Construa a página": ["Build the page", "Construye la página"],
+  "Página com oferta, evidências e chamada para ação.": [
+    "Page with an offering, evidence and a call to action.",
+    "Página con oferta, evidencias y llamada a la acción."
+  ],
+  "Prepare a apresentação": [
+    "Prepare the presentation",
+    "Prepara la presentación"
+  ],
+  "Roteiro e apresentação comercial para revisão.": [
+    "Outline and sales presentation for review.",
+    "Guion y presentación comercial para revisión."
+  ],
+  "Entregar código com confiança": [
+    "Deliver code with confidence",
+    "Entregar código con confianza"
+  ],
+  "Revisão, segurança e lançamento com verificações rastreáveis.": [
+    "Review, security and launch with traceable checks.",
+    "Revisión, seguridad y lanzamiento con verificaciones trazables."
+  ],
+  "Revise a mudança": ["Review the change", "Revisa el cambio"],
+  "Problemas priorizados, testes e correções.": [
+    "Prioritized issues, tests and fixes.",
+    "Problemas priorizados, pruebas y correcciones."
+  ],
+  "Verifique os acessos": ["Check access", "Verifica los accesos"],
+  "Evidências de proteção e riscos restantes.": [
+    "Evidence of protection and remaining risks.",
+    "Evidencias de protección y riesgos restantes."
+  ],
+  "Prepare a publicação": ["Prepare the release", "Prepara la publicación"],
+  "Checklist de release e plano de recuperação.": [
+    "Release checklist and recovery plan.",
+    "Lista de comprobación de versión y plan de recuperación."
+  ]
+}

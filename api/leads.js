@@ -1,12 +1,8 @@
-module.exports = (_req, res) => {
-  res.writeHead(410, {
-    "Content-Type": "application/json",
-    "Cache-Control": "no-store",
+const { send, initializeLocale } = require("../lib/http.cjs");
+module.exports = (req, res) => {
+  initializeLocale(req, res);
+  send(res, 410, {
+    error:
+      "O envio de briefings foi encerrado. Escolha e baixe uma skill na coleção.",
   });
-  res.end(
-    JSON.stringify({
-      error:
-        "O envio de briefings foi encerrado. Escolha e baixe uma skill na coleção.",
-    }),
-  );
 };

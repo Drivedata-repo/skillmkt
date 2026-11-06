@@ -1,8 +1,9 @@
-const { body, send, failure } = require("../lib/http.cjs");
+const { body, send, failure, initializeLocale } = require("../lib/http.cjs");
 const { requireSession } = require("../lib/auth.cjs");
 const { limit } = require("../lib/limit.cjs");
 const { findSkills, analyzeSkills } = require("../lib/match.cjs");
 module.exports = async (req, res) => {
+  const locale = initializeLocale(req, res);
   try {
     requireSession(req);
     const raw = await body(req);
@@ -19,6 +20,7 @@ module.exports = async (req, res) => {
       raw.problem,
       raw.audience,
       raw.refinement || null,
+      locale,
     );
     const { candidateIds, ...publicResult } = result;
     if (
@@ -31,7 +33,7 @@ module.exports = async (req, res) => {
         return send(
           res,
           200,
-          await analyzeSkills(raw.problem, raw.audience, result),
+          await analyzeSkills(raw.problem, raw.audience, result, locale),
         );
       } catch {
         return send(res, 200, {

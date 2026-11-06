@@ -1,5 +1,11 @@
 const fs = require("node:fs");
-const { skills } = require("../lib/catalog.cjs");
+const catalog = require("../lib/catalog.cjs");
+const { localizeCatalog } = require("../lib/catalog-i18n.cjs");
+const { translate } = require("../dist/i18n-core.js");
+const dictionary = {
+  ...require("../data/i18n-market.cjs"),
+  ...require("../data/i18n-public.cjs"),
+};
 const missions = [
   {
     id: "spreadsheets",
@@ -26,37 +32,46 @@ const missions = [
     skillId: "marketing-de-conteudo-b2b",
   },
 ];
-const result = missions.map((m) => {
-  const s = skills.find((s) => s.id === m.skillId);
-  return {
-    ...m,
-    card: {
-      id: s.id,
-      code: s.code,
-      title: s.title,
-      category: s.category,
-      role: s.role,
-      deliverables: s.deliverables,
-      featured: s.featured,
-      version: s.version,
-    },
-    example: {
-      kind: s.example.kind,
-      input: s.example.input,
-      result: s.example.result,
-      checks: s.example.checks,
-      title: s.example.title,
-      before: s.example.before,
-      expected: s.example.expected,
-      task: s.example.task,
-      limitation: s.example.limitation,
-    },
-  };
-});
+function build(locale) {
+  const { skills } = localizeCatalog(catalog, locale);
+  return missions.map((m) => {
+    const s = skills.find((s) => s.id === m.skillId);
+    return {
+      ...m,
+      label: translate(dictionary, locale, m.label),
+      short: translate(dictionary, locale, m.short),
+      card: {
+        id: s.id,
+        code: s.code,
+        title: s.title,
+        category: s.category,
+        categoryKey: s.categoryKey || s.category,
+        role: s.role,
+        deliverables: s.deliverables,
+        featured: s.featured,
+        version: s.version,
+      },
+      example: {
+        kind: s.example.kind,
+        input: s.example.input,
+        result: s.example.result,
+        checks: s.example.checks,
+        title: s.example.title,
+        before: s.example.before,
+        expected: s.example.expected,
+        task: s.example.task,
+        limitation: s.example.limitation,
+      },
+    };
+  });
+}
+const result = Object.fromEntries(
+  ["pt", "en", "es"].map((locale) => [locale, build(locale)]),
+);
 fs.writeFileSync(
   "dist/public-preview.js",
-  "// Public, fictional previews deliberately selected for the landing page.\nconst PublicPreview = " +
+  "// Public, fictional previews deliberately selected for the landing page.\nconst PublicPreview = (" +
     JSON.stringify(result, null, 2) +
-    ";\n",
+    ")[DeckI18n.locale];\n",
 );
 console.log("4 public mission previews prepared");

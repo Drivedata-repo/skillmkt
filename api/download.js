@@ -1,10 +1,11 @@
 const { requireSession } = require("../lib/auth.cjs");
-const { send, failure } = require("../lib/http.cjs");
+const { send, failure, initializeLocale } = require("../lib/http.cjs");
 const { db } = require("../lib/db.cjs");
 const { limit } = require("../lib/limit.cjs");
 const skills = require("../data/skills.cjs");
 const releases = require("../data/releases.cjs");
 module.exports = async (req, res) => {
+  initializeLocale(req, res);
   try {
     requireSession(req);
     if (req.method !== "GET")

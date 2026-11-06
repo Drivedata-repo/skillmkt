@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const cards = require("../data/skills.cjs");
+require("./build-i18n.cjs");
 require("./build-preview.cjs");
 if (cards.length !== 137 || new Set(cards.map((s) => s.code)).size !== 137)
   throw new Error("Invalid card collection");
@@ -19,6 +20,13 @@ for (const file of [
   "market.js",
   "deck-art.js",
   "deck.css",
+  "i18n.css",
+  "i18n.js",
+  "i18n-core.js",
+  "translations.js",
+  "assets/flag-pt.svg",
+  "assets/flag-en.svg",
+  "assets/flag-es.svg",
   "assets/drivedata-logo.png",
   "fonts/archivo-700.ttf",
   "fonts/archivo-LICENSE.txt",

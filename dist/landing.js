@@ -22,7 +22,10 @@ function reveal(index) {
   );
   $("#fan-main").setAttribute(
     "aria-label",
-    "Virar " + m.card.code + ": " + m.card.title,
+    DeckI18n.t("Virar {code}: {title}", {
+      code: m.card.code,
+      title: m.card.title,
+    }),
   );
   $("#mission-code").textContent = m.card.code + " / " + m.card.category;
   $("#mission-title").textContent = m.example.title;
@@ -64,16 +67,18 @@ const taskLabels = [
   },
 ];
 const number = (n) =>
-  new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 }).format(n);
+  new Intl.NumberFormat(DeckI18n.intlLocale, {
+    maximumFractionDigits: 2,
+  }).format(n);
 const percent = (n) =>
-  new Intl.NumberFormat("pt-BR", {
+  new Intl.NumberFormat(DeckI18n.intlLocale, {
     style: "percent",
     maximumFractionDigits: 2,
   }).format(n);
 function renderExample(e) {
   const r = e.result;
   if (e.kind === "margin")
-    return `<table><caption>Valores de uma amostra de vendas</caption><thead><tr><th scope="col">Produto</th><th scope="col">Receita</th><th scope="col">Custo</th><th scope="col">Lucro</th></tr></thead><tbody>${e.input.rows.map((row) => `<tr><th scope="row">${esc(row.product)}</th><td>${number(row.revenue)}</td><td>${number(row.cost)}</td><td>${number(row.revenue - row.cost)}</td></tr>`).join("")}</tbody><tfoot><tr><th scope="row">Total</th><td>${number(r.revenue)}</td><td>${number(r.cost)}</td><td>${number(r.profit)}</td></tr></tfoot></table><div class="calculation-result"><div><span>Margem consolidada</span><strong>${percent(r.margin)}</strong></div><p>${number(r.profit)} de lucro ÷ ${number(r.revenue)} de receita.<br>A margem é calculada pelos totais.</p></div>`;
+    return `<table><caption>Valores de uma amostra de vendas</caption><thead><tr><th scope="col">Produto</th><th scope="col">Receita</th><th scope="col">Custo</th><th scope="col">Lucro</th></tr></thead><tbody>${e.input.rows.map((row) => `<tr><th scope="row">${esc(row.product)}</th><td>${number(row.revenue)}</td><td>${number(row.cost)}</td><td>${number(row.revenue - row.cost)}</td></tr>`).join("")}</tbody><tfoot><tr><th scope="row">Total</th><td>${number(r.revenue)}</td><td>${number(r.cost)}</td><td>${number(r.profit)}</td></tr></tfoot></table><div class="calculation-result"><div><span>Margem consolidada</span><strong>${percent(r.margin)}</strong></div><p>${esc(DeckI18n.t("{profit} de lucro ÷ {revenue} de receita.", { profit: number(r.profit), revenue: number(r.revenue) }))}<br>A margem é calculada pelos totais.</p></div>`;
   if (e.kind === "reconcile")
     return `<table><caption>Receita por mês: fonte e relatório</caption><thead><tr><th scope="col">Mês</th><th scope="col">Fonte</th><th scope="col">Relatório</th><th scope="col">Diferença</th></tr></thead><tbody>${r.rows.map((row) => `<tr><th scope="row">${esc(row.month)}</th><td>${number(row.source)}</td><td>${number(row.report)}</td><td class="${row.difference ? "difference" : ""}">${row.difference > 0 ? "+" : ""}${number(row.difference)}</td></tr>`).join("")}</tbody></table><div class="calculation-result"><div><span>Diferença localizada em Fev</span><strong>+${number(r.totalDifference)}</strong></div><p>O desvio foi localizado. A causa ainda precisa ser investigada.</p></div><p class="result-note">Próxima conferência: filtros, duplicidades e regra de reconhecimento em fevereiro.</p>`;
   if (e.kind === "requirements")
@@ -103,10 +108,10 @@ function flip() {
   $("#fan-main").setAttribute("aria-pressed", on);
   $("#fan-main").setAttribute(
     "aria-label",
-    (on ? "Ver frente de " : "Virar ") +
-      PublicPreview[active].card.code +
-      ": " +
-      PublicPreview[active].card.title,
+    DeckI18n.t(on ? "Ver frente de {code}: {title}" : "Virar {code}: {title}", {
+      code: PublicPreview[active].card.code,
+      title: PublicPreview[active].card.title,
+    }),
   );
   play();
 }
@@ -154,8 +159,10 @@ $("#universe").onpointerleave = () => {
 $("#preview-details").onclick = () => {
   const m = PublicPreview[active];
   $("#preview-title").textContent = m.example.title;
-  $("#preview-prompt").textContent =
-    "Use a skill " + m.card.id + ". " + m.example.task;
+  $("#preview-prompt").textContent = DeckI18n.t("Use a skill {id}. {task}", {
+    id: m.card.id,
+    task: m.example.task,
+  });
   $("#preview-limits").textContent = m.example.limitation;
   $("#preview-checks").innerHTML = m.example.checks
     .map((c) => `<li>${esc(c)}</li>`)
@@ -193,7 +200,7 @@ $("#waitlist-form").onsubmit = async (e) => {
   try {
     const r = await fetch("/api/waitlist", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: DeckI18n.headers({ "Content-Type": "application/json" }),
       body: JSON.stringify(input),
       signal: AbortSignal.timeout(15000),
     });
@@ -209,7 +216,11 @@ $("#waitlist-form").onsubmit = async (e) => {
     $("#waitlist-error").textContent =
       error.name === "TimeoutError"
         ? "A conexão demorou. Seu cadastro pode ter sido recebido; tentar de novo não cria duplicatas."
-        : error.message;
+        : error.name === "TypeError"
+          ? "Não foi possível conectar. Confira sua conexão e tente novamente."
+          : error.name === "SyntaxError"
+            ? "Não foi possível concluir o cadastro."
+            : error.message;
     button.disabled = false;
     button.innerHTML = "Entrar na lista de espera <span>↗</span>";
   }

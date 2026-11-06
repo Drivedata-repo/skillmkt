@@ -120,7 +120,7 @@ $("#access-form").onsubmit = async (e) => {
   try {
     const response = await fetch("/api/session", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: DeckI18n.headers({ "Content-Type": "application/json" }),
       body: JSON.stringify({ password: $("#password").value }),
       signal: AbortSignal.timeout(15000),
     });
@@ -131,13 +131,20 @@ $("#access-form").onsubmit = async (e) => {
     tone("unlock");
     document.body.classList.add("entering");
     $("#entry-status").textContent = "ACESSO LIBERADO";
-    setTimeout(() => location.assign("/app"), reduced.matches ? 0 : 900);
+    setTimeout(
+      () => location.assign(DeckI18n.url("/app")),
+      reduced.matches ? 0 : 900,
+    );
   } catch (error) {
     tone("error");
     $("#login-error").textContent =
       error.name === "TimeoutError"
         ? "A conexão demorou. Tente novamente."
-        : error.message;
+        : error.name === "TypeError"
+          ? "Não foi possível conectar. Confira sua conexão e tente novamente."
+          : error.name === "SyntaxError"
+            ? "Não foi possível entrar."
+            : error.message;
     button.disabled = false;
     button.innerHTML =
       'Desbloquear minha próxima capacidade <span aria-hidden="true">↗</span>';
