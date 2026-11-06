@@ -2,9 +2,9 @@
 
 **Problema → skill recomendada → download.** A landing pública apresenta missões e recebe inscrições na lista de espera. A demonstração continua gratuita: a pessoa entra com a senha compartilhada, escolhe uma das 137 cartas e baixa o pacote. Não há cobrança ou checkout.
 
-Publicado em https://skillmkt-beta.vercel.app . A raiz é pública; `/login` abre a entrada da demo; `/app` exige sessão; `/privacidade` explica o uso dos dados.
+Publicado em https://deck.drivedata.com.br . A raiz é pública; `/login` abre a entrada da demo; `/app` exige sessão; `/privacidade` explica o uso dos dados. O endereço técnico `skillmkt-beta.vercel.app` permanece disponível.
 
-Nome provisório: **DriveData Deck**. URL sugerida: `deck.drivedata.com.br`, ainda não configurada por este repositório.
+Produto: **DriveData Deck**. Subdomínio `deck.drivedata.com.br` configurado e verificado na Vercel, com CNAME no Cloudflare. O domínio principal da DriveData é preservado.
 
 ## Experiência
 
