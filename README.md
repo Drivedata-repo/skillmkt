@@ -10,6 +10,7 @@ Produto: **DriveData Deck**. Subdomínio `deck.drivedata.com.br` configurado e v
 
 - Landing com cartas holográficas, paralaxe e quatro seleções de tarefa. A revisão editorial mostra amostras de planilha, conciliação de indicador, escopo de produto e conteúdo, com dados fictícios do próprio catálogo. Explica o pacote, a instalação e os dois caminhos de uso. A lista de espera é distinta da demo gratuita por senha.
 - Tipografia Archivo/Inter hospedada localmente. Direção visual e fontes da pesquisa de skills em `DESIGN.md`; efeitos concentrados nas cartas, com leitura em superfícies claras e escuras.
+- Rolagem abre uma carta em três camadas: skill, instruções e resultado ilustrativo. Conexões luminosas, perspectiva nos exemplos e movimento nos guias reforçam a apresentação. A cena fixa se adapta ao tamanho da tela; um controle de pausa acompanha a leitura.
 - Login com portal de luz, cartas em CSS 3D, reflexo holográfico, movimento e transição de desbloqueio.
 - Assinatura sonora sintetizada com Web Audio após interação do visitante; botão para silenciar. Nenhum áudio externo.
 - Movimento pode ser pausado e respeita `prefers-reduced-motion`.

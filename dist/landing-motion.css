@@ -1,0 +1,724 @@
+/* Scroll choreography is isolated from forms, authentication and the catalog. */
+.reading-beam {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  z-index: 80;
+  pointer-events: none;
+}
+.reading-beam > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #34d59a, #52a9ff);
+  transform: scaleX(var(--read-progress, 0));
+  transform-origin: left;
+  box-shadow: 0 0 12px #34d59a66;
+}
+.motion-dock {
+  position: fixed;
+  right: 20px;
+  bottom: 18px;
+  z-index: 75;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #0c1c2df2;
+  border: 1px solid #6f91ad;
+  border-radius: 6px;
+  padding: 9px 13px;
+  font-size: 11px;
+  color: #deedff;
+  box-shadow: 0 4px 20px #0003;
+}
+.motion-dock svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+.motion-dock:hover {
+  background: #163958;
+}
+.motion-dock[hidden] {
+  display: none;
+}
+.scroll-lab {
+  --spread: 1;
+  --lab-turn: 0deg;
+  --card-x: -290px;
+  --card-y: 0px;
+  --card-rot: -12deg;
+  --sheet-x: 0px;
+  --sheet-y: -12px;
+  --sheet-rot: 0deg;
+  --result-x: 290px;
+  --result-y: 12px;
+  --result-rot: 9deg;
+  --sheet-opacity: 1;
+  --result-opacity: 1;
+  --wire: 1;
+  background: #081726;
+  color: #f0f7ff;
+  position: relative;
+  border-top: 1px solid #2b4560;
+  border-bottom: 1px solid #23425c;
+  isolation: isolate;
+}
+.lab-sticky {
+  padding: 68px 0 45px;
+  overflow: clip;
+}
+.lab-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 45px;
+  position: relative;
+  z-index: 2;
+}
+.lab-heading h2 {
+  font-size: clamp(35px, 3.6vw, 51px);
+}
+.lab-heading > p {
+  max-width: 365px;
+  color: #aec6dc;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.lab-scene {
+  height: 485px;
+  position: relative;
+  margin-top: 38px;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+.lab-connections {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: #78cbe9;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.connection-track {
+  stroke: #4a718e;
+  stroke-width: 1;
+  fill: none;
+  stroke-dasharray: 4 7;
+}
+.connection-light {
+  stroke: url(#lab-line);
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--wire));
+  filter: drop-shadow(0 0 4px #45dba7);
+}
+.lab-card,
+.lab-instructions,
+.lab-result {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.lab-card {
+  width: 225px;
+  margin-left: -112.5px;
+  z-index: 4;
+  transform: translate3d(var(--card-x), var(--card-y), 80px)
+    rotateY(var(--lab-turn)) rotateZ(var(--card-rot));
+}
+.lab-card .card-info h3 {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+.lab-card .card-info p {
+  display: none;
+}
+.lab-card .card-type {
+  font-size: 7px;
+}
+.lab-card .card-heading {
+  font-size: 8px;
+}
+.lab-card .card-heading b {
+  font-size: 6px;
+}
+.lab-card .card-bottom {
+  font-size: 6px;
+}
+.lab-card .visual-label {
+  font-size: 8px;
+}
+.lab-card .card-face {
+  box-shadow:
+    0 30px 50px #0008,
+    inset 0 0 0 3px #d8fff31c;
+}
+.lab-instructions {
+  width: 268px;
+  margin-left: -134px;
+  background: linear-gradient(135deg, #1d4962f5, #10273ff5);
+  border: 1px solid #6bacc4;
+  border-radius: 10px;
+  padding: 23px 24px;
+  z-index: 3;
+  opacity: var(--sheet-opacity);
+  transform: translate3d(var(--sheet-x), var(--sheet-y), 10px)
+    rotateY(var(--lab-turn)) rotateZ(var(--sheet-rot));
+  box-shadow: 0 28px 60px #0005;
+}
+.lab-sheet-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #c0e6f0;
+  font-size: 11px;
+  margin-bottom: 23px;
+}
+.lab-instructions h3 {
+  font-size: 25px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.instruction-line {
+  display: flex;
+  gap: 15px;
+  border-top: 1px solid #6bacc450;
+  padding: 12px 0;
+}
+.instruction-line > span {
+  font-size: 10px;
+  color: #94d8c9;
+  padding-top: 3px;
+}
+.instruction-line p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.instruction-line small {
+  font-size: 10px;
+  color: #adcbdc;
+}
+.sheet-edge {
+  position: absolute;
+  top: 0;
+  left: 14%;
+  right: 14%;
+  height: 1px;
+  background: #b7fcea;
+  box-shadow: 0 0 15px #5be4bf;
+}
+.lab-result {
+  width: 270px;
+  margin-left: -135px;
+  background: #edf6fc;
+  color: #13304a;
+  border: 1px solid #bddcf0;
+  border-radius: 10px;
+  padding: 20px 23px;
+  top: 65px;
+  z-index: 2;
+  opacity: var(--result-opacity);
+  transform: translate3d(var(--result-x), var(--result-y), -20px)
+    rotateY(var(--lab-turn)) rotateZ(var(--result-rot));
+  box-shadow: 0 28px 60px #0005;
+}
+.result-window {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #425d72;
+  border-bottom: 1px solid #adc6d9;
+  padding-bottom: 13px;
+  margin-bottom: 21px;
+}
+.result-window svg {
+  width: 16px;
+  height: 16px;
+  stroke: #146d50;
+  stroke-width: 1.8;
+  fill: none;
+}
+.result-label {
+  font-size: 10px;
+  color: #425d72;
+}
+.lab-result > strong {
+  font:
+    700 58px/1.3 Archivo,
+    sans-serif;
+  letter-spacing: -0.06em;
+  display: block;
+}
+.lab-result > strong > span {
+  font-size: 26px;
+  margin-left: 3px;
+}
+.lab-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 9px;
+}
+.lab-bars > span {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+  font-size: 10px;
+  isolation: isolate;
+}
+.lab-bars > span:before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--bar);
+  background: #cadfec;
+  z-index: -1;
+  transform: scaleX(var(--wire));
+  transform-origin: left;
+}
+.lab-bars > span:last-child:before {
+  background: #b4e7ce;
+}
+.lab-result > p {
+  font-size: 10px;
+  color: #425d72;
+  margin-top: 18px;
+}
+.lab-footer {
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+.lab-phases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 18px;
+  max-width: 900px;
+  font-size: 14px;
+  color: #b8cfe3;
+}
+.lab-phases li {
+  transition: color 0.3s;
+}
+.lab-phases li > span {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #688da8;
+  border-radius: 50%;
+  font-size: 11px;
+  margin-right: 8px;
+}
+.scroll-lab[data-step="0"] .lab-phases li:nth-child(1),
+.scroll-lab[data-step="1"] .lab-phases li:nth-child(2),
+.scroll-lab[data-step="2"] .lab-phases li:nth-child(3) {
+  color: white;
+}
+.scroll-lab[data-step="0"] .lab-phases li:nth-child(1) > span,
+.scroll-lab[data-step="1"] .lab-phases li:nth-child(2) > span,
+.scroll-lab[data-step="2"] .lab-phases li:nth-child(3) > span {
+  background: #34d59a;
+  border-color: #34d59a;
+  color: #082e20;
+}
+.lab-progress {
+  height: 2px;
+  background: #36546d;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+.lab-progress > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #34d59a, #58b6ff);
+  transform: scaleX(var(--wire));
+  transform-origin: left;
+}
+.lab-footer > p {
+  color: #a5c0d6;
+  font-size: 11px;
+}
+.lab-footer > a {
+  display: inline-block;
+  color: #dcf3ff;
+  font-size: 12px;
+  margin-top: 15px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* Existing sections participate in the same scroll sequence, without hiding content. */
+.scroll-effects .hero .card-stage {
+  translate: 0 var(--hero-lift, 0px);
+}
+.scroll-effects .hero .fan-left {
+  translate: var(--hero-fan-left, 0px) 0;
+}
+.scroll-effects .hero .fan-right {
+  translate: var(--hero-fan-right, 0px) 0;
+}
+.scroll-effects .example-content {
+  transform: perspective(1200px) rotateX(var(--example-angle, 0deg))
+    translateY(var(--example-y, 0px));
+  transform-origin: 50% 100%;
+}
+.scroll-effects .package-cover {
+  transform: translateX(var(--cover-x, 0px)) rotate(var(--cover-angle, -7deg));
+  transition: none;
+}
+.scroll-effects .use-steps {
+  transform: translateX(var(--steps-x, 0px)) rotate(var(--steps-angle, 4deg));
+  transition: none;
+}
+.scroll-effects .package-section {
+  position: relative;
+}
+.package-section:before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #34d59a, #6eabff);
+  transform: scaleX(var(--package-line, 0));
+  transform-origin: left;
+  pointer-events: none;
+}
+.scroll-effects .waitlist-brand {
+  translate: var(--brand-shift, 0px) 0;
+}
+.scroll-effects .waitlist-form {
+  transform: translateY(var(--form-rise, 0px));
+  transition: none;
+}
+@media (min-width: 961px) and (min-height: 821px) {
+  .scroll-effects .scroll-lab {
+    height: 190svh;
+  }
+  .scroll-effects .lab-sticky {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px 0;
+  }
+  .scroll-effects .lab-scene {
+    height: 465px;
+    margin-top: 28px;
+    flex-shrink: 0;
+  }
+  .scroll-effects .lab-heading h2 {
+    font-size: clamp(35px, 3.3vw, 48px);
+  }
+}
+@media (max-width: 1100px) {
+  .scroll-lab {
+    --card-x: -235px;
+    --result-x: 235px;
+  }
+  .lab-heading > p {
+    max-width: 300px;
+    font-size: 13px;
+  }
+  .lab-card {
+    width: 200px;
+    margin-left: -100px;
+  }
+  .lab-instructions {
+    width: 238px;
+    margin-left: -119px;
+    padding: 22px;
+  }
+  .lab-result {
+    width: 238px;
+    margin-left: -119px;
+  }
+  .lab-card .card-info h3 {
+    font-size: 14px;
+  }
+  .lab-instructions h3 {
+    font-size: 22px;
+  }
+  .lab-phases {
+    font-size: 12px;
+  }
+  .lab-phases li > span {
+    margin-right: 4px;
+  }
+}
+@media (max-width: 960px) {
+  .scroll-lab {
+    --card-x: -220px;
+    --result-x: 220px;
+  }
+  .lab-sticky {
+    padding: 50px 0 40px;
+  }
+  .lab-scene {
+    height: 465px;
+    max-width: 760px;
+  }
+  .lab-card {
+    width: 180px;
+    margin-left: -90px;
+    top: 40px;
+  }
+  .lab-instructions {
+    width: 220px;
+    margin-left: -110px;
+    padding: 20px;
+  }
+  .lab-result {
+    width: 220px;
+    margin-left: -110px;
+    top: 72px;
+    padding: 18px;
+  }
+  .lab-instructions h3 {
+    font-size: 21px;
+  }
+  .lab-card .card-info h3 {
+    font-size: 13px;
+  }
+  .lab-heading h2 {
+    font-size: 35px;
+  }
+  .lab-result > strong {
+    font-size: 48px;
+  }
+  .lab-heading {
+    gap: 35px;
+  }
+  .lab-phases {
+    gap: 12px;
+  }
+  .lab-footer > p {
+    font-size: 10px;
+    max-width: 520px;
+    margin: auto;
+  }
+  .lab-phases li > span {
+    display: block;
+    margin: 0 auto 8px;
+  }
+  .lab-sheet-header {
+    margin-bottom: 18px;
+  }
+  .instruction-line {
+    padding: 10px 0;
+  }
+}
+@media (max-width: 640px) {
+  .motion-dock {
+    right: 12px;
+    bottom: 12px;
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  .lab-sticky {
+    padding: 45px 0 35px;
+  }
+  .lab-heading {
+    display: block;
+  }
+  .lab-heading h2 {
+    font-size: 35px;
+  }
+  .lab-heading > p {
+    font-size: 13px;
+    margin-top: 20px;
+    max-width: 330px;
+  }
+  .lab-scene {
+    height: 585px;
+    width: calc(100% - 24px);
+    margin-top: 25px;
+  }
+  .scroll-lab {
+    --card-x: -72px;
+    --card-y: 0px;
+    --card-rot: -10deg;
+    --sheet-x: 62px;
+    --sheet-y: 20px;
+    --sheet-rot: 7deg;
+    --result-x: 0px;
+    --result-y: 245px;
+    --result-rot: -3deg;
+  }
+  .lab-card {
+    width: 156px;
+    margin-left: -78px;
+    top: 12px;
+  }
+  .lab-card .card-face {
+    padding: 9px;
+  }
+  .lab-card .card-info {
+    padding: 8px;
+  }
+  .lab-card .card-info h3 {
+    font-size: 11px;
+  }
+  .lab-card .card-type {
+    font-size: 6px;
+  }
+  .lab-card .card-heading {
+    font-size: 6px;
+  }
+  .lab-card .card-heading b {
+    font-size: 4px;
+  }
+  .lab-card .visual-label {
+    font-size: 6px;
+  }
+  .lab-card .card-bottom {
+    font-size: 4px;
+  }
+  .lab-instructions {
+    width: 180px;
+    margin-left: -90px;
+    padding: 16px;
+    top: 5px;
+  }
+  .lab-instructions h3 {
+    font-size: 18px;
+    margin-bottom: 13px;
+  }
+  .lab-sheet-header {
+    font-size: 9px;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .lab-sheet-header img {
+    width: 18px;
+    height: 18px;
+  }
+  .instruction-line {
+    gap: 10px;
+    padding: 8px 0;
+  }
+  .instruction-line p {
+    font-size: 10px;
+  }
+  .instruction-line small {
+    font-size: 8px;
+  }
+  .instruction-line > span {
+    font-size: 8px;
+  }
+  .lab-result {
+    width: 230px;
+    margin-left: -115px;
+    top: 22px;
+    padding: 17px 20px;
+  }
+  .lab-result > strong {
+    font-size: 43px;
+    line-height: 1.1;
+    margin-top: 5px;
+  }
+  .lab-result > strong > span {
+    font-size: 21px;
+  }
+  .lab-bars {
+    gap: 5px;
+  }
+  .lab-bars > span {
+    padding: 4px 7px;
+    font-size: 9px;
+  }
+  .lab-result > p {
+    margin-top: 10px;
+  }
+  .result-window {
+    font-size: 9px;
+    margin-bottom: 12px;
+    padding-bottom: 9px;
+  }
+  .result-label {
+    font-size: 9px;
+  }
+  .lab-connections {
+    height: 500px;
+    opacity: 0.4;
+  }
+  .lab-phases {
+    font-size: 10px;
+    gap: 10px;
+    max-width: 350px;
+  }
+  .lab-phases li > span {
+    width: 21px;
+    height: 21px;
+    font-size: 10px;
+  }
+  .lab-footer > p {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .lab-footer > a {
+    font-size: 11px;
+  }
+  .lab-progress {
+    margin-bottom: 17px;
+  }
+  .scroll-effects .package-cover,
+  .scroll-effects .use-steps {
+    transition: none;
+  }
+  .scroll-effects .waitlist-brand {
+    translate: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-effects .scroll-lab {
+    height: auto;
+  }
+  .scroll-effects .lab-sticky {
+    position: relative;
+    height: auto;
+    display: block;
+    padding: 45px 0;
+  }
+  .scroll-effects .hero .card-stage,
+  .scroll-effects .hero .fan-left,
+  .scroll-effects .hero .fan-right,
+  .scroll-effects .waitlist-brand {
+    translate: none;
+  }
+  .scroll-effects .example-content,
+  .scroll-effects .waitlist-form {
+    transform: none;
+  }
+  .scroll-effects .package-cover {
+    transform: rotate(-7deg);
+  }
+  .scroll-effects .use-steps {
+    transform: rotate(4deg);
+  }
+  .reading-beam {
+    display: none;
+  }
+  .motion-dock {
+    display: none !important;
+  }
+  .lab-card,
+  .lab-instructions,
+  .lab-result {
+    will-change: auto;
+  }
+}

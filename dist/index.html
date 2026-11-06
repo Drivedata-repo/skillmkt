@@ -34,12 +34,20 @@
     />
     <link rel="stylesheet" href="/deck.css" />
     <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="/landing-motion.css" />
     <script src="/deck-art.js" defer></script>
     <script src="/deck-sound.js" defer></script>
     <script src="/public-preview.js" defer></script>
     <script src="/landing.js" defer></script>
+    <script src="/landing-motion.js" defer></script>
   </head>
   <body class="landing">
+    <div class="reading-beam" aria-hidden="true"><span></span></div>
+    <button class="motion-dock" id="motion-dock" aria-pressed="false" hidden>
+      <svg viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M7 4v12M13 4v12" /></svg
+      ><span>Pausar efeitos</span>
+    </button>
     <a class="skip-link" href="#main">Pular para o conteúdo</a>
     <header class="landing-header wrap">
       <a class="deck-brand" href="/" aria-label="DriveData Deck início"
@@ -130,6 +138,109 @@
         <p><strong>10</strong> exemplos reproduzíveis</p>
         <span>Escolha pela tarefa. Colecione pelo uso.</span>
       </div>
+      <section
+        class="scroll-lab"
+        id="inside-skill"
+        aria-labelledby="inside-title"
+      >
+        <div class="lab-sticky">
+          <div class="wrap lab-heading">
+            <h2 id="inside-title">
+              Abra uma carta.<br />Veja o que ela carrega.
+            </h2>
+            <p>
+              Da tarefa às instruções.<br />Das instruções a uma entrega que
+              você pode conferir.
+            </p>
+          </div>
+          <div class="lab-scene wrap" aria-hidden="true">
+            <svg
+              class="lab-connections"
+              viewBox="0 0 1100 420"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <linearGradient id="lab-line">
+                  <stop stop-color="#34d59a" />
+                  <stop offset="1" stop-color="#52a9ff" />
+                </linearGradient>
+              </defs>
+              <path
+                class="connection-track"
+                d="M140 250H350L395 205H705L750 250H960"
+              />
+              <path
+                class="connection-light"
+                pathLength="1"
+                d="M140 250H350L395 205H705L750 250H960"
+              />
+              <circle cx="140" cy="250" r="5" />
+              <circle cx="550" cy="205" r="5" />
+              <circle cx="960" cy="250" r="5" />
+            </svg>
+            <div class="lab-card" id="lab-card"></div>
+            <div class="lab-instructions">
+              <div class="lab-sheet-header">
+                <img
+                  src="/assets/drivedata-logo.png"
+                  width="22"
+                  height="22"
+                  alt=""
+                /><span>Dentro da skill</span>
+              </div>
+              <h3>Um jeito de<br />conduzir a tarefa.</h3>
+              <div class="instruction-line">
+                <span>01</span>
+                <p>
+                  Organize os dados<br /><small>Receita, custo e lucro</small>
+                </p>
+              </div>
+              <div class="instruction-line">
+                <span>02</span>
+                <p>Defina a regra<br /><small>Margem pelos totais</small></p>
+              </div>
+              <div class="instruction-line">
+                <span>03</span>
+                <p>
+                  Confira a entrega<br /><small
+                    >Fórmula e divisão por zero</small
+                  >
+                </p>
+              </div>
+              <div class="sheet-edge"></div>
+            </div>
+            <div class="lab-result">
+              <div class="result-window">
+                <span>Conferência de margem</span
+                ><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-9" /></svg>
+              </div>
+              <span class="result-label">Resultado de referência</span
+              ><strong>37,27<span>%</span></strong>
+              <div class="lab-bars">
+                <span style="--bar: 100%">Receita <b>1.100</b></span
+                ><span style="--bar: 62.73%">Custo <b>690</b></span
+                ><span style="--bar: 37.27%">Lucro <b>410</b></span>
+              </div>
+              <p>410 ÷ 1.100 = 37,27%</p>
+            </div>
+          </div>
+          <div class="wrap lab-footer">
+            <ol class="lab-phases">
+              <li><span>1</span> Escolha pela tarefa</li>
+              <li><span>2</span> Leve as instruções</li>
+              <li><span>3</span> Confira o resultado</li>
+            </ol>
+            <div class="lab-progress" aria-hidden="true"><span></span></div>
+            <p>
+              Exemplo ilustrativo com dados fictícios. A animação não representa
+              uma execução de IA.
+            </p>
+            <a href="#missions"
+              >Explorar os exemplos <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+      </section>
       <section
         class="definition-section light"
         aria-labelledby="definition-title"

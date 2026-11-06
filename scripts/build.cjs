@@ -8,6 +8,8 @@ for (const file of [
   "login.html",
   "landing.js",
   "landing.css",
+  "landing-motion.css",
+  "landing-motion.js",
   "public-preview.js",
   "privacy.html",
   "experience.css",

@@ -44,7 +44,7 @@ dúvidas frequentes / rodapé
 
 ## Princípios
 
-Não usar depoimentos, métricas de economia, clientes ou escassez inventados. As contagens vêm do catálogo. Exemplos explicitamente fictícios; saída de referência, nunca simulação de execução de IA. Não alterar login, autenticação, pacotes ou contratos do formulário. Uma chamada principal consistente: “Entrar na lista de espera”. Movimento de cartas leve, pausável e reduzido conforme preferência do sistema. Sem faixa móvel, órbitas, partículas e brilhos decorativos no fundo.
+Não usar depoimentos, métricas de economia, clientes ou escassez inventados. As contagens vêm do catálogo. Exemplos explicitamente fictícios; saída de referência, nunca simulação de execução de IA. Não alterar login, autenticação, pacotes ou contratos do formulário. Uma chamada principal consistente: “Entrar na lista de espera”. Movimento de cartas pausável e reduzido conforme preferência do sistema. Sem faixa móvel, órbitas ou partículas decorativas no fundo. O pedido posterior de mais presença tecnológica é atendido pela abertura das cartas em camadas e por conexões luminosas ligadas à explicação do produto.
 
 ## Referências de skills pesquisadas
 
@@ -61,3 +61,14 @@ Revisão da direção: manter apenas preto/verde e títulos com uma palavra colo
 - Quatro seleções de tarefa, frente/verso, pausa de movimento, controle de som e modal com comando e critérios conferidos no navegador.
 - Caminho de desenvolvimento preenche o perfil da lista. Cadastro com consentimento confirmado usando endereço fictício de teste.
 - Build e 14 testes existentes aprovados, incluindo banco, arquivos de exemplo e proteção das rotas. Nenhuma alteração na API de cadastro, autenticação ou nos pacotes da coleção.
+
+## Movimento pela rolagem
+
+A seção “Abra uma carta” fica entre os números do catálogo e a definição de skill. Uma carta se separa em instruções e resultado de referência à medida que a página desce. Perspectiva, rotação, opacidade e um traço luminoso acompanham o progresso; a sequência se recompõe ao subir. A cena é ilustrativa, com a mesma conferência de margem dos exemplos públicos.
+
+- Cena fixa somente acima de 960 px de largura e a partir de 821 px de altura. Em notebook baixo, tablet e celular, permanece no fluxo normal da página.
+- Abertura do leque no hero, chegada do exemplo em perspectiva, separação dos guias e deslocamento discreto da marca no formulário completam o movimento entre seções.
+- Controle de pausa disponível durante a leitura; reaproveita o estado do botão existente. `prefers-reduced-motion` remove a sequência fixa e mantém a composição estática.
+- Atualizações por `requestAnimationFrame` solicitadas por rolagem ou mudança de estado, sem loop permanente. Elementos fora da tela não são recalculados; a aba oculta interrompe as atualizações.
+- CSS e JavaScript isolados em `landing-motion.css` e `landing-motion.js`, sem dependências novas. Sem JavaScript, textos e links permanecem disponíveis e os painéis de referência usam posições estáticas.
+- Verificação visual em 1440×1000, 1280×700, 1024×821, 820×1100 e 390×844. Conferidos pausa/retomada, avanço e retorno das camadas, ausência de sobreposição com as legendas e navegação para exemplos e lista de espera. Sem erros de JavaScript observados. Preferência de redução inspecionada no código; não houve alteração da configuração do sistema operacional.
