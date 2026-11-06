@@ -1,21 +1,28 @@
-# DriveData Deck — demonstração privada
+# DriveData Deck — coleção 1.1 e lista de espera
 
-**Problema → skill recomendada → download.** A pessoa entra com uma senha compartilhada, descreve o que precisa resolver ou explora as 137 cartas, e baixa o pacote escolhido. Não há briefing, formulário comercial, cobrança ou checkout nesta demonstração.
+**Problema → skill recomendada → download.** A landing pública apresenta missões e recebe inscrições na lista de espera. A demonstração continua gratuita: a pessoa entra com a senha compartilhada, escolhe uma das 137 cartas e baixa o pacote. Não há cobrança ou checkout.
+
+Publicado em https://skillmkt-beta.vercel.app . A raiz é pública; `/login` abre a entrada da demo; `/app` exige sessão; `/privacidade` explica o uso dos dados.
 
 Nome provisório: **DriveData Deck**. URL sugerida: `deck.drivedata.com.br`, ainda não configurada por este repositório.
 
 ## Experiência
 
+- Landing com leque de cartas holográficas, paralaxe, quatro missões interativas, frente/verso, exemplos, caminhos para negócio e desenvolvimento e lista de espera.
 - Login com portal de luz, cartas em CSS 3D, reflexo holográfico, movimento e transição de desbloqueio.
 - Assinatura sonora sintetizada com Web Audio após interação do visitante; botão para silenciar. Nenhum áudio externo.
 - Movimento pode ser pausado e respeita `prefers-reduced-motion`.
 - Catálogo: 137 IDs permanentes `DD-001` a `DD-137`, 10 grupos, busca, filtros e frente/verso.
 - A recomendação explica a capacidade da skill e os requisitos para começar. Downloads estão liberados aos participantes da demo.
-- Cada ZIP contém o `SKILL.md` instalado, arquivos auxiliares e `COMO-USAR.md`. O download não instala ferramentas, não executa a skill e não substitui as dependências do ambiente de origem.
+- Pedidos ambíguos recebem uma pergunta curta. A seleção considera até 20 candidatos e apresenta até três indicações.
+- Dez exemplos com dados fictícios, resultado de referência e critérios de conferência. São referências determinísticas, não execuções homologadas das skills por IA.
+- Primeiro uso guiado: ambiente, instalação, comando e conferência. Meu Deck guarda favoritos, downloads, versões e progresso neste navegador, com exportação/importação JSON. Não sincroniza dados entre usuários.
+- Cinco jornadas combinam três skills cada, com roteiro baixável e entregas entre etapas.
+- Cada ZIP contém a pasta da skill, `COMO-USAR.md`, `REVISAO.md`, manifesto, hashes por arquivo e exemplo quando disponível. O download não instala ferramentas, não executa a skill e não substitui as dependências do ambiente de origem.
 
 ## Rodar localmente
 
-Node 24. Execute `npm ci`, configure `.env.local` conforme `.env.example`, `npm run build` e `npm start`. Login em http://127.0.0.1:4317/ . O servidor local escuta apenas nesta máquina.
+Node 24. Execute `npm ci`, configure `.env.local` conforme `.env.example`, `npm run build` e `npm start`. Landing em http://127.0.0.1:4317/ e login em http://127.0.0.1:4317/login . O servidor local escuta apenas nesta máquina.
 
 Para definir/trocar a senha: `node scripts/set-demo-password.cjs`. A entrada é oculta; o script grava apenas o hash scrypt e uma chave aleatória em `.env.local`, ignorado pelo Git. Reinicie o servidor após a troca. Não copie a senha nem os valores das variáveis para arquivos públicos.
 
@@ -27,11 +34,27 @@ Página `/app`, catálogo, recomendações, status e downloads exigem sessão. F
 
 ## Pacotes privados
 
-Os arquivos originais **não fazem parte deste repositório público**. `scripts/package-skills.cjs <pasta-das-skills>` prepara os 137 ZIPs em `.local/packages`, faz uma checagem de padrões de credenciais e verifica a integridade. Os arquivos originais e atribuições são preservados. O script não deve ser executado no build público, pois requer os originais locais.
+Os arquivos originais **não fazem parte deste repositório público**. `scripts/package-skills.cjs <pasta-das-skills>` prepara os 137 ZIPs em `.local/releases/1.1.0`, verifica padrões de credenciais, frontmatter e integridade. Referências pessoais de caminhos foram normalizadas em 122 arquivos de documentação; scripts, licenças e atribuições são preservados. O script não deve ser executado no build público, pois requer os originais locais. `data/releases.cjs` contém apenas metadados seguros para o catálogo. Alterações de conteúdo devem gerar uma nova versão, sem sobrescrever releases existentes.
 
-A tabela privada `skillmkt.packages` guarda o ZIP, SHA-256 e contagem de arquivos. A migração em `supabase/migrations/20261106184328_skill_packages.sql` habilita RLS e permite apenas SELECT ao papel `skillmkt_app`. `anon` e `authenticated` não têm acesso. A importação é uma operação administrativa local, separada do runtime do site. Os 137 pacotes da demo foram importados; a credencial administrativa não fica em arquivo nem na aplicação.
+A tabela privada `skillmkt.package_releases` guarda ZIP, versão, SHA-256 e manifesto. A migração `20261106204653_deck_releases.sql` habilita RLS e permite apenas SELECT ao papel `skillmkt_app`; `anon` e `authenticated` não têm acesso. A tabela antiga `skillmkt.packages` foi preservada. A importação administrativa é separada do runtime. Os 137 pacotes 1.1.0 foram importados; a credencial administrativa não fica em arquivo nem na aplicação.
 
 `GET /api/download?id=<skill-id>` valida a sessão e o ID, aplica o limite e entrega o ZIP por conexão TLS, com `Cache-Control: private, no-store`. O cliente não escolhe caminhos de arquivo. O maior pacote atual tem menos de 300 KB.
+
+O servidor confere o hash cadastrado da versão e o navegador verifica o SHA-256 do arquivo antes de iniciar o download e registrar o histórico.
+
+## Lista de espera
+
+`POST /api/waitlist` recebe nome, email, perfil, interesse e consentimento explícito. Valida tamanho, formato e origem; aplica limite de cinco solicitações/hora por IP e campo antiautomação. Emails repetidos recebem a mesma confirmação sem duplicar a inscrição. Não envia mensagens automaticamente nem confirma compra.
+
+`skillmkt.waitlist` tem RLS. O runtime só pode inserir; não pode consultar ou editar a lista. Não existe endpoint público de listagem, e a senha da demo não dá acesso aos inscritos. Para consultar a lista, use uma sessão administrativa do SQL Editor do Supabase:
+
+```sql
+select name, email, audience, interest, consent_version, created_at
+from skillmkt.waitlist
+order by created_at desc;
+```
+
+Exporte dados pessoais apenas pelo acesso administrativo autorizado. O formulário de demonstração foi testado com endereço fictício, removido após a verificação.
 
 O banco usa o transaction pooler Supabase, com validação de certificado, pool máximo 2 e sem prepared statements nomeados. Certificado público da CA em `certs/supabase-ca.crt`, obtido do endpoint usado pelo dashboard oficial.
 
@@ -54,7 +77,7 @@ As variáveis locais não são enviadas pelo Git. Não use prefixos públicos. C
 
 ## Verificar
 
-`npm test` cobre senha, sessão, expiração, adulteração, proteção de rotas, validação de ID e correspondência de skills. `node --env-file=.env.local --test tests/*.test.cjs` inclui a verificação dos 137 ZIPs no banco, hashes, manifests e restrições de leitura/escrita.
+`npm test` cobre senha, sessão, expiração, adulteração, proteção de rotas, validação de ID, seleção com refinamento, dez exemplos, importação do Deck e consentimento da lista. `node --env-file=.env.local --test tests/*.test.cjs` inclui os 137 ZIPs da versão atual, hashes por arquivo, manifests e privilégios de banco. Total: 14 testes, sem skips quando o banco está configurado.
 
 ## Evolução para venda
 

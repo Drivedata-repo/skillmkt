@@ -77,7 +77,7 @@ test("catalog, downloads and recommendations require login; app redirects", asyn
   const r = mock();
   require("../api/app.js")({ headers: {} }, r);
   assert.equal(r.status, 303);
-  assert.equal(r.headers.Location, "/");
+  assert.equal(r.headers.Location, "/login");
 });
 test("download validates ID without filesystem traversal", async () => {
   const res = mock();

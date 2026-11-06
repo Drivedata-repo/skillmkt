@@ -2,17 +2,20 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
     <meta name="theme-color" content="#050709" />
-    <title>DriveData Deck — Encontre sua próxima capacidade</title>
+    <title>DriveData Deck — Da carta ao primeiro resultado</title>
     <link rel="icon" href="/assets/drivedata-logo.png" />
     <link rel="stylesheet" href="/deck.css" />
+    <link rel="stylesheet" href="/experience.css" />
     <script src="/deck-art.js" defer></script>
+    <script src="/deck-store.js" defer></script>
+    <script src="/deck-sound.js" defer></script>
     <script src="/market.js" defer></script>
   </head>
   <body>
-    <a class="skip" href="#problem">Pular para encontrar uma skill</a>
+    <a class="skip" href="#main">Pular para o conteúdo</a>
     <header class="site-header wrap">
       <a class="brand" href="/app" aria-label="DriveData Deck início"
         ><img src="/assets/drivedata-logo.png" alt="" /><span
@@ -20,138 +23,243 @@
         ></a
       >
       <nav aria-label="Principal">
-        <span class="mode-label">Demo · downloads liberados</span
-        ><a href="#collection">Coleção</a
-        ><button class="text-button" id="logout">Sair</button>
+        <span class="mode-label">Demo gratuita</span
+        ><button id="market-sound" aria-pressed="true" class="text-button">
+          Som ativado</button
+        ><button id="logout">Sair</button>
       </nav>
     </header>
-    <main class="wrap">
-      <section class="market-intro">
-        <div>
-          <h1>Seu problema tem<br />uma próxima jogada.</h1>
-          <p>
-            Conte o que você precisa resolver. Encontre a skill certa, baixe o
-            pacote e coloque a capacidade para trabalhar.
-          </p>
+    <main id="main" class="wrap">
+      <div class="workspace-bar">
+        <div class="view-switch" aria-label="Navegação da coleção">
+          <button data-view="discover" aria-pressed="true">Descobrir</button
+          ><button data-view="deck" aria-pressed="false">
+            Meu Deck <span id="deck-count">0</span></button
+          ><button data-view="journeys" aria-pressed="false">Jornadas</button>
         </div>
-        <div class="intro-aside">
-          137 skills disponíveis<br />10 grupos de capacidades<br />Escolha.
-          Baixe. Use.
+        <div class="audience-switch" aria-label="Meu caminho">
+          <button data-audience="business" aria-pressed="true">
+            Para meu negócio</button
+          ><button data-audience="technical" aria-pressed="false">
+            Para desenvolver
+          </button>
         </div>
-      </section>
-      <form id="finder" class="finder">
-        <label class="sr-only" for="problem"
-          >Qual problema você precisa resolver?</label
-        ><textarea
-          id="problem"
-          required
-          minlength="12"
-          maxlength="2000"
-          placeholder="Meu relatório Power BI está lento e preciso descobrir o que está causando isso…"
-        ></textarea>
-        <div class="finder-bottom">
-          <div class="audience-switch" aria-label="Perfil">
-            <button type="button" data-audience="business" aria-pressed="true">
-              Minha empresa</button
-            ><button
-              type="button"
-              data-audience="technical"
-              aria-pressed="false"
-            >
-              Minha equipe técnica
+      </div>
+      <section id="discover-view" class="view-panel">
+        <section class="market-intro">
+          <div>
+            <p class="edition-line">Coleção 1.1 / Escolha. Experimente. Use.</p>
+            <h1 id="path-title">
+              Sua próxima tarefa.<br />Uma carta para começar.
+            </h1>
+            <p id="path-description">
+              Veja o que cada skill ajuda a produzir, experimente um exemplo e
+              leve um roteiro para o primeiro uso.
+            </p>
+          </div>
+          <div class="intro-aside">
+            <strong>10 exemplos</strong><br />para explorar antes de baixar<br /><strong
+              >137 capacidades</strong
+            ><br />em uma coleção versionada
+          </div>
+        </section>
+        <form id="finder" class="finder">
+          <label for="problem">O que você quer resolver?</label
+          ><textarea
+            id="problem"
+            required
+            minlength="12"
+            maxlength="2000"
+            placeholder="Preciso juntar planilhas e conferir os totais sem duplicar pedidos…"
+          ></textarea>
+          <div class="finder-bottom">
+            <p id="path-hint" class="fine">
+              Descreva a tarefa e o resultado que você precisa.
+            </p>
+            <button class="btn" id="find-skills" type="submit">
+              Encontrar minha skill ↗
             </button>
           </div>
-          <button type="submit" class="btn" id="find-skills">
-            Encontrar minha skill <span aria-hidden="true">↗</span>
+          <label id="ai-choice" class="ai-choice" hidden
+            ><input id="use-ai" type="checkbox" />Usar IA da Groq para refinar a
+            indicação. Meu relato será enviado ao provedor.</label
+          >
+          <p id="finder-error" class="error" role="alert"></p>
+        </form>
+        <div class="examples" id="example-shortcuts">
+          <span>Experimente:</span
+          ><button
+            data-example="Preciso automatizar planilhas Excel e documentos repetitivos da minha equipe."
+          >
+            Automatizar planilhas</button
+          ><button
+            data-example="Meu relatório Power BI está lento e quero otimizar minhas medidas DAX."
+          >
+            Acelerar meu Power BI</button
+          ><button
+            data-example="Quero desenhar um protótipo navegável para validar a interface do meu produto."
+          >
+            Prototipar uma ideia
           </button>
         </div>
-        <label class="ai-choice" id="ai-choice" hidden
-          ><input id="use-ai" type="checkbox" />Usar IA da Groq para refinar a
-          indicação. Meu relato será enviado ao provedor.</label
+        <section
+          id="matches"
+          class="matches"
+          aria-labelledby="matches-title"
+          hidden
         >
-        <p id="finder-error" class="error" role="alert"></p>
-      </form>
-      <div class="examples">
-        <span>Experimente:</span
-        ><button
-          data-example="Preciso automatizar planilhas Excel e documentos repetitivos da minha equipe."
-        >
-          Automatizar planilhas</button
-        ><button
-          data-example="Meu relatório Power BI está lento e quero otimizar minhas medidas DAX."
-        >
-          Acelerar meu Power BI</button
-        ><button
-          data-example="Quero desenhar um protótipo navegável para validar a interface do meu produto."
-        >
-          Prototipar uma ideia
-        </button>
-      </div>
-      <section
-        class="matches"
-        id="matches"
-        aria-labelledby="matches-title"
-        hidden
-      >
-        <div class="matches-heading">
-          <div>
-            <h2 id="matches-title" tabindex="-1">Suas próximas cartas.</h2>
-            <p id="match-summary"></p>
+          <div class="matches-heading">
+            <div>
+              <h2 id="matches-title" tabindex="-1">
+                Encontre o melhor começo.
+              </h2>
+              <p id="match-summary"></p>
+            </div>
+            <button id="clear-matches" class="text-button">
+              Limpar indicação
+            </button>
           </div>
-          <button class="text-button" id="clear-matches">
-            Limpar indicação
-          </button>
-        </div>
-        <div id="match-grid" class="match-grid"></div>
+          <div id="clarification" class="clarification" hidden></div>
+          <div id="match-grid" class="match-grid"></div>
+        </section>
+        <section
+          class="collection"
+          id="collection"
+          aria-labelledby="collection-title"
+        >
+          <div class="section-title">
+            <div>
+              <p class="edition-line">A coleção</p>
+              <h2 id="collection-title">Escolha sua próxima capacidade.</h2>
+            </div>
+            <p id="skill-count" aria-live="polite">Carregando coleção…</p>
+          </div>
+          <div class="filters">
+            <label
+              ><span class="sr-only">Buscar skill por nome ou código</span
+              ><input
+                type="search"
+                id="search"
+                placeholder="Nome, ferramenta ou DD-111" /></label
+            ><label
+              ><span class="sr-only">Grupo de capacidades</span
+              ><select id="group">
+                <option value="all">Todos os grupos</option>
+              </select></label
+            ><label
+              ><span class="sr-only">Tipo de skill</span
+              ><select id="role">
+                <option value="all">Todos os tipos</option>
+                <option value="offer">Aplicações para projetos</option>
+                <option value="platform-specific">
+                  Dependentes de plataforma
+                </option>
+                <option value="support">Apoio técnico</option>
+              </select></label
+            >
+          </div>
+          <div class="collection-options">
+            <label
+              ><input type="checkbox" id="examples-only" />Com exemplo
+              reproduzível</label
+            ><label id="all-skills-label"
+              ><input type="checkbox" id="show-all" />Incluir skills técnicas e
+              de apoio</label
+            ><label
+              >Ordenar
+              <select id="sort">
+                <option value="featured">Exemplos primeiro</option>
+                <option value="code">Identificador</option>
+                <option value="name">Nome</option>
+              </select></label
+            >
+          </div>
+          <div id="skill-grid" class="skill-grid"></div>
+          <div id="empty" class="empty" hidden>
+            Nenhuma carta com estes filtros. Ajuste a busca ou inclua as skills
+            técnicas.
+          </div>
+          <p id="load-error" class="error" role="alert"></p>
+          <div class="more-row">
+            <button id="load-more" class="btn secondary" hidden>
+              Explorar mais cartas
+            </button>
+          </div>
+        </section>
       </section>
       <section
-        class="collection"
-        id="collection"
-        aria-labelledby="collection-title"
+        id="deck-view"
+        class="view-panel"
+        hidden
+        aria-labelledby="my-deck-title"
       >
-        <div class="section-title">
-          <h2 id="collection-title">Encontre sua vantagem.</h2>
-          <p id="skill-count" aria-live="polite">Carregando coleção…</p>
+        <div class="section-hero">
+          <p class="edition-line">Sua coleção pessoal</p>
+          <h1 id="my-deck-title" tabindex="-1">Meu Deck.</h1>
+          <p>
+            Retome uma tarefa, encontre seus favoritos e confira as versões que
+            você baixou.
+          </p>
         </div>
-        <div class="filters">
-          <label
-            ><span class="sr-only">Buscar skill por nome ou código</span
+        <div class="local-note">
+          <p>
+            Salvo neste navegador. Exporte seu Deck para guardar uma cópia ou
+            levar a outro dispositivo. O arquivo contém favoritos e progresso;
+            não contém senhas nem os ZIPs.
+          </p>
+          <div>
+            <button id="export-deck" class="text-button">Exportar Deck</button
+            ><button id="import-deck" class="text-button">Importar Deck</button
             ><input
-              type="search"
-              id="search"
-              placeholder="Nome da skill, ferramenta ou DD-001" /></label
-          ><label
-            ><span class="sr-only">Grupo de capacidades</span
-            ><select id="group">
-              <option value="all">Todos os grupos</option>
-            </select></label
-          ><label
-            ><span class="sr-only">Tipo de skill</span
-            ><select id="role">
-              <option value="all">Todos os tipos</option>
-              <option value="offer">Aplicações para projetos</option>
-              <option value="platform-specific">
-                Dependentes de plataforma
-              </option>
-              <option value="support">Apoio técnico</option>
-            </select></label
-          >
+              id="import-file"
+              type="file"
+              accept=".json,application/json"
+              hidden
+            />
+          </div>
         </div>
-        <div id="skill-grid" class="skill-grid"></div>
-        <div id="empty" class="empty" hidden>
-          Nenhuma carta com esses filtros. Tente outra necessidade ou
-          ferramenta.
-        </div>
-        <p id="load-error" class="error" role="alert"></p>
-        <div class="more-row">
-          <button id="load-more" class="btn secondary" hidden>
-            Explorar mais cartas
+        <p id="storage-error" class="error" role="status"></p>
+        <div id="deck-summary" class="deck-summary"></div>
+        <div class="deck-filters" aria-label="Filtrar Meu Deck">
+          <button data-deck-filter="all" aria-pressed="true">Tudo</button
+          ><button data-deck-filter="favorites" aria-pressed="false">
+            Favoritos</button
+          ><button data-deck-filter="downloads" aria-pressed="false">
+            Baixados</button
+          ><button data-deck-filter="updates" aria-pressed="false">
+            Atualizações
           </button>
         </div>
+        <div id="my-deck-grid" class="skill-grid"></div>
+        <div id="deck-empty" class="empty" hidden>
+          <h2>Sua coleção começa com uma escolha.</h2>
+          <p>Salve uma carta ou baixe uma skill para encontrá-la aqui.</p>
+          <button class="btn" data-view="discover">Explorar a coleção</button>
+        </div>
+        <div id="history-section">
+          <h2>Histórico de downloads</h2>
+          <div id="download-history"></div>
+        </div>
+      </section>
+      <section
+        id="journeys-view"
+        class="view-panel"
+        hidden
+        aria-labelledby="journeys-title"
+      >
+        <div class="section-hero">
+          <p class="edition-line">Uma sequência que faz sentido</p>
+          <h1 id="journeys-title" tabindex="-1">Combine capacidades.</h1>
+          <p>
+            Cada etapa deixa uma entrega para a próxima. As skills são usadas no
+            seu assistente; você controla o que já conferiu.
+          </p>
+        </div>
+        <div id="journey-grid" class="journey-grid"></div>
       </section>
       <footer class="site-footer">
-        <span>DriveData Deck · Uma coleção DriveData.</span
-        ><span>Demonstração interna. Downloads liberados, sem cobrança.</span
+        <span>DriveData Deck · Coleção 1.1</span
+        ><span>Demonstração gratuita. Sem compra ou cobrança.</span
         ><a href="https://drivedata.com.br" target="_blank" rel="noopener"
           >Conheça a DriveData ↗</a
         >

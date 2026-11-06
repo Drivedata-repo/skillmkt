@@ -5,7 +5,8 @@ module.exports = (req, res) => {
     requireSession(req);
     if (req.method !== "GET")
       return send(res, 405, { error: "Método não permitido." });
-    send(res, 200, { skills: require("../data/skills.cjs"), mode: "demo" });
+    const { skills, journeys } = require("../lib/catalog.cjs");
+    send(res, 200, { skills, journeys, mode: "demo", edition: "1.1.0" });
   } catch (e) {
     failure(res, e);
   }

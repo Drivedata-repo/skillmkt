@@ -2,102 +2,441 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#050709" />
-    <title>DriveData Deck — Conhecimento em suas mãos</title>
+    <title>DriveData Deck — Conhecimento em outra dimensão</title>
     <meta
       name="description"
-      content="Uma coleção de capacidades DriveData. Acesso à demonstração privada."
+      content="Descubra skills em cartas interativas, encontre uma capacidade para sua tarefa e entre na lista de espera do DriveData Deck."
+    />
+    <meta
+      property="og:title"
+      content="DriveData Deck — Sua próxima capacidade começa aqui"
+    />
+    <meta
+      property="og:description"
+      content="Uma coleção de skills para transformar problemas em próximos passos. Explore as cartas e entre na lista de espera."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://skillmkt-beta.vercel.app/assets/drivedata-logo.png"
     />
     <link rel="icon" href="/assets/drivedata-logo.png" />
-    <link
-      rel="preload"
-      href="/fonts/inter.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
     <link rel="stylesheet" href="/deck.css" />
+    <link rel="stylesheet" href="/landing.css" />
     <script src="/deck-art.js" defer></script>
-    <script src="/login.js" defer></script>
+    <script src="/deck-sound.js" defer></script>
+    <script src="/public-preview.js" defer></script>
+    <script src="/landing.js" defer></script>
   </head>
-  <body class="login-page">
-    <header class="login-header">
+  <body class="landing">
+    <a class="skip" href="#missions">Pular para explorar</a>
+    <div class="ambient-field" aria-hidden="true">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <header class="landing-header">
       <a class="brand" href="/" aria-label="DriveData Deck início"
         ><img src="/assets/drivedata-logo.png" alt="" /><span
           ><strong>DriveData Deck</strong><small>by DriveData</small></span
         ></a
-      ><button id="sound" class="sound-button" aria-pressed="true">
-        <span class="sound-bars" aria-hidden="true"
-          ><i></i><i></i><i></i><i></i></span
-        ><span id="sound-label">Som ativado</span>
+      >
+      <nav aria-label="Principal">
+        <a href="#missions">Explore</a><a href="#how-it-works">Como funciona</a
+        ><a class="demo-link" href="/login">Entrar na demo ↗</a>
+      </nav>
+      <button id="landing-sound" class="sound-button" aria-pressed="false">
+        Ativar som
       </button>
     </header>
-    <main class="login-layout">
-      <div
-        class="login-scene"
-        aria-label="Cartas holográficas da coleção DriveData Deck"
-      >
-        <div class="starfield"></div>
-        <div class="portal"></div>
-        <div class="orbit-label">
-          DRIVEDATA DECK COLLECTION<br />137 CAPACIDADES / 10 UNIVERSOS
+    <main>
+      <section class="landing-hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="launch-marker">
+            <span></span>Uma nova coleção de possibilidades
+          </p>
+          <h1 id="hero-title">
+            Conhecimento.<br /><span>Em outra<br />dimensão.</span>
+          </h1>
+          <p class="hero-description">
+            Sua próxima ideia merece mais do que ficar na cabeça. Encontre uma
+            skill, revele o que ela pode fazer e dê o primeiro passo.
+          </p>
+          <div class="hero-actions">
+            <a class="btn landing-cta" href="#waitlist"
+              >Quero fazer parte <span>↗</span></a
+            ><a class="text-button" href="#missions">Explorar as cartas</a>
+          </div>
+          <p class="hero-note">Entre na lista de espera. Sem cobrança.</p>
         </div>
-        <div id="scene-left" class="scene-side left" aria-hidden="true"></div>
-        <div id="scene-main" class="scene-main"></div>
-        <div id="scene-right" class="scene-side" aria-hidden="true"></div>
-        <button id="motion" class="scene-motion" aria-pressed="false">
-          Pausar movimento
-        </button>
-        <div class="scene-coordinate">
-          <span>Conhecimento em movimento.</span><span>DD / 01</span>
+        <div
+          class="universe"
+          id="universe"
+          aria-label="Prévia interativa das cartas"
+        >
+          <div class="universe-grid" aria-hidden="true"></div>
+          <div class="universe-orbit orbit-one" aria-hidden="true"></div>
+          <div class="universe-orbit orbit-two" aria-hidden="true"></div>
+          <div class="universe-core" aria-hidden="true"></div>
+          <div class="universe-label">DRIVEDATA / DECK</div>
+          <div class="fan-card fan-left" id="fan-left" aria-hidden="true"></div>
+          <button
+            class="fan-card fan-main"
+            id="fan-main"
+            aria-label="Explorar a carta em destaque"
+          ></button>
+          <div
+            class="fan-card fan-right"
+            id="fan-right"
+            aria-hidden="true"
+          ></div>
+          <span class="universe-coordinate coordinate-a" aria-hidden="true"
+            >137 capacidades<br />10 universos</span
+          ><span class="universe-coordinate coordinate-b" aria-hidden="true"
+            >Conhecimento<br />em movimento</span
+          >
+          <div class="scene-control">
+            <button id="landing-motion" aria-pressed="false">
+              Pausar movimento</button
+            ><span>Mova o cursor. Escolha uma missão.</span>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#missions"
+          ><span>Continue explorando</span><b>↓</b></a
+        >
+      </section>
+      <div class="ticker" aria-label="Capacidades da coleção">
+        <div>
+          <span>Dados que fazem sentido</span><i>✦</i
+          ><span>Ideias que viram interfaces</span><i>✦</i
+          ><span>Rotinas com menos retrabalho</span><i>✦</i
+          ><span>Conteúdo com direção</span><i>✦</i
+          ><span aria-hidden="true">Dados que fazem sentido</span
+          ><i aria-hidden="true">✦</i
+          ><span aria-hidden="true">Ideias que viram interfaces</span>
         </div>
       </div>
-      <section class="access-panel" aria-labelledby="access-title">
-        <div class="access-kicker">Sua próxima capacidade começa aqui.</div>
-        <h1 id="access-title">O próximo nível.<br />Em suas mãos.</h1>
-        <p>
-          Skills que transformam intenção em ação. Entre, descubra sua próxima
-          carta e leve o conhecimento com você.
-        </p>
-        <form id="access-form">
-          <label class="password-label" for="password">Senha de acesso</label>
-          <div class="password-box">
-            <input
-              type="password"
-              id="password"
-              name="password"
-              required
-              maxlength="256"
-              autocomplete="current-password"
-              placeholder="Digite a senha do seu convite"
-            /><button
-              id="show-password"
-              type="button"
-              aria-pressed="false"
-              aria-label="Mostrar ou ocultar senha"
-            >
-              Mostrar
+      <section
+        class="mission-section landing-wrap"
+        id="missions"
+        aria-labelledby="missions-title"
+      >
+        <div class="section-lead">
+          <p class="section-index">01 / Escolha sua missão</p>
+          <h2 id="missions-title">
+            Um problema real.<br />Uma próxima jogada.
+          </h2>
+          <p>
+            Comece pelo que você precisa resolver. Toque em uma missão para
+            revelar uma carta e um exemplo do resultado.
+          </p>
+        </div>
+        <div
+          class="mission-tabs"
+          aria-label="Missões para explorar"
+          id="mission-tabs"
+        ></div>
+        <div class="mission-stage">
+          <div class="mission-card-frame">
+            <div class="mission-aura" aria-hidden="true"></div>
+            <button
+              id="mission-card"
+              class="mission-card"
+              aria-label="Virar carta da missão"
+            ></button
+            ><button id="flip-preview" class="text-button" aria-pressed="false">
+              Ver verso da carta
             </button>
           </div>
-          <button class="btn login-submit" id="enter" type="submit">
-            Desbloquear minha próxima capacidade
-            <span aria-hidden="true">↗</span>
-          </button>
-          <p id="login-error" class="error" role="alert"></p>
-        </form>
-        <div class="access-note">
-          <span>ACESSO POR CONVITE</span><span>EDIÇÃO DE DEMONSTRAÇÃO</span>
+          <div class="mission-story" aria-live="polite">
+            <p class="mission-code" id="mission-code"></p>
+            <h3 id="mission-title"></h3>
+            <div class="transformation">
+              <div>
+                <span>O ponto de partida</span>
+                <p id="mission-before"></p>
+              </div>
+              <div class="transformation-arrow" aria-hidden="true">↓</div>
+              <div class="result-preview">
+                <span>Um resultado de referência</span>
+                <p id="mission-after"></p>
+              </div>
+            </div>
+            <p class="example-disclosure">
+              Exemplo com dados fictícios. O resultado é uma referência
+              didática, não uma execução de IA neste site.
+            </p>
+            <div class="mission-actions">
+              <button id="preview-details" class="text-button">
+                Ver o comando e os limites</button
+              ><a id="mission-join" class="btn landing-cta" href="#waitlist"
+                >Quero explorar essa capacidade ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="how-section landing-wrap"
+        id="how-it-works"
+        aria-labelledby="how-title"
+      >
+        <div class="section-lead">
+          <p class="section-index">02 / Da carta ao resultado</p>
+          <h2 id="how-title">Não termina<br />na escolha.</h2>
+          <p>
+            Uma skill é um conjunto de instruções e materiais que orienta seu
+            assistente. O Deck ajuda você a escolher e começar.
+          </p>
+        </div>
+        <div class="how-track">
+          <article>
+            <span>01</span>
+            <h3>Encontre seu começo.</h3>
+            <p>
+              Descreva a tarefa. Compare capacidades e veja o que precisa ter em
+              mãos.
+            </p>
+            <div class="how-drawing drawing-search" aria-hidden="true">
+              <i></i><b>Problema → capacidade</b>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Monte seu Deck.</h3>
+            <p>
+              Salve cartas, combine uma jornada e confira exemplos antes de
+              baixar.
+            </p>
+            <div class="how-drawing drawing-deck" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Coloque em prática.</h3>
+            <p>
+              Instale no seu assistente, copie o primeiro comando e confira sua
+              entrega.
+            </p>
+            <div class="how-drawing drawing-command" aria-hidden="true">
+              <code
+                >Use esta skill para…<br /><span
+                  >✓ conferir o resultado</span
+                ></code
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="audience-section landing-wrap">
+        <p class="section-index">03 / Dois caminhos, uma coleção</p>
+        <div class="audience-panels">
+          <article>
+            <span>Para quem move o negócio</span>
+            <h2>“Preciso resolver<br />isso.”</h2>
+            <p>
+              Resultados de exemplo, requisitos claros e passos para começar sem
+              precisar conhecer o nome de cada ferramenta.
+            </p>
+            <button data-join-audience="business" class="text-button">
+              Esse é meu caminho ↗
+            </button>
+          </article>
+          <article>
+            <span>Para quem constrói a solução</span>
+            <h2>“Preciso fazer<br />isso funcionar.”</h2>
+            <p>
+              Versões, dependências, arquivos e comandos para levar conhecimento
+              estruturado ao seu ambiente.
+            </p>
+            <button data-join-audience="technical" class="text-button">
+              Esse é meu caminho ↗
+            </button>
+          </article>
+        </div>
+      </section>
+      <section
+        class="waitlist-section"
+        id="waitlist"
+        aria-labelledby="waitlist-title"
+      >
+        <div class="waitlist-orb" aria-hidden="true"></div>
+        <div class="landing-wrap waitlist-layout">
+          <div class="waitlist-copy">
+            <p class="launch-marker">
+              <span></span>A próxima coleção começa com você
+            </p>
+            <h2 id="waitlist-title">Garanta seu lugar<br />na conversa.</h2>
+            <p>
+              Entre na lista para receber contato sobre o lançamento e contar
+              quais capacidades fazem falta na sua rotina.
+            </p>
+            <p class="waitlist-note">
+              Cadastro gratuito. Sem compra, cobrança ou promessa de data.
+            </p>
+            <a href="/login" class="text-button"
+              >Já tem a senha? Entre na demo ↗</a
+            >
+          </div>
+          <form id="waitlist-form" class="waitlist-form">
+            <label for="wait-name">Como podemos chamar você?</label
+            ><input
+              id="wait-name"
+              name="name"
+              autocomplete="given-name"
+              required
+              minlength="2"
+              maxlength="100"
+              placeholder="Seu nome"
+            /><label for="wait-email">Seu melhor e-mail</label
+            ><input
+              id="wait-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              maxlength="254"
+              placeholder="voce@empresa.com"
+            />
+            <div class="waitlist-selects">
+              <label
+                >Meu caminho<select id="wait-audience" name="audience">
+                  <option value="business">Negócio e operação</option>
+                  <option value="technical">
+                    Desenvolvimento e tecnologia
+                  </option>
+                </select></label
+              ><label
+                >Meu interesse<select id="wait-interest" name="interest">
+                  <option value="explore">Explorar a coleção</option>
+                  <option value="spreadsheets">Planilhas e documentos</option>
+                  <option value="bi">Dados e Power BI</option>
+                  <option value="product">Interfaces e produtos</option>
+                  <option value="content">Conteúdo e presença digital</option>
+                </select></label
+              >
+            </div>
+            <div class="honeypot" aria-hidden="true">
+              <label for="wait-website">Website</label
+              ><input
+                id="wait-website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+            <label class="wait-consent"
+              ><input
+                id="wait-consent"
+                name="consent"
+                type="checkbox"
+                required
+              /><span
+                >Quero receber contato da DriveData sobre o lançamento do Deck e
+                li o
+                <a href="/privacidade" target="_blank" rel="noopener"
+                  >aviso de privacidade</a
+                >.</span
+              ></label
+            ><button type="submit" id="join-waitlist" class="btn landing-cta">
+              Entrar na lista de espera <span>↗</span>
+            </button>
+            <p id="waitlist-error" role="alert"></p>
+            <p class="form-note">
+              Seus dados não ficam visíveis para outros visitantes.
+            </p>
+          </form>
+          <div
+            id="waitlist-success"
+            class="waitlist-success"
+            hidden
+            tabindex="-1"
+            role="status"
+          >
+            <div class="success-sigil" aria-hidden="true">✓</div>
+            <p class="section-index">Interesse registrado</p>
+            <h3>Você faz parte<br />do próximo capítulo.</h3>
+            <p>
+              Seu cadastro foi recebido. A DriveData poderá entrar em contato
+              sobre o lançamento. Nenhuma compra ou cobrança foi feita.
+            </p>
+            <a class="btn secondary" href="#missions">Continuar explorando</a>
+          </div>
+        </div>
+      </section>
+      <section class="faq-section landing-wrap">
+        <h2>Antes da próxima jogada.</h2>
+        <div class="faq-grid">
+          <details>
+            <summary>O que eu recebo ao baixar uma skill?</summary>
+            <p>
+              Um ZIP com instruções, materiais auxiliares, manifesto de versão e
+              guia de uso. Algumas cartas incluem exemplos fictícios
+              reproduzíveis.
+            </p>
+          </details>
+          <details>
+            <summary>A skill funciona sozinha?</summary>
+            <p>
+              Ela orienta um assistente que precisa ter as ferramentas e os
+              acessos exigidos. Baixar o pacote não instala programas nem
+              executa ações automaticamente.
+            </p>
+          </details>
+          <details>
+            <summary>A demo é gratuita?</summary>
+            <p>
+              Sim. Quem tem a senha pode explorar e baixar as skills da
+              demonstração. A lista de espera também é gratuita e não cria uma
+              compra.
+            </p>
+          </details>
+          <details>
+            <summary>Funciona em qualquer IA?</summary>
+            <p>
+              A compatibilidade depende do formato, das ferramentas e dos
+              conectores de cada ambiente. A ficha da carta mostra os
+              requisitos; a revisão do pacote não significa execução homologada
+              em todas as plataformas.
+            </p>
+          </details>
         </div>
       </section>
     </main>
-    <footer class="login-footer">
-      <span>DriveData · Inteligência que se move com você.</span
-      ><span>Escolha. Baixe. Use.</span>
+    <footer class="landing-footer landing-wrap">
+      <a class="brand" href="/"
+        ><img src="/assets/drivedata-logo.png" alt="" /><strong
+          >DriveData Deck</strong
+        ></a
+      >
+      <p>Conhecimento para o seu próximo movimento.</p>
+      <div>
+        <a href="/privacidade">Privacidade</a><a href="/login">Entrar na demo</a
+        ><a href="https://drivedata.com.br" target="_blank" rel="noopener"
+          >DriveData ↗</a
+        >
+      </div>
     </footer>
-    <div class="entry-flash" aria-hidden="true"></div>
-    <div class="entry-status" id="entry-status" role="status"></div>
-    <noscript>Ative JavaScript para acessar a demonstração.</noscript>
+    <dialog id="preview-dialog" aria-labelledby="preview-title">
+      <button id="close-preview" aria-label="Fechar exemplo">×</button>
+      <p class="section-index">Por dentro da carta</p>
+      <h2 id="preview-title"></h2>
+      <h3>Um comando para começar</h3>
+      <p id="preview-prompt"></p>
+      <h3>O que este exemplo não testa</h3>
+      <p id="preview-limits"></p>
+      <a class="btn landing-cta" href="#waitlist" id="preview-join"
+        >Entrar na lista ↗</a
+      >
+    </dialog>
+    <noscript
+      ><p class="noscript-notice">
+        Ative JavaScript para explorar as cartas e cadastrar seu interesse.
+        <a href="/login">Acessar demo</a>.
+      </p></noscript
+    >
   </body>
 </html>

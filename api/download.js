@@ -3,6 +3,7 @@ const { send, failure } = require("../lib/http.cjs");
 const { db } = require("../lib/db.cjs");
 const { limit } = require("../lib/limit.cjs");
 const skills = require("../data/skills.cjs");
+const releases = require("../data/releases.cjs");
 module.exports = async (req, res) => {
   try {
     requireSession(req);
@@ -13,8 +14,8 @@ module.exports = async (req, res) => {
     if (!skill) return send(res, 404, { error: "Skill não encontrada." });
     await limit(req, "demo-download", 150);
     const r = await db().query(
-      "SELECT archive,sha256 FROM skillmkt.packages WHERE skill_id=$1",
-      [id],
+      "SELECT archive,sha256 FROM skillmkt.package_releases WHERE skill_id=$1 AND version=$2",
+      [id, releases[id].version],
     );
     if (!r.rowCount)
       return send(res, 503, {
@@ -22,6 +23,8 @@ module.exports = async (req, res) => {
           "Este pacote ainda não está disponível. Tente novamente mais tarde.",
       });
     const { archive, sha256 } = r.rows[0];
+    if (sha256 !== releases[id].sha256)
+      throw new Error("Package integrity metadata mismatch");
     res.writeHead(200, {
       "Content-Type": "application/zip",
       "Content-Disposition": `attachment; filename="${skill.code}-${skill.id}.zip"`,
@@ -29,6 +32,7 @@ module.exports = async (req, res) => {
       "Cache-Control": "private, no-store",
       "X-Content-Type-Options": "nosniff",
       "X-Package-SHA256": sha256,
+      "X-Package-Version": releases[id].version,
     });
     res.end(archive);
   } catch (e) {

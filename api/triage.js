@@ -15,7 +15,12 @@ module.exports = async (req, res) => {
       return send(res, 400, {
         error: "Descreva seu problema com 12 a 2.000 caracteres.",
       });
-    const result = findSkills(raw.problem, raw.audience);
+    const result = findSkills(
+      raw.problem,
+      raw.audience,
+      raw.refinement || null,
+    );
+    const { candidateIds, ...publicResult } = result;
     if (
       raw.useAI === true &&
       process.env.GROQ_API_KEY &&
@@ -30,13 +35,13 @@ module.exports = async (req, res) => {
         );
       } catch {
         return send(res, 200, {
-          ...result,
+          ...publicResult,
           notice:
             "A IA não respondeu. As indicações usam as capacidades do catálogo.",
         });
       }
     }
-    return send(res, 200, result);
+    return send(res, 200, publicResult);
   } catch (e) {
     failure(res, e);
   }

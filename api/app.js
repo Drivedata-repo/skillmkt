@@ -3,7 +3,7 @@ const fs = require("node:fs"),
   path = require("node:path");
 module.exports = (req, res) => {
   if (!authenticated(req)) {
-    res.writeHead(303, { Location: "/", "Cache-Control": "no-store" });
+    res.writeHead(303, { Location: "/login", "Cache-Control": "no-store" });
     return res.end();
   }
   res.writeHead(200, {

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#050709" />
+    <title>DriveData Deck — Conhecimento em suas mãos</title>
+    <meta
+      name="description"
+      content="Uma coleção de capacidades DriveData. Acesso à demonstração privada."
+    />
+    <link rel="icon" href="/assets/drivedata-logo.png" />
+    <link
+      rel="preload"
+      href="/fonts/inter.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/deck.css" />
+    <script src="/deck-art.js" defer></script>
+    <script src="/login.js" defer></script>
+  </head>
+  <body class="login-page">
+    <header class="login-header">
+      <a class="brand" href="/" aria-label="DriveData Deck início"
+        ><img src="/assets/drivedata-logo.png" alt="" /><span
+          ><strong>DriveData Deck</strong><small>by DriveData</small></span
+        ></a
+      ><button id="sound" class="sound-button" aria-pressed="true">
+        <span class="sound-bars" aria-hidden="true"
+          ><i></i><i></i><i></i><i></i></span
+        ><span id="sound-label">Som ativado</span>
+      </button>
+    </header>
+    <main class="login-layout">
+      <div
+        class="login-scene"
+        aria-label="Cartas holográficas da coleção DriveData Deck"
+      >
+        <div class="starfield"></div>
+        <div class="portal"></div>
+        <div class="orbit-label">
+          DRIVEDATA DECK COLLECTION<br />137 CAPACIDADES / 10 UNIVERSOS
+        </div>
+        <div id="scene-left" class="scene-side left" aria-hidden="true"></div>
+        <div id="scene-main" class="scene-main"></div>
+        <div id="scene-right" class="scene-side" aria-hidden="true"></div>
+        <button id="motion" class="scene-motion" aria-pressed="false">
+          Pausar movimento
+        </button>
+        <div class="scene-coordinate">
+          <span>Conhecimento em movimento.</span><span>DD / 01</span>
+        </div>
+      </div>
+      <section class="access-panel" aria-labelledby="access-title">
+        <div class="access-kicker">Sua próxima capacidade começa aqui.</div>
+        <h1 id="access-title">O próximo nível.<br />Em suas mãos.</h1>
+        <p>
+          Skills que transformam intenção em ação. Entre, descubra sua próxima
+          carta e leve o conhecimento com você.
+        </p>
+        <form id="access-form">
+          <label class="password-label" for="password">Senha de acesso</label>
+          <div class="password-box">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              maxlength="256"
+              autocomplete="current-password"
+              placeholder="Digite a senha do seu convite"
+            /><button
+              id="show-password"
+              type="button"
+              aria-pressed="false"
+              aria-label="Mostrar ou ocultar senha"
+            >
+              Mostrar
+            </button>
+          </div>
+          <button class="btn login-submit" id="enter" type="submit">
+            Desbloquear minha próxima capacidade
+            <span aria-hidden="true">↗</span>
+          </button>
+          <p id="login-error" class="error" role="alert"></p>
+        </form>
+        <div class="access-note">
+          <span>ACESSO POR CONVITE</span><span>EDIÇÃO DE DEMONSTRAÇÃO</span>
+        </div>
+      </section>
+    </main>
+    <footer class="login-footer">
+      <span>DriveData · Inteligência que se move com você.</span
+      ><span>Escolha. Baixe. Use.</span>
+    </footer>
+    <div class="entry-flash" aria-hidden="true"></div>
+    <div class="entry-status" id="entry-status" role="status"></div>
+    <noscript>Ative JavaScript para acessar a demonstração.</noscript>
+  </body>
+</html>

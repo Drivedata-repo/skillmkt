@@ -9,7 +9,11 @@
       "includeFiles": "{lib/**,certs/**,data/**,views/**}"
     }
   },
-  "rewrites": [{ "source": "/app", "destination": "/api/app" }],
+  "rewrites": [
+    { "source": "/app", "destination": "/api/app" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/privacidade", "destination": "/privacy.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
