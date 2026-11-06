@@ -1,39 +1,61 @@
-# DriveData Skill Marketplace
+# DriveData Deck — demonstração privada
 
-Catálogo comercial com **137 cartas de skills**, **22 soluções** e caminhos para empresas e equipes técnicas. Interface em português com logo DriveData, cartas holográficas CSS 3D, giro da vitrine, frente/verso, busca, filtros e briefing com envio ou download.
+**Problema → skill recomendada → download.** A pessoa entra com uma senha compartilhada, descreve o que precisa resolver ou explora as 137 cartas, e baixa o pacote escolhido. Não há briefing, formulário comercial, cobrança ou checkout nesta demonstração.
 
-## Executar
+Nome provisório: **DriveData Deck**. URL sugerida: `deck.drivedata.com.br`, ainda não configurada por este repositório.
 
-Node 24, `npm ci`, copie `.env.example` para `.env.local` e configure as variáveis do servidor. `npm run build` e `npm start`. Prévia em http://127.0.0.1:4317.
+## Experiência
 
-`npm test` valida catálogo e entradas. `node --env-file=.env.local --test tests/*.test.cjs` inclui teste real do banco em transação revertida. `npm run db:check` verifica TLS e papel restrito.
+- Login com portal de luz, cartas em CSS 3D, reflexo holográfico, movimento e transição de desbloqueio.
+- Assinatura sonora sintetizada com Web Audio após interação do visitante; botão para silenciar. Nenhum áudio externo.
+- Movimento pode ser pausado e respeita `prefers-reduced-motion`.
+- Catálogo: 137 IDs permanentes `DD-001` a `DD-137`, 10 grupos, busca, filtros e frente/verso.
+- A recomendação explica a capacidade da skill e os requisitos para começar. Downloads estão liberados aos participantes da demo.
+- Cada ZIP contém o `SKILL.md` instalado, arquivos auxiliares e `COMO-USAR.md`. O download não instala ferramentas, não executa a skill e não substitui as dependências do ambiente de origem.
 
-## IA
+## Rodar localmente
 
-Integração preparada para **Qwen3.8-27B**, pesos abertos Apache 2.0, hospedado pela **Groq**. Configure `GROQ_API_KEY` e `GROQ_MODEL` no servidor. A Groq é um serviço hospedado, não um servidor privado. Conta/chave são necessárias; limites gratuitos e cobrança dependem da conta. Sem chave, consentimento, resposta válida ou disponibilidade, a triagem usa o catálogo local e informa o modo utilizado.
+Node 24. Execute `npm ci`, configure `.env.local` conforme `.env.example`, `npm run build` e `npm start`. Login em http://127.0.0.1:4317/ . O servidor local escuta apenas nesta máquina.
 
-A IA recebe apenas desafio, ferramentas, resultado esperado, área e ofertas públicas. Contatos não são incluídos pelo aplicativo. O visitante deve evitar inserir dados pessoais/sensíveis no relato. Consentimento é opcional e desmarcado. A saída é validada contra IDs do catálogo; não executa ferramentas, não fixa preços ou prazos.
+Para definir/trocar a senha: `node scripts/set-demo-password.cjs`. A entrada é oculta; o script grava apenas o hash scrypt e uma chave aleatória em `.env.local`, ignorado pelo Git. Reinicie o servidor após a troca. Não copie a senha nem os valores das variáveis para arquivos públicos.
 
-Fontes: [modelos Groq](https://console.groq.com/docs/models), [modelo Qwen](https://huggingface.co/Qwen/Qwen3.8-27B), [limites](https://console.groq.com/docs/rate-limits), [chave](https://console.groq.com/keys).
+## Acesso
 
-## PostgreSQL / Supabase
+`POST /api/session` valida a senha no servidor. A sessão assinada dura 8 horas, em cookie HttpOnly/SameSite=Strict. Na Vercel, usa Secure e prefixo `__Host-`. Mudar o hash ou a chave invalida todas as sessões anteriores. Sair remove o cookie do navegador; esta demo não oferece administração individual de sessões nem contas por comprador.
 
-Schema privado `skillmkt`, separado das demais aplicações. `leads` registra contato, contexto, soluções, skills e versão do consentimento. `rate_limits` limita envios e IA por IP com hash HMAC; não armazena IP bruto. A aplicação usa papel `skillmkt_app` com permissões restritas e RLS, sem acesso de leitura aos contatos. O usuário administrador consulta os pedidos pelo SQL Editor autenticado do projeto; não há painel público de leads.
+Página `/app`, catálogo, recomendações, status e downloads exigem sessão. Falta de configuração bloqueia o acesso. Login usa limite persistido no banco de 25 tentativas/hora por IP; downloads, 150/hora por IP. O IP é armazenado apenas como hash HMAC no contador. As chaves e pacotes nunca estão no JavaScript público. O antigo endpoint de leads retorna 410; registros anteriores não foram apagados.
 
-A migração está em `supabase/migrations`. Em outro banco, crie um papel LOGIN `skillmkt_app` com senha forte via canal seguro e aplique a migração com usuário administrador. A senha administrativa não pertence às variáveis do site. A migração cria um schema novo deliberadamente e não apaga objetos existentes. Não reaplique em schema já configurado.
+## Pacotes privados
 
-Conexão pelo transaction pooler IPv4, pool de no máximo 2 conexões por instância, sem prepared statements nomeados. TLS verifica identidade e certificado com `certs/supabase-ca.crt`, obtido do endereço oficial usado pelo dashboard: https://supabase-downloads.s3-ap-southeast-1.amazonaws.com/prod/ssl/prod-ca-2021.crt . Não desative a validação TLS.
+Os arquivos originais **não fazem parte deste repositório público**. `scripts/package-skills.cjs <pasta-das-skills>` prepara os 137 ZIPs em `.local/packages`, faz uma checagem de padrões de credenciais e verifica a integridade. Os arquivos originais e atribuições são preservados. O script não deve ser executado no build público, pois requer os originais locais.
 
-Envio possui chave idempotente: uma repetição retorna o mesmo protocolo; alteração com a mesma chave é rejeitada. Não dispara e-mails nem mensagens automaticamente. Atendimento e exclusão dos pedidos são feitos pela equipe autorizada no banco. Defina a política operacional de retenção antes de campanhas públicas.
+A tabela privada `skillmkt.packages` guarda o ZIP, SHA-256 e contagem de arquivos. A migração em `supabase/migrations/20261106184328_skill_packages.sql` habilita RLS e permite apenas SELECT ao papel `skillmkt_app`. `anon` e `authenticated` não têm acesso. A importação é uma operação administrativa local, separada do runtime do site. Os 137 pacotes da demo foram importados; a credencial administrativa não fica em arquivo nem na aplicação.
+
+`GET /api/download?id=<skill-id>` valida a sessão e o ID, aplica o limite e entrega o ZIP por conexão TLS, com `Cache-Control: private, no-store`. O cliente não escolhe caminhos de arquivo. O maior pacote atual tem menos de 300 KB.
+
+O banco usa o transaction pooler Supabase, com validação de certificado, pool máximo 2 e sem prepared statements nomeados. Certificado público da CA em `certs/supabase-ca.crt`, obtido do endpoint usado pelo dashboard oficial.
+
+## Indicação de skills
+
+`lib/match.cjs` relaciona o problema aos nomes, capacidades e descrições do catálogo. Não inventa novas skills. Falta de relação gera orientação para detalhar a tarefa. O perfil ajusta o público da recomendação.
+
+Se `GROQ_API_KEY` estiver configurada e o visitante optar por IA, **Qwen3.8-27B via Groq** refina a justificativa entre os candidatos existentes. A saída é validada por schema/IDs, com timeout e retorno ao catálogo em caso de falha. O visitante é informado antes de enviar seu relato à Groq. Sem chave, a recomendação por capacidades continua funcionando. A chamada real ao modelo exige chave própria e não foi validada nesta demo.
 
 ## Vercel
 
-Importe este repositório como framework **Other**. Build `npm run build`, output `dist`, funções Node em `api/`. Em Settings → Environment Variables, configure `DATABASE_URL` do papel restrito, `RATE_LIMIT_SECRET`, `GROQ_API_KEY` (opcional) e `GROQ_MODEL`. Nunca use prefixo `NEXT_PUBLIC_`. Use variáveis próprias para Preview se não quiser pedidos de teste no banco de produção. A publicação deve ser verificada após o build; push não comprova deploy.
+Importe `Drivedata-repo/skillmkt`, framework **Other**, build `npm run build`, output `dist`. `vercel.json` configura as funções e a página autenticada. Configure no servidor:
 
-## Catálogo e cartas
+- `DATABASE_URL`: conexão do papel restrito, sem parâmetros que desativem a validação TLS.
+- `RATE_LIMIT_SECRET`: segredo HMAC dos limites.
+- `DEMO_PASSWORD_HASH` e `DEMO_SESSION_SECRET`: valores gerados pelo script local.
+- `GROQ_API_KEY` e `GROQ_MODEL`: opcionais.
 
-`dist/catalog.js`: ofertas comerciais revisadas. `dist/skills.js`: metadados públicos das 137 skills. IDs `DD-001` a `DD-137` são permanentes nesta coleção; ao adicionar uma carta, use o próximo código livre, sem renumerar. Acabamento HOLO é visual, não pontuação, homologação, exclusividade ou escassez real. Dependências e variantes são explicitadas no detalhe.
+As variáveis locais não são enviadas pelo Git. Não use prefixos públicos. Configure o domínio apenas após vincular o projeto correto. Push não comprova deploy; verifique o status e o fluxo no endereço publicado.
 
-Os originais SKILL.md, caminhos locais, credenciais e histórico de clientes não fazem parte deste repositório público. `scripts/export-cards.cjs` importa apenas campos permitidos de um inventário revisado; não regenere códigos após mudanças sem preservar o mapa existente. Conteúdos restritos têm descrição pública genérica.
+## Verificar
 
-Movimento reduzido do sistema é respeitado; a vitrine permite pausar. Efeito “4D” é uma experiência visual de profundidade e holografia em CSS 3D, sem equipamento especial. Fontes locais e suas licenças ficam em `dist/fonts`. Logo fornecido pela DriveData.
+`npm test` cobre senha, sessão, expiração, adulteração, proteção de rotas, validação de ID e correspondência de skills. `node --env-file=.env.local --test tests/*.test.cjs` inclui a verificação dos 137 ZIPs no banco, hashes, manifests e restrições de leitura/escrita.
+
+## Evolução para venda
+
+Esta demo libera todos os pacotes após a senha. A versão comercial precisa de contas individuais, checkout, confirmação de pagamento no servidor e autorização de download por compra. Não reutilize a senha compartilhada como controle de compra. A preparação do catálogo comercial também deve definir quais originais e licenças podem ser distribuídos para cada público; o acervo atual foi preparado para demonstração interna autorizada.

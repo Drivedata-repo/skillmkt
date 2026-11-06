@@ -11,7 +11,7 @@ const mime = {
   ".txt": "text/plain",
 };
 const routes = Object.fromEntries(
-  ["triage", "leads", "status"].map((n) => [
+  ["triage", "leads", "status", "session", "app", "catalog", "download"].map((n) => [
     "/api/" + n,
     require("./api/" + n + ".js"),
   ]),
@@ -20,6 +20,7 @@ http
   .createServer(async (req, res) => {
     try {
       const url = new URL(req.url, "http://localhost");
+      if(url.pathname==='/app')return await routes['/api/app'](req,res);
       if (routes[url.pathname]) return await routes[url.pathname](req, res);
       const file = path.resolve(
         root,

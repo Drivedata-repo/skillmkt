@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#050709" />
+    <title>DriveData Deck — Encontre sua próxima capacidade</title>
+    <link rel="icon" href="/assets/drivedata-logo.png" />
+    <link rel="stylesheet" href="/deck.css" />
+    <script src="/deck-art.js" defer></script>
+    <script src="/market.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#problem">Pular para encontrar uma skill</a>
+    <header class="site-header wrap">
+      <a class="brand" href="/app" aria-label="DriveData Deck início"
+        ><img src="/assets/drivedata-logo.png" alt="" /><span
+          ><strong>DriveData Deck</strong><small>by DriveData</small></span
+        ></a
+      >
+      <nav aria-label="Principal">
+        <span class="mode-label">Demo · downloads liberados</span
+        ><a href="#collection">Coleção</a
+        ><button class="text-button" id="logout">Sair</button>
+      </nav>
+    </header>
+    <main class="wrap">
+      <section class="market-intro">
+        <div>
+          <h1>Seu problema tem<br />uma próxima jogada.</h1>
+          <p>
+            Conte o que você precisa resolver. Encontre a skill certa, baixe o
+            pacote e coloque a capacidade para trabalhar.
+          </p>
+        </div>
+        <div class="intro-aside">
+          137 skills disponíveis<br />10 grupos de capacidades<br />Escolha.
+          Baixe. Use.
+        </div>
+      </section>
+      <form id="finder" class="finder">
+        <label class="sr-only" for="problem"
+          >Qual problema você precisa resolver?</label
+        ><textarea
+          id="problem"
+          required
+          minlength="12"
+          maxlength="2000"
+          placeholder="Meu relatório Power BI está lento e preciso descobrir o que está causando isso…"
+        ></textarea>
+        <div class="finder-bottom">
+          <div class="audience-switch" aria-label="Perfil">
+            <button type="button" data-audience="business" aria-pressed="true">
+              Minha empresa</button
+            ><button
+              type="button"
+              data-audience="technical"
+              aria-pressed="false"
+            >
+              Minha equipe técnica
+            </button>
+          </div>
+          <button type="submit" class="btn" id="find-skills">
+            Encontrar minha skill <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <label class="ai-choice" id="ai-choice" hidden
+          ><input id="use-ai" type="checkbox" />Usar IA da Groq para refinar a
+          indicação. Meu relato será enviado ao provedor.</label
+        >
+        <p id="finder-error" class="error" role="alert"></p>
+      </form>
+      <div class="examples">
+        <span>Experimente:</span
+        ><button
+          data-example="Preciso automatizar planilhas Excel e documentos repetitivos da minha equipe."
+        >
+          Automatizar planilhas</button
+        ><button
+          data-example="Meu relatório Power BI está lento e quero otimizar minhas medidas DAX."
+        >
+          Acelerar meu Power BI</button
+        ><button
+          data-example="Quero desenhar um protótipo navegável para validar a interface do meu produto."
+        >
+          Prototipar uma ideia
+        </button>
+      </div>
+      <section
+        class="matches"
+        id="matches"
+        aria-labelledby="matches-title"
+        hidden
+      >
+        <div class="matches-heading">
+          <div>
+            <h2 id="matches-title" tabindex="-1">Suas próximas cartas.</h2>
+            <p id="match-summary"></p>
+          </div>
+          <button class="text-button" id="clear-matches">
+            Limpar indicação
+          </button>
+        </div>
+        <div id="match-grid" class="match-grid"></div>
+      </section>
+      <section
+        class="collection"
+        id="collection"
+        aria-labelledby="collection-title"
+      >
+        <div class="section-title">
+          <h2 id="collection-title">Encontre sua vantagem.</h2>
+          <p id="skill-count" aria-live="polite">Carregando coleção…</p>
+        </div>
+        <div class="filters">
+          <label
+            ><span class="sr-only">Buscar skill por nome ou código</span
+            ><input
+              type="search"
+              id="search"
+              placeholder="Nome da skill, ferramenta ou DD-001" /></label
+          ><label
+            ><span class="sr-only">Grupo de capacidades</span
+            ><select id="group">
+              <option value="all">Todos os grupos</option>
+            </select></label
+          ><label
+            ><span class="sr-only">Tipo de skill</span
+            ><select id="role">
+              <option value="all">Todos os tipos</option>
+              <option value="offer">Aplicações para projetos</option>
+              <option value="platform-specific">
+                Dependentes de plataforma
+              </option>
+              <option value="support">Apoio técnico</option>
+            </select></label
+          >
+        </div>
+        <div id="skill-grid" class="skill-grid"></div>
+        <div id="empty" class="empty" hidden>
+          Nenhuma carta com esses filtros. Tente outra necessidade ou
+          ferramenta.
+        </div>
+        <p id="load-error" class="error" role="alert"></p>
+        <div class="more-row">
+          <button id="load-more" class="btn secondary" hidden>
+            Explorar mais cartas
+          </button>
+        </div>
+      </section>
+      <footer class="site-footer">
+        <span>DriveData Deck · Uma coleção DriveData.</span
+        ><span>Demonstração interna. Downloads liberados, sem cobrança.</span
+        ><a href="https://drivedata.com.br" target="_blank" rel="noopener"
+          >Conheça a DriveData ↗</a
+        >
+      </footer>
+    </main>
+    <dialog
+      id="skill-dialog"
+      class="download-dialog"
+      aria-labelledby="detail-title"
+    >
+      <button class="close" id="close-detail" aria-label="Fechar carta">
+        ×
+      </button>
+      <div id="skill-detail"></div>
+    </dialog>
+    <div id="toast" class="toast" role="status" hidden></div>
+    <noscript>Ative JavaScript para explorar as cartas.</noscript>
+  </body>
+</html>

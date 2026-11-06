@@ -58,7 +58,7 @@ Object.assign(restricted, {
   offers: [],
 });
 fs.writeFileSync(
-  "dist/skills.js",
+  "data/skills.cjs",
   "const SKILLS = " +
     JSON.stringify(cards, null, 2) +
     ";\nif(typeof module!=='undefined')module.exports=SKILLS;\n",

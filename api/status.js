@@ -1,12 +1,10 @@
-module.exports = (_req, res) => {
-  res.writeHead(200, {
-    "Content-Type": "application/json",
-    "Cache-Control": "no-store",
-  });
-  res.end(
-    JSON.stringify({
-      aiConfigured: !!process.env.GROQ_API_KEY,
-      leadsConfigured: !!process.env.DATABASE_URL,
-    }),
-  );
+const { requireSession } = require("../lib/auth.cjs");
+const { send, failure } = require("../lib/http.cjs");
+module.exports = (req, res) => {
+  try {
+    requireSession(req);
+    send(res, 200, { aiConfigured: !!process.env.GROQ_API_KEY, mode: "demo" });
+  } catch (e) {
+    failure(res, e);
+  }
 };

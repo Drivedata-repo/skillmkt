@@ -6,9 +6,10 @@
   "functions": {
     "api/*.js": {
       "maxDuration": 30,
-      "includeFiles": "{lib/**,certs/**,dist/catalog.js,dist/skills.js}"
+      "includeFiles": "{lib/**,certs/**,data/**,views/**}"
     }
   },
+  "rewrites": [{ "source": "/app", "destination": "/api/app" }],
   "headers": [
     {
       "source": "/(.*)",
