@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.vercel/
+.local/
+coverage/
+*.log
+dist/vendor/
+dist/catalog-source.js
+supabase/.temp/

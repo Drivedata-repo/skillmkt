@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Encontre soluções para dados, automação, sistemas e crescimento. Conte seu desafio e organize seu próximo projeto com a DriveData."
+    />
+    <title>DriveData — Seu desafio, nossa próxima solução</title>
+    <link rel="icon" href="assets/drivedata-logo.png" />
+    <link rel="stylesheet" href="variables.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="catalog.js" defer></script>
+    <script src="skills.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="cards.js" defer></script>
+    <script src="sales.js" defer></script>
+    <link rel="stylesheet" href="cards.css" />
+  </head>
+  <body>
+    <a class="skip" href="#catalogo">Pular para o catálogo</a>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#inicio" aria-label="DriveData início"
+          ><img
+            src="assets/drivedata-logo.png"
+            alt=""
+            width="32"
+            height="32"
+          />drive<span>data</span
+          ><span class="brand-mark" aria-hidden="true">↗</span></a
+        >
+        <nav aria-label="Principal">
+          <a href="#colecao">Skills</a><a href="#catalogo">Soluções</a
+          ><a href="#como-funciona">Como funciona</a
+          ><button class="nav-link" id="briefing-nav">
+            Meu briefing <span class="count" id="count">0</span>
+          </button>
+        </nav>
+        <button class="btn primary small" data-start>
+          Encontrar solução <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section id="inicio" class="hero wrap">
+        <div class="hero-copy">
+          <div class="hero-top mono">
+            <span class="cross" aria-hidden="true">+</span> Tecnologia a serviço
+            do seu próximo passo
+          </div>
+          <h1>Seu próximo avanço.<br />Na carta certa.</h1>
+          <p class="lead">
+            137 skills. Um universo de possibilidades.<br />Conte seu desafio e
+            descubra quais capacidades<br class="desktop-break" />
+            podem transformar seu próximo projeto.
+          </p>
+          <div class="audience" aria-label="Seu perfil">
+            <button data-audience="business" aria-pressed="true">
+              Para minha empresa</button
+            ><button data-audience="technical" aria-pressed="false">
+              Para minha equipe técnica
+            </button>
+          </div>
+          <a class="text-link collection-link" href="#colecao"
+            >Explorar a coleção de skills ↗</a
+          >
+        </div>
+        <div class="card-stage" id="card-stage">
+          <div id="showcase-card"></div>
+          <div class="stage-controls">
+            <button id="previous-card" aria-label="Carta anterior">←</button
+            ><span id="showcase-code" class="mono"></span
+            ><button id="next-card" aria-label="Próxima carta">→</button
+            ><button id="motion-toggle" aria-pressed="false">
+              Pausar giro
+            </button>
+          </div>
+          <p class="stage-caption">Mova o cursor. Explore cada dimensão.</p>
+        </div>
+        <div class="hero-dock">
+          <form class="hero-input" id="quick-form">
+            <label class="sr-only" for="quick-pain"
+              >Qual desafio você quer resolver?</label
+            ><textarea
+              id="quick-pain"
+              rows="2"
+              maxlength="2000"
+              placeholder="Ex.: minha equipe perde horas consolidando planilhas para fechar o mês..."
+            ></textarea>
+            <div class="input-bottom">
+              <span class="mono"
+                >Comece pelo problema. A tecnologia vem depois.</span
+              ><button class="btn primary" type="submit">
+                Explorar caminhos <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </form>
+          <div class="examples">
+            <span>Ou comece por:</span
+            ><button
+              data-example="Quero automatizar tarefas repetitivas com planilhas e documentos."
+            >
+              Automatizar minha rotina</button
+            ><button
+              data-example="Preciso de indicadores confiáveis em um dashboard Power BI."
+            >
+              Entender meus dados</button
+            ><button
+              data-example="Quero validar uma ideia de plataforma antes de construir."
+            >
+              Tirar uma ideia do papel
+            </button>
+          </div>
+          <div id="signal-bars" hidden></div>
+        </div>
+      </section>
+      <section
+        id="colecao"
+        class="collection wrap"
+        aria-labelledby="collection-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="kicker mono">DriveData / Coleção de capacidades</p>
+            <h2 id="collection-title">
+              Uma skill. Uma carta.<br />Novas possibilidades.
+            </h2>
+          </div>
+          <p>
+            Explore o que cada capacidade faz.<br />Monte uma seleção para o seu
+            projeto.
+          </p>
+        </div>
+        <div class="collection-tools">
+          <label class="search"
+            ><span aria-hidden="true">⌕</span
+            ><span class="sr-only">Buscar skills</span
+            ><input
+              id="skill-search"
+              type="search"
+              placeholder="Nome, capacidade ou código DD-001" /></label
+          ><label
+            ><span class="sr-only">Grupo de skills</span
+            ><select id="skill-group">
+              <option value="all">Todos os grupos</option>
+            </select></label
+          ><label
+            ><span class="sr-only">Tipo de skill</span
+            ><select id="skill-role">
+              <option value="all">Todos os tipos</option>
+              <option value="offer">Aplicações para projetos</option>
+              <option value="support">Apoio técnico</option>
+              <option value="platform-specific">
+                Dependentes de plataforma
+              </option>
+            </select></label
+          ><span class="mono" id="skill-count" aria-live="polite"></span>
+        </div>
+        <p class="fine">
+          Coleção holográfica • O acabamento é visual. Cada capacidade depende
+          de escopo, ferramentas e validação.
+        </p>
+        <div id="skill-cards" class="skill-grid"></div>
+        <p id="skill-empty" hidden>
+          Nenhuma carta encontrada. Tente outro termo ou grupo.
+        </p>
+        <div class="collection-more">
+          <button id="more-skills" class="btn secondary">
+            Carregar mais cartas
+          </button>
+        </div>
+      </section>
+      <section
+        id="catalogo"
+        class="catalog wrap"
+        aria-labelledby="catalog-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="kicker mono">Explore as possibilidades</p>
+            <h2 id="catalog-title">O que você quer transformar?</h2>
+          </div>
+          <p id="catalog-subtitle">
+            Soluções organizadas pelo que<br />elas podem fazer por você.
+          </p>
+        </div>
+        <div class="catalog-layout">
+          <aside>
+            <div class="mono side-label">Áreas de atuação</div>
+            <div
+              id="categories"
+              class="categories"
+              aria-label="Filtrar por área"
+            ></div>
+            <div class="aside-help">
+              <span class="cross" aria-hidden="true">+</span>
+              <h3>Não sabe por onde começar?</h3>
+              <p>
+                Conte seu cenário. A triagem ajuda a organizar o próximo passo.
+              </p>
+              <button class="text-link" data-start>
+                Fazer minha triagem ↗
+              </button>
+            </div>
+          </aside>
+          <div class="catalog-main">
+            <div class="search-row">
+              <label class="search"
+                ><span aria-hidden="true">⌕</span
+                ><span class="sr-only">Buscar soluções</span
+                ><input
+                  id="search"
+                  type="search"
+                  placeholder="Busque por necessidade ou tecnologia" /></label
+              ><span
+                class="mono results-count"
+                id="result-count"
+                aria-live="polite"
+              ></span>
+            </div>
+            <div id="active-filter" class="active-filter"></div>
+            <div class="cards" id="cards"></div>
+            <div class="empty" id="empty" hidden>
+              <h3>Nenhuma solução com esse filtro.</h3>
+              <p>
+                Tente um termo mais amplo ou conte sua necessidade na triagem.
+              </p>
+              <button class="btn secondary" id="clear-search">
+                Limpar filtros
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="como-funciona" class="how wrap">
+        <div class="section-heading">
+          <div>
+            <p class="kicker mono">Do desafio ao projeto</p>
+            <h2>Clareza antes de começar.</h2>
+          </div>
+          <p>
+            Um ponto de partida para uma<br />conversa comercial mais objetiva.
+          </p>
+        </div>
+        <div class="steps">
+          <article>
+            <span class="step-index mono">01 /</span>
+            <h3>Conte o contexto</h3>
+            <p>
+              Explique sua dor, as ferramentas que usa e o que deseja mudar.
+            </p>
+          </article>
+          <article>
+            <span class="step-index mono">02 /</span>
+            <h3>Explore os caminhos</h3>
+            <p>
+              Veja soluções relacionadas e o que precisamos entender para
+              dimensioná-las.
+            </p>
+          </article>
+          <article>
+            <span class="step-index mono">03 /</span>
+            <h3>Monte seu briefing</h3>
+            <p>
+              Reúna necessidades e soluções em um resumo para a conversa de
+              escopo.
+            </p>
+          </article>
+        </div>
+        <div class="bottom-cta">
+          <h3>Você traz o desafio.<br />A gente organiza os caminhos.</h3>
+          <button class="btn primary" data-start>
+            Começar minha triagem ↗
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <div>
+        <a class="brand" href="#inicio"
+          ><img
+            src="assets/drivedata-logo.png"
+            alt=""
+            width="32"
+            height="32"
+          />drive<span>data</span></a
+        >
+        <p>Dados, tecnologia e gestão.</p>
+      </div>
+      <p>
+        Catálogo exploratório • Escopo sob consulta<br />Preços e prazos
+        definidos após avaliação.
+      </p>
+      <button class="text-link" id="privacy">Sobre esta versão</button>
+    </footer>
+    <dialog
+      id="detail-dialog"
+      class="detail-dialog"
+      aria-labelledby="detail-title"
+    >
+      <button class="close" data-close aria-label="Fechar detalhes">×</button>
+      <div id="detail-body"></div>
+    </dialog>
+    <dialog
+      id="triage-dialog"
+      class="triage-dialog"
+      aria-labelledby="triage-title"
+    >
+      <button class="close" data-close aria-label="Fechar triagem">×</button>
+      <div class="dialog-kicker mono">DriveData / Triagem de projeto</div>
+      <div id="triage-body"></div>
+    </dialog>
+    <dialog
+      id="brief-dialog"
+      class="brief-dialog"
+      aria-labelledby="brief-title"
+    >
+      <button class="close" data-close aria-label="Fechar briefing">×</button>
+      <div id="brief-body"></div>
+    </dialog>
+    <dialog id="info-dialog" aria-labelledby="info-title">
+      <button class="close" data-close aria-label="Fechar informações">
+        ×
+      </button>
+      <h2 id="info-title">Sobre esta versão</h2>
+      <p>
+        Este ambiente organiza uma triagem inicial e sugere caminhos a partir
+        das informações que você preenche. As sugestões usam correspondência de
+        temas do catálogo e precisam de validação na conversa de escopo.
+      </p>
+      <p>
+        Seu texto e suas seleções ficam nesta página até você escolher enviar.
+        Se autorizar a análise por IA, o relato será processado pela Groq. Ao
+        enviar seu briefing, seus dados de contato e contexto serão armazenados
+        pela DriveData no Supabase para atendimento comercial. Você também pode
+        apenas baixar o resumo. Não há contratação automática.
+      </p>
+      <p>
+        As ofertas são possibilidades de projeto. Disponibilidade, integrações,
+        licenças, preços e prazos precisam ser confirmados. Evite inserir dados
+        sensíveis, senhas ou informações de terceiros.
+      </p>
+    </dialog>
+    <dialog id="skill-dialog" aria-labelledby="skill-title">
+      <button class="close" data-close aria-label="Fechar carta">×</button>
+      <div id="skill-detail"></div>
+    </dialog>
+    <div class="toast" role="status" id="toast"></div>
+    <noscript
+      >Ative o JavaScript para explorar o catálogo e usar a triagem.</noscript
+    >
+  </body>
+</html>
