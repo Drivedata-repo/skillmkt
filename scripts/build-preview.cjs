@@ -41,6 +41,10 @@ const result = missions.map((m) => {
       version: s.version,
     },
     example: {
+      kind: s.example.kind,
+      input: s.example.input,
+      result: s.example.result,
+      checks: s.example.checks,
       title: s.example.title,
       before: s.example.before,
       expected: s.example.expected,

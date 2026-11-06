@@ -21,6 +21,33 @@ const PublicPreview = [
       "version": "1.1.0"
     },
     "example": {
+      "kind": "margin",
+      "input": {
+        "rows": [
+          {
+            "product": "A",
+            "revenue": 1000,
+            "cost": 600
+          },
+          {
+            "product": "B",
+            "revenue": 100,
+            "cost": 90
+          }
+        ]
+      },
+      "result": {
+        "revenue": 1100,
+        "cost": 690,
+        "profit": 410,
+        "margin": 0.37272727272727274,
+        "formula": "=IFERROR((SUM(B2:B3)-SUM(C2:C3))/SUM(B2:B3),0)"
+      },
+      "checks": [
+        "Lucro total é 410",
+        "Margem usa os totais, não média simples",
+        "Receita zero não produz erro"
+      ],
       "title": "Conferir uma margem sem médias enganosas",
       "before": "A média simples das margens por produto dá 25%, mas não representa a margem consolidada.",
       "expected": "Receita: 1100; custo: 690; lucro: 410; margem consolidada: 37,27%.",
@@ -49,6 +76,52 @@ const PublicPreview = [
       "version": "1.1.0"
     },
     "example": {
+      "kind": "reconcile",
+      "input": {
+        "source": [
+          {
+            "month": "Jan",
+            "revenue": 1000
+          },
+          {
+            "month": "Fev",
+            "revenue": 1500
+          }
+        ],
+        "report": [
+          {
+            "month": "Jan",
+            "revenue": 1000
+          },
+          {
+            "month": "Fev",
+            "revenue": 1800
+          }
+        ]
+      },
+      "result": {
+        "rows": [
+          {
+            "month": "Jan",
+            "source": 1000,
+            "report": 1000,
+            "difference": 0
+          },
+          {
+            "month": "Fev",
+            "source": 1500,
+            "report": 1800,
+            "difference": 300
+          }
+        ],
+        "totalDifference": 300,
+        "nextStep": "Conferir filtros, duplicidades e a regra de reconhecimento em Fev."
+      },
+      "checks": [
+        "Comparação ocorre por mês",
+        "Diferença mantém o sinal",
+        "Hipóteses não são apresentadas como causa confirmada"
+      ],
       "title": "Reconciliar o indicador com a fonte",
       "before": "O relatório e a fonte apresentam valores diferentes, mas o mês da divergência não está isolado.",
       "expected": "Jan confere; Fev apresenta diferença de +300; diferença total de +300.",
@@ -77,6 +150,48 @@ const PublicPreview = [
       "version": "1.1.0"
     },
     "example": {
+      "kind": "requirements",
+      "input": {
+        "need": "Acompanhar solicitações de clientes",
+        "roles": [
+          "Solicitante",
+          "Gestor"
+        ],
+        "states": [
+          "Aberta",
+          "Em análise",
+          "Concluída"
+        ]
+      },
+      "result": {
+        "need": "Acompanhar solicitações de clientes",
+        "flows": [
+          {
+            "role": "Solicitante",
+            "screen": "Nova solicitação",
+            "acceptance": "Ao salvar uma solicitação válida, exibir o estado Aberta"
+          },
+          {
+            "role": "Solicitante",
+            "screen": "Minhas solicitações",
+            "acceptance": "Exibir estado e histórico de cada solicitação autorizada"
+          },
+          {
+            "role": "Gestor",
+            "screen": "Fila de atendimento",
+            "acceptance": "Permitir transições entre Aberta, Em análise, Concluída"
+          }
+        ],
+        "openDecisions": [
+          "Confirmar regras de permissão",
+          "Definir persistência e integrações"
+        ]
+      },
+      "checks": [
+        "Cada fluxo tem critério de aceite",
+        "Os três estados são contemplados",
+        "Protótipo é distinguido de integração operacional"
+      ],
       "title": "Converter uma ideia em critérios verificáveis",
       "before": "“Quero um portal de solicitações” ainda não define perfis, estados ou critérios de aceite.",
       "expected": "Matriz com abertura, acompanhamento e mudança de status; permissões e persistência apontadas como decisões de implementação.",
@@ -105,6 +220,22 @@ const PublicPreview = [
       "version": "1.1.0"
     },
     "example": {
+      "kind": "content",
+      "input": {
+        "audience": "Gestores de operações",
+        "problem": "Consolidar planilhas",
+        "capability": "Revisão de regras e organização de dados",
+        "cta": "Conheça um exemplo de consolidação"
+      },
+      "result": {
+        "draft": "Gestores de operações: consolidar planilhas faz parte da sua rotina?\n\nRevisão de regras e organização de dados é um ponto de partida para entender as inconsistências.\n\nConheça um exemplo de consolidação.",
+        "status": "Rascunho para aprovação"
+      },
+      "checks": [
+        "Público e problema aparecem no texto",
+        "A capacidade corresponde à entrada",
+        "Não há promessa numérica ou depoimento inventado"
+      ],
       "title": "Comunicar uma oferta sem inventar resultados",
       "before": "Uma descrição técnica longa dificulta entender a aplicação prática da oferta.",
       "expected": "Texto curto que relaciona consolidação de planilhas, revisão de regras e um convite para ver o exemplo.",

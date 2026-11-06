@@ -20,32 +20,75 @@ function reveal(index) {
   $("#fan-right").innerHTML = DeckArt.card(
     PublicPreview[(index + 2) % PublicPreview.length].card,
   );
-  $("#mission-card").innerHTML = DeckArt.card(m.card);
-  $("#mission-card").setAttribute(
+  $("#fan-main").setAttribute(
     "aria-label",
     "Virar " + m.card.code + ": " + m.card.title,
   );
   $("#mission-code").textContent = m.card.code + " / " + m.card.category;
   $("#mission-title").textContent = m.example.title;
   $("#mission-before").textContent = m.example.before;
-  $("#mission-after").textContent = m.example.expected;
-  $("#flip-preview").textContent = "Ver verso da carta";
-  $("#flip-preview").setAttribute("aria-pressed", "false");
+  $("#selected-skill-name").textContent = m.card.title;
+  $("#example-file").textContent = taskLabels[index].file;
+  $("#output-preview").innerHTML = renderExample(m.example);
+  $("#fan-main").setAttribute("aria-pressed", "false");
   document
     .querySelectorAll("[data-mission]")
     .forEach((b) =>
       b.setAttribute("aria-pressed", Number(b.dataset.mission) === index),
     );
   $("#wait-interest").value = m.id;
-  const story = $(".mission-story");
-  story.classList.remove("revealing");
-  requestAnimationFrame(() => story.classList.add("revealing"));
-  DeckArt.tilt($("#mission-card"));
-  DeckArt.tilt($("#fan-main"));
+  const story = $(".example-content");
+  story.classList.remove("changing");
+  requestAnimationFrame(() => story.classList.add("changing"));
+}
+const taskLabels = [
+  {
+    short: "Conferir uma planilha",
+    pain: "Minha planilha não fecha.",
+    file: "Conferência de margem",
+  },
+  {
+    short: "Revisar um Power BI",
+    pain: "Meu indicador não bate.",
+    file: "Conciliação do indicador",
+  },
+  {
+    short: "Prototipar uma ideia",
+    pain: "Minha ideia ainda está solta.",
+    file: "Escopo do portal",
+  },
+  {
+    short: "Organizar meu conteúdo",
+    pain: "Minha oferta precisa ficar clara.",
+    file: "Rascunho de publicação",
+  },
+];
+const number = (n) =>
+  new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 }).format(n);
+const percent = (n) =>
+  new Intl.NumberFormat("pt-BR", {
+    style: "percent",
+    maximumFractionDigits: 2,
+  }).format(n);
+function renderExample(e) {
+  const r = e.result;
+  if (e.kind === "margin")
+    return `<table><caption>Valores de uma amostra de vendas</caption><thead><tr><th scope="col">Produto</th><th scope="col">Receita</th><th scope="col">Custo</th><th scope="col">Lucro</th></tr></thead><tbody>${e.input.rows.map((row) => `<tr><th scope="row">${esc(row.product)}</th><td>${number(row.revenue)}</td><td>${number(row.cost)}</td><td>${number(row.revenue - row.cost)}</td></tr>`).join("")}</tbody><tfoot><tr><th scope="row">Total</th><td>${number(r.revenue)}</td><td>${number(r.cost)}</td><td>${number(r.profit)}</td></tr></tfoot></table><div class="calculation-result"><div><span>Margem consolidada</span><strong>${percent(r.margin)}</strong></div><p>${number(r.profit)} de lucro ÷ ${number(r.revenue)} de receita.<br>A margem é calculada pelos totais.</p></div>`;
+  if (e.kind === "reconcile")
+    return `<table><caption>Receita por mês: fonte e relatório</caption><thead><tr><th scope="col">Mês</th><th scope="col">Fonte</th><th scope="col">Relatório</th><th scope="col">Diferença</th></tr></thead><tbody>${r.rows.map((row) => `<tr><th scope="row">${esc(row.month)}</th><td>${number(row.source)}</td><td>${number(row.report)}</td><td class="${row.difference ? "difference" : ""}">${row.difference > 0 ? "+" : ""}${number(row.difference)}</td></tr>`).join("")}</tbody></table><div class="calculation-result"><div><span>Diferença localizada em Fev</span><strong>+${number(r.totalDifference)}</strong></div><p>O desvio foi localizado. A causa ainda precisa ser investigada.</p></div><p class="result-note">Próxima conferência: filtros, duplicidades e regra de reconhecimento em fevereiro.</p>`;
+  if (e.kind === "requirements")
+    return `<ol class="spec-flows">${r.flows.map((f) => `<li><span>${esc(f.role)}</span><strong>${esc(f.screen)}</strong><p>${esc(f.acceptance)}</p></li>`).join("")}</ol><p class="result-note">Ainda a definir: permissões, persistência e integrações.</p>`;
+  if (e.kind === "content")
+    return `<blockquote class="content-draft">${esc(r.draft)}</blockquote><p class="content-status">Rascunho para revisão. Sem clientes, depoimentos ou números inventados.</p>`;
+  return `<p>${esc(e.expected)}</p>`;
 }
 $("#mission-tabs").innerHTML = PublicPreview.map(
   (m, i) =>
-    `<button data-mission="${i}" aria-pressed="${i === 0}">${esc(m.short)}</button>`,
+    `<button data-mission="${i}" aria-pressed="${i === 0}" aria-controls="output-preview">${esc(taskLabels[i].pain)}</button>`,
+).join("");
+$("#hero-tasks").innerHTML = PublicPreview.map(
+  (m, i) =>
+    `<button data-mission="${i}" aria-pressed="${i === 0}" aria-controls="fan-main">${esc(taskLabels[i].short)}</button>`,
 ).join("");
 document.querySelectorAll("[data-mission]").forEach(
   (b) =>
@@ -55,24 +98,19 @@ document.querySelectorAll("[data-mission]").forEach(
     }),
 );
 function flip() {
-  const c = $("#mission-card .holo-card"),
+  const c = $("#fan-main .holo-card"),
     on = c.classList.toggle("flipped");
-  $("#flip-preview").setAttribute("aria-pressed", on);
-  $("#flip-preview").textContent = on
-    ? "Ver frente da carta"
-    : "Ver verso da carta";
+  $("#fan-main").setAttribute("aria-pressed", on);
+  $("#fan-main").setAttribute(
+    "aria-label",
+    (on ? "Ver frente de " : "Virar ") +
+      PublicPreview[active].card.code +
+      ": " +
+      PublicPreview[active].card.title,
+  );
   play();
 }
-$("#flip-preview").onclick = flip;
-$("#mission-card").onclick = flip;
-$("#fan-main").onclick = () => {
-  reveal((active + 1) % PublicPreview.length);
-  play();
-  $("#missions").scrollIntoView({
-    behavior: paused ? "instant" : "smooth",
-    block: "start",
-  });
-};
+$("#fan-main").onclick = flip;
 $("#landing-sound").onclick = () => {
   sound = !sound;
   DeckSound.set(sound);
@@ -119,6 +157,9 @@ $("#preview-details").onclick = () => {
   $("#preview-prompt").textContent =
     "Use a skill " + m.card.id + ". " + m.example.task;
   $("#preview-limits").textContent = m.example.limitation;
+  $("#preview-checks").innerHTML = m.example.checks
+    .map((c) => `<li>${esc(c)}</li>`)
+    .join("");
   $("#preview-dialog").showModal();
 };
 $("#close-preview").onclick = () => $("#preview-dialog").close();
@@ -131,6 +172,7 @@ document.querySelectorAll("[data-join-audience]").forEach(
         behavior: paused ? "instant" : "smooth",
         block: "start",
       });
+      $("#wait-name").focus({ preventScroll: true });
     }),
 );
 $("#waitlist-form").onsubmit = async (e) => {

@@ -18,6 +18,8 @@ for (const file of [
   "deck-art.js",
   "deck.css",
   "assets/drivedata-logo.png",
+  "fonts/archivo-700.ttf",
+  "fonts/archivo-LICENSE.txt",
 ])
   if (!fs.existsSync("dist/" + file)) throw new Error("Missing asset: " + file);
 console.log(
