@@ -30,6 +30,7 @@ const demoCards = [
 $("#scene-main").innerHTML = DeckArt.card(demoCards[0], { spin: true });
 $("#scene-left").innerHTML = DeckArt.card(demoCards[1]);
 $("#scene-right").innerHTML = DeckArt.card(demoCards[2]);
+DeckI18n.apply(document.querySelector(".login-scene"));
 DeckArt.tilt(document.querySelector(".login-scene"));
 let sound = true,
   audioCtx,
@@ -40,6 +41,7 @@ try {
 function updateSound() {
   $("#sound").setAttribute("aria-pressed", String(sound));
   $("#sound-label").textContent = sound ? "Som ativado" : "Som desativado";
+  DeckI18n.apply($("#sound-label"));
 }
 function prepareAudio() {
   if (!sound) return;
@@ -92,11 +94,13 @@ $("#show-password").onclick = () => {
   const show = $("#password").type === "password";
   $("#password").type = show ? "text" : "password";
   $("#show-password").textContent = show ? "Ocultar" : "Mostrar";
+  DeckI18n.apply($("#show-password"));
   $("#show-password").setAttribute("aria-pressed", String(show));
 };
 function motionUI() {
   document.body.classList.toggle("motion-off", paused);
   $("#motion").textContent = paused ? "Ativar movimento" : "Pausar movimento";
+  DeckI18n.apply($("#motion"));
   $("#motion").setAttribute("aria-pressed", String(paused));
 }
 $("#motion").onclick = () => {
@@ -116,6 +120,7 @@ $("#access-form").onsubmit = async (e) => {
   const button = $("#enter");
   button.disabled = true;
   button.innerHTML = 'Verificando acesso <span aria-hidden="true">↗</span>';
+  DeckI18n.apply(button);
   $("#login-error").textContent = "";
   try {
     const response = await fetch("/api/session", {
@@ -131,8 +136,16 @@ $("#access-form").onsubmit = async (e) => {
     tone("unlock");
     document.body.classList.add("entering");
     $("#entry-status").textContent = "ACESSO LIBERADO";
+    DeckI18n.apply($("#entry-status"));
     setTimeout(
-      () => location.assign(DeckI18n.url("/app")),
+      () =>
+        location.assign(
+          DeckI18n.url(
+            DeckNavigation.appPath(
+              new URL(location.href).searchParams.get("next") || "/app",
+            ),
+          ),
+        ),
       reduced.matches ? 0 : 900,
     );
   } catch (error) {
@@ -148,6 +161,7 @@ $("#access-form").onsubmit = async (e) => {
     button.disabled = false;
     button.innerHTML =
       'Desbloquear minha próxima capacidade <span aria-hidden="true">↗</span>';
+    DeckI18n.apply($("#access-form"));
     $("#password").focus();
   }
 };

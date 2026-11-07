@@ -1,6 +1,19 @@
-# DriveData Deck — coleção 1.1 e lista de espera
+# DriveData Deck — Explorar, Trabalhar e pacotes gratuitos
 
 **Problema → skill recomendada → download.** A landing pública apresenta missões e recebe inscrições na lista de espera. A demonstração continua gratuita: a pessoa entra com a senha compartilhada, escolhe uma das 137 cartas e baixa o pacote. Não há cobrança ou checkout.
+
+## Percursos focados em tarefas
+
+- **Explorar:** mantém as cartas holográficas, universos, filtros e descobertas. **Trabalhar:** apresenta as skills com foco em entrega, requisitos e evidência e abre um percurso de quatro etapas: preparar, praticar, aplicar e conferir.
+- **Planilhas confiáveis:** três skills para organizar dados, calcular uma planilha e documentar a conferência. **Power BI sob controle:** quatro skills para preparar dados, revisar modelo e medidas, auditar e documentar. Pacotes 1.0.0 agregam os ZIPs originais 1.2.0 sem alterá-los.
+- Cada pacote traz amostra fictícia, referência determinística, comandos PT/EN/ES, critérios, manifesto e verificador. Os arquivos são entregues por endpoints autenticados e o navegador verifica SHA-256. A montagem requer apenas SELECT dos pacotes já existentes.
+- O usuário escolhe amostra ou materiais próprios. Neste último caso, comandos pedem os arquivos e regras e não reutilizam os números da amostra. A execução ocorre no assistente do usuário, fora do site; o Deck não recebe seus arquivos.
+- Progresso, ajuda necessária, minutos e resultado declarado ficam no navegador. Exportação/importação preserva percursos; nova tarefa arquiva a anterior. Os registros não comprovam eficácia nem execução automática.
+- Três demonstrações públicas sobre duplicatas em planilhas, conciliação de indicadores e investigação de desempenho têm páginas próprias em PT/EN/ES, cálculos determinísticos e exportação CSV/JSON. Links preservam pacote e idioma ao passar pelo login.
+- Dez cenários adicionais de geração de arquivos estão preparados. A tentativa de executar o primeiro foi bloqueada pela política do terminal do assistente; os nove seguintes não foram executados. Nenhum foi marcado como aprovado. Veja `reviews/EVIDENCIAS-ENTREGAS.md`.
+- Piloto de duas semanas com 10–15 usuários **planejado, ainda não realizado**, em `reviews/PILOTO-DECK.md`; CSV de coleta sem participantes em `reviews/piloto-deck-template.csv`.
+
+Detalhes dos pacotes: `reviews/PACOTES-DECK.md`. URLs públicas: `/problemas/conferir-planilhas/`, `/problemas/conciliar-indicadores-power-bi/` e `/problemas/revisar-power-bi-lento/`, com versões `/en/` e `/es/`.
 
 Publicado em https://deck.drivedata.com.br . A raiz é pública; `/login` abre a entrada da demo; `/app` exige sessão; `/privacidade` explica o uso dos dados. O endereço técnico `skillmkt-beta.vercel.app` permanece disponível.
 

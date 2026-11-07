@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /app
+Disallow: /login
+Sitemap: https://deck.drivedata.com.br/sitemap.xml

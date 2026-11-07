@@ -12,6 +12,10 @@ const mime = {
   ".ttf": "font/ttf",
   ".woff2": "font/woff2",
   ".txt": "text/plain",
+  ".json": "application/json; charset=utf-8",
+  ".csv": "text/csv; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8",
+  ".pdf": "application/pdf",
 };
 const routes = Object.fromEntries(
   [
@@ -24,6 +28,8 @@ const routes = Object.fromEntries(
     "download",
     "waitlist",
     "feedback",
+    "packs",
+    "pack-download",
   ].map((n) => ["/api/" + n, require("./api/" + n + ".js")]),
 );
 http
@@ -32,7 +38,7 @@ http
       const url = new URL(req.url, "http://localhost");
       if (url.pathname === "/app") return await routes["/api/app"](req, res);
       if (routes[url.pathname]) return await routes[url.pathname](req, res);
-      const file = path.resolve(
+      let file = path.resolve(
         root,
         "." +
           decodeURIComponent(
@@ -45,6 +51,12 @@ http
                   : url.pathname,
           ),
       );
+      if (
+        file.startsWith(root + path.sep) &&
+        fs.existsSync(file) &&
+        fs.statSync(file).isDirectory()
+      )
+        file = path.join(file, "index.html");
       if (
         !file.startsWith(root + path.sep) ||
         !fs.existsSync(file) ||

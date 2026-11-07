@@ -3,6 +3,10 @@
   if (typeof module === "object" && module.exports) module.exports = value;
   else root.DeckStore = value;
 })(typeof window === "object" ? window : this, () => {
+  const workStore =
+    typeof module === "object" && module.exports
+      ? require("./work-store.js")
+      : window.DeckWorkStore;
   const KEY = "drivedata-deck-v1";
   const empty = () => ({
     schema: 1,
@@ -11,6 +15,7 @@
     progress: {},
     journeys: [],
     plans: [],
+    work: workStore.empty(),
   });
   function clean(raw, ids, journeyIds = []) {
     if (!raw || raw.schema !== 1)
@@ -18,6 +23,7 @@
     const allowed = new Set(ids),
       allowedJourneys = new Set(journeyIds),
       out = empty();
+    out.work = workStore.clean(raw.work);
     out.favorites = [
       ...new Set(
         (Array.isArray(raw.favorites) ? raw.favorites : []).filter((id) =>

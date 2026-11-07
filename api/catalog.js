@@ -33,6 +33,7 @@ module.exports = (req, res) => {
     const catalog = localizeCatalog({ skills, journeys }, locale);
     send(res, 200, {
       ...catalog,
+      packs: require("../lib/packs.cjs").getPacks(locale),
       skills: catalog.skills.map((skill) => ({
         ...skill,
         compatibilityAssessment: assessCompatibility(skill, context, locale),

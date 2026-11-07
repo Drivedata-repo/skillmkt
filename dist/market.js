@@ -76,6 +76,7 @@ function save() {
   $("#storage-error").textContent = ok
     ? ""
     : "O navegador não permitiu salvar. Exporte seu Deck para preservar o progresso.";
+  DeckI18n.apply($("#storage-error"));
   $("#deck-count").textContent = new Set([
     ...deck.favorites,
     ...deck.downloads.map((x) => x.id),
@@ -115,6 +116,8 @@ function badge(s) {
 }
 function slot(s) {
   const d = latest(s.id);
+  if (window.DeckWork?.mode === "work")
+    return `<article class="work-skill"><div class="work-skill-heading"><span>${esc(s.code)}</span><button class="favorite" data-favorite="${esc(s.id)}" aria-pressed="${favorite(s.id)}" aria-label="${esc(t(favorite(s.id) ? "Remover {code} do Meu Deck" : "Salvar {code} no Meu Deck", { code: s.code }))}">${favorite(s.id) ? "♥" : "♡"}</button></div><h3>${esc(s.title)}</h3><p>${esc(s.universe.purpose)}</p><dl><dt>${esc(t("Sua entrega"))}</dt><dd>${esc(s.deliverables[0])}</dd><dt>${esc(t("Requisitos principais"))}</dt><dd>${esc(s.dependencies.slice(0, 2).join("; "))}</dd></dl><p class="work-evidence">${esc(t(s.lab?.deliverableSamples?.some((x) => x.passed && x.currentVersion) ? "Cenário com entregável conferido" : "Confira o cenário e os limites"))}</p><div class="work-actions"><button class="btn secondary" data-start="${esc(s.id)}">${esc(t("Começar"))} ↗</button><button class="text-button" data-open="${esc(s.id)}">${esc(t("Ver detalhes"))}</button></div></article>`;
   return `<article class="skill-slot"><div class="slot-top"><span class="quality-badge">${esc(badge(s))}</span><button class="favorite" data-favorite="${esc(s.id)}" aria-pressed="${favorite(s.id)}" aria-label="${esc(t(favorite(s.id) ? "Remover {code} do Meu Deck" : "Salvar {code} no Meu Deck", { code: s.code }))}">${favorite(s.id) ? "♥" : "♡"}</button></div><button class="card-open" data-open="${esc(s.id)}" aria-label="${esc(t("Explorar {code}: {title}", { code: s.code, title: s.title }))}">${DeckArt.card(s)}</button><p class="slot-context">${audience === "technical" ? esc(s.id) : esc(s.universe.tagline)}</p><p class="slot-state">${needsUpdate(s) ? "Nova versão disponível" : progress(s.id).tested ? "Conferido por você" : d ? esc(t("Baixado · v{version}", { version: d.version })) : esc(s.setup)}</p><div class="skill-actions"><button class="text-button" data-open="${esc(s.id)}">Explorar universo</button><button class="download" data-start="${esc(s.id)}">Começar ↗</button></div></article>`;
 }
 function render() {
@@ -161,6 +164,7 @@ function render() {
   $("#empty").hidden = filtered.length > 0;
   $("#load-more").hidden = filtered.length <= limit;
   DeckArt.tilt($("#skill-grid"));
+  DeckI18n.apply($("#collection"));
 }
 function renderDeck() {
   const selectedIds = new Set([
@@ -223,6 +227,7 @@ function renderDeck() {
     )
     .join("");
   restoreDownloadState();
+  DeckI18n.apply($("#deck-view"));
 }
 function renderJourneys() {
   $("#journey-grid").innerHTML = journeys
@@ -239,6 +244,7 @@ function renderJourneys() {
         )}</ol><div class="journey-actions"><button class="btn secondary" data-save-journey="${j.id}">${deck.journeys.includes(j.id) ? "Jornada no meu Deck" : "Adicionar ao meu Deck"}</button><button class="text-button" data-export-journey="${j.id}">Baixar roteiro</button></div></article>`;
     })
     .join("");
+  DeckI18n.apply($("#journeys-view"));
 }
 function setView(next) {
   if (!["discover", "deck", "journeys"].includes(next)) return;
@@ -292,13 +298,14 @@ function setAudience(next) {
   ++requestVersion;
   $("#matches").hidden = true;
   $("#find-skills").disabled = false;
-  $("#find-skills").textContent = "Encontrar minha skill ↗";
+  $("#find-skills").textContent = t("Encontrar minha skill ↗");
   render();
   renderDeck();
   renderJourneys();
   try {
     localStorage.setItem("drivedata-audience", next);
   } catch {}
+  DeckI18n.apply();
 }
 const list = (items) =>
   `<ul>${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
@@ -412,6 +419,7 @@ function renderDetail(focusTarget) {
   DeckArt.tilt($("#skill-detail"));
   restoreFeedbackState();
   restoreDownloadState();
+  DeckI18n.apply($("#skill-detail"));
   $("#skill-detail .holo-card").classList.toggle("flipped", detailFlipped);
   if (restoreFocus || focusTarget)
     ($(focusTarget || "#detail-title") || $("#detail-title")).focus({
@@ -423,7 +431,7 @@ function renderDetail(focusTarget) {
     c.classList.remove("is-spinning");
     const on = c.classList.toggle("flipped");
     detailFlipped = on;
-    $("#turn-card").textContent = on ? "Ver frente" : "Ver verso";
+    $("#turn-card").textContent = t(on ? "Ver frente" : "Ver verso");
     $("#turn-card").setAttribute("aria-pressed", on);
     $("#spin-card").textContent = t(
       motionPreference.matches
@@ -440,9 +448,9 @@ function renderDetail(focusTarget) {
     detailFlipped = false;
     const on = c.classList.toggle("is-spinning");
     detailSpin = on;
-    $("#spin-card").textContent = on ? "Pausar giro" : "Ativar giro";
+    $("#spin-card").textContent = t(on ? "Pausar giro" : "Ativar giro");
     $("#spin-card").setAttribute("aria-pressed", on);
-    $("#turn-card").textContent = "Ver verso";
+    $("#turn-card").textContent = t("Ver verso");
     $("#turn-card").setAttribute("aria-pressed", "false");
     syncDetailURL();
   };
@@ -467,7 +475,9 @@ function openSkill(id, tab, state = {}) {
       : null;
   }
   selected = s;
-  detailTab = tab || "universe";
+  detailTab =
+    tab || (window.DeckWork?.mode === "work" ? "overview" : "universe");
+  if (window.DeckWork?.mode === "work") detailSpin = false;
   wizardStep = /^[0-3]$/.test(String(state.step)) ? Number(state.step) : 0;
   if (["on", "off"].includes(state.spin)) detailSpin = state.spin === "on";
   detailFlipped = state.face === "back";
@@ -573,6 +583,7 @@ function applyCatalog(data) {
       )
       .join("");
   $("#group").value = groups.some(([key]) => key === group) ? group : "all";
+  if (window.DeckWork?.ready) DeckWork.update(data);
 }
 DeckI18n.onChange(async (next) => {
   $("#find-skills").disabled = true;
@@ -707,9 +718,9 @@ function toggleFavorite(id) {
     document.querySelectorAll(`[data-favorite="${id}"]`).forEach((b) => {
       b.setAttribute("aria-pressed", favorite(id));
       if (b.classList.contains("save-detail"))
-        b.textContent = favorite(id)
-          ? "♥ Salva no Meu Deck"
-          : "♡ Salvar no Meu Deck";
+        b.textContent = t(
+          favorite(id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck",
+        );
     });
   toast(
     favorite(id) ? "Carta salva no Meu Deck." : "Carta removida dos favoritos.",
@@ -934,6 +945,7 @@ function renderMatches(result, focus = true) {
     $("#matches-title").focus();
     $("#matches").scrollIntoView({ block: "start" });
   }
+  DeckI18n.apply($("#matches"));
 }
 async function find() {
   if (DeckI18n.changing) {
@@ -942,14 +954,15 @@ async function find() {
   }
   const problem = $("#problem").value.trim();
   if (problem.length < 12) {
-    $("#finder-error").textContent =
-      "Descreva a tarefa com pelo menos 12 caracteres.";
+    $("#finder-error").textContent = t(
+      "Descreva a tarefa com pelo menos 12 caracteres.",
+    );
     return;
   }
   const version = ++requestVersion;
   $("#finder-error").textContent = "";
   $("#find-skills").disabled = true;
-  $("#find-skills").textContent = "Comparando capacidades…";
+  $("#find-skills").textContent = t("Comparando capacidades…");
   try {
     lastTriageRequest = {
       problem,
@@ -983,10 +996,11 @@ async function find() {
       e.name === "TimeoutError"
         ? "A análise demorou. Tente novamente."
         : errorText(e);
+    DeckI18n.apply($("#finder-error"));
   } finally {
     if (version === requestVersion) {
       $("#find-skills").disabled = false;
-      $("#find-skills").textContent = "Encontrar minha skill ↗";
+      $("#find-skills").textContent = t("Encontrar minha skill ↗");
     }
   }
 }
@@ -1123,9 +1137,10 @@ document.addEventListener("click", async (e) => {
     syncDetailURL();
   }
   if (b.id === "copy-prompt") {
-    if (await copy(selected.firstPrompt)) {
-      persistProgress(selected.id, { promptCopied: true });
-      b.textContent = "Copiar novamente";
+    const sourceSkill = selected;
+    if (sourceSkill && (await copy(sourceSkill.firstPrompt))) {
+      persistProgress(sourceSkill.id, { promptCopied: true });
+      b.textContent = t("Copiar novamente");
     }
   }
   if (b.id === "mark-tested") {
@@ -1141,7 +1156,7 @@ document.addEventListener("click", async (e) => {
     renderDeck();
     renderJourneys();
     toast("Sua conferência foi registrada no Meu Deck.");
-    b.textContent = "Conferido por você ✓";
+    b.textContent = t("Conferido por você ✓");
   }
   if (b.dataset.copyExample) {
     const s = byId(b.dataset.copyExample);
@@ -1233,7 +1248,7 @@ function resetIndication() {
   $("#matches").hidden = true;
   $("#finder-error").textContent = "";
   $("#find-skills").disabled = false;
-  $("#find-skills").textContent = "Encontrar minha skill ↗";
+  $("#find-skills").textContent = t("Encontrar minha skill ↗");
 }
 async function refreshCompatibility() {
   const revision = ++compatibilityVersion;
@@ -1438,7 +1453,7 @@ $("#problem").oninput = () => {
   refinement = null;
   ++requestVersion;
   $("#find-skills").disabled = DeckI18n.changing;
-  $("#find-skills").textContent = "Encontrar minha skill ↗";
+  $("#find-skills").textContent = t("Encontrar minha skill ↗");
   $("#matches").hidden = true;
 };
 for (const id of ["group", "role", "examples-only", "show-all", "sort"])
@@ -1459,7 +1474,7 @@ $("#clear-matches").onclick = () => {
   refinement = null;
   $("#matches").hidden = true;
   $("#find-skills").disabled = false;
-  $("#find-skills").textContent = "Encontrar minha skill ↗";
+  $("#find-skills").textContent = t("Encontrar minha skill ↗");
   $("#problem").focus();
 };
 $("#market-sound").onclick = () => {
@@ -1467,6 +1482,7 @@ $("#market-sound").onclick = () => {
   $("#market-sound").textContent = DeckSound.enabled
     ? "Som ativado"
     : "Som desativado";
+  DeckI18n.apply($("#market-sound"));
   $("#market-sound").setAttribute("aria-pressed", DeckSound.enabled);
   if (DeckSound.enabled) DeckSound.play();
 };
@@ -1495,6 +1511,7 @@ $("#import-file").onchange = async (e) => {
         journeys: [...deck.journeys, ...incoming.journeys],
         plans: [...(deck.plans || []), ...(incoming.plans || [])],
         progress: { ...deck.progress, ...incoming.progress },
+        work: DeckWorkStore.merge(deck.work, incoming.work),
         downloads: [
           ...new Map(
             downloads.map((d) => [d.id + ":" + d.version + ":" + d.at, d]),
@@ -1507,6 +1524,7 @@ $("#import-file").onchange = async (e) => {
     save();
     renderDeck();
     toast("Deck importado e combinado com esta coleção.");
+    DeckWork.render();
   } catch (error) {
     toast(
       error instanceof SyntaxError
@@ -1542,6 +1560,37 @@ $("#logout").onclick = async () => {
       journeys.map((j) => j.id),
     );
     save();
+    DeckWork.start(
+      {
+        deck: () => deck,
+        save,
+        copy,
+        openSkill,
+        setView,
+        renderCollection: () => {
+          render();
+          renderDeck();
+        },
+        setRuntime: (value) => {
+          $("#need-runtime").value = value;
+          refreshCompatibility();
+        },
+        packDownloaded: (pack) => {
+          const at = new Date().toISOString();
+          deck.downloads.push(
+            ...pack.steps.map((s) => ({
+              id: s.skillId,
+              version: pack.skillVersion,
+              at,
+            })),
+          );
+          deck.downloads = deck.downloads.slice(-300);
+          save();
+          renderDeck();
+        },
+      },
+      data,
+    );
     try {
       audience =
         localStorage.getItem("drivedata-audience") === "technical"
@@ -1579,6 +1628,7 @@ $("#logout").onclick = async () => {
     $("#market-sound").textContent = DeckSound.enabled
       ? "Som ativado"
       : "Som desativado";
+    DeckI18n.apply($("#market-sound"));
     $("#market-sound").setAttribute("aria-pressed", DeckSound.enabled);
     const status = await api("/api/status");
     $("#ai-choice").hidden = !status.aiConfigured;

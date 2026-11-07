@@ -1,6 +1,20 @@
 "use strict";
 const $ = (s) => document.querySelector(s),
   esc = DeckArt.esc;
+document.querySelectorAll("[data-public-problem]").forEach((a) => {
+  a.href =
+    "/problemas/" +
+    a.dataset.publicProblem +
+    "/" +
+    (DeckI18n.locale === "pt" ? "" : DeckI18n.locale + "/") +
+    "?lang=" +
+    DeckI18n.locale;
+});
+document.querySelectorAll("[data-work-pack]").forEach((a) => {
+  a.href = DeckI18n.url(
+    "/app?mode=work&pack=" + encodeURIComponent(a.dataset.workPack),
+  );
+});
 let active = 0,
   paused = matchMedia("(prefers-reduced-motion: reduce)").matches,
   sound = false;
@@ -43,6 +57,7 @@ function reveal(index) {
   const story = $(".example-content");
   story.classList.remove("changing");
   requestAnimationFrame(() => story.classList.add("changing"));
+  DeckI18n.apply();
 }
 const taskLabels = [
   {
@@ -120,6 +135,7 @@ $("#landing-sound").onclick = () => {
   sound = !sound;
   DeckSound.set(sound);
   $("#landing-sound").textContent = sound ? "Som ativado" : "Ativar som";
+  DeckI18n.apply($("#landing-sound"));
   $("#landing-sound").setAttribute("aria-pressed", sound);
   if (sound) play();
 };
@@ -128,6 +144,7 @@ function motion() {
   $("#landing-motion").textContent = paused
     ? "Ativar movimento"
     : "Pausar movimento";
+  DeckI18n.apply($("#landing-motion"));
   $("#landing-motion").setAttribute("aria-pressed", paused);
 }
 $("#landing-motion").onclick = () => {
@@ -167,6 +184,7 @@ $("#preview-details").onclick = () => {
   $("#preview-checks").innerHTML = m.example.checks
     .map((c) => `<li>${esc(c)}</li>`)
     .join("");
+  DeckI18n.apply($("#preview-dialog"));
   $("#preview-dialog").showModal();
 };
 $("#close-preview").onclick = () => $("#preview-dialog").close();
@@ -188,6 +206,7 @@ $("#waitlist-form").onsubmit = async (e) => {
   if (button.disabled) return;
   button.disabled = true;
   button.textContent = "Registrando seu interesse…";
+  DeckI18n.apply(button);
   $("#waitlist-error").textContent = "";
   const input = {
     name: $("#wait-name").value.trim(),
@@ -222,7 +241,9 @@ $("#waitlist-form").onsubmit = async (e) => {
             ? "Não foi possível concluir o cadastro."
             : error.message;
     button.disabled = false;
-    button.innerHTML = "Entrar na lista de espera <span>↗</span>";
+    button.innerHTML =
+      'Entrar na lista de espera <span aria-hidden="true">↗</span>';
+    DeckI18n.apply($("#waitlist-form"));
   }
 };
 reveal(0);

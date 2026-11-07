@@ -10,10 +10,29 @@ window.DeckEvolution = (() => {
   function lab(s) {
     const l = s.lab;
     if (!l) return "";
-    return `<section class="lab-panel"><div class="evidence-heading"><h3>${esc(t("Laboratório da carta"))}</h3><span>${esc(l.label)}</span></div><p>${esc(l.notice)}</p><dl class="lab-evidence"><div><dt>${esc(t("Execução por assistente"))}</dt><dd>${esc(l.executionLabel)}</dd></div><div><dt>${esc(t("Critério de aprovação"))}</dt><dd>${esc(l.scenario.check)}</dd></div></dl>${(l.assistantSamples || []).map((sample, index) => assistantSample(s, sample, index)).join("")}${l.reference ? `<details><summary>${esc(t("Ver evidência reproduzível"))}</summary><p>${esc(t("Esta verificação executa o cálculo de referência com dados fictícios. Não executa a skill no assistente."))}</p><p>${esc(t("Resultado da verificação"))}: <strong>${esc(t(l.reference.passed ? "Aprovado" : "Requer revisão"))}</strong></p><p class="fine">${esc(l.reference.runtime || "Node.js")} · ${esc(l.reference.method)}</p><div class="sample-actions">${(l.reference.artifacts || []).map((a, i) => `<button class="text-button" data-lab-artifact="${esc(s.id)}" data-artifact-index="${i}">${esc(t(i === 0 ? "Baixar entrada" : "Baixar saída de referência"))}</button>`).join("")}</div></details>` : ""}<button class="text-button" data-eval-kit="${esc(s.id)}">${esc(t("Baixar roteiro de avaliação"))}</button></section>`;
+    return `<section class="lab-panel"><div class="evidence-heading"><h3>${esc(t("Laboratório da carta"))}</h3><span>${esc(l.label)}</span></div><p>${esc(l.notice)}</p><dl class="lab-evidence"><div><dt>${esc(t("Execução por assistente"))}</dt><dd>${esc(l.executionLabel)}</dd></div><div><dt>${esc(t("Critério de aprovação"))}</dt><dd>${esc(l.scenario.check)}</dd></div></dl>${(l.assistantSamples || []).map((sample, index) => assistantSample(s, sample, index)).join("")}${deliverables(l)}${l.reference ? `<details><summary>${esc(t("Ver evidência reproduzível"))}</summary><p>${esc(t("Esta verificação executa o cálculo de referência com dados fictícios. Não executa a skill no assistente."))}</p><p>${esc(t("Resultado da verificação"))}: <strong>${esc(t(l.reference.passed ? "Aprovado" : "Requer revisão"))}</strong></p><p class="fine">${esc(l.reference.runtime || "Node.js")} · ${esc(l.reference.method)}</p><div class="sample-actions">${(l.reference.artifacts || []).map((a, i) => `<button class="text-button" data-lab-artifact="${esc(s.id)}" data-artifact-index="${i}">${esc(t(i === 0 ? "Baixar entrada" : "Baixar saída de referência"))}</button>`).join("")}</div></details>` : ""}<button class="text-button" data-eval-kit="${esc(s.id)}">${esc(t("Baixar roteiro de avaliação"))}</button></section>`;
   }
   function assistantSample(s, sample, index) {
     return `<details class="assistant-evidence"><summary>${esc(t("Ver amostra executada por assistente"))}</summary><p>${esc(sample.scopeLabel)}</p><p class="fine">${esc(sample.runtime)} · v${esc(sample.version)} · ${esc(new Intl.DateTimeFormat(DeckI18n.intlLocale, { dateStyle: "medium" }).format(new Date(sample.finishedAt)))}</p><p>${esc(sample.modelLabel)}</p><p>${esc(sample.limitation)}</p><ul>${sample.checks.map((check) => `<li>${esc(check.label)} — ${esc(t(check.passed ? "Aprovado" : "Requer revisão"))}</li>`).join("")}</ul><p class="fine">${esc(t("Os dados do ensaio permanecem no idioma original para preservar a evidência."))}</p><h4>${esc(t("Entrada do ensaio"))}</h4><pre>${esc(JSON.stringify(sample.input, null, 2))}</pre><h4>${esc(t("Saída observada"))}</h4><pre>${esc(JSON.stringify(sample.output, null, 2))}</pre><div class="sample-actions">${sample.artifacts.map((a, i) => `<button class="text-button" data-assistant-artifact="${esc(s.id)}" data-sample-index="${index}" data-artifact-index="${i}">${esc(t(["Baixar entrada", "Baixar saída observada", "Baixar evidência do ensaio"][i] || "Baixar evidência do ensaio"))}</button>`).join("")}</div></details>`;
+  }
+  function deliverables(l) {
+    const samples = l.deliverableSamples || [],
+      readiness = l.deliverableReadiness || [];
+    return (
+      samples
+        .map(
+          (sample) =>
+            `<details class="assistant-evidence"><summary>${esc(t("Ver entrega produzida por assistente"))}</summary><h4>${esc(sample.title)}</h4><p>${esc(sample.scope)}</p><p class="fine">${esc(sample.runtime)} · v${esc(sample.version)} · ${esc(sample.modelLabel)}</p><ul>${sample.checks.map((c) => `<li>${esc(c.label)} — ${esc(t(c.passed ? "Aprovado" : "Requer revisão"))}</li>`).join("")}</ul><p>${esc(t("O selo se refere a este cenário, arquivo e ambiente. Não representa todos os usos da skill."))}</p><ul>${sample.limitations.map((x) => `<li>${esc(x)}</li>`).join("")}</ul><div class="sample-actions">${sample.artifacts.map((a) => `<a class="text-button" href="${esc(a.url)}" download="${esc(a.filename)}">${esc(a.label)}</a>`).join("")}</div></details>`,
+        )
+        .join("") +
+      readiness
+        .filter((r) => !samples.some((s) => s.caseId === r.caseId))
+        .map(
+          (r) =>
+            `<details class="assistant-evidence"><summary>${esc(t("Ver cenário e critérios preparados"))}</summary><h4>${esc(r.title)}</h4><p><strong>${esc(r.statusLabel)}</strong></p><p>${esc(r.scope)}</p><h4>${esc(t("Materiais e requisitos"))}</h4><ul>${r.prerequisites.map((x) => `<li>${esc(x)}</li>`).join("")}</ul><h4>${esc(t("Critério de aprovação"))}</h4><ul>${r.checks.map((c) => `<li>${esc(c.label)}</li>`).join("")}</ul><p>${esc(t("Ainda sem entregável produzido e conferido neste ensaio."))}</p><ul>${r.limitations.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>`,
+        )
+        .join("")
+    );
   }
   const help = {
     recognition: {

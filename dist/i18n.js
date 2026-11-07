@@ -12,7 +12,9 @@
     .find((s) => s.startsWith("deck_locale="))
     ?.slice(12);
   let locale = core.resolveLocale(
-    new URL(location.href).searchParams.get("lang"),
+    new URL(location.href).searchParams.get("lang") ??
+      document.documentElement.dataset.problemLocale ??
+      null,
     stored,
     cookie,
   );

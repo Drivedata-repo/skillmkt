@@ -4,6 +4,145 @@
   font-weight: 700;
   font-display: swap;
 }
+.public-tasks-section {
+  padding-block: 80px;
+}
+.public-task-list {
+  margin-top: 38px;
+}
+.public-task-list article {
+  display: grid;
+  grid-template-columns: 45px minmax(0, 1fr) auto;
+  gap: 26px;
+  align-items: center;
+  border-top: 1px solid #a6b9c9;
+  padding: 32px 0;
+}
+.public-task-list h3 {
+  font-size: 27px;
+  margin: 0 0 12px;
+}
+.public-task-list p {
+  max-width: 660px;
+  margin: 0;
+  color: #35516a !important;
+}
+.public-task-list a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #075cdd;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.task-number {
+  font: 15px monospace;
+  color: #476579;
+}
+.public-proof-note {
+  font-size: 13px;
+  margin-top: 28px;
+  color: #476579 !important;
+}
+.work-packs-section {
+  padding-block: 80px;
+}
+.work-packs-section .section-heading p {
+  color: #c1d1df;
+}
+.work-packs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  margin-top: 42px;
+}
+.work-packs-list article {
+  border-top: 2px solid #7099b2;
+  padding-top: 20px;
+}
+.work-packs-list h3 {
+  font-size: 36px;
+  margin: 18px 0 22px;
+}
+.work-packs-list p {
+  color: #c7d6e2;
+}
+.work-packs-list .pack-purpose {
+  font-size: 21px;
+  color: #f2f6fa;
+  line-height: 1.4;
+}
+.pack-sequence {
+  font: 13px monospace;
+}
+.work-packs-list .pack-requirements {
+  font-size: 14px;
+  color: #a9bfd3;
+  min-height: 64px;
+}
+.work-packs-list .button {
+  margin-top: 18px;
+}
+.public-pilot {
+  margin-top: 55px;
+  padding-top: 28px;
+  border-top: 1px solid #ffffff30;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 35px;
+}
+.public-pilot h3 {
+  font-size: 27px;
+  margin: 0;
+}
+.public-pilot p {
+  color: #c5d3e2;
+  margin: 0;
+}
+.landing .hero-copy h1 {
+  font-size: clamp(42px, 4.7vw, 68px);
+}
+@media (max-width: 850px) {
+  .public-task-list article {
+    grid-template-columns: 35px 1fr;
+    gap: 15px;
+  }
+  .public-task-list a {
+    grid-column: 2;
+  }
+  .work-packs-list {
+    gap: 35px;
+  }
+  .public-pilot {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .public-tasks-section,
+  .work-packs-section {
+    padding-block: 50px;
+  }
+  .work-packs-list {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .work-packs-list h3 {
+    font-size: 32px;
+  }
+  .public-task-list h3 {
+    font-size: 24px;
+  }
+  .landing .hero-copy h1 {
+    font-size: 42px;
+  }
+  .public-task-list a {
+    font-size: 13px;
+  }
+  .work-packs-list .pack-requirements {
+    min-height: 0;
+  }
+}
 .landing {
   --night: #070c13;
   --paper: #edf2f7;

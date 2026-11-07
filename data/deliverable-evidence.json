@@ -1,0 +1,930 @@
+{
+  "schemaVersion": 1,
+  "scenarios": [
+    {
+      "caseId": "margin-workbook",
+      "skillId": "claude-xlsx",
+      "version": "1.2.0",
+      "status": "blocked",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "2767ed541e84d1cd2f16fcc5bb7026f62e1762f69fa30dbdb351661bd9765500",
+      "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987",
+      "finishedAt": "2026-11-07T12:41:53.309Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T12:37:53.873Z",
+          "finishedAt": "2026-11-07T12:38:06.364Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "execution-policy-blocked",
+          "outputsProduced": 0
+        },
+        {
+          "startedAt": "2026-11-07T12:40:41.979Z",
+          "finishedAt": "2026-11-07T12:40:52.731Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "diagnostic-host-unavailable",
+          "outputsProduced": 0
+        },
+        {
+          "startedAt": "2026-11-07T12:41:38.378Z",
+          "finishedAt": "2026-11-07T12:41:53.309Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "execution-policy-blocked",
+          "outputsProduced": 0
+        }
+      ],
+      "copy": {
+        "pt": {
+          "title": "Planilha de margem ponderada",
+          "scope": "Criar XLSX com fórmulas: receita 1100, custo 690, lucro 410 e margem 410/1100.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Office local para abertura e revisão independente"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Somente dados fictícios; não comprova integração com sistemas ou documentos reais."
+          ]
+        },
+        "en": {
+          "title": "Weighted margin workbook",
+          "scope": "Create an XLSX with formulas: revenue 1100, cost 690, profit 410 and margin 410/1100.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local Office for opening and independent review"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Fictional data only; this does not demonstrate integration with real systems or documents."
+          ]
+        },
+        "es": {
+          "title": "Libro de margen ponderado",
+          "scope": "Crear un XLSX con fórmulas: ingresos 1100, coste 690, beneficio 410 y margen 410/1100.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Office local para apertura y revisión independiente"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Solo datos ficticios; no demuestra integración con sistemas o documentos reales."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "formulas",
+          "labels": {
+            "pt": "Fórmulas e referências conferidas",
+            "en": "Formulas and references checked",
+            "es": "Fórmulas y referencias comprobadas"
+          },
+          "passed": null
+        },
+        {
+          "id": "recalc",
+          "labels": {
+            "pt": "Recálculo independente no Excel conferido",
+            "en": "Independent Excel recalculation checked",
+            "es": "Recálculo independiente en Excel comprobado"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "proposal-document",
+      "skillId": "claude-docx",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "0100c3fd7980a83ab6bc984e87483f3d2703a7f5451c28c03ca8235e217fa573",
+      "packageSha256": "8bf3f058ad3914e56cfd0a50caaa1866eef0a8fe7825fdde0d962a8d86a44629",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Proposta editável sem preço inventado",
+          "scope": "Criar DOCX para Aurora Demo com escopo, exclusões, aceite e preço a confirmar.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Office local para abertura e revisão independente"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Somente dados fictícios; não comprova integração com sistemas ou documentos reais."
+          ]
+        },
+        "en": {
+          "title": "Editable proposal without an invented price",
+          "scope": "Create a DOCX for Aurora Demo with scope, exclusions, acceptance and a price to be confirmed.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local Office for opening and independent review"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Fictional data only; this does not demonstrate integration with real systems or documents."
+          ]
+        },
+        "es": {
+          "title": "Propuesta editable sin precio inventado",
+          "scope": "Crear un DOCX para Aurora Demo con alcance, exclusiones, aceptación y precio por confirmar.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Office local para apertura y revisión independiente"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Solo datos ficticios; no demuestra integración con sistemas o documentos reales."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "visual",
+          "labels": {
+            "pt": "Renderização e legibilidade revisadas por pessoa",
+            "en": "Rendering and readability reviewed by a person",
+            "es": "Renderizado y legibilidad revisados por una persona"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "editable-slides",
+      "skillId": "claude-pptx",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "802e6096fcb21c6c32508aa916190afe9b61c4bc72163eefd1b042a53d6cfb29",
+      "packageSha256": "5aa06ae39463ac2677a5353c1a11f09de8c6a8f3a3be1b0b6d6b25e7e30b8298",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Três slides com dados verificáveis",
+          "scope": "Criar 3 slides editáveis em 16:9: 20 pedidos fictícios, 5 pendentes e revisão dos 5.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Office local para abertura e revisão independente"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Somente dados fictícios; não comprova integração com sistemas ou documentos reais."
+          ]
+        },
+        "en": {
+          "title": "Three slides with verifiable facts",
+          "scope": "Create 3 editable 16:9 slides: 20 fictional orders, 5 pending and a review of those 5.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local Office for opening and independent review"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Fictional data only; this does not demonstrate integration with real systems or documents."
+          ]
+        },
+        "es": {
+          "title": "Tres diapositivas con datos verificables",
+          "scope": "Crear 3 diapositivas editables en 16:9: 20 pedidos ficticios, 5 pendientes y revisión de esos 5.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Office local para apertura y revisión independiente"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Solo datos ficticios; no demuestra integración con sistemas o documentos reales."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "visual",
+          "labels": {
+            "pt": "Renderização e legibilidade revisadas por pessoa",
+            "en": "Rendering and readability reviewed by a person",
+            "es": "Renderizado y legibilidad revisados por una persona"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "summary-pdf",
+      "skillId": "claude-pdf",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "91c90095a74ec33bae0f812f3a710da11dc6d4b29e42415d5237d9527b85f458",
+      "packageSha256": "3f28378af1f54d076e8e71ab6a33ffc909b729c566cee77dbd4bd0841d146c0c",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Resumo de pedidos em PDF",
+          "scope": "Criar PDF de 1 página com P01=1200, P02=800, P03=500 e total 2500.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Ferramenta local de leitura e conferência do formato final"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Somente dados fictícios; não comprova integração com sistemas ou documentos reais."
+          ]
+        },
+        "en": {
+          "title": "Order summary PDF",
+          "scope": "Create a 1-page PDF with P01=1200, P02=800, P03=500 and a total of 2500.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local tool for reading and checking the final format"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Fictional data only; this does not demonstrate integration with real systems or documents."
+          ]
+        },
+        "es": {
+          "title": "Resumen de pedidos en PDF",
+          "scope": "Crear un PDF de 1 página con P01=1200, P02=800, P03=500 y total 2500.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Herramienta local para leer y comprobar el formato final"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Solo datos ficticios; no demuestra integración con sistemas o documentos reales."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "visual",
+          "labels": {
+            "pt": "Renderização e legibilidade revisadas por pessoa",
+            "en": "Rendering and readability reviewed by a person",
+            "es": "Renderizado y legibilidad revisados por una persona"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "meeting-minutes",
+      "skillId": "claude-acta-drivedata",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "6c6e64a06d707242fedd689b9d7fc1822737348131b22e480644d18f543f0641",
+      "packageSha256": "f1c28962254e054db85f0455ee476716da7e61ea5a3450545aa19bece7e85541",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Ata com prazo pendente explícito",
+          "scope": "Criar DOCX: Ana revisa o cadastro até 2026-11-10; Bruno valida o relatório com prazo a confirmar.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Office local para abertura e revisão independente"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Somente dados fictícios; não comprova integração com sistemas ou documentos reais."
+          ]
+        },
+        "en": {
+          "title": "Minutes with an explicit pending deadline",
+          "scope": "Create a DOCX: Ana reviews registration by 2026-11-10; Bruno validates the report with the deadline to be confirmed.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local Office for opening and independent review"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Fictional data only; this does not demonstrate integration with real systems or documents."
+          ]
+        },
+        "es": {
+          "title": "Acta con plazo pendiente explícito",
+          "scope": "Crear un DOCX: Ana revisa el registro antes de 2026-11-10; Bruno valida el informe con plazo por confirmar.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Office local para apertura y revisión independiente"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Solo datos ficticios; no demuestra integración con sistemas o documentos reales."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "visual",
+          "labels": {
+            "pt": "Renderização e legibilidade revisadas por pessoa",
+            "en": "Rendering and readability reviewed by a person",
+            "es": "Renderizado y legibilidad revisados por una persona"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "model-documentation",
+      "skillId": "claude-bi-documentation",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "dd817b782951521c41659152a376cb2cf10a9539745e5d7b4bc8a7ce8878d577",
+      "packageSha256": "d6c8690a1088e39443bd4eb2d3a5c2522b624ef7e0ea90fff83dacc5fe05984c",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Documentação do modelo fictício",
+          "scope": "Ler BIM fictício e documentar 2 tabelas, 6 colunas, 3 medidas e 1 relacionamento em DOCX e Markdown.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Office local para abertura e revisão independente"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Somente dados fictícios; não comprova integração com sistemas ou documentos reais."
+          ]
+        },
+        "en": {
+          "title": "Fictional model documentation",
+          "scope": "Read a fictional BIM and document 2 tables, 6 columns, 3 measures and 1 relationship in DOCX and Markdown.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local Office for opening and independent review"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Fictional data only; this does not demonstrate integration with real systems or documents."
+          ]
+        },
+        "es": {
+          "title": "Documentación del modelo ficticio",
+          "scope": "Leer un BIM ficticio y documentar 2 tablas, 6 columnas, 3 medidas y 1 relación en DOCX y Markdown.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Office local para apertura y revisión independiente"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Solo datos ficticios; no demuestra integración con sistemas o documentos reales."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "visual",
+          "labels": {
+            "pt": "Renderização e legibilidade revisadas por pessoa",
+            "en": "Rendering and readability reviewed by a person",
+            "es": "Renderizado y legibilidad revisados por una persona"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "power-query-review",
+      "skillId": "claude-power-query-best-practices",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "104f5075e52b9fbf2b7a92e1b84d1acb7dcb888526001526ed4967d98f05e153",
+      "packageSha256": "0601e3d06cfa19db7eb4bd0293c7bea26c7488b8eb4e421fe56c271763e22c1a",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Consulta M com cultura e nulos",
+          "scope": "Revisar arquivo M preservando 3 linhas e nulo, com conversão pt-BR e soma esperada 30.5.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Ferramenta local de leitura e conferência do formato final"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Revisão estática: nenhum motor Power Query ou DAX foi executado; não comprova desempenho."
+          ]
+        },
+        "en": {
+          "title": "M query with locale and null handling",
+          "scope": "Review an M file preserving 3 rows and null, with pt-BR conversion and an expected sum of 30.5.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local tool for reading and checking the final format"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Static review: no Power Query or DAX engine was executed; performance is not established."
+          ]
+        },
+        "es": {
+          "title": "Consulta M con configuración regional y nulos",
+          "scope": "Revisar un archivo M conservando 3 filas y nulo, con conversión pt-BR y suma esperada de 30.5.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Herramienta local para leer y comprobar el formato final"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Revisión estática: no se ejecutó ningún motor Power Query o DAX; no demuestra rendimiento."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "semantics",
+          "labels": {
+            "pt": "Limites técnicos e semântica documentados",
+            "en": "Technical boundaries and semantics documented",
+            "es": "Límites técnicos y semántica documentados"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "dax-review",
+      "skillId": "claude-power-bi-dax-optimization",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "9e61e59acdc42035f12486adb2cb1f71568a965afd42ab559a7a72e0341fad8a",
+      "packageSha256": "94c9e67e02d2493861bc0c20d93b8e8456d7d6ccb9b1330d7c0526f4a470d264",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Medidas DAX e diagnóstico delimitado",
+          "scope": "Entregar DAX com SUM e DIVIDE; diagnosticar receita 1100, custo 690 e margem 410/1100.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Ferramenta local de leitura e conferência do formato final"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Revisão estática: nenhum motor Power Query ou DAX foi executado; não comprova desempenho."
+          ]
+        },
+        "en": {
+          "title": "DAX measures and a bounded diagnosis",
+          "scope": "Deliver DAX using SUM and DIVIDE; diagnose revenue 1100, cost 690 and margin 410/1100.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local tool for reading and checking the final format"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Static review: no Power Query or DAX engine was executed; performance is not established."
+          ]
+        },
+        "es": {
+          "title": "Medidas DAX y diagnóstico delimitado",
+          "scope": "Entregar DAX con SUM y DIVIDE; diagnosticar ingresos 1100, coste 690 y margen 410/1100.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Herramienta local para leer y comprobar el formato final"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Revisión estática: no se ejecutó ningún motor Power Query o DAX; no demuestra rendimiento."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "semantics",
+          "labels": {
+            "pt": "Limites técnicos e semântica documentados",
+            "en": "Technical boundaries and semantics documented",
+            "es": "Límites técnicos y semántica documentados"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "request-prototype",
+      "skillId": "prototipos-e-especificacao-funcional",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "6b3d5b5a60897f52fb5b66d5d64b4608dcf01207cc46a726a54fa459b4c8a9b9",
+      "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Protótipo navegável de solicitações",
+          "scope": "Criar HTML local com navegação, validação, inclusão e troca de status por papel simulado.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Ferramenta local de leitura e conferência do formato final"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Protótipo em memória: sem backend, autenticação real ou publicação."
+          ]
+        },
+        "en": {
+          "title": "Navigable request prototype",
+          "scope": "Create local HTML with navigation, validation, insertion and status changes by simulated role.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local tool for reading and checking the final format"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "In-memory prototype: no backend, real authentication or publication."
+          ]
+        },
+        "es": {
+          "title": "Prototipo navegable de solicitudes",
+          "scope": "Crear HTML local con navegación, validación, inserción y cambio de estado por rol simulado.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Herramienta local para leer y comprobar el formato final"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Prototipo en memoria: sin backend, autenticación real ni publicación."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "interaction",
+          "labels": {
+            "pt": "Fluxo interativo exercitado no navegador",
+            "en": "Interactive flow exercised in a browser",
+            "es": "Flujo interactivo probado en el navegador"
+          },
+          "passed": null
+        },
+        {
+          "id": "visual",
+          "labels": {
+            "pt": "Renderização e legibilidade revisadas por pessoa",
+            "en": "Rendering and readability reviewed by a person",
+            "es": "Renderizado y legibilidad revisados por una persona"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    },
+    {
+      "caseId": "orders-consolidation",
+      "skillId": "automacao-documentos-office",
+      "version": "1.2.0",
+      "status": "not-run",
+      "passed": false,
+      "assistantExecuted": false,
+      "runtime": "Codex CLI",
+      "model": null,
+      "sourceSha256": "0ac8ccc780bdc5d0e74d10612d107d2c39e5ee4751be9081cab4c646d42d649c",
+      "packageSha256": "a7071953b83111f30052237ffb7e533bc6b39b03fe694a7821a42583439129ed",
+      "finishedAt": null,
+      "attempts": [],
+      "copy": {
+        "pt": {
+          "title": "Consolidação de pedidos sem duplicação",
+          "scope": "Consolidar 2 CSVs em XLSX: 3 pedidos únicos, P01 duplicado e total 2500, mantendo as origens.",
+          "prerequisites": [
+            "Assistente autorizado a ler e criar arquivos na pasta isolada",
+            "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
+            "Office local para abertura e revisão independente"
+          ],
+          "limitations": [
+            "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
+            "Somente dados fictícios; não comprova integração com sistemas ou documentos reais."
+          ]
+        },
+        "en": {
+          "title": "Order consolidation without duplicates",
+          "scope": "Consolidate 2 CSVs into an XLSX: 3 unique orders, duplicate P01 and a total of 2500, retaining source filenames.",
+          "prerequisites": [
+            "Assistant authorized to read and create files in the isolated directory",
+            "Python with the appropriate local libraries; supplied fictional inputs",
+            "Local Office for opening and independent review"
+          ],
+          "limitations": [
+            "Scenario files are in Portuguese; the evaluation description is available in three languages.",
+            "Fictional data only; this does not demonstrate integration with real systems or documents."
+          ]
+        },
+        "es": {
+          "title": "Consolidación de pedidos sin duplicados",
+          "scope": "Consolidar 2 CSV en un XLSX: 3 pedidos únicos, P01 duplicado y total 2500, conservando los orígenes.",
+          "prerequisites": [
+            "Asistente autorizado para leer y crear archivos en la carpeta aislada",
+            "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
+            "Office local para apertura y revisión independiente"
+          ],
+          "limitations": [
+            "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
+            "Solo datos ficticios; no demuestra integración con sistemas o documentos reales."
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "files",
+          "labels": {
+            "pt": "Arquivos finais presentes e legíveis",
+            "en": "Final files present and readable",
+            "es": "Archivos finales presentes y legibles"
+          },
+          "passed": null
+        },
+        {
+          "id": "content",
+          "labels": {
+            "pt": "Fatos e estrutura conferidos contra as entradas",
+            "en": "Facts and structure checked against inputs",
+            "es": "Datos y estructura contrastados con las entradas"
+          },
+          "passed": null
+        },
+        {
+          "id": "formulas",
+          "labels": {
+            "pt": "Fórmulas e referências conferidas",
+            "en": "Formulas and references checked",
+            "es": "Fórmulas y referencias comprobadas"
+          },
+          "passed": null
+        },
+        {
+          "id": "recalc",
+          "labels": {
+            "pt": "Recálculo independente no Excel conferido",
+            "en": "Independent Excel recalculation checked",
+            "es": "Recálculo independiente en Excel comprobado"
+          },
+          "passed": null
+        }
+      ],
+      "artifacts": [],
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false
+    }
+  ]
+}

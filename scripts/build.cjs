@@ -2,6 +2,7 @@ const fs = require("node:fs");
 const cards = require("../data/skills.cjs");
 require("./build-i18n.cjs");
 require("./build-preview.cjs");
+require("./build-problem-pages.cjs");
 if (cards.length !== 137 || new Set(cards.map((s) => s.code)).size !== 137)
   throw new Error("Invalid card collection");
 for (const file of [
@@ -18,6 +19,10 @@ for (const file of [
   "evolution.css",
   "evolution.js",
   "skill-art.js",
+  "work-store.js",
+  "work.js",
+  "work.css",
+  "navigation.js",
   "deck-store.js",
   "deck-sound.js",
   "login.js",

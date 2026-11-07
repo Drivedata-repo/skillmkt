@@ -689,3 +689,4 @@ module.exports = {
       "Esta aplicación no añade publicidad comportamental ni analítica de terceros.",
     ],
 };
+Object.assign(module.exports, require("./i18n-problems.cjs"));

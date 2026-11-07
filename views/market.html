@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="/evolution.css" />
     <link rel="stylesheet" href="/universes.css" />
     <link rel="stylesheet" href="/i18n.css" />
+    <link rel="stylesheet" href="/work.css" />
     <script src="/translations.js"></script>
     <script src="/i18n-core.js"></script>
     <script src="/i18n.js"></script>
     <script src="/skill-art.js" defer></script>
     <script src="/deck-art.js" defer></script>
+    <script src="/work-store.js" defer></script>
     <script src="/deck-store.js" defer></script>
     <script src="/deck-sound.js" defer></script>
     <script src="/evolution.js" defer></script>
+    <script src="/work.js" defer></script>
     <script src="/market.js" defer></script>
   </head>
   <body>
@@ -38,6 +41,16 @@
       </nav>
     </header>
     <main id="main" class="wrap">
+      <div class="experience-bar">
+        <p id="experience-title" tabindex="-1">Seu Deck, no seu ritmo.</p>
+        <div class="experience-switch" role="group" aria-label="Modo de uso">
+          <button data-experience="explore" aria-pressed="true">
+            <span class="mode-glyph" aria-hidden="true">◇</span>Explorar</button
+          ><button data-experience="work" aria-pressed="false">
+            <span class="mode-glyph" aria-hidden="true">↗</span>Trabalhar
+          </button>
+        </div>
+      </div>
       <div class="workspace-bar">
         <div class="view-switch" aria-label="Navegação da coleção">
           <button data-view="discover" aria-pressed="true">Descobrir</button
@@ -54,6 +67,53 @@
         </div>
       </div>
       <section id="discover-view" class="view-panel">
+        <section
+          id="work-space"
+          class="work-space"
+          hidden
+          aria-labelledby="work-title"
+        >
+          <div
+            id="work-pack-tabs"
+            class="work-pack-tabs"
+            role="group"
+            aria-label="Escolher pacote"
+          ></div>
+          <header class="work-header">
+            <div>
+              <p class="work-kicker">Da amostra à sua entrega</p>
+              <h1 id="work-title" tabindex="-1">Seu percurso de trabalho</h1>
+              <p id="work-description"></p>
+            </div>
+            <div class="work-package-actions">
+              <button id="work-download-pack" class="btn secondary">
+                Baixar pacote completo</button
+              ><button id="work-download-guide" class="text-button">
+                Baixar meu roteiro</button
+              ><small>Demo gratuita. Sem compra ou cobrança.</small>
+            </div>
+          </header>
+          <p id="work-return" class="work-return"></p>
+          <ol id="work-progress" class="work-progress"></ol>
+          <div id="work-stage" tabindex="-1"></div>
+          <p id="work-status" class="work-status" role="status" hidden></p>
+          <details class="pilot-record">
+            <summary>Meu registro de uso</summary>
+            <p>
+              Experimente uma tarefa real, registre a ajuda necessária e volte
+              para uma segunda tarefa. Você pode compartilhar o registro
+              exportado com a DriveData quando quiser.
+            </p>
+            <p id="pilot-progress"></p>
+            <button class="text-button" data-export-work>
+              Exportar meu registro
+            </button>
+            <p class="fine">
+              As avaliações são suas declarações. O registro não contém seus
+              arquivos, nome ou contato e não é enviado automaticamente.
+            </p>
+          </details>
+        </section>
         <section class="market-intro">
           <div>
             <p class="edition-line">Coleção 1.2 / Escolha. Experimente. Use.</p>
@@ -70,6 +130,22 @@
               >10 exemplos conferidos</strong
             ><br />para explorar antes de baixar
           </div>
+        </section>
+        <section
+          id="explore-packs"
+          class="explore-packs"
+          aria-labelledby="packs-title"
+        >
+          <div class="section-title">
+            <div>
+              <h2 id="packs-title">Duas tarefas. Um caminho para cada uma.</h2>
+              <p>
+                Especialidades, amostras e critérios reunidos para analistas e
+                equipes de dados e operação.
+              </p>
+            </div>
+          </div>
+          <div id="pack-tiles" class="pack-tiles"></div>
         </section>
         <form id="finder" class="finder">
           <label for="problem">O que você quer resolver?</label
