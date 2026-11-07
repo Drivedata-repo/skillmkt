@@ -63,13 +63,10 @@
 .power-boundary{font-size:12px!important;color:#b5c8d4;line-height:1.65;border-top:1px solid #344758;padding-top:16px;margin-top:20px}
 .power-announcement{color:#d9f5e7;font-size:13px;min-height:1.5em}
 .power-summon{background:#e8d6ab!important;color:#142028!important}
-.power-arena.is-invoked:after{content:"";position:absolute;inset:-25%;pointer-events:none;background:linear-gradient(115deg,transparent 35%,#f6d49750 48%,#d1f6ff65 50%,transparent 65%);animation:deck-invocation 1.25s ease-out both}
-.detail-card.is-invoked{filter:drop-shadow(0 0 18px #bbdbf177)}
-@keyframes deck-invocation{from{transform:translateX(-90%);opacity:0}25%{opacity:1}to{transform:translateX(90%);opacity:0}}
+.back .back-identity{color:#d2e8e8;font:8px/1.6 var(--mono,monospace);border-top:1px solid #64939266;padding-top:9px;margin-top:6px;overflow-wrap:anywhere}
 @media(max-width:900px){.combo-tiles{grid-template-columns:1fr}.combo-tile ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}}
 @media(max-width:760px){.card-rank{font-size:6px;padding-bottom:5px}.rank-stars{font-size:7px;gap:3px}.rank-stars em{font-size:6px}.has-game .card-info h3{font-size:13px}.has-game .card-info{padding:8px 6px}.has-game .card-info p{font-size:8px}.card-battle-stats{font-size:7px;padding:6px 2px 4px}.card-battle-stats b{font-size:10px;margin-left:2px}.card-bottom small{font-size:6px}.card-price b{font-size:10px}.has-game .card-bottom{font-size:6px;gap:4px;padding-top:4px}.detail-card .holo-card.has-game{aspect-ratio:.57}.detail-card .has-game .card-visual{height:36%}.detail-card .has-game .card-info h3{font-size:11px}.detail-card .rank-stars>span{display:none}.power-arena{padding:24px 17px 14px}.power-meters{gap:13px}.power-sigil{font-size:80px}.combo-focus{align-items:flex-start;flex-direction:column}}
 @media(max-width:460px){.has-game .card-type{display:none}.has-game .card-info p{display:none}.combo-tile ul{grid-template-columns:1fr}.pricing-dimensions dt{font-size:11px}.pricing-dimensions meter{width:72px}.power-actions .btn{width:100%}}
-@media(prefers-reduced-motion:reduce){.power-arena.is-invoked:after{animation:none;display:none}.detail-card.is-invoked{filter:none}}
 
 /* Four progressively richer foil finishes. Text sits on opaque ink, clear of the optical layers. */
 .premium-card{--foil:#53f0ff;--foil-rgb:83 240 255;--foil-deep:#046b8e;--foil-alt:#2375ff;--foil-metal:#b7fcff;--foil-turn:14s;--foil-strength:.4}
@@ -125,11 +122,9 @@
   .premium-card:hover .foil-sweep,.card-open:focus-visible .foil-sweep,.detail-card .foil-sweep{animation:foil-revolution var(--foil-turn) linear infinite;animation-delay:var(--foil-delay)}
   .premium-card:hover .foil-orbit,.card-open:focus-visible .foil-orbit,.detail-card .foil-orbit{animation:foil-revolution calc(var(--foil-turn)*2) linear infinite reverse;animation-delay:var(--foil-delay)}
   .premium-card:hover .foil-sparks,.card-open:focus-visible .foil-sparks,.detail-card .foil-sparks{animation:foil-glimmer 3.6s ease-in-out infinite alternate;animation-delay:var(--foil-delay)}
-  .detail-card.is-invoked .finish-gold .card-face{animation:gold-awaken 1.25s ease-out 1}
 }
 @keyframes foil-revolution{to{transform:rotate(330deg)}}
 @keyframes foil-glimmer{from{transform:translateY(3px);opacity:.4}to{transform:translateY(-4px);opacity:1}}
-@keyframes gold-awaken{40%{box-shadow:0 0 55px #ffcf72a6,inset 0 0 0 3px #fff1b8aa}to{box-shadow:0 18px 45px #0009,0 0 34px #e9aa3b50,inset 0 0 0 3px #fff1b859}}
 .motion-off .premium-card *,.motion-off .premium-card *:before,.motion-off .premium-card *:after{animation:none!important}
 @media(prefers-reduced-motion:reduce){.premium-card *,.premium-card *:before,.premium-card *:after{animation:none!important;transition:none!important}}
 @media(max-width:760px){.premium-card .card-heading{padding:3px;margin-bottom:3px}.premium-card .card-heading b{font-size:6px}.premium-card .card-rank{padding:3px;margin-bottom:3px}.premium-card .card-face{padding:10px}.premium-card .card-bottom,.premium-card .card-battle-stats{padding-left:4px;padding-right:4px}.premium-card .visual-label,.premium-card .card-codename{padding:2px 3px}}

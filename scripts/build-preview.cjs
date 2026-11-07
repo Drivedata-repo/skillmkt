@@ -53,6 +53,7 @@ function build(locale) {
         universe: { alias: s.universe.alias, tagline: s.universe.tagline },
         pricing: s.pricing,
         game: s.game,
+        identity: s.identity,
       },
       example: {
         kind: s.example.kind,

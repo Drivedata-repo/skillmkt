@@ -80,6 +80,26 @@ const PublicPreview = ({
           "school": "Escriba",
           "flavor": "Preserva os detalhes que sustentam toda a missão.",
           "notice": "Níveis, ATQ e DEF são atributos fictícios de coleção. Não medem qualidade, preço ou resultado da skill."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-042",
+          "id": "ddk_bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
+          "digest": "bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
+          "serial": "DDK-042-BAD9-BC04-DBC7",
+          "edition": {
+            "id": "dde_3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
+            "digest": "3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
+            "version": "1.2.0",
+            "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -196,6 +216,26 @@ const PublicPreview = ({
           "school": "Oráculo",
           "flavor": "Decifra o que está escondido entre os números.",
           "notice": "Níveis, ATQ e DEF são atributos fictícios de coleção. Não medem qualidade, preço ou resultado da skill."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-111",
+          "id": "ddk_ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
+          "digest": "ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
+          "serial": "DDK-111-EA99-B810-FAC1",
+          "edition": {
+            "id": "dde_c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
+            "digest": "c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
+            "version": "1.2.0",
+            "packageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -331,6 +371,26 @@ const PublicPreview = ({
           "school": "Explorador",
           "flavor": "Segue pistas, cruza fronteiras e volta com novas perguntas.",
           "notice": "Níveis, ATQ e DEF são atributos fictícios de coleção. Não medem qualidade, preço ou resultado da skill."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-118",
+          "id": "ddk_bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
+          "digest": "bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
+          "serial": "DDK-118-BC74-67D6-9343",
+          "edition": {
+            "id": "dde_77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
+            "digest": "77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
+            "version": "1.2.0",
+            "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -462,6 +522,26 @@ const PublicPreview = ({
           "school": "Embaixador",
           "flavor": "Transforma uma ideia em uma mensagem que encontra seu destino.",
           "notice": "Níveis, ATQ e DEF são atributos fictícios de coleção. Não medem qualidade, preço ou resultado da skill."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-100",
+          "id": "ddk_e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
+          "digest": "e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
+          "serial": "DDK-100-E061-BE3E-63B7",
+          "edition": {
+            "id": "dde_19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
+            "digest": "19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
+            "version": "1.2.0",
+            "packageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -569,6 +649,26 @@ const PublicPreview = ({
           "school": "Scribe",
           "flavor": "Preserves the details that hold the mission together.",
           "notice": "Levels, ATK and DEF are fictional collection attributes. They do not measure skill quality, price or results."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-042",
+          "id": "ddk_bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
+          "digest": "bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
+          "serial": "DDK-042-BAD9-BC04-DBC7",
+          "edition": {
+            "id": "dde_3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
+            "digest": "3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
+            "version": "1.2.0",
+            "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -685,6 +785,26 @@ const PublicPreview = ({
           "school": "Oracle",
           "flavor": "Deciphers what lies hidden between the numbers.",
           "notice": "Levels, ATK and DEF are fictional collection attributes. They do not measure skill quality, price or results."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-111",
+          "id": "ddk_ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
+          "digest": "ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
+          "serial": "DDK-111-EA99-B810-FAC1",
+          "edition": {
+            "id": "dde_c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
+            "digest": "c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
+            "version": "1.2.0",
+            "packageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -820,6 +940,26 @@ const PublicPreview = ({
           "school": "Explorer",
           "flavor": "Follows clues, crosses borders and returns with new questions.",
           "notice": "Levels, ATK and DEF are fictional collection attributes. They do not measure skill quality, price or results."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-118",
+          "id": "ddk_bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
+          "digest": "bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
+          "serial": "DDK-118-BC74-67D6-9343",
+          "edition": {
+            "id": "dde_77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
+            "digest": "77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
+            "version": "1.2.0",
+            "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -951,6 +1091,26 @@ const PublicPreview = ({
           "school": "Envoy",
           "flavor": "Turns an idea into a message that finds its destination.",
           "notice": "Levels, ATK and DEF are fictional collection attributes. They do not measure skill quality, price or results."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-100",
+          "id": "ddk_e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
+          "digest": "e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
+          "serial": "DDK-100-E061-BE3E-63B7",
+          "edition": {
+            "id": "dde_19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
+            "digest": "19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
+            "version": "1.2.0",
+            "packageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -1058,6 +1218,26 @@ const PublicPreview = ({
           "school": "Escriba",
           "flavor": "Preserva los detalles que sostienen toda la misión.",
           "notice": "Los niveles, ATQ y DEF son atributos ficticios de colección. No miden la calidad, el precio ni los resultados de la skill."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-042",
+          "id": "ddk_bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
+          "digest": "bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
+          "serial": "DDK-042-BAD9-BC04-DBC7",
+          "edition": {
+            "id": "dde_3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
+            "digest": "3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
+            "version": "1.2.0",
+            "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -1174,6 +1354,26 @@ const PublicPreview = ({
           "school": "Oráculo",
           "flavor": "Descifra lo que se esconde entre los números.",
           "notice": "Los niveles, ATQ y DEF son atributos ficticios de colección. No miden la calidad, el precio ni los resultados de la skill."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-111",
+          "id": "ddk_ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
+          "digest": "ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
+          "serial": "DDK-111-EA99-B810-FAC1",
+          "edition": {
+            "id": "dde_c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
+            "digest": "c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
+            "version": "1.2.0",
+            "packageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -1309,6 +1509,26 @@ const PublicPreview = ({
           "school": "Explorador",
           "flavor": "Sigue pistas, cruza fronteras y vuelve con nuevas preguntas.",
           "notice": "Los niveles, ATQ y DEF son atributos ficticios de colección. No miden la calidad, el precio ni los resultados de la skill."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-118",
+          "id": "ddk_bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
+          "digest": "bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
+          "serial": "DDK-118-BC74-67D6-9343",
+          "edition": {
+            "id": "dde_77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
+            "digest": "77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
+            "version": "1.2.0",
+            "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {
@@ -1440,6 +1660,26 @@ const PublicPreview = ({
           "school": "Embajador",
           "flavor": "Convierte una idea en un mensaje que encuentra su destino.",
           "notice": "Los niveles, ATQ y DEF son atributos ficticios de colección. No miden la calidad, el precio ni los resultados de la skill."
+        },
+        "identity": {
+          "schema": "drivedata.card-identity.v1",
+          "namespace": "drivedata:deck:card:v1",
+          "registryCode": "DD-100",
+          "id": "ddk_e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
+          "digest": "e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
+          "serial": "DDK-100-E061-BE3E-63B7",
+          "edition": {
+            "id": "dde_19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
+            "digest": "19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
+            "version": "1.2.0",
+            "packageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649"
+          },
+          "blockchain": {
+            "status": "not-minted",
+            "network": null,
+            "contract": null,
+            "tokenId": null
+          }
         }
       },
       "example": {

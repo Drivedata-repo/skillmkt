@@ -36,7 +36,10 @@ const DeckArt = (() => {
     );
   }
   function seal(s) {
-    return `<svg class="edition-seal" viewBox="0 0 38 30" aria-hidden="true">${[...signature(s.code)].map((bit, i) => `<rect x="${(i % 5) * 8}" y="${Math.floor(i / 5) * 8}" width="5" height="5" rx="1" fill="currentColor" opacity="${bit === "1" ? ".9" : ".18"}"/>`).join("")}</svg>`;
+    const pattern = /^[a-f0-9]{64}$/.test(s.identity?.digest || "")
+      ? [...s.identity.digest.slice(0, 5)].map(c => parseInt(c, 16).toString(2).padStart(4, "0")).join("")
+      : signature(s.code);
+    return `<svg class="edition-seal" viewBox="0 0 38 30" aria-hidden="true">${[...pattern].map((bit, i) => `<rect x="${(i % 5) * 8}" y="${Math.floor(i / 5) * 8}" width="5" height="5" rx="1" fill="currentColor" opacity="${bit === "1" ? ".9" : ".18"}"/>`).join("")}</svg>`;
   }
   function illustration(s) {
     if (typeof DeckSkillArt !== "undefined") return DeckSkillArt.render(s.id);
@@ -65,7 +68,7 @@ const DeckArt = (() => {
         ${g?`<div class="card-battle-stats" title="${esc(g.notice)}"><span>${esc(translated("ATQ"))} <b>${g.attack}</b></span><i aria-hidden="true">◆</i><span>${esc(translated("DEF"))} <b>${g.defense}</b></span></div>`:""}
         <div class="card-bottom"><span>${esc(s.code)} · v${esc(s.version || "1.2.0")}${p?`<small>${esc(translated("Grátis na demo"))}</small>`:""}</span>${p?`<span class="card-price"><small>${esc(translated("Preço proposto"))}</small><b>${esc(money)}</b></span>`:"<span>DRIVEDATA DECK</span>"}</div><div class="holo-shine"></div>
       </div>
-      <div class="card-face back" aria-hidden="true"><div class="back-orbit"></div><img src="/assets/drivedata-logo.png" alt=""><strong>DriveData Deck</strong><span>${esc(s.code)} · ${esc(translated(s.category))}</span>${s.universe ? `<p class="back-alias">${esc(s.universe.alias)}</p><p class="back-tagline">${esc(s.universe.tagline)}</p>` : "<p>Uma capacidade.<br>Seu próximo resultado.</p>"}<small>${s.featured ? "EXEMPLO REPRODUZÍVEL INCLUÍDO" : "CONHECIMENTO PARA COLOCAR EM PRÁTICA"}</small></div>
+      <div class="card-face back" aria-hidden="true"><div class="back-orbit"></div><img src="/assets/drivedata-logo.png" alt=""><strong>DriveData Deck</strong><span>${esc(s.code)} · ${esc(translated(s.category))}</span>${s.universe ? `<p class="back-alias">${esc(s.universe.alias)}</p><p class="back-tagline">${esc(s.universe.tagline)}</p>` : "<p>Uma capacidade.<br>Seu próximo resultado.</p>"}${s.identity ? `<span class="back-identity">${esc(translated("ID da carta"))}<br>${esc(s.identity.serial)}</span>` : ""}<small>${s.featured ? "EXEMPLO REPRODUZÍVEL INCLUÍDO" : "CONHECIMENTO PARA COLOCAR EM PRÁTICA"}</small></div>
     </div>`;
   }
   function tilt(root) {

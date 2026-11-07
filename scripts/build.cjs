@@ -14,6 +14,9 @@ require("./build-problem-pages.cjs");
 require("./build-deliverable-gallery.cjs");
 if (cards.length !== 137 || new Set(cards.map((s) => s.code)).size !== 137)
   throw new Error("Invalid card collection");
+const identities = require("../lib/catalog.cjs").skills.map(s => s.identity);
+if (new Set(identities.map(i => i.id)).size !== 137 || new Set(identities.map(i => i.serial)).size !== 137)
+  throw new Error("Card identities must be unique");
 for (const file of [
   "index.html",
   "login.html",
@@ -36,6 +39,10 @@ for (const file of [
   "navigation.js",
   "deck-store.js",
   "deck-sound.js",
+  "invocation-profiles.js",
+  "deck-invocation.js",
+  "card-identity.js",
+  "invocation.css",
   "login.js",
   "market.js",
   "deck-art.js",

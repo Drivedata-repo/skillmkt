@@ -6,7 +6,7 @@
   "functions": {
     "api/*.js": {
       "maxDuration": 30,
-      "includeFiles": "{lib/**,certs/**,data/**,views/**,dist/navigation.js,dist/evidence-assets/**}"
+      "includeFiles": "{lib/**,certs/**,data/**,views/**,dist/navigation.js,dist/card-identity.js,dist/evidence-assets/**}"
     }
   },
   "rewrites": [

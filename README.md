@@ -133,6 +133,12 @@ A aba Ajuda trata reconhecimento, dependências, resultado divergente, primeiro 
 
 Se `GROQ_API_KEY` estiver configurada e o visitante optar por IA, **Qwen3.8-27B via Groq** refina a justificativa entre os candidatos existentes. A saída é validada por schema/IDs, com timeout e retorno ao catálogo em caso de falha. O visitante é informado antes de enviar seu relato à Groq. Sem chave, a recomendação por capacidades continua funcionando. A chamada real ao modelo exige chave própria e não foi validada nesta demo.
 
+## Invocações e passaportes
+
+As nove faixas de US$ 7 a US$ 47 têm coreografias e sons originais próprios em **Poder da carta → Invocar carta**. A dourada recebe a Coroação solar. A apresentação pode ser encerrada a qualquer momento e respeita movimento reduzido e silêncio. Trocar o idioma com a carta aberta encerra a sequência sem perder a carta.
+
+Cada uma das 137 cartas tem ID permanente `ddk_…`, serial visual, selo e impressão SHA-256 da edição. **Ficha técnica → Passaporte da carta** permite copiar, baixar o JSON, conferir a identidade e comparar um ZIP local sem upload. O ID completo ou o serial também podem ser usados na busca do catálogo. É identidade do registro, não de uma cópia adquirida. Blockchain não está ativada; o caminho técnico e os limites estão em [Invocações e identidade](docs/card-identity-and-invocations.md).
+
 ## Vercel
 
 Importe `Drivedata-repo/skillmkt`, framework **Other**, build `npm run build`, output `dist`. `vercel.json` configura as funções e a página autenticada. Configure no servidor:

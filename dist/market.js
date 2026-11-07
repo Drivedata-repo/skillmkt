@@ -140,6 +140,8 @@ function render() {
         [
           s.code,
           s.id,
+          s.identity?.id,
+          s.identity?.serial,
           s.title,
           s.pain,
           s.universe?.alias,
@@ -355,7 +357,7 @@ function exampleView(s) {
   return `<div class="example-intro"><span class="quality-badge">Dados fictícios · referência conferida</span><h3>${esc(x.title)}</h3><p>${esc(x.before)}</p></div><div class="sample-columns"><section><h4>Entrada</h4><pre>${esc(JSON.stringify(x.input, null, 2))}</pre></section><section><h4>Resultado de referência</h4><p>${esc(x.expected)}</p><details><summary>Inspecionar o resultado completo</summary><pre>${esc(JSON.stringify(x.result, null, 2))}</pre></details></section></div><h4>Peça assim ao seu assistente</h4><pre class="prompt-block">${esc(t("Use a skill {id}. {task}", { id: s.id, task: x.task }))}</pre><div class="sample-actions"><button class="btn secondary" data-copy-example="${s.id}">Copiar comando do exemplo</button><button class="text-button" data-sample="${s.id}">Baixar dados de exemplo</button></div><h4>Como conferir</h4>${list(x.checks)}<p class="scope-note">${esc(x.limitation)} ${esc(x.verification)}</p><button class="btn" data-detail-tab="start">Usar esta skill no meu ambiente</button>`;
 }
 function technical(s) {
-  return `${DeckCommerce.assessment(s)}<dl class="spec-sheet"><div><dt>Identificador</dt><dd>${esc(s.code)} / ${esc(s.id)}</dd></div><div><dt>Versão</dt><dd>${esc(s.version)} · ${esc(new Date(s.release.date + "T12:00:00Z").toLocaleDateString(DeckI18n.intlLocale, { timeZone: "UTC" }))}</dd></div><div><dt>Pacote</dt><dd>${esc(t("{count} arquivos · {size} KB", { count: s.release.fileCount, size: DeckI18n.number(s.release.bytes / 1024, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) }))}</dd></div><div><dt>Formato</dt><dd>${esc(s.compatibility.format)}</dd></div><div><dt>Execução</dt><dd>${esc(s.compatibility.execution)}</dd></div><div><dt>Ferramentas citadas</dt><dd>${esc(s.compatibility.tools.join(", ") || "Confira os requisitos da skill")}</dd></div><div><dt>Integridade SHA-256</dt><dd class="digest">${esc(s.release.sha256)}</dd></div></dl><details class="release-notes"><summary>O que mudou nesta versão</summary>${s.changelog.map((c) => `<h4>v${esc(c.version)}</h4>${list(c.changes)}`).join("")}</details><details class="release-notes"><summary>Origem, compatibilidade e condições de distribuição</summary><p>${esc(s.release.license)}. ${esc(t("A revisão técnica não libera distribuição comercial. Atribuições e termos originais estão no ZIP."))}</p><p>${esc(t("{count} arquivos de documentação tiveram caminhos pessoais substituídos por marcadores. Scripts e integrações ainda precisam ser conferidos no ambiente de destino.", { count: s.release.normalizedFiles }))}</p><p>O formato foi revisado; ferramentas específicas de Claude, Figma, Office ou outros serviços não são instaladas pelo pacote.</p></details>`;
+  return `${DeckIdentity.panel(s)}${DeckCommerce.assessment(s)}<dl class="spec-sheet"><div><dt>Identificador</dt><dd>${esc(s.code)} / ${esc(s.id)}</dd></div><div><dt>Versão</dt><dd>${esc(s.version)} · ${esc(new Date(s.release.date + "T12:00:00Z").toLocaleDateString(DeckI18n.intlLocale, { timeZone: "UTC" }))}</dd></div><div><dt>Pacote</dt><dd>${esc(t("{count} arquivos · {size} KB", { count: s.release.fileCount, size: DeckI18n.number(s.release.bytes / 1024, { minimumFractionDigits: 1, maximumFractionDigits: 1 }) }))}</dd></div><div><dt>Formato</dt><dd>${esc(s.compatibility.format)}</dd></div><div><dt>Execução</dt><dd>${esc(s.compatibility.execution)}</dd></div><div><dt>Ferramentas citadas</dt><dd>${esc(s.compatibility.tools.join(", ") || "Confira os requisitos da skill")}</dd></div><div><dt>Integridade SHA-256</dt><dd class="digest">${esc(s.release.sha256)}</dd></div></dl><details class="release-notes"><summary>O que mudou nesta versão</summary>${s.changelog.map((c) => `<h4>v${esc(c.version)}</h4>${list(c.changes)}`).join("")}</details><details class="release-notes"><summary>Origem, compatibilidade e condições de distribuição</summary><p>${esc(s.release.license)}. ${esc(t("A revisão técnica não libera distribuição comercial. Atribuições e termos originais estão no ZIP."))}</p><p>${esc(t("{count} arquivos de documentação tiveram caminhos pessoais substituídos por marcadores. Scripts e integrações ainda precisam ser conferidos no ambiente de destino.", { count: s.release.normalizedFiles }))}</p><p>O formato foi revisado; ferramentas específicas de Claude, Figma, Office ou outros serviços não são instaladas pelo pacote.</p></details>`;
 }
 function wizard(s) {
   const p = progress(s.id);
@@ -391,6 +393,7 @@ function wizard(s) {
 function renderDetail(focusTarget) {
   const s = selected;
   if (!s) return;
+  DeckInvocation.cancel();
   const active = document.activeElement;
   const restoreFocus = $("#skill-detail").contains(active);
   if (!focusTarget && restoreFocus) {
@@ -408,7 +411,7 @@ function renderDetail(focusTarget) {
   }
   if (motionPreference.matches) detailSpin = false;
   $("#skill-detail").innerHTML =
-    `<div class="detail-layout" style="--universe-hue:${DeckArt.hue(s)}"><aside class="detail-card">${DeckArt.card(s, { spin: detailSpin })}<div class="detail-controls"><button class="text-button" id="turn-card" aria-pressed="${detailFlipped}">${detailFlipped ? "Ver frente" : "Ver verso"}</button><button class="text-button" id="spin-card" aria-pressed="${detailSpin}" ${motionPreference.matches ? "disabled" : ""}>${motionPreference.matches ? "Giro desativado: movimento reduzido" : detailSpin ? "Pausar giro" : "Ativar giro"}</button></div><button class="save-detail" data-favorite="${s.id}" aria-pressed="${favorite(s.id)}">${favorite(s.id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck"}</button><span class="quality-badge">${esc(badge(s))}</span></aside><div class="detail-content"><p class="code">${esc(s.code)} · v${s.version} · ${esc(s.category)}</p><h2 id="detail-title" tabindex="-1">${esc(s.title)}</h2>${DeckCommerce.stamp(s.pricing)}<div class="detail-tabs" aria-label="Detalhes da skill">${[
+    `<div class="detail-layout" style="--universe-hue:${DeckArt.hue(s)}"><aside class="detail-card">${DeckInvocation.stage(s, DeckArt.card(s, { spin: detailSpin }))}${s.identity ? `<button class="card-identity-link" data-detail-tab="technical"><span>${esc(t("ID da carta"))}</span>${esc(s.identity.serial)}</button>` : ""}<div class="detail-controls"><button class="text-button" id="turn-card" aria-pressed="${detailFlipped}">${detailFlipped ? "Ver frente" : "Ver verso"}</button><button class="text-button" id="spin-card" aria-pressed="${detailSpin}" ${motionPreference.matches ? "disabled" : ""}>${motionPreference.matches ? "Giro desativado: movimento reduzido" : detailSpin ? "Pausar giro" : "Ativar giro"}</button></div><button class="save-detail" data-favorite="${s.id}" aria-pressed="${favorite(s.id)}">${favorite(s.id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck"}</button><span class="quality-badge">${esc(badge(s))}</span></aside><div class="detail-content"><p class="code">${esc(s.code)} · v${s.version} · ${esc(s.category)}</p><h2 id="detail-title" tabindex="-1">${esc(s.title)}</h2>${DeckCommerce.stamp(s.pricing)}<div class="detail-tabs" aria-label="Detalhes da skill">${[
       ["universe", "Universo"],
       ["power", "Poder da carta"],
       ["overview", "Aplicações"],
@@ -435,6 +438,7 @@ function renderDetail(focusTarget) {
       preventScroll: true,
     });
   $("#turn-card").onclick = () => {
+    DeckInvocation.cancel();
     detailSpin = false;
     const c = $("#skill-detail .holo-card");
     c.classList.remove("is-spinning");
@@ -451,6 +455,7 @@ function renderDetail(focusTarget) {
     syncDetailURL();
   };
   $("#spin-card").onclick = () => {
+    DeckInvocation.cancel();
     if (motionPreference.matches) return;
     const c = $("#skill-detail .holo-card");
     c.classList.remove("flipped");
@@ -1018,6 +1023,32 @@ async function find() {
 document.addEventListener("click", async (e) => {
   const b = e.target.closest("button");
   if (!b) return;
+  if (b.hasAttribute("data-invocation-motion")) { DeckInvocation.toggleMotion($("#skill-detail")); return; }
+  if (b.hasAttribute("data-invocation-sound")) {
+    DeckSound.set(!DeckSound.enabled);
+    for (const button of document.querySelectorAll("#market-sound,[data-invocation-sound]")) {
+      button.textContent = t(DeckSound.enabled ? "Som ativado" : "Som desativado");
+      button.setAttribute("aria-pressed", String(DeckSound.enabled));
+    }
+    return;
+  }
+  if (b.dataset.copyIdentity && selected?.id === b.dataset.copyIdentity) {
+    try { await navigator.clipboard.writeText(selected.identity.id); toast("ID da carta copiado."); }
+    catch { toast("Não foi possível copiar. Selecione o ID completo na ficha técnica."); }
+    return;
+  }
+  if (b.dataset.passport && selected?.id === b.dataset.passport) {
+    saveFile(`${selected.code}-passport-v${selected.version}.json`, JSON.stringify(DeckIdentity.manifest(selected), null, 2) + "\n");
+    return;
+  }
+  if (b.dataset.verifyIdentity && selected?.id === b.dataset.verifyIdentity) {
+    const status = $("#skill-detail .identity-result"), skill = selected;
+    b.disabled = true; status.textContent = t("Conferindo identidade…");
+    const valid = await DeckIdentity.verify(skill);
+    if (status.isConnected) status.textContent = t(valid ? "ID e edição conferidos por SHA-256. Isso não certifica compra ou propriedade." : "Não foi possível conferir esta identidade. Atualize a página e tente novamente.");
+    if (b.isConnected) b.disabled = false;
+    return;
+  }
   if (b.hasAttribute("data-save-plan") && currentPlan) {
     deck.plans = [
       ...(deck.plans || []).filter((p) => p.id !== currentPlan.id),
@@ -1136,10 +1167,7 @@ document.addEventListener("click", async (e) => {
       $("#spin-card").setAttribute("aria-pressed","false");
       $("#spin-card").textContent=t(motionPreference.matches?"Giro desativado: movimento reduzido":"Ativar giro");
       $("#turn-card").setAttribute("aria-pressed","false");$("#turn-card").textContent=t("Ver verso");
-      arena.classList.add("is-invoked");card.classList.add("is-invoked");b.disabled=true;
-      arena.querySelector(".power-announcement").textContent=t("Carta invocada. Agora experimente a missão no seu assistente.");
-      DeckSound.play("reveal");
-      setTimeout(()=>{arena.classList.remove("is-invoked");card.classList.remove("is-invoked");b.disabled=false},1300);
+      DeckInvocation.start(selected, $("#skill-detail"), b);
     }
   }
   if (b.dataset.detailTab) {
@@ -1256,7 +1284,24 @@ document.addEventListener("click", async (e) => {
   }
 });
 $("#close-detail").onclick = () => $("#skill-dialog").close();
+$("#skill-dialog").addEventListener("cancel", e => {
+  if (DeckInvocation.running) { e.preventDefault(); DeckInvocation.cancel(); }
+});
+document.addEventListener("change", async e => {
+  const input = e.target;
+  if (!input.matches("[data-verify-zip]") || selected?.id !== input.dataset.verifyZip) return;
+  const file = input.files?.[0], skill = selected, status = input.closest("details").querySelector(".zip-result");
+  if (!file) { status.textContent = ""; return; }
+  if (file.size > 4000000) { status.textContent = t("Selecione um ZIP de até 4 MB, como os arquivos deste catálogo."); return; }
+  status.textContent = t("Conferindo arquivo no seu navegador…");
+  try {
+    const digest = await DeckIdentity.sha256(await file.arrayBuffer());
+    if (!status.isConnected || input.files[0] !== file) return;
+    status.textContent = t(digest === skill.release.sha256 ? "Arquivo íntegro: corresponde exatamente ao ZIP desta edição." : "Este arquivo não corresponde à edição exibida. Pode ser outra versão ou ter sido alterado.");
+  } catch { if (status.isConnected && input.files[0] === file) status.textContent = t("Não foi possível ler o arquivo. Selecione o ZIP novamente."); }
+});
 $("#skill-dialog").addEventListener("close", () => {
+  DeckInvocation.cancel();
   selected = null;
   syncDetailURL();
   render();

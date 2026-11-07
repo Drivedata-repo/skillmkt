@@ -52,6 +52,8 @@ const toolNames = new Set([
 function technicalString(value, path) {
   return (
     value === "" ||
+    // The passport is a language-neutral data contract, tested independently.
+    /^catalog\.skills\.\d+\.identity\./.test(path) ||
     /\.(?:id|skillId|kind|code|variantOf|version|sha256)$/.test(path) ||
     /\.release\.(?:format|review)$/.test(path) ||
     /\.release\.(?:sourceReview|distribution|sourcePolicy)$/.test(path) ||

@@ -1,0 +1,160 @@
+/* The nine ceremonies share their stage, not their choreography. Only a clicked card performs. */
+.summon-stage{position:relative;isolation:isolate;padding:26px 0;margin:-26px 0;perspective:1100px}
+.summon-card-shell{position:relative;z-index:2;transform-origin:50% 80%}
+.summon-field{position:absolute;inset:0 -16px;overflow:hidden;pointer-events:none;z-index:0;color:var(--summon-color);opacity:0}
+.summon-disc{position:absolute;top:42%;left:50%;width:360px;height:360px;transform:translate(-50%,-50%)}
+.summon-disc svg{width:100%;height:100%;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.2;filter:drop-shadow(0 0 4px rgb(var(--summon-rgb)/.45))}
+.summon-ring,.summon-rays,.summon-crystal,.summon-arcs,.summon-crown{transform-origin:180px 180px;opacity:0}
+.summon-ring circle:first-child{stroke-width:2}
+.ring-b{stroke:rgb(var(--summon-rgb)/.6)}
+.ring-c{stroke-width:1.2}
+.summon-rays{stroke-width:2}
+.summon-crystal{fill:rgb(var(--summon-rgb)/.08);stroke-width:1.5}
+.summon-crown{stroke:#fff1b8;stroke-width:2;fill:#d5971e20}
+.summon-arcs{stroke-width:2.5;stroke-linejoin:round}
+.summon-particle{position:absolute;left:50%;top:50%;width:var(--spark-size);height:var(--spark-size);border-radius:50%;background:#fff8df;box-shadow:0 0 7px 2px rgb(var(--summon-rgb)/.7);opacity:0}
+.summon-nebula{position:absolute;inset:3% -12%;background:radial-gradient(ellipse at 50% 42%,rgb(var(--summon-rgb)/.4),rgb(var(--summon-rgb)/.1) 40%,transparent 67%);opacity:0}
+.summon-floor{position:absolute;bottom:4%;left:8%;width:84%;height:15%;border:1px solid var(--summon-color);border-radius:50%;box-shadow:0 0 16px rgb(var(--summon-rgb)/.5),inset 0 0 14px rgb(var(--summon-rgb)/.2);opacity:0}
+.summon-beam{position:absolute;top:0;bottom:0;left:35%;width:30%;background:linear-gradient(90deg,transparent,rgb(var(--summon-rgb)/.3),#fff9,rgb(var(--summon-rgb)/.3),transparent);mask-image:linear-gradient(transparent,#000 28% 60%,transparent);opacity:0}
+.summon-console{display:flex;align-items:center;gap:18px;border-top:1px solid rgb(var(--summon-rgb)/.45);border-bottom:1px solid rgb(var(--summon-rgb)/.25);margin:22px 0 10px;padding:15px 0;min-width:0}
+.summon-emblem{position:relative;flex:0 0 92px;height:104px;overflow:hidden;isolation:isolate}
+.summon-emblem .summon-field{inset:0;opacity:.38}
+.summon-emblem .summon-disc{width:135px;height:135px;top:50%}
+.summon-emblem .ring-a{opacity:1}
+.summon-emblem>span{position:absolute;inset:0;display:grid;place-items:center;font:600 22px var(--mono,monospace);color:var(--summon-color);z-index:1}
+.summon-description{flex:1;min-width:0}
+.summon-description .summon-label{font:10px/1.5 var(--mono,monospace);color:#b1c7d5;margin:0 0 6px}
+.summon-description h4{font:600 19px/1.2 var(--display,inherit);color:var(--summon-color);margin:0 0 7px;text-transform:none;letter-spacing:0}
+.summon-description p:last-child{font-size:11px;line-height:1.65;margin:0;color:#c5d3df}
+.summon-preferences{display:flex;justify-content:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.summon-preferences button{font-size:11px;min-height:32px}
+.summon-preferences button[aria-pressed=true]{text-decoration:underline;text-underline-offset:5px}
+.power-summon{transition:background .2s}
+.power-summon:disabled{opacity:.75;cursor:progress}
+.invocation-theater{position:fixed;z-index:15;padding:0;margin:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:0 0 10px 10px;background:radial-gradient(ellipse at 50% 47%,rgb(var(--summon-rgb)/.15),transparent 66%),#070d16}
+.download-dialog:has(.invocation-theater) #skill-detail{visibility:hidden}
+.invocation-theater>.summon-field{inset:0}
+.invocation-theater .summon-disc{width:min(130vw,650px);height:min(130vw,650px);top:48%}
+.invocation-theater .summon-nebula{inset:-10% 4%}
+.invocation-theater .summon-floor{left:22%;width:56%;bottom:13%;height:7%}
+.theater-title{position:absolute;z-index:3;top:14px;left:14px;right:14px;text-align:center}
+.theater-title p{margin:0 0 5px;font:10px var(--mono,monospace);color:#b6ccd6}
+.theater-title h3{margin:0;color:var(--summon-color);font-size:clamp(18px,3vw,28px);line-height:1.1}
+.theater-card{width:clamp(110px,calc((var(--theater-height) - 165px)*.63),270px);margin:0 0 13px;flex-shrink:0}
+.theater-card .holo-card{width:100%;filter:drop-shadow(0 16px 30px #0009);--rx:0deg;--ry:0deg}
+.theater-card .card-info h3{font-size:14px}.theater-card .card-info p{display:block;font-size:9px}
+.theater-card .card-visual{height:33%}
+.theater-card .card-type{font-size:6px}
+.theater-footer{position:absolute;z-index:3;bottom:14px;left:14px;right:14px;text-align:center}
+.theater-footer p{font-size:13px;color:#edf4f7;margin:0 0 4px}
+.theater-footer>span{display:block;font:8px var(--mono,monospace);color:#a9c2cf}
+.theater-footer>div{display:flex;justify-content:center;gap:24px;margin-top:10px}
+.theater-footer button{font-size:11px;min-height:30px;color:#d9e7ef;text-decoration:underline;text-underline-offset:4px}
+.theater-footer button:focus-visible{outline:2px solid var(--summon-color);outline-offset:3px}
+@media(max-height:620px){.theater-card .card-info p,.theater-card .card-type{display:none}.theater-card .card-info h3{font-size:10px}.theater-card .card-rank{font-size:6px}.theater-card .rank-stars>span{display:none}.theater-card .card-heading{font-size:6px}.theater-card .card-heading b{font-size:5px}.theater-card .card-heading img{width:14px;height:14px}.theater-card .card-price b{font-size:10px}.theater-card .card-battle-stats b{font-size:10px}}
+@media(max-height:500px) and (min-width:600px){.theater-card{width:calc((var(--theater-height) - 28px)*.63);max-width:205px;margin:0 42% 0 0}.theater-title{left:50%;top:22%}.theater-footer{left:50%;bottom:18%}.invocation-theater .summon-disc{left:29%;width:410px;height:410px}.theater-footer>div{flex-wrap:wrap;gap:4px 18px}.theater-title h3{font-size:20px}}
+@media(max-height:620px){.theater-card .card-face{padding:7px;border-radius:9px}.theater-card .card-visual{height:29%}.theater-card .card-info{padding:6px;margin-top:4px}.theater-card .card-heading{padding:3px;margin-bottom:3px;gap:3px}.theater-card .card-rank{padding:3px;margin-bottom:3px}.theater-card .card-battle-stats{padding:4px 3px;margin-top:3px}.theater-card .card-bottom{padding:3px;margin-top:3px;font-size:6px}.theater-card .card-bottom small{font-size:5px}}
+.is-invoked>.summon-field,.is-invoked .summon-emblem .summon-field{opacity:1}
+.summon-stage.is-invoked .holo-card{pointer-events:none}
+.summon-stage.is-invoked .card-face{box-shadow:0 10px 38px #0009,0 0 22px rgb(var(--summon-rgb)/.38)}
+.summon-solar.is-invoked .card-face{border-color:#ffe7a2;box-shadow:0 16px 45px #0009,0 0 32px #ffd26088,inset 0 0 0 2px #ffe7a2}
+@media(prefers-reduced-motion:no-preference){
+  .invocation-theater .foil-sweep{animation:foil-revolution 5s linear infinite}
+  .invocation-theater .foil-sparks{animation:foil-glimmer 2s ease-in-out infinite}
+  .is-invoked:not(.invocation-reduced) .summon-field{animation:summon-envelope var(--summon-duration) ease both}
+  .is-invoked:not(.invocation-reduced) .summon-nebula{animation:summon-aura var(--summon-duration) ease both}
+  .is-invoked:not(.invocation-reduced) .summon-particle{animation:summon-dust var(--summon-duration) cubic-bezier(.15,.6,.2,1) both;animation-delay:var(--spark-delay)}
+  .summon-pulse.is-invoked:not(.invocation-reduced) .ring-a{animation:pulse-expand var(--summon-duration) ease-out both}
+  .summon-echo.is-invoked:not(.invocation-reduced) .ring-a{animation:echo-expand var(--summon-duration) ease-out both}
+  .summon-echo.is-invoked:not(.invocation-reduced) .ring-b{animation:echo-expand var(--summon-duration) .13s ease-out both}
+  .summon-verdant.is-invoked:not(.invocation-reduced) .ring-a{animation:verdant-helix var(--summon-duration) ease-in-out both}
+  .summon-verdant.is-invoked:not(.invocation-reduced) .ring-b{animation:verdant-helix var(--summon-duration) .1s ease-in-out reverse both}
+  .summon-ember.is-invoked:not(.invocation-reduced) .ring-a{animation:ember-lock var(--summon-duration) cubic-bezier(.2,.8,.2,1) both}
+  .summon-ember.is-invoked:not(.invocation-reduced) .summon-rays{animation:ember-rays var(--summon-duration) ease both}
+  .summon-rift.is-invoked:not(.invocation-reduced) .ring-a{animation:rift-open var(--summon-duration) ease both}
+  .summon-rift.is-invoked:not(.invocation-reduced) .summon-beam{animation:rift-beam var(--summon-duration) ease both}
+  .summon-ion.is-invoked:not(.invocation-reduced) .summon-arcs{animation:ion-trace var(--summon-duration) ease both;stroke-dasharray:260;stroke-dashoffset:260}
+  .summon-ion.is-invoked:not(.invocation-reduced) .ring-a{animation:ion-orbit var(--summon-duration) ease both}
+  .summon-prism.is-invoked:not(.invocation-reduced) .summon-crystal{animation:prism-rise var(--summon-duration) ease both}
+  .summon-prism.is-invoked:not(.invocation-reduced) .ring-b{animation:prism-refract var(--summon-duration) ease both}
+  .summon-orbital.is-invoked:not(.invocation-reduced) .ring-c{animation:orbital-converge var(--summon-duration) ease both}
+  .summon-orbital.is-invoked:not(.invocation-reduced) .ring-a{animation:orbital-seal var(--summon-duration) ease both}
+  .summon-solar.is-invoked:not(.invocation-reduced) .ring-a{animation:solar-seal var(--summon-duration) cubic-bezier(.2,.7,.2,1) both}
+  .summon-solar.is-invoked:not(.invocation-reduced) .ring-b{animation:solar-counterseal var(--summon-duration) ease both}
+  .summon-solar.is-invoked:not(.invocation-reduced) .summon-rays{animation:solar-rays var(--summon-duration) ease both}
+  .summon-solar.is-invoked:not(.invocation-reduced) .summon-crown{animation:solar-crown var(--summon-duration) ease both}
+  .summon-solar.is-invoked:not(.invocation-reduced) .summon-beam{animation:solar-pillar var(--summon-duration) ease both}
+  .summon-solar.is-invoked:not(.invocation-reduced) .summon-floor{animation:solar-floor var(--summon-duration) ease both}
+  .summon-stage.summon-pulse.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-pulse var(--summon-duration) ease both}
+  .summon-stage.summon-echo.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-echo var(--summon-duration) ease both}
+  .summon-stage.summon-verdant.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-flow var(--summon-duration) ease both}
+  .summon-stage.summon-ember.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-ignite var(--summon-duration) ease both}
+  .summon-stage.summon-rift.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-rift var(--summon-duration) ease both}
+  .summon-stage.summon-ion.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-ion var(--summon-duration) ease both}
+  .summon-stage.summon-prism.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-prism var(--summon-duration) ease both}
+  .summon-stage.summon-orbital.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-orbital var(--summon-duration) ease both}
+  .summon-stage.summon-solar.is-invoked:not(.invocation-reduced) .summon-card-shell{animation:card-coronation var(--summon-duration) cubic-bezier(.2,.65,.2,1) both}
+}
+@keyframes summon-envelope{0%,100%{opacity:0}12%,83%{opacity:1}}
+@keyframes summon-aura{0%,100%{opacity:0;transform:scale(.6)}32%,70%{opacity:1;transform:scale(1)}}
+@keyframes summon-dust{0%,16%{opacity:0;transform:translate(0,0) scale(.2)}34%{opacity:1}86%,100%{opacity:0;transform:translate(var(--px),var(--py)) scale(.6)}}
+@keyframes pulse-expand{0%{opacity:0;transform:scale(.2)}30%{opacity:1}100%{opacity:0;transform:scale(1.25)}}
+@keyframes echo-expand{0%{opacity:0;transform:scale(.3)}25%,50%{opacity:1}100%{opacity:0;transform:scale(1.2)}}
+@keyframes verdant-helix{0%{opacity:0;transform:scaleX(.2) rotate(-100deg)}25%,75%{opacity:1}100%{opacity:0;transform:scaleX(.7) rotate(160deg)}}
+@keyframes ember-lock{0%{opacity:0;transform:scale(1.5) rotate(-80deg)}32%,65%{opacity:1;transform:scale(.92) rotate(0)}100%{opacity:0;transform:scale(1.1) rotate(20deg)}}
+@keyframes ember-rays{0%,20%{opacity:0;transform:scale(.5)}40%{opacity:1}100%{opacity:0;transform:scale(1.2) rotate(30deg)}}
+@keyframes rift-open{0%{opacity:0;transform:scaleX(.04) scaleY(1.2)}25%,65%{opacity:1;transform:scaleX(.8) scaleY(1.1)}100%{opacity:0;transform:scale(1.15)}}
+@keyframes rift-beam{0%{opacity:0;transform:scaleX(.1)}27%{opacity:.7;transform:scaleX(.2)}55%{opacity:.4;transform:scaleX(2)}100%{opacity:0;transform:scaleX(3)}}
+@keyframes ion-trace{0%{opacity:0;stroke-dashoffset:260}25%,65%{opacity:1;stroke-dashoffset:0}100%{opacity:0;stroke-dashoffset:-260}}
+@keyframes ion-orbit{0%{opacity:0;transform:rotate(-160deg) scale(.6)}30%,70%{opacity:1}100%{opacity:0;transform:rotate(160deg) scale(1.05)}}
+@keyframes prism-rise{0%{opacity:0;transform:translateY(60px) scale(.4) rotate(-45deg)}30%,65%{opacity:1;transform:translateY(0) scale(1) rotate(0)}100%{opacity:0;transform:translateY(-25px) scale(1.15) rotate(45deg)}}
+@keyframes prism-refract{0%{opacity:0;transform:scale(.2) rotate(100deg)}35%,75%{opacity:1}100%{opacity:0;transform:scale(1.25) rotate(-100deg)}}
+@keyframes orbital-converge{0%{opacity:0;transform:scale(1.7) rotate(-100deg)}30%,70%{opacity:1;transform:scale(1) rotate(20deg)}100%{opacity:0;transform:scale(.8) rotate(120deg)}}
+@keyframes orbital-seal{0%,10%{opacity:0;transform:scale(.3)}45%,75%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.1)}}
+@keyframes solar-seal{0%{opacity:0;transform:scale(.35) rotate(-130deg)}25%{opacity:.5}42%,78%{opacity:1;transform:scale(1.1) rotate(30deg)}100%{opacity:0;transform:scale(1.2) rotate(65deg)}}
+@keyframes solar-counterseal{0%,12%{opacity:0;transform:scale(.3) rotate(80deg)}40%,76%{opacity:1;transform:scale(1) rotate(-40deg)}100%{opacity:0;transform:scale(1.2) rotate(-80deg)}}
+@keyframes solar-rays{0%,22%{opacity:0;transform:scale(.2) rotate(-10deg)}44%,70%{opacity:.9;transform:scale(1.07) rotate(15deg)}100%{opacity:0;transform:scale(1.25) rotate(30deg)}}
+@keyframes solar-crown{0%,28%{opacity:0;transform:translateY(35px) scale(.8)}47%,80%{opacity:1;transform:translateY(-3px) scale(1)}100%{opacity:0;transform:translateY(-20px) scale(1.03)}}
+@keyframes solar-pillar{0%{opacity:0;transform:scaleX(.06)}23%{opacity:.6;transform:scaleX(.1)}40%{opacity:.5;transform:scaleX(1.4)}75%,100%{opacity:0;transform:scaleX(2)}}
+@keyframes solar-floor{0%,18%{opacity:0;transform:scale(.2)}45%,80%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.2)}}
+@keyframes card-pulse{0%,100%{transform:none}35%{transform:scale(1.025)}}
+@keyframes card-echo{0%,100%{transform:none}30%{transform:translateY(-5px)}65%{transform:translateY(-2px)}}
+@keyframes card-flow{0%,100%{transform:none}40%{transform:translateY(-9px) rotateZ(-1.5deg)}70%{transform:translateY(-6px) rotateZ(1deg)}}
+@keyframes card-ignite{0%,100%{transform:none}20%{transform:scale(.96) rotateZ(-2deg)}42%,60%{transform:scale(1.025) rotateZ(1deg)}}
+@keyframes card-rift{0%,100%{transform:none}18%{transform:scaleX(.92) rotateY(-14deg)}55%{transform:translateY(-11px) rotateY(10deg)}}
+@keyframes card-ion{0%,100%{transform:none}20%{transform:translateY(4px) rotateY(-12deg)}44%,65%{transform:translateY(-13px) rotateY(7deg)}}
+@keyframes card-prism{0%,100%{transform:none}25%{transform:rotateY(-20deg) rotateZ(-3deg) scale(.96)}55%,70%{transform:translateY(-14px) rotateY(15deg) rotateZ(2deg)}}
+@keyframes card-orbital{0%,100%{transform:none}25%{transform:rotateY(-24deg) rotateX(8deg) scale(.97)}60%{transform:translateY(-17px) rotateY(18deg) rotateX(-4deg)}}
+@keyframes card-coronation{0%,100%{transform:none}20%{transform:translateY(5px) rotateY(-18deg) scale(.94)}43%{transform:translateY(-20px) rotateY(14deg) rotateX(4deg) scale(1.025)}72%{transform:translateY(-14px) rotateY(-6deg) scale(1.025)}}
+/* A static seal acknowledges the action in reduced motion; sound remains independently controllable. */
+.invocation-reduced.is-invoked .summon-field{opacity:.55}
+.invocation-reduced.is-invoked .ring-a{opacity:.6}
+.invocation-reduced.is-invoked .summon-nebula{opacity:.25}
+.invocation-reduced .holo-card *{animation:none!important;transition:none!important}
+.motion-off .summon-stage *,.motion-off .summon-console *{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){.summon-stage *,.summon-console *{animation:none!important;transition:none!important}.is-invoked .ring-a{opacity:.6}.is-invoked .summon-nebula{opacity:.25}}
+@media(max-width:760px){.detail-card>.summon-stage{grid-row:1/5}.summon-disc{width:280px;height:280px}.summon-emblem{flex-basis:68px;height:90px}.summon-emblem .summon-disc{width:120px;height:120px}.summon-description h4{font-size:17px}.summon-console{gap:12px}.summon-field{inset:0 -8px}}
+
+/* The passport is a catalog identity, not a wallet or ownership certificate. */
+.card-passport{border:1px solid #3d6774;padding:22px;margin:24px 0;background:linear-gradient(125deg,#11252c,#09131c 72%)}
+.passport-heading{display:flex;align-items:center;gap:16px}
+.identity-mark{width:64px;flex-shrink:0;color:#93dfdb;fill:currentColor}
+.passport-heading h3{margin:0 0 6px;font-size:21px;color:#eaf9f8}
+.passport-heading p{margin:0;font:11px/1.6 var(--mono,monospace);color:#aee6e2;overflow-wrap:anywhere}
+.card-passport dl{margin:20px 0}
+.card-passport dl>div{padding:12px 0;border-top:1px solid #32515c}
+.card-passport dt{color:#a9c3d0;font-size:11px;margin-bottom:7px}
+.card-passport dd{margin:0;font:11px/1.8 var(--mono,monospace);color:#e0efed;overflow-wrap:anywhere;word-break:break-all}
+.passport-actions{display:flex;gap:12px 18px;flex-wrap:wrap;align-items:center}
+.passport-actions button{font-size:11px;min-height:36px}
+.card-passport .identity-result,.card-passport .zip-result{color:#d7f6e7;min-height:1.6em;margin:12px 0}
+.card-passport details{padding:14px 0;border-top:1px solid #32515c}
+.card-passport summary{cursor:pointer;font-size:12px;color:#e4f6f3}
+.zip-check-label{display:grid;gap:10px;font-size:12px;color:#cfe2e9}
+.zip-check-label input{font:11px var(--mono,monospace);max-width:100%;min-width:0}
+.card-passport .passport-scope{border-top:1px solid #32515c;padding-top:14px;font-size:11px;color:#b8cbd5;line-height:1.65;margin-bottom:0}
+.card-identity-link{display:block;border:0;border-bottom:1px solid #3a5864;background:transparent;padding:10px 0 8px;text-align:left;width:100%;color:#bdd6db;font:9px/1.5 var(--mono,monospace);cursor:pointer;overflow-wrap:anywhere}
+.card-identity-link span{display:block;font:10px/1.5 var(--sans, sans-serif);color:#93b9c4;margin-bottom:3px}
+.card-identity-link:hover{color:#fff}
+.back .back-identity{color:#d2e8e8;font:8px/1.6 var(--mono,monospace);border-top:1px solid #64939266;padding-top:9px;margin-top:6px;overflow-wrap:anywhere}
+@media(max-width:460px){.card-passport{padding:15px}.passport-heading{gap:10px}.passport-heading h3{font-size:18px}.identity-mark{width:48px}.passport-heading p{font-size:9px}.back .back-identity{font-size:6px}}
