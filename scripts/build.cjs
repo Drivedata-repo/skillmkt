@@ -1,5 +1,13 @@
 const fs = require("node:fs");
 const cards = require("../data/skills.cjs");
+const priceReview = require("../data/pricing-review.json");
+const releases = require("../data/releases.cjs");
+const {getSkillPricing} = require("../lib/pricing.cjs");
+if(priceReview.records.length!==137) throw Error("Pricing review must cover the complete collection");
+for(const s of cards){
+  const r=priceReview.records.find(r=>r.id===s.id);
+  if(!r || r.packageSha256!==releases[s.id].sha256 || r.priceCents!==getSkillPricing(s.id).priceCents) throw Error("Pricing assessment needs review: "+s.id);
+}
 require("./build-i18n.cjs");
 require("./build-preview.cjs");
 require("./build-problem-pages.cjs");
@@ -23,6 +31,8 @@ for (const file of [
   "work-store.js",
   "work.js",
   "work.css",
+  "commerce.js",
+  "collection-extras.css",
   "navigation.js",
   "deck-store.js",
   "deck-sound.js",

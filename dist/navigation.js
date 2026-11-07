@@ -32,6 +32,7 @@
         "technical",
         "lab",
         "help",
+        "power",
       ],
       step: ["0", "1", "2", "3"],
       spin: ["on", "off"],

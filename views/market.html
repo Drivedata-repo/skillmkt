@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="/universes.css" />
     <link rel="stylesheet" href="/i18n.css" />
     <link rel="stylesheet" href="/work.css" />
+    <link rel="stylesheet" href="/collection-extras.css" />
     <script src="/translations.js"></script>
     <script src="/i18n-core.js"></script>
     <script src="/i18n.js"></script>
     <script src="/skill-art.js" defer></script>
+    <script src="/commerce.js" defer></script>
     <script src="/deck-art.js" defer></script>
     <script src="/work-store.js" defer></script>
     <script src="/deck-store.js" defer></script>
@@ -84,6 +86,7 @@
               <p class="work-kicker">Da amostra à sua entrega</p>
               <h1 id="work-title" tabindex="-1">Seu percurso de trabalho</h1>
               <p id="work-description"></p>
+              <div id="work-bundle-price"></div>
             </div>
             <div class="work-package-actions">
               <button id="work-download-pack" class="btn secondary">
@@ -146,6 +149,13 @@
             </div>
           </div>
           <div id="pack-tiles" class="pack-tiles"></div>
+          <p class="fine">Demo gratuita. Valores propostos em USD; nenhuma cobrança ativa.</p>
+          <details class="more-combos">
+            <summary>Outros combos por objetivo</summary>
+            <p>Escolha uma sequência que faça sentido para o seu trabalho.</p>
+            <p class="fine">Descontos sobre os preços individuais propostos. Todos continuam gratuitos na demo.</p>
+            <div id="combo-tiles" class="combo-tiles"></div>
+          </details>
         </section>
         <form id="finder" class="finder">
           <label for="problem">O que você quer resolver?</label
@@ -286,6 +296,15 @@
             >
           </div>
           <div class="collection-options">
+            <label>Preço individual proposto
+              <select id="price-ceiling">
+                <option value="all">Todas as faixas</option>
+                <option value="1700">Até US$ 17</option>
+                <option value="2700">Até US$ 27</option>
+                <option value="3700">Até US$ 37</option>
+                <option value="4700">Até US$ 47</option>
+              </select>
+            </label>
             <label
               ><input type="checkbox" id="examples-only" />Com exemplo
               reproduzível</label
@@ -298,9 +317,13 @@
                 <option value="featured">Exemplos primeiro</option>
                 <option value="code">Identificador</option>
                 <option value="name">Nome</option>
+                <option value="price-asc">Menor preço proposto</option>
+                <option value="price-desc">Maior preço proposto</option>
               </select></label
             >
           </div>
+          <p class="fine">Níveis, ATQ e DEF são fictícios. O teste real está no Laboratório.</p>
+          <div id="combo-focus" class="combo-focus" hidden><span></span><button id="clear-combo" class="text-button">Limpar seleção do combo</button></div>
           <div id="skill-grid" class="skill-grid"></div>
           <div id="empty" class="empty" hidden>
             Nenhuma carta com estes filtros. Ajuste a busca ou inclua as skills

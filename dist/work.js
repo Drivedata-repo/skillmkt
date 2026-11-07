@@ -164,7 +164,7 @@ window.DeckWork = (() => {
       })
       .join(
         "",
-      )}</div><button class="btn secondary" data-choose-pack="${p.id}">${esc(t("Abrir meu percurso"))}<span aria-hidden="true">↗</span></button><small>${esc(t("{count} especialidades em uma sequência", { count }))}</small></article>`;
+      )}</div>${DeckCommerce.bundlePrice(p.pricing)}<button class="btn secondary" data-choose-pack="${p.id}">${esc(t("Abrir meu percurso"))}<span aria-hidden="true">↗</span></button><small>${esc(t("{count} especialidades em uma sequência", { count }))}</small></article>`;
   }
   function render() {
     if (!ctx || !packs.length) return;
@@ -184,6 +184,7 @@ window.DeckWork = (() => {
       focusId = focused?.id;
     $("#work-title").textContent = p.title;
     $("#work-description").textContent = p.description;
+    $("#work-bundle-price").innerHTML = DeckCommerce.bundlePrice(p.pricing);
     $("#work-pack-tabs").innerHTML = packs
       .map(
         (x) =>

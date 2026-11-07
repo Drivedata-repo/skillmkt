@@ -34,6 +34,7 @@ module.exports = (req, res) => {
     send(res, 200, {
       ...catalog,
       packs: require("../lib/packs.cjs").getPacks(locale),
+      combos: require("../lib/pricing.cjs").getCombos(locale),
       skills: catalog.skills.map((skill) => ({
         ...skill,
         compatibilityAssessment: assessCompatibility(skill, context, locale),

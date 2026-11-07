@@ -248,6 +248,8 @@ function harness({
     setTimeout() {},
   };
   vm.createContext(sandbox);
+  vm.runInContext(fs.readFileSync("dist/commerce.js", "utf8"), sandbox);
+  sandbox.DeckCommerce = sandbox.window.DeckCommerce;
   vm.runInContext(source, sandbox);
   const work = sandbox.window.DeckWork;
   work.start(context, data(locale));

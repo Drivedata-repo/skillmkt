@@ -24,6 +24,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Oficina de Células",
           "tagline": "Uma planilha útil mostra a conta e permite conferir o resultado."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 4200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Preço proposto",
+          "demoLabel": "Grátis na demo",
+          "notice": "Valor planejado em dólares americanos. Nenhuma compra ou cobrança está ativa.",
+          "basis": "Avaliação documental do escopo; não é uma nota de qualidade nem comprovação de ganho.",
+          "complexityLabel": "Especializada",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Profundidade técnica",
+              "score": 4,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Abrangência da entrega",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Esforço de conferência",
+              "score": 5,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reutilização",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Entrega de referência: Planilhas editáveis com fórmulas, tabelas e gráficos.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 3,
+          "attack": 1960,
+          "defense": 2620,
+          "school": "Escriba",
+          "flavor": "Preserva os detalhes que sustentam toda a missão.",
+          "notice": "Níveis, ATQ e DEF são atributos fictícios de coleção. Não medem qualidade, preço ou resultado da skill."
         }
       },
       "example": {
@@ -84,6 +140,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Cartógrafo de Métricas",
           "tagline": "Encontre a regra por trás do número antes de otimizar a medida."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 4200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Preço proposto",
+          "demoLabel": "Grátis na demo",
+          "notice": "Valor planejado em dólares americanos. Nenhuma compra ou cobrança está ativa.",
+          "basis": "Avaliação documental do escopo; não é uma nota de qualidade nem comprovação de ganho.",
+          "complexityLabel": "Especializada",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Profundidade técnica",
+              "score": 5,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Abrangência da entrega",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Esforço de conferência",
+              "score": 5,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reutilização",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Entrega de referência: Diagnóstico do modelo e medidas.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 6,
+          "attack": 2370,
+          "defense": 1640,
+          "school": "Oráculo",
+          "flavor": "Decifra o que está escondido entre os números.",
+          "notice": "Níveis, ATQ e DEF são atributos fictícios de coleção. Não medem qualidade, preço ou resultado da skill."
         }
       },
       "example": {
@@ -163,6 +275,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Laboratório do Escopo",
           "tagline": "Veja o fluxo funcionar em uma demonstração antes de assumir o escopo."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 3700,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Preço proposto",
+          "demoLabel": "Grátis na demo",
+          "notice": "Valor planejado em dólares americanos. Nenhuma compra ou cobrança está ativa.",
+          "basis": "Avaliação documental do escopo; não é uma nota de qualidade nem comprovação de ganho.",
+          "complexityLabel": "Avançada",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Profundidade técnica",
+              "score": 4,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Abrangência da entrega",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Esforço de conferência",
+              "score": 4,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reutilização",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Entrega de referência: Protótipo navegável com dados de demonstração.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 7,
+          "attack": 2740,
+          "defense": 1580,
+          "school": "Explorador",
+          "flavor": "Segue pistas, cruza fronteiras e volta com novas perguntas.",
+          "notice": "Níveis, ATQ e DEF são atributos fictícios de coleção. Não medem qualidade, preço ou resultado da skill."
         }
       },
       "example": {
@@ -238,6 +406,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Tradutor de Valor",
           "tagline": "Transforme capacidade técnica em uma mensagem que alguém entende."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 3200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Preço proposto",
+          "demoLabel": "Grátis na demo",
+          "notice": "Valor planejado em dólares americanos. Nenhuma compra ou cobrança está ativa.",
+          "basis": "Avaliação documental do escopo; não é uma nota de qualidade nem comprovação de ganho.",
+          "complexityLabel": "Avançada",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Profundidade técnica",
+              "score": 3,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Abrangência da entrega",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Esforço de conferência",
+              "score": 3,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reutilização",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Entrega de referência: Calendário e pautas editoriais.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 9,
+          "attack": 3030,
+          "defense": 1560,
+          "school": "Embaixador",
+          "flavor": "Transforma uma ideia em uma mensagem que encontra seu destino.",
+          "notice": "Níveis, ATQ e DEF são atributos fictícios de coleção. Não medem qualidade, preço ou resultado da skill."
         }
       },
       "example": {
@@ -289,6 +513,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Cell Workshop",
           "tagline": "A useful spreadsheet shows the calculation and lets you check the result."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 4200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Proposed price",
+          "demoLabel": "Free in the demo",
+          "notice": "Planned value in US dollars. No purchase or billing is active.",
+          "basis": "Documentary assessment of scope; not a quality rating or proof of improvement.",
+          "complexityLabel": "Specialist",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Technical depth",
+              "score": 4,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Deliverable scope",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Verification effort",
+              "score": 5,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reuse",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Reference deliverable: Editable spreadsheets with formulas, tables and charts.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 3,
+          "attack": 1960,
+          "defense": 2620,
+          "school": "Scribe",
+          "flavor": "Preserves the details that hold the mission together.",
+          "notice": "Levels, ATK and DEF are fictional collection attributes. They do not measure skill quality, price or results."
         }
       },
       "example": {
@@ -349,6 +629,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Metric Cartographer",
           "tagline": "Find the rule behind the number before optimizing the measure."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 4200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Proposed price",
+          "demoLabel": "Free in the demo",
+          "notice": "Planned value in US dollars. No purchase or billing is active.",
+          "basis": "Documentary assessment of scope; not a quality rating or proof of improvement.",
+          "complexityLabel": "Specialist",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Technical depth",
+              "score": 5,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Deliverable scope",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Verification effort",
+              "score": 5,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reuse",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Reference deliverable: Model and measure diagnosis.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 6,
+          "attack": 2370,
+          "defense": 1640,
+          "school": "Oracle",
+          "flavor": "Deciphers what lies hidden between the numbers.",
+          "notice": "Levels, ATK and DEF are fictional collection attributes. They do not measure skill quality, price or results."
         }
       },
       "example": {
@@ -428,6 +764,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Scope Laboratory",
           "tagline": "Explore a demonstration flow before committing to the scope."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 3700,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Proposed price",
+          "demoLabel": "Free in the demo",
+          "notice": "Planned value in US dollars. No purchase or billing is active.",
+          "basis": "Documentary assessment of scope; not a quality rating or proof of improvement.",
+          "complexityLabel": "Advanced",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Technical depth",
+              "score": 4,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Deliverable scope",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Verification effort",
+              "score": 4,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reuse",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Reference deliverable: Navigable prototype with demonstration data.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 7,
+          "attack": 2740,
+          "defense": 1580,
+          "school": "Explorer",
+          "flavor": "Follows clues, crosses borders and returns with new questions.",
+          "notice": "Levels, ATK and DEF are fictional collection attributes. They do not measure skill quality, price or results."
         }
       },
       "example": {
@@ -503,6 +895,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Value Translator",
           "tagline": "Turn technical capability into a message people can understand."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 3200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Proposed price",
+          "demoLabel": "Free in the demo",
+          "notice": "Planned value in US dollars. No purchase or billing is active.",
+          "basis": "Documentary assessment of scope; not a quality rating or proof of improvement.",
+          "complexityLabel": "Advanced",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Technical depth",
+              "score": 3,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Deliverable scope",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Verification effort",
+              "score": 3,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reuse",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Reference deliverable: Editorial calendar and topics.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 9,
+          "attack": 3030,
+          "defense": 1560,
+          "school": "Envoy",
+          "flavor": "Turns an idea into a message that finds its destination.",
+          "notice": "Levels, ATK and DEF are fictional collection attributes. They do not measure skill quality, price or results."
         }
       },
       "example": {
@@ -554,6 +1002,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Taller de Celdas",
           "tagline": "Una hoja útil muestra la cuenta y permite comprobar el resultado."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 4200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Precio propuesto",
+          "demoLabel": "Gratis en la demo",
+          "notice": "Valor previsto en dólares estadounidenses. No hay compras ni cobros activos.",
+          "basis": "Evaluación documental del alcance; no es una nota de calidad ni una prueba de mejora.",
+          "complexityLabel": "Especializada",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Profundidad técnica",
+              "score": 4,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Alcance de la entrega",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Esfuerzo de revisión",
+              "score": 5,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reutilización",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Entrega de referencia: Hojas de cálculo editables con fórmulas, tablas y gráficos.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 3,
+          "attack": 1960,
+          "defense": 2620,
+          "school": "Escriba",
+          "flavor": "Preserva los detalles que sostienen toda la misión.",
+          "notice": "Los niveles, ATQ y DEF son atributos ficticios de colección. No miden la calidad, el precio ni los resultados de la skill."
         }
       },
       "example": {
@@ -614,6 +1118,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Cartógrafo de Métricas",
           "tagline": "Encuentra la regla detrás de la cifra antes de optimizar la medida."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 4200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Precio propuesto",
+          "demoLabel": "Gratis en la demo",
+          "notice": "Valor previsto en dólares estadounidenses. No hay compras ni cobros activos.",
+          "basis": "Evaluación documental del alcance; no es una nota de calidad ni una prueba de mejora.",
+          "complexityLabel": "Especializada",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Profundidad técnica",
+              "score": 5,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Alcance de la entrega",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Esfuerzo de revisión",
+              "score": 5,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reutilización",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Entrega de referencia: Diagnóstico del modelo y las medidas.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 6,
+          "attack": 2370,
+          "defense": 1640,
+          "school": "Oráculo",
+          "flavor": "Descifra lo que se esconde entre los números.",
+          "notice": "Los niveles, ATQ y DEF son atributos ficticios de colección. No miden la calidad, el precio ni los resultados de la skill."
         }
       },
       "example": {
@@ -693,6 +1253,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Laboratorio del Alcance",
           "tagline": "Explora un flujo de demostración antes de comprometer el alcance."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 3700,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Precio propuesto",
+          "demoLabel": "Gratis en la demo",
+          "notice": "Valor previsto en dólares estadounidenses. No hay compras ni cobros activos.",
+          "basis": "Evaluación documental del alcance; no es una nota de calidad ni una prueba de mejora.",
+          "complexityLabel": "Avanzada",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Profundidad técnica",
+              "score": 4,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Alcance de la entrega",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Esfuerzo de revisión",
+              "score": 4,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reutilización",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Entrega de referencia: Prototipo navegable con datos de demostración.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 7,
+          "attack": 2740,
+          "defense": 1580,
+          "school": "Explorador",
+          "flavor": "Sigue pistas, cruza fronteras y vuelve con nuevas preguntas.",
+          "notice": "Los niveles, ATQ y DEF son atributos ficticios de colección. No miden la calidad, el precio ni los resultados de la skill."
         }
       },
       "example": {
@@ -768,6 +1384,62 @@ const PublicPreview = ({
         "universe": {
           "alias": "Traductor de Valor",
           "tagline": "Convierte capacidad técnica en un mensaje comprensible."
+        },
+        "pricing": {
+          "currency": "USD",
+          "priceCents": 3200,
+          "demoPriceCents": 0,
+          "purchasable": false,
+          "status": "proposed-free-demo",
+          "revision": "2026-11-07",
+          "assessedVersion": "1.2.0",
+          "label": "Precio propuesto",
+          "demoLabel": "Gratis en la demo",
+          "notice": "Valor previsto en dólares estadounidenses. No hay compras ni cobros activos.",
+          "basis": "Evaluación documental del alcance; no es una nota de calidad ni una prueba de mejora.",
+          "complexityLabel": "Avanzada",
+          "dimensions": [
+            {
+              "key": "depth",
+              "label": "Profundidad técnica",
+              "score": 3,
+              "max": 5,
+              "weight": 35
+            },
+            {
+              "key": "scope",
+              "label": "Alcance de la entrega",
+              "score": 4,
+              "max": 5,
+              "weight": 30
+            },
+            {
+              "key": "verification",
+              "label": "Esfuerzo de revisión",
+              "score": 3,
+              "max": 5,
+              "weight": 20
+            },
+            {
+              "key": "reuse",
+              "label": "Reutilización",
+              "score": 5,
+              "max": 5,
+              "weight": 15
+            }
+          ],
+          "reason": "Entrega de referencia: Calendario y temas editoriales.",
+          "variantNote": null
+        },
+        "game": {
+          "edition": "arcana-1",
+          "fictional": true,
+          "level": 9,
+          "attack": 3030,
+          "defense": 1560,
+          "school": "Embajador",
+          "flavor": "Convierte una idea en un mensaje que encuentra su destino.",
+          "notice": "Los niveles, ATQ y DEF son atributos ficticios de colección. No miden la calidad, el precio ni los resultados de la skill."
         }
       },
       "example": {

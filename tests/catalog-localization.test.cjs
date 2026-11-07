@@ -75,6 +75,8 @@ function generatedString(path) {
   return (
     /^catalog\.skills\.\d+\.(?:firstPrompt|acceptance\.\d+)$/.test(path) ||
     /^catalog\.skills\.\d+\.universe\./.test(path)
+    // Pricing and collectible attributes have exhaustive locale/number tests.
+    || /^catalog\.skills\.\d+\.(?:pricing|game)\./.test(path)
   );
 }
 

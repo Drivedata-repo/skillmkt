@@ -4,6 +4,10 @@
 
 ## Percursos focados em tarefas
 
+Os 137 itens têm preços **propostos** de US$ 7 a US$ 47, definidos por profundidade, escopo, esforço de conferência e reutilização. A [matriz completa](reviews/PRECIFICACAO-137-SKILLS-2026-11-07.md) e seu CSV registram cada justificativa e os cinco combos, com descontos de 20% a 30%. O teto vale por skill; os combos somam várias skills. Preços não ativam cobrança nem alteram a liberação comercial. A avaliação documental é distinta dos dez ensaios executados.
+
+As cartas possuem níveis, estrelas, arquétipos e ATQ/DEF **fictícios**, independentes de preço e qualidade. A aba Poder da carta tem uma invocação visual e sonora, respeitando movimento reduzido e a preferência de som. Esse efeito não executa a skill. Ficha técnica explica a avaliação de preço; Laboratório mantém a evidência real.
+
 - **Explorar:** mantém as cartas holográficas, universos, filtros e descobertas. **Trabalhar:** apresenta as skills com foco em entrega, requisitos e evidência e abre um percurso de quatro etapas: preparar, praticar, aplicar e conferir.
 - **Planilhas confiáveis:** três skills para organizar dados, calcular uma planilha e documentar a conferência. **Power BI sob controle:** quatro skills para preparar dados, revisar modelo e medidas, auditar e documentar. Pacotes 1.0.0 agregam os ZIPs originais 1.2.0 sem alterá-los.
 - Cada pacote traz amostra fictícia, referência determinística, comandos PT/EN/ES, critérios, manifesto e verificador. Os arquivos são entregues por endpoints autenticados e o navegador verifica SHA-256. A montagem requer apenas SELECT dos pacotes já existentes.

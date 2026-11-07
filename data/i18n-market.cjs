@@ -790,3 +790,4 @@ module.exports = {
 };
 Object.assign(module.exports, require("./i18n-evolution.cjs"));
 Object.assign(module.exports, require("./i18n-work.cjs"));
+Object.assign(module.exports, require("./i18n-commerce.cjs"));

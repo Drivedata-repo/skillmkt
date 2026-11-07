@@ -25,6 +25,7 @@ if(passed.length){
  files['CONFERENCIA.html']=Buffer.from(portable);
  files['LEIA-ME.txt']=Buffer.from('DriveData Deck — arquivos reais dos ensaios limitados.\nAbra CONFERENCIA.html ou as pastas files/.\nOs originais foram gerados pelo Codex CLI a partir de dados fictícios. PDFs de Office, capturas e cópias recalculadas são evidências derivadas da revisão independente.\nOs ensaios não homologam todos os fluxos das 137 skills. Aceite do usuário pendente.\nNenhuma instrução privada de skill, credencial ou log de execução faz parte deste pacote.\n');
  files['evidence.json']=Buffer.from(JSON.stringify({schemaVersion:1,ownerAcceptance:"pending",scenarios:passed},null,2));
- fs.writeFileSync(path.join(out,'deck-ensaios.zip'),zipSync(files,{level:6}));
+ // Fixed DOS calendar time makes the same reviewed files reproducible across builds.
+ fs.writeFileSync(path.join(out,'deck-ensaios.zip'),zipSync(files,{level:6,mtime:new Date(2026,10,7,0,0,0)}));
 }
 console.log(`${passed.length} independently reviewed artifact scenarios in PT/EN/ES.`);

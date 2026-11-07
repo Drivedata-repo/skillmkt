@@ -1,0 +1,2610 @@
+{
+  "revision": "2026-11-07",
+  "currency": "USD",
+  "method": "documentary-four-dimensions",
+  "records": [
+    {
+      "id": "agent-development",
+      "code": "DD-001",
+      "version": "1.2.0",
+      "packageSha256": "cfef40f3f2fe64d5a9b8cacfb91dfb18889736f1fd49c12054746ed93a0558b5",
+      "sourceSha256": "b3a562148c11b821debf69263d7e2c50f919ba27d0a8e2ed9e44652f97ef1d6e",
+      "contractSha256": "8654e29e84e0aee5605569779ca126b578dd686df08bf7e47459dea82aeb59da",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Define agentes, ferramentas mínimas e testes de ativação; depende do runtime de plugins.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "ambiente-dev-windows",
+      "code": "DD-002",
+      "version": "1.2.0",
+      "packageSha256": "8e37ec27514c3a686a9115fb2dbc9f1ce94e26faa0736623c0c227d68f59363c",
+      "sourceSha256": "6e6d83f4a61ab3ef9e913862824139c92d7b742910899b09b0ec3d15ea383341",
+      "contractSha256": "f76724842f586bf60ada032ad4fda4bc473eea437a17e07e3545dd6bcd1d2186",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 2,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Diagnóstico reutilizável de runtimes, caminhos e TLS; receitas locais exigem reconfirmação.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "automacao-documentos-office",
+      "code": "DD-003",
+      "version": "1.2.0",
+      "packageSha256": "a7071953b83111f30052237ffb7e533bc6b39b03fe694a7821a42583439129ed",
+      "sourceSha256": "0ac8ccc780bdc5d0e74d10612d107d2c39e5ee4751be9081cab4c646d42d649c",
+      "contractSha256": "caa4a42dd407bc8504e1ff056532af1f064433c55bdcb3d3cfb5bdcbcf6b9f0b",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Coordena quatro formatos editáveis com recálculo, renderização e consistência entre arquivos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "brief",
+      "code": "DD-004",
+      "version": "1.2.0",
+      "packageSha256": "4f32700bb5dc9151dfd2e512a0ddbf904420c3b9f007a1f7e6400310c2441bc5",
+      "sourceSha256": "ca7cd3bff0576704aea586e8d8b4d7ca36ef8971b9d42754e792463fcbc035d9",
+      "contractSha256": "52a709a52fb659fddb5f60083fab384b562d1715c04c705d998f48251a5111ab",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Organiza fontes, prazos e pendências jurídicas; interpretação continua sujeita a revisão profissional.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "build-mcp-app",
+      "code": "DD-005",
+      "version": "1.2.0",
+      "packageSha256": "38ef04e184b95e74ec44dcb14a572873b7c6b0222bfb27ab25a3c681c16288be",
+      "sourceSha256": "856c49466f76d849e743231e69b3ad6af328df39674d9949f9c52adb362e50fb",
+      "contractSha256": "52f91254931608c73c0f8eb7faccbc86cb3192087ab1006d3a5f8f22f364ab11",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Combina servidor, widget, CSP e contratos de interação com fallback no host.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "build-mcp-server",
+      "code": "DD-006",
+      "version": "1.2.0",
+      "packageSha256": "8b5f0bf506a49d5ce8b35259d4f96c652aea769d61e101552bbed6452e8e7e1c",
+      "sourceSha256": "f63ef263549fd49dccee832ffa8bb587c22b76cf096d8debfd88df215932636f",
+      "contractSha256": "34614e7b780a5804aa7fa6c6b2f4a39491396f00a48dec419cf46964e4ef282e",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Cria ferramentas e autenticação com testes de timeout, escopo e respostas inválidas.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "build-mcpb",
+      "code": "DD-007",
+      "version": "1.2.0",
+      "packageSha256": "ef864099810fb882f8bae6fd677af1922cec92784809ac54ab610eef5522268d",
+      "sourceSha256": "7cfd9ccb279c585ff5aa20837b49c6090b9005ecdcf512a03e389e2258749a9d",
+      "contractSha256": "c9c32a5353eb5cc8839e47ef802e5cb6ef8f7274b24b7c3546edd0c41efe269b",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Empacota servidor e dependências; exige manifesto, verificação de caminhos e instalação portátil.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "cardputer-buddy",
+      "code": "DD-008",
+      "version": "1.2.0",
+      "packageSha256": "fb802783176e75849c6b6b595a0e9221580a27192011b6023784b4a2a667bc36",
+      "sourceSha256": "5515ba2845eb5676dde21d700ebfeba52a08dd42182fea7351e0e01d194a0da4",
+      "contractSha256": "c841e6bf14ab8833f74cc62a05d045f8079b881ffeb8ab07c0c740cdec2532e2",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 2
+      },
+      "family": null,
+      "rationale": "Itera aplicativo MicroPython com logs e recuperação em hardware específico já provisionado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-acta-drivedata",
+      "code": "DD-009",
+      "version": "1.2.0",
+      "packageSha256": "f1c28962254e054db85f0455ee476716da7e61ea5a3450545aa19bece7e85541",
+      "sourceSha256": "6c6e64a06d707242fedd689b9d7fc1822737348131b22e480644d18f543f0641",
+      "contractSha256": "433e1fb0e380cdf504cecdfc2312663db6b4f6c9fcf7c6d8322b3b6c30ba45b8",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Transforma transcrição em ata e compromissos rastreáveis; verifica nomes, datas e formatos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-automation-recommender",
+      "code": "DD-010",
+      "version": "1.2.0",
+      "packageSha256": "54c3f645cb856dfb12ecebb993bd742bc5bcecc5015a96f375f0b344313f935c",
+      "sourceSha256": "cee4d5102b3ac24e44d5291d496429e56620f9a2fed71b15b6ed55ce649a377b",
+      "contractSha256": "088e8d9e2ea477af0827735fcfa0f81f333096dc1ad7973cc929100cb1e1fd62",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 2,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Diagnóstico de repositório com recomendações priorizadas; não implementa a automação.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-bi-documentation",
+      "code": "DD-011",
+      "version": "1.2.0",
+      "packageSha256": "d6c8690a1088e39443bd4eb2d3a5c2522b624ef7e0ea90fff83dacc5fe05984c",
+      "sourceSha256": "dd817b782951521c41659152a376cb2cf10a9539745e5d7b4bc8a7ce8878d577",
+      "contractSha256": "506ef74d11e343adc58d0a26c8ca3a81cfb26ccf30c7fc2fcfc86bcd8599fead",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Inventaria metadados e DAX com cobertura e revisão do documento Word.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-built-in-browser",
+      "code": "DD-012",
+      "version": "1.2.0",
+      "packageSha256": "7c2af0355a4c53614586daf4ee908900f7e4887931aa38ec7a87e8a5a353c1e0",
+      "sourceSha256": "3704a9e606dbed0784c9334077c3035ded3bafb4c70a783202ef0b69ee378a0c",
+      "contractSha256": "9b9b9aa0fa4fee49941e5a8500e3c4a93d5547829e14bc4f39a403122b9e8dc1",
+      "priceCents": 1700,
+      "scores": {
+        "depth": 2,
+        "scope": 1,
+        "verification": 2,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Guia de operação dependente do navegador e permissões do host; não instala automação.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-chrome-browser",
+      "code": "DD-013",
+      "version": "1.2.0",
+      "packageSha256": "e7fefc2719481ace2dddae314ee7875ad42671a92954a31c61ebc213fcbca364",
+      "sourceSha256": "0b783b61db884663a954c492bfd72a4b3fff75f06a9aeb4a0d9f9841a03dfb63",
+      "contractSha256": "467e60debcee38d08939aa757539082f4f153097e2f5e80aeb94e5ec87cc37fa",
+      "priceCents": 1700,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 2,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Orienta navegação e evidência antes/depois com extensão conectada; escopo de apoio.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-cloud-code-architecture",
+      "code": "DD-014",
+      "version": "1.2.0",
+      "packageSha256": "9d7cc8c13983b328bfa6beb93fdce4b2e9b332809417c6a90fd0486c8717659a",
+      "sourceSha256": "cf3f296276aa12b5e820d1bfba5229731805e3f8381fa2f0a32f6b4028ceae95",
+      "contractSha256": "680e09e0777fc9d7b4c495503fe0bd185158d11faa951daa8ec2b690d491ead8",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Analisa eventos, idempotência e recuperação; desenho não equivale a infraestrutura implantada.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-computer-use",
+      "code": "DD-015",
+      "version": "1.2.0",
+      "packageSha256": "563017bf3b60015252aaf8a0752956916e19287e27c9af5c68e393bcf317b533",
+      "sourceSha256": "4b51ba938f268fc0fdf4d888bc07990cecf4ba0991a98916a5bbb7b05d2dee12",
+      "contractSha256": "bc5c820b9c197255986cb2eb7a712ee6e8867625976fdeba84ba48acf1b5e509",
+      "priceCents": 1700,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 2,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Procedimento de inspeção e operação de aplicativos; depende de ferramentas do host.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-computer-use-staging",
+      "code": "DD-016",
+      "version": "1.2.0",
+      "packageSha256": "584f813826b4f916cff814aa14ec9b5e1e9f08515ee28e0de3193c20571713e5",
+      "sourceSha256": "a075e5aa411e29538fd1529fe8ab6b702fb64bdc30da14013264af8aabf6b4a5",
+      "contractSha256": "8d78c54f69a4a238df5e27fd328e9d9875cc051de65a02bb81fadc51c51a95ac",
+      "priceCents": 1700,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 2,
+        "reuse": 3
+      },
+      "family": "claude-computer-use",
+      "rationale": "Variante de preparação, com a mesma finalidade; não é capacidade adicional.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-deep-research",
+      "code": "DD-017",
+      "version": "1.2.0",
+      "packageSha256": "506de9119b02d9b0e1831a2eab32996102582aa614e074236cc3059eca33fb95",
+      "sourceSha256": "dc1e30a04c1b4960379b93402ce3e3cbf38fd5e37fde7e43d43b4ed643d685ae",
+      "contractSha256": "50a635310721bf576db1c11f3d9a73ab5acb63e0952179d2eca5723662d228ea",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Pesquisa com fontes, conflitos e limites de cobertura; entrega síntese para decisão.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-docs",
+      "code": "DD-018",
+      "version": "1.2.0",
+      "packageSha256": "2bbff39e97f5ba3e6d203baa8d6467368d94711dbe36ec0d43c1916c5d657fed",
+      "sourceSha256": "517a8cb597aa579a694d473d1746467b181b730e0b2de1ae3bf4fe0f34cf89d4",
+      "contractSha256": "1c40192e62f6135c4f976ca1a2e4619d5b460c864da7c4987e8da08cdab15b5d",
+      "priceCents": 700,
+      "scores": {
+        "depth": 1,
+        "scope": 1,
+        "verification": 1,
+        "reuse": 1
+      },
+      "family": null,
+      "rationale": "Encaminhamento ao conector de documentos; não contém um gerador autônomo.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-docx",
+      "code": "DD-019",
+      "version": "1.2.0",
+      "packageSha256": "8bf3f058ad3914e56cfd0a50caaa1866eef0a8fe7825fdde0d962a8d86a44629",
+      "sourceSha256": "0100c3fd7980a83ab6bc984e87483f3d2703a7f5451c28c03ca8235e217fa573",
+      "contractSha256": "78e8c2a6e91aff8dbf81cfb259aca5b376ed807da477cbb82e57cdcfbcf47079",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Cria e edita Word preservando comentários, relações e estrutura, com renderização.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-google-workspace",
+      "code": "DD-020",
+      "version": "1.2.0",
+      "packageSha256": "6ba209a1ec79470c555ba21bee3dd93c1d230b77b98552074e1ea6e119ad0164",
+      "sourceSha256": "9b9412c2746f6576c8ab9ce2e84c5aaae9ed66060b4bfdffc0395eebaeb076df",
+      "contractSha256": "b569e02d0bdea93e57a087750e75a70c9f63bedcaa18a67b5b64e90b0d1b6838",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Atua em documentos, planilhas e slides via conectores, preservando revisão concorrente.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-import-memory",
+      "code": "DD-021",
+      "version": "1.2.0",
+      "packageSha256": "7c553e4f941ad192a516a7f69fb9617d290fe8301c3f9f654e52bcc907cfdb0c",
+      "sourceSha256": "c0655dfe2cdd5c517e0ac6d74e31ff6d6972475cd26459aea94cce7b033c68fa",
+      "contractSha256": "b0620b04cffe8b4fb5cfd1d32c10777418d9c0b4326b2e35566b916377890dbc",
+      "priceCents": 1200,
+      "scores": {
+        "depth": 2,
+        "scope": 1,
+        "verification": 2,
+        "reuse": 2
+      },
+      "family": null,
+      "rationale": "Importação aditiva de contexto duradouro para um mecanismo de memória específico.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-maia",
+      "code": "DD-022",
+      "version": "1.2.0",
+      "packageSha256": "713c913a96becb901e447701dca6d221802c7ff524f93781f97b6cd7a6d78128",
+      "sourceSha256": "fc1b398a64b366b7154a03b1735afdc75673dc1287450cb2e4e03dc2905a366d",
+      "contractSha256": "602b563a46b7b15565a34fdf91bcb8417449e9efd474207e2148f78d0fc0f4b3",
+      "priceCents": 700,
+      "scores": {
+        "depth": 1,
+        "scope": 1,
+        "verification": 1,
+        "reuse": 1
+      },
+      "family": null,
+      "rationale": "Somente referência sanitizada de inventário; funções e dados privados não são distribuídos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-marketplace-skill-creator",
+      "code": "DD-023",
+      "version": "1.2.0",
+      "packageSha256": "d97a6649dc497de7517e46099f6bf8c202dafe135191a5add8f3140468885253",
+      "sourceSha256": "486cc3a051a108f354f75b5d81c1bfe6706b54a2e77d8eb50a064f0f994fdb1e",
+      "contractSha256": "29c3a13cc96a90d6f7daab6c1fadf43389414db4e85d9c7fff00a1a10b9a3640",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": "claude-skill-creator",
+      "rationale": "Variante de origem marketplace do mesmo processo de autoria e avaliação.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-md-improver",
+      "code": "DD-024",
+      "version": "1.2.0",
+      "packageSha256": "f895cc65478fbedd700205635276e512c0a51d212f19df4c56f9209bf21a0871",
+      "sourceSha256": "76a82008b4b3ba3d82f7467a97140dfb619f6a86b0a091a11faf63b4226acf40",
+      "contractSha256": "85b3c95a8f0fbdecdae5df37ebe1bf4ffa85a304104e41c7827b75a526e415a2",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Revisa instruções de repositório com evidência e diff pontual; escopo documental delimitado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-messi-knowledge-ingest",
+      "code": "DD-025",
+      "version": "1.2.0",
+      "packageSha256": "6289aeb349671f194d1620d48a5ea59f5df56b597df70d7f8c7f42fa75846b3e",
+      "sourceSha256": "5f90848b03babe9168e9d213f79eec4b909e577c58adf85ea2c6732775a1f5ac",
+      "contractSha256": "c4a1e97792ed3a50815ec0a5884ad316fb70fe41b12d8ebc2a554479a9d5f88d",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Prepara ingestão versionada, deduplicação e rastreabilidade; indexação requer pipeline real.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-morning",
+      "code": "DD-026",
+      "version": "1.2.0",
+      "packageSha256": "182f02a7ce7555e64bb4ca87a03e5d03f1f5a07ba6d418873e6eefb6dd1343cb",
+      "sourceSha256": "db034432f1ed4d27f6270e209dc03042dc95d4954340df494015edc1228814bc",
+      "contractSha256": "2b630834c34678715b7bad1b0789acc6862a76654bd147107326f89ce6464f76",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Consolida agenda e prioridades em HTML a partir das fontes disponíveis, sem recorrência implícita.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-oraculo",
+      "code": "DD-027",
+      "version": "1.2.0",
+      "packageSha256": "5686a0892bbb0191d1e28e78353b7282e90d9380ef2fe11bca0a198dd81f6da5",
+      "sourceSha256": "ebac5bff70b3906d8ec2b944319992db53e7eb664c1cac889290bdbc7482eee7",
+      "contractSha256": "65214c8e4abe842ca0bfbd54d33d3118461b4a248e67050722f66b859963ea9e",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Concilia bases comerciais, indicadores e cenários com premissas; scoring não é previsão validada.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-pbip",
+      "code": "DD-028",
+      "version": "1.2.0",
+      "packageSha256": "3c51ef3358f367902cb1200a58624e6f97509a7314189e532e933bc0e0bbed1b",
+      "sourceSha256": "93a03c4436f893e3e9db7f445a64cd6a280509a3a89a37cda7847e37415049d7",
+      "contractSha256": "0859911f394d3ee43d69ae45c586ae784f6841cc0125b0a612e2c6a6d967f42f",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Organiza e converte projetos com diferenças thin/thick, caches e referências preservadas.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-pbir-expert",
+      "code": "DD-029",
+      "version": "1.2.0",
+      "packageSha256": "ac3b0fbeee5806620c303eb79bbbc7d79b17976c92aaf8706a1332e5ba4bbc11",
+      "sourceSha256": "8f989a8a15771f7da91fbe34bdcb5223e95118967c9f0fb45ba7f40b35303f9a",
+      "contractSha256": "38a70ca7f4b387b1547594cd077c0b6c317376c9a2c165b80947d825ee289e76",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Edita relatórios e modelos como código, preservando IDs, bindings e semântica.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-pbir-format",
+      "code": "DD-030",
+      "version": "1.2.0",
+      "packageSha256": "c9bb704e1b51e997cf8c605c3e85d1323c91d7a41355910aba1fcf5b618f94e9",
+      "sourceSha256": "55bd69850545d4f0a0197deba1e8a6f11fd5e23429f461425e0679ca46ef677c",
+      "contractSha256": "7be67f9920b79841a1ed0c9caeb62d41a4cf282732e777d6ee763bd3c805cbe1",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 4,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Referência especializada de esquemas e camadas PBIR; escopo menor que implementar um relatório.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-pdf",
+      "code": "DD-031",
+      "version": "1.2.0",
+      "packageSha256": "3f28378af1f54d076e8e71ab6a33ffc909b729c566cee77dbd4bd0841d146c0c",
+      "sourceSha256": "91c90095a74ec33bae0f812f3a710da11dc6d4b29e42415d5237d9527b85f458",
+      "contractSha256": "440619fed2f6c44075cb806724c1293fa63bf52ceb11fc4b3e112ca8d82fe50a",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Extrai, organiza e produz PDFs com OCR e conferência de página conforme a entrada.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-power-bi-best-practices",
+      "code": "DD-032",
+      "version": "1.2.0",
+      "packageSha256": "e4a3253e167e3e522327a17d3d57f113a8e551339542df58c7839f79df4f1076",
+      "sourceSha256": "3ab99c6be891cbd47ef5289475dca530ab9537e956cff31e0f99974616a383cc",
+      "contractSha256": "8f7db6e28a7915d591389e0f2b05d0dd4e9ad2ef9efe0ee84d4071121974991a",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Audita modelos por severidade e cobertura, com exceções justificadas e métricas quando disponíveis.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-power-bi-data-analysis",
+      "code": "DD-033",
+      "version": "1.2.0",
+      "packageSha256": "43d3855bfa7f8ec7a8669b9033ff8dae33f4a3662e48d7c2be6160c98510c58f",
+      "sourceSha256": "116cd0a4c9ed594a0a6e6f423e80e134eecf2691db61d26ab79852b4b870b5f1",
+      "contractSha256": "580fdf3af5dde7a58e99cfdf5f7f434e11512c9b55213161c9a48b99d3b5b5ff",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Liga perguntas de negócio a granularidade, indicadores, medidas e estrutura analítica.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-power-bi-dax-optimization",
+      "code": "DD-034",
+      "version": "1.2.0",
+      "packageSha256": "94c9e67e02d2493861bc0c20d93b8e8456d7d6ccb9b1330d7c0526f4a470d264",
+      "sourceSha256": "9e61e59acdc42035f12486adb2cb1f71568a965afd42ab559a7a72e0341fad8a",
+      "contractSha256": "ae261ece7623cfccc2d90ff593f9ca6850cef6b9dca3852bb017df5012768db6",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Refatora DAX preservando filtros, totais e BLANK; desempenho precisa de medição separada.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-power-query-best-practices",
+      "code": "DD-035",
+      "version": "1.2.0",
+      "packageSha256": "0601e3d06cfa19db7eb4bd0293c7bea26c7488b8eb4e421fe56c271763e22c1a",
+      "sourceSha256": "104f5075e52b9fbf2b7a92e1b84d1acb7dcb888526001526ed4967d98f05e153",
+      "contractSha256": "acc363e278dd5b46d7d5399c007b9d1261870a31f2b3f7c21b833145cb4c2ab0",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Revisa tipos, etapas, parâmetros e folding, com comparação de dados e fronteiras incrementais.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-powerbi-html-visuals",
+      "code": "DD-036",
+      "version": "1.2.0",
+      "packageSha256": "da04f8a6314a64ceabd4d1a250504df90b355c4120683660bd0959606a6fd405",
+      "sourceSha256": "c283ae9b0f36d1e22a8fb9ee5bd6e05ee45b4cf73ccbf150ec4ba1437ffed63f",
+      "contractSha256": "8d67b5b0172e58600d5b156b0ccba83fd575eea518a452f7d061c3263414a525",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Combina DAX e HTML com restrições do visual hospedeiro e teste dos filtros e números.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-pptx",
+      "code": "DD-037",
+      "version": "1.2.0",
+      "packageSha256": "5aa06ae39463ac2677a5353c1a11f09de8c6a8f3a3be1b0b6d6b25e7e30b8298",
+      "sourceSha256": "802e6096fcb21c6c32508aa916190afe9b61c4bc72163eefd1b042a53d6cfb29",
+      "contractSha256": "8c5fe3e3e8edc8ffa362acf64df3932045d3c3adac6c89a2d94b7934cfd741eb",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Produz apresentações editáveis preservando notas, masters e legibilidade em renderização.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-protheus-expert",
+      "code": "DD-038",
+      "version": "1.2.0",
+      "packageSha256": "af07b015e1d9896130d598878e346ef587075aa9dbc2d579f1a3b9c783a29ac9",
+      "sourceSha256": "c6b49b4d183126db60e3ebaa205b32b3d219fce2bffb101c56891f1cd7e09951",
+      "contractSha256": "fce70fac881ea8dd2c1bcf5c9dd5769914a0ea23dad8fc3b4048259578e1f463",
+      "priceCents": 4700,
+      "scores": {
+        "depth": 5,
+        "scope": 5,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Integra conhecimento de ERP, AdvPL/TLPP, dicionário e isolamento transacional por versão.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-security",
+      "code": "DD-039",
+      "version": "1.2.0",
+      "packageSha256": "6505b213f20601adb5d1a444574a8beb916867393c454e880acf49206785403e",
+      "sourceSha256": "ced8cac25a8fc61e01afe4c4b25d5c71ef20435336a9b9f8bd409b9513b850fd",
+      "contractSha256": "9783c96a0f63663804355ea615df2c8d2fe5413b8f24da4612992acd3985e65c",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 4,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Orquestra revisão em plugin externo; componentes não incluídos limitam a autonomia do pacote.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-skill-creator",
+      "code": "DD-040",
+      "version": "1.2.0",
+      "packageSha256": "0f41f468cf244c3bc04530d9f19745ef642c295ec92a373cacbf00ee81d1e025",
+      "sourceSha256": "3c9527bc662d715202bf13ddcc8c10d8b9c414d92c86df4b356017dd7effed88",
+      "contractSha256": "38f02aa37139c65e3d2365132f7e715a999950094f1e5e4852f549695c3c12a0",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Cria skills e avaliações de ativação e qualidade com comparação de referência.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-tmdl",
+      "code": "DD-041",
+      "version": "1.2.0",
+      "packageSha256": "8fec7bbdf478a84088a163243de4da51a276b5c57bbd9b43cffe8052d61bb677",
+      "sourceSha256": "dc4c0c375d031b3ade5a0638fd92782d15d3ca241e828b926c044c44e7df3a49",
+      "contractSha256": "51d06a0b03830f10501a82f79418601e83468d11b6ec7e75b9f6aff7c7f2ece8",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Edita modelo textual preservando lineage, relações e fórmulas; exige validação semântica externa.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-xlsx",
+      "code": "DD-042",
+      "version": "1.2.0",
+      "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987",
+      "sourceSha256": "2767ed541e84d1cd2f16fcc5bb7026f62e1762f69fa30dbdb351661bd9765500",
+      "contractSha256": "fa145134ea7f4b7558c44aacc94d7008400c747c7006add12b6083c271f51496",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Produz planilhas com fórmulas, entradas e gráficos; recálculo e mutação de entradas são relevantes.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "claude-xlsx-staging",
+      "code": "DD-043",
+      "version": "1.2.0",
+      "packageSha256": "e76acc6a2a22d611597876a64c93e6184d1ebbff2750595727ee386f177523d5",
+      "sourceSha256": "4a8d71e90ccb5fb80d5e9c23a4427943a76de23ed4b9484af9dacfcfa7393c7d",
+      "contractSha256": "682976c669ae9a1cffb035f6d56e7a49c33fe95b5bca565a84cf57b7cb5714cc",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": "claude-xlsx",
+      "rationale": "Alternativa da mesma finalidade; não adiciona recursos nem substitui a verificação no motor.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "code-review-and-quality",
+      "code": "DD-044",
+      "version": "1.2.0",
+      "packageSha256": "a5eaef28183ecc9cc717360e48e5d21f917dcf09aedf915bd88e3cecb60f3942",
+      "sourceSha256": "aac9b479b3cd1f6b66f620fd1b83c7f45c0bcd764726988f36b66054035555ad",
+      "contractSha256": "37d86031c81ef8c95a906cfb7d6535ed1ce010875d19f8fca4e5a15cb7b2663c",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Revisão focalizada de código com achados reproduzíveis e verificação de regressão.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "command-development",
+      "code": "DD-045",
+      "version": "1.2.0",
+      "packageSha256": "5a2e7a6aaa1de4ba436b65d6df089be81c6bdc8e4a5b109650aaf5efc58251a8",
+      "sourceSha256": "58ca64ea9e32d81cc969c5ccdb0aea173bce9fcef81da23966e7c439316daa74",
+      "contractSha256": "d70a914d2044da2a09105258c6c6d5f7f872a290db76f56409a2b5c5e183d065",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Constrói comandos parametrizados e valida argumentos, ferramentas e fronteiras do shell.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "compliance-check",
+      "code": "DD-046",
+      "version": "1.2.0",
+      "packageSha256": "ea30ff190adcd3c1cc4f115a36bcd443531fed7a6084581420365e9a4bd181a4",
+      "sourceSha256": "985663645f7b7bf7ec0dab77e1ff83feb46b794c0354afeea271ff5d1739e61a",
+      "contractSha256": "3811a569421456cc1eb4fa16971d916a976f069bcbb984abb735a54386b5af2a",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Organiza requisitos e riscos por jurisdição; entrega triagem, não aprovação de conformidade.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "cowork-plugin-customizer",
+      "code": "DD-047",
+      "version": "1.2.0",
+      "packageSha256": "d6c2bb3fa09029120694b9708741c46580a258ddff684b78b341eed5e1837383",
+      "sourceSha256": "329ef79120f62dbaef0a33de13191df44c7fd93ac5745740904415b603b78c72",
+      "contractSha256": "dba59fee2df5869e8d460d12f5be0296c1ec7a8fd801ece06f129f0cd63f9994",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Adapta pacote existente, referências e configuração, preservando integridade e licenças.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "create-cowork-plugin",
+      "code": "DD-048",
+      "version": "1.2.0",
+      "packageSha256": "c76538146c7fcf87a9b25a316173fe3c8a9cc8ca25c737db0f69ec57d2743ddf",
+      "sourceSha256": "c26b519967c7bf03ea5c24464b8d4ed2ca672b0de8f5b6fa96b0841266580f94",
+      "contractSha256": "6ad77db12f63b20c200f2a62783e599687a5c1f7e25f7bbbc6a6468be49c30b9",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Cria fluxo e componentes de plugin com manifesto, testes de ativação e instalação dependente do host.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "debugging-and-error-recovery",
+      "code": "DD-049",
+      "version": "1.2.0",
+      "packageSha256": "084c62c655630b40c358559b58d4ee403e04623b38e0fa659f37a484377fab7f",
+      "sourceSha256": "66e8da8f2cfb2aebadec7275bb98e24e0ac5c86f64bd70d6308f50fb892ad419",
+      "contractSha256": "0da6e663b2c6053ab176c9861107891a57a8a9cee3766e831b10686816c14035",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Reproduz falhas, isola hipóteses e verifica a correção no runner adequado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "design-de-interface-autoral",
+      "code": "DD-050",
+      "version": "1.2.0",
+      "packageSha256": "76c035654122b957a72419a8278851e65e00ff6eb899d5e478f6232018dba4da",
+      "sourceSha256": "bf4c6b7ee7125584df7e99ca2a9cba420188c243a76cca6a0aad23ebe4a1306a",
+      "contractSha256": "13584f694a57996d46309b276868d29772592020d5db8c9243621f20b9201679",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Coordena identidade, hierarquia e estados com contraste, responsividade e movimento reduzido.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "discord-access",
+      "code": "DD-051",
+      "version": "1.2.0",
+      "packageSha256": "8e2f92ae86a4c00a3661ebfa10704b9f796a01f1f32c596b813da88faaffc46d",
+      "sourceSha256": "ca06b0f1b99634f1cc866259aedfd155e419949c19b5bef95a2ddcc0dbfcda8e",
+      "contractSha256": "cfc36c9da5e7ffb55f28f7796175b3742061c5ea09cebc034b04bfe45ddb7ab0",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Opera política de acesso e concorrência de configuração no plugin Discord.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "discord-configure",
+      "code": "DD-052",
+      "version": "1.2.0",
+      "packageSha256": "c5c17a0dad36ceb38550dd2c41c95d2e8ac8c08c05332a8c0242c51f9fe67f2f",
+      "sourceSha256": "47ebabd4205adb57a11976f84bf943e2e59f40c48624df53a06637c6e6744423",
+      "contractSha256": "20f32a08d41b165faec2c60a1f1e202d604b9e4d6b3a4762e0c18149bc542afc",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Configura canal e credenciais com diagnóstico de prontidão, sem fornecer o bot completo.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "estilo-de-colaboracao",
+      "code": "DD-053",
+      "version": "1.2.0",
+      "packageSha256": "578809690ece0f3c6ed09c5595d8dd7280503e37f15a95eaee7b1ec02af3ecd0",
+      "sourceSha256": "a488c8de26e250f6a812ce29b68cf35ef2f2e49e852f29307d94cb06c6514f7a",
+      "contractSha256": "529533a898267574816191fc458cd0f85963baf369060a25d28e66047b3989fc",
+      "priceCents": 700,
+      "scores": {
+        "depth": 1,
+        "scope": 1,
+        "verification": 1,
+        "reuse": 2
+      },
+      "family": null,
+      "rationale": "Referência de comunicação que deve ser adaptada; não entrega uma solução operacional por si só.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "example-command",
+      "code": "DD-054",
+      "version": "1.2.0",
+      "packageSha256": "dfca722c40ce279cdae8f74ceb037ddd23d787edc883e54db479d4216fedb897",
+      "sourceSha256": "c9f1cd9c204bdf7182328dc5ff20cf7ff019f61f59bb37c4460023707844bcfe",
+      "contractSha256": "ebb4f0d27654b3855edc8030fe56087acbb8f87874556cacb7f3d05df9499840",
+      "priceCents": 700,
+      "scores": {
+        "depth": 1,
+        "scope": 1,
+        "verification": 1,
+        "reuse": 1
+      },
+      "family": null,
+      "rationale": "Template demonstrativo de argumento e parser; não constitui serviço final.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "example-skill",
+      "code": "DD-055",
+      "version": "1.2.0",
+      "packageSha256": "09c6d052fa7825febecc0b43cfea00b9d2c2ad542145581436e3869d5d8fc850",
+      "sourceSha256": "3950672b5fc3080304302688c24cb5429bf039dfebc94b500fafd79f0ee437f3",
+      "contractSha256": "bd74dc8fa66b49d8616d7f41b74545d3ad82ab363668f3ad5760bba4792cda38",
+      "priceCents": 700,
+      "scores": {
+        "depth": 1,
+        "scope": 1,
+        "verification": 1,
+        "reuse": 1
+      },
+      "family": null,
+      "rationale": "Esqueleto didático de definição e ativação; não implementa uma especialidade.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-code-connect",
+      "code": "DD-056",
+      "version": "1.2.0",
+      "packageSha256": "a32caffd693d6ebc7b15b2d3c03b53efdaad02e4e9331101ca352979eea73bf6",
+      "sourceSha256": "8bffb647cecb1c55d49c74ec8359ef3a7213232f64933cbdf3f1316918963499",
+      "contractSha256": "eaaa17fb0775bbe8a048a7d3e1ca36cb793c5f8aa6408287847db8d77787a61f",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Mapeia componentes e variantes para código, preservando instâncias sem correspondência.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-code-connect-figquery",
+      "code": "DD-057",
+      "version": "1.2.0",
+      "packageSha256": "8adabefbc442b1600dd98f4f951957bd9e669363f694d2ea36243be43e46ce08",
+      "sourceSha256": "905d8e796a9d014b06c04d8a96a73a6b132bf8d79cd06ace262247d439753d6d",
+      "contractSha256": "2e61b94fecd5d7fdcc6bf643a857a7ff5f542b712c4a169c2e1d1b4ed04600c5",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": "figma-code-connect",
+      "rationale": "Mesmo escopo de Code Connect; exige adaptador FigQuery compatível.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-code-workflows",
+      "code": "DD-058",
+      "version": "1.2.0",
+      "packageSha256": "4654326463ecb56899e513aa55145578d72dfedaff6b58302fca277c3f3210f3",
+      "sourceSha256": "abc1b943254005c1bba36edad8495144a5339f2761013f1af7a04d394f6825b3",
+      "contractSha256": "d3086ef8f9d073c4b0f7d7f56232ffc472ad5a6e7d29f804a65e50239719ce37",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Importa interfaces para o destino escolhido e confere editabilidade e assets.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-create-new-file",
+      "code": "DD-059",
+      "version": "1.2.0",
+      "packageSha256": "a6f1245883a0ea3bc35d9f3c40e3ae5c18ce61491a8d3cc93b4e87415eb461b4",
+      "sourceSha256": "449013cc2a07a2c0fadfbd167c5f1b38b99f35d7678656fbda885399578ea009",
+      "contractSha256": "71b99bf032edb07b70830a442bde575845b7903c08a8320b76b5af42f5fc5398",
+      "priceCents": 1200,
+      "scores": {
+        "depth": 1,
+        "scope": 1,
+        "verification": 2,
+        "reuse": 2
+      },
+      "family": null,
+      "rationale": "Prepara um arquivo no editor correto; não inclui a criação de seu conteúdo.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-create-new-file-figquery",
+      "code": "DD-060",
+      "version": "1.2.0",
+      "packageSha256": "0c3bfd7c0f3391b4bd472e429c0c414f26cb0c59b635fca686cb26706e33669d",
+      "sourceSha256": "3fcfa5e1764174588e569631794fd00a414adf8c26941cfc177358ba5340bdef",
+      "contractSha256": "9f51d7ff15b9236fc886dd8e0bd010de6cb3cd1744d949af9e8ff10d2892fbe9",
+      "priceCents": 1200,
+      "scores": {
+        "depth": 1,
+        "scope": 1,
+        "verification": 2,
+        "reuse": 2
+      },
+      "family": "figma-create-new-file",
+      "rationale": "Variante de criação de arquivo para FigQuery, sem entrega adicional.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-design-to-code",
+      "code": "DD-061",
+      "version": "1.2.0",
+      "packageSha256": "c5766a75c361e61ae6f8332c7a62cd66821a7d33625b7ec534ca8554425b3d99",
+      "sourceSha256": "1662503d0b095b38c5b0ea357252e37c5ac8103b06a47a1aa15c0ee56c9f1ad9",
+      "contractSha256": "62f466dc3a6afe5511c92802f81c3feabe74af34a1e2d73935cf2fad6a42e402",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Implementa design com estados, semântica, teclado e comparação visual no produto.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-design-to-code-figquery",
+      "code": "DD-062",
+      "version": "1.2.0",
+      "packageSha256": "afd68e89c222185efe9d40f623be14ec8d63b4d3063674c540cc9b241c624b97",
+      "sourceSha256": "f953a4530710ea3f4d6eb6019404fd08ae809c7fac10992a8d83ede86ba91b5e",
+      "contractSha256": "aea5f3b9df97395020f1d3acb185ec08d2d84ee184f7b47847305980f55c5bc9",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": "figma-design-to-code",
+      "rationale": "Mesmo resultado de implementação, com descoberta de contexto pelo adaptador FigQuery.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-generate-design",
+      "code": "DD-063",
+      "version": "1.2.0",
+      "packageSha256": "462cbe33132d0e7c59351588a8ad94975a4f37094590e64d4953c0f472562672",
+      "sourceSha256": "db0ecff429053296fffac1a698f4de7481030fb997e13d9ed24d4fb647648a24",
+      "contractSha256": "fbed08e828a04f3ae8b4612b6bc5e7c5551eb8918f4572524e94e6a3721d8346",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Compõe telas editáveis e confere fontes, componentes e vínculos após importação.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-generate-design-figquery",
+      "code": "DD-064",
+      "version": "1.2.0",
+      "packageSha256": "8cfce685107f3c974b69e3d43a0eab7d161968cc9b0ea066c9fc1a583f442cf4",
+      "sourceSha256": "1fbff428f29a91f704d649cd3406a7c0aeb508907ee31c9296fa76cfc9421248",
+      "contractSha256": "a36f15b1550f6ed052bff8140784485a9fa5e9315da56ce52c4bf4710182a4f5",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": "figma-generate-design",
+      "rationale": "Variante da mesma prototipação, com reconciliação de falhas pelo builder FigQuery.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-generate-diagram",
+      "code": "DD-065",
+      "version": "1.2.0",
+      "packageSha256": "5e7bd1c665b81b0cc7ef76ff087ad0ce4d34e07016825ee7cddfff77644600f0",
+      "sourceSha256": "5d36ecb17a7d748cc8cc75443b5520e879610ac5a334965879703200e06b9d2c",
+      "contractSha256": "67b7a7e7698f6c3f718d920e587889fc525f0ba06f3e4231a06384c2216544b8",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Converte processos em nós e relações verificáveis, com validação da direção e condições.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-generate-diagram-figquery",
+      "code": "DD-066",
+      "version": "1.2.0",
+      "packageSha256": "9296072dd50146643a2c926ad097d5344fdcfee8521752a503d2e5a77c671b29",
+      "sourceSha256": "49e4d89d383ed1bb5fd5edad837a6f4d123f4e0d54c16d9b877b0dd78ff44e0a",
+      "contractSha256": "50ccee2628df1ca5e86d4c540975e0e00784871f9119611b33785b5fc29aba25",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": "figma-generate-diagram",
+      "rationale": "Variante do mesmo diagrama para capacidades FigQuery disponíveis.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-generate-library",
+      "code": "DD-067",
+      "version": "1.2.0",
+      "packageSha256": "9a61df0cfd1dc6760cabf2242d26ceaa9584689d0d9c3222fe6ee39c21ba6415",
+      "sourceSha256": "53959f7c307ce6489e9611664ebd0cfa6f166f3b504634636652c238e9f091c7",
+      "contractSha256": "9a9e50c81bad5e86f48e23384f617c871a422cd8e9f424f3e2483b8d3f807230",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Constrói tokens, componentes e variantes com reconciliação de IDs e alinhamento ao código.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-generate-library-figquery",
+      "code": "DD-068",
+      "version": "1.2.0",
+      "packageSha256": "ddce3368534d7c18567a712aa2ae1bfa428b87d26bff7942a2e2ed47416dd604",
+      "sourceSha256": "5b30a8c048b2db0ff1a695e5064aa289f10b9eb452b84547848e303e728b6437",
+      "contractSha256": "b4501495e7deb18bfe2c2ebf4090a8f0695666af31219c74605524acab6def97",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": "figma-generate-library",
+      "rationale": "Mesmo sistema de design, adaptado ao builder e ao escopo do runtime FigQuery.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-generative-plugins",
+      "code": "DD-069",
+      "version": "1.2.0",
+      "packageSha256": "c811db1c8ad96ef5b6ea2b3df65fc9fd1f15c665b2d60f64c7d50f1989c46c81",
+      "sourceSha256": "8654e251cb0d73da872ff319e9c0855732fb0725d9a9701ce07b10c4736ca6ce",
+      "contractSha256": "cb1212b38a31a1031af97169afa8e1143d23b09ac78e431d800dbc648d13f2f4",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Cria código generativo reutilizável e verifica compilação, entradas e efeito no editor.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-generative-plugins-figquery",
+      "code": "DD-070",
+      "version": "1.2.0",
+      "packageSha256": "66232ee83330e0fe2aa06fbd4da3530aa7110b3e6d99a2035a875db9abce1bcc",
+      "sourceSha256": "287c3a0db9748159aff4ea77ce69a6208bba338cff9f6ec109fe166cf926d976",
+      "contractSha256": "8a116da3da17d1255df82dcd1e58c8393c3741aca3a9feb307eadc01d2d27205",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": "figma-generative-plugins",
+      "rationale": "Variante de plugin generativo; não acrescenta o backend necessário à execução.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-implement-motion",
+      "code": "DD-071",
+      "version": "1.2.0",
+      "packageSha256": "d176c02d50a6e0d0d8c4c43abb3182b4b65b6133d6205b609b23bb790c0fec85",
+      "sourceSha256": "137eb56d7261831464fedad5aedc256447bb4fc96a22e921efb2cbcd2ee44de2",
+      "contractSha256": "2dd782dbe0942a6a849804cdd02c4f1925421f5bfff5b2e02f58818b5e4f8890",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Traduz inventário de movimento em código, com cobertura de nós e verificação temporal.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-implement-motion-figquery",
+      "code": "DD-072",
+      "version": "1.2.0",
+      "packageSha256": "18c578e77c38d080f3a5c0e2d4d2c0733a47956f8359f8b56847e3254e4ce6b2",
+      "sourceSha256": "87ea6c812dbd9947e9b8f5f9aa36b9df7ace953bb8d10912915c773ba964c66d",
+      "contractSha256": "329f10a5d70c981898bcb379cf5479d116828b8747c3fc7cd409af7f629cb8b0",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": "figma-implement-motion",
+      "rationale": "Mesmo escopo de motion, com assets e leitura compatíveis com FigQuery.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-shaders",
+      "code": "DD-073",
+      "version": "1.2.0",
+      "packageSha256": "683c8d6c7e7c6705d7963bdba514e598cab6709f6da294e50e7c55a7f5d3272d",
+      "sourceSha256": "7bf2f23542c004775f6f496ab68d688f52ec9a8ae1dd617667218588d0213098",
+      "contractSha256": "ab049844084f754ce11adf99b05295b4e24d63361fd7c198f5af3379cf1a968a",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Produz shaders e controles, verificando compilação, valores extremos e aparência.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-shaders-figquery",
+      "code": "DD-074",
+      "version": "1.2.0",
+      "packageSha256": "00ac251570cb07e375f75a16af82796a439d9206294cde8e9acad4c70d04df75",
+      "sourceSha256": "61d795ed7e8680a876be6f3b0e3fa99303c6841f6974385cec897ac6c7c4d390",
+      "contractSha256": "de5682955f4a3740d1f25852dd266b658b3ad6a9a63e90f481e8888b5e0e76a0",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": "figma-shaders",
+      "rationale": "Variante do shader; migração de controles precisa de validação no adaptador.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-spec",
+      "code": "DD-075",
+      "version": "1.2.0",
+      "packageSha256": "b6ff1765c6b830ce3605be725011ef4d6d6e4c04a2d1c0d6edef0593541f5ccf",
+      "sourceSha256": "af331ba0a8bb600097e4fc78b4dd4024c48cb2e2dcc0319cae7ed5cf53b9d859",
+      "contractSha256": "efe713f1be33a85aa7bb14e64183939751f0271249a9a3f396432efd40a7aff5",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Edita especificações com controle de versão, preservando trechos não autorizados.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-swiftui",
+      "code": "DD-076",
+      "version": "1.2.0",
+      "packageSha256": "fc3df8b558accc264b9b252914cc85f8322f86aafa52b1ed2645504aec1b87ad",
+      "sourceSha256": "bff0de2c0fa239b6367d07d4f5781714e97bcb80d878e81d7430a3353dd2c5df",
+      "contractSha256": "6cf8faad5c8516a7546d71080dec850536bbd0ae85681c3408a52a9c1f0b825b",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Traduz design e SwiftUI em duas direções com estados e validação no ambiente iOS.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-swiftui-figquery",
+      "code": "DD-077",
+      "version": "1.2.0",
+      "packageSha256": "d2194de4f6d2ef6b0f0c05bcd7447cf7f91bd6cb5d4873f6a518a80d370479a9",
+      "sourceSha256": "9e931188cbca14cfc52d7014b33546fa5d48aef71e3f8ec9f62f8921e6864c58",
+      "contractSha256": "4521e8a1f791ec9b7444fd08f4681c89767e030bec23a59ec06d160f8d57c1db",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": "figma-swiftui",
+      "rationale": "Variante da tradução SwiftUI; exige ferramentas e símbolos realmente suportados.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-use",
+      "code": "DD-078",
+      "version": "1.2.0",
+      "packageSha256": "e59ccd400e33ecb04257be75d19bdedbf7913885f95c58858f9db296b62574ac",
+      "sourceSha256": "37037ced9e6a2aca93d77bade759daa0cf6c56fc18bf0218af3aece417c798eb",
+      "contractSha256": "3e61a744dd6da6683d75cd4c8b37898a52128e78c17496819edbe9652f256427",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Base de operação e inspeção de nós e variáveis; não equivale a um projeto completo de design.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-use-figjam",
+      "code": "DD-079",
+      "version": "1.2.0",
+      "packageSha256": "3682ee7f6b75141241feb5427e0155cd8ca96238801352104d201eabdd745a33",
+      "sourceSha256": "0d53e3e3a63368d3c10afccd052843b4568879efbbb6a47748016e8af82351ce",
+      "contractSha256": "8956da2144cdd9ce95bafdd3a1624fbb4fdafd01b8a615c542e94ee0e6b8a0bc",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Organiza elementos e relações em quadros; depende do editor e conector adequados.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-use-figjam-figquery",
+      "code": "DD-080",
+      "version": "1.2.0",
+      "packageSha256": "5c9f3a0aaf31e164d11c84c818fd2e256b4d5083a8de0c55357a902bba080813",
+      "sourceSha256": "366db45ddc05da260c922705415d3a445f5e660e699f4fb6532ac0cb85d10b63",
+      "contractSha256": "5c8ab52d0cf73596cfe81ed6a15e19a32765dcadc497394cd08fb618f5dafecd",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": "figma-use-figjam",
+      "rationale": "Variante de operação do FigJam via builder, com a mesma finalidade.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-use-figquery",
+      "code": "DD-081",
+      "version": "1.2.0",
+      "packageSha256": "4a2d01e39f0569552dbe2cb57b9831f786c8fe5332d763c96d878d98744479e2",
+      "sourceSha256": "9c74eb7e0d17ac0dd53b2d9ab8b4f6a4b4ae64861cf64e3e35b7ee9dc502f04b",
+      "contractSha256": "b6b2bb9a45f80a5287f08c1d73821b95924881a39badfc087e8124c46281069b",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": "figma-use",
+      "rationale": "Alternativa do mesmo operador de canvas; compatibilidade precisa ser observada.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-use-motion",
+      "code": "DD-082",
+      "version": "1.2.0",
+      "packageSha256": "a5443bd2f3f3793df1dda84cf3e1885e0bdbf4255aa7392c50654bb54313492c",
+      "sourceSha256": "73c4cb5305c066fce0cce3ad8d5381bb82dc84118e7e4072c34fb83fccaa47b1",
+      "contractSha256": "67e05cbf16866ade037e1a8347a91d180af85e634e784099aaf26a81f13fc768",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Define keyframes e timing; verificação visual requer preview temporal disponível.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-use-motion-figquery",
+      "code": "DD-083",
+      "version": "1.2.0",
+      "packageSha256": "b7b54d9b12541b16e89189ab3e7a724e53bebd519f7185124996b62a1609acab",
+      "sourceSha256": "c402567a6ff45354e01d230bbd04dd60df0ba843fcea869e2b5d36176bfedec5",
+      "contractSha256": "fca75eecf0417abfb54a6353c4e6fec0d5e8b19a29791e7928eef9d492c78176",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": "figma-use-motion",
+      "rationale": "Mesma finalidade de movimento, limitada às capacidades do adaptador FigQuery.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-use-slides",
+      "code": "DD-084",
+      "version": "1.2.0",
+      "packageSha256": "2966fe4f5e6ba8f95cd61da5649703866b86eba0321e12a9ae4eda63e12d87c8",
+      "sourceSha256": "513ff509d1378270e99186839b3243774bfae30bb481fb581f3f5eaea2091325",
+      "contractSha256": "80944976eab3efd5674f317f3f81b54c7288c06f2da9db9901249b4212f2c14c",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Organiza slides editáveis, geometria, ordem e notas com inspeção visual.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "figma-use-slides-figquery",
+      "code": "DD-085",
+      "version": "1.2.0",
+      "packageSha256": "cdfafe7160ff33ab37e90014ec95d9b1abea5630ba256597cb4a4b6193b3b34f",
+      "sourceSha256": "b116e001ace88112c0a1cc12e1fdb9433d5135ac7188527671e89930594cc306",
+      "contractSha256": "a59b7fcd59385d0eb3daba9a1839c99d2f291249e2ae17a72067ac208d0760c7",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": "figma-use-slides",
+      "rationale": "Variante de Slides com retorno e builder próprios, sem nova capacidade comercial.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "frontend-design",
+      "code": "DD-086",
+      "version": "1.2.0",
+      "packageSha256": "8563f0adf158c94684f043504e1a141805e2892c1f7fd6bf0fa51e2f14ac28fd",
+      "sourceSha256": "7015443d9254b25c2c595a984f9214eb6480eba717a99e02360684373dfac97f",
+      "contractSha256": "485c47569b3fc9b2124666e2c57dfa51845b5e6b78070644993def6e020271bb",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Direção visual e implementação da hierarquia com conteúdo real, teclado e responsividade.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "fullstack-nextjs-vercel",
+      "code": "DD-087",
+      "version": "1.2.0",
+      "packageSha256": "1fad058b8ee249ad57862357028f3e00b7976626ecac200af2fc9fc07fb61916",
+      "sourceSha256": "bbd35b58a81caff1aab6b0bce540d75f549c9f887f338a38a9535165dc3b3494",
+      "contractSha256": "6eab357f4e175ff5f043c56566ab2b150533c71d05cccd142e37a6b617bc5ad4",
+      "priceCents": 4700,
+      "scores": {
+        "depth": 5,
+        "scope": 5,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Abrange aplicação, integrações, idiomas e publicação com build e validação do fluxo online.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "generate-project-plan",
+      "code": "DD-088",
+      "version": "1.2.0",
+      "packageSha256": "9cc4feb3d2e3b7532b17ce9a774a595fb869b2c1ea4e249b2db4275f2cd3ae97",
+      "sourceSha256": "484ee4b5ebcd29ad29611f8560dfd7c6ce6e2638fb09ce133bea5662a329313a",
+      "contractSha256": "2098a20def0e8c4674bf343adc73d090e36bcb28571d078ecb0c9d7a582f188e",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Transforma PRD e código em frentes e etapas num quadro, preservando decisões e relações.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "gestao-de-entregas-e-homologacao",
+      "code": "DD-089",
+      "version": "1.2.0",
+      "packageSha256": "b4041b84a29ce88cd8d8a5f316eb9a65586a5d269230d5073d3e39daa249bdaa",
+      "sourceSha256": "727f124c4c1055b56e26180f42713f859977c5869e9b3295d236f5c71af3f8eb",
+      "contractSha256": "2a57250d5df0e05c9b0d2889da3d92be9a87d3c4753100a6a26229186825b20d",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Estrutura backlog, aceite, liberação e recuperação com rastreabilidade de evidências.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "git-workflow-and-versioning",
+      "code": "DD-090",
+      "version": "1.2.0",
+      "packageSha256": "9a53e4affc4fd8768372507730b1ff843cd72649cf95f05d6fa18ef85e85eb1c",
+      "sourceSha256": "1e9ce830c81371e32d673dda98fc18c7c316d6f21425d1c2675ab79e853762fc",
+      "contractSha256": "3af88be45a9d5fa5f37b46b31c330ffcbe688d379d2c66d2e8e310b6ccb9ad68",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Apoia branches, commits e conflitos preservando alterações compartilhadas e contexto.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "hook-development",
+      "code": "DD-091",
+      "version": "1.2.0",
+      "packageSha256": "64d202f8b038a1f9c6305d30b774f12d39ac1e635cc59ccefba965e022887747",
+      "sourceSha256": "86f164c835eabd69d0a90cc757f79298dfe8783eb634920bc04d1469257bdac4",
+      "contractSha256": "4966b9aa868d475b0ed8804c4b927a5df23c022f3a8a110669c501483be796a9",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Constrói hooks por evento com fixtures e diferenças explícitas entre runtimes.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "ia-aplicada-a-produtos",
+      "code": "DD-092",
+      "version": "1.2.0",
+      "packageSha256": "17d5c4fd997ba7e7e52221c8a91a38e82c610ac31540b0d3503ff3dd65c7fa2d",
+      "sourceSha256": "781628b7e8c9433606db1af7a484b9e6e4d27db76e6f4aa68682962f4f5e3a67",
+      "contractSha256": "9bb13b96927ee59cec41542b02f9ae67a4bade847153c0aedb805c99a5487462",
+      "priceCents": 4700,
+      "scores": {
+        "depth": 5,
+        "scope": 5,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Integra modelos, dados e ações com controles, avaliação de respostas e fallback autorizado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "imessage-access",
+      "code": "DD-093",
+      "version": "1.2.0",
+      "packageSha256": "a513780305515851e0b54d57247c49a1bb32693ad274a8feee554f8c93c2a0bd",
+      "sourceSha256": "4d969eff453a833258a7edd09b8fdc22d57b2bc0b982dbe19a025b9bb721cb1c",
+      "contractSha256": "4ab202b226d73bec5c3fb84c79a0d491881d749cf215044bcc9c247997afa844",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Gerencia allowlist e concorrência no plugin iMessage, exigindo macOS e acesso autorizado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "imessage-configure",
+      "code": "DD-094",
+      "version": "1.2.0",
+      "packageSha256": "a1a49075eeffd6378d06062265d1f812ad441bac202774c8ec26bd113fc0c3a3",
+      "sourceSha256": "0970a62c66d039ae23919432148a536fc1d254a6f686ab961a9c274ae3662cb0",
+      "contractSha256": "142f380c8d941958c95be60815995ff01af59abab11947bc7efb0404cebd80ca",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Diagnostica configuração e conexão do canal iMessage; não funciona por si só no Windows.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "integracoes-erp-fiscal-financeiro",
+      "code": "DD-095",
+      "version": "1.2.0",
+      "packageSha256": "4b8ee3f186cd86a9752c4df4de8770c5a797a7fdb56b9fc708d2ea5fc9ba6979",
+      "sourceSha256": "bfa7e6c76cf355648762ca60e36c3bc41a021365f6cb82e45da02f8066153d24",
+      "contractSha256": "67ce4a90af5c4ee4ecb7de7f0bbf833edf1e39e72a76a0c18418eaca32e81572",
+      "priceCents": 4700,
+      "scores": {
+        "depth": 5,
+        "scope": 5,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Conecta operações financeiras com idempotência, refresh concorrente e reconciliação de efeitos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "legal-response",
+      "code": "DD-096",
+      "version": "1.2.0",
+      "packageSha256": "cefe19009b3ab8698983fc86d65de9d7b5c1faf6cf848fbd6c83a7a3ce473138",
+      "sourceSha256": "849432bd0b28c4503f202d9dd4cb4ed52596e9973ce8bbda864bc6bfc399b111",
+      "contractSha256": "9085568bc5992aef771cd96a2d2a65d496086b1522bb282d4b891e6f0fb376ca",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Preenche minutas por template aprovado e encaminha exceções para revisão jurídica.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "legal-risk-assessment",
+      "code": "DD-097",
+      "version": "1.2.0",
+      "packageSha256": "e99e92c2c7ed7bc5a7e59127b6ec91ab68075b2c53a6a3a8c3fa66a507ce7bae",
+      "sourceSha256": "047ec6695784af8801d322e75f9246e2a911f9c9bc0587e3ade990058811f947",
+      "contractSha256": "e25af25d864b9092dcb78b11a60731fddf769c161527eb53d0e6702ff8783caa",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Organiza riscos com evidência, confiança e escalonamento, sem precisão estatística presumida.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "m5-onboard",
+      "code": "DD-098",
+      "version": "1.2.0",
+      "packageSha256": "0757a227006377a3ddb55e2640da0cb7ccfab61f00568b09c26cf139e70dd5a5",
+      "sourceSha256": "e1f2253f90a58be250beef46fca9ffa20aeef3dcbb43c1917c81f24733f63016",
+      "contractSha256": "6c3770bf84eb67ff17d671aae1b0418b87d337ad0e9381d0f9c7cafba71d3c00",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 2
+      },
+      "family": null,
+      "rationale": "Provisiona hardware identificado, com firmware, recuperação e validação após gravação.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "magnitude",
+      "code": "DD-099",
+      "version": "1.2.0",
+      "packageSha256": "332d53839877c4d51fd48cbcf6ab07ff50129f162bd4473e4a58161782e0bf2d",
+      "sourceSha256": "7fa13670e359fab2409dd52eb5de7e8f24a6271cb19eb076160f9c360e86a7ce",
+      "contractSha256": "dd36cc2dd1d0130f66963e8733c86d2f6f1ca40b3c4a8a4c75e456640039fd2d",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 2
+      },
+      "family": null,
+      "rationale": "Avalia hardware e configura inferência local específica, com confirmação de serviço e teste.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "marketing-de-conteudo-b2b",
+      "code": "DD-100",
+      "version": "1.2.0",
+      "packageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649",
+      "sourceSha256": "062fcb7721edba8d1f8830803e0a1fc14b3f5ed519cd8abdf507aded52464aff",
+      "contractSha256": "dea232383e3bc20866ae9b8db7910cfb1498d8f500334b080a172d51c6f5e9b7",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Planeja e produz conteúdo em vários formatos com mapa de alegações e revisão de marca.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "math-olympiad",
+      "code": "DD-101",
+      "version": "1.2.0",
+      "packageSha256": "633591e401d693710f6705750bd4a649d28ac8d6a496090895b3fb508673960c",
+      "sourceSha256": "bba3a0fc5833001922e9d22fa3d83ab049151d679fddfd2584ab81591d5b2836",
+      "contractSha256": "b538eb1af73f98a5591059e232ee874c1b9270d79586794ec29c158ea733714c",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 5,
+        "scope": 3,
+        "verification": 5,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Organiza prova, contraexemplos e revisão matemática; não garante solução nem inclui ferramentas externas.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "mcp-integration",
+      "code": "DD-102",
+      "version": "1.2.0",
+      "packageSha256": "0ee91adcd6141c2cdd81d0a6704ac5b5eeec37516a11d7a418226b90f32f1f0b",
+      "sourceSha256": "b6caa4f1feafd1c03a3ef03e63c6ed2c647697a34918b3733364dee2f895c421",
+      "contractSha256": "652aa74605efc7295773708fa9408eeffb5e2a04353abc6e6421dc10eb12bb10",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Conecta um servidor existente ao plugin, com schema, autenticação e descoberta de ferramentas.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "meeting-briefing",
+      "code": "DD-103",
+      "version": "1.2.0",
+      "packageSha256": "cf9c1510aec52176e78d2b0f6484051fa25937984c734238dd0fc3a9563eff87",
+      "sourceSha256": "65791b04fa50db510fa559e76db506b916a9fc459a7ba48cd5cf7c6d18ef8823",
+      "contractSha256": "4c9c14aaf43be8dd56af7e75d51b75ea905dca59498434c9a38d43c6883958c6",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Prepara contexto e pauta a partir de fontes conflitantes, preservando compromissos confirmados.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "pagamentos-recorrentes-asaas",
+      "code": "DD-104",
+      "version": "1.2.0",
+      "packageSha256": "6487c183bee50ac9314e3b75e19fb9dd777959aadc32585a2f82e73aca4698b8",
+      "sourceSha256": "04d9ae3f66e625ae3d63d6ad2c3f8f45c2aad77c60bc64f17fcc12c161995510",
+      "contractSha256": "6ebdb637258f3bd93316d76affcf48b939f39aaaca85421411ac5636f3ed3207",
+      "priceCents": 4700,
+      "scores": {
+        "depth": 5,
+        "scope": 5,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Implementa assinaturas e acesso com inbox, estados financeiros e reconciliação de webhooks.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "plataformas-de-ensino-online",
+      "code": "DD-105",
+      "version": "1.2.0",
+      "packageSha256": "4ce5b8f55626009abb0ba6c530c76ee2df8dcd766917c8ad2d87250084c24570",
+      "sourceSha256": "d9b496344b2f013ba77ab37f825cb68d8e0a1c22be84e4e4a0d90c63de64758a",
+      "contractSha256": "01d73e36450dbba9ca01f557bdfedf76ca17fedb8a9215f90992301bb846cf50",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Abrange área do aluno, conteúdo, progresso e controle efetivo de acesso à mídia.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "playground",
+      "code": "DD-106",
+      "version": "1.2.0",
+      "packageSha256": "11395854155008769693eaa73adf17358d6bece4168457ab74a88fb1adaabdd0",
+      "sourceSha256": "fd04d5aa8e2727d68c4be7f01af3be3e8d5308646b3400dc23c5609045a63621",
+      "contractSha256": "33d22c185e7adcd0deff075f73e9fc6384a078e528081afd819df5a73de097de",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Cria exploração HTML com controles, presets e saída consistente, testável por teclado e no celular.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "plugin-settings",
+      "code": "DD-107",
+      "version": "1.2.0",
+      "packageSha256": "9f4e874bb453a4e3976d534df0e374760410d3dee5b78d69e0750f9cacf3b90f",
+      "sourceSha256": "79c06fc12b0b660d382f8c4ffde9342260b78ebd4c5ce0ce0f46eacf716900c8",
+      "contractSha256": "6486fca991098d97110cd9ab20794d1f31c3e862bcbdbeb35aa115afb862551c",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Implementa parsing seguro e validação tipada de configuração, preservando o corpo Markdown.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "plugin-structure",
+      "code": "DD-108",
+      "version": "1.2.0",
+      "packageSha256": "6ff1fd0381462c2439771f8f03e9354833d86b767fe59f67d273888e62847adb",
+      "sourceSha256": "0e8cf2c532e957e09940808814bff13b539a9bb98f9ef286607d1d6ef5de7cb5",
+      "contractSha256": "38ff4ebe91b2dfcf2f3619a9a3e509788f45ba4bf5f117fe490493bab4024d24",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Organiza manifestos e componentes com validação de caminhos e pacote extraído.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "portfolio-de-projetos",
+      "code": "DD-109",
+      "version": "1.2.0",
+      "packageSha256": "ab20953601853b992e761eb55a4f27ca64e94e851b05dfd8788ac053804373db",
+      "sourceSha256": "f4f28d4989329cc194be8a5fcfe51e9a2a5ced7a34db788043e80f572c7ab72d",
+      "contractSha256": "4dcf7781c58ec4384bbc11d09b9981c1cfc7785df7ce14049497dbb2013d4e86",
+      "priceCents": 700,
+      "scores": {
+        "depth": 1,
+        "scope": 1,
+        "verification": 1,
+        "reuse": 1
+      },
+      "family": null,
+      "rationale": "Referência sanitizada de portfólio; o acervo privado e seus clientes não acompanham a edição.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "power-bi-embedded-portais",
+      "code": "DD-110",
+      "version": "1.2.0",
+      "packageSha256": "b4be6e36b7bed6c405e107c18b509e23a9a3777c6f633af085af95dfe259e708",
+      "sourceSha256": "9188f3f7193828bb0ef7cb47b7ad07d4a87be89dc1348f18385315aad77fc3de",
+      "contractSha256": "14ccc769064bf5bb5f1905b8f299f6417a69d64b05ac1adc6e202c58c1c915d3",
+      "priceCents": 4700,
+      "scores": {
+        "depth": 5,
+        "scope": 5,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Integra portal, identidade e relatórios com teste de isolamento entre tenants e licenciamento separado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "power-bi-modelagem-dax-performance",
+      "code": "DD-111",
+      "version": "1.2.0",
+      "packageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e",
+      "sourceSha256": "1e46b1d37e99f9b3a2ef2aaaf67ddc6ffa8ce7dc78a459a67860c886e705c092",
+      "contractSha256": "d996b28a04291614b660a4c230344c9b469b530565a6248a276e84e0762c0a97",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 5,
+        "scope": 4,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Combina reconciliação de negócio, modelagem e medição de DAX com múltiplos contextos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "power-bi-relatorios-como-codigo",
+      "code": "DD-112",
+      "version": "1.2.0",
+      "packageSha256": "7652afba0c87bdb76fdc879209bd37095f1e2bfc56a1e7cbc35f96108bc744bc",
+      "sourceSha256": "303f32228477193c8c5cfd81196f0e6070fdab0c4d6920518352e1c548306eb8",
+      "contractSha256": "a7c93b0c854fd439b29aed1759f198368aa824cb4ab4f6fe71767d4497e3c21d",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Constrói relatórios versionados com temas, páginas e interações, verificando referências e números.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "power-platform-code-first",
+      "code": "DD-113",
+      "version": "1.2.0",
+      "packageSha256": "3c312c3f0687f209ab14288378cb4c09af37989e207e7d29b611efe3edf067a7",
+      "sourceSha256": "27c9743bd82ef09cf6eb0069428b3b9a1819d7dc901e8a1bdc6b9105ab1bf424",
+      "contractSha256": "331468cbebdfbba7caae74352fbfe4c473c5397c77aea690c1455511f7f285a6",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Produz apps e fluxos Microsoft com importação, delegação e validação no Studio.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "project-artifact",
+      "code": "DD-114",
+      "version": "1.2.0",
+      "packageSha256": "cd6cb2537e211f771bb42f8ea3f82754eab85e434b3571093a34b916984debe8",
+      "sourceSha256": "ae056b39c7c925d55714c7beaa8104ba14fdd1be32c207964ec9ca3347135238",
+      "contractSha256": "fcb8ca559e7ecabded9f9316a1dcfcd8f9eaf7f9d22466278aae7004b2d2cd03",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Consolida status em página compartilhada; publicação depende do recurso Artifact externo.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "propostas-comerciais-e-estimativas",
+      "code": "DD-115",
+      "version": "1.2.0",
+      "packageSha256": "9c1134888c44cfdccb8d2917577fe223cf4c85b24faf825742f461b7f0d378c7",
+      "sourceSha256": "e6323ecbc66b260e0438dabc4bc047a89f0d5e23aaab18ed7dc0f2dfead2d535",
+      "contractSha256": "413d69e1892dd8fb66fd05628f4be1feffe39c55ac2d5d0f2d41bb9748dff5a2",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Estrutura escopo e estimativa com premissas e condições sujeitas à decisão comercial.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "prospeccao-b2b-linkedin",
+      "code": "DD-116",
+      "version": "1.2.0",
+      "packageSha256": "26f07f468ee2d809fc54502539500d26b3d6922d2b0f8c613d65a9176bdc093a",
+      "sourceSha256": "b36323283967050c5c56c0eb4ad7b49e01ef8f6a3d0c00c37cf292239de30b2c",
+      "contractSha256": "1b3c32353873db9d3a0030e9272e374bfcc025a45ef3fc0b9ad4178cf5837c84",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Organiza qualificação, mensagens e histórico com deduplicação; envio e resultado não são automáticos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "prospeccao-drivedata",
+      "code": "DD-117",
+      "version": "1.2.0",
+      "packageSha256": "872f316dc7d73a4ea12bab62c32f3b87c0e10f6a543c705db1386e4346250fcf",
+      "sourceSha256": "9de15f50be9e4ae6ee804bd48133e46a81353a8fd36cfd105f33081588e925a8",
+      "contractSha256": "c34b65237599e92b1ad3000cb3eee3889120900b2e8d772a50b91e3ccb896731",
+      "priceCents": 1200,
+      "scores": {
+        "depth": 2,
+        "scope": 1,
+        "verification": 2,
+        "reuse": 2
+      },
+      "family": null,
+      "rationale": "Camada de marca e roteamento que depende da base autorizada; sobrepõe a prospecção B2B.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "prototipos-e-especificacao-funcional",
+      "code": "DD-118",
+      "version": "1.2.0",
+      "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448",
+      "sourceSha256": "6b3d5b5a60897f52fb5b66d5d64b4608dcf01207cc46a726a54fa459b4c8a9b9",
+      "contractSha256": "c75c78dbf6cc2ef7f785ba10459eb66416b10a03c206111a0aec466511403838",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Conecta requisitos, protótipo navegável, estados e critérios de aceite sem simular backend pronto.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "receipts",
+      "code": "DD-119",
+      "version": "1.2.0",
+      "packageSha256": "0f798c5197c241072cd7f565bbcbbf3c42101933407d49b6ac1fadb8bfb15020",
+      "sourceSha256": "d526fefd80af955f72604701d7c7f04e58acef379a019865f3ce6792ab0d0fd0",
+      "contractSha256": "2d23bced43044c2803c746f21031a70969f16d59739e7de04450454e4183be71",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Consolida registros locais e Git num relatório de atividade, sem inferir ROI ou aceite.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "review-contract",
+      "code": "DD-120",
+      "version": "1.2.0",
+      "packageSha256": "b941c948b85473dc0711150be62918ad6004f026e70f0a9512393fc3cd220c72",
+      "sourceSha256": "dbc76800da05e5267bc60d16dc6f67505afd9dfaa7d420b867bb251976a95c2b",
+      "contractSha256": "2ba7e883ea079e23e17037509c333203cba510b62458e82c2bcc1c6e0afb8864",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Compara cláusulas com playbook e propõe redlines coerentes; revisão profissional permanece necessária.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "saas-multi-tenant-supabase",
+      "code": "DD-121",
+      "version": "1.2.0",
+      "packageSha256": "45ac796580822f5586bd797242388c3c1cc482899a06eab4c1b6650122ab7be0",
+      "sourceSha256": "accbab754865c403a0e9a8c200cbc0b1da60c0c9a9685d8261d850105a89248b",
+      "contractSha256": "ab99ec27dd36cc472092112248b5bbaec85949735c8dc32260088cc49b93f9fb",
+      "priceCents": 4700,
+      "scores": {
+        "depth": 5,
+        "scope": 5,
+        "verification": 5,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Abrange autenticação, RLS, Storage, migrações e testes de isolamento por caminho de acesso.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "security-and-hardening",
+      "code": "DD-122",
+      "version": "1.2.0",
+      "packageSha256": "83512f0d95ea9e1a39a59ff0f4725514fd9377fed61ed12878d8be652914e49b",
+      "sourceSha256": "d7ac5306429ce2aee188f82c9f74db8b206bb31ee82ca91e5f57c959d7639d38",
+      "contractSha256": "cf773b6fef7a2fd9e73a2ae8ae471d77e1a969dbfafe906d5a1ffb98171ac572",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Fortalece fronteiras de confiança e verifica controles e bypasses pertinentes ao fluxo.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "security-audit",
+      "code": "DD-123",
+      "version": "1.2.0",
+      "packageSha256": "3056791a835ff474e2feb40fbcaf032e4a1835356889e7692c1592549d8b6485",
+      "sourceSha256": "eaa06b5360bfd782ad0912e123c99ce0da6bdb3d13b5e3cdbe36698ce2ca548f",
+      "contractSha256": "512bdf44f64550bc47c5ac047ff320a06cc574487203d340babcc2955bddc4bd",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Revisão defensiva com escopo, achados reproduzíveis e limites de cobertura, sem certificação.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "session-report",
+      "code": "DD-124",
+      "version": "1.2.0",
+      "packageSha256": "fe039b31692ea3a6c05e9254d2c62f8959d684fc91f0ba20b21812a8d4bf1b20",
+      "sourceSha256": "4c7f8eb5d5cd77d55d3cb40501b35ca60e4ecfc509d7b7a9763248f102db93ba",
+      "contractSha256": "2da1a87c75713d2effdaa2f2f593a73d6ea41871ddb1aaffe8e0f8991ac6b157",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Gera HTML de consumo e sessões com parsing, cobertura e tratamento de registros incompletos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "shipping-and-launch",
+      "code": "DD-125",
+      "version": "1.2.0",
+      "packageSha256": "e51d738ec0b969b816353833fdcccb789cd89f2c78333f6a88e689550778408b",
+      "sourceSha256": "6ba97cf486c3eec3610e4a34b7ece3e0289a533bc1cc27bc50f8f30fedea37f3",
+      "contractSha256": "8245e64f9c9476fa5e3a3099b85780ea969f0adc5139284e95d14344f933b7d4",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Prepara lançamento, sinais de falha e recuperação com distinção entre código e dados.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "siege",
+      "code": "DD-126",
+      "version": "1.2.0",
+      "packageSha256": "2d7021b8ae6f3d5e9995a01347114e9ce311978fda8e05c4c0e80163d3122d71",
+      "sourceSha256": "b707fb3dc15728f8b43fe332ee7792a92c2c920dce6ae1da46f7f07c03ca7b9d",
+      "contractSha256": "5375d17e5b32a8cc5c841d7f0992aeb9510494b4fdcf40b116952abfe6ecdea5",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 5,
+        "scope": 3,
+        "verification": 5,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Estrutura investigação matemática em rodadas, ledger e checkpoints; orçamento e ferramentas são externos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "signature-request",
+      "code": "DD-127",
+      "version": "1.2.0",
+      "packageSha256": "cfeac3cbcf77c4b1653ac611bc0df4649b6bde7cd898f9d9f63719a4ad9a3024",
+      "sourceSha256": "0aa5c720ebd6ef6fddb804c4c75c4ad8709c654905f9ae33dee2d680f42bab13",
+      "contractSha256": "1d3c05938d3ca070bd9de868da1b5c691519d46580e5e302b285c7454189c349",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Prepara documento, anexos e signatários com versão conferida; conector e envio não estão implícitos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "sites-institucionais-e-seo",
+      "code": "DD-128",
+      "version": "1.2.0",
+      "packageSha256": "90d42c7c106ce92a69e3caf1f6362ce107b5688a29cb0f0482201284c8745eaf",
+      "sourceSha256": "1b739b5b90090dbfabb636c6d7135470a0a5027056af508e9dd9599928993cdc",
+      "contractSha256": "adc70952709b4c4726ba290012a6bfc15942f0ec05b2d08d0f8bea85fabf8c74",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Combina conteúdo, site e captação com conferência de persistência e SEO multilíngue.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "skill-development",
+      "code": "DD-129",
+      "version": "1.2.0",
+      "packageSha256": "d6bcafbda3a01881a2759990beaaf6e1d23e06e965e070777ebf527f938f7686",
+      "sourceSha256": "34d7020c893e168d12e495c0e8e980c645bd58b2837992549f3449b752aab375",
+      "contractSha256": "c3a8e1fcc102f381095db3c3e561331448e86d1d5c5616bfed0de677283dbfa7",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Estrutura conhecimento em pacote de skill com gatilhos, dependências e validação de links.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "solo",
+      "code": "DD-130",
+      "version": "1.2.0",
+      "packageSha256": "8538bf63f58904895285ee29992ca3e35e59e75612b87e818a730c578737d593",
+      "sourceSha256": "02b692fbd216aac5c1768b332edc81cbf8e5dc521afb793d2afda851849cfefb",
+      "contractSha256": "54abdd945763a3ed6e6c21820b375e062ff348a5984dfafa7eb125b64db976b6",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 2,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Organiza prova e obrigações abertas em pesquisa direta; escopo menor que orquestração de avaliações.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "telegram-access",
+      "code": "DD-131",
+      "version": "1.2.0",
+      "packageSha256": "5792b811ab45ffd2235516b310249db5eb86ff156cf8388fd602a308cf0c03c9",
+      "sourceSha256": "8692559bc0a4855820824e96d3c41a7f9fd0cdfc928c133589fc813509c2aecf",
+      "contractSha256": "5be655e39d729033a1d69be5b911c9cfbad017a4d1460b5b1c95df189b5a8a89",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Controla acesso e IDs sem perda de precisão, com concorrência segura no plugin Telegram.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "telegram-configure",
+      "code": "DD-132",
+      "version": "1.2.0",
+      "packageSha256": "b1c35a893a3d5c57daf318977cb78a53ebb0f33cf81a77269105ff6553af48fc",
+      "sourceSha256": "5a6bb3c7e7987cf7ae33889edbee356bc36084dc95da5da88464b87f2c57c9fc",
+      "contractSha256": "e7830daaefe57fbb36a17819ccf3e317433906a824a7312ddfd6a0143d258a50",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Configura canal e armazenamento de segredos com estados de prontidão e teste autorizado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "triage-nda",
+      "code": "DD-133",
+      "version": "1.2.0",
+      "packageSha256": "1f9ab23c8acbc8a77f291c13ad34537e48cbb3167b4c685490f0a8685798248f",
+      "sourceSha256": "a3bebaa30e640c9cdea29b907e25a4ebdabcba466b9fad840f8e26e29c28cb0c",
+      "contractSha256": "fa5aba96815da476e6be3622bf6c71851ac46a049a64428b17a3b3c831bf466f",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Classifica desvios de NDA por cláusula e playbook; triagem não autoriza assinatura.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "vendor-check",
+      "code": "DD-134",
+      "version": "1.2.0",
+      "packageSha256": "8627d115d5353ff6ef65dc9735767548f7e2fe481449c3f4117d20b911623e86",
+      "sourceSha256": "92ecf85ff54e376e1d93d01a7f83fe908d98fc9304bc061ea024ff08e868287f",
+      "contractSha256": "7853f5318e7fb2456eda5d81f0deb859a178e26307541c8e7254ee760d80985e",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Inventaria acordos, vigências e lacunas conforme cobertura das fontes realmente consultadas.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "video-interaction-mapper",
+      "code": "DD-135",
+      "version": "1.2.0",
+      "packageSha256": "5b357d7706f5a73d08bfcdfc27d2bc29fe28734067e1988a22a94be41e3f12df",
+      "sourceSha256": "1ec5d275ff4aee3a855b93a601a018e78907fec7809fe4ed2cc5fc38b32118e5",
+      "contractSha256": "f2d916c32c847e254da1570ddfc8790af10fe0697a11342e4ea73140b6e4e554",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Transforma gravação em storyboard com frames, tempos e incerteza dos gatilhos no Figma.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "video-programatico-reels",
+      "code": "DD-136",
+      "version": "1.2.0",
+      "packageSha256": "d4932fd2a98ecaf556e6044aaab1d6dca29d5fcad8868adc7cb27cfe5c03eea0",
+      "sourceSha256": "4861a0b1502caa07ff5b29fcddae3171b161b266617077da9154aef486f80477",
+      "contractSha256": "3bd4b485253c2799764ed3e9c820599e550184f16c190d2e6c92f4994b08e892",
+      "priceCents": 4200,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Produz vídeo com cenas, áudio e legendas, incluindo prévia e verificação técnica da mídia.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "writing-hookify-rules",
+      "code": "DD-137",
+      "version": "1.2.0",
+      "packageSha256": "60dd5ebd597f8a3a032e572c7b8d4df84fc95deea10251535b55b0f193883916",
+      "sourceSha256": "814fe185ce549bf8b1e6111ab36fbeba5764b27d87702a7a5705c769b6b2ecc4",
+      "contractSha256": "967ebd7aad4b9fe414ce05b8e26e982410907cdba826ef05c8c2afd62e71d1e3",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Cria regras por evento com testes de regex, falsos positivos e suporte real ao bloqueio.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    }
+  ]
+}
