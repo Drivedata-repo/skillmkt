@@ -43,15 +43,24 @@ const DeckArt = (() => {
     // Neutral loading fallback; never assign another skill's illustration.
     return '<svg class="skill-scene" viewBox="0 0 320 260" aria-hidden="true" focusable="false"><path d="M70 62H250V202H70ZM70 88H250M92 111H228M92 134H187M92 157H209" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
   }
+  // Finish follows the proposed USD price; game power and technical evidence stay independent.
+  function finish(s) {
+    const cents = s.pricing?.currency === "USD" ? s.pricing.priceCents : 0;
+    if (!Number.isSafeInteger(cents) || cents < 3000) return null;
+    if (cents >= 4700) return { key: "gold", label: "Ouro solar" };
+    if (cents >= 4200) return { key: "platinum", label: "Platina orbital" };
+    if (cents >= 3700) return { key: "prism", label: "Prisma violeta" };
+    return { key: "ion", label: "Ciano iônico" };
+  }
   function card(s, opts = {}) {
-    const g=s.game, p=s.pricing;
+    const g=s.game, p=s.pricing, foil=finish(s);
     const money=p ? (typeof DeckCommerce!=="undefined" ? DeckCommerce.money(p.priceCents) : `US$ ${p.priceCents/100}`) : "";
     const level=g ? translated("Nível de coleção {level}").replace("{level}",g.level) : "";
-    return `<div class="holo-card ${g ? "has-game " : ""}${opts.spin ? "is-spinning " : ""}${s.featured ? "featured-card" : ""}" style="--hue:${hue(s)}" data-card-id="${esc(s.id)}">
+    return `<div class="holo-card ${g ? "has-game " : ""}${opts.spin ? "is-spinning " : ""}${foil ? `premium-card finish-${foil.key} ` : ""}${s.featured ? "featured-card" : ""}" style="--hue:${hue(s)};--foil-delay:-${(Number(s.code?.slice(3)) || 0)%9}s" data-card-id="${esc(s.id)}"${foil ? ` data-finish="${foil.key}"` : ""}>
       <div class="card-face front"><div class="card-edge"></div>
-        <div class="card-heading"><img src="/assets/drivedata-logo.png" alt="" width="22" height="22"><span>${esc(s.code)}</span><b>${s.featured ? "EXAMPLE EDITION" : "HOLO SERIES"}</b></div>
+        <div class="card-heading"><img src="/assets/drivedata-logo.png" alt="" width="22" height="22"><span>${esc(s.code)}</span><b>${foil ? esc(translated(foil.label)) : s.featured ? "EXAMPLE EDITION" : "HOLO SERIES"}</b></div>
         ${g?`<div class="card-rank"><span>${esc(g.school)}</span><span class="rank-stars" aria-label="${esc(level)}"><em>LV ${g.level}</em><span aria-hidden="true">${"✦".repeat(g.level)}</span></span></div>`:""}
-        <div class="card-visual">${illustration(s)}${seal(s)}<span class="visual-label">${esc(translated(s.category))}</span>${s.universe ? `<span class="card-codename">${esc(s.universe.alias)}</span>` : ""}<span class="visual-stars" aria-hidden="true">${s.featured ? "◈ ◈ ◈" : "✧ ✦ ✧"}</span></div>
+        <div class="card-visual">${foil ? '<div class="premium-fx" aria-hidden="true"><i class="foil-orbit"></i><i class="foil-sparks"></i><i class="foil-sweep"></i></div>' : ''}${illustration(s)}${seal(s)}<span class="visual-label">${esc(translated(s.category))}</span>${s.universe ? `<span class="card-codename">${esc(s.universe.alias)}</span>` : ""}<span class="visual-stars" aria-hidden="true">${s.featured ? "◈ ◈ ◈" : "✧ ✦ ✧"}</span></div>
         <div class="card-info"><span class="card-type">${s.role === "platform-specific" ? "Conexão de plataforma" : s.role === "support" ? "Especialidade de apoio" : "Skill de aplicação"}</span><h3>${esc(s.title)}</h3><p>${esc(s.universe?.tagline || s.deliverables?.[0] || "Conhecimento para a sua próxima tarefa.")}</p></div>
         ${g?`<div class="card-battle-stats" title="${esc(g.notice)}"><span>${esc(translated("ATQ"))} <b>${g.attack}</b></span><i aria-hidden="true">◆</i><span>${esc(translated("DEF"))} <b>${g.defense}</b></span></div>`:""}
         <div class="card-bottom"><span>${esc(s.code)} · v${esc(s.version || "1.2.0")}${p?`<small>${esc(translated("Grátis na demo"))}</small>`:""}</span>${p?`<span class="card-price"><small>${esc(translated("Preço proposto"))}</small><b>${esc(money)}</b></span>`:"<span>DRIVEDATA DECK</span>"}</div><div class="holo-shine"></div>
@@ -81,5 +90,5 @@ const DeckArt = (() => {
       };
     });
   }
-  return { esc, card, tilt, hue, signature };
+  return { esc, card, tilt, hue, signature, finish };
 })();

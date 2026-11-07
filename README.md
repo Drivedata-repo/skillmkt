@@ -8,6 +8,8 @@ Os 137 itens têm preços **propostos** de US$ 7 a US$ 47, definidos por profund
 
 As cartas possuem níveis, estrelas, arquétipos e ATQ/DEF **fictícios**, independentes de preço e qualidade. A aba Poder da carta tem uma invocação visual e sonora, respeitando movimento reduzido e a preferência de som. Esse efeito não executa a skill. Ficha técnica explica a avaliação de preço; Laboratório mantém a evidência real.
 
+Os acabamentos visuais acompanham o preço proposto em USD a partir de US$ 30: Ciano iônico (US$ 32, 25 cartas), Prisma violeta (US$ 37, 27), Platina orbital (US$ 42, 17) e Ouro solar (US$ 47, 7). Moldura, cores, reflexos, órbitas e partículas evoluem entre as quatro faixas. O movimento se concentra na carta em inspeção e respeita pausa e movimento reduzido. Os nomes são localizados em PT/EN/ES; preços, demo gratuita e atributos fictícios permanecem iguais. O acabamento não é uma alegação de escassez ou de qualidade técnica.
+
 - **Explorar:** mantém as cartas holográficas, universos, filtros e descobertas. **Trabalhar:** apresenta as skills com foco em entrega, requisitos e evidência e abre um percurso de quatro etapas: preparar, praticar, aplicar e conferir.
 - **Planilhas confiáveis:** três skills para organizar dados, calcular uma planilha e documentar a conferência. **Power BI sob controle:** quatro skills para preparar dados, revisar modelo e medidas, auditar e documentar. Pacotes 1.0.0 agregam os ZIPs originais 1.2.0 sem alterá-los.
 - Cada pacote traz amostra fictícia, referência determinística, comandos PT/EN/ES, critérios, manifesto e verificador. Os arquivos são entregues por endpoints autenticados e o navegador verifica SHA-256. A montagem requer apenas SELECT dos pacotes já existentes.
