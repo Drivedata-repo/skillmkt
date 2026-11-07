@@ -40,7 +40,7 @@
 .theater-title{position:absolute;z-index:3;top:14px;left:14px;right:14px;text-align:center}
 .theater-title p{margin:0 0 5px;font:10px var(--mono,monospace);color:#b6ccd6}
 .theater-title h3{margin:0;color:var(--summon-color);font-size:clamp(18px,3vw,28px);line-height:1.1}
-.theater-card{width:clamp(110px,calc((var(--theater-height) - 165px)*.63),270px);margin:0 0 13px;flex-shrink:0}
+.theater-card{width:clamp(110px,calc((var(--theater-height) - 195px)*.63),270px);margin:0 0 13px;flex-shrink:0}
 .theater-card .holo-card{width:100%;filter:drop-shadow(0 16px 30px #0009);--rx:0deg;--ry:0deg}
 .theater-card .card-info h3{font-size:14px}.theater-card .card-info p{display:block;font-size:9px}
 .theater-card .card-visual{height:33%}
@@ -51,6 +51,7 @@
 .theater-footer>div{display:flex;justify-content:center;gap:24px;margin-top:10px}
 .theater-footer button{font-size:11px;min-height:30px;color:#d9e7ef;text-decoration:underline;text-underline-offset:4px}
 .theater-footer button:focus-visible{outline:2px solid var(--summon-color);outline-offset:3px}
+.theater-title p,.theater-title h3,.theater-footer>p,.theater-footer>span,.theater-footer>div{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;background:#070d16ed;padding:3px 9px;border-radius:3px}
 @media(max-height:620px){.theater-card .card-info p,.theater-card .card-type{display:none}.theater-card .card-info h3{font-size:10px}.theater-card .card-rank{font-size:6px}.theater-card .rank-stars>span{display:none}.theater-card .card-heading{font-size:6px}.theater-card .card-heading b{font-size:5px}.theater-card .card-heading img{width:14px;height:14px}.theater-card .card-price b{font-size:10px}.theater-card .card-battle-stats b{font-size:10px}}
 @media(max-height:500px) and (min-width:600px){.theater-card{width:calc((var(--theater-height) - 28px)*.63);max-width:205px;margin:0 42% 0 0}.theater-title{left:50%;top:22%}.theater-footer{left:50%;bottom:18%}.invocation-theater .summon-disc{left:29%;width:410px;height:410px}.theater-footer>div{flex-wrap:wrap;gap:4px 18px}.theater-title h3{font-size:20px}}
 @media(max-height:620px){.theater-card .card-face{padding:7px;border-radius:9px}.theater-card .card-visual{height:29%}.theater-card .card-info{padding:6px;margin-top:4px}.theater-card .card-heading{padding:3px;margin-bottom:3px;gap:3px}.theater-card .card-rank{padding:3px;margin-bottom:3px}.theater-card .card-battle-stats{padding:4px 3px;margin-top:3px}.theater-card .card-bottom{padding:3px;margin-top:3px;font-size:6px}.theater-card .card-bottom small{font-size:5px}}
