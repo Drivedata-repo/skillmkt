@@ -1,0 +1,17 @@
+{
+  "caseId": "request-prototype",
+  "reviewedAt": "2026-11-07T13:42:51.672Z",
+  "outputSha256": "52a89fe48ddf9fed6491a1af4dbf1d89f4774cca26ec644228b3a6c474b3ecb9",
+  "passed": true,
+  "desktop": true,
+  "mobileWidth": 390,
+  "horizontalPageOverflow": false,
+  "consoleErrors": 0,
+  "requiredSubject": true,
+  "createdRequest": "REQ-002",
+  "initialStatus": "Aberta",
+  "operatorChangedStatus": "Concluida",
+  "requesterReadOnly": true,
+  "reloadResets": true,
+  "backendVerified": false
+}

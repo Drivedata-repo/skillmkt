@@ -1,0 +1,3 @@
+# Reviewed evidence is hash-bound: preserve original and derived bytes exactly.
+dist/evidence-assets/** -text
+dist/ensaios/deck-ensaios.zip -text

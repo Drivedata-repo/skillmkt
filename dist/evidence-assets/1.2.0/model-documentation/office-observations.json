@@ -1,0 +1,17 @@
+{
+  "caseId": "model-documentation",
+  "reviewedAt": "2026-11-07T13:40:06.9129635Z",
+  "method": "Microsoft Office COM; isolated copies; macros disabled",
+  "files": [
+    {
+      "filename": "model-documentation.docx",
+      "originalSha256": "fdc09920ca4db9a3f9c1201d913e66de674200566cc2914f8184dd9171082491",
+      "opened": true,
+      "pdf": "model-documentation.pdf",
+      "officeVersion": "16.0",
+      "pages": 6,
+      "reviewedCopySha256": "fdc09920ca4db9a3f9c1201d913e66de674200566cc2914f8184dd9171082491",
+      "pdfSha256": "982d39ae5fd1c92ed86dcf0268bf70f352e75f78b13701d4b3c8938244398fb3"
+    }
+  ]
+}

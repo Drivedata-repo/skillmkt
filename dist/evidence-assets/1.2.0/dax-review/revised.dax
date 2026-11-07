@@ -1,0 +1,11 @@
+-- Receita aditiva no contexto de filtro atual.
+Revenue Total =
+    SUM(Sales[Revenue])
+
+-- Margem dos totais; denominador zero ou BLANK retorna BLANK.
+MarginPct =
+VAR Receita = [Revenue Total]
+VAR Custo = SUM(Sales[Cost])
+VAR Lucro = Receita - Custo
+RETURN
+    DIVIDE(Lucro, Receita)

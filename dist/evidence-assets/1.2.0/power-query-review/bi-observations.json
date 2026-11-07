@@ -1,0 +1,33 @@
+{
+  "caseId": "power-query-review",
+  "reviewedAt": "2026-11-07T13:33:23.0001410Z",
+  "outputSha256": "f160ae63b8c90d2e4924274ef141379367aebdf20fcf5531006fa35a439b585f",
+  "passed": true,
+  "checks": [
+    "Three original IDs preserved",
+    "pt-BR values parsed as 10.5 and 20",
+    "Null preserved as an empty Excel cell",
+    "Non-null sum 30.5"
+  ],
+  "fullSkillExecutionVerified": false,
+  "officeVersion": "16.0",
+  "engine": "Power Query / Microsoft Mashup in Excel",
+  "rows": [
+    {
+      "Id": 1.0,
+      "Amount": 10.5
+    },
+    {
+      "Id": 2.0,
+      "Amount": null
+    },
+    {
+      "Id": 3.0,
+      "Amount": 20.0
+    }
+  ],
+  "sum": 30.5,
+  "limitations": [
+    "Literal source only; no remote query folding or refresh service tested"
+  ]
+}

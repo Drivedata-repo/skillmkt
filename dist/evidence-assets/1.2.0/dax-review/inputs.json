@@ -1,0 +1,18 @@
+{
+  "original.dax": "Revenue Total = SUMX(Sales, Sales[Revenue])\nMarginPct = ([Revenue Total] - SUM(Sales[Cost])) / [Revenue Total]\n",
+  "sales.json": {
+    "fictional": true,
+    "rows": [
+      {
+        "product": "A",
+        "revenue": 1000,
+        "cost": 600
+      },
+      {
+        "product": "B",
+        "revenue": 100,
+        "cost": 90
+      }
+    ]
+  }
+}

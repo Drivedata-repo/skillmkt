@@ -1,0 +1,69 @@
+{
+  "model.bim": {
+    "name": "AuroraModel",
+    "compatibilityLevel": 1600,
+    "model": {
+      "culture": "pt-BR",
+      "tables": [
+        {
+          "name": "Sales",
+          "columns": [
+            {
+              "name": "SaleId",
+              "dataType": "int64"
+            },
+            {
+              "name": "ProductId",
+              "dataType": "int64"
+            },
+            {
+              "name": "Revenue",
+              "dataType": "double"
+            },
+            {
+              "name": "Cost",
+              "dataType": "double"
+            }
+          ],
+          "measures": [
+            {
+              "name": "TotalRevenue",
+              "expression": "SUM(Sales[Revenue])"
+            },
+            {
+              "name": "TotalCost",
+              "expression": "SUM(Sales[Cost])"
+            },
+            {
+              "name": "MarginPct",
+              "expression": "DIVIDE([TotalRevenue] - [TotalCost], [TotalRevenue])"
+            }
+          ]
+        },
+        {
+          "name": "Product",
+          "columns": [
+            {
+              "name": "ProductId",
+              "dataType": "int64"
+            },
+            {
+              "name": "ProductName",
+              "dataType": "string"
+            }
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Sales_Product",
+          "fromTable": "Sales",
+          "fromColumn": "ProductId",
+          "toTable": "Product",
+          "toColumn": "ProductId",
+          "crossFilteringBehavior": "oneDirection"
+        }
+      ]
+    }
+  }
+}

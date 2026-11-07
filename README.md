@@ -113,6 +113,10 @@ Skills de apoio úteis, como Git ou TMDL, entram somente em tarefas explícitas 
 
 ## Laboratório, suporte e aprendizado
 
+Dez ensaios com arquivos reais da edição 1.2.0 foram executados e conferidos em 07/11/2026. A galeria `/ensaios/` reúne 13 entregáveis originais, entradas fictícias, prévias, cópias recalculadas e registros independentes, em PT/EN/ES. Word, Excel e PowerPoint abriram os arquivos; M e DAX foram executados nos motores locais do Excel; o HTML foi exercitado em desktop e celular. A documentação do modelo exigiu duas novas gerações após falhas de paginação e largura. O histórico de tentativas foi preservado. Detalhes e limites em `reviews/ENSAIOS-REAIS-2026-11-07.md`.
+
+O aceite do proprietário continua pendente. A galeria permite marcar arquivos conferidos e exportar a revisão local, vinculada às versões e hashes, sem transmitir essas marcações. Os dez cenários não homologam todos os usos das 137 skills nem comprovam ganho sobre uma IA sem skill. A demo permanece gratuita.
+
 As 137 cartas têm roteiro de avaliação. Dez exemplos de referência têm conferência determinística em PT/EN/ES, totalizando 30 verificações locais; isso não executa as skills por IA. `node scripts/run-skill-lab.cjs` reproduz esses exemplos. Três amostras limitadas da edição 1.2 foram executadas pelo Codex CLI: margem ponderada, compromissos de ata e classificação de risco em um caso fictício. `data/assistant-evidence.json` registra entrada, saída, critérios, versão e hashes. Não contém fontes privadas ou prompts internos. O laboratório oferece esses artefatos para download e distingue amostra limitada de execução integral; nenhuma das três comprova geração de arquivos Office ou integração com serviços externos. O CLI não informou o modelo utilizado, registrado como desconhecido.
 
 Para repetir os três ensaios com o CLI instalado: `node scripts/run-assistant-evals.cjs --execute --version=1.2.0`. A execução usa sessão efêmera, sandbox de leitura e dados fictícios; não equivale a homologar os 137 fluxos completos. Detalhes locais ficam em `.local/assistant-evals/`, fora do Git.

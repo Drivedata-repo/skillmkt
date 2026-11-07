@@ -1,0 +1,15 @@
+{
+  "brief.json": {
+    "project": "Aurora Demo",
+    "fictional": true,
+    "scope": [
+      "Mapear indicadores",
+      "Criar painel demonstrativo"
+    ],
+    "exclusions": [
+      "Integracao com ERP"
+    ],
+    "acceptance": "Conferir indicadores com a fonte ficticia",
+    "price": null
+  }
+}

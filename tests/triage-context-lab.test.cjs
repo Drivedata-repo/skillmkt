@@ -93,7 +93,7 @@ for (const [i, locale] of ["pt", "en", "es"].entries()) {
       assert.deepEqual(c.sourceRequirements, skill.dependencies);
       const lab = getLab(skill, locale);
       assert.equal(lab.executionVerified, false);
-      assert.equal(lab.executionStatus, "not-run");
+      assert.equal(lab.executionStatus, lab.assistantSamples.some(s=>s.currentVersion)||lab.deliverableSamples.length ? "limited-sample-verified" : "not-run");
       assert.ok(
         lab.scenario.request && lab.scenario.check && lab.prerequisites.length,
       );

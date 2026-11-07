@@ -1,0 +1,191 @@
+{
+  "caseId": "margin-workbook",
+  "reviewedAt": "2026-11-07T13:22:42.5742376Z",
+  "method": "Microsoft Office COM; isolated copies; macros disabled",
+  "files": [
+    {
+      "filename": "margin.xlsx",
+      "originalSha256": "fa36a5b70e73a3642070454f8aadf91b70e826d46168a576d97013bcdb32edc2",
+      "opened": true,
+      "pdf": "margin.pdf",
+      "officeVersion": "16.0",
+      "baseline": [
+        {
+          "sheet": "Margens",
+          "address": "D2",
+          "formula": "=B2-C2",
+          "value": 400.0,
+          "text": "R$ 400,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E2",
+          "formula": "=IFERROR(D2/B2,0)",
+          "value": 0.4,
+          "text": "40,0%"
+        },
+        {
+          "sheet": "Margens",
+          "address": "D3",
+          "formula": "=B3-C3",
+          "value": 10.0,
+          "text": "R$ 10,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E3",
+          "formula": "=IFERROR(D3/B3,0)",
+          "value": 0.1,
+          "text": "10,0%"
+        },
+        {
+          "sheet": "Margens",
+          "address": "B4",
+          "formula": "=SUM(B2:B3)",
+          "value": 1100.0,
+          "text": "R$ 1.100,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "C4",
+          "formula": "=SUM(C2:C3)",
+          "value": 690.0,
+          "text": "R$ 690,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "D4",
+          "formula": "=B4-C4",
+          "value": 410.0,
+          "text": "R$ 410,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E4",
+          "formula": "=IFERROR(D4/B4,0)",
+          "value": 0.37272727272727274,
+          "text": "37,3%"
+        }
+      ],
+      "changedInput": [
+        {
+          "sheet": "Margens",
+          "address": "D2",
+          "formula": "=B2-C2",
+          "value": 1400.0,
+          "text": "R$ 1.400,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E2",
+          "formula": "=IFERROR(D2/B2,0)",
+          "value": 0.7,
+          "text": "70,0%"
+        },
+        {
+          "sheet": "Margens",
+          "address": "D3",
+          "formula": "=B3-C3",
+          "value": 10.0,
+          "text": "R$ 10,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E3",
+          "formula": "=IFERROR(D3/B3,0)",
+          "value": 0.1,
+          "text": "10,0%"
+        },
+        {
+          "sheet": "Margens",
+          "address": "B4",
+          "formula": "=SUM(B2:B3)",
+          "value": 2100.0,
+          "text": "R$ 2.100,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "C4",
+          "formula": "=SUM(C2:C3)",
+          "value": 690.0,
+          "text": "R$ 690,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "D4",
+          "formula": "=B4-C4",
+          "value": 1410.0,
+          "text": "R$ 1.410,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E4",
+          "formula": "=IFERROR(D4/B4,0)",
+          "value": 0.6714285714285714,
+          "text": "67,1%"
+        }
+      ],
+      "zeroRevenue": [
+        {
+          "sheet": "Margens",
+          "address": "D2",
+          "formula": "=B2-C2",
+          "value": -600.0,
+          "text": "(R$ 600,00)"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E2",
+          "formula": "=IFERROR(D2/B2,0)",
+          "value": 0.0,
+          "text": "-"
+        },
+        {
+          "sheet": "Margens",
+          "address": "D3",
+          "formula": "=B3-C3",
+          "value": -90.0,
+          "text": "(R$ 90,00)"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E3",
+          "formula": "=IFERROR(D3/B3,0)",
+          "value": 0.0,
+          "text": "-"
+        },
+        {
+          "sheet": "Margens",
+          "address": "B4",
+          "formula": "=SUM(B2:B3)",
+          "value": 0.0,
+          "text": "-"
+        },
+        {
+          "sheet": "Margens",
+          "address": "C4",
+          "formula": "=SUM(C2:C3)",
+          "value": 690.0,
+          "text": "R$ 690,00"
+        },
+        {
+          "sheet": "Margens",
+          "address": "D4",
+          "formula": "=B4-C4",
+          "value": -690.0,
+          "text": "(R$ 690,00)"
+        },
+        {
+          "sheet": "Margens",
+          "address": "E4",
+          "formula": "=IFERROR(D4/B4,0)",
+          "value": 0.0,
+          "text": "-"
+        }
+      ],
+      "recalculationPassed": true,
+      "reviewedCopySha256": "e6c19ab5305dffdce138f5a8b57e790a9963da659aa906c0579ca43d65dcf914",
+      "pdfSha256": "2fd4b28b60fbabb8d6e1c72c7f756853615fd075797d288f03c7256dea5e131b"
+    }
+  ]
+}

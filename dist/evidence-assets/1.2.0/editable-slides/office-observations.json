@@ -1,0 +1,17 @@
+{
+  "caseId": "editable-slides",
+  "reviewedAt": "2026-11-07T13:26:04.8598824Z",
+  "method": "Microsoft Office COM; isolated copies; macros disabled",
+  "files": [
+    {
+      "filename": "presentation.pptx",
+      "originalSha256": "4e88d804476058769bcd1bea65c0f5a2413a3970a22543e7c77e9894922a0f02",
+      "opened": true,
+      "pdf": "presentation.pdf",
+      "officeVersion": "16.0",
+      "slides": 3,
+      "reviewedCopySha256": "4e88d804476058769bcd1bea65c0f5a2413a3970a22543e7c77e9894922a0f02",
+      "pdfSha256": "c4041719c201323b6c2478f85f3d8e6339f35a2c2b4d724bbb58b95943189c5c"
+    }
+  ]
+}

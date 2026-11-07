@@ -3,6 +3,7 @@ const cards = require("../data/skills.cjs");
 require("./build-i18n.cjs");
 require("./build-preview.cjs");
 require("./build-problem-pages.cjs");
+require("./build-deliverable-gallery.cjs");
 if (cards.length !== 137 || new Set(cards.map((s) => s.code)).size !== 137)
   throw new Error("Invalid card collection");
 for (const file of [

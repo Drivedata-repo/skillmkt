@@ -1,0 +1,4 @@
+{
+  "batch-a.csv": "Id,Client,Value\nP01,Aurora,1200\nP02,Norte,800\n",
+  "batch-b.csv": "Id,Client,Value\nP01,Aurora,1200\nP03,Aurora,500\n"
+}

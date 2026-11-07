@@ -1,0 +1,27 @@
+{
+  "requirements.json": {
+    "fictional": true,
+    "title": "Aurora Solicita",
+    "fields": [
+      "Assunto",
+      "Descricao"
+    ],
+    "required": "Assunto",
+    "states": [
+      "Aberta",
+      "Em atendimento",
+      "Concluida"
+    ],
+    "roles": [
+      "Solicitante",
+      "Operador"
+    ],
+    "initialItems": [
+      {
+        "id": "REQ-001",
+        "subject": "Revisar painel",
+        "status": "Aberta"
+      }
+    ]
+  }
+}

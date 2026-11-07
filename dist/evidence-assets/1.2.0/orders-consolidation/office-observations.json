@@ -1,0 +1,63 @@
+{
+  "caseId": "orders-consolidation",
+  "reviewedAt": "2026-11-07T13:37:56.1240973Z",
+  "method": "Microsoft Office COM; isolated copies; macros disabled",
+  "files": [
+    {
+      "filename": "orders.xlsx",
+      "originalSha256": "68458fd7b1464a90584eb66f9d2bb738f5590c33bcffbcdfaaf4f3b7e73ff581",
+      "opened": true,
+      "pdf": "orders.pdf",
+      "officeVersion": "16.0",
+      "baseline": [
+        {
+          "sheet": "Resumo",
+          "address": "B2",
+          "formula": "=SUMIF(Pedidos!B2:B4,A2,Pedidos!C2:C4)",
+          "value": 1700.0,
+          "text": "1.700,00"
+        },
+        {
+          "sheet": "Resumo",
+          "address": "B3",
+          "formula": "=SUMIF(Pedidos!B2:B4,A3,Pedidos!C2:C4)",
+          "value": 800.0,
+          "text": "800,00"
+        },
+        {
+          "sheet": "Resumo",
+          "address": "B4",
+          "formula": "=SUM(Pedidos!C2:C4)",
+          "value": 2500.0,
+          "text": "2.500,00"
+        }
+      ],
+      "changedInput": [
+        {
+          "sheet": "Resumo",
+          "address": "B2",
+          "formula": "=SUMIF(Pedidos!B2:B4,A2,Pedidos!C2:C4)",
+          "value": 1800.0,
+          "text": "1.800,00"
+        },
+        {
+          "sheet": "Resumo",
+          "address": "B3",
+          "formula": "=SUMIF(Pedidos!B2:B4,A3,Pedidos!C2:C4)",
+          "value": 800.0,
+          "text": "800,00"
+        },
+        {
+          "sheet": "Resumo",
+          "address": "B4",
+          "formula": "=SUM(Pedidos!C2:C4)",
+          "value": 2600.0,
+          "text": "2.600,00"
+        }
+      ],
+      "recalculationPassed": true,
+      "reviewedCopySha256": "8dee0f0fb2978139b3f6de87288c018486643106c7bd8bb65b7526e6b40f906f",
+      "pdfSha256": "76ddbc8efad844b3d86f735c0fedfdee7ae38365e481212b984748f85eb9b6c0"
+    }
+  ]
+}

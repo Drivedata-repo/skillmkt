@@ -15,34 +15,38 @@ const evidence = require("../data/deliverable-evidence.json"),
     getDeliverableReadiness,
     validArtifact,
   } = require("../lib/deliverable-evidence.cjs");
-test("ten prepared scenarios are distinct from the existing three JSON executions", () => {
+test("ten actual artifact scenarios remain distinct from full skill certification", () => {
   assert.equal(cases.length, 10);
   assert.equal(evidence.scenarios.length, 10);
   assert.equal(new Set(cases.map((c) => c.skillId)).size, 10);
   assert.equal(
-    evidence.scenarios.filter((s) => s.status === "blocked").length,
-    1,
+    evidence.scenarios.filter((s) => s.status === "passed").length,
+    10,
   );
   assert.equal(
-    evidence.scenarios.filter((s) => s.status === "not-run").length,
-    9,
+    evidence.scenarios.reduce((n,s) => n+s.artifacts.length,0),
+    13,
   );
-  const blocked = evidence.scenarios.find((s) => s.status === "blocked");
+  const blocked = evidence.scenarios.find((s) => s.caseId === "margin-workbook");
   assert.equal(blocked.caseId, "margin-workbook");
-  assert.equal(blocked.attempts.length, 3);
-  assert.ok(blocked.attempts.every((a) => a.outputsProduced === 0));
+  assert.equal(blocked.attempts.filter(a => a.outputsProduced === 0).length, 3);
+  assert.ok(blocked.attempts.some(a => a.status === "limited-deliverable-verified"));
+  assert.equal(evidence.ownerAcceptance,"pending");
   for (const s of evidence.scenarios) {
     const skill = catalog.skills.find((x) => x.id === s.skillId);
     assert.ok(skill);
     assert.equal(s.version, skill.release.version);
     assert.equal(s.packageSha256, skill.release.sha256);
     assert.match(s.sourceSha256, /^[a-f0-9]{64}$/);
-    assert.equal(s.passed, false);
-    assert.equal(s.assistantExecuted, false);
+    assert.equal(s.passed, true);
+    assert.equal(s.assistantExecuted, true);
     assert.equal(s.executionVerified, false);
     assert.equal(s.fullSkillExecutionVerified, false);
-    assert.deepEqual(s.artifacts, []);
-    assert.ok(s.checks.every((c) => c.passed === null));
+    assert.equal(s.ownerAcceptance,"pending");
+    assert.ok(s.artifacts.every(validArtifact));
+    assert.ok(validArtifact(s.inputs));
+    assert.ok(s.reviewArtifacts.length && s.reviewArtifacts.every(validArtifact));
+    assert.ok(s.checks.every((c) => c.passed === true));
     assert.deepEqual(
       s.checks.map((c) => c.id),
       checkIds(cases.find((c) => c.id === s.caseId)),
@@ -50,10 +54,16 @@ test("ten prepared scenarios are distinct from the existing three JSON execution
   }
 });
 for (const locale of ["pt", "en", "es"])
-  test(`${locale}: readiness is complete and no blocked run becomes a sample`, () => {
+  test(`${locale}: only current verified files become downloadable samples`, () => {
     let count = 0;
+    let samples = 0;
     for (const skill of catalog.skills) {
-      assert.deepEqual(getDeliverableSamples(skill, locale), []);
+      for(const sample of getDeliverableSamples(skill,locale)){
+        samples++;
+        assert.ok(sample.artifacts.length && sample.artifacts.every(validArtifact));
+        assert.ok(sample.reviewUrl.startsWith('/ensaios/') && sample.reviewLabel && sample.reviewNote);
+        assert.equal(sample.fullSkillExecutionVerified,false);
+      }
       for (const r of getDeliverableReadiness(skill, locale)) {
         count++;
         assert.ok(r.title.length > 10 && r.scope.length > 30);
@@ -62,14 +72,24 @@ for (const locale of ["pt", "en", "es"])
             r.prerequisites.length >= 3 &&
             r.limitations.length >= 3,
         );
-        assert.ok(r.checks.every((c) => c.label && c.passed === null));
+        assert.ok(r.checks.every((c) => c.label && c.passed === true));
         assert.equal(r.currentVersion, true);
-        assert.equal(r.passed, false);
+        assert.equal(r.passed, true);
         assert.equal(r.fullSkillExecutionVerified, false);
       }
     }
     assert.equal(count, 10);
+    assert.equal(samples,10);
   });
+test("failed or mismatched evidence never inherits an approval", () => {
+  const record=evidence.scenarios[0], skill=catalog.skills.find(s=>s.id===record.skillId),original=structuredClone(record);
+  try{
+    record.status='blocked';assert.deepEqual(getDeliverableSamples(skill),[]);
+    record.status='passed';record.packageSha256='0'.repeat(64);assert.deepEqual(getDeliverableSamples(skill),[]);
+    record.packageSha256=original.packageSha256;record.checks[0].passed=false;assert.deepEqual(getDeliverableSamples(skill),[]);
+    record.checks[0].passed=true;record.artifacts[0].sha256='0'.repeat(64);assert.deepEqual(getDeliverableSamples(skill),[]);
+  }finally{Object.assign(record,original);}
+});
 test("locale data has translated evaluation copy and preserves numeric scenario facts", () => {
   for (const s of evidence.scenarios) {
     for (const lang of ["en", "es"]) {
@@ -277,4 +297,12 @@ test("oracles reject misleading values, formulas, invented deadlines and missing
   f = structuredClone(fixtures["power-query-review"]);
   f["revised.pq"].text = f["revised.pq"].text.replace("pt-BR", "en-US");
   assert.equal(validateExtracted("power-query-review", f).content, false);
+});
+test("valid nullable M types and participant tables do not cause false rejections", () => {
+  const m=structuredClone(fixtures['power-query-review']);
+  m['revised.pq'].text=m['revised.pq'].text.replace('type number','type nullable number');
+  assert.equal(validateExtracted('power-query-review',m).content,true);
+  const minutes=structuredClone(fixtures['meeting-minutes']);
+  minutes['minutes.docx'].tables.unshift([['Ana','Responsável pelo cadastro'],['Bruno','Responsável pelo relatório']]);
+  assert.equal(validateExtracted('meeting-minutes',minutes).content,true);
 });

@@ -1,0 +1,12 @@
+{
+  "brief.json": {
+    "project": "Aurora Demo",
+    "fictional": true,
+    "audience": "Equipe comercial",
+    "facts": [
+      "Foram recebidos 20 pedidos ficticios.",
+      "5 pedidos ficticios aguardam revisao.",
+      "Proximo passo: revisar os 5 pedidos pendentes."
+    ]
+  }
+}

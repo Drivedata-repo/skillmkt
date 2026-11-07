@@ -1,0 +1,17 @@
+{
+  "caseId": "proposal-document",
+  "reviewedAt": "2026-11-07T13:23:46.5352472Z",
+  "method": "Microsoft Office COM; isolated copies; macros disabled",
+  "files": [
+    {
+      "filename": "proposal.docx",
+      "originalSha256": "e49394e24d87ae4605cf7d5889c9f65d4b3c8f5ad50b89459e60e268b125c897",
+      "opened": true,
+      "pdf": "proposal.pdf",
+      "officeVersion": "16.0",
+      "pages": 1,
+      "reviewedCopySha256": "e49394e24d87ae4605cf7d5889c9f65d4b3c8f5ad50b89459e60e268b125c897",
+      "pdfSha256": "5fc528f1023488eb42fa9733ef811b2670738beab4b1191bc13e142e099d8b7b"
+    }
+  ]
+}

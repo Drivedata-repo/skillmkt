@@ -1,0 +1,39 @@
+{
+  "caseId": "dax-review",
+  "reviewedAt": "2026-11-07T13:36:15.9738660Z",
+  "outputSha256": "f142c8a1fa6959929487922fb376dde5fb8b1edcfba7174d174bed497b209b5a",
+  "passed": true,
+  "checks": [
+    "Actual generated measures executed by the DAX engine",
+    "Total revenue 1100, cost 690, weighted margin 410/1100",
+    "Filter A 40%; B 10%",
+    "Empty filter and zero revenue return BLANK",
+    "Changed revenue propagates through the model"
+  ],
+  "fullSkillExecutionVerified": false,
+  "officeVersion": "16.0",
+  "engine": "DAX / Excel Power Pivot data model",
+  "total": {
+    "Revenue": 1100.0,
+    "Cost": 690.0,
+    "Margin": 0.37272727272727274
+  },
+  "filtered": {
+    "A": 0.4,
+    "B": 0.1,
+    "Empty": null
+  },
+  "changedInput": {
+    "Revenue": 2100.0,
+    "Cost": 690.0,
+    "Margin": 0.6714285714285714
+  },
+  "zeroRevenue": {
+    "Revenue": 0.0,
+    "Cost": 690.0,
+    "Margin": null
+  },
+  "limitations": [
+    "Excel Power Pivot on synthetic data; no Power BI service, RLS, DirectQuery, equivalence benchmark or speedup measurement"
+  ]
+}

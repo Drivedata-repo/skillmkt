@@ -1,18 +1,18 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "scenarios": [
     {
       "caseId": "margin-workbook",
       "skillId": "claude-xlsx",
       "version": "1.2.0",
-      "status": "blocked",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "2767ed541e84d1cd2f16fcc5bb7026f62e1762f69fa30dbdb351661bd9765500",
       "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987",
-      "finishedAt": "2026-11-07T12:41:53.309Z",
+      "finishedAt": "2026-11-07T13:21:24.872Z",
       "attempts": [
         {
           "startedAt": "2026-11-07T12:37:53.873Z",
@@ -40,6 +40,15 @@
           "exitCode": 0,
           "status": "execution-policy-blocked",
           "outputsProduced": 0
+        },
+        {
+          "startedAt": "2026-11-07T13:20:15.950Z",
+          "finishedAt": "2026-11-07T13:21:24.872Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 1
         }
       ],
       "copy": {
@@ -91,7 +100,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -100,7 +109,7 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "formulas",
@@ -109,7 +118,7 @@
             "en": "Formulas and references checked",
             "es": "Fórmulas y referencias comprobadas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "recalc",
@@ -118,26 +127,119 @@
             "en": "Independent Excel recalculation checked",
             "es": "Recálculo independiente en Excel comprobado"
           },
-          "passed": null
+          "passed": true
+        },
+        {
+          "id": "visual",
+          "labels": {
+            "pt": "Renderização e legibilidade conferidas em revisão independente",
+            "en": "Rendering and readability checked in an independent review",
+            "es": "Renderizado y legibilidad comprobados en una revisión independiente"
+          },
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "margin.xlsx",
+          "url": "/evidence-assets/1.2.0/margin-workbook/margin.xlsx",
+          "sha256": "fa36a5b70e73a3642070454f8aadf91b70e826d46168a576d97013bcdb32edc2",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "labels": {
+            "pt": "Entregável: margin.xlsx",
+            "en": "Deliverable: margin.xlsx",
+            "es": "Entregable: margin.xlsx"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/margin-workbook/inputs.json",
+        "sha256": "28492c3b4af9200487690fad0027eeae1667563e5e7f69aea697b956fb5e2ea0",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "margin-checked.xlsx",
+          "url": "/evidence-assets/1.2.0/margin-workbook/margin-checked.xlsx",
+          "sha256": "947252836c0237806999f618d36a850b1dc919fa76a7da36f85d255a4366b31d",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "kind": "recalculated",
+          "labels": {
+            "pt": "Baixar cópia recalculada no Excel",
+            "en": "Download Excel-recalculated copy",
+            "es": "Descargar copia recalculada en Excel"
+          }
+        },
+        {
+          "filename": "margin-page-1.png",
+          "url": "/evidence-assets/1.2.0/margin-workbook/margin-page-1.png",
+          "sha256": "625c6716d578762f6d4cd6d9341b9387e72c20c6f8ebb9da1a25f6d9d2787757",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: margin-page-1.png",
+            "en": "Actual preview: margin-page-1.png",
+            "es": "Vista previa real: margin-page-1.png"
+          }
+        },
+        {
+          "filename": "margin.pdf",
+          "url": "/evidence-assets/1.2.0/margin-workbook/margin.pdf",
+          "sha256": "2fd4b28b60fbabb8d6e1c72c7f756853615fd075797d288f03c7256dea5e131b",
+          "mimeType": "application/pdf",
+          "kind": "preview",
+          "labels": {
+            "pt": "Abrir PDF renderizado no Office",
+            "en": "Open Office-rendered PDF",
+            "es": "Abrir PDF renderizado en Office"
+          }
+        },
+        {
+          "filename": "office-observations.json",
+          "url": "/evidence-assets/1.2.0/margin-workbook/office-observations.json",
+          "sha256": "5a222d0f8fe17701a4dd1bb6701b7e02de71a501dc8efe47b1a0feb0d1593373",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "Excel confirmou receita 1100, custo 690, lucro 410 e margem 37,2727%. Alterar a receita atualizou o total; receita zero retornou zero pela regra do arquivo. A cópia recalculada preserva as fórmulas.",
+        "en": "Excel confirmed revenue 1100, cost 690, profit 410 and margin 37.2727%. Changing revenue updated the total; zero revenue returned zero under the workbook rule. The recalculated copy preserves formulas.",
+        "es": "Excel confirmó ingresos 1100, coste 690, beneficio 410 y margen 37,2727%. Cambiar los ingresos actualizó el total; ingresos cero devolvieron cero según la regla del archivo. La copia recalculada conserva las fórmulas."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "proposal-document",
       "skillId": "claude-docx",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "0100c3fd7980a83ab6bc984e87483f3d2703a7f5451c28c03ca8235e217fa573",
       "packageSha256": "8bf3f058ad3914e56cfd0a50caaa1866eef0a8fe7825fdde0d962a8d86a44629",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:22:57.733Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:21:24.903Z",
+          "finishedAt": "2026-11-07T13:22:57.733Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 1
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Proposta editável sem preço inventado",
@@ -187,7 +289,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -196,35 +298,107 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "visual",
           "labels": {
-            "pt": "Renderização e legibilidade revisadas por pessoa",
-            "en": "Rendering and readability reviewed by a person",
-            "es": "Renderizado y legibilidad revisados por una persona"
+            "pt": "Renderização e legibilidade conferidas em revisão independente",
+            "en": "Rendering and readability checked in an independent review",
+            "es": "Renderizado y legibilidad comprobados en una revisión independiente"
           },
-          "passed": null
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "proposal.docx",
+          "url": "/evidence-assets/1.2.0/proposal-document/proposal.docx",
+          "sha256": "e49394e24d87ae4605cf7d5889c9f65d4b3c8f5ad50b89459e60e268b125c897",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "labels": {
+            "pt": "Entregável: proposal.docx",
+            "en": "Deliverable: proposal.docx",
+            "es": "Entregable: proposal.docx"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/proposal-document/inputs.json",
+        "sha256": "af9e15b336903322392211cf9493e231eb9e09990cc7ed350a5b88191495a292",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "office-observations.json",
+          "url": "/evidence-assets/1.2.0/proposal-document/office-observations.json",
+          "sha256": "6c633a475bb15c47aa11dca402e3917f9261b3b65bac5cee15f03706f9165346",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        },
+        {
+          "filename": "proposal-page-1.png",
+          "url": "/evidence-assets/1.2.0/proposal-document/proposal-page-1.png",
+          "sha256": "07474dc5c50df66817854bac500cd36a7842ffed770593838ea97b2990966195",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: proposal-page-1.png",
+            "en": "Actual preview: proposal-page-1.png",
+            "es": "Vista previa real: proposal-page-1.png"
+          }
+        },
+        {
+          "filename": "proposal.pdf",
+          "url": "/evidence-assets/1.2.0/proposal-document/proposal.pdf",
+          "sha256": "5fc528f1023488eb42fa9733ef811b2670738beab4b1191bc13e142e099d8b7b",
+          "mimeType": "application/pdf",
+          "kind": "preview",
+          "labels": {
+            "pt": "Abrir PDF renderizado no Office",
+            "en": "Open Office-rendered PDF",
+            "es": "Abrir PDF renderizado en Office"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "Proposta editável aberta no Word, com 1 página. Escopo, exclusão de ERP e aceite conferidos; preço mantido como “A confirmar”.",
+        "en": "Editable proposal opened in Word, with 1 page. Scope, ERP exclusion and acceptance checked; price remains “To be confirmed” in Portuguese.",
+        "es": "Propuesta editable abierta en Word, con 1 página. Alcance, exclusión de ERP y aceptación comprobados; precio conservado como “A confirmar”."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "editable-slides",
       "skillId": "claude-pptx",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "802e6096fcb21c6c32508aa916190afe9b61c4bc72163eefd1b042a53d6cfb29",
       "packageSha256": "5aa06ae39463ac2677a5353c1a11f09de8c6a8f3a3be1b0b6d6b25e7e30b8298",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:25:28.850Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:22:57.773Z",
+          "finishedAt": "2026-11-07T13:25:28.850Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 1
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Três slides com dados verificáveis",
@@ -274,7 +448,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -283,35 +457,149 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "visual",
           "labels": {
-            "pt": "Renderização e legibilidade revisadas por pessoa",
-            "en": "Rendering and readability reviewed by a person",
-            "es": "Renderizado y legibilidad revisados por una persona"
+            "pt": "Renderização e legibilidade conferidas em revisão independente",
+            "en": "Rendering and readability checked in an independent review",
+            "es": "Renderizado y legibilidad comprobados en una revisión independiente"
           },
-          "passed": null
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "presentation.pptx",
+          "url": "/evidence-assets/1.2.0/editable-slides/presentation.pptx",
+          "sha256": "4e88d804476058769bcd1bea65c0f5a2413a3970a22543e7c77e9894922a0f02",
+          "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          "labels": {
+            "pt": "Entregável: presentation.pptx",
+            "en": "Deliverable: presentation.pptx",
+            "es": "Entregable: presentation.pptx"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/editable-slides/inputs.json",
+        "sha256": "fdb214348c1ed4c13d8661347cf08c56fcc694d57fb8401303320d5f5d6ee7c8",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "office-observations.json",
+          "url": "/evidence-assets/1.2.0/editable-slides/office-observations.json",
+          "sha256": "2d3bf50aba67e668d3e995db56fdddf5328861ded253c6150207c79e0f5a2857",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        },
+        {
+          "filename": "presentation-page-1.png",
+          "url": "/evidence-assets/1.2.0/editable-slides/presentation-page-1.png",
+          "sha256": "321dbb32972a661423e54c2238772401fa519708876e9c24c5f3dc399916ad50",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: presentation-page-1.png",
+            "en": "Actual preview: presentation-page-1.png",
+            "es": "Vista previa real: presentation-page-1.png"
+          }
+        },
+        {
+          "filename": "presentation-page-2.png",
+          "url": "/evidence-assets/1.2.0/editable-slides/presentation-page-2.png",
+          "sha256": "2e6b4b94bb860a7c08ff4fd6c6ad13a98d62ebdd0e93ced52cf4345b3df9960b",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: presentation-page-2.png",
+            "en": "Actual preview: presentation-page-2.png",
+            "es": "Vista previa real: presentation-page-2.png"
+          }
+        },
+        {
+          "filename": "presentation-page-3.png",
+          "url": "/evidence-assets/1.2.0/editable-slides/presentation-page-3.png",
+          "sha256": "a5bc1cf5adefb647a51728097ae94a9129fc05f54707334b7bf035015bc8e62a",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: presentation-page-3.png",
+            "en": "Actual preview: presentation-page-3.png",
+            "es": "Vista previa real: presentation-page-3.png"
+          }
+        },
+        {
+          "filename": "presentation.pdf",
+          "url": "/evidence-assets/1.2.0/editable-slides/presentation.pdf",
+          "sha256": "c4041719c201323b6c2478f85f3d8e6339f35a2c2b4d724bbb58b95943189c5c",
+          "mimeType": "application/pdf",
+          "kind": "preview",
+          "labels": {
+            "pt": "Abrir PDF renderizado no Office",
+            "en": "Open Office-rendered PDF",
+            "es": "Abrir PDF renderizado en Office"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "PowerPoint abriu os 3 slides editáveis em 16:9. As 3 páginas renderizadas foram inspecionadas; os valores 20 e 5 correspondem à entrada.",
+        "en": "PowerPoint opened the 3 editable 16:9 slides. All 3 rendered pages were inspected; values 20 and 5 match the input.",
+        "es": "PowerPoint abrió las 3 diapositivas editables en 16:9. Se revisaron las 3 páginas renderizadas; los valores 20 y 5 coinciden con la entrada."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "summary-pdf",
       "skillId": "claude-pdf",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "91c90095a74ec33bae0f812f3a710da11dc6d4b29e42415d5237d9527b85f458",
       "packageSha256": "3f28378af1f54d076e8e71ab6a33ffc909b729c566cee77dbd4bd0841d146c0c",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:31:30.729Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:25:28.861Z",
+          "finishedAt": "2026-11-07T13:27:30.548Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "missing-runtime-dependency",
+          "outputsProduced": 0
+        },
+        {
+          "startedAt": "2026-11-07T13:28:15.925Z",
+          "finishedAt": "2026-11-07T13:28:53.105Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "runtime-access-denied",
+          "outputsProduced": 0
+        },
+        {
+          "startedAt": "2026-11-07T13:30:59.981Z",
+          "finishedAt": "2026-11-07T13:31:30.729Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 1
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Resumo de pedidos em PDF",
@@ -361,7 +649,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -370,35 +658,83 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "visual",
           "labels": {
-            "pt": "Renderização e legibilidade revisadas por pessoa",
-            "en": "Rendering and readability reviewed by a person",
-            "es": "Renderizado y legibilidad revisados por una persona"
+            "pt": "Renderização e legibilidade conferidas em revisão independente",
+            "en": "Rendering and readability checked in an independent review",
+            "es": "Renderizado y legibilidad comprobados en una revisión independiente"
           },
-          "passed": null
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "summary.pdf",
+          "url": "/evidence-assets/1.2.0/summary-pdf/summary.pdf",
+          "sha256": "f8cfdde233a513a063b81f88c22829f187859133273b37fa808ff9452d0fb695",
+          "mimeType": "application/pdf",
+          "labels": {
+            "pt": "Entregável: summary.pdf",
+            "en": "Deliverable: summary.pdf",
+            "es": "Entregable: summary.pdf"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/summary-pdf/inputs.json",
+        "sha256": "1c8bb236cec54c2c7641e6eb52038e48037e3a16de087331c7a5188372348d67",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "summary-page-1.png",
+          "url": "/evidence-assets/1.2.0/summary-pdf/summary-page-1.png",
+          "sha256": "c4ae76fb603db62d3897fd15ea0412ebef33fceecb4b54d02f62e8cbdee96f01",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: summary-page-1.png",
+            "en": "Actual preview: summary-page-1.png",
+            "es": "Vista previa real: summary-page-1.png"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "PDF com 1 página e texto selecionável. Os pedidos 1200, 800 e 500 totalizam 2500. Gerado com ReportLab após corrigir a escolha do ambiente Python.",
+        "en": "PDF with 1 page and selectable text. Orders of 1200, 800 and 500 total 2500. Generated with ReportLab after correcting Python runtime selection.",
+        "es": "PDF de 1 página con texto seleccionable. Los pedidos de 1200, 800 y 500 suman 2500. Generado con ReportLab tras corregir la selección del entorno Python."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "meeting-minutes",
       "skillId": "claude-acta-drivedata",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "6c6e64a06d707242fedd689b9d7fc1822737348131b22e480644d18f543f0641",
       "packageSha256": "f1c28962254e054db85f0455ee476716da7e61ea5a3450545aa19bece7e85541",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:28:38.301Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:27:30.562Z",
+          "finishedAt": "2026-11-07T13:28:38.301Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 1
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Ata com prazo pendente explícito",
@@ -448,7 +784,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -457,35 +793,125 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "visual",
           "labels": {
-            "pt": "Renderização e legibilidade revisadas por pessoa",
-            "en": "Rendering and readability reviewed by a person",
-            "es": "Renderizado y legibilidad revisados por una persona"
+            "pt": "Renderização e legibilidade conferidas em revisão independente",
+            "en": "Rendering and readability checked in an independent review",
+            "es": "Renderizado y legibilidad comprobados en una revisión independiente"
           },
-          "passed": null
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "minutes.docx",
+          "url": "/evidence-assets/1.2.0/meeting-minutes/minutes.docx",
+          "sha256": "6febd0854afccb86e2411e25f90c7703bfeca392aef7006456bb76f5603177e5",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "labels": {
+            "pt": "Entregável: minutes.docx",
+            "en": "Deliverable: minutes.docx",
+            "es": "Entregable: minutes.docx"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/meeting-minutes/inputs.json",
+        "sha256": "d1fc91becdb9222cfd7b11d53c16f92344f6b70d19c7a71b1b3e3376c7a56388",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "minutes-page-1.png",
+          "url": "/evidence-assets/1.2.0/meeting-minutes/minutes-page-1.png",
+          "sha256": "cdd81606474c5c6395b74e62a938e917e6d629aee213ee1d081fab4bee8266a0",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: minutes-page-1.png",
+            "en": "Actual preview: minutes-page-1.png",
+            "es": "Vista previa real: minutes-page-1.png"
+          }
+        },
+        {
+          "filename": "minutes.pdf",
+          "url": "/evidence-assets/1.2.0/meeting-minutes/minutes.pdf",
+          "sha256": "7bd7463f91c70f375c4dc528d34e56716933b8ceadb0abe6258c212be5335f1e",
+          "mimeType": "application/pdf",
+          "kind": "preview",
+          "labels": {
+            "pt": "Abrir PDF renderizado no Office",
+            "en": "Open Office-rendered PDF",
+            "es": "Abrir PDF renderizado en Office"
+          }
+        },
+        {
+          "filename": "office-observations.json",
+          "url": "/evidence-assets/1.2.0/meeting-minutes/office-observations.json",
+          "sha256": "3b6f3ae81c5cd340694075063c6878ec59edda92de4655155fb520ecd4b90f3d",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "Ata editável aberta no Word, com 1 página. Ana tem prazo 2026-11-10; Bruno permanece “A confirmar”. A tabela de participantes não foi confundida com a tabela de compromissos.",
+        "en": "Editable minutes opened in Word, with 1 page. Ana has a 2026-11-10 deadline; Bruno remains “To be confirmed” in Portuguese. Participant rows were distinguished from action rows.",
+        "es": "Acta editable abierta en Word, con 1 página. Ana tiene plazo 2026-11-10; Bruno sigue “A confirmar”. Se distinguieron los participantes de los compromisos."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "model-documentation",
       "skillId": "claude-bi-documentation",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "dd817b782951521c41659152a376cb2cf10a9539745e5d7b4bc8a7ce8878d577",
       "packageSha256": "d6c8690a1088e39443bd4eb2d3a5c2522b624ef7e0ea90fff83dacc5fe05984c",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:38:46.394Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:28:38.306Z",
+          "finishedAt": "2026-11-07T13:30:15.884Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "pagination-review-failed",
+          "outputsProduced": 2
+        },
+        {
+          "startedAt": "2026-11-07T13:31:54.514Z",
+          "finishedAt": "2026-11-07T13:33:17.489Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "table-width-review-failed",
+          "outputsProduced": 2
+        },
+        {
+          "startedAt": "2026-11-07T13:37:47.385Z",
+          "finishedAt": "2026-11-07T13:38:46.394Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 2
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Documentação do modelo fictício",
@@ -535,7 +961,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -544,35 +970,178 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "visual",
           "labels": {
-            "pt": "Renderização e legibilidade revisadas por pessoa",
-            "en": "Rendering and readability reviewed by a person",
-            "es": "Renderizado y legibilidad revisados por una persona"
+            "pt": "Renderização e legibilidade conferidas em revisão independente",
+            "en": "Rendering and readability checked in an independent review",
+            "es": "Renderizado y legibilidad comprobados en una revisión independiente"
           },
-          "passed": null
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "model-documentation.docx",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation.docx",
+          "sha256": "fdc09920ca4db9a3f9c1201d913e66de674200566cc2914f8184dd9171082491",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "labels": {
+            "pt": "Entregável: model-documentation.docx",
+            "en": "Deliverable: model-documentation.docx",
+            "es": "Entregable: model-documentation.docx"
+          }
+        },
+        {
+          "filename": "model-documentation.md",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation.md",
+          "sha256": "525bf932a7eee4702df5f59df896362311cc5a9331f40e713ffbdda90d21aaa7",
+          "mimeType": "text/markdown",
+          "labels": {
+            "pt": "Entregável: model-documentation.md",
+            "en": "Deliverable: model-documentation.md",
+            "es": "Entregable: model-documentation.md"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/model-documentation/inputs.json",
+        "sha256": "afb868212d0c7fb82bc47e91f1d5a0400936b9a714e6b6dc3efc110a724df504",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "model-documentation-page-1.png",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation-page-1.png",
+          "sha256": "bb2b4a1acb993ea9897af5149f67ffa91578a26864341e4729c995269d561e21",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: model-documentation-page-1.png",
+            "en": "Actual preview: model-documentation-page-1.png",
+            "es": "Vista previa real: model-documentation-page-1.png"
+          }
+        },
+        {
+          "filename": "model-documentation-page-2.png",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation-page-2.png",
+          "sha256": "73db302a97856d8b095305c9fd7754f8d78bd17c3a1ae53dfa9a78157ac2fd22",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: model-documentation-page-2.png",
+            "en": "Actual preview: model-documentation-page-2.png",
+            "es": "Vista previa real: model-documentation-page-2.png"
+          }
+        },
+        {
+          "filename": "model-documentation-page-3.png",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation-page-3.png",
+          "sha256": "3e5a59d2e9ddcaf93c8b56f96c0e31f1bb67213d286e7ca74e7edef64519b89b",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: model-documentation-page-3.png",
+            "en": "Actual preview: model-documentation-page-3.png",
+            "es": "Vista previa real: model-documentation-page-3.png"
+          }
+        },
+        {
+          "filename": "model-documentation-page-4.png",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation-page-4.png",
+          "sha256": "d64275a848af85522844f6353fe2b357da66c7970e68c8b99570fa8e44f331c5",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: model-documentation-page-4.png",
+            "en": "Actual preview: model-documentation-page-4.png",
+            "es": "Vista previa real: model-documentation-page-4.png"
+          }
+        },
+        {
+          "filename": "model-documentation-page-5.png",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation-page-5.png",
+          "sha256": "8c9743b820f08ebc623c2599356ca8a5a15bf419e2dc4b6f2b0526f1056bcb91",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: model-documentation-page-5.png",
+            "en": "Actual preview: model-documentation-page-5.png",
+            "es": "Vista previa real: model-documentation-page-5.png"
+          }
+        },
+        {
+          "filename": "model-documentation-page-6.png",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation-page-6.png",
+          "sha256": "5215703a4a1b575c16e98801993ae3bb7472464c8b104e5e8fa391eab04563b9",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: model-documentation-page-6.png",
+            "en": "Actual preview: model-documentation-page-6.png",
+            "es": "Vista previa real: model-documentation-page-6.png"
+          }
+        },
+        {
+          "filename": "model-documentation.pdf",
+          "url": "/evidence-assets/1.2.0/model-documentation/model-documentation.pdf",
+          "sha256": "982d39ae5fd1c92ed86dcf0268bf70f352e75f78b13701d4b3c8938244398fb3",
+          "mimeType": "application/pdf",
+          "kind": "preview",
+          "labels": {
+            "pt": "Abrir PDF renderizado no Office",
+            "en": "Open Office-rendered PDF",
+            "es": "Abrir PDF renderizado en Office"
+          }
+        },
+        {
+          "filename": "office-observations.json",
+          "url": "/evidence-assets/1.2.0/model-documentation/office-observations.json",
+          "sha256": "24184aca0dd969a1201212e71636978acf697505f07f70207875ba1f8b3f3a3c",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "Word e Markdown cobrem 2 tabelas, 6 colunas, 3 medidas e 1 relacionamento. A revisão identificou quebras e tabelas fora da página; duas novas gerações corrigiram a paginação e as larguras. As 6 páginas finais foram conferidas.",
+        "en": "Word and Markdown cover 2 tables, 6 columns, 3 measures and 1 relationship. Review found page breaks and tables extending beyond the page; two new generations corrected pagination and widths. All 6 final pages were checked.",
+        "es": "Word y Markdown cubren 2 tablas, 6 columnas, 3 medidas y 1 relación. La revisión detectó saltos y tablas fuera de la página; dos nuevas generaciones corrigieron paginación y anchos. Se revisaron las 6 páginas finales."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "power-query-review",
       "skillId": "claude-power-query-best-practices",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "104f5075e52b9fbf2b7a92e1b84d1acb7dcb888526001526ed4967d98f05e153",
       "packageSha256": "0601e3d06cfa19db7eb4bd0293c7bea26c7488b8eb4e421fe56c271763e22c1a",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:32:11.227Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:30:15.895Z",
+          "finishedAt": "2026-11-07T13:32:11.227Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 2
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Consulta M com cultura e nulos",
@@ -580,11 +1149,11 @@
           "prerequisites": [
             "Assistente autorizado a ler e criar arquivos na pasta isolada",
             "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
-            "Ferramenta local de leitura e conferência do formato final"
+            "Excel local com Power Query e Power Pivot para a revisão independente"
           ],
           "limitations": [
             "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
-            "Revisão estática: nenhum motor Power Query ou DAX foi executado; não comprova desempenho."
+            "Teste local no Power Query do Excel com fonte literal fictícia. Não valida conectores, atualização em serviço, folding remoto ou desempenho. O diagnóstico original foi escrito antes dessa execução independente."
           ]
         },
         "en": {
@@ -593,11 +1162,11 @@
           "prerequisites": [
             "Assistant authorized to read and create files in the isolated directory",
             "Python with the appropriate local libraries; supplied fictional inputs",
-            "Local tool for reading and checking the final format"
+            "Local Excel with Power Query and Power Pivot for independent review"
           ],
           "limitations": [
             "Scenario files are in Portuguese; the evaluation description is available in three languages.",
-            "Static review: no Power Query or DAX engine was executed; performance is not established."
+            "Local Excel Power Query test with a fictional literal source. It does not validate connectors, service refresh, remote folding or performance. The original diagnosis was written before this independent execution."
           ]
         },
         "es": {
@@ -606,11 +1175,11 @@
           "prerequisites": [
             "Asistente autorizado para leer y crear archivos en la carpeta aislada",
             "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
-            "Herramienta local para leer y comprobar el formato final"
+            "Excel local con Power Query y Power Pivot para revisión independiente"
           ],
           "limitations": [
             "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
-            "Revisión estática: no se ejecutó ningún motor Power Query o DAX; no demuestra rendimiento."
+            "Prueba local en Power Query de Excel con fuente literal ficticia. No valida conectores, actualización en servicio, folding remoto ni rendimiento. El diagnóstico original se escribió antes de esta ejecución independiente."
           ]
         }
       },
@@ -622,7 +1191,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -631,7 +1200,7 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "semantics",
@@ -640,26 +1209,94 @@
             "en": "Technical boundaries and semantics documented",
             "es": "Límites técnicos y semántica documentados"
           },
-          "passed": null
+          "passed": true
+        },
+        {
+          "id": "engine",
+          "labels": {
+            "pt": "Código produzido executado no motor local, com dados fictícios",
+            "en": "Generated code executed in the local engine with fictional data",
+            "es": "Código generado ejecutado en el motor local con datos ficticios"
+          },
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "revised.pq",
+          "url": "/evidence-assets/1.2.0/power-query-review/revised.pq",
+          "sha256": "f160ae63b8c90d2e4924274ef141379367aebdf20fcf5531006fa35a439b585f",
+          "mimeType": "text/plain",
+          "labels": {
+            "pt": "Entregável: revised.pq",
+            "en": "Deliverable: revised.pq",
+            "es": "Entregable: revised.pq"
+          }
+        },
+        {
+          "filename": "diagnosis.md",
+          "url": "/evidence-assets/1.2.0/power-query-review/diagnosis.md",
+          "sha256": "6cbf9c653545a4b3df0861f7919dc48262d91a1c63ab87369ae13bc3d50b5e52",
+          "mimeType": "text/markdown",
+          "labels": {
+            "pt": "Entregável: diagnosis.md",
+            "en": "Deliverable: diagnosis.md",
+            "es": "Entregable: diagnosis.md"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/power-query-review/inputs.json",
+        "sha256": "caf0ad34514a96cfaf47853f4db04d6f2cb8e64531138b85daef3acb21e32f7a",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "bi-observations.json",
+          "url": "/evidence-assets/1.2.0/power-query-review/bi-observations.json",
+          "sha256": "60ba8b4d2730a6f9c9b7aac298eb63c82395a85d16d73189992314b293bc40e2",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "O arquivo M gerado executou no Power Query do Excel: 3 linhas, valores 10,5 e 20, nulo preservado e soma 30,5. O diagnóstico original descreve a etapa de geração estática; o teste no motor ocorreu depois, na revisão independente.",
+        "en": "The generated M file ran in Excel Power Query: 3 rows, values 10.5 and 20, null preserved and sum 30.5. The original diagnosis describes static generation; engine execution happened later during independent review.",
+        "es": "El archivo M generado se ejecutó en Power Query de Excel: 3 filas, valores 10,5 y 20, nulo conservado y suma 30,5. El diagnóstico original describe la generación estática; la prueba en el motor ocurrió después, en la revisión independiente."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "dax-review",
       "skillId": "claude-power-bi-dax-optimization",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "9e61e59acdc42035f12486adb2cb1f71568a965afd42ab559a7a72e0341fad8a",
       "packageSha256": "94c9e67e02d2493861bc0c20d93b8e8456d7d6ccb9b1330d7c0526f4a470d264",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:34:00.925Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:32:11.229Z",
+          "finishedAt": "2026-11-07T13:34:00.925Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 2
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Medidas DAX e diagnóstico delimitado",
@@ -667,11 +1304,11 @@
           "prerequisites": [
             "Assistente autorizado a ler e criar arquivos na pasta isolada",
             "Python com as bibliotecas locais apropriadas; entradas fictícias fornecidas",
-            "Ferramenta local de leitura e conferência do formato final"
+            "Excel local com Power Query e Power Pivot para a revisão independente"
           ],
           "limitations": [
             "Arquivos do cenário em português; descrição da avaliação disponível em três idiomas.",
-            "Revisão estática: nenhum motor Power Query ou DAX foi executado; não comprova desempenho."
+            "Teste no motor DAX do Power Pivot do Excel com dados fictícios. Não valida Power BI Service, RLS, DirectQuery, modelo de cliente, equivalência integral ou ganho de desempenho. O diagnóstico original precede o teste independente."
           ]
         },
         "en": {
@@ -680,11 +1317,11 @@
           "prerequisites": [
             "Assistant authorized to read and create files in the isolated directory",
             "Python with the appropriate local libraries; supplied fictional inputs",
-            "Local tool for reading and checking the final format"
+            "Local Excel with Power Query and Power Pivot for independent review"
           ],
           "limitations": [
             "Scenario files are in Portuguese; the evaluation description is available in three languages.",
-            "Static review: no Power Query or DAX engine was executed; performance is not established."
+            "Test in the Excel Power Pivot DAX engine with fictional data. It does not validate Power BI Service, RLS, DirectQuery, a customer model, full equivalence or performance gains. The original diagnosis predates the independent test."
           ]
         },
         "es": {
@@ -693,11 +1330,11 @@
           "prerequisites": [
             "Asistente autorizado para leer y crear archivos en la carpeta aislada",
             "Python con las bibliotecas locales adecuadas; entradas ficticias proporcionadas",
-            "Herramienta local para leer y comprobar el formato final"
+            "Excel local con Power Query y Power Pivot para revisión independiente"
           ],
           "limitations": [
             "Los archivos del escenario están en portugués; la descripción de la evaluación está disponible en tres idiomas.",
-            "Revisión estática: no se ejecutó ningún motor Power Query o DAX; no demuestra rendimiento."
+            "Prueba en el motor DAX de Power Pivot de Excel con datos ficticios. No valida Power BI Service, RLS, DirectQuery, modelos de clientes, equivalencia integral ni mejoras de rendimiento. El diagnóstico original precede la prueba independiente."
           ]
         }
       },
@@ -709,7 +1346,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -718,7 +1355,7 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "semantics",
@@ -727,26 +1364,94 @@
             "en": "Technical boundaries and semantics documented",
             "es": "Límites técnicos y semántica documentados"
           },
-          "passed": null
+          "passed": true
+        },
+        {
+          "id": "engine",
+          "labels": {
+            "pt": "Código produzido executado no motor local, com dados fictícios",
+            "en": "Generated code executed in the local engine with fictional data",
+            "es": "Código generado ejecutado en el motor local con datos ficticios"
+          },
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "revised.dax",
+          "url": "/evidence-assets/1.2.0/dax-review/revised.dax",
+          "sha256": "f142c8a1fa6959929487922fb376dde5fb8b1edcfba7174d174bed497b209b5a",
+          "mimeType": "text/plain",
+          "labels": {
+            "pt": "Entregável: revised.dax",
+            "en": "Deliverable: revised.dax",
+            "es": "Entregable: revised.dax"
+          }
+        },
+        {
+          "filename": "diagnosis.md",
+          "url": "/evidence-assets/1.2.0/dax-review/diagnosis.md",
+          "sha256": "4c638eee38a38eebf5ad5e100bc2c72f4eea3bcbcc8b7dafa6f53b7be63258b1",
+          "mimeType": "text/markdown",
+          "labels": {
+            "pt": "Entregável: diagnosis.md",
+            "en": "Deliverable: diagnosis.md",
+            "es": "Entregable: diagnosis.md"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/dax-review/inputs.json",
+        "sha256": "165f92db558c48e25e4e87f37bdd9f73707f2d2d47cdec9561e247a2b70477df",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "bi-observations.json",
+          "url": "/evidence-assets/1.2.0/dax-review/bi-observations.json",
+          "sha256": "cfcfec63f6ba6c95bd83208fd4182e464bfdf2c3787fde848f3e278b7934f434",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "As medidas geradas executaram no motor DAX do Power Pivot: margem total 410/1100, A=40%, B=10%, atualização após mudança da receita e BLANK em receita zero ou filtro vazio. O diagnóstico original precede esse teste independente.",
+        "en": "Generated measures ran in the Power Pivot DAX engine: total margin 410/1100, A=40%, B=10%, updates after revenue changes and BLANK for zero revenue or an empty filter. The original diagnosis predates this independent test.",
+        "es": "Las medidas generadas se ejecutaron en el motor DAX de Power Pivot: margen total 410/1100, A=40%, B=10%, actualización al cambiar ingresos y BLANK para ingresos cero o filtro vacío. El diagnóstico original precede esta prueba independiente."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "request-prototype",
       "skillId": "prototipos-e-especificacao-funcional",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "6b3d5b5a60897f52fb5b66d5d64b4608dcf01207cc46a726a54fa459b4c8a9b9",
       "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:35:55.359Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:34:00.942Z",
+          "finishedAt": "2026-11-07T13:35:55.359Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 1
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Protótipo navegável de solicitações",
@@ -796,7 +1501,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -805,7 +1510,7 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "interaction",
@@ -814,35 +1519,107 @@
             "en": "Interactive flow exercised in a browser",
             "es": "Flujo interactivo probado en el navegador"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "visual",
           "labels": {
-            "pt": "Renderização e legibilidade revisadas por pessoa",
-            "en": "Rendering and readability reviewed by a person",
-            "es": "Renderizado y legibilidad revisados por una persona"
+            "pt": "Renderização e legibilidade conferidas em revisão independente",
+            "en": "Rendering and readability checked in an independent review",
+            "es": "Renderizado y legibilidad comprobados en una revisión independiente"
           },
-          "passed": null
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "prototype.html",
+          "url": "/evidence-assets/1.2.0/request-prototype/prototype.html",
+          "sha256": "52a89fe48ddf9fed6491a1af4dbf1d89f4774cca26ec644228b3a6c474b3ecb9",
+          "mimeType": "text/html",
+          "labels": {
+            "pt": "Entregável: prototype.html",
+            "en": "Deliverable: prototype.html",
+            "es": "Entregable: prototype.html"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/request-prototype/inputs.json",
+        "sha256": "5b94c84bcbde5388546113f29871c66e8d62e13b5506ab7204ff9a6c574f3cd4",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "browser-observations.json",
+          "url": "/evidence-assets/1.2.0/request-prototype/browser-observations.json",
+          "sha256": "9f7332eb4e823bd8ccfb2bb1795ce5a672c698e0dae049d8d7c75f8c13498720",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        },
+        {
+          "filename": "prototype-desktop.jpg",
+          "url": "/evidence-assets/1.2.0/request-prototype/prototype-desktop.jpg",
+          "sha256": "1dcef312e6963065ef7fa322f2da0e5d244a742f7c40bfd8e6a8b87e26b65d7a",
+          "mimeType": "image/jpeg",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: prototype-desktop.jpg",
+            "en": "Actual preview: prototype-desktop.jpg",
+            "es": "Vista previa real: prototype-desktop.jpg"
+          }
+        },
+        {
+          "filename": "prototype-mobile.jpg",
+          "url": "/evidence-assets/1.2.0/request-prototype/prototype-mobile.jpg",
+          "sha256": "81d4ce07b0b7d63e4df5131f871b8bdc58014b681e29ebb3721dc3e0b08ac0e0",
+          "mimeType": "image/jpeg",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: prototype-mobile.jpg",
+            "en": "Actual preview: prototype-mobile.jpg",
+            "es": "Vista previa real: prototype-mobile.jpg"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "Navegador: campo obrigatório, criação de REQ-002, status Aberta, mudança para Concluida como Operador e leitura como Solicitante. Conferido em desktop e largura 390px, sem erros de console. Recarregar restaura os dados iniciais, conforme o escopo em memória.",
+        "en": "Browser: required field, creation of REQ-002 with Aberta status, change to Concluida as Operador and read-only Solicitante view. Checked on desktop and at 390px with no console errors. Reload restores the initial in-memory data as specified.",
+        "es": "Navegador: campo obligatorio, creación de REQ-002 con estado Aberta, cambio a Concluida como Operador y lectura como Solicitante. Revisado en escritorio y a 390px, sin errores de consola. Recargar restaura los datos iniciales, según el alcance en memoria."
+      },
+      "ownerAcceptance": "pending"
     },
     {
       "caseId": "orders-consolidation",
       "skillId": "automacao-documentos-office",
       "version": "1.2.0",
-      "status": "not-run",
-      "passed": false,
-      "assistantExecuted": false,
+      "status": "passed",
+      "passed": true,
+      "assistantExecuted": true,
       "runtime": "Codex CLI",
       "model": null,
       "sourceSha256": "0ac8ccc780bdc5d0e74d10612d107d2c39e5ee4751be9081cab4c646d42d649c",
       "packageSha256": "a7071953b83111f30052237ffb7e533bc6b39b03fe694a7821a42583439129ed",
-      "finishedAt": null,
-      "attempts": [],
+      "finishedAt": "2026-11-07T13:37:12.688Z",
+      "attempts": [
+        {
+          "startedAt": "2026-11-07T13:35:55.374Z",
+          "finishedAt": "2026-11-07T13:37:12.688Z",
+          "runtime": "Codex CLI",
+          "model": null,
+          "exitCode": 0,
+          "status": "limited-deliverable-verified",
+          "outputsProduced": 1
+        }
+      ],
       "copy": {
         "pt": {
           "title": "Consolidação de pedidos sem duplicação",
@@ -892,7 +1669,7 @@
             "en": "Final files present and readable",
             "es": "Archivos finales presentes y legibles"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "content",
@@ -901,7 +1678,7 @@
             "en": "Facts and structure checked against inputs",
             "es": "Datos y estructura contrastados con las entradas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "formulas",
@@ -910,7 +1687,7 @@
             "en": "Formulas and references checked",
             "es": "Fórmulas y referencias comprobadas"
           },
-          "passed": null
+          "passed": true
         },
         {
           "id": "recalc",
@@ -919,12 +1696,121 @@
             "en": "Independent Excel recalculation checked",
             "es": "Recálculo independiente en Excel comprobado"
           },
-          "passed": null
+          "passed": true
+        },
+        {
+          "id": "visual",
+          "labels": {
+            "pt": "Renderização e legibilidade conferidas em revisão independente",
+            "en": "Rendering and readability checked in an independent review",
+            "es": "Renderizado y legibilidad comprobados en una revisión independiente"
+          },
+          "passed": true
         }
       ],
-      "artifacts": [],
+      "artifacts": [
+        {
+          "filename": "orders.xlsx",
+          "url": "/evidence-assets/1.2.0/orders-consolidation/orders.xlsx",
+          "sha256": "68458fd7b1464a90584eb66f9d2bb738f5590c33bcffbcdfaaf4f3b7e73ff581",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "labels": {
+            "pt": "Entregável: orders.xlsx",
+            "en": "Deliverable: orders.xlsx",
+            "es": "Entregable: orders.xlsx"
+          }
+        }
+      ],
       "executionVerified": false,
-      "fullSkillExecutionVerified": false
+      "fullSkillExecutionVerified": false,
+      "inputs": {
+        "filename": "inputs.json",
+        "url": "/evidence-assets/1.2.0/orders-consolidation/inputs.json",
+        "sha256": "f3cb36e4d760f4a4c0a06c00efdd2e8ff4a036f6bdbc49b74b73ca2eab2cdc53",
+        "mimeType": "application/json"
+      },
+      "reviewArtifacts": [
+        {
+          "filename": "office-observations.json",
+          "url": "/evidence-assets/1.2.0/orders-consolidation/office-observations.json",
+          "sha256": "d7e2f4e648069ddf9110c656a8ed3663a3eacf0a983b8c5ba250bcd90ac70b86",
+          "mimeType": "application/json",
+          "kind": "review",
+          "labels": {
+            "pt": "Baixar registro da conferência independente",
+            "en": "Download independent review record",
+            "es": "Descargar registro de revisión independiente"
+          }
+        },
+        {
+          "filename": "orders-checked.xlsx",
+          "url": "/evidence-assets/1.2.0/orders-consolidation/orders-checked.xlsx",
+          "sha256": "2da478dd92f21052b848fea01454df1b070dc2bc915dc7d60f869cf9bed886b0",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "kind": "recalculated",
+          "labels": {
+            "pt": "Baixar cópia recalculada no Excel",
+            "en": "Download Excel-recalculated copy",
+            "es": "Descargar copia recalculada en Excel"
+          }
+        },
+        {
+          "filename": "orders-page-1.png",
+          "url": "/evidence-assets/1.2.0/orders-consolidation/orders-page-1.png",
+          "sha256": "b37b418317185cabf3690962ae772cb291d0d8965a116cdb62658f7c300a0e8f",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: orders-page-1.png",
+            "en": "Actual preview: orders-page-1.png",
+            "es": "Vista previa real: orders-page-1.png"
+          }
+        },
+        {
+          "filename": "orders-page-2.png",
+          "url": "/evidence-assets/1.2.0/orders-consolidation/orders-page-2.png",
+          "sha256": "38b46275f7cf2329ac7dd584b802d3060792228b78faaecc806bd4f3d5f6ab0a",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: orders-page-2.png",
+            "en": "Actual preview: orders-page-2.png",
+            "es": "Vista previa real: orders-page-2.png"
+          }
+        },
+        {
+          "filename": "orders-page-3.png",
+          "url": "/evidence-assets/1.2.0/orders-consolidation/orders-page-3.png",
+          "sha256": "6d4b32c477355cc9f13bb3cc1d63b7f54d4a0713bde6e6160c322c16097c812d",
+          "mimeType": "image/png",
+          "kind": "preview",
+          "labels": {
+            "pt": "Prévia real: orders-page-3.png",
+            "en": "Actual preview: orders-page-3.png",
+            "es": "Vista previa real: orders-page-3.png"
+          }
+        },
+        {
+          "filename": "orders.pdf",
+          "url": "/evidence-assets/1.2.0/orders-consolidation/orders.pdf",
+          "sha256": "76ddbc8efad844b3d86f735c0fedfdee7ae38365e481212b984748f85eb9b6c0",
+          "mimeType": "application/pdf",
+          "kind": "preview",
+          "labels": {
+            "pt": "Abrir PDF renderizado no Office",
+            "en": "Open Office-rendered PDF",
+            "es": "Abrir PDF renderizado en Office"
+          }
+        }
+      ],
+      "reviewNotes": {
+        "pt": "Excel confirmou 3 pedidos únicos, duplicata P01 com as duas origens, Aurora 1700, Norte 800 e total 2500. Alterar o valor de P01 para 1300 atualizou Aurora para 1800 e o total para 2600. As 3 abas foram renderizadas e inspecionadas.",
+        "en": "Excel confirmed 3 unique orders, duplicate P01 with both sources, Aurora 1700, Norte 800 and total 2500. Changing P01 to 1300 updated Aurora to 1800 and the total to 2600. All 3 sheets were rendered and inspected.",
+        "es": "Excel confirmó 3 pedidos únicos, duplicado P01 con ambos orígenes, Aurora 1700, Norte 800 y total 2500. Cambiar P01 a 1300 actualizó Aurora a 1800 y el total a 2600. Se renderizaron y revisaron las 3 hojas."
+      },
+      "ownerAcceptance": "pending"
     }
-  ]
+  ],
+  "ownerAcceptance": "pending",
+  "reviewMethod": "Assistant generation followed by independent artifact inspection; no owner approval inferred"
 }

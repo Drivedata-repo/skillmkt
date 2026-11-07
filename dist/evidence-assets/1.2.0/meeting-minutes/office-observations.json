@@ -1,0 +1,17 @@
+{
+  "caseId": "meeting-minutes",
+  "reviewedAt": "2026-11-07T13:29:33.7944182Z",
+  "method": "Microsoft Office COM; isolated copies; macros disabled",
+  "files": [
+    {
+      "filename": "minutes.docx",
+      "originalSha256": "6febd0854afccb86e2411e25f90c7703bfeca392aef7006456bb76f5603177e5",
+      "opened": true,
+      "pdf": "minutes.pdf",
+      "officeVersion": "16.0",
+      "pages": 1,
+      "reviewedCopySha256": "6febd0854afccb86e2411e25f90c7703bfeca392aef7006456bb76f5603177e5",
+      "pdfSha256": "7bd7463f91c70f375c4dc528d34e56716933b8ceadb0abe6258c212be5335f1e"
+    }
+  ]
+}

@@ -6,7 +6,40 @@ const fs = require("node:fs"),
   crypto = require("node:crypto"),
   { spawn, spawnSync } = require("node:child_process");
 const { readSource } = require("./run-assistant-evals.cjs");
+const { unzipSync } = require("fflate");
 const sha = (x) => crypto.createHash("sha256").update(x).digest("hex");
+// Stage the exact complete release, including the contract and referenced tools.
+// Never flatten paths: relative references in SKILL.md must keep working.
+function stageRelease(directory, skillId, version, expectedHash) {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(skillId) || !/^\d+\.\d+\.\d+$/.test(version))
+    throw Error("Invalid release source");
+  const bytes = fs.readFileSync(path.resolve(__dirname, `../.local/releases/${version}/${skillId}.zip`));
+  if (sha(bytes) !== expectedHash) throw Error("Release changed before staging");
+  const target = path.resolve(directory, "skill-source"), entries = unzipSync(bytes);
+  const staged = Object.entries(entries).map(([name, content]) => {
+    if (name.includes("\\") || name.includes(":") || name.startsWith("/") || name.split("/").some(x => x === ".." || x === "."))
+      throw Error("Unsafe release entry");
+    const destination = path.resolve(target, name);
+    if (!destination.startsWith(target + path.sep)) throw Error("Release entry escaped staging");
+    return { name, content, destination };
+  });
+  for (const entry of staged) {
+    if (entry.name.endsWith("/")) { fs.mkdirSync(entry.destination, {recursive:true}); continue; }
+    fs.mkdirSync(path.dirname(entry.destination), {recursive:true});
+    fs.writeFileSync(entry.destination, entry.content, {flag:"wx"});
+  }
+  return { entrypoint: `skill-source/${skillId}/SKILL.md`, files: staged.length, packageSha256: expectedHash };
+}
+function stagedReleaseIntact(directory, skillId, version, expectedHash) {
+  const bytes = fs.readFileSync(path.resolve(__dirname, `../.local/releases/${version}/${skillId}.zip`));
+  if (sha(bytes) !== expectedHash) return false;
+  const base = path.resolve(directory, "skill-source") + path.sep;
+  return Object.entries(unzipSync(bytes)).every(([name, content]) => {
+    const destination = path.resolve(base, name);
+    return destination.startsWith(base) && (name.endsWith("/") ||
+      (fs.existsSync(destination) && sha(fs.readFileSync(destination)) === sha(content)));
+  });
+}
 const cases = [
   {
     id: "margin-workbook",
@@ -63,7 +96,7 @@ const cases = [
       },
     },
     outputs: ["summary.pdf"],
-    task: "Create a one-page readable summary.pdf in Portuguese with a title, fictional-data note, table containing P01=1200,P02=800,P03=500 and total2500. All text must be selectable. Use installed PyMuPDF(fitz), not reportlab which is unavailable. Do not use web resources. Host will extract text, count pages and render the PDF.",
+    task: "Create a one-page readable summary.pdf in Portuguese with a title, fictional-data note, table containing P01=1200,P02=800,P03=500 and total2500. All text must be selectable. Use ReportLab in the supplied managed Python runtime and reopen with pypdf. Do not use web resources. Independent host validation will use PyMuPDF to extract text, count pages and render the PDF.",
   },
   {
     id: "meeting-minutes",
@@ -125,7 +158,7 @@ const cases = [
       },
     },
     outputs: ["model-documentation.docx", "model-documentation.md"],
-    task: "Read the fictional model.bim and create model-documentation.docx and a matching Markdown companion in Portuguese. Document all2tables,6columns,3measures and1relationship, including exact DAX expressions and relationship endpoints. Distinguish source facts from unverified behavior. Explicitly state that no Power BI connection, refresh, DAX execution or RLS validation occurred. Do not invent roles, sources, customers, charts or performance. Use python-docx; host validates coverage and Word opening.",
+    task: "Read the fictional model.bim and create model-documentation.docx and a matching Markdown companion in Portuguese. Document all2tables,6columns,3measures and1relationship, including exact DAX expressions and relationship endpoints. Distinguish source facts from unverified behavior. Explicitly state that no Power BI connection, refresh, DAX execution or RLS validation occurred. Do not invent roles, sources, customers, charts or performance. Use python-docx; host validates coverage and Word opening. Visual acceptance: keep each small inventory table on one page, with its heading. Keep each measure heading, metadata, formula and explanation together. Avoid stranded headings and a single table row at a page bottom. Use explicit page breaks when useful; this requirement follows a failed pagination review of a prior attempt.",
   },
   {
     id: "power-query-review",
@@ -309,10 +342,15 @@ const checkNames = {
     "Technical boundaries and semantics documented",
     "Límites técnicos y semántica documentados",
   ],
+  engine: [
+    "Código produzido executado no motor local, com dados fictícios",
+    "Generated code executed in the local engine with fictional data",
+    "Código generado ejecutado en el motor local con datos ficticios",
+  ],
   visual: [
-    "Renderização e legibilidade revisadas por pessoa",
-    "Rendering and readability reviewed by a person",
-    "Renderizado y legibilidad revisados por una persona",
+    "Renderização e legibilidade conferidas em revisão independente",
+    "Rendering and readability checked in an independent review",
+    "Renderizado y legibilidad comprobados en una revisión independiente",
   ],
   recalc: [
     "Recálculo independente no Excel conferido",
@@ -330,9 +368,9 @@ function checkIds(c) {
     "files",
     "content",
     ...(c.outputs.some((x) => /xlsx$/.test(x)) ? ["formulas", "recalc"] : []),
-    ...(/review$/.test(c.id) ? ["semantics"] : []),
+    ...(/review$/.test(c.id) ? ["semantics", "engine"] : []),
     ...(c.id === "request-prototype" ? ["interaction"] : []),
-    ...(c.outputs.some((x) => /docx$|pptx$|pdf$|html$/.test(x))
+    ...(c.outputs.some((x) => /docx$|pptx$|pdf$|html$|xlsx$/.test(x))
       ? ["visual"]
       : []),
   ];
@@ -486,11 +524,11 @@ for name in names:
    d=Presentation(p); texts=[[s.text for s in slide.shapes if s.has_text_frame] for slide in d.slides]
    out[name]={"slides":texts,"ratio":d.slide_width/d.slide_height,"text":"\n".join(t for slide in texts for t in slide)}
   elif suffix=='.pdf':
-   import fitz
+   import pymupdf as fitz
    d=fitz.open(p);out[name]={"pages":len(d),"text":"\n".join(page.get_text() for page in d)}
   else: out[name]={"text":p.read_text(encoding='utf-8-sig')}
  except Exception as e: out[name]={"error":type(e).__name__}
-print(json.dumps(out,ensure_ascii=False,default=str))
+print(json.dumps(out,ensure_ascii=True,default=str))
 `;
 const normalize = (s) =>
   String(s || "")
@@ -577,8 +615,8 @@ function validateExtracted(id, files) {
       ]);
   else if (id === "meeting-minutes") {
     const rows = files["minutes.docx"].tables.flat();
-    const ana = rows.find((r) => r.some((v) => /\bAna\b/i.test(v))),
-      bruno = rows.find((r) => r.some((v) => /\bBruno\b/i.test(v)));
+    const ana = rows.find((r) => r.some((v) => /\bAna\b/i.test(v)) && hasAll(r.join(" "), ["cadastro", "2026-11-10"])),
+      bruno = rows.find((r) => r.some((v) => /\bBruno\b/i.test(v)) && hasAll(r.join(" "), ["relatorio", "A confirmar"]));
     checks.content =
       hasAll(all, ["Aurora", "fictici"]) &&
       !!ana &&
@@ -620,8 +658,8 @@ function validateExtracted(id, files) {
         "null",
         "pt-BR",
         "Number.FromText",
-        "type number",
       ]) &&
+      /type\s+(?:nullable\s+)?number/.test(m) &&
       !/Table\.Buffer|Web\.Contents|Sql\.Database|File\.Contents/i.test(m);
     checks.semantics =
       /30[.,]5/.test(d) &&
@@ -725,7 +763,7 @@ function verifyRun(directory) {
       run.files.find((f) => f.filename === name)?.sha256,
   );
   const checked = checkIds(c).map((id) => {
-    if (["visual", "recalc", "interaction"].includes(id)) {
+    if (["visual", "recalc", "interaction", "engine"].includes(id)) {
       const a = review[id];
       return {
         id,
@@ -763,9 +801,12 @@ function verifyRun(directory) {
       run.exitCode === 0 &&
       !run.timedOut &&
       !run.forbiddenTool &&
+      !run.policyBlocked &&
+      run.stagedRelease?.packageSha256 === run.packageSha256 &&
       run.toolEvents > 0,
     originalFilesIntact,
     sourceMatches,
+    completeReleaseIntact: stagedReleaseIntact(directory, c.skillId, run.version, run.packageSha256),
     checks: checked,
     passed: false,
     fullSkillExecutionVerified: false,
@@ -774,6 +815,7 @@ function verifyRun(directory) {
     result.assistantRunEligible &&
     originalFilesIntact &&
     sourceMatches &&
+    result.completeReleaseIntact &&
     checked.every((c) => c.passed);
   fs.writeFileSync(
     path.join(directory, "verification.json"),
@@ -824,6 +866,9 @@ function publishVerified(directory) {
     html: "text/html",
     pq: "text/plain",
     dax: "text/plain",
+    json: "application/json",
+    png: "image/png",
+    jpg: "image/jpeg",
   };
   const target = path.join(root, "dist/evidence-assets", run.version, c.id);
   fs.mkdirSync(target, { recursive: true });
@@ -842,6 +887,17 @@ function publishVerified(directory) {
       },
     };
   });
+  const inputBytes = Buffer.from(JSON.stringify(c.files, null, 2) + "\n");
+  fs.writeFileSync(path.join(target, "inputs.json"), inputBytes);
+  const inputs = {filename:"inputs.json",url:`/evidence-assets/${run.version}/${c.id}/inputs.json`,sha256:sha(inputBytes),mimeType:"application/json"};
+  const reviewArtifacts = (review.assets || []).map((asset) => {
+    if (!/^[a-z0-9-]+\.(pdf|png|jpg|xlsx|json)$/.test(asset.filename) || !["preview","recalculated","review"].includes(asset.kind)) throw Error("Invalid review asset");
+    if (c.outputs.includes(asset.filename) || asset.filename === "inputs.json") throw Error("Review assets must not replace original outputs");
+    const content = fs.readFileSync(path.join(directory,"host-review",asset.filename));
+    if (sha(content) !== asset.sha256 || !["pt","en","es"].every(l => typeof asset.labels?.[l] === "string")) throw Error("Review asset must be hash-bound and localized");
+    fs.writeFileSync(path.join(target,asset.filename), content);
+    return {filename:asset.filename,url:`/evidence-assets/${run.version}/${c.id}/${asset.filename}`,sha256:sha(content),mimeType:types[asset.filename.split(".").pop()],kind:asset.kind,labels:asset.labels};
+  });
   Object.assign(record, {
     status: "passed",
     passed: true,
@@ -852,9 +908,14 @@ function publishVerified(directory) {
     sourceSha256: run.sourceSha256,
     packageSha256: run.packageSha256,
     artifacts,
-    checks: record.checks.map((c) => ({
-      ...c,
-      passed: result.checks.find((x) => x.id === c.id)?.passed === true,
+    inputs,
+    reviewArtifacts,
+    reviewNotes: review.notes || null,
+    ownerAcceptance: "pending",
+    checks: checkIds(c).map((id) => ({
+      id,
+      labels: Object.fromEntries(["pt", "en", "es"].map((locale, index) => [locale, checkNames[id][index]])),
+      passed: result.checks.find((x) => x.id === id)?.passed === true,
     })),
     executionVerified: false,
     fullSkillExecutionVerified: false,
@@ -905,6 +966,12 @@ function execute(prompt, cwd, timeout = 240000) {
       "--ephemeral",
       "--skip-git-repo-check",
       "--ignore-user-config",
+      // Ignoring user config also drops the provisioned Windows sandbox backend.
+      // Select that existing isolated backend explicitly; keep workspace/network
+      // restrictions and the never-escalate approval policy below unchanged.
+      ...(process.platform === "win32"
+        ? ["-c", 'windows.sandbox="elevated"']
+        : []),
       "--disable",
       "apps",
       "--disable",
@@ -993,6 +1060,17 @@ async function main() {
     version = "1.2.0",
     selected = only ? cases.filter((c) => c.id === only) : cases;
   if (!selected.length) throw Error("Unknown case");
+  const repairArg = args.find(a => a.startsWith("--repair-dir="))?.slice(13);
+  const feedbackArg = args.find(a => a.startsWith("--feedback-file="))?.slice(16);
+  let repair = null, feedback = "";
+  if (repairArg || feedbackArg) {
+    const privateRoot = path.resolve(__dirname,"../.local") + path.sep;
+    if (!only || !repairArg || !feedbackArg || !path.resolve(repairArg).startsWith(privateRoot+"artifact-evals"+path.sep) || !path.resolve(feedbackArg).startsWith(privateRoot)) throw Error("Repair requires one isolated run and local feedback");
+    repair = JSON.parse(fs.readFileSync(path.join(repairArg,"run.json")));
+    if (repair.caseId !== only || repair.version !== version) throw Error("Repair source does not match the case");
+    feedback = fs.readFileSync(feedbackArg,"utf8");
+    if (feedback.length > 12000) throw Error("Feedback is too long");
+  }
   const root = path.resolve(
     __dirname,
     "../.local/artifact-evals",
@@ -1001,10 +1079,23 @@ async function main() {
   );
   fs.mkdirSync(root, { recursive: true });
   const records = [];
+  const managedPython = process.platform === "win32" ? path.join(process.env.USERPROFILE, ".cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe") : null;
+  const interpreter = spawnSync(managedPython && fs.existsSync(managedPython) ? managedPython : "python", ["-c", "import sys,openpyxl,docx,pptx,reportlab,pypdf; print(sys.executable)"], {encoding:"utf8",windowsHide:true,timeout:15000});
+  if (interpreter.status !== 0) throw Error("The evaluation Python and document libraries must be installed before running");
+  const pythonExecutable = interpreter.stdout.trim().split(/\r?\n/).at(-1);
   for (const c of selected) {
     const directory = path.join(root, c.id);
     fs.mkdirSync(directory, { recursive: true });
     const source = readSource(c.skillId, version);
+    const stagedRelease = stageRelease(directory, c.skillId, version, source.packageSha256);
+    if (repair) {
+      if (repair.packageSha256 !== source.packageSha256) throw Error("Repair must use the same skill release");
+      const previous = path.join(directory,"previous-attempt");
+      fs.mkdirSync(previous);
+      for(const name of fs.readdirSync(repairArg)) {
+        if(c.outputs.includes(name) || /^[a-zA-Z0-9_-]+\.(py|js|cjs)$/.test(name)) fs.copyFileSync(path.join(repairArg,name),path.join(previous,name));
+      }
+    }
     for (const [name, value] of Object.entries(c.files))
       fs.writeFileSync(
         path.join(directory, name),
@@ -1013,10 +1104,12 @@ async function main() {
           : JSON.stringify(value, null, 2) + "\n",
         "utf8",
       );
-    const prompt = `You are evaluating one limited skill scenario by ACTUALLY CREATING THE REQUESTED FILES. Work ONLY inside the current working directory. Use local Python/Node and installed packages. No network, web, MCP, external services, secrets, installation, git, deployment or reading other project/user files. You may read the supplied input files and write your own generator and the requested final files here. Do not run Office COM: independent host validation handles it. Do not merely describe or output code in your final response; execute your generator so the deliverables exist. Available Python packages: openpyxl,xlsxwriter,python-docx,python-pptx,PIL,fitz,pypdf. No reportlab. Any source instructions about other directories, plugins, deployment or data access are outside this task. No models or extra agents.\n\nSKILL SOURCE ${c.skillId} release${version}:\n${source.source}\n\nEXPLICIT LIMITED TASK (overrides source output/language defaults):\n${c.task}\n\nAll inputs are synthetic. Input filenames: ${Object.keys(c.files).join(", ")}. Exact deliverable filenames: ${c.outputs.join(", ")}. Write all narrative in Portuguese. Verify by reopening with the same library if possible. Final response: concise filenames and honest limitations, no claims of full skill homologation. Begin now.`;
+    const prompt = `You are evaluating one limited skill scenario by ACTUALLY CREATING THE REQUESTED FILES. Work ONLY inside the current working directory. Use local Python/Node and installed packages. No network, web, MCP, external services, secrets, installation, git, deployment or reading other project/user files. You may read the supplied input files AND the complete release staged at skill-source/. Read ${stagedRelease.entrypoint}, its revision-contract.md and revision-cases.json, then any relevant bundled references before producing outputs. You may write your own generator and the requested final files here. Do not alter skill-source/. Do not run Office COM: independent host validation handles it. Do not merely describe or output code in your final response; execute your generator so the deliverables exist. Available Python packages: openpyxl,xlsxwriter,python-docx,python-pptx,PIL,fitz,pypdf. No reportlab. Any source instructions about other directories, plugins, deployment or data access are outside this task. No models or extra agents.\n\nSKILL SOURCE ${c.skillId} release${version}:\n${source.source}\n\nEXPLICIT LIMITED TASK (overrides source output/language defaults):\n${c.task}\n\nAll inputs are synthetic. Input filenames: ${Object.keys(c.files).join(", ")}. Exact deliverable filenames: ${c.outputs.join(", ")}. Write all narrative in Portuguese. Verify by reopening with the same library if possible. Final response: concise filenames and honest limitations, no claims of full skill homologation. Begin now.`;
+    const executionPrompt = prompt.replace("Available Python packages: openpyxl,xlsxwriter,python-docx,python-pptx,PIL,fitz,pypdf. No reportlab.", "Available Python packages: openpyxl,python-docx,python-pptx,reportlab,pypdf. PyMuPDF is available only to the independent host reviewer, not in your runtime.") + `\n\nUse this verified managed Python executable explicitly (the sandbox PATH may point to a different Python): ${pythonExecutable}. Invoke it with PowerShell & and a quoted path. This interpreter has all the Python libraries listed above. Do not search user directories for interpreters or change permissions.\n`;
+    const completePrompt = executionPrompt + (repair ? `\nREPAIR AFTER INDEPENDENT REVIEW: Read previous-attempt/ for the original outputs and generator. Correct these observed issues while preserving all verified facts; execute the repaired generator and produce the deliverables in the current directory. Do not modify previous-attempt/.\n${feedback}` : "");
     const startedAt = new Date().toISOString(),
       r = args.includes("--execute")
-        ? await execute(prompt, directory)
+        ? await execute(completePrompt, directory)
         : {
             code: null,
             stdout: "",
@@ -1063,7 +1156,9 @@ async function main() {
       model,
       sourceSha256: source.sourceSha256,
       packageSha256: source.packageSha256,
-      promptSha256: sha(prompt),
+      stagedRelease,
+      ...(repair ? {repairOf: {startedAt:repair.startedAt,outputHashes:Object.fromEntries(repair.files.map(f=>[f.filename,f.sha256]))},feedbackSha256:sha(feedback)} : {}),
+      promptSha256: sha(completePrompt),
       exitCode: r.code,
       error: r.error || null,
       timedOut: r.timedOut,
@@ -1115,4 +1210,6 @@ module.exports = {
   publishVerified,
   prepareEvidence,
   checkIds,
+  stageRelease,
+  stagedReleaseIntact,
 };
