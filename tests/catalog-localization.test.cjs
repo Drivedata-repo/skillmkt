@@ -54,6 +54,9 @@ function technicalString(value, path) {
     value === "" ||
     /\.(?:id|skillId|kind|code|variantOf|version|sha256)$/.test(path) ||
     /\.release\.(?:format|review)$/.test(path) ||
+    /\.release\.(?:sourceReview|distribution|sourcePolicy)$/.test(path) ||
+    /\.release\.changes\.\d+\.path$/.test(path) ||
+    /^[a-f0-9]{64}$/.test(value) ||
     /^catalog\.skills\.\d+\.(?:role|audience)$/.test(path) ||
     /^catalog\.journeys\.\d+\.audience$/.test(path) ||
     /\.(?:offers|licenseFiles)\.\d+$/.test(path) ||

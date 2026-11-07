@@ -1,0 +1,288 @@
+.runtime-field {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 28rem;
+  margin: 0 0 1.4rem;
+  font-weight: 650;
+}
+.runtime-field select,
+.capability-options select,
+.skill-feedback select,
+.insights-access input {
+  font: inherit;
+  color: #d0dbe4;
+  background: #101e2c;
+  border: 1px solid #42596a;
+  border-radius: 6px;
+  padding: 0.7rem;
+  width: 100%;
+}
+.capability-settings {
+  border-top: 1px solid #344654;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.capability-settings summary {
+  cursor: pointer;
+  color: #d4e5ec;
+}
+.capability-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.capability-options label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+}
+.compatibility-panel,
+.lab-panel,
+.support-panel,
+.skill-feedback,
+.personal-plan {
+  padding: 1.6rem 0;
+  border-top: 1px solid #344654;
+  margin-top: 1.5rem;
+}
+.evidence-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.evidence-heading h3 {
+  margin: 0;
+}
+.evidence-heading > span {
+  font-size: 0.78rem;
+  color: #a8c6cc;
+  border-left: 2px solid #58d7a7;
+  padding-left: 0.7rem;
+}
+.is-blocked .evidence-heading > span {
+  border-color: #f2ba75;
+  color: #f2c791;
+}
+.requirements-list {
+  list-style: none;
+  padding: 0 !important;
+}
+.requirements-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid #293a49;
+  padding: 0.75rem 0;
+}
+.requirements-list strong {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: right;
+  color: #b9cbd5;
+}
+.lab-evidence {
+  display: grid;
+  gap: 1rem;
+}
+.lab-evidence dt,
+.personal-plan dt {
+  font-weight: 650;
+  color: #e4edf1;
+}
+.lab-evidence dd,
+.personal-plan dd {
+  margin: 0.4rem 0 0;
+  color: #b9ccd8;
+  line-height: 1.65;
+}
+.support-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.support-choices button {
+  font-size: 0.78rem;
+}
+.support-choices [aria-pressed="true"] {
+  border-color: #67d1b1;
+  background: #183f3c;
+}
+.support-panel li {
+  line-height: 1.75;
+  margin-bottom: 0.8rem;
+}
+.skill-feedback {
+  display: grid;
+  gap: 1rem;
+}
+.skill-feedback > label {
+  display: grid;
+  gap: 0.5rem;
+}
+.skill-feedback > .check-line {
+  display: flex;
+}
+.skill-feedback button {
+  justify-self: start;
+}
+.skill-feedback .fine {
+  margin: 0;
+}
+.personal-plan > ol {
+  list-style: none;
+  padding: 0;
+}
+.personal-plan li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  border-bottom: 1px solid #344654;
+  padding: 1.2rem 0;
+}
+.plan-number {
+  font:
+    1.4rem "IBM Plex Mono",
+    monospace;
+  color: #a6ced3;
+}
+.personal-plan h4 {
+  font-size: 1.2rem;
+  margin: 0.25rem 0;
+}
+.personal-plan dd {
+  margin-bottom: 0.8rem;
+}
+.personal-plan .text-button {
+  margin-left: 0;
+}
+.personal-plan > button + button {
+  margin-left: 1rem;
+}
+.insights-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+.insights-table th,
+.insights-table td {
+  text-align: left;
+  padding: 0.8rem;
+  border-bottom: 1px solid #344654;
+}
+.insights-scroll {
+  overflow-x: auto;
+}
+.insights-access {
+  max-width: 34rem;
+}
+.insights-access label {
+  display: grid;
+  gap: 0.7rem;
+}
+.insights-access button {
+  margin-top: 1rem;
+}
+.insights-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #344654;
+}
+.insights-kpis strong {
+  font-size: 2rem;
+  display: block;
+}
+.insights-kpis span {
+  font-size: 0.8rem;
+}
+.evidence-empty {
+  padding: 2rem 0;
+  color: #b9ccd8;
+}
+.feedback-status {
+  color: #bfe3d1;
+}
+.runtime-field select:focus-visible,
+.capability-options select:focus-visible,
+.skill-feedback select:focus-visible {
+  outline: 2px solid #90d8e0;
+  outline-offset: 3px;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+.language-option:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+.language-switcher[aria-busy="true"] {
+  pointer-events: none;
+}
+.assistant-evidence {
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid #344654;
+}
+.assistant-evidence summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: #b9e4d9;
+}
+.assistant-evidence pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 25rem;
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid #344654;
+  font-size: 0.78rem;
+  background: #08121d;
+  color: #c1d6df;
+}
+.assistant-evidence .sample-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+@media (max-width: 800px) {
+  .capability-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .requirements-list li {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .requirements-list strong {
+    text-align: left;
+  }
+}
+@media (max-width: 480px) {
+  .capability-options {
+    grid-template-columns: 1fr;
+  }
+  .personal-plan li {
+    grid-template-columns: 1.6rem 1fr;
+  }
+  .evidence-heading {
+    display: block;
+  }
+  .evidence-heading > span {
+    display: inline-block;
+    margin-top: 0.6rem;
+  }
+  .support-choices {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .support-choices button {
+    text-align: left;
+  }
+  .personal-plan > button + button {
+    margin: 0.7rem 0 0;
+  }
+}

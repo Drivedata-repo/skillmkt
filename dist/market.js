@@ -18,7 +18,17 @@ let skills = [],
   wizardStep = 0,
   requestVersion = 0,
   refinement = null,
+  lastTriageRequest = null,
+  lastMatch = null,
+  helpIssue = "recognition",
+  currentPlan = null,
+  capabilityOptions = [],
+  compatibilityVersion = 0,
   toastTimer;
+const feedbackStates = new Map();
+const downloadStates = new Map();
+let queuedFind = false,
+  insightsVersion = 0;
 const norm = (s) =>
   String(s || "")
     .normalize("NFD")
@@ -116,7 +126,7 @@ function render() {
       (audience === "technical" ||
         $("#show-all").checked ||
         (s.audience !== "technical" && s.role !== "support")) &&
-      (group === "all" || s.category === group) &&
+      (group === "all" || (s.categoryKey || s.category) === group) &&
       (role === "all" || s.role === role) &&
       (!$("#examples-only").checked || s.example) &&
       norm(
@@ -191,6 +201,28 @@ function renderDeck() {
     )
     .join("");
   DeckArt.tilt($("#my-deck-grid"));
+  $("#saved-plans-section").hidden = !(deck.plans || []).length;
+  $("#saved-plans").innerHTML = (deck.plans || [])
+    .map(
+      (p) =>
+        `<article class="saved-plan"><h3>${esc(
+          p.skillIds
+            .map((id) => byId(id)?.title)
+            .filter(Boolean)
+            .join(" → "),
+        )}</h3><ol>${p.skillIds
+          .map((id) => byId(id))
+          .filter(Boolean)
+          .map(
+            (s) =>
+              `<li><button class="text-button" data-start="${esc(s.id)}">${esc(s.title)}</button></li>`,
+          )
+          .join(
+            "",
+          )}</ol><button class="text-button" data-remove-plan="${esc(p.id)}">${esc(t("Remover plano"))}</button></article>`,
+    )
+    .join("");
+  restoreDownloadState();
 }
 function renderJourneys() {
   $("#journey-grid").innerHTML = journeys
@@ -299,7 +331,7 @@ function missionView(s) {
   return `<section class="mission"><p class="mission-notice">Cenário fictício para praticar; substitua pelos seus dados ao aplicar.</p><h3 class="mission-title">${esc(x.title)}</h3><div class="mission-section"><span class="mission-number" aria-hidden="true">01</span><div><h4>Contexto da missão</h4><p>${esc(x.context)}</p></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">02</span><div><h4>Seu comando de partida</h4><p>${esc(x.request)}</p><button class="btn secondary" data-copy-mission="${esc(s.id)}">Copiar missão completa</button><details class="mission-command"><summary>Inspecionar comando completo</summary><pre>${esc(missionPrompt(s))}</pre></details></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">03</span><div><h4>Entrega esperada</h4><p>${esc(x.output)}</p></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">04</span><div><h4>Como conferir</h4><p>${esc(x.check)}</p></div></div><p class="scope-note">${esc(u.boundary)}</p><p class="fine">Esta missão é um roteiro ilustrativo. Não representa uma execução ou um resultado já validado.</p><div class="universe-actions"><button class="btn" data-detail-tab="start">Preparar meu ambiente ↗</button><button class="text-button" data-guide="${esc(s.id)}">Levar o universo em Markdown</button></div></section>${s.example ? `<details class="verified-reference"><summary>Também há um exemplo reproduzível nesta carta</summary>${exampleView(s)}</details>` : ""}`;
 }
 function overview(s) {
-  return `<p class="application-purpose">${esc(s.universe.purpose)}</p><h3>Quando tirar esta carta do Deck</h3><ol class="use-case-list">${s.universe.useCases.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><h3>${audience === "technical" ? "Entregas e escopo" : "O que você pode produzir"}</h3>${list(s.deliverables)}<h3>O que você precisa ter</h3>${list(s.dependencies)}<h3>Antes de usar</h3><p>${esc(s.universe.boundary)}</p><div class="detail-primary"><button class="btn" data-detail-tab="start">Começar com esta skill ↗</button><button class="text-button" data-download="${esc(s.id)}">Baixar ZIP direto</button><button class="text-button" data-guide="${esc(s.id)}">Baixar guia no meu idioma</button></div><p class="fine">Downloads liberados na demo. O pacote será usado no seu assistente.</p><p class="fine">Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.</p>`;
+  return `<p class="application-purpose">${esc(s.universe.purpose)}</p><h3>Quando tirar esta carta do Deck</h3><ol class="use-case-list">${s.universe.useCases.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><h3>${audience === "technical" ? "Entregas e escopo" : "O que você pode produzir"}</h3>${list(s.deliverables)}<h3>O que você precisa ter</h3>${list(s.dependencies)}${DeckEvolution.compatibility(s)}<h3>Antes de usar</h3><p>${esc(s.universe.boundary)}</p><div class="detail-primary"><button class="btn" data-detail-tab="start">Começar com esta skill ↗</button><button class="text-button" data-download="${esc(s.id)}">Baixar ZIP direto</button><button class="text-button" data-guide="${esc(s.id)}">Baixar guia no meu idioma</button></div><p class="fine">Downloads liberados na demo. O pacote será usado no seu assistente.</p><p class="fine">Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.</p>`;
 }
 function exampleView(s) {
   if (!s.example)
@@ -339,7 +371,7 @@ function wizard(s) {
     content = `<h3>Leve um comando claro.</h3><p>Substitua os campos entre colchetes pelos seus dados. Anexe apenas arquivos autorizados no assistente escolhido.</p><pre class="prompt-block" id="first-prompt">${esc(s.firstPrompt)}</pre><button class="btn" id="copy-prompt">${p.promptCopied ? "Copiar novamente" : "Copiar primeiro comando"}</button><p class="fine">A execução acontece no seu assistente. O site não envia seus arquivos ou executa a skill.</p><button class="text-button" data-wizard-step="3">Já executei; quero conferir o resultado</button>`;
   if (wizardStep === 3)
     content = `<h3>Confira antes de considerar pronto.</h3><p>Registre sua própria conferência. Isso não altera o selo de homologação da skill.</p>${s.acceptance.map((c, i) => `<label class="check-line"><input class="result-check" type="checkbox" ${p.tested ? "checked" : ""}>${esc(c)}</label>`).join("")}<button class="btn" id="mark-tested">${p.tested ? "Atualizar minha conferência" : "Marcar como conferido por mim"}</button><p class="fine">Se algo falhou, volte ao comando e informe a diferença entre o esperado e o observado.</p><button class="text-button" data-wizard-step="2">Rever meu comando</button>`;
-  return `<div class="wizard"><ol class="wizard-steps">${["Ambiente", "Instalação", "Primeiro comando", "Conferência"].map((x, i) => `<li><button data-wizard-step="${i}" aria-current="${wizardStep === i ? "step" : "false"}"><span>${i + 1}</span>${x}</button></li>`).join("")}</ol><div class="wizard-body">${content}</div></div>`;
+  return `<div class="wizard"><ol class="wizard-steps">${["Ambiente", "Instalação", "Primeiro comando", "Conferência"].map((x, i) => `<li><button data-wizard-step="${i}" aria-current="${wizardStep === i ? "step" : "false"}"><span>${i + 1}</span>${x}</button></li>`).join("")}</ol><div class="wizard-body">${wizardStep === 0 ? DeckEvolution.compatibility(s) : ""}${content}<button class="text-button" data-detail-tab="help">Preciso de ajuda para usar</button>${wizardStep === 3 ? DeckEvolution.feedback(s) : ""}</div></div>`;
 }
 function renderDetail(focusTarget) {
   const s = selected;
@@ -367,6 +399,8 @@ function renderDetail(focusTarget) {
       ["example", "Missão prática"],
       ["start", "Primeiro uso"],
       ["technical", "Ficha técnica"],
+      ["lab", "Laboratório"],
+      ["help", "Ajuda"],
     ]
       .map(
         ([id, label]) =>
@@ -374,8 +408,10 @@ function renderDetail(focusTarget) {
       )
       .join(
         "",
-      )}</div><div class="detail-tab-body">${detailTab === "universe" ? universeView(s) : detailTab === "overview" ? overview(s) : detailTab === "example" ? missionView(s) : detailTab === "technical" ? technical(s) : wizard(s)}</div><p id="download-status" class="download-status" role="status"></p></div></div>`;
+      )}</div><div class="detail-tab-body">${detailTab === "universe" ? universeView(s) : detailTab === "overview" ? overview(s) : detailTab === "example" ? missionView(s) : detailTab === "technical" ? technical(s) : detailTab === "lab" ? DeckEvolution.lab(s) : detailTab === "help" ? DeckEvolution.support(s, helpIssue) : wizard(s)}</div><p id="download-status" class="download-status" role="status"></p></div></div>`;
   DeckArt.tilt($("#skill-detail"));
+  restoreFeedbackState();
+  restoreDownloadState();
   $("#skill-detail .holo-card").classList.toggle("flipped", detailFlipped);
   if (restoreFocus || focusTarget)
     ($(focusTarget || "#detail-title") || $("#detail-title")).focus({
@@ -460,7 +496,199 @@ function syncDetailURL() {
   }
   history.replaceState(null, "", url.pathname + url.search + url.hash);
 }
-document.addEventListener("deck:before-locale", syncDetailURL);
+function environmentContext() {
+  return {
+    runtime: $("#need-runtime")?.value || "any",
+    availability: Object.fromEntries(
+      [...document.querySelectorAll("[data-capability]")]
+        .filter((e) => e.value !== "unknown")
+        .map((e) => [e.dataset.capability, e.value]),
+    ),
+  };
+}
+function triageProfile() {
+  return {
+    ...Object.fromEntries(
+      ["goal", "tool", "environment"].map((key) => [
+        key,
+        $("#need-" + key).value,
+      ]),
+    ),
+    ...environmentContext(),
+  };
+}
+function catalogURL(locale = DeckI18n.locale) {
+  const params = new URLSearchParams({ lang: locale });
+  const context = environmentContext();
+  params.set("runtime", context.runtime);
+  params.set("availability", JSON.stringify(context.availability));
+  return "/api/catalog?" + params;
+}
+function applyCatalog(data) {
+  const group = $("#group").value;
+  skills = data.skills;
+  journeys = data.journeys;
+  const context = environmentContext();
+  $("#need-runtime").innerHTML = (data.runtimeOptions || [])
+    .map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`)
+    .join("");
+  $("#need-runtime").value = context.runtime;
+  capabilityOptions = data.capabilityOptions || [];
+  $("#capability-options").innerHTML = capabilityOptions
+    .map(
+      (o) =>
+        `<label>${esc(o.label)}<select data-capability="${esc(o.id)}">${[
+          ["unknown", "Não sei ainda"],
+          ["available", "Tenho acesso"],
+          ["unavailable", "Não tenho acesso"],
+        ]
+          .map(
+            ([v, label]) =>
+              `<option value="${v}" ${context.availability[o.id] === v ? "selected" : ""}>${esc(t(label))}</option>`,
+          )
+          .join("")}</select></label>`,
+    )
+    .join("");
+  for (const key of ["goal", "tool", "environment"]) {
+    const field = $("#need-" + key),
+      value = field.value;
+    field.innerHTML = data.triageOptions[key]
+      .map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`)
+      .join("");
+    field.value = [...field.options].some((o) => o.value === value)
+      ? value
+      : "any";
+  }
+  const groups = [
+    ...new Map(
+      skills.map((s) => [s.categoryKey || s.category, s.category]),
+    ).entries(),
+  ];
+  $("#group").innerHTML =
+    `<option value="all">${esc(t("Todos os grupos"))}</option>` +
+    groups
+      .sort((a, b) => a[1].localeCompare(b[1], DeckI18n.intlLocale))
+      .map(
+        ([key, label]) => `<option value="${esc(key)}">${esc(label)}</option>`,
+      )
+      .join("");
+  $("#group").value = groups.some(([key]) => key === group) ? group : "all";
+}
+DeckI18n.onChange(async (next) => {
+  $("#find-skills").disabled = true;
+  const queryRevision = ++requestVersion;
+  const catalogRevision = ++compatibilityVersion;
+  const response = await fetch(catalogURL(next), {
+    headers: { "x-deck-language": next },
+    signal: AbortSignal.timeout(20000),
+  });
+  if (!response.ok)
+    throw new Error("Não foi possível trocar o idioma. Tente novamente.");
+  const data = await response.json();
+  if (!Array.isArray(data.skills) || data.skills.length !== skills.length)
+    throw new Error("Não foi possível trocar o idioma. Tente novamente.");
+  if (catalogRevision !== compatibilityVersion)
+    throw new Error("Não foi possível trocar o idioma. Tente novamente.");
+  let translatedMatch = null;
+  if (!$("#matches").hidden && lastTriageRequest) {
+    const response = await fetch("/api/triage?lang=" + next, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-deck-language": next },
+      body: JSON.stringify({ ...lastTriageRequest, useAI: false }),
+      signal: AbortSignal.timeout(20000),
+    });
+    if (!response.ok)
+      throw new Error("Não foi possível trocar o idioma. Tente novamente.");
+    translatedMatch = await response.json();
+  }
+  if (catalogRevision !== compatibilityVersion)
+    throw new Error("Não foi possível trocar o idioma. Tente novamente.");
+  if (queryRevision !== requestVersion) translatedMatch = null;
+  const dialog = $("#skill-dialog"),
+    scroll = dialog.scrollTop,
+    pageScroll = scrollY;
+  const id = selected?.id;
+  const expanded = [...dialog.querySelectorAll("details")].map((d) => d.open);
+  const checks = [...dialog.querySelectorAll('input[type="checkbox"]')].map(
+    (c) => c.checked,
+  );
+  const formValues = [
+    ...dialog.querySelectorAll(
+      'select[name],textarea[name],input[name]:not([type="checkbox"])',
+    ),
+  ].map((e) => ({ name: e.name, value: e.value }));
+  const nodes = [
+    ...dialog.querySelectorAll(
+      ".detail-tab-body h3,.detail-tab-body h4,.detail-tab-body p",
+    ),
+  ];
+  const toolbarBottom = dialog
+    .querySelector(".detail-toolbar")
+    .getBoundingClientRect().bottom;
+  const anchorIndex = nodes.findIndex(
+    (n) => n.getBoundingClientRect().bottom > toolbarBottom,
+  );
+  const anchorOffset =
+    nodes[anchorIndex]?.getBoundingClientRect().top - toolbarBottom;
+  return () => {
+    ++requestVersion;
+    applyCatalog(data);
+    render();
+    renderDeck();
+    renderJourneys();
+    if (insightsRows) renderInsights(insightsRows);
+    if (translatedMatch) renderMatches(translatedMatch, false);
+    else if (queryRevision !== requestVersion - 1) $("#matches").hidden = true;
+    if (id && dialog.open) {
+      selected = byId(id);
+      renderDetail();
+      dialog.querySelector(".detail-tab-body").style.animation = "none";
+      [...dialog.querySelectorAll("details")].forEach(
+        (d, i) => (d.open = expanded[i] || false),
+      );
+      [...dialog.querySelectorAll('input[type="checkbox"]')].forEach(
+        (c, i) => (c.checked = checks[i] || false),
+      );
+      formValues.forEach(({ name, value }) => {
+        const field = dialog.querySelector(`[name="${CSS.escape(name)}"]`);
+        if (field) field.value = value;
+      });
+    }
+    DeckI18n.apply();
+    $("#find-skills").disabled = false;
+    $("#find-skills").textContent = t("Encontrar minha skill ↗");
+    window.scrollTo({ top: pageScroll, behavior: "instant" });
+    dialog.scrollTop = scroll;
+    const newAnchor = [
+      ...dialog.querySelectorAll(
+        ".detail-tab-body h3,.detail-tab-body h4,.detail-tab-body p",
+      ),
+    ][anchorIndex];
+    if (newAnchor && Number.isFinite(anchorOffset))
+      dialog.scrollTop +=
+        newAnchor.getBoundingClientRect().top -
+        dialog.querySelector(".detail-toolbar").getBoundingClientRect().bottom -
+        anchorOffset;
+    const scope = dialog.open ? dialog : document;
+    scope
+      .querySelector(`.language-option[data-locale="${next}"]`)
+      ?.focus({ preventScroll: true });
+  };
+});
+document.addEventListener("deck:locale-error", () => {
+  $("#find-skills").disabled = false;
+  $("#find-skills").textContent = t("Encontrar minha skill ↗");
+  toast("Não foi possível trocar o idioma. Tente novamente.");
+});
+for (const eventName of ["deck:locale-changed", "deck:locale-error"])
+  document.addEventListener(eventName, () =>
+    queueMicrotask(() => {
+      if (queuedFind) {
+        queuedFind = false;
+        find();
+      }
+    }),
+  );
 motionPreference.addEventListener("change", () => {
   if (motionPreference.matches) detailSpin = false;
   if (selected) {
@@ -536,9 +764,7 @@ function downloadGuide(s) {
     `## ${t("Primeiro comando")}`,
     s.firstPrompt,
     `## ${t("Como conferir")}`,
-    s.acceptance
-      .map((item) => `- [ ] ${item}`)
-      .join("\n"),
+    s.acceptance.map((item) => `- [ ] ${item}`).join("\n"),
     t(
       "A execução acontece no seu assistente. O site não envia seus arquivos ou executa a skill.",
     ),
@@ -561,11 +787,25 @@ async function copy(text) {
     return false;
   }
 }
+function restoreDownloadState() {
+  document.querySelectorAll("[data-download]").forEach((button) => {
+    const state = downloadStates.get(button.dataset.download);
+    if (!state) return;
+    button.disabled = state.pending;
+    button.textContent = t(
+      state.pending ? "Verificando pacote…" : "Baixar v{version} ↓",
+      { version: byId(button.dataset.download)?.version },
+    );
+  });
+  if ($("#download-status"))
+    $("#download-status").textContent = t(
+      downloadStates.get(selected?.id)?.message || "",
+    );
+}
 async function download(id, button) {
-  if (button.disabled) return;
-  const label = button.innerHTML;
-  button.disabled = true;
-  button.textContent = "Verificando pacote…";
+  if (button.disabled || downloadStates.get(id)?.pending) return;
+  downloadStates.set(id, { pending: true, message: "" });
+  restoreDownloadState();
   const s = byId(id);
   try {
     const r = await fetch(
@@ -616,11 +856,13 @@ async function download(id, button) {
       at: new Date().toISOString(),
     });
     deck.downloads = deck.downloads.slice(-300);
+    recordUsage("download", id, "downloaded");
     save();
     renderDeck();
-    if ($("#download-status"))
-      $("#download-status").textContent =
-        "Pacote íntegro baixado. Continue pelo Primeiro uso.";
+    downloadStates.set(id, {
+      pending: false,
+      message: "Pacote íntegro baixado. Continue pelo Primeiro uso.",
+    });
     toast("ZIP conferido e baixado. O histórico está no Meu Deck.");
     DeckSound.play("save");
   } catch (e) {
@@ -628,14 +870,76 @@ async function download(id, button) {
       e.name === "TimeoutError"
         ? "O download demorou. Tente novamente."
         : errorText(e);
-    if ($("#download-status")) $("#download-status").textContent = message;
+    downloadStates.set(id, {
+      pending: false,
+      message:
+        e.name === "TimeoutError"
+          ? "O download demorou. Tente novamente."
+          : "Download indisponível.",
+    });
     toast(message);
   } finally {
-    button.disabled = false;
-    button.innerHTML = label;
+    const state = downloadStates.get(id);
+    if (state) state.pending = false;
+    restoreDownloadState();
+  }
+}
+function renderMatches(result, focus = true) {
+  lastMatch = result;
+  currentPlan = result.plan || null;
+  $("#personal-plan").innerHTML = DeckEvolution.plan(currentPlan, skills);
+  $("#matches").hidden = false;
+  $("#match-summary").textContent =
+    result.summary +
+    (result.mode === "ai"
+      ? " " + t("Indicação assistida por IA.")
+      : " " + t("Correspondência pelo catálogo.")) +
+    (result.notice ? " " + result.notice : "");
+  if (result.filterLabels?.length)
+    $("#match-summary").textContent +=
+      " " +
+      t("Filtros aplicados: {filters}.", {
+        filters: result.filterLabels.join(" · "),
+      });
+  const excludedToolLabels = [
+    ...new Set(
+      (result.excludedTools || [])
+        .map(
+          (id) =>
+            [...$("#need-tool").options].find((option) => option.value === id)
+              ?.textContent,
+        )
+        .filter(Boolean),
+    ),
+  ];
+  if (excludedToolLabels.length)
+    $("#match-summary").textContent +=
+      " " +
+      t("Ferramentas excluídas do pedido: {tools}.", {
+        tools: excludedToolLabels.join(" · "),
+      });
+  $("#clarification").hidden = !result.clarification;
+  $("#clarification").innerHTML = result.clarification
+    ? `<p class="fine">${esc(t("Pergunta {step} de até {total}", { step: result.clarification.step || 1, total: 2 }))}</p><h3>${esc(result.clarification.question)}</h3><div>${result.clarification.options.map((o) => `<button class="btn secondary" data-refine="${esc(o.id)}" data-question="${esc(result.clarification.id)}">${esc(o.label)}</button>`).join("")}</div>`
+    : "";
+  $("#match-grid").innerHTML = result.matches
+    .map((m, i) => {
+      const s = byId(m.id);
+      return s
+        ? `<article class="match-item"><p class="mini-heading">${esc(s.code)} / ${esc(t(i === 0 ? "Comece por aqui" : "Também pode ajudar"))}</p><h3>${esc(s.title)}</h3><p>${esc(m.reason)}</p>${s.role === "support" ? `<p class="scope-note">Skill de apoio: orienta esta etapa e pode precisar de outras ferramentas para concluir a entrega.</p>` : ""}<dl class="match-evidence"><div><dt>Entrega sugerida</dt><dd>${esc(m.deliverable || s.deliverables[0])}</dd></div><div><dt>Verifique antes</dt><dd>${esc(m.consideration || s.universe.boundary)}</dd></div></dl><p class="fine">${esc(m.nextStep)}</p><span class="quality-badge">${esc(badge(s))}</span><div class="match-actions"><button class="btn" data-start="${s.id}">Começar</button><button class="btn secondary" data-mission="${s.id}">Experimentar a missão</button></div></article>`
+        : "";
+    })
+    .join("");
+  if (focus) {
+    $("#matches-title").focus();
+    $("#matches").scrollIntoView({ block: "start" });
   }
 }
 async function find() {
+  if (DeckI18n.changing) {
+    queuedFind = true;
+    return;
+  }
   const problem = $("#problem").value.trim();
   if (problem.length < 12) {
     $("#finder-error").textContent =
@@ -647,6 +951,12 @@ async function find() {
   $("#find-skills").disabled = true;
   $("#find-skills").textContent = "Comparando capacidades…";
   try {
+    lastTriageRequest = {
+      problem,
+      audience,
+      refinement,
+      profile: triageProfile(),
+    };
     const result = await api("/api/triage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -654,62 +964,21 @@ async function find() {
         problem,
         audience,
         refinement,
-        profile: Object.fromEntries(
-          ["goal", "tool", "environment"].map((key) => [
-            key,
-            $("#need-" + key).value,
-          ]),
-        ),
+        profile: triageProfile(),
         useAI: $("#use-ai").checked,
       }),
       signal: AbortSignal.timeout(20000),
     });
     if (version !== requestVersion) return;
-    $("#matches").hidden = false;
-    $("#match-summary").textContent =
-      result.summary +
-      (result.mode === "ai"
-        ? " " + t("Indicação assistida por IA.")
-        : " " + t("Correspondência pelo catálogo.")) +
-      (result.notice ? " " + result.notice : "");
-    if (result.filterLabels?.length)
-      $("#match-summary").textContent +=
-        " " +
-        t("Filtros aplicados: {filters}.", {
-          filters: result.filterLabels.join(" · "),
-        });
-    const excludedToolLabels = [
-      ...new Set(
-        (result.excludedTools || [])
-          .map(
-            (id) =>
-              [...$("#need-tool").options].find((option) => option.value === id)
-                ?.textContent,
-          )
-          .filter(Boolean),
-      ),
-    ];
-    if (excludedToolLabels.length)
-      $("#match-summary").textContent +=
-        " " +
-        t("Ferramentas excluídas do pedido: {tools}.", {
-          tools: excludedToolLabels.join(" · "),
-        });
-    $("#clarification").hidden = !result.clarification;
-    $("#clarification").innerHTML = result.clarification
-      ? `<h3>${esc(result.clarification.question)}</h3><div>${result.clarification.options.map((o) => `<button class="btn secondary" data-refine="${esc(o.id)}" data-question="${esc(result.clarification.id)}">${esc(o.label)}</button>`).join("")}</div>`
-      : "";
-    $("#match-grid").innerHTML = result.matches
-      .map((m, i) => {
-        const s = byId(m.id);
-        return s
-          ? `<article class="match-item"><p class="mini-heading">${esc(s.code)} / ${esc(t(i === 0 ? "Comece por aqui" : "Também pode ajudar"))}</p><h3>${esc(s.title)}</h3><p>${esc(m.reason)}</p>${s.role === "support" ? `<p class="scope-note">Skill de apoio: orienta esta etapa e pode precisar de outras ferramentas para concluir a entrega.</p>` : ""}<dl class="match-evidence"><div><dt>Entrega sugerida</dt><dd>${esc(m.deliverable || s.deliverables[0])}</dd></div><div><dt>Verifique antes</dt><dd>${esc(m.consideration || s.universe.boundary)}</dd></div></dl><p class="fine">${esc(m.nextStep)}</p><span class="quality-badge">${esc(badge(s))}</span><div class="match-actions"><button class="btn" data-start="${s.id}">Começar</button><button class="btn secondary" data-mission="${s.id}">Experimentar a missão</button></div></article>`
-          : "";
-      })
-      .join("");
-    $("#matches-title").focus();
-    $("#matches").scrollIntoView({ block: "start" });
+    renderMatches(result);
+    if (!result.clarification)
+      recordUsage(
+        "recommendation",
+        null,
+        result.matches.length ? "matches" : "no-match",
+      );
   } catch (e) {
+    if (version !== requestVersion) return;
     $("#finder-error").textContent =
       e.name === "TimeoutError"
         ? "A análise demorou. Tente novamente."
@@ -724,6 +993,73 @@ async function find() {
 document.addEventListener("click", async (e) => {
   const b = e.target.closest("button");
   if (!b) return;
+  if (b.hasAttribute("data-save-plan") && currentPlan) {
+    deck.plans = [
+      ...(deck.plans || []).filter((p) => p.id !== currentPlan.id),
+      {
+        id: currentPlan.id,
+        title: currentPlan.title,
+        skillIds: currentPlan.steps.map((s) => s.skillId),
+      },
+    ].slice(-20);
+    deck.favorites = [
+      ...new Set([
+        ...deck.favorites,
+        ...currentPlan.steps.map((s) => s.skillId),
+      ]),
+    ];
+    save();
+    renderDeck();
+    toast("Plano e cartas adicionados ao Meu Deck.");
+  }
+  if (b.dataset.removePlan) {
+    deck.plans = (deck.plans || []).filter(
+      (p) => p.id !== b.dataset.removePlan,
+    );
+    save();
+    renderDeck();
+  }
+  if (b.hasAttribute("data-export-plan") && currentPlan)
+    saveFile(
+      "DriveData-plano.md",
+      `# ${currentPlan.title}\n\n${currentPlan.rationale}\n\n` +
+        currentPlan.steps
+          .map(
+            (step) =>
+              `## ${step.order}. ${byId(step.skillId).title}\n\n${step.input}\n\n${step.output}\n\n${step.rationale}\n`,
+          )
+          .join("\n") +
+        currentPlan.notice,
+      "text/markdown",
+    );
+  if (b.dataset.helpIssue) {
+    helpIssue = b.dataset.helpIssue;
+    renderDetail(`[data-help-issue="${helpIssue}"]`);
+  }
+  if (b.dataset.copyHelp)
+    await copy(
+      DeckEvolution.helpPrompt(byId(b.dataset.copyHelp), b.dataset.issue),
+    );
+  if (b.dataset.labArtifact) {
+    const a = byId(b.dataset.labArtifact)?.lab?.reference?.artifacts?.[
+      Number(b.dataset.artifactIndex)
+    ];
+    if (a) saveFile(a.filename, a.content, a.mimeType);
+  }
+  if (b.dataset.assistantArtifact) {
+    const a = byId(b.dataset.assistantArtifact)?.lab?.assistantSamples?.[
+      Number(b.dataset.sampleIndex)
+    ]?.artifacts?.[Number(b.dataset.artifactIndex)];
+    if (a) saveFile(a.filename, a.content, a.mimeType);
+  }
+  if (b.dataset.evalKit) {
+    const s = byId(b.dataset.evalKit);
+    saveFile(
+      s.code + "-avaliacao-" + DeckI18n.locale + ".md",
+      `# ${s.title}\n\n${s.lab.notice}\n\n${missionPrompt(s)}\n\n${t("Execução por assistente")}: ${s.lab.executionLabel}\n\n${t("Requisitos desta carta")}: ${s.dependencies.join("; ")}\n`,
+      "text/markdown",
+    );
+  }
   if (b.dataset.view) setView(b.dataset.view);
   if (b.dataset.audience) setAudience(b.dataset.audience);
   if (b.dataset.open) openSkill(b.dataset.open, undefined, { opener: b });
@@ -741,7 +1077,14 @@ document.addEventListener("click", async (e) => {
     find();
   }
   if (b.dataset.refine) {
-    refinement = { questionId: b.dataset.question, optionId: b.dataset.refine };
+    refinement = [
+      ...(Array.isArray(refinement)
+        ? refinement
+        : refinement
+          ? [refinement]
+          : []),
+      { questionId: b.dataset.question, optionId: b.dataset.refine },
+    ].slice(-2);
     find();
   }
   if (b.dataset.detailTab) {
@@ -892,17 +1235,209 @@ function resetIndication() {
   $("#find-skills").disabled = false;
   $("#find-skills").textContent = "Encontrar minha skill ↗";
 }
+async function refreshCompatibility() {
+  const revision = ++compatibilityVersion;
+  resetIndication();
+  $("#find-skills").disabled = true;
+  try {
+    const data = await api(catalogURL(), {
+      signal: AbortSignal.timeout(20000),
+    });
+    if (revision !== compatibilityVersion) return;
+    const id = selected?.id,
+      scroll = $("#skill-dialog").scrollTop;
+    applyCatalog(data);
+    render();
+    renderDeck();
+    if (id) {
+      selected = byId(id);
+      renderDetail();
+      DeckI18n.apply();
+      $("#skill-dialog").scrollTop = scroll;
+    }
+  } catch (error) {
+    if (revision === compatibilityVersion)
+      $("#finder-error").textContent = errorText(error);
+  } finally {
+    if (revision === compatibilityVersion) $("#find-skills").disabled = false;
+  }
+}
+$("#need-runtime").onchange = refreshCompatibility;
+$("#capability-options").addEventListener("change", refreshCompatibility);
+async function recordUsage(kind, skillId, outcome) {
+  if (!$("#usage-consent").checked) return;
+  try {
+    await api("/api/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        kind,
+        skillId,
+        outcome,
+        reason: "none",
+        ...feedbackContext(),
+        consent: true,
+      }),
+    });
+  } catch {}
+}
+function feedbackContext() {
+  return {
+    runtime: environmentContext().runtime,
+    goal: $("#need-goal").value,
+    tool: $("#need-tool").value,
+  };
+}
+document.addEventListener("submit", async (event) => {
+  const form = event.target;
+  if (!form.matches("[data-feedback-form]")) return;
+  event.preventDefault();
+  const button = form.querySelector('[type="submit"]'),
+    status = form.querySelector(".feedback-status");
+  if (button.disabled) return;
+  feedbackStates.set(form.dataset.feedbackForm, { pending: true, message: "" });
+  button.disabled = true;
+  const fields = new FormData(form);
+  try {
+    const result = await api("/api/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        kind: "feedback",
+        skillId: form.dataset.feedbackForm,
+        outcome: fields.get("outcome"),
+        reason: fields.get("reason"),
+        consent: fields.get("consent") === "on",
+        ...feedbackContext(),
+      }),
+    });
+    feedbackStates.set(form.dataset.feedbackForm, {
+      pending: false,
+      sent: true,
+      message: "Avaliação recebida. Obrigado por ajudar a melhorar o Deck.",
+    });
+  } catch {
+    feedbackStates.set(form.dataset.feedbackForm, {
+      pending: false,
+      message:
+        "Não foi possível enviar a avaliação. Confira os campos e sua conexão antes de tentar novamente.",
+    });
+  }
+  restoreFeedbackState();
+});
+function restoreFeedbackState() {
+  document.querySelectorAll("[data-feedback-form]").forEach((form) => {
+    const state = feedbackStates.get(form.dataset.feedbackForm);
+    if (!state) return;
+    form.querySelector('[type="submit"]').disabled = !!(
+      state.pending || state.sent
+    );
+    form.querySelector(".feedback-status").textContent = t(
+      state.pending ? "Enviando avaliação…" : state.message,
+    );
+  });
+}
+$("#open-insights").onclick = () => {
+  $("#insights-panel").hidden = false;
+  $("#insights-title").focus();
+  $("#insights-panel").scrollIntoView({ block: "start" });
+};
+$("#close-insights").onclick = () => {
+  ++insightsVersion;
+  $("#insights-panel").hidden = true;
+  $("#insights-key").value = "";
+  $("#insights-results").innerHTML = "";
+  $("#insights-error").textContent = "";
+  insightsRows = null;
+  $("#open-insights").focus();
+};
+$("#insights-access").onsubmit = async (event) => {
+  event.preventDefault();
+  const revision = ++insightsVersion;
+  $("#insights-error").textContent = "";
+  const button = event.target.querySelector("button");
+  button.disabled = true;
+  try {
+    const result = await api("/api/feedback", {
+      headers: { "x-insights-key": $("#insights-key").value },
+      signal: AbortSignal.timeout(20000),
+    });
+    if (revision !== insightsVersion || $("#insights-panel").hidden) return;
+    renderInsights(result.rows);
+  } catch (error) {
+    if (revision === insightsVersion && !$("#insights-panel").hidden)
+      $("#insights-error").textContent = errorText(error);
+  } finally {
+    button.disabled = false;
+  }
+};
+let insightsRows = null;
+function renderInsights(rows) {
+  insightsRows = rows;
+  const count = (kind, outcome) =>
+    rows
+      .filter((r) => r.kind === kind && (!outcome || r.outcome === outcome))
+      .reduce((a, r) => a + Number(r.total), 0);
+  const labels = {
+    resolved: "Resolvi minha tarefa",
+    partial: "Ajudou parcialmente",
+    "not-fit": "Não serviu para esta tarefa",
+    matches: "Com indicação",
+    "no-match": "Sem indicação",
+    downloaded: "Download concluído",
+    blocked: "Uso bloqueado",
+  };
+  $("#insights-results").innerHTML =
+    `<p class="fine">${esc(t("Últimos 90 dias. Resultados declarados pelos usuários; a mesma sessão conta uma vez por carta e tipo de evento."))}</p><div class="insights-kpis">${[
+      ["Consultas de triagem", count("recommendation")],
+      ["Necessidades sem indicação", count("recommendation", "no-match")],
+      ["Avaliações recebidas", count("feedback")],
+      ["Tarefas resolvidas declaradas", count("feedback", "resolved")],
+    ]
+      .map(
+        ([label, n]) =>
+          `<div><strong>${n}</strong><span>${esc(t(label))}</span></div>`,
+      )
+      .join("")}</div>${
+      rows.length
+        ? `<div class="insights-scroll"><table class="insights-table"><thead><tr><th>${esc(t("Carta ou necessidade"))}</th><th>${esc(t("Resultado"))}</th><th>${esc(t("Principal dificuldade"))}</th><th>${esc(t("Sessões"))}</th></tr></thead><tbody>${rows
+            .map((r) => {
+              const goal = [...$("#need-goal").options].find(
+                (o) => o.value === r.goal,
+              )?.textContent;
+              const tool = [...$("#need-tool").options].find(
+                (o) => o.value === r.tool,
+              )?.textContent;
+              const reason = {
+                none: "Nenhuma",
+                recognition: "A skill não apareceu",
+                dependency: "Falta uma ferramenta",
+                "different-result": "O resultado saiu diferente",
+                unclear: "Não sei como começar",
+                incompatible: "Meu assistente não é compatível",
+                "out-of-scope": "A tarefa ficou fora do escopo",
+              }[r.reason];
+              return `<tr><td>${esc(byId(r.skill_id)?.title || [goal, tool].filter(Boolean).join(" · "))}<small>${esc(r.runtime)} · ${esc(r.locale)}</small></td><td>${esc(t(labels[r.outcome] || r.outcome))}</td><td>${esc(t(reason || "Nenhuma"))}</td><td>${Number(r.total)}</td></tr>`;
+            })
+            .join("")}</tbody></table></div>`
+        : `<p class="evidence-empty">${esc(t("Ainda não há dados. As primeiras avaliações voluntárias aparecerão aqui."))}</p>`
+    }`;
+}
 for (const key of ["goal", "tool", "environment"])
   $("#need-" + key).onchange = resetIndication;
 $("#reset-profile").onclick = () => {
   for (const key of ["goal", "tool", "environment"])
     $("#need-" + key).value = "any";
-  resetIndication();
+  $("#need-runtime").value = "any";
+  document.querySelectorAll("#capability-options select").forEach((select) => {
+    select.value = "unknown";
+  });
+  refreshCompatibility();
 };
 $("#problem").oninput = () => {
   refinement = null;
   ++requestVersion;
-  $("#find-skills").disabled = false;
+  $("#find-skills").disabled = DeckI18n.changing;
   $("#find-skills").textContent = "Encontrar minha skill ↗";
   $("#matches").hidden = true;
 };
@@ -958,6 +1493,7 @@ $("#import-file").onchange = async (e) => {
         schema: 1,
         favorites: [...deck.favorites, ...incoming.favorites],
         journeys: [...deck.journeys, ...incoming.journeys],
+        plans: [...(deck.plans || []), ...(incoming.plans || [])],
         progress: { ...deck.progress, ...incoming.progress },
         downloads: [
           ...new Map(
@@ -998,26 +1534,14 @@ $("#logout").onclick = async () => {
 };
 (async () => {
   try {
-    const data = await api("/api/catalog");
-    skills = data.skills;
-    journeys = data.journeys;
-    for (const key of ["goal", "tool", "environment"])
-      $("#need-" + key).innerHTML = data.triageOptions[key]
-        .map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`)
-        .join("");
+    const data = await api(catalogURL());
+    applyCatalog(data);
     deck = DeckStore.load(
       deckStorage,
       skills.map((s) => s.id),
       journeys.map((j) => j.id),
     );
     save();
-    $("#group").insertAdjacentHTML(
-      "beforeend",
-      [...new Set(skills.map((s) => s.category))]
-        .sort()
-        .map((g) => `<option value="${esc(g)}">${esc(g)}</option>`)
-        .join(""),
-    );
     try {
       audience =
         localStorage.getItem("drivedata-audience") === "technical"
@@ -1035,9 +1559,15 @@ $("#logout").onclick = async () => {
     if (initialSkill)
       openSkill(
         initialSkill.id,
-        ["universe", "overview", "example", "start", "technical"].includes(
-          initialChapter,
-        )
+        [
+          "universe",
+          "overview",
+          "example",
+          "start",
+          "technical",
+          "lab",
+          "help",
+        ].includes(initialChapter)
           ? initialChapter
           : "universe",
         {

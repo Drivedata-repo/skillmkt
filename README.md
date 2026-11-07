@@ -17,7 +17,7 @@ Produto: **DriveData Deck**. Subdomínio `deck.drivedata.com.br` configurado e v
 - Português, inglês e espanhol em todo o produto: seletor com bandeiras SVG, escolha persistida, catálogo, triagem, exemplos, primeiro uso, Meu Deck, jornadas, login, privacidade e mensagens. Guias Markdown podem ser baixados no idioma selecionado.
 - Catálogo: 137 IDs permanentes `DD-001` a `DD-137`, 10 grupos, busca, filtros e frente/verso.
 - A recomendação explica a capacidade da skill e os requisitos para começar. Downloads estão liberados aos participantes da demo.
-- Pedidos ambíguos recebem uma pergunta curta. A seleção considera até 20 candidatos e apresenta até três indicações.
+- Pedidos ambíguos recebem até duas perguntas contextuais. A seleção respeita assistente, requisitos e ferramentas indisponíveis e apresenta até três indicações. Tarefas compostas podem receber um plano de duas ou três etapas.
 - Dez exemplos com dados fictícios, resultado de referência e critérios de conferência. São referências determinísticas, não execuções homologadas das skills por IA.
 - Primeiro uso guiado: ambiente, instalação, comando e conferência. Meu Deck guarda favoritos, downloads, versões e progresso neste navegador, com exportação/importação JSON. Não sincroniza dados entre usuários.
 - Cinco jornadas combinam três skills cada, com roteiro baixável e entregas entre etapas.
@@ -40,6 +40,8 @@ Página `/app`, catálogo, recomendações, status e downloads exigem sessão. F
 Os arquivos originais **não fazem parte deste repositório público**. `scripts/package-skills.cjs <pasta-das-skills>` prepara os 137 ZIPs em `.local/releases/1.1.0`, verifica padrões de credenciais, frontmatter e integridade. Referências pessoais de caminhos foram normalizadas em 122 arquivos de documentação; scripts, licenças e atribuições são preservados. O script não deve ser executado no build público, pois requer os originais locais. `data/releases.cjs` contém apenas metadados seguros para o catálogo. Alterações de conteúdo devem gerar uma nova versão, sem sobrescrever releases existentes.
 
 A tabela privada `skillmkt.package_releases` guarda ZIP, versão, SHA-256 e manifesto. A migração `20261106204653_deck_releases.sql` habilita RLS e permite apenas SELECT ao papel `skillmkt_app`; `anon` e `authenticated` não têm acesso. A tabela antiga `skillmkt.packages` foi preservada. A importação administrativa é separada do runtime. Os 137 pacotes 1.1.0 foram importados; a credencial administrativa não fica em arquivo nem na aplicação.
+
+A edição atual é **1.2.0**, com 137 novos pacotes importados e a edição 1.1.0 preservada. `scripts/upgrade-skills.cjs` aplica os procedimentos autorais em `data/skill-improvements/` aos ZIPs locais anteriores; `scripts/validate-upgraded-skills.cjs` confere hashes, conteúdo, referências e preservação das fontes. Sete referências CONNECTORS foram corrigidas, quatro guias extensos reorganizados e sete fontes privadas receberam edições parametrizadas. A revisão individual e seus limites estão em `reviews/REVISAO-APLICADA-1.2.md`. As skills globais da máquina não são sobrescritas por esse processo.
 
 `GET /api/download?id=<skill-id>` valida a sessão e o ID, aplica o limite e entrega o ZIP por conexão TLS, com `Cache-Control: private, no-store`. O cliente não escolhe caminhos de arquivo. O maior pacote atual tem menos de 300 KB.
 
@@ -64,6 +66,7 @@ O banco usa o transaction pooler Supabase, com validação de certificado, pool 
 ## Idiomas
 
 - URLs aceitam `?lang=pt`, `?lang=en` e `?lang=es`. O seletor salva a preferência em `drivedata-language` e no cookie `deck_locale`; o padrão é português. Links internos e redirecionamentos preservam a escolha, e a seção ativa da coleção é mantida na troca.
+- Na coleção, a troca prepara o catálogo localizado e atualiza a tela sem recarregar a página. Preserva carta, capítulo, face, giro, etapa, campos preenchidos e posição aproximada da leitura; respostas antigas de triagem são descartadas. Se a nova tradução não carregar, mantém o idioma anterior. Landing e login continuam usando navegação normal.
 - `data/i18n-public.cjs` e `data/i18n-market.cjs` contêm as traduções da interface. O build gera `dist/translations.js`, valida pares e placeholders. `dist/i18n-core.js` e `dist/i18n.js` aplicam texto e atributos sem converter traduções em HTML ou alterar o texto digitado pelo visitante.
 - `data/i18n/catalog-text.json` contém 1.080 frases de produto traduzidas; `lib/catalog-i18n.cjs` localiza as 137 skills, cinco jornadas e dez exemplos. IDs, versões, hashes, fórmulas, permissões e valores numéricos permanecem estáveis. `categoryKey` preserva a arte de cada grupo.
 - A API valida o idioma pela query, pelo cabeçalho `x-deck-language` ou pelo cookie. A triagem tem vocabulário e perguntas nos três idiomas; a IA opcional também recebe a preferência de idioma. O modo de catálogo funciona sem provedor de tradução externo.
@@ -73,7 +76,9 @@ O banco usa o transaction pooler Supabase, com validação de certificado, pool 
 
 ## Indicação de skills
 
-`lib/match.cjs` relaciona o problema às capacidades, aplicações e requisitos reais do catálogo. Há 12 objetivos de trabalho, 10 opções de ferramenta e filtro para evitar conectores específicos, além das escolhas abertas. `lib/triage-profile.cjs` valida os filtros e aplica a interseção; não relaxa restrições para preencher a lista. O ranking mostra até três indicações, com entrega e limite de uso; grupos ambíguos recebem uma pergunta contextual.
+`lib/match.cjs` relaciona o problema às capacidades, aplicações e requisitos reais do catálogo. Há 12 objetivos de trabalho, 10 opções de ferramenta e filtro para evitar conectores específicos, além das escolhas abertas. `lib/triage-profile.cjs` valida os filtros e aplica a interseção; não relaxa restrições para preencher a lista. O ranking mostra até três indicações, com entrega e limite de uso; grupos ambíguos recebem no máximo duas perguntas contextuais. `lib/compatibility.cjs` considera Codex, Claude ou outro assistente e 21 capacidades informadas como disponíveis, indisponíveis ou desconhecidas. Compatibilidade declarada não equivale a execução homologada.
+
+`lib/plans.cjs` monta sequências específicas para tarefas compostas, com entrada e entrega por etapa. O visitante pode salvar o plano no Meu Deck, exportar o roteiro e abrir cada carta. Planos seguem os mesmos filtros e não executam tarefas automaticamente.
 
 O motor distingue termos HTTP de conteúdo editorial, preparação de reunião de transcrição, necessidades de segurança de criação de produto e API Next.js de servidor MCP. Exclusões explícitas de ferramentas são reconhecidas por regras nos três idiomas, com nomes excluídos visíveis no resultado. Essas regras não são compreensão semântica universal: quando não há correspondência, a interface orienta a reformular. Agendamento de eventos no Google Calendar/Outlook não é uma capacidade desta coleção e recebe resposta explícita, sem indicar a skill de documentos Google para isso.
 
@@ -83,7 +88,7 @@ Skills de apoio úteis, como Git ou TMDL, entram somente em tarefas explícitas 
 
 - `data/universes/001-046.json`, `047-092.json` e `093-137.json`: autoria individual em PT/EN/ES. Cada registro tem identidade, frase curta, história ilustrativa, propósito, duas aplicações, missão com contexto/comando/entrega/conferência, três passos e limite real.
 - `lib/universes.cjs` valida o contrato; `lib/catalog-i18n.cjs` entrega a versão autorada de cada idioma. Não há tradução automática das narrativas nem mistura de histórias fictícias com resultados homologados.
-- Cada carta tem uma assinatura gráfica estável. O modal organiza Universo, Aplicações, Missão prática, Primeiro uso e Ficha técnica. Os dez exemplos determinísticos continuam separados dos 137 cenários ilustrativos.
+- Cada carta tem uma composição vetorial individual em `dist/skill-art.js`, com objetos ligados à sua aplicação, além de assinatura gráfica estável. O modal organiza Universo, Aplicações, Missão prática, Primeiro uso, Ficha técnica, Laboratório e Ajuda. Os dez exemplos determinísticos continuam separados dos 137 cenários ilustrativos.
 - O comando da missão reúne contexto e critérios; o guia Markdown leva o universo completo no idioma ativo. Os ZIPs originais 1.1.0 permanecem íntegros e separados desse material editorial.
 - A URL conserva carta, capítulo, etapa, giro e face durante a troca de idioma. Foco de teclado é restaurado entre capítulos e ao fechar; avisos do modal ficam em sua própria região acessível. Movimento reduzido desabilita o giro.
 
@@ -92,6 +97,16 @@ Skills de apoio úteis, como Git ou TMDL, entram somente em tarefas explícitas 
 `reviews/REVISAO-137-SKILLS.md` e `reviews/skill-audit.json` consolidam a leitura individual das 137 fontes, com qualidade existente, melhoria, evidência, alteração sugerida e cenário candidato de validação. São propostas de evolução, não alegações de execução ou alterações silenciosas nas skills globais.
 
 `scripts/audit-skill-sources.cjs` confere os ZIPs locais contra os hashes distribuídos e inspeciona frontmatter, extensão e links. A revisão encontrou sete referências externas a `CONNECTORS.md` ausentes no ZIP e quatro arquivos principais acima de 5.000 palavras. Também registra incompatibilidades entre variantes e a necessidade de separar referências privadas de futuras edições distribuíveis. Os pacotes da demo seguem protegidos por autenticação.
+
+## Laboratório, suporte e aprendizado
+
+As 137 cartas têm roteiro de avaliação. Dez exemplos de referência têm conferência determinística em PT/EN/ES, totalizando 30 verificações locais; isso não executa as skills por IA. `node scripts/run-skill-lab.cjs` reproduz esses exemplos. Três amostras limitadas da edição 1.2 foram executadas pelo Codex CLI: margem ponderada, compromissos de ata e classificação de risco em um caso fictício. `data/assistant-evidence.json` registra entrada, saída, critérios, versão e hashes. Não contém fontes privadas ou prompts internos. O laboratório oferece esses artefatos para download e distingue amostra limitada de execução integral; nenhuma das três comprova geração de arquivos Office ou integração com serviços externos. O CLI não informou o modelo utilizado, registrado como desconhecido.
+
+Para repetir os três ensaios com o CLI instalado: `node scripts/run-assistant-evals.cjs --execute --version=1.2.0`. A execução usa sessão efêmera, sandbox de leitura e dados fictícios; não equivale a homologar os 137 fluxos completos. Detalhes locais ficam em `.local/assistant-evals/`, fora do Git.
+
+A aba Ajuda trata reconhecimento, dependências, resultado divergente, primeiro passo e incompatibilidade. Gera um pedido de ajuda com ID, versão e requisitos da carta. A avaliação é voluntária e estruturada; não recebe relato livre, arquivos ou contato. Contagens de indicação e download só são enviadas quando o visitante ativa a opção específica no rodapé.
+
+`POST /api/feedback` exige sessão, origem válida, consentimento, opções permitidas e limite de frequência. A migração `20261106235141_deck_feedback.sql` cria uma tabela privada com RLS e concede somente INSERT ao runtime. A sessão é representada por HMAC; não é armazenado o cookie original. O painel exige também `INSIGHTS_KEY`, uma chave administrativa separada, com no mínimo 32 caracteres. `GET /api/feedback` retorna apenas contagens dos últimos 90 dias por meio de uma função agregadora de parâmetros fixos; o runtime não pode ler os eventos individuais. A janela de 90 dias não é uma política de exclusão automática. A chave não é salva no navegador nem incluída no código público. O painel mede sessões e respostas declaradas, não pessoas únicas nem eficácia comprovada.
 
 Se `GROQ_API_KEY` estiver configurada e o visitante optar por IA, **Qwen3.8-27B via Groq** refina a justificativa entre os candidatos existentes. A saída é validada por schema/IDs, com timeout e retorno ao catálogo em caso de falha. O visitante é informado antes de enviar seu relato à Groq. Sem chave, a recomendação por capacidades continua funcionando. A chamada real ao modelo exige chave própria e não foi validada nesta demo.
 
@@ -102,13 +117,14 @@ Importe `Drivedata-repo/skillmkt`, framework **Other**, build `npm run build`, o
 - `DATABASE_URL`: conexão do papel restrito, sem parâmetros que desativem a validação TLS.
 - `RATE_LIMIT_SECRET`: segredo HMAC dos limites.
 - `DEMO_PASSWORD_HASH` e `DEMO_SESSION_SECRET`: valores gerados pelo script local.
+- `INSIGHTS_KEY`: chave administrativa separada para consultar indicadores agregados.
 - `GROQ_API_KEY` e `GROQ_MODEL`: opcionais.
 
 As variáveis locais não são enviadas pelo Git. Não use prefixos públicos. Configure o domínio apenas após vincular o projeto correto. Push não comprova deploy; verifique o status e o fluxo no endereço publicado.
 
 ## Verificar
 
-`npm test` cobre senha, sessão, expiração, adulteração, proteção de rotas, validação de ID, seleção com refinamento, dez exemplos, importação do Deck e consentimento da lista. `node --env-file=.env.local --test tests/*.test.cjs` inclui os 137 ZIPs da versão atual, hashes por arquivo, manifests e privilégios de banco. Total: 72 testes, sem skips quando o banco está configurado, incluindo os universos em três idiomas e regressões de precisão da triagem.
+`npm test` cobre senha, sessão, expiração, adulteração, proteção de rotas, validação de ID, refinamento contextual, compatibilidade, planos, arte individual, laboratório, feedback, importação do Deck e consentimento da lista. `node --env-file=.env.local --test tests/*.test.cjs` inclui os 137 ZIPs da versão atual, hashes por arquivo, manifests e privilégios de banco. Testes que exigem arquivos privados ou dependências locais declaram skip quando esses materiais não existem; não representam uma execução completa das skills.
 
 ## Evolução para venda
 

@@ -52,7 +52,7 @@ test("all ten reference examples preserve the declared facts", () => {
 test("catalog metadata is complete and does not claim untested execution or sales clearance", () => {
   assert.equal(skills.length, 137);
   for (const s of skills) {
-    assert.equal(s.version, "1.1.0");
+    assert.equal(s.version, "1.2.0");
     assert.equal(s.release.review, "structure-checked");
     assert.equal(s.release.executionTested, false);
     assert.equal(s.release.commercialCleared, false);
@@ -111,6 +111,21 @@ test("personal deck import validates IDs, versions, size-independent shape and p
         { id, version: "<script>", at: "yesterday" },
       ],
       journeys: [journeys[0].id, "x"],
+      plans: [
+        {
+          id: "valid-plan",
+          title: "Sequência",
+          skillIds: [skills[0].id, skills[1].id],
+          privateField: "discard",
+        },
+        { id: "duplicates", title: "Inválido", skillIds: [id, id] },
+        { id: "unknown", title: "Inválido", skillIds: [id, "not-a-skill"] },
+        {
+          id: "<script>",
+          title: "Inválido",
+          skillIds: [skills[0].id, skills[1].id],
+        },
+      ],
       progress: { [id]: { platform: "other", tested: "yes", installed: true } },
     };
   const clean = store.clean(
@@ -123,6 +138,25 @@ test("personal deck import validates IDs, versions, size-independent shape and p
   assert.equal(clean.progress[id].tested, false);
   assert.equal(clean.progress[id].installed, true);
   assert.equal(clean.journeys.length, 1);
+  assert.deepEqual(clean.plans, [
+    {
+      id: "valid-plan",
+      title: "Sequência",
+      skillIds: [skills[0].id, skills[1].id],
+    },
+  ]);
+  const plans = Array.from({ length: 20 }, (_, i) => ({
+    id: "plan-" + i,
+    title: "Plano " + i,
+    skillIds: [skills[0].id, skills[1].id],
+  }));
+  assert.deepEqual(
+    store.clean(
+      { schema: 1, plans: [...plans, plans[19]] },
+      skills.map((s) => s.id),
+    ).plans,
+    plans,
+  );
   assert.equal(store.latest(clean, id).version, "1.0.0");
   assert.throws(() => store.clean({ schema: 900 }, []));
   assert.deepEqual(
@@ -179,7 +213,7 @@ test(
     const pool = db();
     try {
       const releases = await pool.query(
-        "SELECT skill_id,version,archive,sha256 FROM skillmkt.package_releases WHERE version='1.1.0'",
+        "SELECT skill_id,version,archive,sha256 FROM skillmkt.package_releases WHERE version='1.2.0'",
       );
       assert.equal(releases.rowCount, 137);
       for (const row of releases.rows) {
@@ -191,7 +225,7 @@ test(
         );
         const files = unzipSync(row.archive),
           manifest = JSON.parse(Buffer.from(files["MANIFEST.json"]));
-        assert.equal(manifest.version, "1.1.0");
+        assert.equal(manifest.version, "1.2.0");
         assert.ok(files["COMO-USAR.md"]);
         const hashes = JSON.parse(Buffer.from(files["INTEGRIDADE.json"]));
         for (const [name, digest] of Object.entries(hashes))

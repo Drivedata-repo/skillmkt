@@ -20,7 +20,7 @@ const PublicPreview = ({
           "Conferência de fórmulas e resultados"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Oficina de Células",
           "tagline": "Uma planilha útil mostra a conta e permite conferir o resultado."
@@ -80,7 +80,7 @@ const PublicPreview = ({
           "Avaliação de consumo e desempenho"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Cartógrafo de Métricas",
           "tagline": "Encontre a regra por trás do número antes de otimizar a medida."
@@ -159,7 +159,7 @@ const PublicPreview = ({
           "Matriz de rastreabilidade entre necessidade e funcionalidade"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Laboratório do Escopo",
           "tagline": "Veja o fluxo funcionar em uma demonstração antes de assumir o escopo."
@@ -234,7 +234,7 @@ const PublicPreview = ({
           "Revisão de tom de voz e mensagens"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Tradutor de Valor",
           "tagline": "Transforme capacidade técnica em uma mensagem que alguém entende."
@@ -285,7 +285,7 @@ const PublicPreview = ({
           "Formula and result checks"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Cell Workshop",
           "tagline": "A useful spreadsheet shows the calculation and lets you check the result."
@@ -345,7 +345,7 @@ const PublicPreview = ({
           "Usage and performance assessment"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Metric Cartographer",
           "tagline": "Find the rule behind the number before optimizing the measure."
@@ -424,7 +424,7 @@ const PublicPreview = ({
           "Traceability matrix between needs and features"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Scope Laboratory",
           "tagline": "Explore a demonstration flow before committing to the scope."
@@ -499,7 +499,7 @@ const PublicPreview = ({
           "Tone of voice and messaging review"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Value Translator",
           "tagline": "Turn technical capability into a message people can understand."
@@ -550,7 +550,7 @@ const PublicPreview = ({
           "Comprobación de fórmulas y resultados"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Taller de Celdas",
           "tagline": "Una hoja útil muestra la cuenta y permite comprobar el resultado."
@@ -610,7 +610,7 @@ const PublicPreview = ({
           "Evaluación de consumo y rendimiento"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Cartógrafo de Métricas",
           "tagline": "Encuentra la regla detrás de la cifra antes de optimizar la medida."
@@ -689,7 +689,7 @@ const PublicPreview = ({
           "Matriz de trazabilidad entre necesidades y funcionalidades"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Laboratorio del Alcance",
           "tagline": "Explora un flujo de demostración antes de comprometer el alcance."
@@ -764,7 +764,7 @@ const PublicPreview = ({
           "Revisión del tono de voz y los mensajes"
         ],
         "featured": true,
-        "version": "1.1.0",
+        "version": "1.2.0",
         "universe": {
           "alias": "Traductor de Valor",
           "tagline": "Convierte capacidad técnica en un mensaje comprensible."

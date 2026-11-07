@@ -301,6 +301,83 @@ button {
   display: block;
   filter: drop-shadow(0 0 3px hsl(var(--hue) 90% 60% / 0.25));
 }
+/* Each collectible contains a small, individually composed working scene. */
+.card-visual .skill-scene {
+  filter: none;
+  isolation: isolate;
+}
+.skill-scene .scene-ink {
+  color: hsl(var(--hue) 66% 78%);
+}
+.skill-scene .scene-solid {
+  fill: hsl(var(--hue) 28% 16%);
+}
+.skill-scene .scene-tint {
+  fill: hsl(var(--hue) 37% 29%);
+}
+.skill-scene .scene-light {
+  fill: hsl(var(--hue) 66% 74%);
+  stroke: hsl(var(--hue) 44% 91%);
+}
+.skill-scene .scene-floor {
+  fill: hsl(var(--hue) 23% 13%);
+  stroke: hsl(var(--hue) 30% 44%);
+  stroke-width: 1;
+}
+.skill-scene .scene-room {
+  stroke: hsl(var(--hue) 25% 37%);
+  stroke-width: 1;
+  opacity: 0.52;
+}
+.skill-scene [class^="scene-"] {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+/* Motion is a short response to inspection, not a perpetual animated wallpaper. */
+.holo-card:hover .scene-lift,
+.card-open:focus-visible .scene-lift {
+  animation: sceneLift 1.8s ease-in-out 1;
+}
+.holo-card:hover .scene-turn,
+.card-open:focus-visible .scene-turn {
+  animation: sceneTurn 2s ease-in-out 1;
+}
+.holo-card:hover .scene-breathe,
+.card-open:focus-visible .scene-breathe {
+  animation: sceneBreathe 1.8s ease-in-out 1;
+}
+.holo-card:hover .scene-trace,
+.card-open:focus-visible .scene-trace {
+  animation: sceneTrace 1.6s ease-out 1;
+}
+@keyframes sceneLift {
+  45% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes sceneTurn {
+  35% {
+    transform: rotate(8deg);
+  }
+  70% {
+    transform: rotate(-3deg);
+  }
+}
+@keyframes sceneBreathe {
+  45% {
+    transform: scale(1.045);
+  }
+}
+@keyframes sceneTrace {
+  35% {
+    stroke: #fff;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-scene g {
+    animation: none !important;
+  }
+}
 .visual-label {
   position: absolute;
   top: 11px;

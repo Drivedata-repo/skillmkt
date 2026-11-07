@@ -10,6 +10,7 @@
     downloads: [],
     progress: {},
     journeys: [],
+    plans: [],
   });
   function clean(raw, ids, journeyIds = []) {
     if (!raw || raw.schema !== 1)
@@ -31,6 +32,28 @@
         ),
       ),
     ];
+    out.plans = [
+      ...new Map(
+        (Array.isArray(raw.plans) ? raw.plans : [])
+          .filter(
+            (p) =>
+              p &&
+              typeof p.id === "string" &&
+              /^[a-z0-9-]{1,80}$/.test(p.id) &&
+              typeof p.title === "string" &&
+              p.title.length <= 180 &&
+              Array.isArray(p.skillIds) &&
+              p.skillIds.length >= 2 &&
+              p.skillIds.length <= 3 &&
+              new Set(p.skillIds).size === p.skillIds.length &&
+              p.skillIds.every((id) => allowed.has(id)),
+          )
+          .map((p) => [
+            p.id,
+            { id: p.id, title: p.title, skillIds: [...p.skillIds] },
+          ]),
+      ).values(),
+    ].slice(-20);
     out.downloads = (Array.isArray(raw.downloads) ? raw.downloads : [])
       .filter(
         (x) =>

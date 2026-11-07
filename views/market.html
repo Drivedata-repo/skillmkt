@@ -9,14 +9,17 @@
     <link rel="icon" href="/assets/drivedata-logo.png" />
     <link rel="stylesheet" href="/deck.css" />
     <link rel="stylesheet" href="/experience.css" />
+    <link rel="stylesheet" href="/evolution.css" />
     <link rel="stylesheet" href="/universes.css" />
     <link rel="stylesheet" href="/i18n.css" />
     <script src="/translations.js"></script>
     <script src="/i18n-core.js"></script>
     <script src="/i18n.js"></script>
+    <script src="/skill-art.js" defer></script>
     <script src="/deck-art.js" defer></script>
     <script src="/deck-store.js" defer></script>
     <script src="/deck-sound.js" defer></script>
+    <script src="/evolution.js" defer></script>
     <script src="/market.js" defer></script>
   </head>
   <body>
@@ -53,7 +56,7 @@
       <section id="discover-view" class="view-panel">
         <section class="market-intro">
           <div>
-            <p class="edition-line">Coleção 1.1 / Escolha. Experimente. Use.</p>
+            <p class="edition-line">Coleção 1.2 / Escolha. Experimente. Use.</p>
             <h1 id="path-title">
               Sua próxima tarefa.<br />Uma carta para começar.
             </h1>
@@ -78,6 +81,11 @@
             placeholder="Preciso juntar planilhas e conferir os totais sem duplicar pedidos…"
           ></textarea>
           <div class="finder-refiners">
+            <label class="runtime-field" for="need-runtime"
+              >Em qual assistente você vai usar?<select id="need-runtime">
+                <option value="any">Ainda não escolhi</option>
+              </select></label
+            >
             <div class="refiners-heading">
               <span>Afine o encaixe</span
               ><button type="button" class="text-button" id="reset-profile">
@@ -106,6 +114,14 @@
               conferido antes do uso.
             </p>
           </div>
+          <details class="capability-settings">
+            <summary>Informar ferramentas disponíveis</summary>
+            <p class="fine">
+              Opcional. Marque o que você tem ou não tem. Isso ajuda a evitar
+              indicações incompatíveis.
+            </p>
+            <div id="capability-options" class="capability-options"></div>
+          </details>
           <div class="finder-bottom">
             <p id="path-hint" class="fine">
               Descreva a tarefa e o resultado que você precisa.
@@ -155,6 +171,7 @@
           </div>
           <div id="clarification" class="clarification" hidden></div>
           <div id="match-grid" class="match-grid"></div>
+          <div id="personal-plan"></div>
         </section>
         <section
           class="collection"
@@ -274,6 +291,10 @@
           <h2>Histórico de downloads</h2>
           <div id="download-history"></div>
         </div>
+        <section id="saved-plans-section" hidden>
+          <h2>Meus planos de trabalho</h2>
+          <div id="saved-plans"></div>
+        </section>
       </section>
       <section
         id="journeys-view"
@@ -292,12 +313,40 @@
         <div id="journey-grid" class="journey-grid"></div>
       </section>
       <footer class="site-footer">
-        <span>DriveData Deck · Coleção 1.1</span
+        <span>DriveData Deck · Coleção 1.2</span
         ><span>Demonstração gratuita. Sem compra ou cobrança.</span
         ><a href="https://drivedata.com.br" target="_blank" rel="noopener"
           >Conheça a DriveData ↗</a
         >
+        <label class="usage-consent"
+          ><input type="checkbox" id="usage-consent" />Compartilhar contagens de
+          uso sem enviar meu relato</label
+        >
+        <button class="text-button" id="open-insights">
+          Painel de evolução
+        </button>
       </footer>
+      <section id="insights-panel" hidden aria-labelledby="insights-title">
+        <h2 id="insights-title" tabindex="-1">O que o uso está ensinando.</h2>
+        <p>
+          Contagens de sessões com participação voluntária. Não representam
+          pessoas únicas nem comprovam execução das skills.
+        </p>
+        <form id="insights-access" class="insights-access">
+          <label for="insights-key"
+            >Chave do painel<input
+              type="password"
+              id="insights-key"
+              autocomplete="off"
+              required /></label
+          ><button type="submit" class="btn secondary">
+            Consultar indicadores
+          </button>
+        </form>
+        <p id="insights-error" role="alert"></p>
+        <div id="insights-results"></div>
+        <button class="text-button" id="close-insights">Fechar painel</button>
+      </section>
     </main>
     <dialog
       id="skill-dialog"

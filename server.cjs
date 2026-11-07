@@ -23,6 +23,7 @@ const routes = Object.fromEntries(
     "catalog",
     "download",
     "waitlist",
+    "feedback",
   ].map((n) => ["/api/" + n, require("./api/" + n + ".js")]),
 );
 http

@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "samples": [
+    {
+      "caseId": "weighted-margin",
+      "skillId": "claude-xlsx",
+      "version": "1.2.0",
+      "startedAt": "2026-11-07T00:09:47.659Z",
+      "finishedAt": "2026-11-07T00:09:52.048Z",
+      "method": "assistant-bounded-sample",
+      "runtime": "Codex CLI",
+      "sandbox": "read-only",
+      "ephemeral": true,
+      "userConfigLoaded": false,
+      "model": null,
+      "modelEvidence": "not-reported",
+      "status": "sample-passed",
+      "passed": true,
+      "input": {
+        "csv": "product,revenue,cost\nA,1000,600\nB,100,90\n"
+      },
+      "output": {
+        "revenue": 1100,
+        "cost": 690,
+        "profit": 410,
+        "margin": 0.37272727272727274
+      },
+      "outputText": "{\"revenue\":1100,\"cost\":690,\"profit\":410,\"margin\":0.37272727272727274}",
+      "inputSha256": "aa04ee467ddbfb305dca3c4b3d0d1e6a8be7c684f566a0e2d62d28df33a49387",
+      "outputSha256": "9460eee4e57867fff0cdd4c2770dc9b53939553d2f6baff85429f7be2f228378",
+      "sourceSha256": "2767ed541e84d1cd2f16fcc5bb7026f62e1762f69fa30dbdb351661bd9765500",
+      "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987",
+      "checks": [
+        {
+          "id": "source-totals",
+          "passed": true
+        },
+        {
+          "id": "profit",
+          "passed": true
+        },
+        {
+          "id": "weighted-margin",
+          "passed": true
+        }
+      ],
+      "scope": "json-reasoning-only",
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false,
+      "evidenceLanguage": "en"
+    },
+    {
+      "caseId": "minutes-missing-date",
+      "skillId": "claude-acta-drivedata",
+      "version": "1.2.0",
+      "startedAt": "2026-11-07T00:09:52.055Z",
+      "finishedAt": "2026-11-07T00:09:56.316Z",
+      "method": "assistant-bounded-sample",
+      "runtime": "Codex CLI",
+      "sandbox": "read-only",
+      "ephemeral": true,
+      "userConfigLoaded": false,
+      "model": null,
+      "modelEvidence": "not-reported",
+      "status": "sample-passed",
+      "passed": true,
+      "input": {
+        "transcript": "Fictional prototype review. Ana: I will review the registration by 2026-11-10. Bruno: I will validate the report; I have not agreed a due date yet. Both actions are agreed. No email or file delivery is authorized."
+      },
+      "output": {
+        "actions": [
+          {
+            "owner": "Ana",
+            "action": "Review the registration",
+            "due": "2026-11-10"
+          },
+          {
+            "owner": "Bruno",
+            "action": "Validate the report",
+            "due": null
+          }
+        ]
+      },
+      "outputText": "{\"actions\":[{\"owner\":\"Ana\",\"action\":\"Review the registration\",\"due\":\"2026-11-10\"},{\"owner\":\"Bruno\",\"action\":\"Validate the report\",\"due\":null}]}",
+      "inputSha256": "248950b49658d1371e04d4b565f65fbff0ce849492d7b1bac2b39900fc9b6654",
+      "outputSha256": "6f1c3fe2c21292b6c0bc3b0246dd8bc6f0b65bf32a088bdd47af5bca5e631954",
+      "sourceSha256": "6c6e64a06d707242fedd689b9d7fc1822737348131b22e480644d18f543f0641",
+      "packageSha256": "f1c28962254e054db85f0455ee476716da7e61ea5a3450545aa19bece7e85541",
+      "checks": [
+        {
+          "id": "two-actions",
+          "passed": true
+        },
+        {
+          "id": "ana-date",
+          "passed": true
+        },
+        {
+          "id": "bruno-date-unknown",
+          "passed": true
+        },
+        {
+          "id": "no-extra-owner",
+          "passed": true
+        }
+      ],
+      "scope": "json-reasoning-only",
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false,
+      "evidenceLanguage": "en"
+    },
+    {
+      "caseId": "risk-matrix",
+      "skillId": "legal-risk-assessment",
+      "version": "1.2.0",
+      "startedAt": "2026-11-07T00:09:56.318Z",
+      "finishedAt": "2026-11-07T00:10:00.579Z",
+      "method": "assistant-bounded-sample",
+      "runtime": "Codex CLI",
+      "sandbox": "read-only",
+      "ephemeral": true,
+      "userConfigLoaded": false,
+      "model": null,
+      "modelEvidence": "not-reported",
+      "status": "sample-passed",
+      "passed": true,
+      "input": {
+        "fictional": true,
+        "framework": "Use the source's severity × likelihood starter matrix only.",
+        "risks": [
+          {
+            "id": "A",
+            "severity": 4,
+            "likelihood": 2
+          },
+          {
+            "id": "B",
+            "severity": 2,
+            "likelihood": 4
+          }
+        ]
+      },
+      "output": {
+        "risks": [
+          {
+            "id": "A",
+            "score": 8,
+            "level": "medium"
+          },
+          {
+            "id": "B",
+            "score": 8,
+            "level": "medium"
+          }
+        ],
+        "legalApproval": false
+      },
+      "outputText": "{\"risks\":[{\"id\":\"A\",\"score\":8,\"level\":\"medium\"},{\"id\":\"B\",\"score\":8,\"level\":\"medium\"}],\"legalApproval\":false}",
+      "inputSha256": "c761a7c4542e11ca6844cfd001863e6657d643b70a1915de09c41a404c4864be",
+      "outputSha256": "9c2c267ba3ff76b61f33af9b017c3cb427c0aeae254fb1c7634ae9a65086cf24",
+      "sourceSha256": "047ec6695784af8801d322e75f9246e2a911f9c9bc0587e3ade990058811f947",
+      "packageSha256": "e99e92c2c7ed7bc5a7e59127b6ec91ab68075b2c53a6a3a8c3fa66a507ce7bae",
+      "checks": [
+        {
+          "id": "both-risks",
+          "passed": true
+        },
+        {
+          "id": "matrix-score",
+          "passed": true
+        },
+        {
+          "id": "not-legal-approval",
+          "passed": true
+        }
+      ],
+      "scope": "json-reasoning-only",
+      "executionVerified": false,
+      "fullSkillExecutionVerified": false,
+      "evidenceLanguage": "en"
+    }
+  ]
+}

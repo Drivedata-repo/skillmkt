@@ -139,13 +139,13 @@ const environments = [
 ];
 function options(locale = "pt") {
   const index = { pt: 1, en: 2, es: 3 }[locale] || 1;
-  return Object.fromEntries(
+  return {...Object.fromEntries(
     Object.entries({ goal: goals, tool: tools, environment: environments }).map(
       ([key, rows]) => [
         key,
         rows.map((row) => ({ id: row[0], label: row[index] })),
       ],
     ),
-  );
+  ), runtime: require("../lib/compatibility.cjs").runtimeOptions(locale)};
 }
 module.exports = { goals, tools, environments, options };

@@ -77,13 +77,13 @@ A seção “Abra uma carta” fica entre os números do catálogo e a definiç�
 
 Três bandeiras vetoriais representam português brasileiro, inglês e espanhol, acompanhadas de PT/EN/ES e nomes acessíveis completos. A seleção tem contorno e sublinhado, além de mudança de cor. Uma inclinação leve no hover segue o tema das cartas; a preferência de redução de movimento remove essa transição. Contraste do texto do seletor acima de 11:1.
 
-O cabeçalho se reorganiza em telas menores, mantendo as bandeiras visíveis na landing, no login e na coleção. Na privacidade, o seletor fica no início do conteúdo. A troca usa navegação normal, preserva página, âncora e seção da coleção; favoritos e histórico continuam associados aos IDs originais. Formulários em andamento são reiniciados ao trocar o idioma.
+O cabeçalho se reorganiza em telas menores, mantendo as bandeiras visíveis na landing, no login e na coleção. Na privacidade, o seletor fica no início do conteúdo. A coleção troca idioma sem recarregar: preserva carta aberta, face, giro, capítulo, etapa, campos e posição aproximada da leitura. Flags ficam ocupadas durante a preparação para evitar trocas sobrepostas. Landing, login e privacidade usam navegação normal. Favoritos e histórico continuam associados aos IDs originais.
 
 A tradução abrange microtextos, atributos acessíveis, mensagens de erro, exemplos, metadados das cartas e conteúdo gerado para copiar/baixar. Nomes próprios, caminhos técnicos, IDs e arquivos originais das skills não são reescritos. O guia localizado é oferecido separadamente do ZIP original. Layouts conferidos em 1440, 1280, 820, 390 e 375 px; recomendações e navegação testadas em inglês e espanhol, com retorno ao português.
 
 ## Universos da coleção
 
-Cada carta ganha uma identidade editorial ligada ao trabalho: Cartógrafo de Métricas, Oficina de Entregas e outras 135 identidades próprias, traduzidas para inglês e espanhol. A ilustração mantém o símbolo da família, com marca geométrica exclusiva derivada do identificador, órbitas e variação discreta de matiz. A identidade nunca representa pontuação, escassez ou desempenho inventado.
+Cada carta ganha uma identidade editorial ligada ao trabalho: Cartógrafo de Métricas, Oficina de Entregas e outras 135 identidades próprias, traduzidas para inglês e espanhol. A edição 1.2 acrescenta 137 composições vetoriais individuais, construídas com objetos semânticos da aplicação, marca geométrica, órbitas e cor da família. A identidade nunca representa pontuação, escassez ou desempenho inventado. O movimento dos novos objetos ocorre em hover/foco e respeita movimento reduzido.
 
 O detalhe funciona como um caderno de campo: uma cena ilustrativa, o problema, aplicações concretas, uma missão copiável e um percurso de três passos. A narrativa tem tipografia maior e leitura espaçada; exemplos e limites ficam próximos da ação. O material técnico continua acessível em capítulo próprio. No celular, carta e controles ocupam uma composição compacta em duas colunas, antes do conteúdo.
 

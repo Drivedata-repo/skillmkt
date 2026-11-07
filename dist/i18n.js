@@ -11,12 +11,12 @@
     .map((s) => s.trim())
     .find((s) => s.startsWith("deck_locale="))
     ?.slice(12);
-  const locale = core.resolveLocale(
+  let locale = core.resolveLocale(
     new URL(location.href).searchParams.get("lang"),
     stored,
     cookie,
   );
-  const intlLocale = { pt: "pt-BR", en: "en-US", es: "es-ES" }[locale];
+  const intl = () => ({ pt: "pt-BR", en: "en-US", es: "es-ES" })[locale];
   const t = (source, params) =>
     core.translate(dictionary, locale, source, params);
   const url = (path) => core.localizedURL(path, locale, location.origin);
@@ -32,7 +32,7 @@
     document.cookie = `deck_locale=${next}; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol === "https:" ? "; Secure" : ""}`;
   }
   remember(locale);
-  document.documentElement.lang = intlLocale;
+  document.documentElement.lang = intl();
   document.documentElement.dataset.locale = locale;
   const skip =
     "script,style,code,pre,textarea,[data-no-i18n],.language-switcher";
@@ -44,17 +44,24 @@
     "alt",
     "data-example",
   ];
+  // Keep the authored text, so switching EN -> ES -> PT is reversible.
+  const textSources = new WeakMap();
+  const attributeSources = new WeakMap();
+  const localizedValidity = new Set();
   function translateText(node) {
     if (!node.parentElement || node.parentElement.closest(skip)) return;
     const text = node.nodeValue;
-    const key = core.normalize(text);
-    if (!key || !dictionary[key] || locale === "pt") return;
+    const previous = textSources.get(node);
+    const source = previous?.rendered === text ? previous.source : text;
+    const key = core.normalize(source);
+    if (!key || !dictionary[key]) return;
     const translated = t(key);
-    if (key === translated) return;
-    node.nodeValue =
-      (text.match(/^\s*/)?.[0] || "") +
+    const rendered =
+      (source.match(/^\s*/)?.[0] || "") +
       translated +
-      (text.match(/\s*$/)?.[0] || "");
+      (source.match(/\s*$/)?.[0] || "");
+    textSources.set(node, { source, rendered });
+    if (text !== rendered) node.nodeValue = rendered;
   }
   const routes = new Set([
     "/",
@@ -68,19 +75,21 @@
   function translateElement(element) {
     if (element.closest("script,style,[data-no-i18n],.language-switcher"))
       return;
-    for (const attr of attrs) {
+    const sources = attributeSources.get(element) || {};
+    for (const attr of [
+      ...attrs,
+      ...(element.matches("meta[content]") ? ["content"] : []),
+    ]) {
       const value = element.getAttribute(attr);
-      if (value && dictionary[core.normalize(value)])
-        element.setAttribute(attr, t(value));
+      const previous = sources[attr];
+      const source = previous?.rendered === value ? previous.source : value;
+      if (source && dictionary[core.normalize(source)]) {
+        const rendered = t(source);
+        sources[attr] = { source, rendered };
+        if (value !== rendered) element.setAttribute(attr, rendered);
+      }
     }
-    if (
-      element.matches(
-        'meta[name="description"],meta[property="og:title"],meta[property="og:description"]',
-      )
-    ) {
-      const value = element.getAttribute("content");
-      if (value) element.setAttribute("content", t(value));
-    }
+    attributeSources.set(element, sources);
     if (element.matches("a[href]")) {
       const href = element.getAttribute("href");
       if (href.startsWith("/") && !href.startsWith("//")) {
@@ -133,15 +142,83 @@
     translateTree(root);
     observe();
   }
+  let localeHandler = null,
+    changing = false;
+  function refreshSwitchers() {
+    document.querySelectorAll(".language-option").forEach((button) => {
+      button.setAttribute(
+        "aria-pressed",
+        String(button.dataset.locale === locale),
+      );
+      button.disabled = changing;
+    });
+    document.querySelectorAll(".language-switcher").forEach((group) => {
+      group.setAttribute("aria-label", t("Idioma do site"));
+      group.setAttribute("aria-busy", String(changing));
+    });
+  }
+  async function changeLocale(next) {
+    if (!["pt", "en", "es"].includes(next) || next === locale || changing)
+      return;
+    if (!localeHandler) {
+      remember(next);
+      location.assign(core.localizedURL(location.href, next, location.origin));
+      return;
+    }
+    changing = true;
+    refreshSwitchers();
+    try {
+      // Fetch/validate first: a network error leaves the existing card intact.
+      const commit = await localeHandler(next);
+      locale = next;
+      remember(next);
+      document.documentElement.lang = intl();
+      document.documentElement.dataset.locale = next;
+      for (const field of localizedValidity) field.setCustomValidity("");
+      localizedValidity.clear();
+      history.replaceState(
+        null,
+        "",
+        core.localizedURL(location.href, next, location.origin),
+      );
+      apply();
+      commit();
+      apply();
+      document.dispatchEvent(
+        new CustomEvent("deck:locale-changed", { detail: next }),
+      );
+    } catch (error) {
+      document.dispatchEvent(
+        new CustomEvent("deck:locale-error", { detail: error }),
+      );
+    } finally {
+      changing = false;
+      refreshSwitchers();
+      (document.querySelector("dialog[open]") || document)
+        .querySelector(`.language-option[data-locale="${locale}"]`)
+        ?.focus({ preventScroll: true });
+    }
+  }
   window.DeckI18n = Object.freeze({
-    locale,
-    intlLocale,
+    get locale() {
+      return locale;
+    },
+    get changing() {
+      return changing;
+    },
+    get intlLocale() {
+      return intl();
+    },
     t,
     url,
     headers,
     apply,
+    onChange(handler) {
+      localeHandler = handler;
+    },
+    changeLocale,
     number: (value, options = {}) =>
-      new Intl.NumberFormat(intlLocale, options).format(value),
+      new Intl.NumberFormat(intl(), options).format(value),
   });
   apply();
   function mountSwitcher(target) {
@@ -171,14 +248,7 @@
       const label = document.createElement("span");
       label.textContent = abbreviation;
       button.append(flag, label);
-      button.addEventListener("click", () => {
-        if (id === locale) return;
-        remember(id);
-        document.dispatchEvent(
-          new CustomEvent("deck:before-locale", { detail: id }),
-        );
-        location.assign(core.localizedURL(location.href, id, location.origin));
-      });
+      button.addEventListener("click", () => changeLocale(id));
       switcher.append(button);
     }
     if (target?.tagName === "MAIN") target.prepend(switcher);
@@ -216,7 +286,10 @@
         message = t("Use no máximo {count} caracteres.", {
           count: field.maxLength,
         });
-      if (message) field.setCustomValidity(message);
+      if (message) {
+        field.setCustomValidity(message);
+        localizedValidity.add(field);
+      }
     },
     true,
   );
