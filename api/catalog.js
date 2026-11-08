@@ -1,5 +1,6 @@
 const { requireAccess, restrictCatalog } = require("../lib/access.cjs");
 const { officialGuide } = require("../lib/official-guides.cjs");
+const { getPainMap, painTerms } = require("../lib/pain-map.cjs");
 function guideFields(skill, locale) {
   const guide = officialGuide(skill.id, locale);
   if (!guide) return {};
@@ -44,9 +45,11 @@ module.exports = async (req, res) => {
       skills: catalog.skills.map((skill) => ({
         ...skill,
         ...guideFields(skill, locale),
+        painTerms: painTerms(skill.id, locale),
         compatibilityAssessment: assessCompatibility(skill, context, locale),
         lab: getLab(skill, locale),
       })),
+      painMap: getPainMap(locale),
       runtimeOptions: runtimeOptions(locale),
       capabilityOptions: capabilityOptions(locale),
       compatibilityContext: context,

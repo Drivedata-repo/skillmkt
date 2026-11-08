@@ -138,6 +138,11 @@
             ><br />para explorar antes de baixar
           </div>
         </section>
+        <section id="discover" class="discover" aria-labelledby="discover-title" hidden>
+          <h2 id="discover-title" tabindex="-1">Não sabe por onde começar?</h2>
+          <p class="discover-lead">Responda duas perguntas e mostramos a carta certa. Não precisa escrever nada.</p>
+          <div id="discover-body"></div>
+        </section>
         <section
           id="explore-packs"
           class="explore-packs"
@@ -161,6 +166,7 @@
             <div id="combo-tiles" class="combo-tiles"></div>
           </details>
         </section>
+        <p class="finder-or">Prefere explicar com as suas palavras?</p>
         <form id="finder" class="finder">
           <label for="problem">O que você quer resolver?</label
           ><textarea
@@ -281,7 +287,7 @@
               ><input
                 type="search"
                 id="search"
-                placeholder="Nome, ferramenta ou ID da carta" /></label
+                placeholder="Ex.: número errado, reunião, Power BI" /></label
             ><label
               ><span class="sr-only">Grupo de capacidades</span
               ><select id="group">
@@ -331,8 +337,8 @@
           <div id="combo-focus" class="combo-focus" hidden><span></span><button id="clear-combo" class="text-button">Limpar seleção do combo</button></div>
           <div id="skill-grid" class="skill-grid"></div>
           <div id="empty" class="empty" hidden>
-            Nenhuma carta com estes filtros. Ajuste a busca ou inclua as skills
-            técnicas.
+            Nenhuma carta com estes filtros. Ajuste a busca ou inclua as skills técnicas.
+            <button type="button" class="text-button" id="empty-discover">Responder às duas perguntas</button>
           </div>
           <p id="load-error" class="error" role="alert"></p>
           <div class="more-row">

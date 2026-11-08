@@ -3,7 +3,9 @@ const $ = (s) => document.querySelector(s),
   esc = DeckArt.esc,
   t = DeckI18n.t,
   motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
-let skills = [],
+let painMap = [],
+  discover = { area: null, symptom: null },
+  skills = [],
   combos = [],
   comboFilter = null,
   journeys = [],
@@ -137,36 +139,69 @@ function slot(s) {
     return `<article class="work-skill"><div class="work-skill-heading"><span>${esc(s.code)}</span><button class="favorite" data-favorite="${esc(s.id)}" aria-pressed="${favorite(s.id)}" aria-label="${esc(t(favorite(s.id) ? "Remover {code} do Meu Deck" : "Salvar {code} no Meu Deck", { code: s.code }))}">${favorite(s.id) ? "♥" : "♡"}</button></div><h3>${esc(s.title)}</h3><p>${esc(s.universe.purpose)}</p><dl><dt>${esc(t("Sua entrega"))}</dt><dd>${esc(s.deliverables[0])}</dd><dt>${esc(t("Requisitos principais"))}</dt><dd>${esc(s.dependencies.slice(0, 2).join("; "))}</dd></dl><p class="work-evidence">${esc(t(s.lab?.deliverableSamples?.some((x) => x.passed && x.currentVersion) ? "Cenário com entregável conferido" : "Confira o cenário e os limites"))}</p>${DeckCommerce.stamp(s.pricing)}<div class="work-actions"><button class="btn secondary" data-start="${esc(s.id)}">${esc(t("Começar"))} ↗</button><button class="text-button" data-open="${esc(s.id)}">${esc(t("Ver detalhes"))}</button></div></article>`;
   return `<article class="skill-slot"><div class="slot-top"><span class="quality-badge">${esc(badge(s))}</span><button class="favorite" data-favorite="${esc(s.id)}" aria-pressed="${favorite(s.id)}" aria-label="${esc(t(favorite(s.id) ? "Remover {code} do Meu Deck" : "Salvar {code} no Meu Deck", { code: s.code }))}">${favorite(s.id) ? "♥" : "♡"}</button></div><button class="card-open" data-open="${esc(s.id)}" aria-label="${esc(t("Explorar {code}: {title}", { code: s.code, title: s.title }))}">${DeckArt.card(s)}</button><p class="slot-context">${audience === "technical" ? esc(s.id) : esc(s.universe.tagline)}</p><p class="slot-state">${needsUpdate(s) ? "Nova versão disponível" : progress(s.id).tested ? "Conferido por você" : d ? esc(t("Baixado · v{version}", { version: d.version })) : esc(s.setup)}</p><div class="skill-actions"><button class="text-button" data-open="${esc(s.id)}">Explorar universo</button><button class="download" data-start="${esc(s.id)}">Começar ↗</button></div></article>`;
 }
+const SEARCH_STOP = new Set("a o e de da do das dos em no na nos nas um uma uns umas para por com que meu minha meus minhas sua seu nao the of to and in my for el la los las y mi con".split(" "));
+function searchTokens(value) {
+  return norm(value).split(/\s+/).filter((w) => w && !SEARCH_STOP.has(w)).map((w) => (w.length > 4 ? w.replace(/s$/, "") : w));
+}
+function searchHits(s, tokens) {
+  const text = norm(
+    [s.code, s.id, s.identity?.id, s.identity?.serial, s.title, s.pain, s.painTerms, s.universe?.alias, s.universe?.purpose, ...(s.universe?.useCases || []), ...s.deliverables, ...s.compatibility.tools].join(" "),
+  );
+  return tokens.filter((w) => text.includes(w)).length;
+}
+function painSymptoms(area) {
+  const usable = (list) => list.filter((p) => p.skillIds.some((id) => byId(id)));
+  if (area === "unsure") return painMap.map((a) => usable(a.symptoms)[0]).filter(Boolean);
+  return usable(painMap.find((a) => a.id === area)?.symptoms || []);
+}
+function discoverOption(attr, value, label) {
+  return `<li><button type="button" class="discover-option" ${attr}="${esc(value)}">${esc(label)}<span aria-hidden="true">→</span></button></li>`;
+}
+function renderDiscover(focus = false) {
+  const section = $("#discover"), body = $("#discover-body");
+  if (!section || !body) return;
+  const areas = painMap.filter((a) => painSymptoms(a.id).length);
+  section.hidden = !areas.length;
+  if (!areas.length) return;
+  let symptom = null;
+  for (const a of painMap) symptom ||= a.symptoms.find((p) => p.id === discover.symptom);
+  const cards = symptom ? symptom.skillIds.map(byId).filter(Boolean).slice(0, 3) : [];
+  if (symptom && cards.length) {
+    body.innerHTML = `<div class="discover-result"><p class="discover-said">${esc(symptom.say)}</p><h3 tabindex="-1">${esc(t("Isso tem nome: {name}.", { name: symptom.name }))}</h3><p class="discover-first"><strong>${esc(t("Seu primeiro passo:"))}</strong> ${esc(symptom.first)}</p><p class="discover-pick">${esc(t(cards.length > 1 ? "Comece pela primeira carta. As outras completam o trabalho." : "Comece por esta carta."))}</p><div class="discover-cards">${cards.map(slot).join("")}</div><div class="discover-actions"><button type="button" class="text-button" data-discover-back>${esc(t("Não é bem isso"))}</button><button type="button" class="text-button" data-discover-reset>${esc(t("Recomeçar"))}</button></div></div>`;
+    DeckArt.tilt(body);
+  } else if (discover.area) {
+    const list = painSymptoms(discover.area);
+    body.innerHTML = `<p class="discover-progress">${esc(t("Pergunta {step} de 2", { step: 2 }))}</p><h3 tabindex="-1">${esc(t("Qual dessas frases parece com o seu dia?"))}</h3><ul class="discover-options">${list.map((p) => discoverOption("data-discover-symptom", p.id, p.say)).join("")}</ul><div class="discover-actions"><button type="button" class="text-button" data-discover-reset>${esc(t("Voltar"))}</button><button type="button" class="text-button" data-discover-none>${esc(t("Nenhuma dessas"))}</button></div>`;
+  } else {
+    body.innerHTML = `<p class="discover-progress">${esc(t("Pergunta {step} de 2", { step: 1 }))}</p><h3 tabindex="-1">${esc(t("Onde o problema aparece mais?"))}</h3><ul class="discover-options">${areas.map((a) => discoverOption("data-discover-area", a.id, a.label)).join("")}${discoverOption("data-discover-area", "unsure", t("Ainda não sei dizer"))}</ul>`;
+  }
+  if (focus) {
+    section.scrollIntoView({ block: "start" });
+    body.querySelector("h3")?.focus({ preventScroll: true });
+  }
+}
 function render() {
-  const q = norm($("#search").value),
-    group = $("#group").value,
+  const group = $("#group").value,
     role = $("#role").value;
-  let filtered = skills.filter(
+  const tokens = searchTokens($("#search").value);
+  const base = skills.filter(
     (s) =>
-      (audience === "technical" ||
+      (tokens.length > 0 ||
+        audience === "technical" ||
         $("#show-all").checked ||
         (s.audience !== "technical" && s.role !== "support")) &&
       (group === "all" || (s.categoryKey || s.category) === group) &&
       (!comboFilter || combos.find(c=>c.id===comboFilter)?.skillIds.includes(s.id)) &&
       ($("#price-ceiling").value === "all" || ($("#price-ceiling").value === "free" ? s.free : !s.free && s.pricing.priceCents <= Number($("#price-ceiling").value))) &&
       (role === "all" || s.role === role) &&
-      (!$("#examples-only").checked || s.example) &&
-      norm(
-        [
-          s.code,
-          s.id,
-          s.identity?.id,
-          s.identity?.serial,
-          s.title,
-          s.pain,
-          s.universe?.alias,
-          s.universe?.purpose,
-          ...(s.universe?.useCases || []),
-          ...s.deliverables,
-          ...s.compatibility.tools,
-        ].join(" "),
-      ).includes(q),
+      (!$("#examples-only").checked || s.example),
   );
+  let filtered = base.filter((s) => searchHits(s, tokens) === tokens.length);
+  let nearby = false;
+  if (!filtered.length && tokens.length > 1) {
+    filtered = base.filter((s) => searchHits(s, tokens) * 2 >= tokens.length);
+    nearby = filtered.length > 0;
+  }
   const sort = $("#sort").value;
   filtered.sort(
     sort === "price-asc" || sort === "price-desc"
@@ -179,7 +214,9 @@ function render() {
             Number(b.featured) - Number(a.featured) ||
             a.code.localeCompare(b.code),
   );
-  $("#skill-count").textContent = t("{count} de {total} cartas", {
+  $("#skill-count").textContent = nearby
+    ? t("{count} cartas próximas da sua busca", { count: filtered.length })
+    : t("{count} de {total} cartas", {
     count: filtered.length,
     total: skills.length,
   });
@@ -568,6 +605,8 @@ function applyCatalog(data) {
   skills = data.skills;
   journeys = data.journeys;
   combos = data.combos || [];
+  painMap = data.painMap || [];
+  renderDiscover();
   $("#combo-tiles").innerHTML = combos.filter(c=>!c.packId).map(c=>DeckCommerce.combo(c,skills)).join("");
   const context = environmentContext();
   $("#need-runtime").innerHTML = (data.runtimeOptions || [])
@@ -986,6 +1025,8 @@ function renderMatches(result, focus = true) {
       ? " " + t("Indicação assistida por IA.")
       : " " + t("Correspondência pelo catálogo.")) +
     (result.notice ? " " + result.notice : "");
+  if (!result.matches?.length && !result.clarification)
+    $("#match-summary").textContent += " " + t("Se preferir, responda às duas perguntas acima.");
   if (result.filterLabels?.length)
     $("#match-summary").textContent +=
       " " +
@@ -1587,6 +1628,27 @@ for (const id of ["group", "role", "examples-only", "show-all", "sort", "price-c
     limit = 12;
     render();
   };
+$("#discover").addEventListener("click", (e) => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  if (b.dataset.discoverArea) discover = { area: b.dataset.discoverArea, symptom: null };
+  else if (b.dataset.discoverSymptom) {
+    discover.symptom = b.dataset.discoverSymptom;
+    recordUsage("recommendation", null, "matches");
+  } else if (b.hasAttribute("data-discover-back")) discover.symptom = null;
+  else if (b.hasAttribute("data-discover-reset")) discover = { area: null, symptom: null };
+  else if (b.hasAttribute("data-discover-none")) {
+    discover = { area: null, symptom: null };
+    renderDiscover();
+    $("#problem").focus();
+    return;
+  } else return;
+  renderDiscover(true);
+});
+$("#empty-discover").onclick = () => {
+  $("#discover").scrollIntoView({ block: "start" });
+  $("#discover-title").focus({ preventScroll: true });
+};
 $("#search").oninput = () => {
   limit = 12;
   render();
