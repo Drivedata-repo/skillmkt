@@ -5542,5 +5542,293 @@
       ],
       "boundary": "Depende de registros y relatos. En una intrusión, la respuesta de seguridad va antes del postmortem."
     }
+  },
+  {
+    "id": "cena-de-hero-em-canvas",
+    "pt": {
+      "alias": "Órbita com Propósito",
+      "tagline": "Cada ponto na tela é um dado real, e a cena para quando deve.",
+      "story": "Na fictícia Rede Escolar Horizonte, uma agência entregou 1500 partículas que giravam sem dizer nada e esquentavam o celular das famílias. Órbita com Propósito troca o enfeite por um ponto para cada escola, para a cena fora da tela e respeita quem pediu menos movimento.",
+      "purpose": "Constrói uma cena de hero em canvas, sem biblioteca, em que cada elemento representa um dado real, e audita pausa fora da tela, movimento reduzido, densidade e ajuste no celular.",
+      "useCases": [
+        "Criar uma abertura de site que mostre o tamanho do catálogo.",
+        "Revisar uma animação de fundo que pesa no celular."
+      ],
+      "scenario": {
+        "title": "As partículas que não diziam nada",
+        "context": "Cenário fictício: a página de [EMPRESA] tem um fundo animado que não representa [DADO REAL].",
+        "request": "Use esta skill para refazer a cena de abertura de [EMPRESA]. Defina a função em uma frase, ligue cada elemento a [DADO REAL], monte a cena em canvas sem biblioteca, aplique as travas e rode o verificador antes de decidir.",
+        "output": "Cena em canvas, mapa de dados, plano de correção e decisão.",
+        "check": "Elemento sem dado real não entra, e nada é publicado sem medição em celular."
+      },
+      "steps": [
+        "Escreva a função da cena.",
+        "Ligue cada elemento a um dado.",
+        "Audite o código e meça no celular."
+      ],
+      "boundary": "Cobre canvas 2D. A ferramenta lê o código e não executa a cena, então a medição em celular fica com quem aplica."
+    },
+    "en": {
+      "alias": "Orbit with Purpose",
+      "tagline": "Every dot on screen is real data, and the scene stops when it should.",
+      "story": "At the fictional Rede Escolar Horizonte, an agency delivered 1500 particles that spun without saying anything and heated up families' phones. Orbit with Purpose swaps the ornament for one dot per school, stops the scene off screen and respects those who asked for less motion.",
+      "purpose": "Builds a hero scene in canvas, with no library, where every element represents real data, and audits off-screen pause, reduced motion, pixel density and phone layout.",
+      "useCases": [
+        "Create a website opening that shows the size of the catalog.",
+        "Review a background animation that weighs down phones."
+      ],
+      "scenario": {
+        "title": "The particles that said nothing",
+        "context": "Fictional scenario: the [COMPANY] page has an animated background that does not represent [REAL DATA].",
+        "request": "Use this skill to redo the opening scene of [COMPANY]. Define its purpose in one sentence, tie each element to [REAL DATA], build the scene in canvas with no library, apply the guards and run the checker before deciding.",
+        "output": "Canvas scene, data map, fix plan and decision.",
+        "check": "An element without real data stays out, and nothing is published without phone measurement."
+      },
+      "steps": [
+        "Write the purpose of the scene.",
+        "Tie each element to a piece of data.",
+        "Audit the code and measure on a phone."
+      ],
+      "boundary": "It covers canvas 2D. The tool reads the code and does not run the scene, so measuring on a phone is up to whoever applies it."
+    },
+    "es": {
+      "alias": "Órbita con Propósito",
+      "tagline": "Cada punto en pantalla es un dato real, y la escena para cuando debe.",
+      "story": "En la ficticia Rede Escolar Horizonte, una agencia entregó 1500 partículas que giraban sin decir nada y calentaban el móvil de las familias. Órbita con Propósito cambia el adorno por un punto para cada escuela, detiene la escena fuera de pantalla y respeta a quien pidió menos movimiento.",
+      "purpose": "Construye una escena de hero en canvas, sin biblioteca, donde cada elemento representa un dato real, y audita la pausa fuera de pantalla, el movimiento reducido, la densidad y el ajuste en el móvil.",
+      "useCases": [
+        "Crear una apertura de sitio que muestre el tamaño del catálogo.",
+        "Revisar una animación de fondo que pesa en el móvil."
+      ],
+      "scenario": {
+        "title": "Las partículas que no decían nada",
+        "context": "Escenario ficticio: la página de [EMPRESA] tiene un fondo animado que no representa [DATO REAL].",
+        "request": "Usa esta skill para rehacer la escena de apertura de [EMPRESA]. Define la función en una frase, vincula cada elemento a [DATO REAL], monta la escena en canvas sin biblioteca, aplica las protecciones y ejecuta el verificador antes de decidir.",
+        "output": "Escena en canvas, mapa de datos, plan de corrección y decisión.",
+        "check": "Un elemento sin dato real no entra, y nada se publica sin medición en móvil."
+      },
+      "steps": [
+        "Escribe la función de la escena.",
+        "Vincula cada elemento a un dato.",
+        "Audita el código y mide en el móvil."
+      ],
+      "boundary": "Cubre canvas 2D. La herramienta lee el código y no ejecuta la escena, así que la medición en móvil queda a cargo de quien la aplica."
+    }
+  },
+  {
+    "id": "movimento-acessivel-em-sites",
+    "pt": {
+      "alias": "Pausa Gentil",
+      "tagline": "O site se mexe quando ajuda e para quando a pessoa pede.",
+      "story": "Na fictícia Pousada Serra Azul, hóspedes reclamavam de enjoo: o selo de reserva piscava sem parar e a rolagem parecia ter vontade própria. Pausa Gentil lista cada movimento, pergunta para que ele serve, dá um botão de pausa e devolve a rolagem a quem está lendo.",
+      "purpose": "Planeja e audita o movimento de um site, com entradas, rolagem, controle de pausa, preferência de movimento reduzido, conteúdo visível sem JavaScript e custo no celular.",
+      "useCases": [
+        "Revisar efeitos antes de publicar uma página.",
+        "Resolver reclamações de enjoo ou travamento."
+      ],
+      "scenario": {
+        "title": "O selo que não parava",
+        "context": "Cenário fictício: o site de [EMPRESA] tem [EFEITOS] e recebeu reclamações de [PÚBLICO].",
+        "request": "Use esta skill para revisar o movimento do site de [EMPRESA]. Liste cada peça que se mexe e a função dela, rode a auditoria nos arquivos, corrija primeiro o que traz risco à pessoa e registre os testes manuais que ainda faltam.",
+        "output": "Inventário, auditoria, plano de correção e decisão.",
+        "check": "Movimento automático precisa de pausa, e teste não feito fica marcado como não testado."
+      },
+      "steps": [
+        "Liste o que se mexe e por quê.",
+        "Rode a auditoria nos arquivos.",
+        "Teste com movimento reduzido e no celular."
+      ],
+      "boundary": "Lê arquivos sem executar a página. Não é certificado de conformidade, e os testes manuais são obrigatórios."
+    },
+    "en": {
+      "alias": "Gentle Pause",
+      "tagline": "The site moves when it helps and stops when the person asks.",
+      "story": "At the fictional Pousada Serra Azul, guests complained of nausea: the booking badge blinked nonstop and scrolling seemed to have a will of its own. Gentle Pause lists every movement, asks what it is for, adds a pause button and hands scrolling back to the reader.",
+      "purpose": "Plans and audits motion on a website, covering entrances, scrolling, pause control, reduced motion preference, content visible without JavaScript and phone cost.",
+      "useCases": [
+        "Review effects before publishing a page.",
+        "Resolve complaints of nausea or stuttering."
+      ],
+      "scenario": {
+        "title": "The badge that never stopped",
+        "context": "Fictional scenario: the [COMPANY] website has [EFFECTS] and received complaints from [AUDIENCE].",
+        "request": "Use this skill to review the motion on the [COMPANY] website. List each moving piece and its purpose, run the audit on the files, fix first what puts people at risk and record the manual tests still missing.",
+        "output": "Inventory, audit, fix plan and decision.",
+        "check": "Automatic motion needs a pause, and a test not done stays marked as not tested."
+      },
+      "steps": [
+        "List what moves and why.",
+        "Run the audit on the files.",
+        "Test with reduced motion and on a phone."
+      ],
+      "boundary": "It reads files without running the page. It is not a conformance certificate, and manual tests are mandatory."
+    },
+    "es": {
+      "alias": "Pausa Amable",
+      "tagline": "El sitio se mueve cuando ayuda y para cuando la persona lo pide.",
+      "story": "En la ficticia Pousada Serra Azul, los huéspedes se quejaban de mareo: el sello de reserva parpadeaba sin parar y el desplazamiento parecía tener voluntad propia. Pausa Amable enumera cada movimiento, pregunta para qué sirve, añade un botón de pausa y devuelve el desplazamiento a quien lee.",
+      "purpose": "Planifica y audita el movimiento de un sitio, con entradas, desplazamiento, control de pausa, preferencia de movimiento reducido, contenido visible sin JavaScript y coste en el móvil.",
+      "useCases": [
+        "Revisar efectos antes de publicar una página.",
+        "Resolver quejas de mareo o bloqueo."
+      ],
+      "scenario": {
+        "title": "El sello que no paraba",
+        "context": "Escenario ficticio: el sitio de [EMPRESA] tiene [EFECTOS] y recibió quejas de [PÚBLICO].",
+        "request": "Usa esta skill para revisar el movimiento del sitio de [EMPRESA]. Enumera cada pieza que se mueve y su función, ejecuta la auditoría en los archivos, corrige primero lo que supone riesgo para la persona y registra las pruebas manuales que faltan.",
+        "output": "Inventario, auditoría, plan de corrección y decisión.",
+        "check": "El movimiento automático necesita pausa, y una prueba no hecha queda marcada como no probada."
+      },
+      "steps": [
+        "Enumera lo que se mueve y por qué.",
+        "Ejecuta la auditoría en los archivos.",
+        "Prueba con movimiento reducido y en el móvil."
+      ],
+      "boundary": "Lee archivos sin ejecutar la página. No es un certificado de conformidad, y las pruebas manuales son obligatorias."
+    }
+  },
+  {
+    "id": "licenca-antes-de-copiar-componente",
+    "pt": {
+      "alias": "Selo de Origem",
+      "tagline": "Antes de copiar, descobre de quem é e o que foi permitido.",
+      "story": "Na fictícia Construtora Alvorada, a equipe quase publicou um cartão exportado por um plugin e um fundo achado numa galeria sem licença. Selo de Origem separa o que é do plugin, da biblioteca e do código gerado, guarda a prova com data e mostra o caminho quando nada foi autorizado.",
+      "purpose": "Confere se um componente, template, código exportado ou asset pode ser usado, separando a licença de cada camada, registrando evidência e bloqueando cópia sem permissão.",
+      "useCases": [
+        "Decidir se um componente encontrado pode entrar no site.",
+        "Organizar licenças antes de entregar um projeto."
+      ],
+      "scenario": {
+        "title": "O cartão do plugin",
+        "context": "Cenário fictício: [EQUIPE] quer usar [COMPONENTE] encontrado em [ORIGEM], que não informa licença.",
+        "request": "Use esta skill para decidir se [EQUIPE] pode usar [COMPONENTE]. Separe as camadas de plugin, biblioteca e código exportado, registre a licença de cada uma com link e data, e diga o que fazer com o que não tem licença informada.",
+        "output": "Inventário por camada, decisão por item e plano.",
+        "check": "Item sem licença nunca pode aparecer como copiado, e a mesma página não prova duas camadas."
+      },
+      "steps": [
+        "Separe as camadas da peça.",
+        "Procure e registre cada licença.",
+        "Rode o verificador do inventário."
+      ],
+      "boundary": "Não é parecer jurídico. Copyleft em produto, contrato ou valor relevante vai para profissional habilitado."
+    },
+    "en": {
+      "alias": "Seal of Origin",
+      "tagline": "Before copying, it finds out who owns it and what was allowed.",
+      "story": "At the fictional Construtora Alvorada, the team almost published a card exported by a plugin and a background found in a gallery with no license. Seal of Origin separates what belongs to the plugin, the library and the generated code, keeps dated proof and shows the way when nothing was authorized.",
+      "purpose": "Checks whether a component, template, exported code or asset can be used, separating the license of each layer, recording evidence and blocking copies without permission.",
+      "useCases": [
+        "Decide whether a component you found can go on the site.",
+        "Organize licenses before delivering a project."
+      ],
+      "scenario": {
+        "title": "The plugin card",
+        "context": "Fictional scenario: [TEAM] wants to use [COMPONENT] found at [SOURCE], which states no license.",
+        "request": "Use this skill to decide whether [TEAM] can use [COMPONENT]. Separate the plugin, library and exported code layers, record each license with link and date, and say what to do with whatever has no stated license.",
+        "output": "Inventory by layer, decision per item and plan.",
+        "check": "An item with no license can never appear as copied, and one page does not prove two layers."
+      },
+      "steps": [
+        "Separate the layers of the piece.",
+        "Find and record each license.",
+        "Run the inventory checker."
+      ],
+      "boundary": "It is not legal advice. Copyleft in a product, contracts or significant sums go to a qualified professional."
+    },
+    "es": {
+      "alias": "Sello de Origen",
+      "tagline": "Antes de copiar, averigua de quién es y qué se permitió.",
+      "story": "En la ficticia Construtora Alvorada, el equipo casi publicó una tarjeta exportada por un plugin y un fondo hallado en una galería sin licencia. Sello de Origen separa lo que es del plugin, de la biblioteca y del código generado, guarda la prueba con fecha y muestra el camino cuando nada se autorizó.",
+      "purpose": "Comprueba si un componente, plantilla, código exportado o recurso se puede usar, separando la licencia de cada capa, registrando evidencia y bloqueando la copia sin permiso.",
+      "useCases": [
+        "Decidir si un componente encontrado puede entrar en el sitio.",
+        "Organizar licencias antes de entregar un proyecto."
+      ],
+      "scenario": {
+        "title": "La tarjeta del plugin",
+        "context": "Escenario ficticio: [EQUIPO] quiere usar [COMPONENTE] encontrado en [ORIGEN], que no informa licencia.",
+        "request": "Usa esta skill para decidir si [EQUIPO] puede usar [COMPONENTE]. Separa las capas de plugin, biblioteca y código exportado, registra la licencia de cada una con enlace y fecha, y di qué hacer con lo que no tiene licencia informada.",
+        "output": "Inventario por capa, decisión por elemento y plan.",
+        "check": "Un elemento sin licencia nunca puede aparecer como copiado, y la misma página no prueba dos capas."
+      },
+      "steps": [
+        "Separa las capas de la pieza.",
+        "Busca y registra cada licencia.",
+        "Ejecuta el verificador del inventario."
+      ],
+      "boundary": "No es asesoramiento jurídico. El copyleft en un producto, un contrato o un importe relevante van a un profesional habilitado."
+    }
+  },
+  {
+    "id": "landing-rapida-e-core-web-vitals",
+    "pt": {
+      "alias": "Cronômetro da Primeira Dobra",
+      "tagline": "Mede primeiro, mexe depois e só comemora com número comparável.",
+      "story": "No fictício Curso Trilha Certa, a campanha levava gente para uma página que demorava quase cinco segundos no celular. A imagem principal carregava por último e um chat travava o início. Cronômetro da Primeira Dobra mede antes, liga cada correção a uma métrica e recusa comemoração sem comparação justa.",
+      "purpose": "Acelera uma landing a partir de medições de LCP, INP e CLS, encontra causas prováveis em imagem, fonte e script de terceiros, e só aceita melhora com comparação equivalente.",
+      "useCases": [
+        "Descobrir por que a landing demora no celular.",
+        "Provar o efeito de uma otimização."
+      ],
+      "scenario": {
+        "title": "A imagem que chegava por último",
+        "context": "Cenário fictício: a landing de [EMPRESA] recebe tráfego pago e demora a abrir em [APARELHO].",
+        "request": "Use esta skill para acelerar a landing de [EMPRESA]. Leia as medições de campo e de laboratório antes de mexer, audite o HTML, ligue cada correção a uma métrica, e depois compare o antes e o depois na mesma origem e no mesmo aparelho.",
+        "output": "Medição, achados, plano por métrica e decisão.",
+        "check": "Sem medição anterior não há correção, e laboratório sozinho não aprova os Core Web Vitals."
+      },
+      "steps": [
+        "Registre as medições de antes.",
+        "Audite o HTML e confirme a causa.",
+        "Corrija e compare nas mesmas condições."
+      ],
+      "boundary": "Não coleta as métricas e não executa JavaScript. Não promete nota nem posição em buscadores."
+    },
+    "en": {
+      "alias": "First Screen Stopwatch",
+      "tagline": "Measures first, changes later and only celebrates with comparable numbers.",
+      "story": "At the fictional Curso Trilha Certa, the campaign sent people to a page that took almost five seconds on a phone. The main image loaded last and a chat widget blocked the start. First Screen Stopwatch measures first, ties each fix to a metric and refuses to celebrate without a fair comparison.",
+      "purpose": "Speeds up a landing page from LCP, INP and CLS measurements, finds likely causes in images, fonts and third-party scripts, and only accepts an improvement with an equivalent comparison.",
+      "useCases": [
+        "Find out why the landing page is slow on phones.",
+        "Prove the effect of an optimization."
+      ],
+      "scenario": {
+        "title": "The image that arrived last",
+        "context": "Fictional scenario: the [COMPANY] landing page gets paid traffic and is slow to open on [DEVICE].",
+        "request": "Use this skill to speed up the [COMPANY] landing page. Read field and lab measurements before changing anything, audit the HTML, tie each fix to a metric, and then compare before and after from the same source on the same device.",
+        "output": "Measurement, findings, plan by metric and decision.",
+        "check": "With no earlier measurement there is no fix, and lab data alone does not pass Core Web Vitals."
+      },
+      "steps": [
+        "Record the before measurements.",
+        "Audit the HTML and confirm the cause.",
+        "Fix and compare under the same conditions."
+      ],
+      "boundary": "It does not collect the metrics or run JavaScript. It promises neither a score nor a position in search engines."
+    },
+    "es": {
+      "alias": "Cronómetro de la Primera Pantalla",
+      "tagline": "Mide primero, cambia después y solo celebra con números comparables.",
+      "story": "En el ficticio Curso Trilha Certa, la campaña llevaba a la gente a una página que tardaba casi cinco segundos en el móvil. La imagen principal cargaba la última y un chat bloqueaba el inicio. Cronómetro de la Primera Pantalla mide antes, vincula cada corrección a una métrica y rechaza celebrar sin una comparación justa.",
+      "purpose": "Acelera una landing a partir de mediciones de LCP, INP y CLS, encuentra causas probables en imagen, fuente y script de terceros, y solo acepta una mejora con comparación equivalente.",
+      "useCases": [
+        "Descubrir por qué la landing tarda en el móvil.",
+        "Demostrar el efecto de una optimización."
+      ],
+      "scenario": {
+        "title": "La imagen que llegaba la última",
+        "context": "Escenario ficticio: la landing de [EMPRESA] recibe tráfico de pago y tarda en abrir en [DISPOSITIVO].",
+        "request": "Usa esta skill para acelerar la landing de [EMPRESA]. Lee las mediciones de campo y de laboratorio antes de cambiar nada, audita el HTML, vincula cada corrección a una métrica y después compara el antes y el después en el mismo origen y dispositivo.",
+        "output": "Medición, hallazgos, plan por métrica y decisión.",
+        "check": "Sin medición previa no hay corrección, y el laboratorio por sí solo no aprueba los Core Web Vitals."
+      },
+      "steps": [
+        "Registra las mediciones de antes.",
+        "Audita el HTML y confirma la causa.",
+        "Corrige y compara en las mismas condiciones."
+      ],
+      "boundary": "No recoge las métricas ni ejecuta JavaScript. No promete nota ni posición en buscadores."
+    }
   }
 ]

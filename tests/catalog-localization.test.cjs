@@ -203,7 +203,7 @@ test("localization preserves schema, all identities and numerical facts without 
   assert.strictEqual(localizeCatalog(source, "unsupported"), source);
   for (const locale of ["en", "es"]) {
     const localized = localizeCatalog(source, locale);
-    assert.equal(localized.skills.length, 169);
+    assert.equal(localized.skills.length, 173);
     assert.equal(localized.journeys.length, 5);
     assertSameContract(source, localized);
     assert.deepEqual(

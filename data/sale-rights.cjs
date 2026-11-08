@@ -5,6 +5,10 @@
 
 // Sem marca de terceiro. Autoria declarada por João em 08/11/2026.
 const ownDeclared = [
+  "cena-de-hero-em-canvas",
+  "movimento-acessivel-em-sites",
+  "licenca-antes-de-copiar-componente",
+  "landing-rapida-e-core-web-vitals",
   "qualidade-de-dados-e-contratos",
   "reducao-de-custos-de-nuvem",
   "auditoria-de-acessibilidade-web",

@@ -172,6 +172,10 @@ const rows = [
   ["estrategia-de-testes-por-risco", "3444", "Prioriza testes por risco, exige casos negativos e usa o histórico para achar instáveis e lentos."],
   ["mapa-de-divida-tecnica", "3334", "Combina frequência de mudança e linhas alteradas para achar pontos críticos e exige plano com métrica."],
   ["postmortem-sem-culpa", "2334", "Conduz a análise da queda com impacto, fatores e ações que mudam o sistema, rejeitando culpa pessoal."],
+  ["cena-de-hero-em-canvas", "4334", "Constrói cena em canvas com dado real e audita pausa, preferência de movimento, densidade e ajuste no celular."],
+  ["movimento-acessivel-em-sites", "3444", "Audita CSS, JavaScript e HTML por barreiras de movimento e custo no celular, e exige testes manuais antes de publicar."],
+  ["licenca-antes-de-copiar-componente", "3345", "Separa licença por camada, bloqueia cópia sem licença e exige evidência datada, sem substituir parecer jurídico."],
+  ["landing-rapida-e-core-web-vitals", "3445", "Cruza medições de campo e laboratório com causas no HTML e só aceita melhora com comparação equivalente."],
 ];
 const dimensions = ["depth", "scope", "verification", "reuse"];
 const byId = new Map(rows.map(row => [row[0], row]));

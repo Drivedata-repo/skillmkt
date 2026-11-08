@@ -5086,5 +5086,101 @@
   "Depende de logs e relatos do ocorrido": [
     "Depends on logs and accounts of what happened",
     "Depende de registros y relatos de lo ocurrido"
+  ],
+  "Cena de hero com função, em canvas": [
+    "Hero scene with a purpose, in canvas",
+    "Escena de hero con función, en canvas"
+  ],
+  "O site tem uma animação bonita que pesa no celular e não diz nada sobre o produto.": [
+    "The website has a pretty animation that weighs down phones and says nothing about the product.",
+    "El sitio tiene una animación bonita que pesa en el móvil y no dice nada del producto."
+  ],
+  "Cena em canvas em que cada elemento é um dado real": [
+    "Canvas scene where every element is real data",
+    "Escena en canvas donde cada elemento es un dato real"
+  ],
+  "Auditoria das travas e plano de correção": [
+    "Guard audit and fix plan",
+    "Auditoría de protecciones y plan de corrección"
+  ],
+  "Python 3 para o verificador de cena": [
+    "Python 3 for the scene checker",
+    "Python 3 para el verificador de escena"
+  ],
+  "Medição em celular real fica com quem aplica": [
+    "Measuring on a real phone is up to whoever applies it",
+    "La medición en móvil real queda a cargo de quien la aplica"
+  ],
+  "Movimento acessível em sites": [
+    "Accessible motion on websites",
+    "Movimiento accesible en sitios web"
+  ],
+  "A animação do site enjoa, distrai e trava a rolagem no celular.": [
+    "The website animation causes nausea, distracts and makes scrolling stutter on phones.",
+    "La animación del sitio marea, distrae y traba el desplazamiento en el móvil."
+  ],
+  "Inventário do movimento com a função de cada peça": [
+    "Motion inventory with the purpose of each piece",
+    "Inventario del movimiento con la función de cada pieza"
+  ],
+  "Auditoria de pausa, preferência e custo no celular": [
+    "Audit of pause, preference and phone cost",
+    "Auditoría de pausa, preferencia y coste en el móvil"
+  ],
+  "Python 3 e arquivos CSS, JS e HTML": [
+    "Python 3 and CSS, JS and HTML files",
+    "Python 3 y archivos CSS, JS y HTML"
+  ],
+  "Exige testes manuais e não é certificado": [
+    "Requires manual tests and is not a certificate",
+    "Exige pruebas manuales y no es un certificado"
+  ],
+  "Checagem de licença antes de copiar componente": [
+    "License check before copying a component",
+    "Comprobación de licencia antes de copiar un componente"
+  ],
+  "A equipe copia um componente bonito da internet e ninguém sabe se podia.": [
+    "The team copies a nice component from the internet and nobody knows if that was allowed.",
+    "El equipo copia un componente bonito de internet y nadie sabe si podía."
+  ],
+  "Inventário por camada com evidência e data": [
+    "Inventory by layer with evidence and date",
+    "Inventario por capa con evidencia y fecha"
+  ],
+  "Decisão por item e caminho para o que não tem licença": [
+    "Decision per item and a path for what has no license",
+    "Decisión por elemento y camino para lo que no tiene licencia"
+  ],
+  "Python 3 e inventário em CSV": [
+    "Python 3 and a CSV inventory",
+    "Python 3 e inventario en CSV"
+  ],
+  "Não é parecer jurídico": [
+    "It is not legal advice",
+    "No es asesoramiento jurídico"
+  ],
+  "Landing rápida e Core Web Vitals": [
+    "Fast landing page and Core Web Vitals",
+    "Landing rápida y Core Web Vitals"
+  ],
+  "A campanha paga leva gente para uma página que demora a abrir e o visitante desiste.": [
+    "The paid campaign sends people to a page that is slow to open and visitors give up.",
+    "La campaña de pago lleva a la gente a una página que tarda en abrir y el visitante desiste."
+  ],
+  "Leitura de LCP, INP e CLS com causas prováveis": [
+    "LCP, INP and CLS reading with likely causes",
+    "Lectura de LCP, INP y CLS con causas probables"
+  ],
+  "Plano por métrica e comparação de antes e depois": [
+    "Plan by metric and before and after comparison",
+    "Plan por métrica y comparación de antes y después"
+  ],
+  "Python 3, HTML e medições em CSV": [
+    "Python 3, HTML and measurements in CSV",
+    "Python 3, HTML y mediciones en CSV"
+  ],
+  "As medições vêm das suas ferramentas": [
+    "Measurements come from your own tools",
+    "Las mediciones vienen de tus herramientas"
   ]
 }

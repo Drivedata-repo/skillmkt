@@ -3213,6 +3213,82 @@
       "rationale": "Conduz a análise da queda com impacto, fatores e ações que mudam o sistema, rejeitando culpa pessoal.",
       "assessmentType": "documentary",
       "executionVerified": false
+    },
+    {
+      "id": "cena-de-hero-em-canvas",
+      "code": "DD-170",
+      "version": "1.2.1",
+      "packageSha256": "74d74362298fa0d180e0cb3d26a07380a682cd7db17c503fe8998b0556dd373d",
+      "sourceSha256": "4502280ce8e3c9cda9c11645fae579eca5c272f13b602b0a8fddd863a777b967",
+      "contractSha256": "4502280ce8e3c9cda9c11645fae579eca5c272f13b602b0a8fddd863a777b967",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Constrói cena em canvas com dado real e audita pausa, preferência de movimento, densidade e ajuste no celular.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "movimento-acessivel-em-sites",
+      "code": "DD-171",
+      "version": "1.2.1",
+      "packageSha256": "cea660c13d13a55a14387e86f5f242db5e38f478f3d61505b00456a4095b3ebf",
+      "sourceSha256": "1905470a98f5f4077ebaa36615aab067814ee9158eea80e8876d0aae471b80cb",
+      "contractSha256": "1905470a98f5f4077ebaa36615aab067814ee9158eea80e8876d0aae471b80cb",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Audita CSS, JavaScript e HTML por barreiras de movimento e custo no celular, e exige testes manuais antes de publicar.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "licenca-antes-de-copiar-componente",
+      "code": "DD-172",
+      "version": "1.2.1",
+      "packageSha256": "9c2a074921d98933001e9e9f7bfb1d97049d03bc221539100fa0fc1da1e705ed",
+      "sourceSha256": "02e1a8493b8ce6f0f4e567936ba4617302b7a7e094132c00230ef1c2770021f5",
+      "contractSha256": "02e1a8493b8ce6f0f4e567936ba4617302b7a7e094132c00230ef1c2770021f5",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Separa licença por camada, bloqueia cópia sem licença e exige evidência datada, sem substituir parecer jurídico.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "landing-rapida-e-core-web-vitals",
+      "code": "DD-173",
+      "version": "1.2.1",
+      "packageSha256": "307982a9e711363a1d26f7f0f3bb7efc3081685f461d12ef742166d8d5c2fd02",
+      "sourceSha256": "bebd6cc462076e401fb3ed1d20bc81d596a9e42a5345687d4ec0fcd08c18a168",
+      "contractSha256": "bebd6cc462076e401fb3ed1d20bc81d596a9e42a5345687d4ec0fcd08c18a168",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Cruza medições de campo e laboratório com causas no HTML e só aceita melhora com comparação equivalente.",
+      "assessmentType": "documentary",
+      "executionVerified": false
     }
   ]
 }

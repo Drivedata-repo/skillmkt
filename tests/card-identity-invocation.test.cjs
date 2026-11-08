@@ -7,8 +7,8 @@ const profiles = require("../dist/invocation-profiles.js"), dictionary = require
 const hash = value => createHash("sha256").update(value).digest("hex");
 
 test("137 card identities are unique, reproducible and independent of price, prose and version", async () => {
-  assert.equal(new Set(catalog.skills.map(s => s.identity.id)).size, 169);
-  assert.equal(new Set(catalog.skills.map(s => s.identity.serial)).size, 169);
+  assert.equal(new Set(catalog.skills.map(s => s.identity.id)).size, 173);
+  assert.equal(new Set(catalog.skills.map(s => s.identity.serial)).size, 173);
   for (const s of catalog.skills) {
     assert.equal(s.identity.id, "ddk_" + hash("drivedata:deck:card:v1\n" + s.code));
     assert.ok(await identity.verify(s), s.code);
