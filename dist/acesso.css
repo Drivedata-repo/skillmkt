@@ -1,0 +1,110 @@
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/inter.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --night: #070c13;
+  --drive: #075cdd;
+  --green: #34d59a;
+  --paper: #edf2f7;
+  --ink: #172e46;
+  --muted: #475d72;
+  --red: #b3261e;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px 16px;
+  place-items: center;
+  background: var(--night);
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.box {
+  width: min(400px, 100%);
+  padding: 28px 24px;
+  border-top: 3px solid var(--green);
+  border-radius: 4px;
+  background: var(--paper);
+}
+.brand {
+  margin: 0 0 22px;
+  font-weight: 700;
+}
+form[hidden] {
+  display: none;
+}
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+form p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: 600;
+  font-size: 15px;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #8096ab;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+button[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--drive);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button[type="submit"]:disabled {
+  background: #5b7087;
+  cursor: progress;
+}
+.link {
+  display: block;
+  margin: 14px auto 0;
+  padding: 4px;
+  border: 0;
+  background: none;
+  color: var(--drive);
+  font: inherit;
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--drive);
+  outline-offset: 2px;
+}
+.message {
+  min-height: 1.5em;
+  margin: 14px 0 0;
+  font-size: 15px;
+}
+.message.error {
+  color: var(--red);
+}

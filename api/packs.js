@@ -1,14 +1,14 @@
-const { requireSession } = require("../lib/auth.cjs");
+const { requireAccess, restrictPacks } = require("../lib/access.cjs");
 const { send, failure, initializeLocale } = require("../lib/http.cjs");
 const {
   getPacks,
   validatePackQuery,
   packMessage,
 } = require("../lib/packs.cjs");
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   const locale = initializeLocale(req, res);
   try {
-    requireSession(req);
+    const access = await requireAccess(req);
     if (req.method !== "GET")
       return send(res, 405, { error: "Método não permitido." });
     if (!validatePackQuery(req))
@@ -19,7 +19,7 @@ module.exports = (req, res) => {
       "X-Content-Type-Options": "nosniff",
       "Content-Language": locale === "pt" ? "pt-BR" : locale,
     });
-    res.end(JSON.stringify(getPacks(locale)));
+    res.end(JSON.stringify(restrictPacks(getPacks(locale), access)));
   } catch (e) {
     failure(res, e);
   }

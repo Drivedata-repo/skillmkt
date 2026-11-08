@@ -234,7 +234,7 @@ test("reference checks detect changed fixture facts rather than blessing any suc
   assert.equal(verifyReference(original).passed, true);
   assert.equal(verifyReference(changed).passed, false);
 });
-test("catalog runtime context stays authenticated, validated and localized", () => {
+test("catalog runtime context stays authenticated, validated and localized", async () => {
   const auth = require("../lib/auth.cjs"),
     handler = require("../api/catalog.js");
   const previousHash = process.env.DEMO_PASSWORD_HASH,
@@ -262,14 +262,14 @@ test("catalog runtime context stays authenticated, validated and localized", () 
       };
     }
     const noAuth = response();
-    handler(
+    await handler(
       { method: "GET", url: "/api/catalog?lang=en&runtime=codex", headers: {} },
       noAuth,
     );
     assert.equal(noAuth.status, 401);
     assert.deepEqual(Object.keys(noAuth.data), ["error"]);
     const invalid = response();
-    handler(
+    await handler(
       {
         method: "GET",
         url: "/api/catalog?lang=es&runtime=administrator",
@@ -280,7 +280,7 @@ test("catalog runtime context stays authenticated, validated and localized", () 
     assert.equal(invalid.status, 400);
     assert.match(invalid.data.error, /Elige filtros/);
     const good = response();
-    handler(
+    await handler(
       {
         method: "GET",
         url:

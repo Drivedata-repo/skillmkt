@@ -6,9 +6,9 @@
     {
       "id": "agent-development",
       "code": "DD-001",
-      "version": "1.2.0",
-      "packageSha256": "cfef40f3f2fe64d5a9b8cacfb91dfb18889736f1fd49c12054746ed93a0558b5",
-      "sourceSha256": "b3a562148c11b821debf69263d7e2c50f919ba27d0a8e2ed9e44652f97ef1d6e",
+      "version": "1.2.1",
+      "packageSha256": "f96a344fe71faf9dc0d37daaa63e03636384a2ab1492f396eefddeef1de8d8df",
+      "sourceSha256": "88163f97ab814717b04f07042bfe77b81928b8bd445cd4d39e6551eba4140b03",
       "contractSha256": "8654e29e84e0aee5605569779ca126b578dd686df08bf7e47459dea82aeb59da",
       "priceCents": 3200,
       "scores": {
@@ -25,8 +25,8 @@
     {
       "id": "ambiente-dev-windows",
       "code": "DD-002",
-      "version": "1.2.0",
-      "packageSha256": "8e37ec27514c3a686a9115fb2dbc9f1ce94e26faa0736623c0c227d68f59363c",
+      "version": "1.2.1",
+      "packageSha256": "ea743b166c40965088fcdb321adbd77ae0ff1a1e865a7e8f24b8c228cea4ea0b",
       "sourceSha256": "6e6d83f4a61ab3ef9e913862824139c92d7b742910899b09b0ec3d15ea383341",
       "contractSha256": "f76724842f586bf60ada032ad4fda4bc473eea437a17e07e3545dd6bcd1d2186",
       "priceCents": 2200,
@@ -44,8 +44,8 @@
     {
       "id": "automacao-documentos-office",
       "code": "DD-003",
-      "version": "1.2.0",
-      "packageSha256": "a7071953b83111f30052237ffb7e533bc6b39b03fe694a7821a42583439129ed",
+      "version": "1.2.1",
+      "packageSha256": "c5ef3b8cadc9a0fce18e67919d097a50caaf2e6e9f9cc0d0d1cee89b63c9db30",
       "sourceSha256": "0ac8ccc780bdc5d0e74d10612d107d2c39e5ee4751be9081cab4c646d42d649c",
       "contractSha256": "caa4a42dd407bc8504e1ff056532af1f064433c55bdcb3d3cfb5bdcbcf6b9f0b",
       "priceCents": 3700,
@@ -63,9 +63,9 @@
     {
       "id": "brief",
       "code": "DD-004",
-      "version": "1.2.0",
-      "packageSha256": "4f32700bb5dc9151dfd2e512a0ddbf904420c3b9f007a1f7e6400310c2441bc5",
-      "sourceSha256": "ca7cd3bff0576704aea586e8d8b4d7ca36ef8971b9d42754e792463fcbc035d9",
+      "version": "1.2.1",
+      "packageSha256": "33e8729d438f05c4fba0ddadba6c22fa78af4df9982dd70aecf15e9193a1c9a4",
+      "sourceSha256": "c4aa28a01c25fcb0e1432335f8d83764625dfd79489e1772da7b4d2ec9163a11",
       "contractSha256": "52a709a52fb659fddb5f60083fab384b562d1715c04c705d998f48251a5111ab",
       "priceCents": 2700,
       "scores": {
@@ -82,9 +82,9 @@
     {
       "id": "build-mcp-app",
       "code": "DD-005",
-      "version": "1.2.0",
-      "packageSha256": "38ef04e184b95e74ec44dcb14a572873b7c6b0222bfb27ab25a3c681c16288be",
-      "sourceSha256": "856c49466f76d849e743231e69b3ad6af328df39674d9949f9c52adb362e50fb",
+      "version": "1.2.1",
+      "packageSha256": "79d6b013c1de967546317535c56e5b74c87a5683858562c7e4a68da02124e8e2",
+      "sourceSha256": "8af0fc7edd1a8a229bc7fe8ea3d509b5799cfac4fed5d7e3f43a4e90a8275ec9",
       "contractSha256": "52f91254931608c73c0f8eb7faccbc86cb3192087ab1006d3a5f8f22f364ab11",
       "priceCents": 4200,
       "scores": {
@@ -101,9 +101,9 @@
     {
       "id": "build-mcp-server",
       "code": "DD-006",
-      "version": "1.2.0",
-      "packageSha256": "8b5f0bf506a49d5ce8b35259d4f96c652aea769d61e101552bbed6452e8e7e1c",
-      "sourceSha256": "f63ef263549fd49dccee832ffa8bb587c22b76cf096d8debfd88df215932636f",
+      "version": "1.2.1",
+      "packageSha256": "16e9666d5c72834638b9099987c246e7a191b53d3aade52cf858d37fb2a1bb46",
+      "sourceSha256": "d6c6ebb4cc604b111168ee2ac34f5515034261fb29dd21fb4349ec49127cb495",
       "contractSha256": "34614e7b780a5804aa7fa6c6b2f4a39491396f00a48dec419cf46964e4ef282e",
       "priceCents": 4200,
       "scores": {
@@ -120,9 +120,9 @@
     {
       "id": "build-mcpb",
       "code": "DD-007",
-      "version": "1.2.0",
-      "packageSha256": "ef864099810fb882f8bae6fd677af1922cec92784809ac54ab610eef5522268d",
-      "sourceSha256": "7cfd9ccb279c585ff5aa20837b49c6090b9005ecdcf512a03e389e2258749a9d",
+      "version": "1.2.1",
+      "packageSha256": "1ad156e5a9c2845736927d6bfebb41e1e2fe7f100ca87c52884b9d8188f3d928",
+      "sourceSha256": "a33cf7e28a83d10979a7e075bbf66b2da3c3b273ec4583b5ccecdbb9d266f73f",
       "contractSha256": "c9c32a5353eb5cc8839e47ef802e5cb6ef8f7274b24b7c3546edd0c41efe269b",
       "priceCents": 3200,
       "scores": {
@@ -139,9 +139,9 @@
     {
       "id": "cardputer-buddy",
       "code": "DD-008",
-      "version": "1.2.0",
-      "packageSha256": "fb802783176e75849c6b6b595a0e9221580a27192011b6023784b4a2a667bc36",
-      "sourceSha256": "5515ba2845eb5676dde21d700ebfeba52a08dd42182fea7351e0e01d194a0da4",
+      "version": "1.2.1",
+      "packageSha256": "03814ed29622ae1a2b58990c972a85702197f2c7b16a54fb2f19cc5b8bb05421",
+      "sourceSha256": "50009a1867a258289bae40cea15c249d36ca32f8f3d4f6df4c2982102a025210",
       "contractSha256": "c841e6bf14ab8833f74cc62a05d045f8079b881ffeb8ab07c0c740cdec2532e2",
       "priceCents": 2700,
       "scores": {
@@ -158,8 +158,8 @@
     {
       "id": "claude-acta-drivedata",
       "code": "DD-009",
-      "version": "1.2.0",
-      "packageSha256": "f1c28962254e054db85f0455ee476716da7e61ea5a3450545aa19bece7e85541",
+      "version": "1.2.1",
+      "packageSha256": "ae9025367dc1a79592067f232abb4db234899632da7b313864010d2f42c13270",
       "sourceSha256": "6c6e64a06d707242fedd689b9d7fc1822737348131b22e480644d18f543f0641",
       "contractSha256": "433e1fb0e380cdf504cecdfc2312663db6b4f6c9fcf7c6d8322b3b6c30ba45b8",
       "priceCents": 2700,
@@ -177,9 +177,9 @@
     {
       "id": "claude-automation-recommender",
       "code": "DD-010",
-      "version": "1.2.0",
-      "packageSha256": "54c3f645cb856dfb12ecebb993bd742bc5bcecc5015a96f375f0b344313f935c",
-      "sourceSha256": "cee4d5102b3ac24e44d5291d496429e56620f9a2fed71b15b6ed55ce649a377b",
+      "version": "1.2.1",
+      "packageSha256": "3b40c4441336e84c0bc6c3d3aeb5d6c26366fceaee8132246437d95a6cfee69a",
+      "sourceSha256": "9eebe59823e1e250ed5692e9b87b0db2cfe6241b04f24274cdbb6ffda45f50ff",
       "contractSha256": "088e8d9e2ea477af0827735fcfa0f81f333096dc1ad7973cc929100cb1e1fd62",
       "priceCents": 2700,
       "scores": {
@@ -196,8 +196,8 @@
     {
       "id": "claude-bi-documentation",
       "code": "DD-011",
-      "version": "1.2.0",
-      "packageSha256": "d6c8690a1088e39443bd4eb2d3a5c2522b624ef7e0ea90fff83dacc5fe05984c",
+      "version": "1.2.1",
+      "packageSha256": "852b6be210d13af4dbc0415968b82f8f37d26a4ef908cca4382edc3d3fb2935d",
       "sourceSha256": "dd817b782951521c41659152a376cb2cf10a9539745e5d7b4bc8a7ce8878d577",
       "contractSha256": "506ef74d11e343adc58d0a26c8ca3a81cfb26ccf30c7fc2fcfc86bcd8599fead",
       "priceCents": 3700,
@@ -253,8 +253,8 @@
     {
       "id": "claude-cloud-code-architecture",
       "code": "DD-014",
-      "version": "1.2.0",
-      "packageSha256": "9d7cc8c13983b328bfa6beb93fdce4b2e9b332809417c6a90fd0486c8717659a",
+      "version": "1.2.1",
+      "packageSha256": "20249e1d780aef6df5b695cb0de98d8b0ea84a151a800de9abbee75b449141a4",
       "sourceSha256": "cf3f296276aa12b5e820d1bfba5229731805e3f8381fa2f0a32f6b4028ceae95",
       "contractSha256": "680e09e0777fc9d7b4c495503fe0bd185158d11faa951daa8ec2b690d491ead8",
       "priceCents": 3700,
@@ -310,8 +310,8 @@
     {
       "id": "claude-deep-research",
       "code": "DD-017",
-      "version": "1.2.0",
-      "packageSha256": "506de9119b02d9b0e1831a2eab32996102582aa614e074236cc3059eca33fb95",
+      "version": "1.2.1",
+      "packageSha256": "3a195bd4ab930a35ef232142187265dc4a907f73eed2c94da851d8bea2f9fd79",
       "sourceSha256": "dc1e30a04c1b4960379b93402ce3e3cbf38fd5e37fde7e43d43b4ed643d685ae",
       "contractSha256": "50a635310721bf576db1c11f3d9a73ab5acb63e0952179d2eca5723662d228ea",
       "priceCents": 3700,
@@ -329,8 +329,8 @@
     {
       "id": "claude-docs",
       "code": "DD-018",
-      "version": "1.2.0",
-      "packageSha256": "2bbff39e97f5ba3e6d203baa8d6467368d94711dbe36ec0d43c1916c5d657fed",
+      "version": "1.2.1",
+      "packageSha256": "f6fa928e909588db39d192c6d53c834157cb0808139ba6208c584ec0745be8c3",
       "sourceSha256": "517a8cb597aa579a694d473d1746467b181b730e0b2de1ae3bf4fe0f34cf89d4",
       "contractSha256": "1c40192e62f6135c4f976ca1a2e4619d5b460c864da7c4987e8da08cdab15b5d",
       "priceCents": 700,
@@ -367,8 +367,8 @@
     {
       "id": "claude-google-workspace",
       "code": "DD-020",
-      "version": "1.2.0",
-      "packageSha256": "6ba209a1ec79470c555ba21bee3dd93c1d230b77b98552074e1ea6e119ad0164",
+      "version": "1.2.1",
+      "packageSha256": "d2da56b0a5a33256bf206788562bef6eb1883ba0498a8072711831a437b209e0",
       "sourceSha256": "9b9412c2746f6576c8ab9ce2e84c5aaae9ed66060b4bfdffc0395eebaeb076df",
       "contractSha256": "b569e02d0bdea93e57a087750e75a70c9f63bedcaa18a67b5b64e90b0d1b6838",
       "priceCents": 3200,
@@ -386,8 +386,8 @@
     {
       "id": "claude-import-memory",
       "code": "DD-021",
-      "version": "1.2.0",
-      "packageSha256": "7c553e4f941ad192a516a7f69fb9617d290fe8301c3f9f654e52bcc907cfdb0c",
+      "version": "1.2.1",
+      "packageSha256": "67c0bb31e6a38447b6951f87acf77ea30b55150c6f34b24117a785afde212429",
       "sourceSha256": "c0655dfe2cdd5c517e0ac6d74e31ff6d6972475cd26459aea94cce7b033c68fa",
       "contractSha256": "b0620b04cffe8b4fb5cfd1d32c10777418d9c0b4326b2e35566b916377890dbc",
       "priceCents": 1200,
@@ -405,8 +405,8 @@
     {
       "id": "claude-maia",
       "code": "DD-022",
-      "version": "1.2.0",
-      "packageSha256": "713c913a96becb901e447701dca6d221802c7ff524f93781f97b6cd7a6d78128",
+      "version": "1.2.1",
+      "packageSha256": "15d6c0bfd36006ef6cbf4424ae84442412eef25ad8c12fd67624ece059390807",
       "sourceSha256": "fc1b398a64b366b7154a03b1735afdc75673dc1287450cb2e4e03dc2905a366d",
       "contractSha256": "602b563a46b7b15565a34fdf91bcb8417449e9efd474207e2148f78d0fc0f4b3",
       "priceCents": 700,
@@ -424,9 +424,9 @@
     {
       "id": "claude-marketplace-skill-creator",
       "code": "DD-023",
-      "version": "1.2.0",
-      "packageSha256": "d97a6649dc497de7517e46099f6bf8c202dafe135191a5add8f3140468885253",
-      "sourceSha256": "486cc3a051a108f354f75b5d81c1bfe6706b54a2e77d8eb50a064f0f994fdb1e",
+      "version": "1.2.1",
+      "packageSha256": "95f08ddb77cd3f4ecb4da1fab693ea80dab575b9a21764f458d97eacab3c081b",
+      "sourceSha256": "39cf0efe09e7855482ed429ae3b9d3f20984759ef43d21451645ef9a8549b61e",
       "contractSha256": "29c3a13cc96a90d6f7daab6c1fadf43389414db4e85d9c7fff00a1a10b9a3640",
       "priceCents": 3700,
       "scores": {
@@ -443,9 +443,9 @@
     {
       "id": "claude-md-improver",
       "code": "DD-024",
-      "version": "1.2.0",
-      "packageSha256": "f895cc65478fbedd700205635276e512c0a51d212f19df4c56f9209bf21a0871",
-      "sourceSha256": "76a82008b4b3ba3d82f7467a97140dfb619f6a86b0a091a11faf63b4226acf40",
+      "version": "1.2.1",
+      "packageSha256": "b453b74f83fed7a421b7acd14f611563d2a860c4d50e2c054b0c35009793f2f6",
+      "sourceSha256": "8a3f0412c9d2035fa47d0a106a601c0a0c0411a34a92ccfd12514d1500e8180c",
       "contractSha256": "85b3c95a8f0fbdecdae5df37ebe1bf4ffa85a304104e41c7827b75a526e415a2",
       "priceCents": 2200,
       "scores": {
@@ -462,8 +462,8 @@
     {
       "id": "claude-messi-knowledge-ingest",
       "code": "DD-025",
-      "version": "1.2.0",
-      "packageSha256": "6289aeb349671f194d1620d48a5ea59f5df56b597df70d7f8c7f42fa75846b3e",
+      "version": "1.2.1",
+      "packageSha256": "b269456294626b18657fa417a790a66963ac4315db496b13a9bf55793e8b39a6",
       "sourceSha256": "5f90848b03babe9168e9d213f79eec4b909e577c58adf85ea2c6732775a1f5ac",
       "contractSha256": "c4a1e97792ed3a50815ec0a5884ad316fb70fe41b12d8ebc2a554479a9d5f88d",
       "priceCents": 3700,
@@ -481,8 +481,8 @@
     {
       "id": "claude-morning",
       "code": "DD-026",
-      "version": "1.2.0",
-      "packageSha256": "182f02a7ce7555e64bb4ca87a03e5d03f1f5a07ba6d418873e6eefb6dd1343cb",
+      "version": "1.2.1",
+      "packageSha256": "1fbe05738c28851ded7f81a9e7821d7da8f9e599bb29676807a1f977e34af44c",
       "sourceSha256": "db034432f1ed4d27f6270e209dc03042dc95d4954340df494015edc1228814bc",
       "contractSha256": "2b630834c34678715b7bad1b0789acc6862a76654bd147107326f89ce6464f76",
       "priceCents": 2200,
@@ -500,8 +500,8 @@
     {
       "id": "claude-oraculo",
       "code": "DD-027",
-      "version": "1.2.0",
-      "packageSha256": "5686a0892bbb0191d1e28e78353b7282e90d9380ef2fe11bca0a198dd81f6da5",
+      "version": "1.2.1",
+      "packageSha256": "402f7ce0964580d3578900025955451df14ef6b86556e3069467588f23c2868b",
       "sourceSha256": "ebac5bff70b3906d8ec2b944319992db53e7eb664c1cac889290bdbc7482eee7",
       "contractSha256": "65214c8e4abe842ca0bfbd54d33d3118461b4a248e67050722f66b859963ea9e",
       "priceCents": 4200,
@@ -519,8 +519,8 @@
     {
       "id": "claude-pbip",
       "code": "DD-028",
-      "version": "1.2.0",
-      "packageSha256": "3c51ef3358f367902cb1200a58624e6f97509a7314189e532e933bc0e0bbed1b",
+      "version": "1.2.1",
+      "packageSha256": "d3635ecca401fa4cfdf57f204850861b7421c094ad2adf2553a4cf5ad6e07972",
       "sourceSha256": "93a03c4436f893e3e9db7f445a64cd6a280509a3a89a37cda7847e37415049d7",
       "contractSha256": "0859911f394d3ee43d69ae45c586ae784f6841cc0125b0a612e2c6a6d967f42f",
       "priceCents": 3200,
@@ -538,8 +538,8 @@
     {
       "id": "claude-pbir-expert",
       "code": "DD-029",
-      "version": "1.2.0",
-      "packageSha256": "ac3b0fbeee5806620c303eb79bbbc7d79b17976c92aaf8706a1332e5ba4bbc11",
+      "version": "1.2.1",
+      "packageSha256": "51731440c1e0d03dcb3585b38cf13e49399101ea2c4ba32cc0daf555677d594c",
       "sourceSha256": "8f989a8a15771f7da91fbe34bdcb5223e95118967c9f0fb45ba7f40b35303f9a",
       "contractSha256": "38a70ca7f4b387b1547594cd077c0b6c317376c9a2c165b80947d825ee289e76",
       "priceCents": 3700,
@@ -557,8 +557,8 @@
     {
       "id": "claude-pbir-format",
       "code": "DD-030",
-      "version": "1.2.0",
-      "packageSha256": "c9bb704e1b51e997cf8c605c3e85d1323c91d7a41355910aba1fcf5b618f94e9",
+      "version": "1.2.1",
+      "packageSha256": "ecefdd1c454088c6c1976c43e2b127bfa35386d88cd4d0ac57462a1e96ab0d2b",
       "sourceSha256": "55bd69850545d4f0a0197deba1e8a6f11fd5e23429f461425e0679ca46ef677c",
       "contractSha256": "7be67f9920b79841a1ed0c9caeb62d41a4cf282732e777d6ee763bd3c805cbe1",
       "priceCents": 2700,
@@ -595,8 +595,8 @@
     {
       "id": "claude-power-bi-best-practices",
       "code": "DD-032",
-      "version": "1.2.0",
-      "packageSha256": "e4a3253e167e3e522327a17d3d57f113a8e551339542df58c7839f79df4f1076",
+      "version": "1.2.1",
+      "packageSha256": "83330732aec53046242bc0fc89a87bd98d363027f2c403e4a647ffe17a825615",
       "sourceSha256": "3ab99c6be891cbd47ef5289475dca530ab9537e956cff31e0f99974616a383cc",
       "contractSha256": "8f7db6e28a7915d591389e0f2b05d0dd4e9ad2ef9efe0ee84d4071121974991a",
       "priceCents": 3700,
@@ -614,8 +614,8 @@
     {
       "id": "claude-power-bi-data-analysis",
       "code": "DD-033",
-      "version": "1.2.0",
-      "packageSha256": "43d3855bfa7f8ec7a8669b9033ff8dae33f4a3662e48d7c2be6160c98510c58f",
+      "version": "1.2.1",
+      "packageSha256": "b8556516efb9e01006aa37b50979da14670a36b7434545c40ac5d68219da8708",
       "sourceSha256": "116cd0a4c9ed594a0a6e6f423e80e134eecf2691db61d26ab79852b4b870b5f1",
       "contractSha256": "580fdf3af5dde7a58e99cfdf5f7f434e11512c9b55213161c9a48b99d3b5b5ff",
       "priceCents": 3700,
@@ -633,8 +633,8 @@
     {
       "id": "claude-power-bi-dax-optimization",
       "code": "DD-034",
-      "version": "1.2.0",
-      "packageSha256": "94c9e67e02d2493861bc0c20d93b8e8456d7d6ccb9b1330d7c0526f4a470d264",
+      "version": "1.2.1",
+      "packageSha256": "3eb322fc1b39421e7242f70b47f39937e504d7d126ee25425992c3cf46c1a7e9",
       "sourceSha256": "9e61e59acdc42035f12486adb2cb1f71568a965afd42ab559a7a72e0341fad8a",
       "contractSha256": "ae261ece7623cfccc2d90ff593f9ca6850cef6b9dca3852bb017df5012768db6",
       "priceCents": 3700,
@@ -652,8 +652,8 @@
     {
       "id": "claude-power-query-best-practices",
       "code": "DD-035",
-      "version": "1.2.0",
-      "packageSha256": "0601e3d06cfa19db7eb4bd0293c7bea26c7488b8eb4e421fe56c271763e22c1a",
+      "version": "1.2.1",
+      "packageSha256": "b3fd4e26e227c29d05987692466c7e6218a39449e87517bb21212884681959ee",
       "sourceSha256": "104f5075e52b9fbf2b7a92e1b84d1acb7dcb888526001526ed4967d98f05e153",
       "contractSha256": "acc363e278dd5b46d7d5399c007b9d1261870a31f2b3f7c21b833145cb4c2ab0",
       "priceCents": 4200,
@@ -671,8 +671,8 @@
     {
       "id": "claude-powerbi-html-visuals",
       "code": "DD-036",
-      "version": "1.2.0",
-      "packageSha256": "da04f8a6314a64ceabd4d1a250504df90b355c4120683660bd0959606a6fd405",
+      "version": "1.2.1",
+      "packageSha256": "92a1b8c884a75a1ca150c0c4a911c3c911299f908e7725faa6758430857f6ecf",
       "sourceSha256": "c283ae9b0f36d1e22a8fb9ee5bd6e05ee45b4cf73ccbf150ec4ba1437ffed63f",
       "contractSha256": "8d67b5b0172e58600d5b156b0ccba83fd575eea518a452f7d061c3263414a525",
       "priceCents": 3700,
@@ -709,8 +709,8 @@
     {
       "id": "claude-protheus-expert",
       "code": "DD-038",
-      "version": "1.2.0",
-      "packageSha256": "af07b015e1d9896130d598878e346ef587075aa9dbc2d579f1a3b9c783a29ac9",
+      "version": "1.2.1",
+      "packageSha256": "91b041d0f0f2f83f15ce81a300f0e5a223dbbdb762d3d268049815bee56b1b49",
       "sourceSha256": "c6b49b4d183126db60e3ebaa205b32b3d219fce2bffb101c56891f1cd7e09951",
       "contractSha256": "fce70fac881ea8dd2c1bcf5c9dd5769914a0ea23dad8fc3b4048259578e1f463",
       "priceCents": 4700,
@@ -747,9 +747,9 @@
     {
       "id": "claude-skill-creator",
       "code": "DD-040",
-      "version": "1.2.0",
-      "packageSha256": "0f41f468cf244c3bc04530d9f19745ef642c295ec92a373cacbf00ee81d1e025",
-      "sourceSha256": "3c9527bc662d715202bf13ddcc8c10d8b9c414d92c86df4b356017dd7effed88",
+      "version": "1.2.1",
+      "packageSha256": "3356666d74c00fec7e9be7cdd2ae96ebd7347382957b9e1ba270f3780f14840d",
+      "sourceSha256": "b90f07b708e44c0150ec92b9bbe1dc23c3ba1b7efa4d2a835c22041fc23a91a6",
       "contractSha256": "38f02aa37139c65e3d2365132f7e715a999950094f1e5e4852f549695c3c12a0",
       "priceCents": 3700,
       "scores": {
@@ -766,8 +766,8 @@
     {
       "id": "claude-tmdl",
       "code": "DD-041",
-      "version": "1.2.0",
-      "packageSha256": "8fec7bbdf478a84088a163243de4da51a276b5c57bbd9b43cffe8052d61bb677",
+      "version": "1.2.1",
+      "packageSha256": "f89a8b2529fb9d5967da08d62b9eaf83796cccdafd93eaf11035d387a0d15e28",
       "sourceSha256": "dc4c0c375d031b3ade5a0638fd92782d15d3ca241e828b926c044c44e7df3a49",
       "contractSha256": "51d06a0b03830f10501a82f79418601e83468d11b6ec7e75b9f6aff7c7f2ece8",
       "priceCents": 3200,
@@ -823,8 +823,8 @@
     {
       "id": "code-review-and-quality",
       "code": "DD-044",
-      "version": "1.2.0",
-      "packageSha256": "a5eaef28183ecc9cc717360e48e5d21f917dcf09aedf915bd88e3cecb60f3942",
+      "version": "1.2.1",
+      "packageSha256": "791db8c264038843c05b029e9978265c5e6f309f9b187faea6d594fe076d73ef",
       "sourceSha256": "aac9b479b3cd1f6b66f620fd1b83c7f45c0bcd764726988f36b66054035555ad",
       "contractSha256": "37d86031c81ef8c95a906cfb7d6535ed1ce010875d19f8fca4e5a15cb7b2663c",
       "priceCents": 3700,
@@ -842,9 +842,9 @@
     {
       "id": "command-development",
       "code": "DD-045",
-      "version": "1.2.0",
-      "packageSha256": "5a2e7a6aaa1de4ba436b65d6df089be81c6bdc8e4a5b109650aaf5efc58251a8",
-      "sourceSha256": "58ca64ea9e32d81cc969c5ccdb0aea173bce9fcef81da23966e7c439316daa74",
+      "version": "1.2.1",
+      "packageSha256": "7fc34ccc056211a79f4a02c359ac3b4e6a044c2213bb43f45be9ca0eb614fc2d",
+      "sourceSha256": "22f3f16922c4025c34b28fbc4f987fbcb922acbf022a44a54eaf42ea7429e54f",
       "contractSha256": "d70a914d2044da2a09105258c6c6d5f7f872a290db76f56409a2b5c5e183d065",
       "priceCents": 2700,
       "scores": {
@@ -861,9 +861,9 @@
     {
       "id": "compliance-check",
       "code": "DD-046",
-      "version": "1.2.0",
-      "packageSha256": "ea30ff190adcd3c1cc4f115a36bcd443531fed7a6084581420365e9a4bd181a4",
-      "sourceSha256": "985663645f7b7bf7ec0dab77e1ff83feb46b794c0354afeea271ff5d1739e61a",
+      "version": "1.2.1",
+      "packageSha256": "71caa06b4a12769aaf329ee8b9732fe80f62acebf42e4b81e35dc51c63ff9fc4",
+      "sourceSha256": "d3fd9b68d915672f9a88e04c162d510efa755f1d05440bafe539ad388b1cfcf2",
       "contractSha256": "3811a569421456cc1eb4fa16971d916a976f069bcbb984abb735a54386b5af2a",
       "priceCents": 2700,
       "scores": {
@@ -880,9 +880,9 @@
     {
       "id": "cowork-plugin-customizer",
       "code": "DD-047",
-      "version": "1.2.0",
-      "packageSha256": "d6c2bb3fa09029120694b9708741c46580a258ddff684b78b341eed5e1837383",
-      "sourceSha256": "329ef79120f62dbaef0a33de13191df44c7fd93ac5745740904415b603b78c72",
+      "version": "1.2.1",
+      "packageSha256": "39ed693231f99ecfdf6cc3fad929e62147d763f4a9fd49d6363f93566da9e190",
+      "sourceSha256": "ef596ec3379c93135d92b4e3ebaaaad8af0d0431fa255c0ae1808440304d8ef3",
       "contractSha256": "dba59fee2df5869e8d460d12f5be0296c1ec7a8fd801ece06f129f0cd63f9994",
       "priceCents": 3200,
       "scores": {
@@ -899,9 +899,9 @@
     {
       "id": "create-cowork-plugin",
       "code": "DD-048",
-      "version": "1.2.0",
-      "packageSha256": "c76538146c7fcf87a9b25a316173fe3c8a9cc8ca25c737db0f69ec57d2743ddf",
-      "sourceSha256": "c26b519967c7bf03ea5c24464b8d4ed2ca672b0de8f5b6fa96b0841266580f94",
+      "version": "1.2.1",
+      "packageSha256": "3f4f42fe6dcf8324194f4b70513a75dc7232d720fa81e5a11cf6f7838ca08717",
+      "sourceSha256": "c76157f36bb481a75b6bef743dcf84fe2fedc97f4aceb69df93bff3724856c6f",
       "contractSha256": "6ad77db12f63b20c200f2a62783e599687a5c1f7e25f7bbbc6a6468be49c30b9",
       "priceCents": 3200,
       "scores": {
@@ -918,8 +918,8 @@
     {
       "id": "debugging-and-error-recovery",
       "code": "DD-049",
-      "version": "1.2.0",
-      "packageSha256": "084c62c655630b40c358559b58d4ee403e04623b38e0fa659f37a484377fab7f",
+      "version": "1.2.1",
+      "packageSha256": "c27b5ea92e95ba6c2145123232449e1bb1462fcb940f5b691df0ccd12f23a6d5",
       "sourceSha256": "66e8da8f2cfb2aebadec7275bb98e24e0ac5c86f64bd70d6308f50fb892ad419",
       "contractSha256": "0da6e663b2c6053ab176c9861107891a57a8a9cee3766e831b10686816c14035",
       "priceCents": 3700,
@@ -937,8 +937,8 @@
     {
       "id": "design-de-interface-autoral",
       "code": "DD-050",
-      "version": "1.2.0",
-      "packageSha256": "76c035654122b957a72419a8278851e65e00ff6eb899d5e478f6232018dba4da",
+      "version": "1.2.1",
+      "packageSha256": "d2e7761bf03709307bf27e50af1e686797151ddbd8e1475b9c5ba5c736f5df10",
       "sourceSha256": "bf4c6b7ee7125584df7e99ca2a9cba420188c243a76cca6a0aad23ebe4a1306a",
       "contractSha256": "13584f694a57996d46309b276868d29772592020d5db8c9243621f20b9201679",
       "priceCents": 3700,
@@ -956,9 +956,9 @@
     {
       "id": "discord-access",
       "code": "DD-051",
-      "version": "1.2.0",
-      "packageSha256": "8e2f92ae86a4c00a3661ebfa10704b9f796a01f1f32c596b813da88faaffc46d",
-      "sourceSha256": "ca06b0f1b99634f1cc866259aedfd155e419949c19b5bef95a2ddcc0dbfcda8e",
+      "version": "1.2.1",
+      "packageSha256": "a43b3410be611dad96390f23f9181cee427a3be47f1b3486a1e716be5e666fb9",
+      "sourceSha256": "628571705f6535d152c3e81d7369621bb0edaff4a7ced889385eafcb6a5ddfeb",
       "contractSha256": "cfc36c9da5e7ffb55f28f7796175b3742061c5ea09cebc034b04bfe45ddb7ab0",
       "priceCents": 2200,
       "scores": {
@@ -975,9 +975,9 @@
     {
       "id": "discord-configure",
       "code": "DD-052",
-      "version": "1.2.0",
-      "packageSha256": "c5c17a0dad36ceb38550dd2c41c95d2e8ac8c08c05332a8c0242c51f9fe67f2f",
-      "sourceSha256": "47ebabd4205adb57a11976f84bf943e2e59f40c48624df53a06637c6e6744423",
+      "version": "1.2.1",
+      "packageSha256": "ebb68951a089d8effb18daeb361369889425ce8d16a84e8c077ff2480e0d5494",
+      "sourceSha256": "166f2e420ca7f58286eb2fb55ba443d8cdabe17be622d0bd62d1bee05a8572f9",
       "contractSha256": "20f32a08d41b165faec2c60a1f1e202d604b9e4d6b3a4762e0c18149bc542afc",
       "priceCents": 2200,
       "scores": {
@@ -994,8 +994,8 @@
     {
       "id": "estilo-de-colaboracao",
       "code": "DD-053",
-      "version": "1.2.0",
-      "packageSha256": "578809690ece0f3c6ed09c5595d8dd7280503e37f15a95eaee7b1ec02af3ecd0",
+      "version": "1.2.1",
+      "packageSha256": "aea16e41d8df62d7c718d8c9e82d55049956ef24e0ed434f6334640b8507bfff",
       "sourceSha256": "a488c8de26e250f6a812ce29b68cf35ef2f2e49e852f29307d94cb06c6514f7a",
       "contractSha256": "529533a898267574816191fc458cd0f85963baf369060a25d28e66047b3989fc",
       "priceCents": 700,
@@ -1013,9 +1013,9 @@
     {
       "id": "example-command",
       "code": "DD-054",
-      "version": "1.2.0",
-      "packageSha256": "dfca722c40ce279cdae8f74ceb037ddd23d787edc883e54db479d4216fedb897",
-      "sourceSha256": "c9f1cd9c204bdf7182328dc5ff20cf7ff019f61f59bb37c4460023707844bcfe",
+      "version": "1.2.1",
+      "packageSha256": "149323a76f68e5a41cfac5d0e524452331a006bed9d9286b227075e2751d77f2",
+      "sourceSha256": "ab40f732b72b4089fbaa56341a7db3409663a821594b3de60ca74718d7298296",
       "contractSha256": "ebb4f0d27654b3855edc8030fe56087acbb8f87874556cacb7f3d05df9499840",
       "priceCents": 700,
       "scores": {
@@ -1032,9 +1032,9 @@
     {
       "id": "example-skill",
       "code": "DD-055",
-      "version": "1.2.0",
-      "packageSha256": "09c6d052fa7825febecc0b43cfea00b9d2c2ad542145581436e3869d5d8fc850",
-      "sourceSha256": "3950672b5fc3080304302688c24cb5429bf039dfebc94b500fafd79f0ee437f3",
+      "version": "1.2.1",
+      "packageSha256": "34305c1be6b2978020d30e73eab52d4e9b1c58fd2410e2e4b6972f8f1e1b577a",
+      "sourceSha256": "92142e149806f597c306169ccb951ea6e394f0c3ff16ad36355e86f0e61dd52b",
       "contractSha256": "bd74dc8fa66b49d8616d7f41b74545d3ad82ab363668f3ad5760bba4792cda38",
       "priceCents": 700,
       "scores": {
@@ -1621,9 +1621,9 @@
     {
       "id": "frontend-design",
       "code": "DD-086",
-      "version": "1.2.0",
-      "packageSha256": "8563f0adf158c94684f043504e1a141805e2892c1f7fd6bf0fa51e2f14ac28fd",
-      "sourceSha256": "7015443d9254b25c2c595a984f9214eb6480eba717a99e02360684373dfac97f",
+      "version": "1.2.1",
+      "packageSha256": "63ac0a3388a218ea894922d71206d78b7aab084d6fc6289bfac13087e5034498",
+      "sourceSha256": "0fc533928a192eeb93d3eac67f4f89e954f259420b7040c37094ed8048f0a459",
       "contractSha256": "485c47569b3fc9b2124666e2c57dfa51845b5e6b78070644993def6e020271bb",
       "priceCents": 3200,
       "scores": {
@@ -1640,8 +1640,8 @@
     {
       "id": "fullstack-nextjs-vercel",
       "code": "DD-087",
-      "version": "1.2.0",
-      "packageSha256": "1fad058b8ee249ad57862357028f3e00b7976626ecac200af2fc9fc07fb61916",
+      "version": "1.2.1",
+      "packageSha256": "e712e3c804817270bd552961af9682ea16b2991d2ce2a2a6c90069544ac52a12",
       "sourceSha256": "bbd35b58a81caff1aab6b0bce540d75f549c9f887f338a38a9535165dc3b3494",
       "contractSha256": "6eab357f4e175ff5f043c56566ab2b150533c71d05cccd142e37a6b617bc5ad4",
       "priceCents": 4700,
@@ -1678,8 +1678,8 @@
     {
       "id": "gestao-de-entregas-e-homologacao",
       "code": "DD-089",
-      "version": "1.2.0",
-      "packageSha256": "b4041b84a29ce88cd8d8a5f316eb9a65586a5d269230d5073d3e39daa249bdaa",
+      "version": "1.2.1",
+      "packageSha256": "d2991a094c4736bc2607f6be23f47846a60fc8eb45ee4b85b42265919a56a67a",
       "sourceSha256": "727f124c4c1055b56e26180f42713f859977c5869e9b3295d236f5c71af3f8eb",
       "contractSha256": "2a57250d5df0e05c9b0d2889da3d92be9a87d3c4753100a6a26229186825b20d",
       "priceCents": 3700,
@@ -1697,8 +1697,8 @@
     {
       "id": "git-workflow-and-versioning",
       "code": "DD-090",
-      "version": "1.2.0",
-      "packageSha256": "9a53e4affc4fd8768372507730b1ff843cd72649cf95f05d6fa18ef85e85eb1c",
+      "version": "1.2.1",
+      "packageSha256": "fb907dd753f93d24a2b79bf33ffe9b84baf6a414f593f773832222f78d5209b2",
       "sourceSha256": "1e9ce830c81371e32d673dda98fc18c7c316d6f21425d1c2675ab79e853762fc",
       "contractSha256": "3af88be45a9d5fa5f37b46b31c330ffcbe688d379d2c66d2e8e310b6ccb9ad68",
       "priceCents": 2200,
@@ -1716,9 +1716,9 @@
     {
       "id": "hook-development",
       "code": "DD-091",
-      "version": "1.2.0",
-      "packageSha256": "64d202f8b038a1f9c6305d30b774f12d39ac1e635cc59ccefba965e022887747",
-      "sourceSha256": "86f164c835eabd69d0a90cc757f79298dfe8783eb634920bc04d1469257bdac4",
+      "version": "1.2.1",
+      "packageSha256": "dab741ef4c826c2b5c3594ee8c81be9cdbe30b895a22613b0c6c6615d62c4378",
+      "sourceSha256": "77e3f5b423686804ddbe0af640557593cf190c0fa789bfc60bcf047e1461772c",
       "contractSha256": "4966b9aa868d475b0ed8804c4b927a5df23c022f3a8a110669c501483be796a9",
       "priceCents": 3200,
       "scores": {
@@ -1735,8 +1735,8 @@
     {
       "id": "ia-aplicada-a-produtos",
       "code": "DD-092",
-      "version": "1.2.0",
-      "packageSha256": "17d5c4fd997ba7e7e52221c8a91a38e82c610ac31540b0d3503ff3dd65c7fa2d",
+      "version": "1.2.1",
+      "packageSha256": "1c0476ab81a93f758cfe88527cd691cb1ff62305604ffb233ca0d8e23137c035",
       "sourceSha256": "781628b7e8c9433606db1af7a484b9e6e4d27db76e6f4aa68682962f4f5e3a67",
       "contractSha256": "9bb13b96927ee59cec41542b02f9ae67a4bade847153c0aedb805c99a5487462",
       "priceCents": 4700,
@@ -1754,9 +1754,9 @@
     {
       "id": "imessage-access",
       "code": "DD-093",
-      "version": "1.2.0",
-      "packageSha256": "a513780305515851e0b54d57247c49a1bb32693ad274a8feee554f8c93c2a0bd",
-      "sourceSha256": "4d969eff453a833258a7edd09b8fdc22d57b2bc0b982dbe19a025b9bb721cb1c",
+      "version": "1.2.1",
+      "packageSha256": "a8e301a38e82bd765551efeb144d488702d7de693b7339f2202a795d6d19df05",
+      "sourceSha256": "0834735d6f2da1b49386aa1b27496729030c13ea42c2eda65b2985c29198533a",
       "contractSha256": "4ab202b226d73bec5c3fb84c79a0d491881d749cf215044bcc9c247997afa844",
       "priceCents": 2200,
       "scores": {
@@ -1773,9 +1773,9 @@
     {
       "id": "imessage-configure",
       "code": "DD-094",
-      "version": "1.2.0",
-      "packageSha256": "a1a49075eeffd6378d06062265d1f812ad441bac202774c8ec26bd113fc0c3a3",
-      "sourceSha256": "0970a62c66d039ae23919432148a536fc1d254a6f686ab961a9c274ae3662cb0",
+      "version": "1.2.1",
+      "packageSha256": "f05eabeab9b520e98fa765f8b8825672a43b168d1d0d011cd67ada787f03f33c",
+      "sourceSha256": "bcaa8c9912cc4f799b3ff15ba4cf310d04054fa4a568880f5e8e2b727a56db5f",
       "contractSha256": "142f380c8d941958c95be60815995ff01af59abab11947bc7efb0404cebd80ca",
       "priceCents": 2200,
       "scores": {
@@ -1792,8 +1792,8 @@
     {
       "id": "integracoes-erp-fiscal-financeiro",
       "code": "DD-095",
-      "version": "1.2.0",
-      "packageSha256": "4b8ee3f186cd86a9752c4df4de8770c5a797a7fdb56b9fc708d2ea5fc9ba6979",
+      "version": "1.2.1",
+      "packageSha256": "646f9dee119be02d9932460fe127d03bf1d184e38191fbf0c3f4c6e2fe4eaed4",
       "sourceSha256": "bfa7e6c76cf355648762ca60e36c3bc41a021365f6cb82e45da02f8066153d24",
       "contractSha256": "67ce4a90af5c4ee4ecb7de7f0bbf833edf1e39e72a76a0c18418eaca32e81572",
       "priceCents": 4700,
@@ -1811,9 +1811,9 @@
     {
       "id": "legal-response",
       "code": "DD-096",
-      "version": "1.2.0",
-      "packageSha256": "cefe19009b3ab8698983fc86d65de9d7b5c1faf6cf848fbd6c83a7a3ce473138",
-      "sourceSha256": "849432bd0b28c4503f202d9dd4cb4ed52596e9973ce8bbda864bc6bfc399b111",
+      "version": "1.2.1",
+      "packageSha256": "6d910c60c094979d5ff4a8681696abed4dd973de1cefa3ed8e34ecfa501afffd",
+      "sourceSha256": "253bbe93d84a85344a8e336ba097a43128b8ca30e046f660e809b32e93619b27",
       "contractSha256": "9085568bc5992aef771cd96a2d2a65d496086b1522bb282d4b891e6f0fb376ca",
       "priceCents": 2700,
       "scores": {
@@ -1830,9 +1830,9 @@
     {
       "id": "legal-risk-assessment",
       "code": "DD-097",
-      "version": "1.2.0",
-      "packageSha256": "e99e92c2c7ed7bc5a7e59127b6ec91ab68075b2c53a6a3a8c3fa66a507ce7bae",
-      "sourceSha256": "047ec6695784af8801d322e75f9246e2a911f9c9bc0587e3ade990058811f947",
+      "version": "1.2.1",
+      "packageSha256": "4d22d3060183ce3f6c5fca9b30b9213557532d0f2de16203b7068f07a8bbdb01",
+      "sourceSha256": "10e3fbb2b43bd58c8a165901eb48d5ccd5d1f09838b30f4f8814a0f8503b35fc",
       "contractSha256": "e25af25d864b9092dcb78b11a60731fddf769c161527eb53d0e6702ff8783caa",
       "priceCents": 2700,
       "scores": {
@@ -1849,9 +1849,9 @@
     {
       "id": "m5-onboard",
       "code": "DD-098",
-      "version": "1.2.0",
-      "packageSha256": "0757a227006377a3ddb55e2640da0cb7ccfab61f00568b09c26cf139e70dd5a5",
-      "sourceSha256": "e1f2253f90a58be250beef46fca9ffa20aeef3dcbb43c1917c81f24733f63016",
+      "version": "1.2.1",
+      "packageSha256": "0eb2ea2fc29b4a7b8a587cdf20c50cbe00ca5ca3d940e9225f315aba4f671579",
+      "sourceSha256": "3e175c20da094b5e4b3b6c4edd3854c8ff7811c5566d8146e324be885e165bb7",
       "contractSha256": "6c3770bf84eb67ff17d671aae1b0418b87d337ad0e9381d0f9c7cafba71d3c00",
       "priceCents": 3200,
       "scores": {
@@ -1868,8 +1868,8 @@
     {
       "id": "magnitude",
       "code": "DD-099",
-      "version": "1.2.0",
-      "packageSha256": "332d53839877c4d51fd48cbcf6ab07ff50129f162bd4473e4a58161782e0bf2d",
+      "version": "1.2.1",
+      "packageSha256": "79be3905a240925c97d9dfea52c812d87e93a23367c7f0706064f64c20ef3fbb",
       "sourceSha256": "7fa13670e359fab2409dd52eb5de7e8f24a6271cb19eb076160f9c360e86a7ce",
       "contractSha256": "dd36cc2dd1d0130f66963e8733c86d2f6f1ca40b3c4a8a4c75e456640039fd2d",
       "priceCents": 2200,
@@ -1887,8 +1887,8 @@
     {
       "id": "marketing-de-conteudo-b2b",
       "code": "DD-100",
-      "version": "1.2.0",
-      "packageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649",
+      "version": "1.2.1",
+      "packageSha256": "39dc2d7d8607cd48c13f27542a72f22fcd1142c1291a43f8d3caa263159415d2",
       "sourceSha256": "062fcb7721edba8d1f8830803e0a1fc14b3f5ed519cd8abdf507aded52464aff",
       "contractSha256": "dea232383e3bc20866ae9b8db7910cfb1498d8f500334b080a172d51c6f5e9b7",
       "priceCents": 3200,
@@ -1906,9 +1906,9 @@
     {
       "id": "math-olympiad",
       "code": "DD-101",
-      "version": "1.2.0",
-      "packageSha256": "633591e401d693710f6705750bd4a649d28ac8d6a496090895b3fb508673960c",
-      "sourceSha256": "bba3a0fc5833001922e9d22fa3d83ab049151d679fddfd2584ab81591d5b2836",
+      "version": "1.2.1",
+      "packageSha256": "1d3c4475e1b3a0addc97ac370d47c3899f463c41adf2128794ccee66e0917c08",
+      "sourceSha256": "96b5a7e8a852280fab52a78d81724a9e4e6166ef5efde437cc4823758029e5f9",
       "contractSha256": "b538eb1af73f98a5591059e232ee874c1b9270d79586794ec29c158ea733714c",
       "priceCents": 3700,
       "scores": {
@@ -1925,9 +1925,9 @@
     {
       "id": "mcp-integration",
       "code": "DD-102",
-      "version": "1.2.0",
-      "packageSha256": "0ee91adcd6141c2cdd81d0a6704ac5b5eeec37516a11d7a418226b90f32f1f0b",
-      "sourceSha256": "b6caa4f1feafd1c03a3ef03e63c6ed2c647697a34918b3733364dee2f895c421",
+      "version": "1.2.1",
+      "packageSha256": "8f85916d132ff07286011f14318b0dc43af9b0b23676999b46245d598fc59977",
+      "sourceSha256": "0e00df00640fd8c45716ad77005f04407cf81b1bbe1849f5c855d7f978118d75",
       "contractSha256": "652aa74605efc7295773708fa9408eeffb5e2a04353abc6e6421dc10eb12bb10",
       "priceCents": 2700,
       "scores": {
@@ -1944,9 +1944,9 @@
     {
       "id": "meeting-briefing",
       "code": "DD-103",
-      "version": "1.2.0",
-      "packageSha256": "cf9c1510aec52176e78d2b0f6484051fa25937984c734238dd0fc3a9563eff87",
-      "sourceSha256": "65791b04fa50db510fa559e76db506b916a9fc459a7ba48cd5cf7c6d18ef8823",
+      "version": "1.2.1",
+      "packageSha256": "9ccbb532b987f3996849141d9d95a5940017e759e77190ae8563041a94915c1f",
+      "sourceSha256": "e7c759916aec4aaf41280a1e1cb214269ea1628c02f1db981225703962909a71",
       "contractSha256": "4c9c14aaf43be8dd56af7e75d51b75ea905dca59498434c9a38d43c6883958c6",
       "priceCents": 2700,
       "scores": {
@@ -1963,8 +1963,8 @@
     {
       "id": "pagamentos-recorrentes-asaas",
       "code": "DD-104",
-      "version": "1.2.0",
-      "packageSha256": "6487c183bee50ac9314e3b75e19fb9dd777959aadc32585a2f82e73aca4698b8",
+      "version": "1.2.1",
+      "packageSha256": "da9be8e67a2a5c6e89276d8a27e5de873b135e387e975309cc2bb702393184b8",
       "sourceSha256": "04d9ae3f66e625ae3d63d6ad2c3f8f45c2aad77c60bc64f17fcc12c161995510",
       "contractSha256": "6ebdb637258f3bd93316d76affcf48b939f39aaaca85421411ac5636f3ed3207",
       "priceCents": 4700,
@@ -1982,8 +1982,8 @@
     {
       "id": "plataformas-de-ensino-online",
       "code": "DD-105",
-      "version": "1.2.0",
-      "packageSha256": "4ce5b8f55626009abb0ba6c530c76ee2df8dcd766917c8ad2d87250084c24570",
+      "version": "1.2.1",
+      "packageSha256": "80125cd35974d00464aaa5a1e76c40c2c6bed0b41f38c74a756252ee913630af",
       "sourceSha256": "d9b496344b2f013ba77ab37f825cb68d8e0a1c22be84e4e4a0d90c63de64758a",
       "contractSha256": "01d73e36450dbba9ca01f557bdfedf76ca17fedb8a9215f90992301bb846cf50",
       "priceCents": 4200,
@@ -2001,9 +2001,9 @@
     {
       "id": "playground",
       "code": "DD-106",
-      "version": "1.2.0",
-      "packageSha256": "11395854155008769693eaa73adf17358d6bece4168457ab74a88fb1adaabdd0",
-      "sourceSha256": "fd04d5aa8e2727d68c4be7f01af3be3e8d5308646b3400dc23c5609045a63621",
+      "version": "1.2.1",
+      "packageSha256": "3c99af1e18bf48fce561b3e56581d2b66353f07682199819b85c5e822d7bbe4d",
+      "sourceSha256": "1fa3a16a5ffaa1ad34ecd39ff8212930277708ba9ad0d9a6cc0f6ea9e732e4d3",
       "contractSha256": "33d22c185e7adcd0deff075f73e9fc6384a078e528081afd819df5a73de097de",
       "priceCents": 3200,
       "scores": {
@@ -2020,9 +2020,9 @@
     {
       "id": "plugin-settings",
       "code": "DD-107",
-      "version": "1.2.0",
-      "packageSha256": "9f4e874bb453a4e3976d534df0e374760410d3dee5b78d69e0750f9cacf3b90f",
-      "sourceSha256": "79c06fc12b0b660d382f8c4ffde9342260b78ebd4c5ce0ce0f46eacf716900c8",
+      "version": "1.2.1",
+      "packageSha256": "adcef2b57955763f48055903b684be016c104e96d9320bfc558ec9d7feceaaf9",
+      "sourceSha256": "e69d9b0bb4f13bff5f3aa5dd1af8983cdb8e1587c9a78827c12670f1aa4ef59b",
       "contractSha256": "6486fca991098d97110cd9ab20794d1f31c3e862bcbdbeb35aa115afb862551c",
       "priceCents": 2700,
       "scores": {
@@ -2039,9 +2039,9 @@
     {
       "id": "plugin-structure",
       "code": "DD-108",
-      "version": "1.2.0",
-      "packageSha256": "6ff1fd0381462c2439771f8f03e9354833d86b767fe59f67d273888e62847adb",
-      "sourceSha256": "0e8cf2c532e957e09940808814bff13b539a9bb98f9ef286607d1d6ef5de7cb5",
+      "version": "1.2.1",
+      "packageSha256": "e61d1cdeddbfd6fc8add2ed76430075e6ae3c1df48f577c11824d450c20c083e",
+      "sourceSha256": "d8fe788139ae201152dd95e432acb04677b35263d4949726ee4761b9cd065397",
       "contractSha256": "38ff4ebe91b2dfcf2f3619a9a3e509788f45ba4bf5f117fe490493bab4024d24",
       "priceCents": 2700,
       "scores": {
@@ -2058,8 +2058,8 @@
     {
       "id": "portfolio-de-projetos",
       "code": "DD-109",
-      "version": "1.2.0",
-      "packageSha256": "ab20953601853b992e761eb55a4f27ca64e94e851b05dfd8788ac053804373db",
+      "version": "1.2.1",
+      "packageSha256": "6d9265e6c9ab5e0f78cba906a59cb7063ccf7ed4b81628057f944ab57a0c9eed",
       "sourceSha256": "f4f28d4989329cc194be8a5fcfe51e9a2a5ced7a34db788043e80f572c7ab72d",
       "contractSha256": "4dcf7781c58ec4384bbc11d09b9981c1cfc7785df7ce14049497dbb2013d4e86",
       "priceCents": 700,
@@ -2077,8 +2077,8 @@
     {
       "id": "power-bi-embedded-portais",
       "code": "DD-110",
-      "version": "1.2.0",
-      "packageSha256": "b4be6e36b7bed6c405e107c18b509e23a9a3777c6f633af085af95dfe259e708",
+      "version": "1.2.1",
+      "packageSha256": "079814c0e006fc69cb77be036fb07f3526a9909b0d420e791333c6b216afb85c",
       "sourceSha256": "9188f3f7193828bb0ef7cb47b7ad07d4a87be89dc1348f18385315aad77fc3de",
       "contractSha256": "14ccc769064bf5bb5f1905b8f299f6417a69d64b05ac1adc6e202c58c1c915d3",
       "priceCents": 4700,
@@ -2096,8 +2096,8 @@
     {
       "id": "power-bi-modelagem-dax-performance",
       "code": "DD-111",
-      "version": "1.2.0",
-      "packageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e",
+      "version": "1.2.1",
+      "packageSha256": "49614a1f88945ad84fddca6f19f18917f4088574192d0314f505d5bd23debd91",
       "sourceSha256": "1e46b1d37e99f9b3a2ef2aaaf67ddc6ffa8ce7dc78a459a67860c886e705c092",
       "contractSha256": "d996b28a04291614b660a4c230344c9b469b530565a6248a276e84e0762c0a97",
       "priceCents": 4200,
@@ -2115,8 +2115,8 @@
     {
       "id": "power-bi-relatorios-como-codigo",
       "code": "DD-112",
-      "version": "1.2.0",
-      "packageSha256": "7652afba0c87bdb76fdc879209bd37095f1e2bfc56a1e7cbc35f96108bc744bc",
+      "version": "1.2.1",
+      "packageSha256": "72c88cfb1c423e5d070b9dc61ff4912e14460a8833d95ff05bcb35643292951c",
       "sourceSha256": "303f32228477193c8c5cfd81196f0e6070fdab0c4d6920518352e1c548306eb8",
       "contractSha256": "a7c93b0c854fd439b29aed1759f198368aa824cb4ab4f6fe71767d4497e3c21d",
       "priceCents": 4200,
@@ -2134,8 +2134,8 @@
     {
       "id": "power-platform-code-first",
       "code": "DD-113",
-      "version": "1.2.0",
-      "packageSha256": "3c312c3f0687f209ab14288378cb4c09af37989e207e7d29b611efe3edf067a7",
+      "version": "1.2.1",
+      "packageSha256": "45cdd4c3e60006bb4647f92537c8a840027dc49c97399c68bc978bf2f51f8c28",
       "sourceSha256": "27c9743bd82ef09cf6eb0069428b3b9a1819d7dc901e8a1bdc6b9105ab1bf424",
       "contractSha256": "331468cbebdfbba7caae74352fbfe4c473c5397c77aea690c1455511f7f285a6",
       "priceCents": 4200,
@@ -2153,9 +2153,9 @@
     {
       "id": "project-artifact",
       "code": "DD-114",
-      "version": "1.2.0",
-      "packageSha256": "cd6cb2537e211f771bb42f8ea3f82754eab85e434b3571093a34b916984debe8",
-      "sourceSha256": "ae056b39c7c925d55714c7beaa8104ba14fdd1be32c207964ec9ca3347135238",
+      "version": "1.2.1",
+      "packageSha256": "1e30ed43d1cb7867d7bb5d61b596170c434bb54c2a452e77fdb838db74d84889",
+      "sourceSha256": "33d5209dc9f49dca2ac0ea37e5103e05e394af125c121201fda51f3ce3b72cb1",
       "contractSha256": "fcb8ca559e7ecabded9f9316a1dcfcd8f9eaf7f9d22466278aae7004b2d2cd03",
       "priceCents": 2200,
       "scores": {
@@ -2172,8 +2172,8 @@
     {
       "id": "propostas-comerciais-e-estimativas",
       "code": "DD-115",
-      "version": "1.2.0",
-      "packageSha256": "9c1134888c44cfdccb8d2917577fe223cf4c85b24faf825742f461b7f0d378c7",
+      "version": "1.2.1",
+      "packageSha256": "1321ff53e93a312db9c5368b79c5b9792b624cb7ac263af66cfab33cda3b024a",
       "sourceSha256": "e6323ecbc66b260e0438dabc4bc047a89f0d5e23aaab18ed7dc0f2dfead2d535",
       "contractSha256": "413d69e1892dd8fb66fd05628f4be1feffe39c55ac2d5d0f2d41bb9748dff5a2",
       "priceCents": 3200,
@@ -2191,8 +2191,8 @@
     {
       "id": "prospeccao-b2b-linkedin",
       "code": "DD-116",
-      "version": "1.2.0",
-      "packageSha256": "26f07f468ee2d809fc54502539500d26b3d6922d2b0f8c613d65a9176bdc093a",
+      "version": "1.2.1",
+      "packageSha256": "9873c25bcba46423e8bfa57b9e4863d1ab49e6813b7bc191e15ad7dabd4841f5",
       "sourceSha256": "b36323283967050c5c56c0eb4ad7b49e01ef8f6a3d0c00c37cf292239de30b2c",
       "contractSha256": "1b3c32353873db9d3a0030e9272e374bfcc025a45ef3fc0b9ad4178cf5837c84",
       "priceCents": 3200,
@@ -2210,8 +2210,8 @@
     {
       "id": "prospeccao-drivedata",
       "code": "DD-117",
-      "version": "1.2.0",
-      "packageSha256": "872f316dc7d73a4ea12bab62c32f3b87c0e10f6a543c705db1386e4346250fcf",
+      "version": "1.2.1",
+      "packageSha256": "1c257963e5c8dd694d0fa77f8720b6c73b979955ebf10d8e38b16bb412f32d61",
       "sourceSha256": "9de15f50be9e4ae6ee804bd48133e46a81353a8fd36cfd105f33081588e925a8",
       "contractSha256": "c34b65237599e92b1ad3000cb3eee3889120900b2e8d772a50b91e3ccb896731",
       "priceCents": 1200,
@@ -2229,8 +2229,8 @@
     {
       "id": "prototipos-e-especificacao-funcional",
       "code": "DD-118",
-      "version": "1.2.0",
-      "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448",
+      "version": "1.2.1",
+      "packageSha256": "e290210cae8367b5a7524d0787bed42adc5c366f4bc13d5153b83760d9cf8a9f",
       "sourceSha256": "6b3d5b5a60897f52fb5b66d5d64b4608dcf01207cc46a726a54fa459b4c8a9b9",
       "contractSha256": "c75c78dbf6cc2ef7f785ba10459eb66416b10a03c206111a0aec466511403838",
       "priceCents": 3700,
@@ -2248,9 +2248,9 @@
     {
       "id": "receipts",
       "code": "DD-119",
-      "version": "1.2.0",
-      "packageSha256": "0f798c5197c241072cd7f565bbcbbf3c42101933407d49b6ac1fadb8bfb15020",
-      "sourceSha256": "d526fefd80af955f72604701d7c7f04e58acef379a019865f3ce6792ab0d0fd0",
+      "version": "1.2.1",
+      "packageSha256": "61dff8793601cc30831ffe85bec977f1895f9563950b88e5d656103204126a62",
+      "sourceSha256": "8700114f0eaf317d1d2efefeca99855f1250c2fcd9270be732347359dcfcd245",
       "contractSha256": "2d23bced43044c2803c746f21031a70969f16d59739e7de04450454e4183be71",
       "priceCents": 2200,
       "scores": {
@@ -2267,9 +2267,9 @@
     {
       "id": "review-contract",
       "code": "DD-120",
-      "version": "1.2.0",
-      "packageSha256": "b941c948b85473dc0711150be62918ad6004f026e70f0a9512393fc3cd220c72",
-      "sourceSha256": "dbc76800da05e5267bc60d16dc6f67505afd9dfaa7d420b867bb251976a95c2b",
+      "version": "1.2.1",
+      "packageSha256": "af0b513b76d24989278c911477622a1218423fc3eb6edc9d516689668c1a9343",
+      "sourceSha256": "c74c5217c9818e9b805c7877d51dc74eb706d4449394926146e5079b8795c8b1",
       "contractSha256": "2ba7e883ea079e23e17037509c333203cba510b62458e82c2bcc1c6e0afb8864",
       "priceCents": 3200,
       "scores": {
@@ -2286,8 +2286,8 @@
     {
       "id": "saas-multi-tenant-supabase",
       "code": "DD-121",
-      "version": "1.2.0",
-      "packageSha256": "45ac796580822f5586bd797242388c3c1cc482899a06eab4c1b6650122ab7be0",
+      "version": "1.2.1",
+      "packageSha256": "497fb5de447a93d59cefd8dfcc4da3af7f7dbc0ab6b90d797561aff8c08cbef8",
       "sourceSha256": "accbab754865c403a0e9a8c200cbc0b1da60c0c9a9685d8261d850105a89248b",
       "contractSha256": "ab99ec27dd36cc472092112248b5bbaec85949735c8dc32260088cc49b93f9fb",
       "priceCents": 4700,
@@ -2305,8 +2305,8 @@
     {
       "id": "security-and-hardening",
       "code": "DD-122",
-      "version": "1.2.0",
-      "packageSha256": "83512f0d95ea9e1a39a59ff0f4725514fd9377fed61ed12878d8be652914e49b",
+      "version": "1.2.1",
+      "packageSha256": "28f22a056a2e392175b59b7145d8d00713b802baa548edcab0f1fc2e29d117ec",
       "sourceSha256": "d7ac5306429ce2aee188f82c9f74db8b206bb31ee82ca91e5f57c959d7639d38",
       "contractSha256": "cf773b6fef7a2fd9e73a2ae8ae471d77e1a969dbfafe906d5a1ffb98171ac572",
       "priceCents": 3700,
@@ -2324,8 +2324,8 @@
     {
       "id": "security-audit",
       "code": "DD-123",
-      "version": "1.2.0",
-      "packageSha256": "3056791a835ff474e2feb40fbcaf032e4a1835356889e7692c1592549d8b6485",
+      "version": "1.2.1",
+      "packageSha256": "10852029d74d121cbf42e000a079ba2fb78718fddd6b42e6e6eb39dcaae875c1",
       "sourceSha256": "eaa06b5360bfd782ad0912e123c99ce0da6bdb3d13b5e3cdbe36698ce2ca548f",
       "contractSha256": "512bdf44f64550bc47c5ac047ff320a06cc574487203d340babcc2955bddc4bd",
       "priceCents": 3700,
@@ -2343,9 +2343,9 @@
     {
       "id": "session-report",
       "code": "DD-124",
-      "version": "1.2.0",
-      "packageSha256": "fe039b31692ea3a6c05e9254d2c62f8959d684fc91f0ba20b21812a8d4bf1b20",
-      "sourceSha256": "4c7f8eb5d5cd77d55d3cb40501b35ca60e4ecfc509d7b7a9763248f102db93ba",
+      "version": "1.2.1",
+      "packageSha256": "97bb74414c0afa2bd97bba93b9633dcbba20f1a85522fa8de7c9010be75ecc2b",
+      "sourceSha256": "8b92a72eb55211d1922aaddc4111230ab84545245c9fece902b8d8721cdeab8d",
       "contractSha256": "2da1a87c75713d2effdaa2f2f593a73d6ea41871ddb1aaffe8e0f8991ac6b157",
       "priceCents": 2200,
       "scores": {
@@ -2362,8 +2362,8 @@
     {
       "id": "shipping-and-launch",
       "code": "DD-125",
-      "version": "1.2.0",
-      "packageSha256": "e51d738ec0b969b816353833fdcccb789cd89f2c78333f6a88e689550778408b",
+      "version": "1.2.1",
+      "packageSha256": "6a58b48100c00d8235bebc3bee1b538a9ccaa74f2dd579ceae552f3770bfb5dc",
       "sourceSha256": "6ba97cf486c3eec3610e4a34b7ece3e0289a533bc1cc27bc50f8f30fedea37f3",
       "contractSha256": "8245e64f9c9476fa5e3a3099b85780ea969f0adc5139284e95d14344f933b7d4",
       "priceCents": 3200,
@@ -2381,9 +2381,9 @@
     {
       "id": "siege",
       "code": "DD-126",
-      "version": "1.2.0",
-      "packageSha256": "2d7021b8ae6f3d5e9995a01347114e9ce311978fda8e05c4c0e80163d3122d71",
-      "sourceSha256": "b707fb3dc15728f8b43fe332ee7792a92c2c920dce6ae1da46f7f07c03ca7b9d",
+      "version": "1.2.1",
+      "packageSha256": "b73abd3deaed6045ba4068263550eac57cc09ee7012bb715e925b05941e89991",
+      "sourceSha256": "5a7119a02a6aa8b81344be2032e4e7b0ee3a733185e810f172a75501bd98a60d",
       "contractSha256": "5375d17e5b32a8cc5c841d7f0992aeb9510494b4fdcf40b116952abfe6ecdea5",
       "priceCents": 3700,
       "scores": {
@@ -2400,9 +2400,9 @@
     {
       "id": "signature-request",
       "code": "DD-127",
-      "version": "1.2.0",
-      "packageSha256": "cfeac3cbcf77c4b1653ac611bc0df4649b6bde7cd898f9d9f63719a4ad9a3024",
-      "sourceSha256": "0aa5c720ebd6ef6fddb804c4c75c4ad8709c654905f9ae33dee2d680f42bab13",
+      "version": "1.2.1",
+      "packageSha256": "e494b2cb8f8bda0c5e5aa32b4f10149976f0719d12f79b9896681f4222bc636a",
+      "sourceSha256": "65a675c1f477ad012247db3f4ee7897c26dd5bf44095ce2da964dc1fba11187b",
       "contractSha256": "1d3c05938d3ca070bd9de868da1b5c691519d46580e5e302b285c7454189c349",
       "priceCents": 2700,
       "scores": {
@@ -2419,8 +2419,8 @@
     {
       "id": "sites-institucionais-e-seo",
       "code": "DD-128",
-      "version": "1.2.0",
-      "packageSha256": "90d42c7c106ce92a69e3caf1f6362ce107b5688a29cb0f0482201284c8745eaf",
+      "version": "1.2.1",
+      "packageSha256": "3fbbbed9718b8f59535420e2f46c68bc8f16d198f59f8c16212da6f32f532e24",
       "sourceSha256": "1b739b5b90090dbfabb636c6d7135470a0a5027056af508e9dd9599928993cdc",
       "contractSha256": "adc70952709b4c4726ba290012a6bfc15942f0ec05b2d08d0f8bea85fabf8c74",
       "priceCents": 3700,
@@ -2438,9 +2438,9 @@
     {
       "id": "skill-development",
       "code": "DD-129",
-      "version": "1.2.0",
-      "packageSha256": "d6bcafbda3a01881a2759990beaaf6e1d23e06e965e070777ebf527f938f7686",
-      "sourceSha256": "34d7020c893e168d12e495c0e8e980c645bd58b2837992549f3449b752aab375",
+      "version": "1.2.1",
+      "packageSha256": "0eb01c6e120d11c972df099396d7a384208b7bb8fc6e1d0a605dfadee370be80",
+      "sourceSha256": "302f2e82033e8614fb71b187470ad830dd360a1141cbb4c0a2869b2886a62b84",
       "contractSha256": "c3a8e1fcc102f381095db3c3e561331448e86d1d5c5616bfed0de677283dbfa7",
       "priceCents": 2700,
       "scores": {
@@ -2457,9 +2457,9 @@
     {
       "id": "solo",
       "code": "DD-130",
-      "version": "1.2.0",
-      "packageSha256": "8538bf63f58904895285ee29992ca3e35e59e75612b87e818a730c578737d593",
-      "sourceSha256": "02b692fbd216aac5c1768b332edc81cbf8e5dc521afb793d2afda851849cfefb",
+      "version": "1.2.1",
+      "packageSha256": "4aadf0f5e593096176fb00412ff7bf2ba9fb2681036f7626b541450dee0e0ea6",
+      "sourceSha256": "b9b04e30c5f609abdb592752929db5c81571f1050b01e7ea731cbaccb8ab842d",
       "contractSha256": "54abdd945763a3ed6e6c21820b375e062ff348a5984dfafa7eb125b64db976b6",
       "priceCents": 3200,
       "scores": {
@@ -2476,9 +2476,9 @@
     {
       "id": "telegram-access",
       "code": "DD-131",
-      "version": "1.2.0",
-      "packageSha256": "5792b811ab45ffd2235516b310249db5eb86ff156cf8388fd602a308cf0c03c9",
-      "sourceSha256": "8692559bc0a4855820824e96d3c41a7f9fd0cdfc928c133589fc813509c2aecf",
+      "version": "1.2.1",
+      "packageSha256": "cc757e394c5f1ddd2228b1c2bef4e6ff3f2e230f7f73705da2274459ebc032e9",
+      "sourceSha256": "df5d3a5a952d311ed0b319a91346be780b575d38626c694c19ac62cdb2b5893b",
       "contractSha256": "5be655e39d729033a1d69be5b911c9cfbad017a4d1460b5b1c95df189b5a8a89",
       "priceCents": 2200,
       "scores": {
@@ -2495,9 +2495,9 @@
     {
       "id": "telegram-configure",
       "code": "DD-132",
-      "version": "1.2.0",
-      "packageSha256": "b1c35a893a3d5c57daf318977cb78a53ebb0f33cf81a77269105ff6553af48fc",
-      "sourceSha256": "5a6bb3c7e7987cf7ae33889edbee356bc36084dc95da5da88464b87f2c57c9fc",
+      "version": "1.2.1",
+      "packageSha256": "8c9a8b3a5b79b284dee6ee2b150bbf69746b1126c2ab3924a39f9819171ca3b7",
+      "sourceSha256": "f2af76f1c5f04d48c7cc080437b35dcdf98b59deee2f45d65ec0f3bca1faa2a9",
       "contractSha256": "e7830daaefe57fbb36a17819ccf3e317433906a824a7312ddfd6a0143d258a50",
       "priceCents": 2200,
       "scores": {
@@ -2514,9 +2514,9 @@
     {
       "id": "triage-nda",
       "code": "DD-133",
-      "version": "1.2.0",
-      "packageSha256": "1f9ab23c8acbc8a77f291c13ad34537e48cbb3167b4c685490f0a8685798248f",
-      "sourceSha256": "a3bebaa30e640c9cdea29b907e25a4ebdabcba466b9fad840f8e26e29c28cb0c",
+      "version": "1.2.1",
+      "packageSha256": "a0379a075fa52518f1f70bae2d32d570b19aa5c6d01b9dc9d027ad8dfbe2b0c4",
+      "sourceSha256": "979a4974cbc8cfa0158bfeb5be644a0ccff23f2b68109c2ca39b4e8169f2254b",
       "contractSha256": "fa5aba96815da476e6be3622bf6c71851ac46a049a64428b17a3b3c831bf466f",
       "priceCents": 2700,
       "scores": {
@@ -2533,9 +2533,9 @@
     {
       "id": "vendor-check",
       "code": "DD-134",
-      "version": "1.2.0",
-      "packageSha256": "8627d115d5353ff6ef65dc9735767548f7e2fe481449c3f4117d20b911623e86",
-      "sourceSha256": "92ecf85ff54e376e1d93d01a7f83fe908d98fc9304bc061ea024ff08e868287f",
+      "version": "1.2.1",
+      "packageSha256": "d35c3c9a89a3da2b130c86cea184b04f0b438227ceea86522a11570dd0835ba4",
+      "sourceSha256": "9bb0205cb2ff90f847a8ce8940ba0a02e339653bfb3aa8149327ce001bac5f23",
       "contractSha256": "7853f5318e7fb2456eda5d81f0deb859a178e26307541c8e7254ee760d80985e",
       "priceCents": 2700,
       "scores": {
@@ -2571,8 +2571,8 @@
     {
       "id": "video-programatico-reels",
       "code": "DD-136",
-      "version": "1.2.0",
-      "packageSha256": "d4932fd2a98ecaf556e6044aaab1d6dca29d5fcad8868adc7cb27cfe5c03eea0",
+      "version": "1.2.1",
+      "packageSha256": "13e25f53c1cca434ad980f5e3c62eddb11f1c3b078acfd660df7d940d99261aa",
       "sourceSha256": "4861a0b1502caa07ff5b29fcddae3171b161b266617077da9154aef486f80477",
       "contractSha256": "3bd4b485253c2799764ed3e9c820599e550184f16c190d2e6c92f4994b08e892",
       "priceCents": 4200,
@@ -2590,9 +2590,9 @@
     {
       "id": "writing-hookify-rules",
       "code": "DD-137",
-      "version": "1.2.0",
-      "packageSha256": "60dd5ebd597f8a3a032e572c7b8d4df84fc95deea10251535b55b0f193883916",
-      "sourceSha256": "814fe185ce549bf8b1e6111ab36fbeba5764b27d87702a7a5705c769b6b2ecc4",
+      "version": "1.2.1",
+      "packageSha256": "260c3b475792fdf7a4b5fcead8c75b6d96cd77e9d176153d2855319ebbabb51a",
+      "sourceSha256": "62b00774dedf2691cd0b44c28ea08b02472ca61232e927aade29ba2394307b33",
       "contractSha256": "967ebd7aad4b9fe414ce05b8e26e982410907cdba826ef05c8c2afd62e71d1e3",
       "priceCents": 2700,
       "scores": {

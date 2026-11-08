@@ -1,4 +1,4 @@
-const { requireSession } = require("../lib/auth.cjs");
+const { requireAccess } = require("../lib/access.cjs");
 const { send, body, failure, initializeLocale } = require("../lib/http.cjs");
 const { db } = require("../lib/db.cjs");
 const { limit } = require("../lib/limit.cjs");
@@ -10,7 +10,7 @@ const {
 module.exports = async (req, res) => {
   initializeLocale(req, res);
   try {
-    requireSession(req);
+    await requireAccess(req);
     if (req.method === "GET") {
       if (!adminAllowed(req))
         return send(res, 403, { error: "Acesso ao painel não autorizado." });

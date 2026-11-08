@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#070c13" />
+    <title>Entrar no DriveData Deck</title>
+    <link rel="stylesheet" href="/acesso.css" />
+    <script src="/navigation.js" defer></script>
+    <script src="/acesso.js" defer></script>
+  </head>
+  <body>
+    <main class="box">
+      <p class="brand">DriveData Deck</p>
+
+      <form id="login" novalidate>
+        <h1>Entre no seu Deck</h1>
+        <label for="email">E-mail da compra</label>
+        <input id="email" type="email" autocomplete="username" required maxlength="254" />
+        <label for="password">Senha</label>
+        <input id="password" type="password" autocomplete="current-password" required maxlength="256" />
+        <button type="submit">Entrar</button>
+        <button class="link" id="go-request" type="button">Primeiro acesso ou esqueci a senha</button>
+      </form>
+
+      <form id="request" novalidate hidden>
+        <h1>Receba seu link de acesso</h1>
+        <p>Enviamos para o e-mail usado na compra um link para criar ou trocar a senha.</p>
+        <label for="request-email">E-mail da compra</label>
+        <input id="request-email" type="email" autocomplete="username" required maxlength="254" />
+        <button type="submit">Enviar link</button>
+        <button class="link" id="go-login" type="button">Voltar para entrar</button>
+      </form>
+
+      <form id="create" novalidate hidden>
+        <h1>Crie sua senha</h1>
+        <label for="new-password">Nova senha, com pelo menos 10 caracteres</label>
+        <input id="new-password" type="password" autocomplete="new-password" required minlength="10" maxlength="256" />
+        <button type="submit">Salvar e abrir o Deck</button>
+      </form>
+
+      <p class="message" id="message" role="status"></p>
+    </main>
+  </body>
+</html>

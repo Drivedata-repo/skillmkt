@@ -35,8 +35,9 @@ test("ten actual artifact scenarios remain distinct from full skill certificatio
   for (const s of evidence.scenarios) {
     const skill = catalog.skills.find((x) => x.id === s.skillId);
     assert.ok(skill);
-    assert.equal(s.version, skill.release.version);
-    assert.equal(s.packageSha256, skill.release.sha256);
+    const onBaseline = skill.release.version === "1.2.1";
+    assert.equal(s.version, onBaseline ? skill.release.baselineVersion : skill.release.version);
+    assert.equal(s.packageSha256, onBaseline ? skill.release.baselinePackageSha256 : skill.release.sha256);
     assert.match(s.sourceSha256, /^[a-f0-9]{64}$/);
     assert.equal(s.passed, true);
     assert.equal(s.assistantExecuted, true);

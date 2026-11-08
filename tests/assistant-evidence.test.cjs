@@ -50,9 +50,10 @@ test("published assistant evidence matches the released package and original fic
     assert.equal(s.status, "sample-passed");
     assert.equal(s.executionVerified, false);
     assert.equal(s.fullSkillExecutionVerified, false);
+    const release = catalog.skills.find((x) => x.id === s.skillId).release;
     assert.equal(
       s.packageSha256,
-      catalog.skills.find((x) => x.id === s.skillId).release.sha256,
+      release.version === "1.2.1" ? release.baselinePackageSha256 : release.sha256,
     );
     assert.equal(hash(s.outputText), s.outputSha256);
     assert.equal(hash(JSON.stringify(s.input)), s.inputSha256);

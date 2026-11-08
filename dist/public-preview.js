@@ -156,7 +156,7 @@ const PublicPreview = ({
           "Avaliação de consumo e desempenho"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Cartógrafo de Métricas",
           "tagline": "Encontre a regra por trás do número antes de otimizar a medida."
@@ -168,7 +168,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Preço proposto",
           "demoLabel": "Grátis na demo",
           "notice": "Valor planejado em dólares americanos. Nenhuma compra ou cobrança está ativa.",
@@ -225,10 +225,10 @@ const PublicPreview = ({
           "digest": "ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
           "serial": "DDK-111-EA99-B810-FAC1",
           "edition": {
-            "id": "dde_c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
-            "digest": "c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
-            "version": "1.2.0",
-            "packageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e"
+            "id": "dde_432e1859935b15a2b4d98ca61ee2c33d3c467a411034c7cce82371f0d719fe3c",
+            "digest": "432e1859935b15a2b4d98ca61ee2c33d3c467a411034c7cce82371f0d719fe3c",
+            "version": "1.2.1",
+            "packageSha256": "49614a1f88945ad84fddca6f19f18917f4088574192d0314f505d5bd23debd91"
           },
           "blockchain": {
             "status": "not-minted",
@@ -311,7 +311,7 @@ const PublicPreview = ({
           "Matriz de rastreabilidade entre necessidade e funcionalidade"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Laboratório do Escopo",
           "tagline": "Veja o fluxo funcionar em uma demonstração antes de assumir o escopo."
@@ -323,7 +323,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Preço proposto",
           "demoLabel": "Grátis na demo",
           "notice": "Valor planejado em dólares americanos. Nenhuma compra ou cobrança está ativa.",
@@ -380,10 +380,10 @@ const PublicPreview = ({
           "digest": "bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
           "serial": "DDK-118-BC74-67D6-9343",
           "edition": {
-            "id": "dde_77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
-            "digest": "77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
-            "version": "1.2.0",
-            "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448"
+            "id": "dde_83a476ec5b60bc66f3b059f2e56193219146705d1ddfdf379bc0a2f9a96cec17",
+            "digest": "83a476ec5b60bc66f3b059f2e56193219146705d1ddfdf379bc0a2f9a96cec17",
+            "version": "1.2.1",
+            "packageSha256": "e290210cae8367b5a7524d0787bed42adc5c366f4bc13d5153b83760d9cf8a9f"
           },
           "blockchain": {
             "status": "not-minted",
@@ -462,7 +462,7 @@ const PublicPreview = ({
           "Revisão de tom de voz e mensagens"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Tradutor de Valor",
           "tagline": "Transforme capacidade técnica em uma mensagem que alguém entende."
@@ -474,7 +474,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Preço proposto",
           "demoLabel": "Grátis na demo",
           "notice": "Valor planejado em dólares americanos. Nenhuma compra ou cobrança está ativa.",
@@ -531,10 +531,10 @@ const PublicPreview = ({
           "digest": "e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
           "serial": "DDK-100-E061-BE3E-63B7",
           "edition": {
-            "id": "dde_19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
-            "digest": "19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
-            "version": "1.2.0",
-            "packageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649"
+            "id": "dde_af26c4e6b76e4be44a6b2925d2c8d8bef7925f72b020fbb881084190524166a9",
+            "digest": "af26c4e6b76e4be44a6b2925d2c8d8bef7925f72b020fbb881084190524166a9",
+            "version": "1.2.1",
+            "packageSha256": "39dc2d7d8607cd48c13f27542a72f22fcd1142c1291a43f8d3caa263159415d2"
           },
           "blockchain": {
             "status": "not-minted",
@@ -725,7 +725,7 @@ const PublicPreview = ({
           "Usage and performance assessment"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Metric Cartographer",
           "tagline": "Find the rule behind the number before optimizing the measure."
@@ -737,7 +737,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Proposed price",
           "demoLabel": "Free in the demo",
           "notice": "Planned value in US dollars. No purchase or billing is active.",
@@ -794,10 +794,10 @@ const PublicPreview = ({
           "digest": "ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
           "serial": "DDK-111-EA99-B810-FAC1",
           "edition": {
-            "id": "dde_c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
-            "digest": "c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
-            "version": "1.2.0",
-            "packageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e"
+            "id": "dde_432e1859935b15a2b4d98ca61ee2c33d3c467a411034c7cce82371f0d719fe3c",
+            "digest": "432e1859935b15a2b4d98ca61ee2c33d3c467a411034c7cce82371f0d719fe3c",
+            "version": "1.2.1",
+            "packageSha256": "49614a1f88945ad84fddca6f19f18917f4088574192d0314f505d5bd23debd91"
           },
           "blockchain": {
             "status": "not-minted",
@@ -880,7 +880,7 @@ const PublicPreview = ({
           "Traceability matrix between needs and features"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Scope Laboratory",
           "tagline": "Explore a demonstration flow before committing to the scope."
@@ -892,7 +892,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Proposed price",
           "demoLabel": "Free in the demo",
           "notice": "Planned value in US dollars. No purchase or billing is active.",
@@ -949,10 +949,10 @@ const PublicPreview = ({
           "digest": "bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
           "serial": "DDK-118-BC74-67D6-9343",
           "edition": {
-            "id": "dde_77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
-            "digest": "77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
-            "version": "1.2.0",
-            "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448"
+            "id": "dde_83a476ec5b60bc66f3b059f2e56193219146705d1ddfdf379bc0a2f9a96cec17",
+            "digest": "83a476ec5b60bc66f3b059f2e56193219146705d1ddfdf379bc0a2f9a96cec17",
+            "version": "1.2.1",
+            "packageSha256": "e290210cae8367b5a7524d0787bed42adc5c366f4bc13d5153b83760d9cf8a9f"
           },
           "blockchain": {
             "status": "not-minted",
@@ -1031,7 +1031,7 @@ const PublicPreview = ({
           "Tone of voice and messaging review"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Value Translator",
           "tagline": "Turn technical capability into a message people can understand."
@@ -1043,7 +1043,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Proposed price",
           "demoLabel": "Free in the demo",
           "notice": "Planned value in US dollars. No purchase or billing is active.",
@@ -1100,10 +1100,10 @@ const PublicPreview = ({
           "digest": "e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
           "serial": "DDK-100-E061-BE3E-63B7",
           "edition": {
-            "id": "dde_19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
-            "digest": "19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
-            "version": "1.2.0",
-            "packageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649"
+            "id": "dde_af26c4e6b76e4be44a6b2925d2c8d8bef7925f72b020fbb881084190524166a9",
+            "digest": "af26c4e6b76e4be44a6b2925d2c8d8bef7925f72b020fbb881084190524166a9",
+            "version": "1.2.1",
+            "packageSha256": "39dc2d7d8607cd48c13f27542a72f22fcd1142c1291a43f8d3caa263159415d2"
           },
           "blockchain": {
             "status": "not-minted",
@@ -1294,7 +1294,7 @@ const PublicPreview = ({
           "Evaluación de consumo y rendimiento"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Cartógrafo de Métricas",
           "tagline": "Encuentra la regla detrás de la cifra antes de optimizar la medida."
@@ -1306,7 +1306,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Precio propuesto",
           "demoLabel": "Gratis en la demo",
           "notice": "Valor previsto en dólares estadounidenses. No hay compras ni cobros activos.",
@@ -1363,10 +1363,10 @@ const PublicPreview = ({
           "digest": "ea99b810fac1c751bb0f0f176e0c7bef4fd39b525c468573620488c5a001bcda",
           "serial": "DDK-111-EA99-B810-FAC1",
           "edition": {
-            "id": "dde_c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
-            "digest": "c26d6119f9667bb4cecefcd6e10435e973e79cf43b2c8fdf71870811cd0c5a7f",
-            "version": "1.2.0",
-            "packageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e"
+            "id": "dde_432e1859935b15a2b4d98ca61ee2c33d3c467a411034c7cce82371f0d719fe3c",
+            "digest": "432e1859935b15a2b4d98ca61ee2c33d3c467a411034c7cce82371f0d719fe3c",
+            "version": "1.2.1",
+            "packageSha256": "49614a1f88945ad84fddca6f19f18917f4088574192d0314f505d5bd23debd91"
           },
           "blockchain": {
             "status": "not-minted",
@@ -1449,7 +1449,7 @@ const PublicPreview = ({
           "Matriz de trazabilidad entre necesidades y funcionalidades"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Laboratorio del Alcance",
           "tagline": "Explora un flujo de demostración antes de comprometer el alcance."
@@ -1461,7 +1461,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Precio propuesto",
           "demoLabel": "Gratis en la demo",
           "notice": "Valor previsto en dólares estadounidenses. No hay compras ni cobros activos.",
@@ -1518,10 +1518,10 @@ const PublicPreview = ({
           "digest": "bc7467d693430f414e6a33ebab2773e8ab320c7c09d0f0a36252818257959df1",
           "serial": "DDK-118-BC74-67D6-9343",
           "edition": {
-            "id": "dde_77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
-            "digest": "77746d88b71d217521d30824e8deb099eca0b3b8dc1561f6f00b502174682021",
-            "version": "1.2.0",
-            "packageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448"
+            "id": "dde_83a476ec5b60bc66f3b059f2e56193219146705d1ddfdf379bc0a2f9a96cec17",
+            "digest": "83a476ec5b60bc66f3b059f2e56193219146705d1ddfdf379bc0a2f9a96cec17",
+            "version": "1.2.1",
+            "packageSha256": "e290210cae8367b5a7524d0787bed42adc5c366f4bc13d5153b83760d9cf8a9f"
           },
           "blockchain": {
             "status": "not-minted",
@@ -1600,7 +1600,7 @@ const PublicPreview = ({
           "Revisión del tono de voz y los mensajes"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Traductor de Valor",
           "tagline": "Convierte capacidad técnica en un mensaje comprensible."
@@ -1612,7 +1612,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Precio propuesto",
           "demoLabel": "Gratis en la demo",
           "notice": "Valor previsto en dólares estadounidenses. No hay compras ni cobros activos.",
@@ -1669,10 +1669,10 @@ const PublicPreview = ({
           "digest": "e061be3e63b7aa02cddbd1b20032db3426a7ce2eeff82edf46a49c71333b5f03",
           "serial": "DDK-100-E061-BE3E-63B7",
           "edition": {
-            "id": "dde_19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
-            "digest": "19227b7259dfe3d694ed2b7b9623107ba33c44724167df62246ab29a81ebceb4",
-            "version": "1.2.0",
-            "packageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649"
+            "id": "dde_af26c4e6b76e4be44a6b2925d2c8d8bef7925f72b020fbb881084190524166a9",
+            "digest": "af26c4e6b76e4be44a6b2925d2c8d8bef7925f72b020fbb881084190524166a9",
+            "version": "1.2.1",
+            "packageSha256": "39dc2d7d8607cd48c13f27542a72f22fcd1142c1291a43f8d3caa263159415d2"
           },
           "blockchain": {
             "status": "not-minted",

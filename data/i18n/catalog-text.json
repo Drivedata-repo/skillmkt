@@ -3779,6 +3779,18 @@
     "Metrics checked against a sample provided by the client",
     "Indicadores comprobados con una muestra proporcionada por el cliente"
   ],
+  "Termos DriveData": [
+    "DriveData terms",
+    "Términos de DriveData"
+  ],
+  "MIT e termos DriveData": [
+    "MIT and DriveData terms",
+    "MIT y términos de DriveData"
+  ],
+  "Apache License 2.0 e termos DriveData": [
+    "Apache License 2.0 and DriveData terms",
+    "Apache License 2.0 y términos de DriveData"
+  ],
   "Termos encontrados; revisar distribuição": [
     "Terms found; review distribution",
     "Condiciones encontradas; revisar la distribución"

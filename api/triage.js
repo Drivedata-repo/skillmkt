@@ -1,11 +1,11 @@
 const { body, send, failure, initializeLocale } = require("../lib/http.cjs");
-const { requireSession } = require("../lib/auth.cjs");
+const { requireAccess, restrictTriage } = require("../lib/access.cjs");
 const { limit } = require("../lib/limit.cjs");
 const { findSkills, analyzeSkills } = require("../lib/match.cjs");
 module.exports = async (req, res) => {
   const locale = initializeLocale(req, res);
   try {
-    requireSession(req);
+    const access = await requireAccess(req);
     const raw = await body(req);
     if (
       typeof raw.problem !== "string" ||
@@ -16,12 +16,15 @@ module.exports = async (req, res) => {
       return send(res, 400, {
         error: "Descreva seu problema com 12 a 2.000 caracteres.",
       });
-    const result = findSkills(
-      raw.problem,
-      raw.audience,
-      raw.refinement || null,
-      locale,
-      raw.profile,
+    const result = restrictTriage(
+      findSkills(
+        raw.problem,
+        raw.audience,
+        raw.refinement || null,
+        locale,
+        raw.profile,
+      ),
+      access,
     );
     const { candidateIds, ...publicResult } = result;
     if (

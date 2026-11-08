@@ -32,6 +32,7 @@ const routes = Object.fromEntries(
     "feedback",
     "packs",
     "pack-download",
+    "commerce",
   ].map((n) => ["/api/" + n, require("./api/" + n + ".js")]),
 );
 http
@@ -39,6 +40,14 @@ http
     try {
       const url = new URL(req.url, "http://localhost");
       if (url.pathname === "/app") return await routes["/api/app"](req, res);
+      const commerceRoute =
+        url.pathname === "/api/webhooks/hotmart"
+          ? "webhook"
+          : url.pathname.match(/^\/api\/account\/([a-z-]+)$/)?.[1];
+      if (commerceRoute) {
+        req.url = "/api/commerce?route=" + commerceRoute;
+        return await routes["/api/commerce"](req, res);
+      }
       if (routes[url.pathname]) return await routes[url.pathname](req, res);
       let file = path.resolve(
         root,
@@ -48,6 +57,10 @@ http
               ? "/index.html"
               : url.pathname === "/login"
                 ? "/login.html"
+                : url.pathname === "/acesso"
+                  ? "/acesso.html"
+                  : url.pathname === "/oferta"
+                    ? "/oferta.html"
                 : url.pathname === "/privacidade"
                   ? "/privacy.html"
                   : url.pathname,

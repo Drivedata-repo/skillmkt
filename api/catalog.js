@@ -1,9 +1,9 @@
-const { requireSession } = require("../lib/auth.cjs");
+const { requireAccess, restrictCatalog } = require("../lib/access.cjs");
 const { send, failure, initializeLocale } = require("../lib/http.cjs");
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   const locale = initializeLocale(req, res);
   try {
-    requireSession(req);
+    const access = await requireAccess(req);
     if (req.method !== "GET")
       return send(res, 405, { error: "Método não permitido." });
     const { skills, journeys } = require("../lib/catalog.cjs");
@@ -31,7 +31,7 @@ module.exports = (req, res) => {
       availability,
     );
     const catalog = localizeCatalog({ skills, journeys }, locale);
-    send(res, 200, {
+    const payload = {
       ...catalog,
       packs: require("../lib/packs.cjs").getPacks(locale),
       combos: require("../lib/pricing.cjs").getCombos(locale),
@@ -51,7 +51,8 @@ module.exports = (req, res) => {
       locale,
       originalsLanguage: "mixed",
       triageOptions: require("../lib/triage-profile.cjs").options(locale),
-    });
+    };
+    send(res, 200, restrictCatalog(payload, access, locale));
   } catch (e) {
     failure(res, e);
   }

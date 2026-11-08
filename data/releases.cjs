@@ -4,13 +4,15 @@ module.exports = {
     "schemaVersion": 1,
     "id": "agent-development",
     "code": "DD-001",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Claude específico"
@@ -24,52 +26,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "3f5d5bbffc9d7e55a50dfef1b7610b112b825f0419409d59613fa27dce9781b7",
-    "baselineSourceSha256": "6a2826571320828cc6f8f21ccd8e6eefd2bced62000c8c5e43a712c12e2d83a1",
-    "sourceSha256": "b3a562148c11b821debf69263d7e2c50f919ba27d0a8e2ed9e44652f97ef1d6e",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "cfef40f3f2fe64d5a9b8cacfb91dfb18889736f1fd49c12054746ed93a0558b5",
+    "baselineSourceSha256": "b3a562148c11b821debf69263d7e2c50f919ba27d0a8e2ed9e44652f97ef1d6e",
+    "sourceSha256": "88163f97ab814717b04f07042bfe77b81928b8bd445cd4d39e6551eba4140b03",
     "patchSetSha256": "bf17952364e4f4fad58ea05d31c6bcaca2690712ab7cf4cee09fe9430a92d781",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "73745acf97f8153e0aab311cb5ebf7ce66ddd5495e867b4494336d9256aa3a14",
+        "afterSha256": "b046366fcd2ffc92bf1054117dd3ed363f9a75088fd822ad22c0b797bf5a9931"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "3b17d0beb7c720b4486dad4151a24b5007646b6b77fc38d6a367bb81fab69ca2"
+      },
+      {
+        "path": "agent-development/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "bc058a5cb76b6aec9bf61714e20e882f1199cfbd408bbce1845a0f24a4ff7bb0"
+      },
+      {
+        "path": "agent-development/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "agent-development/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "6a2826571320828cc6f8f21ccd8e6eefd2bced62000c8c5e43a712c12e2d83a1",
-        "afterSha256": "b3a562148c11b821debf69263d7e2c50f919ba27d0a8e2ed9e44652f97ef1d6e"
-      },
-      {
-        "path": "agent-development/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "8654e29e84e0aee5605569779ca126b578dd686df08bf7e47459dea82aeb59da"
-      },
-      {
-        "path": "agent-development/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "93e75ca502312b84f6634b13559a486ae2ef2a2b369a3463f4c46eae44150478"
-      },
-      {
-        "path": "agent-development/scripts/revision-tools.cjs",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a64ce5fda2548f624110aa677b55495b39c0787ab81b6705d08e19e203bb7750"
+        "beforeSha256": "b3a562148c11b821debf69263d7e2c50f919ba27d0a8e2ed9e44652f97ef1d6e",
+        "afterSha256": "88163f97ab814717b04f07042bfe77b81928b8bd445cd4d39e6551eba4140b03"
       }
     ],
-    "sha256": "cfef40f3f2fe64d5a9b8cacfb91dfb18889736f1fd49c12054746ed93a0558b5",
-    "bytes": 34999,
-    "fileCount": 14
+    "sha256": "f96a344fe71faf9dc0d37daaa63e03636384a2ab1492f396eefddeef1de8d8df",
+    "bytes": 40825,
+    "fileCount": 17
   },
   "ambiente-dev-windows": {
     "schemaVersion": 1,
     "id": "ambiente-dev-windows",
     "code": "DD-002",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -90,46 +98,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "b7daad6bba3c6c5a83b0432eab3a7d9397c046319ad9cb8da54600627b7d233f",
-    "baselineSourceSha256": "4c4b8a0e05287f12723906cb6ca733da2e7b2e248c738a223b1028fb5e4f6f7d",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "8e37ec27514c3a686a9115fb2dbc9f1ce94e26faa0736623c0c227d68f59363c",
+    "baselineSourceSha256": "6e6d83f4a61ab3ef9e913862824139c92d7b742910899b09b0ec3d15ea383341",
     "sourceSha256": "6e6d83f4a61ab3ef9e913862824139c92d7b742910899b09b0ec3d15ea383341",
     "patchSetSha256": "1af0024a83280fb3339351614cef42ffd00c195fc66d270572898d72f3afc3a4",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "ambiente-dev-windows/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "4c4b8a0e05287f12723906cb6ca733da2e7b2e248c738a223b1028fb5e4f6f7d",
-        "afterSha256": "6e6d83f4a61ab3ef9e913862824139c92d7b742910899b09b0ec3d15ea383341"
+        "beforeSha256": "d28971f6039898c5c8c174f31f578cf4a34b1731a52d2665459ecc8546e776e2",
+        "afterSha256": "cc4a6e5cd2dbd87472447ef9a39b77f45ade6b755b72fc8736a8d715a9b41f28"
       },
       {
-        "path": "ambiente-dev-windows/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "f76724842f586bf60ada032ad4fda4bc473eea437a17e07e3545dd6bcd1d2186"
-      },
-      {
-        "path": "ambiente-dev-windows/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "3b3ef52d64d02c36d47f1b45309b30a238c578d572c3ec1ae125409ae4f7c2cf"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "8e37ec27514c3a686a9115fb2dbc9f1ce94e26faa0736623c0c227d68f59363c",
-    "bytes": 32072,
-    "fileCount": 13
+    "sha256": "ea743b166c40965088fcdb321adbd77ae0ff1a1e865a7e8f24b8c228cea4ea0b",
+    "bytes": 32543,
+    "fileCount": 14
   },
   "automacao-documentos-office": {
     "schemaVersion": 1,
     "id": "automacao-documentos-office",
     "code": "DD-003",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -150,47 +152,43 @@ module.exports = {
     },
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "744902eee4f358496ac22682274f2f61e11b4adb37656a3459b505900d38494e",
-    "baselineSourceSha256": "0d63703d40850ee7db3d68024f27f0a5f98e62ac176f86d1d29b79d216814142",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "a7071953b83111f30052237ffb7e533bc6b39b03fe694a7821a42583439129ed",
+    "baselineSourceSha256": "0ac8ccc780bdc5d0e74d10612d107d2c39e5ee4751be9081cab4c646d42d649c",
     "sourceSha256": "0ac8ccc780bdc5d0e74d10612d107d2c39e5ee4751be9081cab4c646d42d649c",
     "patchSetSha256": "ed7a7dc91d204f4f8b7b2df1efd747571638790d0ef9cdb45e8811e6571d10c0",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "automacao-documentos-office/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "0d63703d40850ee7db3d68024f27f0a5f98e62ac176f86d1d29b79d216814142",
-        "afterSha256": "0ac8ccc780bdc5d0e74d10612d107d2c39e5ee4751be9081cab4c646d42d649c"
+        "beforeSha256": "5012d67649a41aa7a9ff882f9480afd9b7163979d18f3d95707dd990c8541a1e",
+        "afterSha256": "fbb43343d12af85afd10b7ff6b572d7b6e3bc4c79b6fe46df543a9c62df09505"
       },
       {
-        "path": "automacao-documentos-office/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "caa4a42dd407bc8504e1ff056532af1f064433c55bdcb3d3cfb5bdcbcf6b9f0b"
-      },
-      {
-        "path": "automacao-documentos-office/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c5f4453d11dd47dd77f70ec75b3a96505cf99125f08f40cec7e298d03149bfaf"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "a7071953b83111f30052237ffb7e533bc6b39b03fe694a7821a42583439129ed",
-    "bytes": 26406,
-    "fileCount": 17
+    "sha256": "c5ef3b8cadc9a0fce18e67919d097a50caaf2e6e9f9cc0d0d1cee89b63c9db30",
+    "bytes": 26879,
+    "fileCount": 18
   },
   "brief": {
     "schemaVersion": 1,
     "id": "brief",
     "code": "DD-004",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -203,53 +201,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "58e3faeace60c08b9e42d7678ed0eaefa7cf24365097bb304af19597f4a182dd",
-    "baselineSourceSha256": "7f1d6d63a74e14e76729d161bf76f2f624b1441d7e4655708e493083a0b93bd2",
-    "sourceSha256": "ca7cd3bff0576704aea586e8d8b4d7ca36ef8971b9d42754e792463fcbc035d9",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "4f32700bb5dc9151dfd2e512a0ddbf904420c3b9f007a1f7e6400310c2441bc5",
+    "baselineSourceSha256": "ca7cd3bff0576704aea586e8d8b4d7ca36ef8971b9d42754e792463fcbc035d9",
+    "sourceSha256": "c4aa28a01c25fcb0e1432335f8d83764625dfd79489e1772da7b4d2ec9163a11",
     "patchSetSha256": "c63859cc600a003130ed9e25ad02ede7d95d983814b6e4d6949b27a02724c3e2",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "5d184879dd1e1512a2f1542c91a56a6331223a7ca4e61bd513e97032a7c30124",
+        "afterSha256": "e3c83f98413e6baf1a9ba457fb55826d997e9171888e7bed9a2851a83915832a"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "07ff7ef3cf5fe7260572e5563c6ada779d34f43a7e574134e4b85dfc6c697f01"
+      },
+      {
+        "path": "brief/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "4f4696f2a18c02bc9272e9c460b6cd6d9535d66ce6d7939eb37cd125bb21e5f2"
+      },
+      {
+        "path": "brief/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "brief/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "7f1d6d63a74e14e76729d161bf76f2f624b1441d7e4655708e493083a0b93bd2",
-        "afterSha256": "ca7cd3bff0576704aea586e8d8b4d7ca36ef8971b9d42754e792463fcbc035d9"
-      },
-      {
-        "path": "brief/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "52a709a52fb659fddb5f60083fab384b562d1715c04c705d998f48251a5111ab"
-      },
-      {
-        "path": "brief/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "baeac48b40ac76327ce8c44312303fb95fe4c9abd9e2cca8c5ad1bc0385ea280"
-      },
-      {
-        "path": "brief/CONNECTORS.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d2259870c53c05017ec8ec917eb1a659674e15eb1e17a7a7210bab468efafc8a"
+        "beforeSha256": "ca7cd3bff0576704aea586e8d8b4d7ca36ef8971b9d42754e792463fcbc035d9",
+        "afterSha256": "c4aa28a01c25fcb0e1432335f8d83764625dfd79489e1772da7b4d2ec9163a11"
       }
     ],
-    "sha256": "4f32700bb5dc9151dfd2e512a0ddbf904420c3b9f007a1f7e6400310c2441bc5",
-    "bytes": 10061,
-    "fileCount": 8
+    "sha256": "33e8729d438f05c4fba0ddadba6c22fa78af4df9982dd70aecf15e9193a1c9a4",
+    "bytes": 15811,
+    "fileCount": 11
   },
   "build-mcp-app": {
     "schemaVersion": 1,
     "id": "build-mcp-app",
     "code": "DD-005",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Node.js",
@@ -266,47 +272,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "9194f2fc04a159e586d51d21d2623a7b1cd4fc8c6045e839e84c387ac87a2de6",
-    "baselineSourceSha256": "d2fd94f0096506469ec855c581e48293d35480e58e6405b2bfcdba0486a0c218",
-    "sourceSha256": "856c49466f76d849e743231e69b3ad6af328df39674d9949f9c52adb362e50fb",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "38ef04e184b95e74ec44dcb14a572873b7c6b0222bfb27ab25a3c681c16288be",
+    "baselineSourceSha256": "856c49466f76d849e743231e69b3ad6af328df39674d9949f9c52adb362e50fb",
+    "sourceSha256": "8af0fc7edd1a8a229bc7fe8ea3d509b5799cfac4fed5d7e3f43a4e90a8275ec9",
     "patchSetSha256": "29cea4f88238a2fd46cd02911bdf740cbe78792eb45750bc9e6d19ec01da38a7",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "a9c9749e443098e3514483657ee3442a916a36f47935c6af40163894fea7ac08",
+        "afterSha256": "46b7f8728a3e28d781c25e1850f3c4c903340ed1d38c0f362ba3f7c33b6823e8"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "c12afabeaa9142fb9c1cf2640936a973615573aa765d6f3725df8de02f40caa6"
+      },
+      {
+        "path": "build-mcp-app/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "9c6df4206f92c284b8c742976cdb2006e1164bf42543a594bd221b4f44761d95"
+      },
+      {
+        "path": "build-mcp-app/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "build-mcp-app/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "d2fd94f0096506469ec855c581e48293d35480e58e6405b2bfcdba0486a0c218",
-        "afterSha256": "856c49466f76d849e743231e69b3ad6af328df39674d9949f9c52adb362e50fb"
-      },
-      {
-        "path": "build-mcp-app/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "52f91254931608c73c0f8eb7faccbc86cb3192087ab1006d3a5f8f22f364ab11"
-      },
-      {
-        "path": "build-mcp-app/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c5cf82e85bbb2bb1ed0759e3364cc2bf2b6c2e684864c4fb01c64c83f6f9020e"
+        "beforeSha256": "856c49466f76d849e743231e69b3ad6af328df39674d9949f9c52adb362e50fb",
+        "afterSha256": "8af0fc7edd1a8a229bc7fe8ea3d509b5799cfac4fed5d7e3f43a4e90a8275ec9"
       }
     ],
-    "sha256": "38ef04e184b95e74ec44dcb14a572873b7c6b0222bfb27ab25a3c681c16288be",
-    "bytes": 29228,
-    "fileCount": 13
+    "sha256": "79d6b013c1de967546317535c56e5b74c87a5683858562c7e4a68da02124e8e2",
+    "bytes": 35072,
+    "fileCount": 16
   },
   "build-mcp-server": {
     "schemaVersion": 1,
     "id": "build-mcp-server",
     "code": "DD-006",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Node.js",
@@ -323,47 +343,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "78c058e9d2dbf68422ba88f34fb20e3d578762ccb747d4418aee8a37c128ffcf",
-    "baselineSourceSha256": "088cd04be7f03ebbdfd24973cbcbf93c7a2e09117c4bba7b2b06bcc3e0a556f6",
-    "sourceSha256": "f63ef263549fd49dccee832ffa8bb587c22b76cf096d8debfd88df215932636f",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "8b5f0bf506a49d5ce8b35259d4f96c652aea769d61e101552bbed6452e8e7e1c",
+    "baselineSourceSha256": "f63ef263549fd49dccee832ffa8bb587c22b76cf096d8debfd88df215932636f",
+    "sourceSha256": "d6c6ebb4cc604b111168ee2ac34f5515034261fb29dd21fb4349ec49127cb495",
     "patchSetSha256": "ef1bed447aa8aa8644e12aa3e381240a9d91ca260c685877e10adfdb59b04657",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "e2f3ce21951e140896dc642bfc27aa9484d5087ff8c9e3cc0746ebe2e95a757b",
+        "afterSha256": "026b3c509a5d3c7044d8750abb72f2b9283a0bd210ecf161a21e723d757e5817"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "9084ec81b9d269379b3dd9d5df8205811a64be0f932b8515fc5592b5dab2f3f2"
+      },
+      {
+        "path": "build-mcp-server/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "abf87d4105e0599269e15ca99e4028ef094f78ce3f7952e375ac172063d65126"
+      },
+      {
+        "path": "build-mcp-server/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "build-mcp-server/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "088cd04be7f03ebbdfd24973cbcbf93c7a2e09117c4bba7b2b06bcc3e0a556f6",
-        "afterSha256": "f63ef263549fd49dccee832ffa8bb587c22b76cf096d8debfd88df215932636f"
-      },
-      {
-        "path": "build-mcp-server/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "34614e7b780a5804aa7fa6c6b2f4a39491396f00a48dec419cf46964e4ef282e"
-      },
-      {
-        "path": "build-mcp-server/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "0b9bcafa5f90bc7841e30b2dc341c2d0ca98fc902bfb324e11af0c795de8eb96"
+        "beforeSha256": "f63ef263549fd49dccee832ffa8bb587c22b76cf096d8debfd88df215932636f",
+        "afterSha256": "d6c6ebb4cc604b111168ee2ac34f5515034261fb29dd21fb4349ec49127cb495"
       }
     ],
-    "sha256": "8b5f0bf506a49d5ce8b35259d4f96c652aea769d61e101552bbed6452e8e7e1c",
-    "bytes": 30749,
-    "fileCount": 15
+    "sha256": "16e9666d5c72834638b9099987c246e7a191b53d3aade52cf858d37fb2a1bb46",
+    "bytes": 36612,
+    "fileCount": 18
   },
   "build-mcpb": {
     "schemaVersion": 1,
     "id": "build-mcpb",
     "code": "DD-007",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Node.js",
@@ -379,47 +413,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "64ae33e63f99103a2e59e5c77ae98178168a9aa84f5d75c2b011e1ee85a48863",
-    "baselineSourceSha256": "6bb90afd0415754e13f353ee5982d13857c14826edbcbdf5f1481fa5563cd56b",
-    "sourceSha256": "7cfd9ccb279c585ff5aa20837b49c6090b9005ecdcf512a03e389e2258749a9d",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "ef864099810fb882f8bae6fd677af1922cec92784809ac54ab610eef5522268d",
+    "baselineSourceSha256": "7cfd9ccb279c585ff5aa20837b49c6090b9005ecdcf512a03e389e2258749a9d",
+    "sourceSha256": "a33cf7e28a83d10979a7e075bbf66b2da3c3b273ec4583b5ccecdbb9d266f73f",
     "patchSetSha256": "9c1df0ec854a07ff00700439b2eb6c2123a337c0bbeedc34fa0fe46906596546",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "40dfaa9441bbd0ab4ac47398377d0478c6124d1709023ddf3c15727e2e924aca",
+        "afterSha256": "19e9234389c2ab705e6540f2715e25cbcb86acbabd2184ab645bfaf5d61d3f35"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "5a13ecb9cd712f10ee31a9a82300ee1f1af72ff76db8ae37c3e00f0b330b88b7"
+      },
+      {
+        "path": "build-mcpb/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "ead69be72c015de3c3af26cb879c7cfeac0182f36f3c3646353e198c7aee6be3"
+      },
+      {
+        "path": "build-mcpb/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "build-mcpb/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "6bb90afd0415754e13f353ee5982d13857c14826edbcbdf5f1481fa5563cd56b",
-        "afterSha256": "7cfd9ccb279c585ff5aa20837b49c6090b9005ecdcf512a03e389e2258749a9d"
-      },
-      {
-        "path": "build-mcpb/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c9c32a5353eb5cc8839e47ef802e5cb6ef8f7274b24b7c3546edd0c41efe269b"
-      },
-      {
-        "path": "build-mcpb/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "b1a53672f9c8770d75b7245de3272dfd69aea7e874c597bb4b36ca3569b08159"
+        "beforeSha256": "7cfd9ccb279c585ff5aa20837b49c6090b9005ecdcf512a03e389e2258749a9d",
+        "afterSha256": "a33cf7e28a83d10979a7e075bbf66b2da3c3b273ec4583b5ccecdbb9d266f73f"
       }
     ],
-    "sha256": "ef864099810fb882f8bae6fd677af1922cec92784809ac54ab610eef5522268d",
-    "bytes": 14766,
-    "fileCount": 9
+    "sha256": "1ad156e5a9c2845736927d6bfebb41e1e2fe7f100ca87c52884b9d8188f3d928",
+    "bytes": 20600,
+    "fileCount": 12
   },
   "cardputer-buddy": {
     "schemaVersion": 1,
     "id": "cardputer-buddy",
     "code": "DD-008",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python"
     ],
@@ -433,46 +481,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "ecb9bfd3440be96a90deb6757e632def700da8804ce644b237181c4f3aaacd7a",
-    "baselineSourceSha256": "dae31d1459c8ee7b4a03d04bf55485f4ece04bdd4f5a2650ad39eb3d07d9be10",
-    "sourceSha256": "5515ba2845eb5676dde21d700ebfeba52a08dd42182fea7351e0e01d194a0da4",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "fb802783176e75849c6b6b595a0e9221580a27192011b6023784b4a2a667bc36",
+    "baselineSourceSha256": "5515ba2845eb5676dde21d700ebfeba52a08dd42182fea7351e0e01d194a0da4",
+    "sourceSha256": "50009a1867a258289bae40cea15c249d36ca32f8f3d4f6df4c2982102a025210",
     "patchSetSha256": "fa5769d3223a180b774c64018b3180a96de20d665ab48a7bb2a69230e3812e62",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "72c6cf26d57ee24b33264a3e08ec6ebbb5612ab5e64bcf7aec3a6b01ccb3e94c",
+        "afterSha256": "1ab768501261099852c90330ac2bda5256240067a0ae6cc1db2643ae68c11e5a"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "94529f6ecb8c9c258e4e2e44bbada66c77b0cf2ce9a0a70b0b9660753bcdd859"
+      },
+      {
+        "path": "cardputer-buddy/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cd996b749f0840f667f31ef5a5427dd2d12c8a40c8648719a59382a5b74efe79"
+      },
+      {
+        "path": "cardputer-buddy/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "cardputer-buddy/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "dae31d1459c8ee7b4a03d04bf55485f4ece04bdd4f5a2650ad39eb3d07d9be10",
-        "afterSha256": "5515ba2845eb5676dde21d700ebfeba52a08dd42182fea7351e0e01d194a0da4"
-      },
-      {
-        "path": "cardputer-buddy/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c841e6bf14ab8833f74cc62a05d045f8079b881ffeb8ab07c0c740cdec2532e2"
-      },
-      {
-        "path": "cardputer-buddy/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "32de090f8aa3569922cbd47d7a9500c5a1a8caa733e6768f041ccc4954b59c03"
+        "beforeSha256": "5515ba2845eb5676dde21d700ebfeba52a08dd42182fea7351e0e01d194a0da4",
+        "afterSha256": "50009a1867a258289bae40cea15c249d36ca32f8f3d4f6df4c2982102a025210"
       }
     ],
-    "sha256": "fb802783176e75849c6b6b595a0e9221580a27192011b6023784b4a2a667bc36",
-    "bytes": 6813,
-    "fileCount": 7
+    "sha256": "03814ed29622ae1a2b58990c972a85702197f2c7b16a54fb2f19cc5b8bb05421",
+    "bytes": 12659,
+    "fileCount": 10
   },
   "claude-acta-drivedata": {
     "schemaVersion": 1,
     "id": "claude-acta-drivedata",
     "code": "DD-009",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -495,47 +555,43 @@ module.exports = {
     },
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "17dfab5e52413b778fae22400b570c5efb43ce6f3858f4c0f0d0190ed9368516",
-    "baselineSourceSha256": "67f5253d78eb15efeb49365ff7b98bbf14fb7bfd22f16374f7e962798629c774",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "f1c28962254e054db85f0455ee476716da7e61ea5a3450545aa19bece7e85541",
+    "baselineSourceSha256": "6c6e64a06d707242fedd689b9d7fc1822737348131b22e480644d18f543f0641",
     "sourceSha256": "6c6e64a06d707242fedd689b9d7fc1822737348131b22e480644d18f543f0641",
     "patchSetSha256": "13542b0f9344f1b618df49233fae26b0756c51aad7c00bde865c9834cea16428",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-acta-drivedata/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "67f5253d78eb15efeb49365ff7b98bbf14fb7bfd22f16374f7e962798629c774",
-        "afterSha256": "6c6e64a06d707242fedd689b9d7fc1822737348131b22e480644d18f543f0641"
+        "beforeSha256": "977babb5e082aee90c83ed1e07fa07a334eaf338b360e5bdfa63975123871fb0",
+        "afterSha256": "581aafe997fe1a2de6a726a97ab6cde4b007779d1be0d47d684b65ebd0d8075b"
       },
       {
-        "path": "claude-acta-drivedata/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "433e1fb0e380cdf504cecdfc2312663db6b4f6c9fcf7c6d8322b3b6c30ba45b8"
-      },
-      {
-        "path": "claude-acta-drivedata/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "bf36534c2c343b8ef6a9594a854c4c79e7d86a9d408b56b766d81946d9a9f1f3"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "f1c28962254e054db85f0455ee476716da7e61ea5a3450545aa19bece7e85541",
-    "bytes": 196926,
-    "fileCount": 14
+    "sha256": "ae9025367dc1a79592067f232abb4db234899632da7b313864010d2f42c13270",
+    "bytes": 197400,
+    "fileCount": 15
   },
   "claude-automation-recommender": {
     "schemaVersion": 1,
     "id": "claude-automation-recommender",
     "code": "DD-010",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Node.js",
@@ -552,46 +608,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "3aed67e044b442c7bfae88a1d8e26098049e62d35d236eb294e7da742aca54a0",
-    "baselineSourceSha256": "441c57e26f0931b64dd085deaad9213c4e3efea27d916dd7443cd33c7e338227",
-    "sourceSha256": "cee4d5102b3ac24e44d5291d496429e56620f9a2fed71b15b6ed55ce649a377b",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "54c3f645cb856dfb12ecebb993bd742bc5bcecc5015a96f375f0b344313f935c",
+    "baselineSourceSha256": "cee4d5102b3ac24e44d5291d496429e56620f9a2fed71b15b6ed55ce649a377b",
+    "sourceSha256": "9eebe59823e1e250ed5692e9b87b0db2cfe6241b04f24274cdbb6ffda45f50ff",
     "patchSetSha256": "f322c12037189e7f1760004a501c51b656ce47a389fe6e2999b740700b0a9e16",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "7730c295db8d2889ec203d96a77e4caa839622b189d6b1a431613c5ff3fe800c",
+        "afterSha256": "85f9eceede264510bf1c0a73c3ad6cb7ec32a1a6095024771c063601381344f2"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "5cee47d1a1cb42234c7b83f41bd558dbaf9b7c23e1b88409c291b67511e6456b"
+      },
+      {
+        "path": "claude-automation-recommender/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "44fd3f151f70ffed71b75afc1614c9f26787784893c200d1d488beebacb956ac"
+      },
+      {
+        "path": "claude-automation-recommender/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "claude-automation-recommender/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "441c57e26f0931b64dd085deaad9213c4e3efea27d916dd7443cd33c7e338227",
-        "afterSha256": "cee4d5102b3ac24e44d5291d496429e56620f9a2fed71b15b6ed55ce649a377b"
-      },
-      {
-        "path": "claude-automation-recommender/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "088e8d9e2ea477af0827735fcfa0f81f333096dc1ad7973cc929100cb1e1fd62"
-      },
-      {
-        "path": "claude-automation-recommender/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "eae95b28451e38f2ed4e4ab149f86e36c85ffb4719d6de40b1ddc739039aa836"
+        "beforeSha256": "cee4d5102b3ac24e44d5291d496429e56620f9a2fed71b15b6ed55ce649a377b",
+        "afterSha256": "9eebe59823e1e250ed5692e9b87b0db2cfe6241b04f24274cdbb6ffda45f50ff"
       }
     ],
-    "sha256": "54c3f645cb856dfb12ecebb993bd742bc5bcecc5015a96f375f0b344313f935c",
-    "bytes": 23477,
-    "fileCount": 12
+    "sha256": "3b40c4441336e84c0bc6c3d3aeb5d6c26366fceaee8132246437d95a6cfee69a",
+    "bytes": 29418,
+    "fileCount": 15
   },
   "claude-bi-documentation": {
     "schemaVersion": 1,
     "id": "claude-bi-documentation",
     "code": "DD-011",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -608,35 +676,29 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "b1ee72a91bcdd4a8658bbd62120e3806847e8b969f89dfcd7a6f753a3efda6cf",
-    "baselineSourceSha256": "a6eae92daa8797dbaa16e15b3b2bd5c02d43e372dd12169bd92f4e9411bdcd30",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "d6c8690a1088e39443bd4eb2d3a5c2522b624ef7e0ea90fff83dacc5fe05984c",
+    "baselineSourceSha256": "dd817b782951521c41659152a376cb2cf10a9539745e5d7b4bc8a7ce8878d577",
     "sourceSha256": "dd817b782951521c41659152a376cb2cf10a9539745e5d7b4bc8a7ce8878d577",
     "patchSetSha256": "958bb815c55d7c953a6328010c77f4baab332aee3bdf942bdeb800c58ed80e64",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-bi-documentation/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "a6eae92daa8797dbaa16e15b3b2bd5c02d43e372dd12169bd92f4e9411bdcd30",
-        "afterSha256": "dd817b782951521c41659152a376cb2cf10a9539745e5d7b4bc8a7ce8878d577"
+        "beforeSha256": "7aef29bce3099f789c14c2ec2ef550a444eac5c800754a4fe1ca9f1133a53276",
+        "afterSha256": "3d7c0af3bb91f8c57d94330b94720863f1da62cb5790b3e73117f95007ede32e"
       },
       {
-        "path": "claude-bi-documentation/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "506ef74d11e343adc58d0a26c8ca3a81cfb26ccf30c7fc2fcfc86bcd8599fead"
-      },
-      {
-        "path": "claude-bi-documentation/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "155666f009a20c073b2c56651fdc8ef83fd2f63847ec13ecfcc528422c139849"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "d6c8690a1088e39443bd4eb2d3a5c2522b624ef7e0ea90fff83dacc5fe05984c",
-    "bytes": 55813,
-    "fileCount": 9
+    "sha256": "852b6be210d13af4dbc0415968b82f8f37d26a4ef908cca4382edc3d3fb2935d",
+    "bytes": 56289,
+    "fileCount": 10
   },
   "claude-built-in-browser": {
     "schemaVersion": 1,
@@ -756,12 +818,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-cloud-code-architecture",
     "code": "DD-014",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -777,35 +839,29 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "506daa65a94ddfe812343e8013f36779e766ebe4ce2de3c6523053148f476196",
-    "baselineSourceSha256": "31e71e017ce6dcc809e975ecf7ed44e73e6cccaf0179c1f70f09702d117ac240",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "9d7cc8c13983b328bfa6beb93fdce4b2e9b332809417c6a90fd0486c8717659a",
+    "baselineSourceSha256": "cf3f296276aa12b5e820d1bfba5229731805e3f8381fa2f0a32f6b4028ceae95",
     "sourceSha256": "cf3f296276aa12b5e820d1bfba5229731805e3f8381fa2f0a32f6b4028ceae95",
     "patchSetSha256": "728388ef038767d1309d6eec0ac8fb48e8404f964487741b86acd41465abc92a",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-cloud-code-architecture/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "31e71e017ce6dcc809e975ecf7ed44e73e6cccaf0179c1f70f09702d117ac240",
-        "afterSha256": "cf3f296276aa12b5e820d1bfba5229731805e3f8381fa2f0a32f6b4028ceae95"
+        "beforeSha256": "e78fb07fc793a836322261b7123c3cffb15cfb9413d5cd044b6504ed14549e05",
+        "afterSha256": "7c7ce4927c56e654b6c4b0d1fc6da3bb3312fbb4c4edfad1c7e842b101478613"
       },
       {
-        "path": "claude-cloud-code-architecture/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "680e09e0777fc9d7b4c495503fe0bd185158d11faa951daa8ec2b690d491ead8"
-      },
-      {
-        "path": "claude-cloud-code-architecture/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "1320835d7b00b2a1d9287058ef5ecc5ce9e54ba129aa6cb86878e242495f1039"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "9d7cc8c13983b328bfa6beb93fdce4b2e9b332809417c6a90fd0486c8717659a",
-    "bytes": 10292,
-    "fileCount": 7
+    "sha256": "20249e1d780aef6df5b695cb0de98d8b0ea84a151a800de9abbee75b449141a4",
+    "bytes": 10768,
+    "fileCount": 8
   },
   "claude-computer-use": {
     "schemaVersion": 1,
@@ -925,12 +981,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-deep-research",
     "code": "DD-017",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "LibreOffice / Office"
@@ -946,46 +1002,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "8fcf638ea901bbee694da2eb0b7b42a59ae993cbe61e066255637b0344df39cb",
-    "baselineSourceSha256": "93961552fbddf8ff749496c277bcc1a15e18e1160e912c2776d059fb0d66bbad",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "506de9119b02d9b0e1831a2eab32996102582aa614e074236cc3059eca33fb95",
+    "baselineSourceSha256": "dc1e30a04c1b4960379b93402ce3e3cbf38fd5e37fde7e43d43b4ed643d685ae",
     "sourceSha256": "dc1e30a04c1b4960379b93402ce3e3cbf38fd5e37fde7e43d43b4ed643d685ae",
     "patchSetSha256": "17dd8047d9252b78f3dcf90cbdc1fd5008ecaa50693a3238ea381c44e2193de4",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-deep-research/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "93961552fbddf8ff749496c277bcc1a15e18e1160e912c2776d059fb0d66bbad",
-        "afterSha256": "dc1e30a04c1b4960379b93402ce3e3cbf38fd5e37fde7e43d43b4ed643d685ae"
+        "beforeSha256": "50590610f5f704c878a138c93e9be5406513d0d021ec09f92f6ec8e21a607432",
+        "afterSha256": "98242ab9be445e58344000c423c281d59b70a040c3309ab41a26c1dc4aa17763"
       },
       {
-        "path": "claude-deep-research/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "50a635310721bf576db1c11f3d9a73ab5acb63e0952179d2eca5723662d228ea"
-      },
-      {
-        "path": "claude-deep-research/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "2d36ad550d35904fbaceffe7e9ba61bdf16e0be36bf10d59875cebc2b4856c33"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "506de9119b02d9b0e1831a2eab32996102582aa614e074236cc3059eca33fb95",
-    "bytes": 16660,
-    "fileCount": 9
+    "sha256": "3a195bd4ab930a35ef232142187265dc4a907f73eed2c94da851d8bea2f9fd79",
+    "bytes": 17128,
+    "fileCount": 10
   },
   "claude-docs": {
     "schemaVersion": 1,
     "id": "claude-docs",
     "code": "DD-018",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Claude específico"
@@ -1000,35 +1050,29 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "7364a46053904296d4e51734f21f78bdc871d53a376d190fd9a2a94522fa4c32",
-    "baselineSourceSha256": "d38166bb8784d40e4866744b6bd12ed97e1c70fecff8edc385980d37c4a8d194",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "2bbff39e97f5ba3e6d203baa8d6467368d94711dbe36ec0d43c1916c5d657fed",
+    "baselineSourceSha256": "517a8cb597aa579a694d473d1746467b181b730e0b2de1ae3bf4fe0f34cf89d4",
     "sourceSha256": "517a8cb597aa579a694d473d1746467b181b730e0b2de1ae3bf4fe0f34cf89d4",
     "patchSetSha256": "841958c2e73e936a3b214d95f079fb482959781d1582e2f35dff735b1aac6011",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-docs/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "d38166bb8784d40e4866744b6bd12ed97e1c70fecff8edc385980d37c4a8d194",
-        "afterSha256": "517a8cb597aa579a694d473d1746467b181b730e0b2de1ae3bf4fe0f34cf89d4"
+        "beforeSha256": "15b22d9e7a2cac63590c16ca2b672d77cdbb4ae620e131b875e72da2b483e34f",
+        "afterSha256": "ae8574e707a1baf6e2d2aa564998114e36b57fdce8ce6df98253ed2541d63da7"
       },
       {
-        "path": "claude-docs/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "1c40192e62f6135c4f976ca1a2e4619d5b460c864da7c4987e8da08cdab15b5d"
-      },
-      {
-        "path": "claude-docs/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "abd701d52833bfd934da8e27fc360dba5b57692c6498e864ff48bfb1b2748ff4"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "2bbff39e97f5ba3e6d203baa8d6467368d94711dbe36ec0d43c1916c5d657fed",
-    "bytes": 6363,
-    "fileCount": 7
+    "sha256": "f6fa928e909588db39d192c6d53c834157cb0808139ba6208c584ec0745be8c3",
+    "bytes": 6842,
+    "fileCount": 8
   },
   "claude-docx": {
     "schemaVersion": 1,
@@ -1096,12 +1140,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-google-workspace",
     "code": "DD-020",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -1117,46 +1161,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "d43947eb5607e228663b05990b653b317b36720e83186b5db67c98a8a7e1c384",
-    "baselineSourceSha256": "4b81a3563e444bb77dee1bf13a8c6190dc1d8b33ff44ca7cca9d253a0cdbfff9",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "6ba209a1ec79470c555ba21bee3dd93c1d230b77b98552074e1ea6e119ad0164",
+    "baselineSourceSha256": "9b9412c2746f6576c8ab9ce2e84c5aaae9ed66060b4bfdffc0395eebaeb076df",
     "sourceSha256": "9b9412c2746f6576c8ab9ce2e84c5aaae9ed66060b4bfdffc0395eebaeb076df",
     "patchSetSha256": "5eb728d47c827cf704f9febfaa0a00afc25a75f2689a9f172192140281453fee",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-google-workspace/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "4b81a3563e444bb77dee1bf13a8c6190dc1d8b33ff44ca7cca9d253a0cdbfff9",
-        "afterSha256": "9b9412c2746f6576c8ab9ce2e84c5aaae9ed66060b4bfdffc0395eebaeb076df"
+        "beforeSha256": "0f4f48cf6cc83ac1c8c31cd0c2f1e9d676a52bbe23af3e8b29e34a2351d26a5a",
+        "afterSha256": "8bd74fa031b2067f81ef11fce3f35b57e62f7fff07cdf4b1a242dc7e8ead472d"
       },
       {
-        "path": "claude-google-workspace/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "b569e02d0bdea93e57a087750e75a70c9f63bedcaa18a67b5b64e90b0d1b6838"
-      },
-      {
-        "path": "claude-google-workspace/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "013ff9c887079a8f8b0226ceb6ba0558b63538ba580683d9c0adcddea9e67c15"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "6ba209a1ec79470c555ba21bee3dd93c1d230b77b98552074e1ea6e119ad0164",
-    "bytes": 91955,
-    "fileCount": 15
+    "sha256": "d2da56b0a5a33256bf206788562bef6eb1883ba0498a8072711831a437b209e0",
+    "bytes": 92430,
+    "fileCount": 16
   },
   "claude-import-memory": {
     "schemaVersion": 1,
     "id": "claude-import-memory",
     "code": "DD-021",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Conector MCP",
@@ -1172,46 +1210,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "f25ffa7a5d6bec5e30a4f2b1cb81ddc0c03be21cdba2fb7cace0f25cdb80f64d",
-    "baselineSourceSha256": "4a4b239f255a59f0b6138127f839e5b48381c764cd6f337853c3f127c91aed77",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "7c553e4f941ad192a516a7f69fb9617d290fe8301c3f9f654e52bcc907cfdb0c",
+    "baselineSourceSha256": "c0655dfe2cdd5c517e0ac6d74e31ff6d6972475cd26459aea94cce7b033c68fa",
     "sourceSha256": "c0655dfe2cdd5c517e0ac6d74e31ff6d6972475cd26459aea94cce7b033c68fa",
     "patchSetSha256": "9fb279c48200d55377097a2cb57e95db25ba11a451eefedc307d3f82477ae499",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-import-memory/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "4a4b239f255a59f0b6138127f839e5b48381c764cd6f337853c3f127c91aed77",
-        "afterSha256": "c0655dfe2cdd5c517e0ac6d74e31ff6d6972475cd26459aea94cce7b033c68fa"
+        "beforeSha256": "e9f12f4983fa2d3c57ca39358505918d4896db63342e70ba495ebb5b4739acb0",
+        "afterSha256": "bf6a1384a1afd6c2123b59fcf6be80fefef28bc06d9554f67f29bc457ee50315"
       },
       {
-        "path": "claude-import-memory/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "b0620b04cffe8b4fb5cfd1d32c10777418d9c0b4326b2e35566b916377890dbc"
-      },
-      {
-        "path": "claude-import-memory/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ae40ee1593232dfda3042640fa3053bd4016577c85ed5a79a43fa8dd5b4f5e59"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "7c553e4f941ad192a516a7f69fb9617d290fe8301c3f9f654e52bcc907cfdb0c",
-    "bytes": 10801,
-    "fileCount": 7
+    "sha256": "67c0bb31e6a38447b6951f87acf77ea30b55150c6f34b24117a785afde212429",
+    "bytes": 11281,
+    "fileCount": 8
   },
   "claude-maia": {
     "schemaVersion": 1,
     "id": "claude-maia",
     "code": "DD-022",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python"
@@ -1224,46 +1256,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "c83505dd6aa3688bd03ccf89edcf8f4e01e5c6b96e37708b5bf127ea40d2c07f",
-    "baselineSourceSha256": "9f4f83568b28ff89860a2773885e96eb717dbb08fe8db1e01f03a0eefb7b30b2",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "713c913a96becb901e447701dca6d221802c7ff524f93781f97b6cd7a6d78128",
+    "baselineSourceSha256": "fc1b398a64b366b7154a03b1735afdc75673dc1287450cb2e4e03dc2905a366d",
     "sourceSha256": "fc1b398a64b366b7154a03b1735afdc75673dc1287450cb2e4e03dc2905a366d",
     "patchSetSha256": "db83a88843389ea27416e9fdc572583bd3b727e9e19f074abb5115d37ef4f1e2",
     "sourcePolicy": "sanitized-original-retained-privately",
     "changes": [
       {
-        "path": "claude-maia/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "9f4f83568b28ff89860a2773885e96eb717dbb08fe8db1e01f03a0eefb7b30b2",
-        "afterSha256": "fc1b398a64b366b7154a03b1735afdc75673dc1287450cb2e4e03dc2905a366d"
+        "beforeSha256": "800b83b64f6cb6299292c22cbaeb3bff92198998776bce7623de37e57cccdac0",
+        "afterSha256": "4f5ea9ff47f4090baa4852c120dcc0d796e6fc6266d13738bb6d24edb8a3970d"
       },
       {
-        "path": "claude-maia/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "602b563a46b7b15565a34fdf91bcb8417449e9efd474207e2148f78d0fc0f4b3"
-      },
-      {
-        "path": "claude-maia/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d89e852f3ca16b28acc51e288184c4ecf09215077a4b9db2c4ee4ea20ca240fb"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "713c913a96becb901e447701dca6d221802c7ff524f93781f97b6cd7a6d78128",
-    "bytes": 5862,
-    "fileCount": 7
+    "sha256": "15d6c0bfd36006ef6cbf4424ae84442412eef25ad8c12fd67624ece059390807",
+    "bytes": 6346,
+    "fileCount": 8
   },
   "claude-marketplace-skill-creator": {
     "schemaVersion": 1,
     "id": "claude-marketplace-skill-creator",
     "code": "DD-023",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "Apache License 2.0 e termos DriveData",
     "licenseFiles": [
       "LICENSE.txt"
     ],
@@ -1283,53 +1309,55 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "51438220a41dc719dff2809e903ae02d42f6df5426bdeefbaf18cc4be352420b",
-    "baselineSourceSha256": "af0070a86ed0722e60ac83010b85bfc3cbe7a5630271b351a19c5d8cff0eb9e3",
-    "sourceSha256": "486cc3a051a108f354f75b5d81c1bfe6706b54a2e77d8eb50a064f0f994fdb1e",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "d97a6649dc497de7517e46099f6bf8c202dafe135191a5add8f3140468885253",
+    "baselineSourceSha256": "486cc3a051a108f354f75b5d81c1bfe6706b54a2e77d8eb50a064f0f994fdb1e",
+    "sourceSha256": "39cf0efe09e7855482ed429ae3b9d3f20984759ef43d21451645ef9a8549b61e",
     "patchSetSha256": "6a5cf0893fc77eb6f02cb61806a4fe8eba2f2b8fe985f90c5360c7cc1973c25a",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "09afef4bd2aa0fd379eb5913afc926b6c022531d2b52f1de91ba0abb70db537f",
+        "afterSha256": "ce04afd4a9778a7e57b3ba4ffcd567dde5e12d95a2e4dd33937c2195a89a15cc"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "aa942e2205aa68c933e8bb998ff43ebb4f00ce05ff87ece3b71c501f12341fe5"
+      },
+      {
+        "path": "claude-marketplace-skill-creator/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "f7cb809bd31a745bf8d70679e519bd11a2352ce064385a2dbf3b1aa255221e51"
+      },
+      {
         "path": "claude-marketplace-skill-creator/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "af0070a86ed0722e60ac83010b85bfc3cbe7a5630271b351a19c5d8cff0eb9e3",
-        "afterSha256": "486cc3a051a108f354f75b5d81c1bfe6706b54a2e77d8eb50a064f0f994fdb1e"
-      },
-      {
-        "path": "claude-marketplace-skill-creator/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "29c3a13cc96a90d6f7daab6c1fadf43389414db4e85d9c7fff00a1a10b9a3640"
-      },
-      {
-        "path": "claude-marketplace-skill-creator/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "7574063b27b5b104dee597ce7185965688b88892465285d72c59b730d2cd602e"
-      },
-      {
-        "path": "claude-marketplace-skill-creator/references/revision-workflow.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "b12c1453af14f627ba3099996afe9a866fbe8149d38ae94428a61241e17331ab"
+        "beforeSha256": "486cc3a051a108f354f75b5d81c1bfe6706b54a2e77d8eb50a064f0f994fdb1e",
+        "afterSha256": "39cf0efe09e7855482ed429ae3b9d3f20984759ef43d21451645ef9a8549b61e"
       }
     ],
-    "sha256": "d97a6649dc497de7517e46099f6bf8c202dafe135191a5add8f3140468885253",
-    "bytes": 84042,
-    "fileCount": 25
+    "sha256": "95f08ddb77cd3f4ecb4da1fab693ea80dab575b9a21764f458d97eacab3c081b",
+    "bytes": 85656,
+    "fileCount": 27
   },
   "claude-md-improver": {
     "schemaVersion": 1,
     "id": "claude-md-improver",
     "code": "DD-024",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Node.js",
       "Claude específico"
@@ -1344,46 +1372,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "11fe77cd37d9679c1ebe75ea31686477bead3face33aaa81dae3b617a788c33b",
-    "baselineSourceSha256": "b06c7420be08ca1c7f6d75f7f4709fdb787624a2d363e2f8052216d8c780f85b",
-    "sourceSha256": "76a82008b4b3ba3d82f7467a97140dfb619f6a86b0a091a11faf63b4226acf40",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "f895cc65478fbedd700205635276e512c0a51d212f19df4c56f9209bf21a0871",
+    "baselineSourceSha256": "76a82008b4b3ba3d82f7467a97140dfb619f6a86b0a091a11faf63b4226acf40",
+    "sourceSha256": "8a3f0412c9d2035fa47d0a106a601c0a0c0411a34a92ccfd12514d1500e8180c",
     "patchSetSha256": "761cf9fd95688a0c6ad5c5786ca7485c85399305bbd402f9e23f21d66b22201e",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "bc6c19df9e20d4935386fb9111bbeee3b889fce5a3c2c6c00d9282bdc2dc5460",
+        "afterSha256": "4bf0789f808c32cdb55b8336593f94bc8800a3d28163c31d146d745175c92cd2"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "5320d2c20a6c1aaacb72b8210ef552c7a542c4bb1a8e87792c2950c5956eaad5"
+      },
+      {
+        "path": "claude-md-improver/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "c7fe5cae93e8b56a5e375dc2b8f9e2258474d8b98841acbf44330baa4de60d92"
+      },
+      {
+        "path": "claude-md-improver/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "claude-md-improver/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "b06c7420be08ca1c7f6d75f7f4709fdb787624a2d363e2f8052216d8c780f85b",
-        "afterSha256": "76a82008b4b3ba3d82f7467a97140dfb619f6a86b0a091a11faf63b4226acf40"
-      },
-      {
-        "path": "claude-md-improver/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "85b3c95a8f0fbdecdae5df37ebe1bf4ffa85a304104e41c7827b75a526e415a2"
-      },
-      {
-        "path": "claude-md-improver/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ca8cfcb44d2f2fd4bf2d5cced9daed5a0faa87ae09034d372305d63422e42f74"
+        "beforeSha256": "76a82008b4b3ba3d82f7467a97140dfb619f6a86b0a091a11faf63b4226acf40",
+        "afterSha256": "8a3f0412c9d2035fa47d0a106a601c0a0c0411a34a92ccfd12514d1500e8180c"
       }
     ],
-    "sha256": "f895cc65478fbedd700205635276e512c0a51d212f19df4c56f9209bf21a0871",
-    "bytes": 13460,
-    "fileCount": 10
+    "sha256": "b453b74f83fed7a421b7acd14f611563d2a860c4d50e2c054b0c35009793f2f6",
+    "bytes": 19346,
+    "fileCount": 13
   },
   "claude-messi-knowledge-ingest": {
     "schemaVersion": 1,
     "id": "claude-messi-knowledge-ingest",
     "code": "DD-025",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -1400,74 +1440,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "3a79f93ee8e1cfa46acb35626042424c711ef768cf5d3921ed43535e566fc003",
-    "baselineSourceSha256": "adf248d142f38c4be16b1d64ccf398e5c88fd879512beb923b7108a0ce2cfe2e",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "6289aeb349671f194d1620d48a5ea59f5df56b597df70d7f8c7f42fa75846b3e",
+    "baselineSourceSha256": "5f90848b03babe9168e9d213f79eec4b909e577c58adf85ea2c6732775a1f5ac",
     "sourceSha256": "5f90848b03babe9168e9d213f79eec4b909e577c58adf85ea2c6732775a1f5ac",
     "patchSetSha256": "8c42c6695ada5d36c13bdacc495b543a9bf767d89530f041bc138e5f2c5eb2c5",
     "sourcePolicy": "sanitized-original-retained-privately",
     "changes": [
       {
-        "path": "claude-messi-knowledge-ingest/private-reference-ab2f7984d4268516",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "2b304a933853cf23d61a64e65877e4cd115bc09abee12f7e9d11cf6e665ceb68",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "claude-messi-knowledge-ingest/private-reference-9edb5cbcf32786a9",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "bcf6326433526624f82e5b67d5d9235f4e7bb8d97c6492efcd4f9cb834c8bb48",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "claude-messi-knowledge-ingest/private-reference-6e1d8f648d0314b0",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "261901a361d5c5d58e3c39ba15d496e283a3c78b1de8b7d9543747436a951224",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "claude-messi-knowledge-ingest/private-reference-39385eade75248b4",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "a39e8593e05f33bae83185dfc8ef5dd6aef8d610362af298eeb0ba496e7e8c08",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "claude-messi-knowledge-ingest/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "adf248d142f38c4be16b1d64ccf398e5c88fd879512beb923b7108a0ce2cfe2e",
-        "afterSha256": "5f90848b03babe9168e9d213f79eec4b909e577c58adf85ea2c6732775a1f5ac"
+        "beforeSha256": "2d47ceff027441e10af7a1115f6c84919dcbb2dbfc690f02759730d652a88026",
+        "afterSha256": "136f40aa0745dfcf44602fa7863e42b545e1dd7af3d1d5e930d2ff79b127a907"
       },
       {
-        "path": "claude-messi-knowledge-ingest/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "c4a1e97792ed3a50815ec0a5884ad316fb70fe41b12d8ebc2a554479a9d5f88d"
-      },
-      {
-        "path": "claude-messi-knowledge-ingest/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "b847eee1b4f28437ac0a8613e63a39c533c7f0e42920025d50e8e73df9b4013d"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "6289aeb349671f194d1620d48a5ea59f5df56b597df70d7f8c7f42fa75846b3e",
-    "bytes": 6585,
-    "fileCount": 7
+    "sha256": "b269456294626b18657fa417a790a66963ac4315db496b13a9bf55793e8b39a6",
+    "bytes": 6782,
+    "fileCount": 8
   },
   "claude-morning": {
     "schemaVersion": 1,
     "id": "claude-morning",
     "code": "DD-026",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -1483,46 +1489,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "aed657a7c38f653f76b408adafa135ba24dcf6e6bc031e12027c32db40129a93",
-    "baselineSourceSha256": "50f074b0e5669a461b13b950d100f2262fad7603c41cdb7402d8198594c3d99b",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "182f02a7ce7555e64bb4ca87a03e5d03f1f5a07ba6d418873e6eefb6dd1343cb",
+    "baselineSourceSha256": "db034432f1ed4d27f6270e209dc03042dc95d4954340df494015edc1228814bc",
     "sourceSha256": "db034432f1ed4d27f6270e209dc03042dc95d4954340df494015edc1228814bc",
     "patchSetSha256": "e72013e981e2f7c149d4224ec3b6d035c71a588ad7d36e2f39fd1078d5faa96f",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-morning/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "50f074b0e5669a461b13b950d100f2262fad7603c41cdb7402d8198594c3d99b",
-        "afterSha256": "db034432f1ed4d27f6270e209dc03042dc95d4954340df494015edc1228814bc"
+        "beforeSha256": "3278134ee52a823f8655377518bcd11392f055d4b0954260c64a696b4a096009",
+        "afterSha256": "fbe7311747e08e6cc287074d8a9d1d0d5c748f8b17595c32ddac977210773f20"
       },
       {
-        "path": "claude-morning/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "2b630834c34678715b7bad1b0789acc6862a76654bd147107326f89ce6464f76"
-      },
-      {
-        "path": "claude-morning/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "0d7e2fa06daf5f17d49b5145c2b365f022a79043781047d3d1f9ea4bda3d5e7b"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "182f02a7ce7555e64bb4ca87a03e5d03f1f5a07ba6d418873e6eefb6dd1343cb",
-    "bytes": 34680,
-    "fileCount": 9
+    "sha256": "1fbe05738c28851ded7f81a9e7821d7da8f9e599bb29676807a1f977e34af44c",
+    "bytes": 35152,
+    "fileCount": 10
   },
   "claude-oraculo": {
     "schemaVersion": 1,
     "id": "claude-oraculo",
     "code": "DD-027",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -1539,46 +1539,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "2eb881bb1dc5535d12a311e2c31f3d3bd6edb9d969f1cdd6be827eaa682042c9",
-    "baselineSourceSha256": "341ac2a15d2d2ace5778e0e8d71f78c1667d2f53e06b16d3cd734579ef5ac534",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "5686a0892bbb0191d1e28e78353b7282e90d9380ef2fe11bca0a198dd81f6da5",
+    "baselineSourceSha256": "ebac5bff70b3906d8ec2b944319992db53e7eb664c1cac889290bdbc7482eee7",
     "sourceSha256": "ebac5bff70b3906d8ec2b944319992db53e7eb664c1cac889290bdbc7482eee7",
     "patchSetSha256": "0e40c3dbfd6830d00084c101a099ec368feb13c9b2eec3ca610794e2223c163b",
     "sourcePolicy": "sanitized-original-retained-privately",
     "changes": [
       {
-        "path": "claude-oraculo/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "341ac2a15d2d2ace5778e0e8d71f78c1667d2f53e06b16d3cd734579ef5ac534",
-        "afterSha256": "ebac5bff70b3906d8ec2b944319992db53e7eb664c1cac889290bdbc7482eee7"
+        "beforeSha256": "681564a38df3511a0f9c5435c508c27539487a008434e57a97c93c191e3713f3",
+        "afterSha256": "04edec8bac09707adc84a58354536aaa5a73bbe168614ad411b381f8528a09e5"
       },
       {
-        "path": "claude-oraculo/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "65214c8e4abe842ca0bfbd54d33d3118461b4a248e67050722f66b859963ea9e"
-      },
-      {
-        "path": "claude-oraculo/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "4af2db45e0c90167d98551d5fe1b770064af766b02dc96b13f03d9451adfb869"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "5686a0892bbb0191d1e28e78353b7282e90d9380ef2fe11bca0a198dd81f6da5",
-    "bytes": 6582,
-    "fileCount": 7
+    "sha256": "402f7ce0964580d3578900025955451df14ef6b86556e3069467588f23c2868b",
+    "bytes": 7060,
+    "fileCount": 8
   },
   "claude-pbip": {
     "schemaVersion": 1,
     "id": "claude-pbip",
     "code": "DD-028",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -1595,46 +1589,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "622c1b64e28f184d78c2aac1313999842e67f8e8cfb1aab6d2c758b62ffe8ddf",
-    "baselineSourceSha256": "768324bdcfa7b7673a09e558857184dbd922a1dfab145afd6f3f7863d3b7649c",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "3c51ef3358f367902cb1200a58624e6f97509a7314189e532e933bc0e0bbed1b",
+    "baselineSourceSha256": "93a03c4436f893e3e9db7f445a64cd6a280509a3a89a37cda7847e37415049d7",
     "sourceSha256": "93a03c4436f893e3e9db7f445a64cd6a280509a3a89a37cda7847e37415049d7",
     "patchSetSha256": "1c598770ae682ee9ffba57207d881713d60c0dd2420c0522baf2da78ac288fcc",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-pbip/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "768324bdcfa7b7673a09e558857184dbd922a1dfab145afd6f3f7863d3b7649c",
-        "afterSha256": "93a03c4436f893e3e9db7f445a64cd6a280509a3a89a37cda7847e37415049d7"
+        "beforeSha256": "c5b6a8ba2ffb5caa7e90a03ce38fab9ae6c17e0276ff638b62e53f850dacf0d0",
+        "afterSha256": "d1ebb653ee9ea286bdcc7ccabf44e5b330d77ed32413e7da639221762543700c"
       },
       {
-        "path": "claude-pbip/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "0859911f394d3ee43d69ae45c586ae784f6841cc0125b0a612e2c6a6d967f42f"
-      },
-      {
-        "path": "claude-pbip/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "e44e25440f57a3eee4fc1efaefadeb41277041c5560f78789e63449aa9371b16"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "3c51ef3358f367902cb1200a58624e6f97509a7314189e532e933bc0e0bbed1b",
-    "bytes": 21805,
-    "fileCount": 10
+    "sha256": "d3635ecca401fa4cfdf57f204850861b7421c094ad2adf2553a4cf5ad6e07972",
+    "bytes": 22282,
+    "fileCount": 11
   },
   "claude-pbir-expert": {
     "schemaVersion": 1,
     "id": "claude-pbir-expert",
     "code": "DD-029",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Power BI"
@@ -1649,46 +1637,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "b3c953b5b84b8166f6bc2c9e765be2758a44f5429fff0a7a771607cae2d90a07",
-    "baselineSourceSha256": "f7ffe730146605cebced9485150dc8f821c3f28e58d0f2e6897cef43840124ad",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "ac3b0fbeee5806620c303eb79bbbc7d79b17976c92aaf8706a1332e5ba4bbc11",
+    "baselineSourceSha256": "8f989a8a15771f7da91fbe34bdcb5223e95118967c9f0fb45ba7f40b35303f9a",
     "sourceSha256": "8f989a8a15771f7da91fbe34bdcb5223e95118967c9f0fb45ba7f40b35303f9a",
     "patchSetSha256": "780f298949cda9dbdfd31e0cbeeba51e9e047dee42efbae6331928ab08ec7112",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-pbir-expert/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "f7ffe730146605cebced9485150dc8f821c3f28e58d0f2e6897cef43840124ad",
-        "afterSha256": "8f989a8a15771f7da91fbe34bdcb5223e95118967c9f0fb45ba7f40b35303f9a"
+        "beforeSha256": "89fa31f4463dc8d9d8500a1c780736bcd77dcbae8f4fe0a0e208c39ce2556b39",
+        "afterSha256": "f6c13c3934eaaa7f83f206f29396c219d8b7c8d0dba6f3e7669fabb33dd1365e"
       },
       {
-        "path": "claude-pbir-expert/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "38a70ca7f4b387b1547594cd077c0b6c317376c9a2c165b80947d825ee289e76"
-      },
-      {
-        "path": "claude-pbir-expert/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ace6790e2272ea762244532b70f4ec4e64d85472add562203bb559e46e11a02d"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "ac3b0fbeee5806620c303eb79bbbc7d79b17976c92aaf8706a1332e5ba4bbc11",
-    "bytes": 27808,
-    "fileCount": 9
+    "sha256": "51731440c1e0d03dcb3585b38cf13e49399101ea2c4ba32cc0daf555677d594c",
+    "bytes": 28281,
+    "fileCount": 10
   },
   "claude-pbir-format": {
     "schemaVersion": 1,
     "id": "claude-pbir-format",
     "code": "DD-030",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -1707,35 +1689,29 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "d0980d1abec8eb9fee5b30673d43b484b8b245899daaa013a3a90fb57a107aa5",
-    "baselineSourceSha256": "62133fb1b2e97cf0032f59631bd624c0bb15e8d5e32117f8d9f3921233ebc0b1",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "c9bb704e1b51e997cf8c605c3e85d1323c91d7a41355910aba1fcf5b618f94e9",
+    "baselineSourceSha256": "55bd69850545d4f0a0197deba1e8a6f11fd5e23429f461425e0679ca46ef677c",
     "sourceSha256": "55bd69850545d4f0a0197deba1e8a6f11fd5e23429f461425e0679ca46ef677c",
     "patchSetSha256": "3a8517bc3ab1974b01e989ef6e3e399fd6fe2bd93927866c95036bd55386c66c",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-pbir-format/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "62133fb1b2e97cf0032f59631bd624c0bb15e8d5e32117f8d9f3921233ebc0b1",
-        "afterSha256": "55bd69850545d4f0a0197deba1e8a6f11fd5e23429f461425e0679ca46ef677c"
+        "beforeSha256": "4c74bc55341246cbc93c581977e584560434e1554532cca834b1ea70d0451e8e",
+        "afterSha256": "ea1bbf22ebc893cc0904a04dcd7fc8a26bf3820df1d55b055bc84fe41ca61595"
       },
       {
-        "path": "claude-pbir-format/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "7be67f9920b79841a1ed0c9caeb62d41a4cf282732e777d6ee763bd3c805cbe1"
-      },
-      {
-        "path": "claude-pbir-format/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d963a10848b9e26c3ca5d422ad1f51496f9d25ebde4005499a879abbbdd25cb1"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "c9bb704e1b51e997cf8c605c3e85d1323c91d7a41355910aba1fcf5b618f94e9",
-    "bytes": 272295,
-    "fileCount": 117
+    "sha256": "ecefdd1c454088c6c1976c43e2b127bfa35386d88cd4d0ac57462a1e96ab0d2b",
+    "bytes": 272782,
+    "fileCount": 118
   },
   "claude-pdf": {
     "schemaVersion": 1,
@@ -1797,12 +1773,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-power-bi-best-practices",
     "code": "DD-032",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Power BI"
@@ -1818,46 +1794,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "96ec7066e7d3392bd9d68c034fe30161446b66bf9e76d4d07f268cc5f991e711",
-    "baselineSourceSha256": "894840a6a22dc94dc293d089bc55e6750a6b39baca25211af0ac9092fbad1a0f",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "e4a3253e167e3e522327a17d3d57f113a8e551339542df58c7839f79df4f1076",
+    "baselineSourceSha256": "3ab99c6be891cbd47ef5289475dca530ab9537e956cff31e0f99974616a383cc",
     "sourceSha256": "3ab99c6be891cbd47ef5289475dca530ab9537e956cff31e0f99974616a383cc",
     "patchSetSha256": "c22e4f8aa5a3829ba779f6f210de91c8bf251d572f246fda50e543e52228ebc6",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-power-bi-best-practices/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "894840a6a22dc94dc293d089bc55e6750a6b39baca25211af0ac9092fbad1a0f",
-        "afterSha256": "3ab99c6be891cbd47ef5289475dca530ab9537e956cff31e0f99974616a383cc"
+        "beforeSha256": "083a3c57e21bfc576e5a0105cd3db3d0f52b1176febb49a766ea971139da5fc1",
+        "afterSha256": "4b900a04ed47cb8875b1eb247a917273473dd9703e2acdccb50e10f7edda12c9"
       },
       {
-        "path": "claude-power-bi-best-practices/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "8f7db6e28a7915d591389e0f2b05d0dd4e9ad2ef9efe0ee84d4071121974991a"
-      },
-      {
-        "path": "claude-power-bi-best-practices/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "e95c47c58b525e11f88ccda1235d782f01d20c903e70e031f520cd237cab3cae"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "e4a3253e167e3e522327a17d3d57f113a8e551339542df58c7839f79df4f1076",
-    "bytes": 41284,
-    "fileCount": 14
+    "sha256": "83330732aec53046242bc0fc89a87bd98d363027f2c403e4a647ffe17a825615",
+    "bytes": 41760,
+    "fileCount": 15
   },
   "claude-power-bi-data-analysis": {
     "schemaVersion": 1,
     "id": "claude-power-bi-data-analysis",
     "code": "DD-033",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Power BI"
@@ -1872,46 +1842,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "a5d735244c52bbe5b6d91cef646303b622a6656a711eda7edca6c5b95bb18066",
-    "baselineSourceSha256": "6d80af71a44775f9d2957fe54dcb14601a7260615a8a94489bd8c56b3a4ee4b9",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "43d3855bfa7f8ec7a8669b9033ff8dae33f4a3662e48d7c2be6160c98510c58f",
+    "baselineSourceSha256": "116cd0a4c9ed594a0a6e6f423e80e134eecf2691db61d26ab79852b4b870b5f1",
     "sourceSha256": "116cd0a4c9ed594a0a6e6f423e80e134eecf2691db61d26ab79852b4b870b5f1",
     "patchSetSha256": "236544ed27b3d5f2d95622ffc5488cc4abd0c2a6b3bf56a57c1a8dffa8507d48",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-power-bi-data-analysis/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "6d80af71a44775f9d2957fe54dcb14601a7260615a8a94489bd8c56b3a4ee4b9",
-        "afterSha256": "116cd0a4c9ed594a0a6e6f423e80e134eecf2691db61d26ab79852b4b870b5f1"
+        "beforeSha256": "145b334c5227b4245dd038a4713c17831272d2dd8b50e0f9c4629ef2ab1e91aa",
+        "afterSha256": "89c778780a30c40e7b5762055915c67640c0370019ed5b5f77736ab5b01dc659"
       },
       {
-        "path": "claude-power-bi-data-analysis/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "580fdf3af5dde7a58e99cfdf5f7f434e11512c9b55213161c9a48b99d3b5b5ff"
-      },
-      {
-        "path": "claude-power-bi-data-analysis/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d631df22554fba5cdd2bf1431a3095b61fc4dd7ed72339143cc65d7114b4fe4b"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "43d3855bfa7f8ec7a8669b9033ff8dae33f4a3662e48d7c2be6160c98510c58f",
-    "bytes": 14235,
-    "fileCount": 8
+    "sha256": "b8556516efb9e01006aa37b50979da14670a36b7434545c40ac5d68219da8708",
+    "bytes": 14716,
+    "fileCount": 9
   },
   "claude-power-bi-dax-optimization": {
     "schemaVersion": 1,
     "id": "claude-power-bi-dax-optimization",
     "code": "DD-034",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Power BI"
@@ -1926,46 +1890,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "10ad4b8eb0d8746c9ddbccad4c4378ada7c5a00ee826b1e9bca9ccb5a52df080",
-    "baselineSourceSha256": "f57b5bcc865a74dc7a1825f04b4b490574198d9349a2ab6cec2a3d55034d6af0",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "94c9e67e02d2493861bc0c20d93b8e8456d7d6ccb9b1330d7c0526f4a470d264",
+    "baselineSourceSha256": "9e61e59acdc42035f12486adb2cb1f71568a965afd42ab559a7a72e0341fad8a",
     "sourceSha256": "9e61e59acdc42035f12486adb2cb1f71568a965afd42ab559a7a72e0341fad8a",
     "patchSetSha256": "5490e4509f5014ada1b9fab870fe33a1dd0e1aa2e9cb9d84d329ae0289531fdb",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-power-bi-dax-optimization/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "f57b5bcc865a74dc7a1825f04b4b490574198d9349a2ab6cec2a3d55034d6af0",
-        "afterSha256": "9e61e59acdc42035f12486adb2cb1f71568a965afd42ab559a7a72e0341fad8a"
+        "beforeSha256": "4a05638bb9fb9c14ebe50bfce20aba4bacf78c34470a875dffc0287770f8f904",
+        "afterSha256": "65649d7ac2fbe32baf8280c3ac7c80f2ebb7d235046dbd8eed6a4fb73be07cc9"
       },
       {
-        "path": "claude-power-bi-dax-optimization/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "ae261ece7623cfccc2d90ff593f9ca6850cef6b9dca3852bb017df5012768db6"
-      },
-      {
-        "path": "claude-power-bi-dax-optimization/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ca6920df702df7c5dbeb3ddbc20b2d8f3eb9550e38cc508adfbe59836fcb65e9"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "94c9e67e02d2493861bc0c20d93b8e8456d7d6ccb9b1330d7c0526f4a470d264",
-    "bytes": 8456,
-    "fileCount": 7
+    "sha256": "3eb322fc1b39421e7242f70b47f39937e504d7d126ee25425992c3cf46c1a7e9",
+    "bytes": 8927,
+    "fileCount": 8
   },
   "claude-power-query-best-practices": {
     "schemaVersion": 1,
     "id": "claude-power-query-best-practices",
     "code": "DD-035",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Power BI"
@@ -1984,46 +1942,40 @@ module.exports = {
     },
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "674e33fc7777ed7c6c133c6a5082e1165f187a0c406587ec22864f5306269b3d",
-    "baselineSourceSha256": "f7df3706505931f410db556c30b1c908bfecad49d2ae24bf1b929861ffec274a",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "0601e3d06cfa19db7eb4bd0293c7bea26c7488b8eb4e421fe56c271763e22c1a",
+    "baselineSourceSha256": "104f5075e52b9fbf2b7a92e1b84d1acb7dcb888526001526ed4967d98f05e153",
     "sourceSha256": "104f5075e52b9fbf2b7a92e1b84d1acb7dcb888526001526ed4967d98f05e153",
     "patchSetSha256": "2cea9ace75b351b4c23d4b947f8f9e09ff98e5533079fe91c547790ab3fc9af4",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-power-query-best-practices/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "f7df3706505931f410db556c30b1c908bfecad49d2ae24bf1b929861ffec274a",
-        "afterSha256": "104f5075e52b9fbf2b7a92e1b84d1acb7dcb888526001526ed4967d98f05e153"
+        "beforeSha256": "53a88a9a7fd4dbfb9be167063ba6275f29f612778ca7e70f416bce64ed4d11fc",
+        "afterSha256": "4fc202d773d3fba2cab8e26a67a9486f5012ec8bce345d86cf69ce0bbf46c4be"
       },
       {
-        "path": "claude-power-query-best-practices/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "acc363e278dd5b46d7d5399c007b9d1261870a31f2b3f7c21b833145cb4c2ab0"
-      },
-      {
-        "path": "claude-power-query-best-practices/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a8461e5d085c9de2c67263c1afc2d07d29a3acc5126feb5a6cf8fd00563efbfc"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "0601e3d06cfa19db7eb4bd0293c7bea26c7488b8eb4e421fe56c271763e22c1a",
-    "bytes": 51698,
-    "fileCount": 18
+    "sha256": "b3fd4e26e227c29d05987692466c7e6218a39449e87517bb21212884681959ee",
+    "bytes": 52168,
+    "fileCount": 19
   },
   "claude-powerbi-html-visuals": {
     "schemaVersion": 1,
     "id": "claude-powerbi-html-visuals",
     "code": "DD-036",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Power BI",
@@ -2040,35 +1992,29 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "152d891494b136ba0a78c8690435df17049eb171a8ef76f0d1b0b4ffa11063e3",
-    "baselineSourceSha256": "80165d20ce4354486c08ac232450311aa940c5d3d9b55626a4e3e02a6c1d1052",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "da04f8a6314a64ceabd4d1a250504df90b355c4120683660bd0959606a6fd405",
+    "baselineSourceSha256": "c283ae9b0f36d1e22a8fb9ee5bd6e05ee45b4cf73ccbf150ec4ba1437ffed63f",
     "sourceSha256": "c283ae9b0f36d1e22a8fb9ee5bd6e05ee45b4cf73ccbf150ec4ba1437ffed63f",
     "patchSetSha256": "dac714c7ad6ef44b6f9378146ee8da97b58af1396d5bdea03390e5e8615eb593",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-powerbi-html-visuals/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "80165d20ce4354486c08ac232450311aa940c5d3d9b55626a4e3e02a6c1d1052",
-        "afterSha256": "c283ae9b0f36d1e22a8fb9ee5bd6e05ee45b4cf73ccbf150ec4ba1437ffed63f"
+        "beforeSha256": "480b790fd36e4f9dcb1da3e339e7aa35ea19e2d993c6ca619b827893e35234ea",
+        "afterSha256": "ea0d21717b6afc330ead0faa8ff16f1e847531e33f117a1b88092b36dfa7770f"
       },
       {
-        "path": "claude-powerbi-html-visuals/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "8d67b5b0172e58600d5b156b0ccba83fd575eea518a452f7d061c3263414a525"
-      },
-      {
-        "path": "claude-powerbi-html-visuals/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "100cdbe730143c8fa2b98e6381315a0e8adb1c2cd823442b11327d75f3305588"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "da04f8a6314a64ceabd4d1a250504df90b355c4120683660bd0959606a6fd405",
-    "bytes": 28907,
-    "fileCount": 11
+    "sha256": "92a1b8c884a75a1ca150c0c4a911c3c911299f908e7725faa6758430857f6ecf",
+    "bytes": 29373,
+    "fileCount": 12
   },
   "claude-pptx": {
     "schemaVersion": 1,
@@ -2136,12 +2082,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-protheus-expert",
     "code": "DD-038",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [],
     "requirements": [
@@ -2155,35 +2101,29 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "0e987708519b31a0745191e69fd55675d63685896b7bc5db7c29fc6100bf4ece",
-    "baselineSourceSha256": "735ee3c003c700f9a66711a1831c7073de2c28b9e62b0340a4e3611e55f57c8c",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "af07b015e1d9896130d598878e346ef587075aa9dbc2d579f1a3b9c783a29ac9",
+    "baselineSourceSha256": "c6b49b4d183126db60e3ebaa205b32b3d219fce2bffb101c56891f1cd7e09951",
     "sourceSha256": "c6b49b4d183126db60e3ebaa205b32b3d219fce2bffb101c56891f1cd7e09951",
     "patchSetSha256": "960c34d50945c99f9dd902faa00a5e4130254f2eb5ce86eb5e371f6a54ba6f13",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-protheus-expert/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "735ee3c003c700f9a66711a1831c7073de2c28b9e62b0340a4e3611e55f57c8c",
-        "afterSha256": "c6b49b4d183126db60e3ebaa205b32b3d219fce2bffb101c56891f1cd7e09951"
+        "beforeSha256": "566becefd4c7660b52e76844ea3171aea9e25089c210335b8e734b2cb75b5808",
+        "afterSha256": "0d0969ceecd8c42e0f8d156c35623de85f03b0ca2370bf5639f86003ddfe6c23"
       },
       {
-        "path": "claude-protheus-expert/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "fce70fac881ea8dd2c1bcf5c9dd5769914a0ea23dad8fc3b4048259578e1f463"
-      },
-      {
-        "path": "claude-protheus-expert/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "9229e7ac2d3ba06d62245e749699819514d7dc6d9187edc5c6efe42bebba5b4c"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "af07b015e1d9896130d598878e346ef587075aa9dbc2d579f1a3b9c783a29ac9",
-    "bytes": 20831,
-    "fileCount": 10
+    "sha256": "91b041d0f0f2f83f15ce81a300f0e5a223dbbdb762d3d268049815bee56b1b49",
+    "bytes": 21310,
+    "fileCount": 11
   },
   "claude-security": {
     "schemaVersion": 1,
@@ -2247,12 +2187,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-skill-creator",
     "code": "DD-040",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "Apache License 2.0 e termos DriveData",
     "licenseFiles": [
       "LICENSE.txt"
     ],
@@ -2271,52 +2211,52 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "b6901402030fe02874d6966e103b0f8b6e5fada2941429cf5341d3270ba5e751",
-    "baselineSourceSha256": "bf6644e60a287f38980fc9414cf446aa701a8e08c2050bd9167cd156ca27d0c9",
-    "sourceSha256": "3c9527bc662d715202bf13ddcc8c10d8b9c414d92c86df4b356017dd7effed88",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "0f41f468cf244c3bc04530d9f19745ef642c295ec92a373cacbf00ee81d1e025",
+    "baselineSourceSha256": "3c9527bc662d715202bf13ddcc8c10d8b9c414d92c86df4b356017dd7effed88",
+    "sourceSha256": "b90f07b708e44c0150ec92b9bbe1dc23c3ba1b7efa4d2a835c22041fc23a91a6",
     "patchSetSha256": "bc8b1afe37d4b19fa6e4fce8fc1e6ba45f43209a87bdffd796cc114ac73e62dd",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "f28e1c3780164877b69f6b75316fa83ce8811d71d1502ce2a1f2aefea7b02560",
+        "afterSha256": "94f0ca21deea80e9f57f98d67c622f0c3798ec8f22123d1957b84309c628796d"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "3e65ad43375f5cc33f67e1f1ede1b4ad126147a5f38b20cb527c9a92f72c7b49"
+      },
+      {
+        "path": "claude-skill-creator/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "46acc96c8664e59bb1118699786403019d01932aeca121cb5d46dc0b6482ce42"
+      },
+      {
         "path": "claude-skill-creator/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "bf6644e60a287f38980fc9414cf446aa701a8e08c2050bd9167cd156ca27d0c9",
-        "afterSha256": "3c9527bc662d715202bf13ddcc8c10d8b9c414d92c86df4b356017dd7effed88"
-      },
-      {
-        "path": "claude-skill-creator/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "38f02aa37139c65e3d2365132f7e715a999950094f1e5e4852f549695c3c12a0"
-      },
-      {
-        "path": "claude-skill-creator/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "7f90b4807eaf957b893b52076bc41c8b65d2732cfa1c428883a880e25bfdab68"
-      },
-      {
-        "path": "claude-skill-creator/references/revision-workflow.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "338ed0c439f96c4d84627da0c9e1d503faf82b0272990c5e3945aff841d809b0"
+        "beforeSha256": "3c9527bc662d715202bf13ddcc8c10d8b9c414d92c86df4b356017dd7effed88",
+        "afterSha256": "b90f07b708e44c0150ec92b9bbe1dc23c3ba1b7efa4d2a835c22041fc23a91a6"
       }
     ],
-    "sha256": "0f41f468cf244c3bc04530d9f19745ef642c295ec92a373cacbf00ee81d1e025",
-    "bytes": 92121,
-    "fileCount": 25
+    "sha256": "3356666d74c00fec7e9be7cdd2ae96ebd7347382957b9e1ba270f3780f14840d",
+    "bytes": 93694,
+    "fileCount": 27
   },
   "claude-tmdl": {
     "schemaVersion": 1,
     "id": "claude-tmdl",
     "code": "DD-041",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Power BI",
@@ -2332,35 +2272,29 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "95508ae22aeb4b2b94e32b1a62052ed9b04166d27563723966f1b743364fcc64",
-    "baselineSourceSha256": "0bd4e24752a38d26024b2c65eb39b90d05595429b977150446fd17f457144b0c",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "8fec7bbdf478a84088a163243de4da51a276b5c57bbd9b43cffe8052d61bb677",
+    "baselineSourceSha256": "dc4c0c375d031b3ade5a0638fd92782d15d3ca241e828b926c044c44e7df3a49",
     "sourceSha256": "dc4c0c375d031b3ade5a0638fd92782d15d3ca241e828b926c044c44e7df3a49",
     "patchSetSha256": "43526d15b88fce36964ebfbe82cabbccda697a364b27d2c6917b906bb3c6066b",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "claude-tmdl/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "0bd4e24752a38d26024b2c65eb39b90d05595429b977150446fd17f457144b0c",
-        "afterSha256": "dc4c0c375d031b3ade5a0638fd92782d15d3ca241e828b926c044c44e7df3a49"
+        "beforeSha256": "1e310ca424d4e6f3e729375bb18b31432f91f5341ad478f323bd5e7558bab600",
+        "afterSha256": "cfcc2ab4c57c0869219c974a3206b4bba73909ff67f1aa1532cab4127002811b"
       },
       {
-        "path": "claude-tmdl/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "51d06a0b03830f10501a82f79418601e83468d11b6ec7e75b9f6aff7c7f2ece8"
-      },
-      {
-        "path": "claude-tmdl/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "0612b23408a0912b4d45407a7e7331d56dbfa4438ce92ff916fc97bf7e5d2bca"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "8fec7bbdf478a84088a163243de4da51a276b5c57bbd9b43cffe8052d61bb677",
-    "bytes": 141467,
-    "fileCount": 62
+    "sha256": "f89a8b2529fb9d5967da08d62b9eaf83796cccdafd93eaf11035d387a0d15e28",
+    "bytes": 141947,
+    "fileCount": 63
   },
   "claude-xlsx": {
     "schemaVersion": 1,
@@ -2485,12 +2419,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "code-review-and-quality",
     "code": "DD-044",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "MIT e termos DriveData",
     "licenseFiles": [
       "LICENSE"
     ],
@@ -2507,47 +2441,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "2a0ae4ac7c5a28ee4a3b01217e84ac9ab0665bfc75a0e219438a65e8b91efc9c",
-    "baselineSourceSha256": "a5381c8a2394a48d24b3a269879cc93ec2d5849272d1ac52021cf86f7c8dc352",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "a5eaef28183ecc9cc717360e48e5d21f917dcf09aedf915bd88e3cecb60f3942",
+    "baselineSourceSha256": "aac9b479b3cd1f6b66f620fd1b83c7f45c0bcd764726988f36b66054035555ad",
     "sourceSha256": "aac9b479b3cd1f6b66f620fd1b83c7f45c0bcd764726988f36b66054035555ad",
     "patchSetSha256": "0770a692d9124d953c46513311cd5ce034b1a8cff55e217ee8f21707f27d788a",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "code-review-and-quality/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "a5381c8a2394a48d24b3a269879cc93ec2d5849272d1ac52021cf86f7c8dc352",
-        "afterSha256": "aac9b479b3cd1f6b66f620fd1b83c7f45c0bcd764726988f36b66054035555ad"
+        "beforeSha256": "dddc6ede92e567d28c03014ec1ff3ff121cf2ad3597678134294622c7ee846ac",
+        "afterSha256": "940d6bec63820d3ee65549d8fad0a13a070df0d8f9aa44908006b0be3af35081"
       },
       {
-        "path": "code-review-and-quality/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "37d86031c81ef8c95a906cfb7d6535ed1ce010875d19f8fca4e5a15cb7b2663c"
-      },
-      {
-        "path": "code-review-and-quality/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "31a5c81ebe7289ac3c37b2567f5112b2f0daaef980da61a5749d25dccc0807d8"
+        "afterSha256": "e7c64db8fe319f3ccd445d12483130ba3f8cdac65a5846fbc883c5a39e24db1c"
       }
     ],
-    "sha256": "a5eaef28183ecc9cc717360e48e5d21f917dcf09aedf915bd88e3cecb60f3942",
-    "bytes": 23721,
-    "fileCount": 9
+    "sha256": "791db8c264038843c05b029e9978265c5e6f309f9b187faea6d594fe076d73ef",
+    "bytes": 24356,
+    "fileCount": 10
   },
   "command-development": {
     "schemaVersion": 1,
     "id": "command-development",
     "code": "DD-045",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Node.js",
@@ -2563,47 +2493,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "78012b9b1cd7f87ff0ceaac163c88381f6582d117642831d4df1c2104acb518b",
-    "baselineSourceSha256": "c55ad02cfe4cbb2a947eea3b1ed5fa1871e722d627c3c6792c3ed87c10c4d7a8",
-    "sourceSha256": "58ca64ea9e32d81cc969c5ccdb0aea173bce9fcef81da23966e7c439316daa74",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "5a2e7a6aaa1de4ba436b65d6df089be81c6bdc8e4a5b109650aaf5efc58251a8",
+    "baselineSourceSha256": "58ca64ea9e32d81cc969c5ccdb0aea173bce9fcef81da23966e7c439316daa74",
+    "sourceSha256": "22f3f16922c4025c34b28fbc4f987fbcb922acbf022a44a54eaf42ea7429e54f",
     "patchSetSha256": "8d90dfe97103e0370b93a68f48584239b54be7689e03a82910554939f48f21af",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "e748f5852ee4fb907727da237096a256cbd519b20133b676ecee5c5347be12e6",
+        "afterSha256": "31a8783c8cff1d10c45031683ccd5c592a43ca36e28600c21357bf7de02d82b7"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "64ba7816c129b5c84070e4468ffea69978067acafc849b2ee4902890203f53f0"
+      },
+      {
+        "path": "command-development/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "33266c015811bce341f376f54eb83e9aa2921d196494daa056113311d3f23d88"
+      },
+      {
+        "path": "command-development/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "command-development/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "c55ad02cfe4cbb2a947eea3b1ed5fa1871e722d627c3c6792c3ed87c10c4d7a8",
-        "afterSha256": "58ca64ea9e32d81cc969c5ccdb0aea173bce9fcef81da23966e7c439316daa74"
-      },
-      {
-        "path": "command-development/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d70a914d2044da2a09105258c6c6d5f7f872a290db76f56409a2b5c5e183d065"
-      },
-      {
-        "path": "command-development/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "f482668167bbe35e2b8c5746f668b55a0d42917ba12ca2943ade61f2c41de99a"
+        "beforeSha256": "58ca64ea9e32d81cc969c5ccdb0aea173bce9fcef81da23966e7c439316daa74",
+        "afterSha256": "22f3f16922c4025c34b28fbc4f987fbcb922acbf022a44a54eaf42ea7429e54f"
       }
     ],
-    "sha256": "5a2e7a6aaa1de4ba436b65d6df089be81c6bdc8e4a5b109650aaf5efc58251a8",
-    "bytes": 64176,
-    "fileCount": 17
+    "sha256": "7fc34ccc056211a79f4a02c359ac3b4e6a044c2213bb43f45be9ca0eb614fc2d",
+    "bytes": 70056,
+    "fileCount": 20
   },
   "compliance-check": {
     "schemaVersion": 1,
     "id": "compliance-check",
     "code": "DD-046",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -2616,52 +2560,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "fc11ceb62e7e24dfd516ce3eea54dd3a46ffb833e4fb5fdfe06ee7e0172f9865",
-    "baselineSourceSha256": "8dff8ebe7eda9ad5e38f3faf1016a7fc1eeba65bcdb7f5ae45ea507824bbc1c2",
-    "sourceSha256": "985663645f7b7bf7ec0dab77e1ff83feb46b794c0354afeea271ff5d1739e61a",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "ea30ff190adcd3c1cc4f115a36bcd443531fed7a6084581420365e9a4bd181a4",
+    "baselineSourceSha256": "985663645f7b7bf7ec0dab77e1ff83feb46b794c0354afeea271ff5d1739e61a",
+    "sourceSha256": "d3fd9b68d915672f9a88e04c162d510efa755f1d05440bafe539ad388b1cfcf2",
     "patchSetSha256": "ca04fcc77d7e0bd0d8e52085d63b32ae679a397a3ef9582e4e286ff2fabe156b",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "24ab02fcf7e01810379723b66d9fa24a00b40f0308f7da1ad260e05667865f2a",
+        "afterSha256": "cfe23e1c3bbde4745990d3a94449b14aa4f51307bb815582dd54982793ab8256"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "da800afc96d358178eed9a4f008e45300fcb07563d428b606fa8be0b46da103a"
+      },
+      {
+        "path": "compliance-check/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "d100fa8842fbdda84744af9b76112df2d232844964516f5abe49cfb07d1d5332"
+      },
+      {
+        "path": "compliance-check/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "compliance-check/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "8dff8ebe7eda9ad5e38f3faf1016a7fc1eeba65bcdb7f5ae45ea507824bbc1c2",
-        "afterSha256": "985663645f7b7bf7ec0dab77e1ff83feb46b794c0354afeea271ff5d1739e61a"
-      },
-      {
-        "path": "compliance-check/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "3811a569421456cc1eb4fa16971d916a976f069bcbb984abb735a54386b5af2a"
-      },
-      {
-        "path": "compliance-check/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c758019d7526d14a65ec700c8d1c008e1cca66bb567f63e8d78de51a8f70b944"
-      },
-      {
-        "path": "compliance-check/CONNECTORS.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d2259870c53c05017ec8ec917eb1a659674e15eb1e17a7a7210bab468efafc8a"
+        "beforeSha256": "985663645f7b7bf7ec0dab77e1ff83feb46b794c0354afeea271ff5d1739e61a",
+        "afterSha256": "d3fd9b68d915672f9a88e04c162d510efa755f1d05440bafe539ad388b1cfcf2"
       }
     ],
-    "sha256": "ea30ff190adcd3c1cc4f115a36bcd443531fed7a6084581420365e9a4bd181a4",
-    "bytes": 12857,
-    "fileCount": 8
+    "sha256": "71caa06b4a12769aaf329ee8b9732fe80f62acebf42e4b81e35dc51c63ff9fc4",
+    "bytes": 18679,
+    "fileCount": 11
   },
   "cowork-plugin-customizer": {
     "schemaVersion": 1,
     "id": "cowork-plugin-customizer",
     "code": "DD-047",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "Apache License 2.0 e termos DriveData",
     "licenseFiles": [
       "LICENSE.txt"
     ],
@@ -2681,47 +2631,55 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "7920facfa0dcda6a586eab2ed485eac21145b0d1461be901386fcd33bff370f2",
-    "baselineSourceSha256": "027b38d51e5ecc53b07cd11a00fbb6541ed9e79da043297951374480358c5d89",
-    "sourceSha256": "329ef79120f62dbaef0a33de13191df44c7fd93ac5745740904415b603b78c72",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "d6c2bb3fa09029120694b9708741c46580a258ddff684b78b341eed5e1837383",
+    "baselineSourceSha256": "329ef79120f62dbaef0a33de13191df44c7fd93ac5745740904415b603b78c72",
+    "sourceSha256": "ef596ec3379c93135d92b4e3ebaaaad8af0d0431fa255c0ae1808440304d8ef3",
     "patchSetSha256": "a391695dcd4da13737c84bb927a7b59e0eed3b4b9793b9780e36793596eb45ab",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "f4ad27b9834bec129c0c73093f8288cd0e1bd2eb2b8593474f2b748a96fa678a",
+        "afterSha256": "2599fe1d46137a3b961d820d7677c9a813842c77611109596449fbd8a30c352e"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "6ac7fae85b02b868e9bf042130ea57cebadd37aeb984da46a8017ca5fa053138"
+      },
+      {
+        "path": "cowork-plugin-customizer/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "43be29912b7b1fed0b6d26e00f1a21c722fd5a92abd453606e367d803e7c3990"
+      },
+      {
         "path": "cowork-plugin-customizer/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "027b38d51e5ecc53b07cd11a00fbb6541ed9e79da043297951374480358c5d89",
-        "afterSha256": "329ef79120f62dbaef0a33de13191df44c7fd93ac5745740904415b603b78c72"
-      },
-      {
-        "path": "cowork-plugin-customizer/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "dba59fee2df5869e8d460d12f5be0296c1ec7a8fd801ece06f129f0cd63f9994"
-      },
-      {
-        "path": "cowork-plugin-customizer/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "e3578496097343afd7b784cc3d1cae0b7e2d5b65673a88a5f4a1ac9306b28713"
+        "beforeSha256": "329ef79120f62dbaef0a33de13191df44c7fd93ac5745740904415b603b78c72",
+        "afterSha256": "ef596ec3379c93135d92b4e3ebaaaad8af0d0431fa255c0ae1808440304d8ef3"
       }
     ],
-    "sha256": "d6c2bb3fa09029120694b9708741c46580a258ddff684b78b341eed5e1837383",
-    "bytes": 17653,
-    "fileCount": 11
+    "sha256": "39ed693231f99ecfdf6cc3fad929e62147d763f4a9fd49d6363f93566da9e190",
+    "bytes": 19274,
+    "fileCount": 13
   },
   "create-cowork-plugin": {
     "schemaVersion": 1,
     "id": "create-cowork-plugin",
     "code": "DD-048",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Node.js",
       "Conector MCP",
@@ -2737,46 +2695,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "d24cd5fcb6e4b1e0492048ddacae8c9cbad7b0fce4d2eee2d81fd3f30f9bf6ae",
-    "baselineSourceSha256": "a4cb3a4624a8529099918c78bc931e97c993774ba9108bf9724fe54612ee38bb",
-    "sourceSha256": "c26b519967c7bf03ea5c24464b8d4ed2ca672b0de8f5b6fa96b0841266580f94",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "c76538146c7fcf87a9b25a316173fe3c8a9cc8ca25c737db0f69ec57d2743ddf",
+    "baselineSourceSha256": "c26b519967c7bf03ea5c24464b8d4ed2ca672b0de8f5b6fa96b0841266580f94",
+    "sourceSha256": "c76157f36bb481a75b6bef743dcf84fe2fedc97f4aceb69df93bff3724856c6f",
     "patchSetSha256": "77a33d12c4324f88ee5fff5f7a6c0fb9242730949f4bdcdf098385e5cd3f86a2",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "a2d471bf0c5ca203175a113ca5197b66b7244e98fde576a50919f25820b5f0d9",
+        "afterSha256": "13e90da3ed7a71bdd28acea503eafb22a465671b6170e50fbe101ea05fb23f57"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "be3893945340bdfbb23e3cdbe6a46f1794737ac56dbd9771790356f7531d016f"
+      },
+      {
+        "path": "create-cowork-plugin/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "57a6cfc0f369387e1b3d22d4a1472c44280b96582322522a6f5c5e632fb6b99f"
+      },
+      {
+        "path": "create-cowork-plugin/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "create-cowork-plugin/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "a4cb3a4624a8529099918c78bc931e97c993774ba9108bf9724fe54612ee38bb",
-        "afterSha256": "c26b519967c7bf03ea5c24464b8d4ed2ca672b0de8f5b6fa96b0841266580f94"
-      },
-      {
-        "path": "create-cowork-plugin/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "6ad77db12f63b20c200f2a62783e599687a5c1f7e25f7bbbc6a6468be49c30b9"
-      },
-      {
-        "path": "create-cowork-plugin/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "5bf022aa0ee436c421e8a7adff2dff9e21ad28b53cd7a750d27efca275cbcd98"
+        "beforeSha256": "c26b519967c7bf03ea5c24464b8d4ed2ca672b0de8f5b6fa96b0841266580f94",
+        "afterSha256": "c76157f36bb481a75b6bef743dcf84fe2fedc97f4aceb69df93bff3724856c6f"
       }
     ],
-    "sha256": "c76538146c7fcf87a9b25a316173fe3c8a9cc8ca25c737db0f69ec57d2743ddf",
-    "bytes": 19471,
-    "fileCount": 9
+    "sha256": "3f4f42fe6dcf8324194f4b70513a75dc7232d720fa81e5a11cf6f7838ca08717",
+    "bytes": 25358,
+    "fileCount": 12
   },
   "debugging-and-error-recovery": {
     "schemaVersion": 1,
     "id": "debugging-and-error-recovery",
     "code": "DD-049",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "MIT e termos DriveData",
     "licenseFiles": [
       "LICENSE"
     ],
@@ -2793,46 +2763,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "232889842e7a0e1c492667512dd587864e6b483efe17faea0c02f267b629bb7f",
-    "baselineSourceSha256": "54789df96167b72060d5db86f97459f68c5c44a4559396786fc5402e9bfc4396",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "084c62c655630b40c358559b58d4ee403e04623b38e0fa659f37a484377fab7f",
+    "baselineSourceSha256": "66e8da8f2cfb2aebadec7275bb98e24e0ac5c86f64bd70d6308f50fb892ad419",
     "sourceSha256": "66e8da8f2cfb2aebadec7275bb98e24e0ac5c86f64bd70d6308f50fb892ad419",
     "patchSetSha256": "9b4722d2a2c3d41426de27a20f2221ad95dd0a36ae373f9fa2adf30e016a19b8",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "debugging-and-error-recovery/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "54789df96167b72060d5db86f97459f68c5c44a4559396786fc5402e9bfc4396",
-        "afterSha256": "66e8da8f2cfb2aebadec7275bb98e24e0ac5c86f64bd70d6308f50fb892ad419"
+        "beforeSha256": "2ddffd6b1fe2015104af795d75b37d668bc455ad4e53b1489799f92e57bde9cb",
+        "afterSha256": "6c9111fcef9b5523d0edbfd611952fb3d8474deff023a62265e1c1456d814a9f"
       },
       {
-        "path": "debugging-and-error-recovery/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "0da6e663b2c6053ab176c9861107891a57a8a9cee3766e831b10686816c14035"
-      },
-      {
-        "path": "debugging-and-error-recovery/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "f7bdf12e8aa0a818ef6ded87ae2da8f5263cde7c0d6f702e8e2736fbb3b25188"
+        "afterSha256": "3b446365dd326a3e455c13389931f6e5d4f43e452bb54d0d8e971df1b3cdd9e0"
       }
     ],
-    "sha256": "084c62c655630b40c358559b58d4ee403e04623b38e0fa659f37a484377fab7f",
-    "bytes": 19609,
-    "fileCount": 9
+    "sha256": "c27b5ea92e95ba6c2145123232449e1bb1462fcb940f5b691df0ccd12f23a6d5",
+    "bytes": 20243,
+    "fileCount": 10
   },
   "design-de-interface-autoral": {
     "schemaVersion": 1,
     "id": "design-de-interface-autoral",
     "code": "DD-050",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -2851,47 +2815,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "73e26a9b6fd54454b10705cc650021b2b86d7f1ae1a9d286657037cb80fbcc9d",
-    "baselineSourceSha256": "7f44e9e9d20a806c19a94bdedc4f70b489d2ee82b860ca0dd54ec9ade12ca6ca",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "76c035654122b957a72419a8278851e65e00ff6eb899d5e478f6232018dba4da",
+    "baselineSourceSha256": "bf4c6b7ee7125584df7e99ca2a9cba420188c243a76cca6a0aad23ebe4a1306a",
     "sourceSha256": "bf4c6b7ee7125584df7e99ca2a9cba420188c243a76cca6a0aad23ebe4a1306a",
     "patchSetSha256": "48cede7bbeeb03f3aff764fb5217a725694409dd8aec44920b34e0f9c3ace050",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "design-de-interface-autoral/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "7f44e9e9d20a806c19a94bdedc4f70b489d2ee82b860ca0dd54ec9ade12ca6ca",
-        "afterSha256": "bf4c6b7ee7125584df7e99ca2a9cba420188c243a76cca6a0aad23ebe4a1306a"
+        "beforeSha256": "46c2864d8e9eed61ffed53de9b353a069ea1d8c370d7c58aa902e88c1953b8ee",
+        "afterSha256": "c43920f7398762195b66c60082aec98b60ba442f16397f681dd0c5b31af84455"
       },
       {
-        "path": "design-de-interface-autoral/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "13584f694a57996d46309b276868d29772592020d5db8c9243621f20b9201679"
-      },
-      {
-        "path": "design-de-interface-autoral/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ace5cbe42baabfeb2f081d495f2941e622beb9cbc9d65b1a4b838e7396e73b74"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "76c035654122b957a72419a8278851e65e00ff6eb899d5e478f6232018dba4da",
-    "bytes": 54881,
-    "fileCount": 18
+    "sha256": "d2e7761bf03709307bf27e50af1e686797151ddbd8e1475b9c5ba5c736f5df10",
+    "bytes": 55365,
+    "fileCount": 19
   },
   "discord-access": {
     "schemaVersion": 1,
     "id": "discord-access",
     "code": "DD-051",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Ambiente e plugin Claude Code/Cowork compatíveis; a importação no Codex não instala o runtime",
@@ -2904,53 +2864,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "5b34e0339f31fed543815d9477f3bc4c5b4f5232ec88dafd06e97f245b6d2422",
-    "baselineSourceSha256": "ad9b015f10795e4df60f6ea677b359238d3d02d5f202d5d102898185f02095f3",
-    "sourceSha256": "ca06b0f1b99634f1cc866259aedfd155e419949c19b5bef95a2ddcc0dbfcda8e",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "8e2f92ae86a4c00a3661ebfa10704b9f796a01f1f32c596b813da88faaffc46d",
+    "baselineSourceSha256": "ca06b0f1b99634f1cc866259aedfd155e419949c19b5bef95a2ddcc0dbfcda8e",
+    "sourceSha256": "628571705f6535d152c3e81d7369621bb0edaff4a7ced889385eafcb6a5ddfeb",
     "patchSetSha256": "d7168b8b9e4ef5dc161f1b05282c89e643d83446179ac2efe3ec200cfc788e70",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "2d8feef0af23c30fcd97a645220a99b1ddc2a08673187bf1b45953cf1ec4d865",
+        "afterSha256": "5809f45f81186c331b08a8ebb868087e942cf801f4ac6ad04684c466ddce548f"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "d8863dde48c23f9c839cc3193a2fd9d7d3f83af0226a5893bf8e408bc98be28d"
+      },
+      {
+        "path": "discord-access/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "17051af59101c673d51f4f7e7d9a0f0822cb61502bebcc267ab6c470dc79e81c"
+      },
+      {
+        "path": "discord-access/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+      },
+      {
         "path": "discord-access/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "ad9b015f10795e4df60f6ea677b359238d3d02d5f202d5d102898185f02095f3",
-        "afterSha256": "ca06b0f1b99634f1cc866259aedfd155e419949c19b5bef95a2ddcc0dbfcda8e"
-      },
-      {
-        "path": "discord-access/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "cfc36c9da5e7ffb55f28f7796175b3742061c5ea09cebc034b04bfe45ddb7ab0"
-      },
-      {
-        "path": "discord-access/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "676581c3c47a95d11227f483e374f33446b5b29c542f43fa1e10f447e416ca1a"
-      },
-      {
-        "path": "discord-access/scripts/revision-tools.cjs",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a64ce5fda2548f624110aa677b55495b39c0787ab81b6705d08e19e203bb7750"
+        "beforeSha256": "ca06b0f1b99634f1cc866259aedfd155e419949c19b5bef95a2ddcc0dbfcda8e",
+        "afterSha256": "628571705f6535d152c3e81d7369621bb0edaff4a7ced889385eafcb6a5ddfeb"
       }
     ],
-    "sha256": "8e2f92ae86a4c00a3661ebfa10704b9f796a01f1f32c596b813da88faaffc46d",
-    "bytes": 11041,
-    "fileCount": 8
+    "sha256": "a43b3410be611dad96390f23f9181cee427a3be47f1b3486a1e716be5e666fb9",
+    "bytes": 16845,
+    "fileCount": 11
   },
   "discord-configure": {
     "schemaVersion": 1,
     "id": "discord-configure",
     "code": "DD-052",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Ambiente e plugin Claude Code/Cowork compatíveis; a importação no Codex não instala o runtime",
@@ -2963,46 +2931,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "5e60d7efbac1fef0da3896c577add93e95bb75165c518bef9e9749630a7a5a64",
-    "baselineSourceSha256": "9950c2c60bcffec4d4ea971d518ab5a365a5ad8cff850eee0d4c7b2c2ebe82a9",
-    "sourceSha256": "47ebabd4205adb57a11976f84bf943e2e59f40c48624df53a06637c6e6744423",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "c5c17a0dad36ceb38550dd2c41c95d2e8ac8c08c05332a8c0242c51f9fe67f2f",
+    "baselineSourceSha256": "47ebabd4205adb57a11976f84bf943e2e59f40c48624df53a06637c6e6744423",
+    "sourceSha256": "166f2e420ca7f58286eb2fb55ba443d8cdabe17be622d0bd62d1bee05a8572f9",
     "patchSetSha256": "0fa7aee208db74470b9365d36dfa2f3cd1ebefb79bf31bafadaac9c9885a102f",
     "sourcePolicy": "entry-replaced-original-retained-in-baseline",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "24e613d2e2073e2dc26b289b1cdf78f8a1b0eb64c45d44abf4cb79b61dc0c8cd",
+        "afterSha256": "19d8afd9ae3c882a4d09239e55a04a874aaa5adebb7478b84c0ee4f19e3c70ee"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "4a5cb43c7a6d39c87100044b3b0b3ce6be4846a9431684a56942a036bbbd9e58"
+      },
+      {
+        "path": "discord-configure/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "dbc4aa3c035e051478075407547fba852011b4b6fd65bd324fc5cf9f6ae0d31f"
+      },
+      {
+        "path": "discord-configure/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+      },
+      {
         "path": "discord-configure/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "9950c2c60bcffec4d4ea971d518ab5a365a5ad8cff850eee0d4c7b2c2ebe82a9",
-        "afterSha256": "47ebabd4205adb57a11976f84bf943e2e59f40c48624df53a06637c6e6744423"
-      },
-      {
-        "path": "discord-configure/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "20f32a08d41b165faec2c60a1f1e202d604b9e4d6b3a4762e0c18149bc542afc"
-      },
-      {
-        "path": "discord-configure/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "2e0626764cd39381f55cb7f193a527b33d0573f1a24ed48153152b2520bcb79d"
+        "beforeSha256": "47ebabd4205adb57a11976f84bf943e2e59f40c48624df53a06637c6e6744423",
+        "afterSha256": "166f2e420ca7f58286eb2fb55ba443d8cdabe17be622d0bd62d1bee05a8572f9"
       }
     ],
-    "sha256": "c5c17a0dad36ceb38550dd2c41c95d2e8ac8c08c05332a8c0242c51f9fe67f2f",
-    "bytes": 6064,
-    "fileCount": 7
+    "sha256": "ebb68951a089d8effb18daeb361369889425ce8d16a84e8c077ff2480e0d5494",
+    "bytes": 11936,
+    "fileCount": 10
   },
   "estilo-de-colaboracao": {
     "schemaVersion": 1,
     "id": "estilo-de-colaboracao",
     "code": "DD-053",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -3018,82 +2998,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "00d8d1d82375b3e947d8628c2d77b5cc0da5b0867ad45e59dd62ec88030e05cb",
-    "baselineSourceSha256": "f1d81f769f24a84a76707c2b01a185f244c34c5298eb4b44611f4292833a5f9c",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "578809690ece0f3c6ed09c5595d8dd7280503e37f15a95eaee7b1ec02af3ecd0",
+    "baselineSourceSha256": "a488c8de26e250f6a812ce29b68cf35ef2f2e49e852f29307d94cb06c6514f7a",
     "sourceSha256": "a488c8de26e250f6a812ce29b68cf35ef2f2e49e852f29307d94cb06c6514f7a",
     "patchSetSha256": "0b4650d8b1556872e9e3eb83e35258f144564d217f350a9550ed4872a95da79b",
     "sourcePolicy": "sanitized-original-retained-privately",
     "changes": [
       {
-        "path": "estilo-de-colaboracao/private-reference-8375990e875f6925",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "9d92166097f4e6a5b144810d69202c89e273f4d481f39e46d93f4ce361b87358",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "estilo-de-colaboracao/private-reference-df85a4c8b4747eb9",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "8a64bb982d71b7bbc0d3cce35fd4fe64f08a9fdfabd56a1955f1223f88772505",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "estilo-de-colaboracao/private-reference-08fed7fda6d85640",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "3ca6bc1e8dfa2b5dc10e7d5143bba8de886a40f434566e084f079511bc70d95f",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "estilo-de-colaboracao/private-reference-d7824b779ff78ac3",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "7cf22ffa2498b5f8850d50eea28aea1b7f1c2b3ba5e14e42fb1cd0cd8a465cf7",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "estilo-de-colaboracao/private-reference-b63ab87623d60d5d",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "f4e1a9cef5c29c9587c981a3add0418863eab45e7d5fd07b1a3b12263f409417",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "estilo-de-colaboracao/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "f1d81f769f24a84a76707c2b01a185f244c34c5298eb4b44611f4292833a5f9c",
-        "afterSha256": "a488c8de26e250f6a812ce29b68cf35ef2f2e49e852f29307d94cb06c6514f7a"
+        "beforeSha256": "e76ef785236b410f3d935225e40c5483579f3ac05ca65ba0053dd5f031abcefb",
+        "afterSha256": "f67e4cbf63b9d6be4740348f50dd70f5eaa1820b59c3a9b9b3699d66320e26b5"
       },
       {
-        "path": "estilo-de-colaboracao/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "529533a898267574816191fc458cd0f85963baf369060a25d28e66047b3989fc"
-      },
-      {
-        "path": "estilo-de-colaboracao/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "7d09277b03dd0f10ef52e00ee83553ef67c312f39b5738bcfbec025cc969a009"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "578809690ece0f3c6ed09c5595d8dd7280503e37f15a95eaee7b1ec02af3ecd0",
-    "bytes": 6271,
-    "fileCount": 7
+    "sha256": "aea16e41d8df62d7c718d8c9e82d55049956ef24e0ed434f6334640b8507bfff",
+    "bytes": 6414,
+    "fileCount": 8
   },
   "example-command": {
     "schemaVersion": 1,
     "id": "example-command",
     "code": "DD-054",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Ambiente e plugin Claude Code/Cowork compatíveis; a importação no Codex não instala o runtime",
@@ -3104,53 +3045,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "e7b462743489ac3a49c2ffe79acd6e52aa51d22e4fbc84e7584781e9de19abb5",
-    "baselineSourceSha256": "d561981660827f3818b0daec456ae5b31894f68c22407d8c495a77b3105ba96d",
-    "sourceSha256": "c9f1cd9c204bdf7182328dc5ff20cf7ff019f61f59bb37c4460023707844bcfe",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "dfca722c40ce279cdae8f74ceb037ddd23d787edc883e54db479d4216fedb897",
+    "baselineSourceSha256": "c9f1cd9c204bdf7182328dc5ff20cf7ff019f61f59bb37c4460023707844bcfe",
+    "sourceSha256": "ab40f732b72b4089fbaa56341a7db3409663a821594b3de60ca74718d7298296",
     "patchSetSha256": "fb45b33eb26ebaa76400082db8bd919dba7e252f75c381fa25088767ce7693e2",
     "sourcePolicy": "entry-replaced-original-retained-in-baseline",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "0ffe0b716e040ed4c723436b9eac378c4def355fca6fd5c85661f53b1374da29",
+        "afterSha256": "eb166f87c54b98bcd106363131b263d7dea583d432b26217e4f102f8bbe851fa"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cd731a840fc8ae94d52c2086819d5c076ce00778dcf9106c62c0c066fc100a78"
+      },
+      {
+        "path": "example-command/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "3ecd3fc564bb94bdfa3977cdb72c98832c5dda3cc74e085c101fb751244762c9"
+      },
+      {
+        "path": "example-command/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "example-command/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "d561981660827f3818b0daec456ae5b31894f68c22407d8c495a77b3105ba96d",
-        "afterSha256": "c9f1cd9c204bdf7182328dc5ff20cf7ff019f61f59bb37c4460023707844bcfe"
-      },
-      {
-        "path": "example-command/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ebb4f0d27654b3855edc8030fe56087acbb8f87874556cacb7f3d05df9499840"
-      },
-      {
-        "path": "example-command/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "b5637ddc69858f499af3e0924297f68065cdbd745f9fd84ebfe3ef0b9a44b461"
-      },
-      {
-        "path": "example-command/scripts/revision-tools.cjs",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a64ce5fda2548f624110aa677b55495b39c0787ab81b6705d08e19e203bb7750"
+        "beforeSha256": "c9f1cd9c204bdf7182328dc5ff20cf7ff019f61f59bb37c4460023707844bcfe",
+        "afterSha256": "ab40f732b72b4089fbaa56341a7db3409663a821594b3de60ca74718d7298296"
       }
     ],
-    "sha256": "dfca722c40ce279cdae8f74ceb037ddd23d787edc883e54db479d4216fedb897",
-    "bytes": 8544,
-    "fileCount": 8
+    "sha256": "149323a76f68e5a41cfac5d0e524452331a006bed9d9286b227075e2751d77f2",
+    "bytes": 14354,
+    "fileCount": 11
   },
   "example-skill": {
     "schemaVersion": 1,
     "id": "example-skill",
     "code": "DD-055",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Claude específico"
     ],
@@ -3163,35 +3112,47 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "d86ab8d7348e0d642eebb9c1f16d61c64c73798f06dc7df495951333f5ee09c9",
-    "baselineSourceSha256": "87d90442621ace039aa3379805f99c3f95bf500e9f7b96f9e7876ac2dcf804f5",
-    "sourceSha256": "3950672b5fc3080304302688c24cb5429bf039dfebc94b500fafd79f0ee437f3",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "09c6d052fa7825febecc0b43cfea00b9d2c2ad542145581436e3869d5d8fc850",
+    "baselineSourceSha256": "3950672b5fc3080304302688c24cb5429bf039dfebc94b500fafd79f0ee437f3",
+    "sourceSha256": "92142e149806f597c306169ccb951ea6e394f0c3ff16ad36355e86f0e61dd52b",
     "patchSetSha256": "6a4b4b9ac2a59fde2aefba6dfd74105b20bcd8cb6695d1a955c90937271f3ca4",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "a8e18939bd08e491500e2a1d7afd2ac1b39dc92e687b1014c4cf08378f2d2400",
+        "afterSha256": "0fab715016fc12da15309142c2d9d022fa3957072cb725c23f254ff363a1e637"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "9e98b1b83e1b5549760736d529bc24d3ec7f873bace8de5d80b624f4bbbba249"
+      },
+      {
+        "path": "example-skill/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "aee8103610c0b190bd17abcf10585524b3e54a607fda905100c1fe1e14e12f31"
+      },
+      {
+        "path": "example-skill/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "example-skill/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "87d90442621ace039aa3379805f99c3f95bf500e9f7b96f9e7876ac2dcf804f5",
-        "afterSha256": "3950672b5fc3080304302688c24cb5429bf039dfebc94b500fafd79f0ee437f3"
-      },
-      {
-        "path": "example-skill/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "bd74dc8fa66b49d8616d7f41b74545d3ad82ab363668f3ad5760bba4792cda38"
-      },
-      {
-        "path": "example-skill/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "06be31b23cb0f2ff217fda310513e9536d1a43860d2512d3606f55347fa222f8"
+        "beforeSha256": "3950672b5fc3080304302688c24cb5429bf039dfebc94b500fafd79f0ee437f3",
+        "afterSha256": "92142e149806f597c306169ccb951ea6e394f0c3ff16ad36355e86f0e61dd52b"
       }
     ],
-    "sha256": "09c6d052fa7825febecc0b43cfea00b9d2c2ad542145581436e3869d5d8fc850",
-    "bytes": 6837,
-    "fileCount": 7
+    "sha256": "34305c1be6b2978020d30e73eab52d4e9b1c58fd2410e2e4b6972f8f1e1b577a",
+    "bytes": 12684,
+    "fileCount": 10
   },
   "figma-code-connect": {
     "schemaVersion": 1,
@@ -5341,12 +5302,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "frontend-design",
     "code": "DD-086",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "Apache License 2.0 e termos DriveData",
     "licenseFiles": [
       "LICENSE.txt"
     ],
@@ -5360,46 +5321,52 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "4a3744ce2638c2313bc9bb70ca15aa249fa7246ac13106226fb52196d9c7f6d7",
-    "baselineSourceSha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
-    "sourceSha256": "7015443d9254b25c2c595a984f9214eb6480eba717a99e02360684373dfac97f",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "8563f0adf158c94684f043504e1a141805e2892c1f7fd6bf0fa51e2f14ac28fd",
+    "baselineSourceSha256": "7015443d9254b25c2c595a984f9214eb6480eba717a99e02360684373dfac97f",
+    "sourceSha256": "0fc533928a192eeb93d3eac67f4f89e954f259420b7040c37094ed8048f0a459",
     "patchSetSha256": "f04d6c489050843e32e99d404e3f7e5b1da339ce24508d2e6c5733569ed8341e",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "723f8d2db5d43079953a8a14bc4d6495699dc28416293835a4f9602d7183cf8a",
+        "afterSha256": "0ac7ac65c49ba495ad5364b59c4964ccf3cb044c5ec9a9c01495c3478f007302"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "00ccbfd26c825927bbe50b892c0a4c5a5dd9487105e3052cd569fbbc78623566"
+      },
+      {
+        "path": "frontend-design/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "3b302ccb8d2433c7cb4a368a7c7708a5266045f56c2f08bc1f7869f6f8e21508"
+      },
+      {
         "path": "frontend-design/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
-        "afterSha256": "7015443d9254b25c2c595a984f9214eb6480eba717a99e02360684373dfac97f"
-      },
-      {
-        "path": "frontend-design/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "485c47569b3fc9b2124666e2c57dfa51845b5e6b78070644993def6e020271bb"
-      },
-      {
-        "path": "frontend-design/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "02f7b799fe84fe4e569007369180cb559930e9a0600510d7d703007edb39ef1f"
+        "beforeSha256": "7015443d9254b25c2c595a984f9214eb6480eba717a99e02360684373dfac97f",
+        "afterSha256": "0fc533928a192eeb93d3eac67f4f89e954f259420b7040c37094ed8048f0a459"
       }
     ],
-    "sha256": "8563f0adf158c94684f043504e1a141805e2892c1f7fd6bf0fa51e2f14ac28fd",
-    "bytes": 13996,
-    "fileCount": 8
+    "sha256": "63ac0a3388a218ea894922d71206d78b7aab084d6fc6289bfac13087e5034498",
+    "bytes": 15574,
+    "fileCount": 10
   },
   "fullstack-nextjs-vercel": {
     "schemaVersion": 1,
     "id": "fullstack-nextjs-vercel",
     "code": "DD-087",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -5416,35 +5383,29 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "d73cf298a6185e411c5cb33f49fc43bfbc0e28285364c92d8574f16b40c97fc2",
-    "baselineSourceSha256": "d9bf31922c3af0be3e69114d98b06a94c774a8ee11a187f479c494129c5f0445",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "1fad058b8ee249ad57862357028f3e00b7976626ecac200af2fc9fc07fb61916",
+    "baselineSourceSha256": "bbd35b58a81caff1aab6b0bce540d75f549c9f887f338a38a9535165dc3b3494",
     "sourceSha256": "bbd35b58a81caff1aab6b0bce540d75f549c9f887f338a38a9535165dc3b3494",
     "patchSetSha256": "293afa8c97b64c55856adef9effaba889cfdd8a4d6564766ece9826eb26cae5d",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "fullstack-nextjs-vercel/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "d9bf31922c3af0be3e69114d98b06a94c774a8ee11a187f479c494129c5f0445",
-        "afterSha256": "bbd35b58a81caff1aab6b0bce540d75f549c9f887f338a38a9535165dc3b3494"
+        "beforeSha256": "67f2150d66f666f0700622aa7c1bfb4a0a4710080129de61ecff92225ac43173",
+        "afterSha256": "1078e3917c3876c80472ea8baa81e38748ccef53ea29676a924a237f31adde36"
       },
       {
-        "path": "fullstack-nextjs-vercel/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "6eab357f4e175ff5f043c56566ab2b150533c71d05cccd142e37a6b617bc5ad4"
-      },
-      {
-        "path": "fullstack-nextjs-vercel/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "9b084be9eb6aa1f674802a1257101ebc858ee92ed56bd2bbf88f99a45f0fde7d"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "1fad058b8ee249ad57862357028f3e00b7976626ecac200af2fc9fc07fb61916",
-    "bytes": 38288,
-    "fileCount": 15
+    "sha256": "e712e3c804817270bd552961af9682ea16b2991d2ce2a2a6c90069544ac52a12",
+    "bytes": 38754,
+    "fileCount": 16
   },
   "generate-project-plan": {
     "schemaVersion": 1,
@@ -5514,12 +5475,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "gestao-de-entregas-e-homologacao",
     "code": "DD-089",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -5536,46 +5497,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "b20cc67c8c4c28b1ebb954a5ac09d741ed5e1e4e540211db192bb8a703da5846",
-    "baselineSourceSha256": "5a384d8ada57a2dc9752b70022390a0477cbb467280f2b84b16a4389b217390c",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "b4041b84a29ce88cd8d8a5f316eb9a65586a5d269230d5073d3e39daa249bdaa",
+    "baselineSourceSha256": "727f124c4c1055b56e26180f42713f859977c5869e9b3295d236f5c71af3f8eb",
     "sourceSha256": "727f124c4c1055b56e26180f42713f859977c5869e9b3295d236f5c71af3f8eb",
     "patchSetSha256": "f5c7db321d0c6a18fe04b826e3e4a04980f4582d48d9ffb20adb8bd46f3080d6",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "gestao-de-entregas-e-homologacao/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "5a384d8ada57a2dc9752b70022390a0477cbb467280f2b84b16a4389b217390c",
-        "afterSha256": "727f124c4c1055b56e26180f42713f859977c5869e9b3295d236f5c71af3f8eb"
+        "beforeSha256": "daa2f5a5ec636ec5135c55dbb6fb11c680c99b202128e0aaf33b108a201fb593",
+        "afterSha256": "0b3fc0ef1b118d18f80fc6e6e37a8c52b58240fe528d0994b5e7cddefa1f8d2a"
       },
       {
-        "path": "gestao-de-entregas-e-homologacao/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "2a57250d5df0e05c9b0d2889da3d92be9a87d3c4753100a6a26229186825b20d"
-      },
-      {
-        "path": "gestao-de-entregas-e-homologacao/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "90e106414476bfd92300852e0f5eeb102988ef877c5b041a35b41701caab10a7"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "b4041b84a29ce88cd8d8a5f316eb9a65586a5d269230d5073d3e39daa249bdaa",
-    "bytes": 32235,
-    "fileCount": 13
+    "sha256": "d2991a094c4736bc2607f6be23f47846a60fc8eb45ee4b85b42265919a56a67a",
+    "bytes": 32714,
+    "fileCount": 14
   },
   "git-workflow-and-versioning": {
     "schemaVersion": 1,
     "id": "git-workflow-and-versioning",
     "code": "DD-090",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "MIT e termos DriveData",
     "licenseFiles": [
       "LICENSE"
     ],
@@ -5591,54 +5546,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "cceb186c079e56577131135a896866cca6917313c0cc2caf3223c449fca5794b",
-    "baselineSourceSha256": "b0e6d07f460e668149f440a46c82bd2c7bde7b67f457ef2edd5fb581754d5c85",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "9a53e4affc4fd8768372507730b1ff843cd72649cf95f05d6fa18ef85e85eb1c",
+    "baselineSourceSha256": "1e9ce830c81371e32d673dda98fc18c7c316d6f21425d1c2675ab79e853762fc",
     "sourceSha256": "1e9ce830c81371e32d673dda98fc18c7c316d6f21425d1c2675ab79e853762fc",
     "patchSetSha256": "741166d57d3b0cd26e14883ea7759c9f4e2269ca00898a6353beb9ebc4c3e9f4",
     "sourcePolicy": "sanitized-original-retained-privately",
     "changes": [
       {
-        "path": "git-workflow-and-versioning/private-reference-125c0dd231958c98",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "git-workflow-and-versioning/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "b0e6d07f460e668149f440a46c82bd2c7bde7b67f457ef2edd5fb581754d5c85",
-        "afterSha256": "1e9ce830c81371e32d673dda98fc18c7c316d6f21425d1c2675ab79e853762fc"
+        "beforeSha256": "d916a811eb7d1d0bd7148e8c3281d76c492a8016eb442df10d0e90fa4c6c8eec",
+        "afterSha256": "11c1d33ff92c6c28494214e51d5037090f8c8729bb12713baa5979d0c9666e87"
       },
       {
-        "path": "git-workflow-and-versioning/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "3af88be45a9d5fa5f37b46b31c330ffcbe688d379d2c66d2e8e310b6ccb9ad68"
-      },
-      {
-        "path": "git-workflow-and-versioning/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c4329a1efe6d4d72dfb70f25fca1d857fcb75fda6a7606ba6ff68bdd7a0eacd3"
+        "afterSha256": "c810d80c703c731ceb2896d5884bb2beb4a3a8ce313e788e822ace2490ec83a6"
       }
     ],
-    "sha256": "9a53e4affc4fd8768372507730b1ff843cd72649cf95f05d6fa18ef85e85eb1c",
-    "bytes": 6839,
-    "fileCount": 8
+    "sha256": "fb907dd753f93d24a2b79bf33ffe9b84baf6a414f593f773832222f78d5209b2",
+    "bytes": 7365,
+    "fileCount": 9
   },
   "hook-development": {
     "schemaVersion": 1,
     "id": "hook-development",
     "code": "DD-091",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Node.js",
@@ -5654,46 +5598,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "de6bf355852fc115485d1f93a7e3cc7c973cf5ae28300ca10d8ca5761381190f",
-    "baselineSourceSha256": "f47e2d42f6360294216a859ae0c30b93caafdd2b2e5ffc007489ba4ca447fa5c",
-    "sourceSha256": "86f164c835eabd69d0a90cc757f79298dfe8783eb634920bc04d1469257bdac4",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "64d202f8b038a1f9c6305d30b774f12d39ac1e635cc59ccefba965e022887747",
+    "baselineSourceSha256": "86f164c835eabd69d0a90cc757f79298dfe8783eb634920bc04d1469257bdac4",
+    "sourceSha256": "77e3f5b423686804ddbe0af640557593cf190c0fa789bfc60bcf047e1461772c",
     "patchSetSha256": "a0bad1c453269fc97af256af5818ca36dff182274df9d015f5d7a4fd8118dbd2",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "608db9230676d447ec76f0bbda83c8f9262bd5dbed47d7183e7156bd57b7b710",
+        "afterSha256": "be4672f28df7dc8a39d0a77084a5b0bb9235976da297f6f357151aaa4435a3af"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "1ae49f726de2646849c5d441d6fd876bad315015efcb68a12d97e7d7da565277"
+      },
+      {
+        "path": "hook-development/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "e4205c7b3aa78378b83f3475fe79fb6b498bb9f143bd79546540dd732496cc39"
+      },
+      {
+        "path": "hook-development/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "hook-development/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "f47e2d42f6360294216a859ae0c30b93caafdd2b2e5ffc007489ba4ca447fa5c",
-        "afterSha256": "86f164c835eabd69d0a90cc757f79298dfe8783eb634920bc04d1469257bdac4"
-      },
-      {
-        "path": "hook-development/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "4966b9aa868d475b0ed8804c4b927a5df23c022f3a8a110669c501483be796a9"
-      },
-      {
-        "path": "hook-development/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "b9efac03647c8558a2b890525b26f916c2f832c6a8c8a2eeb0baac4675000eeb"
+        "beforeSha256": "86f164c835eabd69d0a90cc757f79298dfe8783eb634920bc04d1469257bdac4",
+        "afterSha256": "77e3f5b423686804ddbe0af640557593cf190c0fa789bfc60bcf047e1461772c"
       }
     ],
-    "sha256": "64d202f8b038a1f9c6305d30b774f12d39ac1e635cc59ccefba965e022887747",
-    "bytes": 30655,
-    "fileCount": 17
+    "sha256": "dab741ef4c826c2b5c3594ee8c81be9cdbe30b895a22613b0c6c6615d62c4378",
+    "bytes": 36513,
+    "fileCount": 20
   },
   "ia-aplicada-a-produtos": {
     "schemaVersion": 1,
     "id": "ia-aplicada-a-produtos",
     "code": "DD-092",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -5710,47 +5666,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "2908c6e065c41dd9a541b078ca696cefdc19ab63d9057e2a8b83c0eaa7833764",
-    "baselineSourceSha256": "0a570b0ad5e33d507a0af97e0bd30605a0e068069f6c099958b5a05b47cc5911",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "17d5c4fd997ba7e7e52221c8a91a38e82c610ac31540b0d3503ff3dd65c7fa2d",
+    "baselineSourceSha256": "781628b7e8c9433606db1af7a484b9e6e4d27db76e6f4aa68682962f4f5e3a67",
     "sourceSha256": "781628b7e8c9433606db1af7a484b9e6e4d27db76e6f4aa68682962f4f5e3a67",
     "patchSetSha256": "cb52eb7725b9aab09b331835c5e4fff5e880f8f1d01ab6f11e4c348788a052ad",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "ia-aplicada-a-produtos/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "0a570b0ad5e33d507a0af97e0bd30605a0e068069f6c099958b5a05b47cc5911",
-        "afterSha256": "781628b7e8c9433606db1af7a484b9e6e4d27db76e6f4aa68682962f4f5e3a67"
+        "beforeSha256": "4c098010c47c5571b821c1d263e240e82ed063c48e5b32f6f5a7d4b7321e52f8",
+        "afterSha256": "9d44540d521fee9924aca90245631e78c43979901a90980e372be2c3f9ee1f17"
       },
       {
-        "path": "ia-aplicada-a-produtos/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "9bb13b96927ee59cec41542b02f9ae67a4bade847153c0aedb805c99a5487462"
-      },
-      {
-        "path": "ia-aplicada-a-produtos/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "f5ff3e457e9a40e6ef34287670c869bca2c88bc3b0ef413bb022de7bedad0889"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "17d5c4fd997ba7e7e52221c8a91a38e82c610ac31540b0d3503ff3dd65c7fa2d",
-    "bytes": 37827,
-    "fileCount": 17
+    "sha256": "1c0476ab81a93f758cfe88527cd691cb1ff62305604ffb233ca0d8e23137c035",
+    "bytes": 38313,
+    "fileCount": 18
   },
   "imessage-access": {
     "schemaVersion": 1,
     "id": "imessage-access",
     "code": "DD-093",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Ambiente e plugin Claude Code/Cowork compatíveis; a importação no Codex não instala o runtime",
@@ -5763,53 +5715,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "e2908a3ab981b7e327a22ee44903c2b589314d63dcf234700d0c18c6a06a4d15",
-    "baselineSourceSha256": "fbbf63066c18620a2cfbf859f4ae31330707d867de8603aa028d11121b50cba0",
-    "sourceSha256": "4d969eff453a833258a7edd09b8fdc22d57b2bc0b982dbe19a025b9bb721cb1c",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "a513780305515851e0b54d57247c49a1bb32693ad274a8feee554f8c93c2a0bd",
+    "baselineSourceSha256": "4d969eff453a833258a7edd09b8fdc22d57b2bc0b982dbe19a025b9bb721cb1c",
+    "sourceSha256": "0834735d6f2da1b49386aa1b27496729030c13ea42c2eda65b2985c29198533a",
     "patchSetSha256": "201088a7c3048199cd65651e6152d7db2714bbb04984a05dea912d24d3340cfc",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "38f0c233bd15ac0634fabce8cff070caba048918c9e437e92903864bec22e7ce",
+        "afterSha256": "7d4c192ae5a1b9ae3f2a5d3db856e9ce7c0ac9744eb071804301b30395536cf1"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "301e96f4175bb0445314a0486948e1a71651e0a22f41c199725ee468e0e9d445"
+      },
+      {
+        "path": "imessage-access/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "4c06346835b510cf3afea9c25bc4a428338ba54599c76f9e7e356eb9b69a02bf"
+      },
+      {
+        "path": "imessage-access/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+      },
+      {
         "path": "imessage-access/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "fbbf63066c18620a2cfbf859f4ae31330707d867de8603aa028d11121b50cba0",
-        "afterSha256": "4d969eff453a833258a7edd09b8fdc22d57b2bc0b982dbe19a025b9bb721cb1c"
-      },
-      {
-        "path": "imessage-access/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "4ab202b226d73bec5c3fb84c79a0d491881d749cf215044bcc9c247997afa844"
-      },
-      {
-        "path": "imessage-access/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "cd9e364bea683ec727d3250ef707d41bc5f5a0ae4316061edcf4c3e65a81be28"
-      },
-      {
-        "path": "imessage-access/scripts/revision-tools.cjs",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a64ce5fda2548f624110aa677b55495b39c0787ab81b6705d08e19e203bb7750"
+        "beforeSha256": "4d969eff453a833258a7edd09b8fdc22d57b2bc0b982dbe19a025b9bb721cb1c",
+        "afterSha256": "0834735d6f2da1b49386aa1b27496729030c13ea42c2eda65b2985c29198533a"
       }
     ],
-    "sha256": "a513780305515851e0b54d57247c49a1bb32693ad274a8feee554f8c93c2a0bd",
-    "bytes": 10998,
-    "fileCount": 8
+    "sha256": "a8e301a38e82bd765551efeb144d488702d7de693b7339f2202a795d6d19df05",
+    "bytes": 16808,
+    "fileCount": 11
   },
   "imessage-configure": {
     "schemaVersion": 1,
     "id": "imessage-configure",
     "code": "DD-094",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Claude específico"
     ],
@@ -5824,46 +5784,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "9b6586db61efc9af7aeb5b1cac7dbe26bd14c038cc746f6e02b11b6d5430c199",
-    "baselineSourceSha256": "78e913e83100fbbd24f5dc57d1ce3bb2adae51eb2ad62d8c32212d5d386f45fe",
-    "sourceSha256": "0970a62c66d039ae23919432148a536fc1d254a6f686ab961a9c274ae3662cb0",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "a1a49075eeffd6378d06062265d1f812ad441bac202774c8ec26bd113fc0c3a3",
+    "baselineSourceSha256": "0970a62c66d039ae23919432148a536fc1d254a6f686ab961a9c274ae3662cb0",
+    "sourceSha256": "bcaa8c9912cc4f799b3ff15ba4cf310d04054fa4a568880f5e8e2b727a56db5f",
     "patchSetSha256": "c5c15e6cfbfbb6ffede0a4555d7cf169c6b21765b657ae3b4646566587b3ff59",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "df2106d1b176310e386115059d1327d02b7ad4de36ab0bd892106802a79fc897",
+        "afterSha256": "3d202fcdf052c3a8ec75f0af48f361c98a52a74eaa4737875c2df8844723a1d5"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "82fc076bbf5563cfbeee1897b49122b58733d096a74f5c637ccfef5f5e517474"
+      },
+      {
+        "path": "imessage-configure/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "3a2c676a1ef4d1988e2417a25065757ace4268c9f7df129d0cfe358f89b7a38c"
+      },
+      {
+        "path": "imessage-configure/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+      },
+      {
         "path": "imessage-configure/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "78e913e83100fbbd24f5dc57d1ce3bb2adae51eb2ad62d8c32212d5d386f45fe",
-        "afterSha256": "0970a62c66d039ae23919432148a536fc1d254a6f686ab961a9c274ae3662cb0"
-      },
-      {
-        "path": "imessage-configure/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "142f380c8d941958c95be60815995ff01af59abab11947bc7efb0404cebd80ca"
-      },
-      {
-        "path": "imessage-configure/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "96bdf206f65ddd01322618dce5d6e61a9e5d864b9ad621c8537aeb7dd206789e"
+        "beforeSha256": "0970a62c66d039ae23919432148a536fc1d254a6f686ab961a9c274ae3662cb0",
+        "afterSha256": "bcaa8c9912cc4f799b3ff15ba4cf310d04054fa4a568880f5e8e2b727a56db5f"
       }
     ],
-    "sha256": "a1a49075eeffd6378d06062265d1f812ad441bac202774c8ec26bd113fc0c3a3",
-    "bytes": 7615,
-    "fileCount": 7
+    "sha256": "f05eabeab9b520e98fa765f8b8825672a43b168d1d0d011cd67ada787f03f33c",
+    "bytes": 13490,
+    "fileCount": 10
   },
   "integracoes-erp-fiscal-financeiro": {
     "schemaVersion": 1,
     "id": "integracoes-erp-fiscal-financeiro",
     "code": "DD-095",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -5880,47 +5852,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "701bd3734b2c02d2eaac118694d552f3bad3993b9697dca64da810ba4889632d",
-    "baselineSourceSha256": "2359165894b93936e8eaea612e36a6f3867fdcab909590688f66c22873dc57d0",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "4b8ee3f186cd86a9752c4df4de8770c5a797a7fdb56b9fc708d2ea5fc9ba6979",
+    "baselineSourceSha256": "bfa7e6c76cf355648762ca60e36c3bc41a021365f6cb82e45da02f8066153d24",
     "sourceSha256": "bfa7e6c76cf355648762ca60e36c3bc41a021365f6cb82e45da02f8066153d24",
     "patchSetSha256": "f0649b618ac540546a32f1c8a0b8530b4cbdfd36fda6e79ec58a8b7056af8731",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "integracoes-erp-fiscal-financeiro/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "2359165894b93936e8eaea612e36a6f3867fdcab909590688f66c22873dc57d0",
-        "afterSha256": "bfa7e6c76cf355648762ca60e36c3bc41a021365f6cb82e45da02f8066153d24"
+        "beforeSha256": "aedb2ddd5caee3ba96eb42399fe146e8f49a818425016a9d49ee0073037cc655",
+        "afterSha256": "c6a8c3177797b15b228a3faa0bab7dd2527cfd0295faea0b23e9dd5ce4fc6ae8"
       },
       {
-        "path": "integracoes-erp-fiscal-financeiro/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "67ce4a90af5c4ee4ecb7de7f0bbf833edf1e39e72a76a0c18418eaca32e81572"
-      },
-      {
-        "path": "integracoes-erp-fiscal-financeiro/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "665eaaf77306a66c23a34259c55de64b497b8fa1a8970a7b2d7a6113f5383e19"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "4b8ee3f186cd86a9752c4df4de8770c5a797a7fdb56b9fc708d2ea5fc9ba6979",
-    "bytes": 51170,
-    "fileCount": 15
+    "sha256": "646f9dee119be02d9932460fe127d03bf1d184e38191fbf0c3f4c6e2fe4eaed4",
+    "bytes": 51643,
+    "fileCount": 16
   },
   "legal-response": {
     "schemaVersion": 1,
     "id": "legal-response",
     "code": "DD-096",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -5934,53 +5902,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "9f530dce9a3ecea442ddf7c940b1cecbe6864ca88a111cf5c533429c47a56ab4",
-    "baselineSourceSha256": "b3a0585ee00a53ccb159fbf5b7dd4d4b45c39e5e65cc8f4f39cbb134fef493db",
-    "sourceSha256": "849432bd0b28c4503f202d9dd4cb4ed52596e9973ce8bbda864bc6bfc399b111",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "cefe19009b3ab8698983fc86d65de9d7b5c1faf6cf848fbd6c83a7a3ce473138",
+    "baselineSourceSha256": "849432bd0b28c4503f202d9dd4cb4ed52596e9973ce8bbda864bc6bfc399b111",
+    "sourceSha256": "253bbe93d84a85344a8e336ba097a43128b8ca30e046f660e809b32e93619b27",
     "patchSetSha256": "454567864a4b7686724d50a1a93dbac4efeb9e09d255e07066cbeb207ca17573",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "8f62749e37557f4354f7be5ed20faf12b70c0e4847e1418de05c8fc6bf541ef2",
+        "afterSha256": "134e53a288611deb4ead48f3758435d19283f3b874e065d773eb6f3bd5611a46"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "370dec72ed5efd1f646968e9c1c914d3769621c0006b3b9e60464a703d7823cd"
+      },
+      {
+        "path": "legal-response/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "9b74bbf27bd41ec2d0dac3a2e6e1de42ea1a23f39c9a28a33736dbdb62182087"
+      },
+      {
+        "path": "legal-response/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "legal-response/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "b3a0585ee00a53ccb159fbf5b7dd4d4b45c39e5e65cc8f4f39cbb134fef493db",
-        "afterSha256": "849432bd0b28c4503f202d9dd4cb4ed52596e9973ce8bbda864bc6bfc399b111"
-      },
-      {
-        "path": "legal-response/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "9085568bc5992aef771cd96a2d2a65d496086b1522bb282d4b891e6f0fb376ca"
-      },
-      {
-        "path": "legal-response/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "2e28266d296e5a57eb7ed01953cb32a6c98e8637c24d17c4b38481acca908440"
-      },
-      {
-        "path": "legal-response/CONNECTORS.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d2259870c53c05017ec8ec917eb1a659674e15eb1e17a7a7210bab468efafc8a"
+        "beforeSha256": "849432bd0b28c4503f202d9dd4cb4ed52596e9973ce8bbda864bc6bfc399b111",
+        "afterSha256": "253bbe93d84a85344a8e336ba097a43128b8ca30e046f660e809b32e93619b27"
       }
     ],
-    "sha256": "cefe19009b3ab8698983fc86d65de9d7b5c1faf6cf848fbd6c83a7a3ce473138",
-    "bytes": 13048,
-    "fileCount": 8
+    "sha256": "6d910c60c094979d5ff4a8681696abed4dd973de1cefa3ed8e34ecfa501afffd",
+    "bytes": 18859,
+    "fileCount": 11
   },
   "legal-risk-assessment": {
     "schemaVersion": 1,
     "id": "legal-risk-assessment",
     "code": "DD-097",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -5993,47 +5969,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "cda4a3eb359b0c195ca5ff1a78c80a0bf114e6910a5fba22fe2f60d826a1a524",
-    "baselineSourceSha256": "9f7985e3a98ac8419b52067cdaa1b72f754fa38c20489e7f0bf9de36347d4d89",
-    "sourceSha256": "047ec6695784af8801d322e75f9246e2a911f9c9bc0587e3ade990058811f947",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "e99e92c2c7ed7bc5a7e59127b6ec91ab68075b2c53a6a3a8c3fa66a507ce7bae",
+    "baselineSourceSha256": "047ec6695784af8801d322e75f9246e2a911f9c9bc0587e3ade990058811f947",
+    "sourceSha256": "10e3fbb2b43bd58c8a165901eb48d5ccd5d1f09838b30f4f8814a0f8503b35fc",
     "patchSetSha256": "dd4b95e136186eb16b4a5e02878f76f90de59f1165379795b25c6167dba487a6",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "7ccfb13490932d09b3050a201a966059cc64eeef401d0542349ee081c7e2924f",
+        "afterSha256": "a7df489435c9a6c6b3c93c18deca1a196e345d5e87e3034d43a352946f6d9751"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "254c3836043b0635d30a7cbbc457a455ad905749b796e54fe512b73afe5ace5e"
+      },
+      {
+        "path": "legal-risk-assessment/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "6f3d4586e126bfd0879c02217bed825a3b53bf613aca9795860a8f43b8461a8d"
+      },
+      {
+        "path": "legal-risk-assessment/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "legal-risk-assessment/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "9f7985e3a98ac8419b52067cdaa1b72f754fa38c20489e7f0bf9de36347d4d89",
-        "afterSha256": "047ec6695784af8801d322e75f9246e2a911f9c9bc0587e3ade990058811f947"
-      },
-      {
-        "path": "legal-risk-assessment/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "e25af25d864b9092dcb78b11a60731fddf769c161527eb53d0e6702ff8783caa"
-      },
-      {
-        "path": "legal-risk-assessment/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "030ea55fb93432cbce31d523fa17c09b698c9814eb96f1e8a8da98857f54336c"
+        "beforeSha256": "047ec6695784af8801d322e75f9246e2a911f9c9bc0587e3ade990058811f947",
+        "afterSha256": "10e3fbb2b43bd58c8a165901eb48d5ccd5d1f09838b30f4f8814a0f8503b35fc"
       }
     ],
-    "sha256": "e99e92c2c7ed7bc5a7e59127b6ec91ab68075b2c53a6a3a8c3fa66a507ce7bae",
-    "bytes": 10856,
-    "fileCount": 7
+    "sha256": "4d22d3060183ce3f6c5fca9b30b9213557532d0f2de16203b7068f07a8bbdb01",
+    "bytes": 16749,
+    "fileCount": 10
   },
   "m5-onboard": {
     "schemaVersion": 1,
     "id": "m5-onboard",
     "code": "DD-098",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Claude específico"
@@ -6048,46 +6038,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "e2396c546da7de3a6bddb52799022c40d083117eba141470f22fc3717bace2c0",
-    "baselineSourceSha256": "c6ba88fd06f59a3e902fead2bb863b6834f189672cfcc75248941c23ae39bd2d",
-    "sourceSha256": "e1f2253f90a58be250beef46fca9ffa20aeef3dcbb43c1917c81f24733f63016",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "0757a227006377a3ddb55e2640da0cb7ccfab61f00568b09c26cf139e70dd5a5",
+    "baselineSourceSha256": "e1f2253f90a58be250beef46fca9ffa20aeef3dcbb43c1917c81f24733f63016",
+    "sourceSha256": "3e175c20da094b5e4b3b6c4edd3854c8ff7811c5566d8146e324be885e165bb7",
     "patchSetSha256": "213d723c5c606995016a4c3d42228e87348666f1d63177c4fc0a37b6eda9c655",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "22b036cd7859cca79b8ad7f8ddf9e180ccdb1db452aab2b7ad90a5822f27ddf5",
+        "afterSha256": "39ab854010dcf76507a53b4997986d47824c6364a931835aa8c636bf9e2990a7"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "8a0368f6b37cacc1f48bae15842e9ccb3958faa127ef9ac8c0777b46b0bb7ca9"
+      },
+      {
+        "path": "m5-onboard/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "7783b7a4415012991feee63d72228704366aad65615b10a4052d491885b9e4a0"
+      },
+      {
+        "path": "m5-onboard/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "m5-onboard/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "c6ba88fd06f59a3e902fead2bb863b6834f189672cfcc75248941c23ae39bd2d",
-        "afterSha256": "e1f2253f90a58be250beef46fca9ffa20aeef3dcbb43c1917c81f24733f63016"
-      },
-      {
-        "path": "m5-onboard/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "6c3770bf84eb67ff17d671aae1b0418b87d337ad0e9381d0f9c7cafba71d3c00"
-      },
-      {
-        "path": "m5-onboard/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "bcc68c2385711e0711062ae5073c010600e5d0a298bfe1eb6428f67c01dedfe6"
+        "beforeSha256": "e1f2253f90a58be250beef46fca9ffa20aeef3dcbb43c1917c81f24733f63016",
+        "afterSha256": "3e175c20da094b5e4b3b6c4edd3854c8ff7811c5566d8146e324be885e165bb7"
       }
     ],
-    "sha256": "0757a227006377a3ddb55e2640da0cb7ccfab61f00568b09c26cf139e70dd5a5",
-    "bytes": 15948,
-    "fileCount": 7
+    "sha256": "0eb2ea2fc29b4a7b8a587cdf20c50cbe00ca5ca3d940e9225f315aba4f671579",
+    "bytes": 21783,
+    "fileCount": 10
   },
   "magnitude": {
     "schemaVersion": 1,
     "id": "magnitude",
     "code": "DD-099",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [],
     "requirements": [
@@ -6101,46 +6103,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "966cf41feddef8b4b3bba3d6397534ecb4cb128d98c95a5579155a42076b6c69",
-    "baselineSourceSha256": "37de67f0c7b831415f6298c8785b7ae97d5cfe454dc778651d96114840d2ace2",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "332d53839877c4d51fd48cbcf6ab07ff50129f162bd4473e4a58161782e0bf2d",
+    "baselineSourceSha256": "7fa13670e359fab2409dd52eb5de7e8f24a6271cb19eb076160f9c360e86a7ce",
     "sourceSha256": "7fa13670e359fab2409dd52eb5de7e8f24a6271cb19eb076160f9c360e86a7ce",
     "patchSetSha256": "f24e4192c3ff4f1d8352b8bddf181debf7fce46c9c8c15fa428e4b700f2ffeb0",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "magnitude/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "37de67f0c7b831415f6298c8785b7ae97d5cfe454dc778651d96114840d2ace2",
-        "afterSha256": "7fa13670e359fab2409dd52eb5de7e8f24a6271cb19eb076160f9c360e86a7ce"
+        "beforeSha256": "fe2e57ab1068f141aa3352a16bdda4b2c9ae4997c375d3be4fc7fdce12de7d42",
+        "afterSha256": "f82e3080831c758598aa006b094205e241f0b2fd1d2ea94d648766a29dcfeca8"
       },
       {
-        "path": "magnitude/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "dd36cc2dd1d0130f66963e8733c86d2f6f1ca40b3c4a8a4c75e456640039fd2d"
-      },
-      {
-        "path": "magnitude/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "2f08759b18ca8fecaa76812cdfe71cb5e3e1e2570876c450fea4c45ea1c82174"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "332d53839877c4d51fd48cbcf6ab07ff50129f162bd4473e4a58161782e0bf2d",
-    "bytes": 6099,
-    "fileCount": 7
+    "sha256": "79be3905a240925c97d9dfea52c812d87e93a23367c7f0706064f64c20ef3fbb",
+    "bytes": 6573,
+    "fileCount": 8
   },
   "marketing-de-conteudo-b2b": {
     "schemaVersion": 1,
     "id": "marketing-de-conteudo-b2b",
     "code": "DD-100",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Power BI"
@@ -6160,47 +6156,43 @@ module.exports = {
     },
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "b25c392744f8be0b6b6f36cc569bf81e1bb3aa3f2d2f27a1431d883b2a3cc158",
-    "baselineSourceSha256": "a33ccbc77498f850348ce06bb646f4f24f10dc8de33e6714e99ee3942f4a8b3f",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649",
+    "baselineSourceSha256": "062fcb7721edba8d1f8830803e0a1fc14b3f5ed519cd8abdf507aded52464aff",
     "sourceSha256": "062fcb7721edba8d1f8830803e0a1fc14b3f5ed519cd8abdf507aded52464aff",
     "patchSetSha256": "36c62322179ff343d75cd21ef6ba0310e83eea15d054c2597e95cb62fe89f4fd",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "marketing-de-conteudo-b2b/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "a33ccbc77498f850348ce06bb646f4f24f10dc8de33e6714e99ee3942f4a8b3f",
-        "afterSha256": "062fcb7721edba8d1f8830803e0a1fc14b3f5ed519cd8abdf507aded52464aff"
+        "beforeSha256": "dd6e0ed8ad62d863c26dbaba2eb37fa18f5985710020f1f0ea01758082fc8c50",
+        "afterSha256": "3c89b464cadfaa121eeab804f315ac14f3bedbba42a96a63fc76ec9448ce5f7e"
       },
       {
-        "path": "marketing-de-conteudo-b2b/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "dea232383e3bc20866ae9b8db7910cfb1498d8f500334b080a172d51c6f5e9b7"
-      },
-      {
-        "path": "marketing-de-conteudo-b2b/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "b624e75a0e2a2b1520bd3810e8e4827755ced84760e65671578add94e9faf6e0"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "c39a9d67fc9dd3100659c2965bcc51026f0fe013616a4989c1eeebd248233649",
-    "bytes": 38065,
-    "fileCount": 21
+    "sha256": "39dc2d7d8607cd48c13f27542a72f22fcd1142c1291a43f8d3caa263159415d2",
+    "bytes": 38551,
+    "fileCount": 22
   },
   "math-olympiad": {
     "schemaVersion": 1,
     "id": "math-olympiad",
     "code": "DD-101",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python"
     ],
@@ -6214,47 +6206,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "eb6f85e755c56d266071f6d0363bd5ef00662985df87383e8f57196630ee4b08",
-    "baselineSourceSha256": "f697e195d343520f3db551bd4fb44c5120504ee2c47a9cc2016cd57767f23403",
-    "sourceSha256": "bba3a0fc5833001922e9d22fa3d83ab049151d679fddfd2584ab81591d5b2836",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "633591e401d693710f6705750bd4a649d28ac8d6a496090895b3fb508673960c",
+    "baselineSourceSha256": "bba3a0fc5833001922e9d22fa3d83ab049151d679fddfd2584ab81591d5b2836",
+    "sourceSha256": "96b5a7e8a852280fab52a78d81724a9e4e6166ef5efde437cc4823758029e5f9",
     "patchSetSha256": "ecd30489b81daf18f2dc23af582c9c40dd207336ce25c809b7520d969285f262",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "4bf7e9102bae64a23a61528187de3280d6ba4c25a509c91b97e0bebacacc84d2",
+        "afterSha256": "b3bd5df8d0131e3c5e97c38fed9a6709ecdd142df9b3ac7d12687761a488cfd7"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "2d162fd8c3e184cda4171fdce28b54801160f0e86d3896cc05d74234e3f8a273"
+      },
+      {
+        "path": "math-olympiad/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "4d849c1ce356b73c2a8f1ca0000fe7569302e8e5cd3762b0ad274489136aa2c9"
+      },
+      {
+        "path": "math-olympiad/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "math-olympiad/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "f697e195d343520f3db551bd4fb44c5120504ee2c47a9cc2016cd57767f23403",
-        "afterSha256": "bba3a0fc5833001922e9d22fa3d83ab049151d679fddfd2584ab81591d5b2836"
-      },
-      {
-        "path": "math-olympiad/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "b538eb1af73f98a5591059e232ee874c1b9270d79586794ec29c158ea733714c"
-      },
-      {
-        "path": "math-olympiad/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "4260ac9d8d35cf009b290ec05299a5a31aa31927762703e9d2bc07280f4e2491"
+        "beforeSha256": "bba3a0fc5833001922e9d22fa3d83ab049151d679fddfd2584ab81591d5b2836",
+        "afterSha256": "96b5a7e8a852280fab52a78d81724a9e4e6166ef5efde437cc4823758029e5f9"
       }
     ],
-    "sha256": "633591e401d693710f6705750bd4a649d28ac8d6a496090895b3fb508673960c",
-    "bytes": 37052,
-    "fileCount": 17
+    "sha256": "1d3c4475e1b3a0addc97ac370d47c3899f463c41adf2128794ccee66e0917c08",
+    "bytes": 42896,
+    "fileCount": 20
   },
   "mcp-integration": {
     "schemaVersion": 1,
     "id": "mcp-integration",
     "code": "DD-102",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Node.js",
@@ -6271,47 +6277,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "a82d9bdc31a5d539e8aa784113304498b38595ca82f2696734eb3cb88f9e4971",
-    "baselineSourceSha256": "b9319d8e44c8f058c1c4f003168295ab2582567fd6329c8b933409116e938bc6",
-    "sourceSha256": "b6caa4f1feafd1c03a3ef03e63c6ed2c647697a34918b3733364dee2f895c421",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "0ee91adcd6141c2cdd81d0a6704ac5b5eeec37516a11d7a418226b90f32f1f0b",
+    "baselineSourceSha256": "b6caa4f1feafd1c03a3ef03e63c6ed2c647697a34918b3733364dee2f895c421",
+    "sourceSha256": "0e00df00640fd8c45716ad77005f04407cf81b1bbe1849f5c855d7f978118d75",
     "patchSetSha256": "3356ee77e44fadf7a293a49ec52cd5ec7125c03c34e6c9e84cb0a260580d2d38",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "2b14c71906efa043209cd8d4e8053db5d330c31ea2ffb1810bb16653522ade5f",
+        "afterSha256": "1f991947f6535103f84bf9750917c9741a6855100d1a052c4983d72f729bd229"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "09d0e973ab0952b7c91b814cdb61819e655fb9a85d361bcd696ba9fd7612f16a"
+      },
+      {
+        "path": "mcp-integration/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "83c752cd1a27a5220cfe853942da8e5775ac7e7a5fa9e5a7074d517cde2f509a"
+      },
+      {
+        "path": "mcp-integration/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "mcp-integration/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "b9319d8e44c8f058c1c4f003168295ab2582567fd6329c8b933409116e938bc6",
-        "afterSha256": "b6caa4f1feafd1c03a3ef03e63c6ed2c647697a34918b3733364dee2f895c421"
-      },
-      {
-        "path": "mcp-integration/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "652aa74605efc7295773708fa9408eeffb5e2a04353abc6e6421dc10eb12bb10"
-      },
-      {
-        "path": "mcp-integration/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "e87d8926b0b0e786f61d39c778cbe19a9f7dc5da7934488487c7993a243dbfd2"
+        "beforeSha256": "b6caa4f1feafd1c03a3ef03e63c6ed2c647697a34918b3733364dee2f895c421",
+        "afterSha256": "0e00df00640fd8c45716ad77005f04407cf81b1bbe1849f5c855d7f978118d75"
       }
     ],
-    "sha256": "0ee91adcd6141c2cdd81d0a6704ac5b5eeec37516a11d7a418226b90f32f1f0b",
-    "bytes": 24096,
-    "fileCount": 13
+    "sha256": "8f85916d132ff07286011f14318b0dc43af9b0b23676999b46245d598fc59977",
+    "bytes": 29955,
+    "fileCount": 16
   },
   "meeting-briefing": {
     "schemaVersion": 1,
     "id": "meeting-briefing",
     "code": "DD-103",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -6324,46 +6344,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "cbe6978f7fcc43044f369d91a5789b95c317c8f1c8ab589fe1ffae1093ebdb61",
-    "baselineSourceSha256": "4d19bc2ddb2138d1b306b150c5d0900ce0a398d5ab690b8eba8101ef33d98baa",
-    "sourceSha256": "65791b04fa50db510fa559e76db506b916a9fc459a7ba48cd5cf7c6d18ef8823",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "cf9c1510aec52176e78d2b0f6484051fa25937984c734238dd0fc3a9563eff87",
+    "baselineSourceSha256": "65791b04fa50db510fa559e76db506b916a9fc459a7ba48cd5cf7c6d18ef8823",
+    "sourceSha256": "e7c759916aec4aaf41280a1e1cb214269ea1628c02f1db981225703962909a71",
     "patchSetSha256": "2c49ac2ee7a4e5ff8f2a489e3eeec85f696ff431af27fa2516749b8f4f982e94",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "8ccd2891e0970884b4b5ca6925987e94103272476dca6c992ed199fdc044122d",
+        "afterSha256": "355a02bb2d20ec732d02bf9b30b2184194f93dc2673a352d755781e394fea22e"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "310dbb1f754117f14c42df7ccf623ea7ac0b36d1c6174b123f2f77b8aa200b07"
+      },
+      {
+        "path": "meeting-briefing/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "aa4d2c2dc0642d8c76921608e5cb18c62c02917de0bdb91f7a30ac6903ba780c"
+      },
+      {
+        "path": "meeting-briefing/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "meeting-briefing/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "4d19bc2ddb2138d1b306b150c5d0900ce0a398d5ab690b8eba8101ef33d98baa",
-        "afterSha256": "65791b04fa50db510fa559e76db506b916a9fc459a7ba48cd5cf7c6d18ef8823"
-      },
-      {
-        "path": "meeting-briefing/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "4c9c14aaf43be8dd56af7e75d51b75ea905dca59498434c9a38d43c6883958c6"
-      },
-      {
-        "path": "meeting-briefing/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "69431d07a296d6fbbebc4a1ca56971cd7c8f484743aa43033e73b09673198394"
+        "beforeSha256": "65791b04fa50db510fa559e76db506b916a9fc459a7ba48cd5cf7c6d18ef8823",
+        "afterSha256": "e7c759916aec4aaf41280a1e1cb214269ea1628c02f1db981225703962909a71"
       }
     ],
-    "sha256": "cf9c1510aec52176e78d2b0f6484051fa25937984c734238dd0fc3a9563eff87",
-    "bytes": 9392,
-    "fileCount": 7
+    "sha256": "9ccbb532b987f3996849141d9d95a5940017e759e77190ae8563041a94915c1f",
+    "bytes": 15253,
+    "fileCount": 10
   },
   "pagamentos-recorrentes-asaas": {
     "schemaVersion": 1,
     "id": "pagamentos-recorrentes-asaas",
     "code": "DD-104",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -6380,46 +6412,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "16da352f616400cdd58a63be506e225c574af371e9cab5bd2a41843744a17862",
-    "baselineSourceSha256": "085d7d3550f5a9a37c6e640ceec524abae6b7929e353cd4ec560e52fe30ae848",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "6487c183bee50ac9314e3b75e19fb9dd777959aadc32585a2f82e73aca4698b8",
+    "baselineSourceSha256": "04d9ae3f66e625ae3d63d6ad2c3f8f45c2aad77c60bc64f17fcc12c161995510",
     "sourceSha256": "04d9ae3f66e625ae3d63d6ad2c3f8f45c2aad77c60bc64f17fcc12c161995510",
     "patchSetSha256": "9be50db993bad692b9ce157b3aabf2e574ae82e3a8b3b5bc1ac36da0e58c1970",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "pagamentos-recorrentes-asaas/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "085d7d3550f5a9a37c6e640ceec524abae6b7929e353cd4ec560e52fe30ae848",
-        "afterSha256": "04d9ae3f66e625ae3d63d6ad2c3f8f45c2aad77c60bc64f17fcc12c161995510"
+        "beforeSha256": "f34e819d135398d070bc74115f4c3642828d77002df17db7db9e97317b7340d7",
+        "afterSha256": "8f589285dfd0bce992940deeea88840b9d0fc9ae4fb1836209c701f053b56f25"
       },
       {
-        "path": "pagamentos-recorrentes-asaas/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "6ebdb637258f3bd93316d76affcf48b939f39aaaca85421411ac5636f3ed3207"
-      },
-      {
-        "path": "pagamentos-recorrentes-asaas/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "aa34192c8fc5db0eccf203dddd2e5eade70a229a012647cc4e94342e62785aea"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "6487c183bee50ac9314e3b75e19fb9dd777959aadc32585a2f82e73aca4698b8",
-    "bytes": 34055,
-    "fileCount": 15
+    "sha256": "da9be8e67a2a5c6e89276d8a27e5de873b135e387e975309cc2bb702393184b8",
+    "bytes": 34544,
+    "fileCount": 16
   },
   "plataformas-de-ensino-online": {
     "schemaVersion": 1,
     "id": "plataformas-de-ensino-online",
     "code": "DD-105",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -6438,47 +6464,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "7541cd128dd1e3ca6e63f4d2b911b79b472685422c0b3e88b4ea95ca97d5aa2e",
-    "baselineSourceSha256": "d55fcfd0987cf72ab9bade669c8d988ab82057d47cf8ea053451f8c6af0715e7",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "4ce5b8f55626009abb0ba6c530c76ee2df8dcd766917c8ad2d87250084c24570",
+    "baselineSourceSha256": "d9b496344b2f013ba77ab37f825cb68d8e0a1c22be84e4e4a0d90c63de64758a",
     "sourceSha256": "d9b496344b2f013ba77ab37f825cb68d8e0a1c22be84e4e4a0d90c63de64758a",
     "patchSetSha256": "2f44d02188c228592cf1d3e1dacac596adf978d41f45dae0c514cfae236d1bce",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "plataformas-de-ensino-online/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "d55fcfd0987cf72ab9bade669c8d988ab82057d47cf8ea053451f8c6af0715e7",
-        "afterSha256": "d9b496344b2f013ba77ab37f825cb68d8e0a1c22be84e4e4a0d90c63de64758a"
+        "beforeSha256": "8d4282e3e2993de4b8886f383d8dc2e84280bd6d73f48aa5c73509934b49bd21",
+        "afterSha256": "ad4b8395f1c9b3e9e16e6dfdc1c57296f4f01f590695373ecf4e677a4b816ba9"
       },
       {
-        "path": "plataformas-de-ensino-online/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "01d73e36450dbba9ca01f557bdfedf76ca17fedb8a9215f90992301bb846cf50"
-      },
-      {
-        "path": "plataformas-de-ensino-online/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d7ee88901e1dc5e7d8d08b00e6670eee37d55af7b471cbdf04152dce0de6ced9"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "4ce5b8f55626009abb0ba6c530c76ee2df8dcd766917c8ad2d87250084c24570",
-    "bytes": 60719,
-    "fileCount": 20
+    "sha256": "80125cd35974d00464aaa5a1e76c40c2c6bed0b41f38c74a756252ee913630af",
+    "bytes": 61202,
+    "fileCount": 21
   },
   "playground": {
     "schemaVersion": 1,
     "id": "playground",
     "code": "DD-106",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Node.js"
     ],
@@ -6491,47 +6513,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "51375cc024269cffa73a1226a31c0b232cfd2895eded3b8e0720f75724479f57",
-    "baselineSourceSha256": "521a3d62211e5f47b65ed17b660e001b15cf8d88d058cbf31bc00e889bcb63cc",
-    "sourceSha256": "fd04d5aa8e2727d68c4be7f01af3be3e8d5308646b3400dc23c5609045a63621",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "11395854155008769693eaa73adf17358d6bece4168457ab74a88fb1adaabdd0",
+    "baselineSourceSha256": "fd04d5aa8e2727d68c4be7f01af3be3e8d5308646b3400dc23c5609045a63621",
+    "sourceSha256": "1fa3a16a5ffaa1ad34ecd39ff8212930277708ba9ad0d9a6cc0f6ea9e732e4d3",
     "patchSetSha256": "9c91067fe7a5ffef6fdeeaa77a774a5497fe1b015ea05f01aa75d0611d23ab7b",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "331c4d2becf186296c3365c30157b5bf0abdf00bcaf4e0dc0ed4d82f743a00e3",
+        "afterSha256": "4518188a0a62e222e46c97c0ee11556d83e371cf4a972d0d28b19844de7ee665"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "d2e6e41e2f127d013e81ae2bfec45a1aecae06e6c5961dadef6d3a7fc6e86b86"
+      },
+      {
+        "path": "playground/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "dcfc504331d775d3545882bf4f4dc5f1240cc42b74ee197c40467cbb50468d55"
+      },
+      {
+        "path": "playground/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "playground/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "521a3d62211e5f47b65ed17b660e001b15cf8d88d058cbf31bc00e889bcb63cc",
-        "afterSha256": "fd04d5aa8e2727d68c4be7f01af3be3e8d5308646b3400dc23c5609045a63621"
-      },
-      {
-        "path": "playground/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "33d22c185e7adcd0deff075f73e9fc6384a078e528081afd819df5a73de097de"
-      },
-      {
-        "path": "playground/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "4fedcb2dd4562b8ac606498a22b56d22734cee0d54a7fd8e976bffdc3e62caff"
+        "beforeSha256": "fd04d5aa8e2727d68c4be7f01af3be3e8d5308646b3400dc23c5609045a63621",
+        "afterSha256": "1fa3a16a5ffaa1ad34ecd39ff8212930277708ba9ad0d9a6cc0f6ea9e732e4d3"
       }
     ],
-    "sha256": "11395854155008769693eaa73adf17358d6bece4168457ab74a88fb1adaabdd0",
-    "bytes": 20511,
-    "fileCount": 13
+    "sha256": "3c99af1e18bf48fce561b3e56581d2b66353f07682199819b85c5e822d7bbe4d",
+    "bytes": 26325,
+    "fileCount": 16
   },
   "plugin-settings": {
     "schemaVersion": 1,
     "id": "plugin-settings",
     "code": "DD-107",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Claude específico"
     ],
@@ -6544,95 +6580,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "1283142e12cf63c23028b61fb59be655a0de9bbb22f9cb21d83168fba4e0591b",
-    "baselineSourceSha256": "028b955244b937ebc1a5c268a12776b8ceae4cbfb60928fbca927227f4c8851d",
-    "sourceSha256": "79c06fc12b0b660d382f8c4ffde9342260b78ebd4c5ce0ce0f46eacf716900c8",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "9f4e874bb453a4e3976d534df0e374760410d3dee5b78d69e0750f9cacf3b90f",
+    "baselineSourceSha256": "79c06fc12b0b660d382f8c4ffde9342260b78ebd4c5ce0ce0f46eacf716900c8",
+    "sourceSha256": "e69d9b0bb4f13bff5f3aa5dd1af8983cdb8e1587c9a78827c12670f1aa4ef59b",
     "patchSetSha256": "c566b4d906491b8c48d7cf6d27b551c8560bd48b8bc9909568d88fb597eab469",
     "sourcePolicy": "entry-replaced-original-retained-in-baseline",
     "changes": [
       {
-        "path": "plugin-settings/examples/create-settings-command.md",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "abf0a36bb3f6425041046f2da1ebfac5505c5b37656fdd4772cfc4d8bd2fa655",
-        "afterSha256": null
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "eeccced0e8419efc90f0272cb8e05b5441c17b70942fd64d358e5a71f3c0530d",
+        "afterSha256": "aa59da32529a26e6029c8919e163fcf9d98a4e37a03b63fb35747f83b42a9954"
       },
       {
-        "path": "plugin-settings/examples/example-settings.md",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "f07209b6e2fb62d443ae07d01bc1674c6c741c352a04549bfa978e1f34b9769e",
-        "afterSha256": null
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "5703c201dc043f98e8e38701b2554f81cc7128e51fbdebff18594c4c10463da8"
       },
       {
-        "path": "plugin-settings/examples/read-settings-hook.sh",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "627fce38d37d64c971401ecc85d548f060075670bcac52f65c92ca156e810c70",
-        "afterSha256": null
+        "path": "plugin-settings/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "8d8e52ac548447b766ad363562a691a13803579a22426be67d4112c6d5499b38"
       },
       {
-        "path": "plugin-settings/references/parsing-techniques.md",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "bc90aa020aa5fcbb3483d7316754450dcc91d086ee96f9304fa655e878f7712e",
-        "afterSha256": null
-      },
-      {
-        "path": "plugin-settings/references/real-world-examples.md",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "87509f67d8a37eee0cea3c5b32f1d62a6ae239777bb637844f2a056b9fda96fa",
-        "afterSha256": null
-      },
-      {
-        "path": "plugin-settings/scripts/parse-frontmatter.sh",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "1ab8c42d5a19e0b404af3c573d0267fc19b5987e1d7885f522066ffd76e54553",
-        "afterSha256": null
-      },
-      {
-        "path": "plugin-settings/scripts/validate-settings.sh",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "2f4975285cba7f16b82c764a95fe76d34ac488308ba6705c04561267da4f4f75",
-        "afterSha256": null
+        "path": "plugin-settings/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
       },
       {
         "path": "plugin-settings/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "028b955244b937ebc1a5c268a12776b8ceae4cbfb60928fbca927227f4c8851d",
-        "afterSha256": "79c06fc12b0b660d382f8c4ffde9342260b78ebd4c5ce0ce0f46eacf716900c8"
-      },
-      {
-        "path": "plugin-settings/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "6486fca991098d97110cd9ab20794d1f31c3e862bcbdbeb35aa115afb862551c"
-      },
-      {
-        "path": "plugin-settings/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "52922bc08cf22ae863547dc338afaef4a87f24b9480beb5d0cbb2252c7b0fb91"
-      },
-      {
-        "path": "plugin-settings/scripts/parse-settings.py",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "738ec071567d6778d87115b50fa389d127a8ea0b512bbbe81354f33c769c42b1"
+        "beforeSha256": "79c06fc12b0b660d382f8c4ffde9342260b78ebd4c5ce0ce0f46eacf716900c8",
+        "afterSha256": "e69d9b0bb4f13bff5f3aa5dd1af8983cdb8e1587c9a78827c12670f1aa4ef59b"
       }
     ],
-    "sha256": "9f4e874bb453a4e3976d534df0e374760410d3dee5b78d69e0750f9cacf3b90f",
-    "bytes": 8297,
-    "fileCount": 8
+    "sha256": "adcef2b57955763f48055903b684be016c104e96d9320bfc558ec9d7feceaaf9",
+    "bytes": 13775,
+    "fileCount": 11
   },
   "plugin-structure": {
     "schemaVersion": 1,
     "id": "plugin-structure",
     "code": "DD-108",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Node.js",
@@ -6649,52 +6651,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "279fb68e4667924566f974a07f2aebabd7e950da0121959ed0bb51c31e175d69",
-    "baselineSourceSha256": "0b19088c8d0ad3155bd46f55ae3b2307f2c176d0828549b44cc22cf2a0be45b3",
-    "sourceSha256": "0e8cf2c532e957e09940808814bff13b539a9bb98f9ef286607d1d6ef5de7cb5",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "6ff1fd0381462c2439771f8f03e9354833d86b767fe59f67d273888e62847adb",
+    "baselineSourceSha256": "0e8cf2c532e957e09940808814bff13b539a9bb98f9ef286607d1d6ef5de7cb5",
+    "sourceSha256": "d8fe788139ae201152dd95e432acb04677b35263d4949726ee4761b9cd065397",
     "patchSetSha256": "50b4d22c8984847d4e9877e8f078fd722a90dec7c3d0fc0767c3daeb4a212886",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "977dc2fddf30c8f67926b37a531a44d74df8bbc510741132f56d7a900e0c0eb4",
+        "afterSha256": "fdd7b066f4a52a9ed963a0e0e747b163e1955d0d266d8eff1e532d0fb6c3dc80"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "ae9d47353098b52f3adee70b8b1171557192135a30f4b7539836761640d93bfc"
+      },
+      {
+        "path": "plugin-structure/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "a9a92984152c8537cee9693e2d02831154f2a81f060d13ec5cb5546395a64a60"
+      },
+      {
+        "path": "plugin-structure/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "plugin-structure/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "0b19088c8d0ad3155bd46f55ae3b2307f2c176d0828549b44cc22cf2a0be45b3",
-        "afterSha256": "0e8cf2c532e957e09940808814bff13b539a9bb98f9ef286607d1d6ef5de7cb5"
-      },
-      {
-        "path": "plugin-structure/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "38ff4ebe91b2dfcf2f3619a9a3e509788f45ba4bf5f117fe490493bab4024d24"
-      },
-      {
-        "path": "plugin-structure/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "f2dd285a4055db0a076589cceba2988307d7b52e097bb93ab2a2b56c68eaf902"
-      },
-      {
-        "path": "plugin-structure/scripts/revision-tools.cjs",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a64ce5fda2548f624110aa677b55495b39c0787ab81b6705d08e19e203bb7750"
+        "beforeSha256": "0e8cf2c532e957e09940808814bff13b539a9bb98f9ef286607d1d6ef5de7cb5",
+        "afterSha256": "d8fe788139ae201152dd95e432acb04677b35263d4949726ee4761b9cd065397"
       }
     ],
-    "sha256": "6ff1fd0381462c2439771f8f03e9354833d86b767fe59f67d273888e62847adb",
-    "bytes": 36838,
-    "fileCount": 14
+    "sha256": "e61d1cdeddbfd6fc8add2ed76430075e6ae3c1df48f577c11824d450c20c083e",
+    "bytes": 42649,
+    "fileCount": 17
   },
   "portfolio-de-projetos": {
     "schemaVersion": 1,
     "id": "portfolio-de-projetos",
     "code": "DD-109",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -6713,228 +6721,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "06d322aed0f6b946fc3cdcb6881c46c7ae2cc85c28b84015bc1f560cfff37db2",
-    "baselineSourceSha256": "d6b3b002f583f789bb3116af058fad022c503a1b761c4d3bbe690469d96be23f",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "ab20953601853b992e761eb55a4f27ca64e94e851b05dfd8788ac053804373db",
+    "baselineSourceSha256": "f4f28d4989329cc194be8a5fcfe51e9a2a5ced7a34db788043e80f572c7ab72d",
     "sourceSha256": "f4f28d4989329cc194be8a5fcfe51e9a2a5ced7a34db788043e80f572c7ab72d",
     "patchSetSha256": "9439492d3aef3cd8c1e5e7b9a5e9ca1d9a67613c95277a0b86aa9802483f7525",
     "sourcePolicy": "sanitized-original-retained-privately",
     "changes": [
       {
-        "path": "portfolio-de-projetos/private-reference-ff196d7ca8d93381",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "6331cb80be6134ec40d1d8ea1e353cc9727599dc003d0c2586cf8d23de4550eb",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-eb3ce34f0913125e",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "1d9c638bb4011f7d86da62498c992fa882589496c1bdd48858bbd6623ddc5c64",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-3db25f5799247b32",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "aa84e7526cd697a3cdcd723f8d98e0a3b0675d004662bb72e594998074fb2e75",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-7eaf659359c2af3b",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "2becf612ea262d14dee69d0f336177de2ef3d2c4607229523d86af7afa559f04",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-71eba4f76ec80d11",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "78f6820c4aa1775f80f7c359d46902905dcb330c26b8643cea0c1be018512afe",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-1bcdcb366e2bf8e9",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "da33dd5507170618fe49701bd884e1f78e40e2131731fb4393f67453ff840c19",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-c1af3aff367876ec",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "c75b7893e112ebfc2d7dbc2dce88e2f388516a52477d8b1adf1e52b4bc49345e",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-aeafea4f90348a2e",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "ae59e2ce04f84d7054afea4b86531f3061a0bf19ab98cbdb0a531c397dbb869b",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-2167f311444b0c25",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "622a4ef604c3bc5e7d2847d254c1ca2b03e2e9b07178d7bc0a0059ab2060492d",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-86b6e22388b3e6d3",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "f0444e59754218370a9cf374a09cb9b141a2cee448f750b76ccb2a974d5e1b91",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-1bee56971caa3811",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "84048f0667e2c40f63eb129092897887a760c555d648dc67e6746a46df3f3c75",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-a0435cb1443abe57",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "8727a57765daba0608d7e24ddf4e13237400a638aca658c5b20948b7742fbfeb",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-985b014cbe591ca8",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "eaaf4e7759115de1df5466ad7d6ab73e263c3b9f9cbf4f8e3d120b42c2ade867",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-829329905ca2e4e1",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "fa795f59fd403cfe1b3a7a1820384a04a743bb6fc38a676e4da6dedd907ba456",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-300bed7524234948",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "16bf7b25e0f750b25d2d4bd49cf424c2cb09e3eb1b6ffbc7ba4c1beb08097e0a",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-0b81222617941ea8",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "f77007a02eec90629a68ae0b42ed904f4d4c924de62567422505ba0df605c07d",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-eb456535606aa7d3",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "280d82552daa44b8bb1685b5a1df667207b9b5e099f7d1a6f8a3f7301a4941c3",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-5873f6dbc9cae933",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "b643b5d85e2b1cc1f286572ea1b60de12134dfada216a4867a5ce05a0d618b25",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-02630dcdaeed9ea9",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "03deb9c6e920806b39b0ab748b8d6d89117001a530f8f940274dd5f19b9ac5e6",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-c9ae45286ce7b079",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "0f8a5ae794daa9d2a165a3ddf7ab5053d692c807719d72719fe7480fca4f70f5",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-da5b638f83b634b7",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "976c8037ca06d8a99e89d7fc9119dbd1d4d7367601130afbd262314549a06f64",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-2a614165595b2b1d",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "bd5db1224a7e0e57934ac9c8a81e0e9c251d36d0fa45a8c5cb98f89949362790",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-8f0b3a419df1fd60",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "8a3e653fa91019d52be4c4e1a5277a554b2de43ee57279f5acdc4a9aa100b75c",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-7c1c09c3553c432d",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "89a66cda510cc6cdaf44c250e73ea8ad8a0f3e0fb4605e77e9ec3e632ea3d53f",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-a6fd20aab2dc43ec",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "8eb3af3f315a92c3ead6b05a59af2894da13ff8e3fec78ccba71bc63451124d2",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/private-reference-0a73c1ffa1265e9b",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "6af99100db79a5efcc4419939ceb0cd51382910403b84cb4d556d42f0188dfd2",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "portfolio-de-projetos/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "d6b3b002f583f789bb3116af058fad022c503a1b761c4d3bbe690469d96be23f",
-        "afterSha256": "f4f28d4989329cc194be8a5fcfe51e9a2a5ced7a34db788043e80f572c7ab72d"
+        "beforeSha256": "33814821167fc86214b26b4023f64654dfe5355293ac54238c92162623b8eaad",
+        "afterSha256": "ba488a5da6ea19c41bd55f231e4b24cbd5c546fbd20365089c9071ef9989500a"
       },
       {
-        "path": "portfolio-de-projetos/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "4dcf7781c58ec4384bbc11d09b9981c1cfc7785df7ce14049497dbb2013d4e86"
-      },
-      {
-        "path": "portfolio-de-projetos/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d5375f970bb46a2da24f89f65ed48e0de9042f95e576ba36f93bfbd18f7d0e3f"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "ab20953601853b992e761eb55a4f27ca64e94e851b05dfd8788ac053804373db",
-    "bytes": 7606,
-    "fileCount": 7
+    "sha256": "6d9265e6c9ab5e0f78cba906a59cb7063ccf7ed4b81628057f944ab57a0c9eed",
+    "bytes": 6533,
+    "fileCount": 8
   },
   "power-bi-embedded-portais": {
     "schemaVersion": 1,
     "id": "power-bi-embedded-portais",
     "code": "DD-110",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -6952,46 +6772,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "de9253c0e2b230d5410816da600b49188a5788937079da618e7ddfbb1e4fc832",
-    "baselineSourceSha256": "67d68a0434972b710666256beb170ef949d756257726b9ed98abb92380675840",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "b4be6e36b7bed6c405e107c18b509e23a9a3777c6f633af085af95dfe259e708",
+    "baselineSourceSha256": "9188f3f7193828bb0ef7cb47b7ad07d4a87be89dc1348f18385315aad77fc3de",
     "sourceSha256": "9188f3f7193828bb0ef7cb47b7ad07d4a87be89dc1348f18385315aad77fc3de",
     "patchSetSha256": "33fe847e44caeb8d836b5fef4b5ece22a0708a5517d4a35eb98a713dcd8ac5d3",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "power-bi-embedded-portais/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "67d68a0434972b710666256beb170ef949d756257726b9ed98abb92380675840",
-        "afterSha256": "9188f3f7193828bb0ef7cb47b7ad07d4a87be89dc1348f18385315aad77fc3de"
+        "beforeSha256": "c6bceb2909fcfa802d231201423434a8dcca420f2cd07360236a2cb1fe7d168d",
+        "afterSha256": "9d6be892826f8cc26dd95db196f7297be6a75f5a9024ece6f2cfd5ec8468b9fb"
       },
       {
-        "path": "power-bi-embedded-portais/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "14ccc769064bf5bb5f1905b8f299f6417a69d64b05ac1adc6e202c58c1c915d3"
-      },
-      {
-        "path": "power-bi-embedded-portais/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "3c8d0b6010646cd508910ff7967153bd300551952301551453343d9251ffce56"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "b4be6e36b7bed6c405e107c18b509e23a9a3777c6f633af085af95dfe259e708",
-    "bytes": 43424,
-    "fileCount": 17
+    "sha256": "079814c0e006fc69cb77be036fb07f3526a9909b0d420e791333c6b216afb85c",
+    "bytes": 43904,
+    "fileCount": 18
   },
   "power-bi-modelagem-dax-performance": {
     "schemaVersion": 1,
     "id": "power-bi-modelagem-dax-performance",
     "code": "DD-111",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -7013,46 +6827,40 @@ module.exports = {
     },
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "45bccc6117bc2fa53f745f48b5fefde0e089c142df949591f5e387619ffd2f52",
-    "baselineSourceSha256": "ab5af7bce418f8786c5c645cf34d80c817c69b65745b80cd4523b3c4d4dbe0d4",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e",
+    "baselineSourceSha256": "1e46b1d37e99f9b3a2ef2aaaf67ddc6ffa8ce7dc78a459a67860c886e705c092",
     "sourceSha256": "1e46b1d37e99f9b3a2ef2aaaf67ddc6ffa8ce7dc78a459a67860c886e705c092",
     "patchSetSha256": "8d99bf0b0c3313e77d2c5d06b6414fb9872f346317a8bcf2663ee0c6ab64ca5e",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "power-bi-modelagem-dax-performance/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "ab5af7bce418f8786c5c645cf34d80c817c69b65745b80cd4523b3c4d4dbe0d4",
-        "afterSha256": "1e46b1d37e99f9b3a2ef2aaaf67ddc6ffa8ce7dc78a459a67860c886e705c092"
+        "beforeSha256": "168271c0e38bc0c5f67d1a4d48a0a4b7debac940b1532ac87106737bf27acddd",
+        "afterSha256": "ef1e30629f871b0cb5945aa8fa30dc20b0f93daaf6fe665e0ca859663c88525e"
       },
       {
-        "path": "power-bi-modelagem-dax-performance/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "d996b28a04291614b660a4c230344c9b469b530565a6248a276e84e0762c0a97"
-      },
-      {
-        "path": "power-bi-modelagem-dax-performance/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "863679ad65729255ed80e602c42c8b5df6ed726f616abbe1ebbb83776fac3273"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "fb69ef1ba64619c9baa7da68f0d62cbe7ea47a1ab81c9beaf3f4766db0a9277e",
-    "bytes": 31302,
-    "fileCount": 19
+    "sha256": "49614a1f88945ad84fddca6f19f18917f4088574192d0314f505d5bd23debd91",
+    "bytes": 31779,
+    "fileCount": 20
   },
   "power-bi-relatorios-como-codigo": {
     "schemaVersion": 1,
     "id": "power-bi-relatorios-como-codigo",
     "code": "DD-112",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -7072,46 +6880,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "914216419b00f8ac6c51742c075d9de8f3423918482200e6ff911cf62a1796b4",
-    "baselineSourceSha256": "cf1922444721e392f133724e148a98ec5c216f79469f327357093f507ebc8a85",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "7652afba0c87bdb76fdc879209bd37095f1e2bfc56a1e7cbc35f96108bc744bc",
+    "baselineSourceSha256": "303f32228477193c8c5cfd81196f0e6070fdab0c4d6920518352e1c548306eb8",
     "sourceSha256": "303f32228477193c8c5cfd81196f0e6070fdab0c4d6920518352e1c548306eb8",
     "patchSetSha256": "cb46388fb365614e7b4c262b3f28457608e96a66f27b33060ad696c46f31ee0b",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "power-bi-relatorios-como-codigo/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "cf1922444721e392f133724e148a98ec5c216f79469f327357093f507ebc8a85",
-        "afterSha256": "303f32228477193c8c5cfd81196f0e6070fdab0c4d6920518352e1c548306eb8"
+        "beforeSha256": "511d1eb78393e4ca9423ac7a5e5dd1e2459aec6f04d6f2ebf07721d72c65182b",
+        "afterSha256": "aee1ba729cb0d8b0c3caa374555d3c82037298b4f0db66ed59fcb07a770e2bba"
       },
       {
-        "path": "power-bi-relatorios-como-codigo/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "a7c93b0c854fd439b29aed1759f198368aa824cb4ab4f6fe71767d4497e3c21d"
-      },
-      {
-        "path": "power-bi-relatorios-como-codigo/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "5cb3df3495c602dab9f5d6a5fdc41d395c90780142d8bd0bf95509e5ae5d8d46"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "7652afba0c87bdb76fdc879209bd37095f1e2bfc56a1e7cbc35f96108bc744bc",
-    "bytes": 43266,
-    "fileCount": 16
+    "sha256": "72c88cfb1c423e5d070b9dc61ff4912e14460a8833d95ff05bcb35643292951c",
+    "bytes": 43744,
+    "fileCount": 17
   },
   "power-platform-code-first": {
     "schemaVersion": 1,
     "id": "power-platform-code-first",
     "code": "DD-113",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -7129,47 +6931,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "461babb03f0e94cfc21ca01cc342e927e3727b19f8159a7f62cac0445c0484ea",
-    "baselineSourceSha256": "0e035a178202d0dab9a237ab0d2321d265f02f0f5fe578ccb1075d12db6096b2",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "3c312c3f0687f209ab14288378cb4c09af37989e207e7d29b611efe3edf067a7",
+    "baselineSourceSha256": "27c9743bd82ef09cf6eb0069428b3b9a1819d7dc901e8a1bdc6b9105ab1bf424",
     "sourceSha256": "27c9743bd82ef09cf6eb0069428b3b9a1819d7dc901e8a1bdc6b9105ab1bf424",
     "patchSetSha256": "e2f8c4503fc26e3c6c9ebf18524989929b8fe676a2293ddb2ac60d665e695797",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "power-platform-code-first/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "0e035a178202d0dab9a237ab0d2321d265f02f0f5fe578ccb1075d12db6096b2",
-        "afterSha256": "27c9743bd82ef09cf6eb0069428b3b9a1819d7dc901e8a1bdc6b9105ab1bf424"
+        "beforeSha256": "602923888c60701d73aa46d694ce71c08f4aab1290e2d94efb5d453b4fa7b1ea",
+        "afterSha256": "ac77d2e8979ec94c0205e402c5e8c1fab615348eb8382267b3f0dc5d0714e245"
       },
       {
-        "path": "power-platform-code-first/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "331468cbebdfbba7caae74352fbfe4c473c5397c77aea690c1455511f7f285a6"
-      },
-      {
-        "path": "power-platform-code-first/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ce63ffa92b5bcb3d46ee8e39a6286e8ab1b4764a65292863ebb3d9712b5ed6ea"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "3c312c3f0687f209ab14288378cb4c09af37989e207e7d29b611efe3edf067a7",
-    "bytes": 22802,
-    "fileCount": 11
+    "sha256": "45cdd4c3e60006bb4647f92537c8a840027dc49c97399c68bc978bf2f51f8c28",
+    "bytes": 23282,
+    "fileCount": 12
   },
   "project-artifact": {
     "schemaVersion": 1,
     "id": "project-artifact",
     "code": "DD-114",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Claude específico"
     ],
@@ -7182,46 +6980,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "cca497da7e7623a3f0541653803424d9502cbd4524b87ab29e347a68d3d4a895",
-    "baselineSourceSha256": "34e13249dba8a066f33c5f723dbb7b9cb6174b80cc490dd866fbfd1736f0577f",
-    "sourceSha256": "ae056b39c7c925d55714c7beaa8104ba14fdd1be32c207964ec9ca3347135238",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "cd6cb2537e211f771bb42f8ea3f82754eab85e434b3571093a34b916984debe8",
+    "baselineSourceSha256": "ae056b39c7c925d55714c7beaa8104ba14fdd1be32c207964ec9ca3347135238",
+    "sourceSha256": "33d5209dc9f49dca2ac0ea37e5103e05e394af125c121201fda51f3ce3b72cb1",
     "patchSetSha256": "dae0c4478f8bc5c7e35bf60c6bb7a1af8ebaa6abe08243d272d32d1c1f54f0e5",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "87260a678cb81f879db9b0bd3039af44cbb14d399c93f070a375eb618612f8bd",
+        "afterSha256": "e323468943fd789f20cb9c0e25f50a4ef2b67a3de0cc79796a24c0b182c8d93d"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "3b15347a4a172803b325deecaabb6de259b44d78bc5c1c2daeaec364b166369c"
+      },
+      {
+        "path": "project-artifact/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "4744e1b195171c678e91ad13500543488b8587659f670a1bdb18900c111b98c3"
+      },
+      {
+        "path": "project-artifact/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "project-artifact/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "34e13249dba8a066f33c5f723dbb7b9cb6174b80cc490dd866fbfd1736f0577f",
-        "afterSha256": "ae056b39c7c925d55714c7beaa8104ba14fdd1be32c207964ec9ca3347135238"
-      },
-      {
-        "path": "project-artifact/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "fcb8ca559e7ecabded9f9316a1dcfcd8f9eaf7f9d22466278aae7004b2d2cd03"
-      },
-      {
-        "path": "project-artifact/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "88c0511c4438f0c5e4b7c5e6098a9c0f03f179710e3d1df4f3d40172c0fc99ca"
+        "beforeSha256": "ae056b39c7c925d55714c7beaa8104ba14fdd1be32c207964ec9ca3347135238",
+        "afterSha256": "33d5209dc9f49dca2ac0ea37e5103e05e394af125c121201fda51f3ce3b72cb1"
       }
     ],
-    "sha256": "cd6cb2537e211f771bb42f8ea3f82754eab85e434b3571093a34b916984debe8",
-    "bytes": 24694,
-    "fileCount": 9
+    "sha256": "1e30ed43d1cb7867d7bb5d61b596170c434bb54c2a452e77fdb838db74d84889",
+    "bytes": 30553,
+    "fileCount": 12
   },
   "propostas-comerciais-e-estimativas": {
     "schemaVersion": 1,
     "id": "propostas-comerciais-e-estimativas",
     "code": "DD-115",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -7240,46 +7050,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "3ea8609e6025dc13bbb6ac3a26b2c11d407ab6ceae5c3d098ba9b36e3b7ddd29",
-    "baselineSourceSha256": "21d0735e06f439792cc34d7feaad9de3ccfd3aaaad543b203864bd36ed0b5b90",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "9c1134888c44cfdccb8d2917577fe223cf4c85b24faf825742f461b7f0d378c7",
+    "baselineSourceSha256": "e6323ecbc66b260e0438dabc4bc047a89f0d5e23aaab18ed7dc0f2dfead2d535",
     "sourceSha256": "e6323ecbc66b260e0438dabc4bc047a89f0d5e23aaab18ed7dc0f2dfead2d535",
     "patchSetSha256": "1eeb14bc8dd7729da492ad434a5fcd1eedea1b2ff0a786230aaa3eb7327e5ee4",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "propostas-comerciais-e-estimativas/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "21d0735e06f439792cc34d7feaad9de3ccfd3aaaad543b203864bd36ed0b5b90",
-        "afterSha256": "e6323ecbc66b260e0438dabc4bc047a89f0d5e23aaab18ed7dc0f2dfead2d535"
+        "beforeSha256": "bd94d4dfd9e8bff0f5a1b06ac1ac96e2db854b443c7044b18ebd09236d1bc6b9",
+        "afterSha256": "361af49c4f7a81d1c9482fd97fed6a3468bed38e31fbb757a02296f6094f7be5"
       },
       {
-        "path": "propostas-comerciais-e-estimativas/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "413d69e1892dd8fb66fd05628f4be1feffe39c55ac2d5d0f2d41bb9748dff5a2"
-      },
-      {
-        "path": "propostas-comerciais-e-estimativas/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "aa1fb6fbad1152d29c4ad8af046dbd106da786087a86a4bcf7e8ed242f3059c4"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "9c1134888c44cfdccb8d2917577fe223cf4c85b24faf825742f461b7f0d378c7",
-    "bytes": 49226,
-    "fileCount": 15
+    "sha256": "1321ff53e93a312db9c5368b79c5b9792b624cb7ac263af66cfab33cda3b024a",
+    "bytes": 49704,
+    "fileCount": 16
   },
   "prospeccao-b2b-linkedin": {
     "schemaVersion": 1,
     "id": "prospeccao-b2b-linkedin",
     "code": "DD-116",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -7299,46 +7103,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "17ab0b668367e698cca63650a4d3cc33ce57e0c3f91b2f282d798ec8c9f5ca8f",
-    "baselineSourceSha256": "13f1f034d6ff42376cd2e3bdf8faad82b27501ef8c30a2ede9ff9bb832d89ea9",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "26f07f468ee2d809fc54502539500d26b3d6922d2b0f8c613d65a9176bdc093a",
+    "baselineSourceSha256": "b36323283967050c5c56c0eb4ad7b49e01ef8f6a3d0c00c37cf292239de30b2c",
     "sourceSha256": "b36323283967050c5c56c0eb4ad7b49e01ef8f6a3d0c00c37cf292239de30b2c",
     "patchSetSha256": "75c3b71430de1ae30e88d686e3db29cce8a5e90bcfc27a9ae9a0741237dbea7b",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "prospeccao-b2b-linkedin/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "13f1f034d6ff42376cd2e3bdf8faad82b27501ef8c30a2ede9ff9bb832d89ea9",
-        "afterSha256": "b36323283967050c5c56c0eb4ad7b49e01ef8f6a3d0c00c37cf292239de30b2c"
+        "beforeSha256": "18b6f6309a767babf08ff9957182a823e4a3b930a81ac6aeff7a383af537a784",
+        "afterSha256": "95ce620eff663d38d127e2d1601f48d442366fdef1f98edfb07d49ffd8ce6f07"
       },
       {
-        "path": "prospeccao-b2b-linkedin/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "1b3c32353873db9d3a0030e9272e374bfcc025a45ef3fc0b9ad4178cf5837c84"
-      },
-      {
-        "path": "prospeccao-b2b-linkedin/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "dc961ccdff5153753e6bfc02457a268ec66194b1fe7e2a8f79bd2f03d6803b01"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "26f07f468ee2d809fc54502539500d26b3d6922d2b0f8c613d65a9176bdc093a",
-    "bytes": 242774,
-    "fileCount": 19
+    "sha256": "9873c25bcba46423e8bfa57b9e4863d1ab49e6813b7bc191e15ad7dabd4841f5",
+    "bytes": 243257,
+    "fileCount": 20
   },
   "prospeccao-drivedata": {
     "schemaVersion": 1,
     "id": "prospeccao-drivedata",
     "code": "DD-117",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -7357,116 +7155,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "e5ea0b1bf6b792444351cc1554f9a97125d23f5bfa161c75788385af175cbff1",
-    "baselineSourceSha256": "1e74de7bebc84681cec75f178654d9e963fbb8d06d386439169be64e499249dd",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "872f316dc7d73a4ea12bab62c32f3b87c0e10f6a543c705db1386e4346250fcf",
+    "baselineSourceSha256": "9de15f50be9e4ae6ee804bd48133e46a81353a8fd36cfd105f33081588e925a8",
     "sourceSha256": "9de15f50be9e4ae6ee804bd48133e46a81353a8fd36cfd105f33081588e925a8",
     "patchSetSha256": "1c4ddc7e0470bd43af227add154e4e1977c49909664650fb031785ee5cf9e0d4",
     "sourcePolicy": "sanitized-original-retained-privately",
     "changes": [
       {
-        "path": "prospeccao-drivedata/private-reference-8e2b9b05520d0292",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "d39c076dc06e5f0323116e5d0776349fc9ba46c8876a423172d628b0c758413b",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-6337b16f22e330fa",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "7f49bfc6fafe5dddd79394067c4cc428e0d48d6601f8535310a582df5ce6b1e9",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-f46819340504f8d7",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "95ed5b0943da399b3a3bd094e454402cbb8cc428ba6c932d2bb577c32c6d34da",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-c2251be19d702d62",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "8a0037e9f0e7b5ad04eb1db17ad5ce1ee0b44f679186f9bd738c98c74032bf46",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-4456e6e7278208a4",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "132b87acb1562eb0261799e05feab19411279aa93c8053d3e964b958deee2773",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-0b6e8c2550142a2e",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "d083db0a7e155d0a57e97e5ca58df2b9f8ed55418831475a8adcc7b73de0e355",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-bc9c4ecebaf9b4a9",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "055ce7737d94f0449577d3e63d4679a511e0014ec3923bf2abc041b5b4518436",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-44acf1cb959bc570",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "1f5ee202c44ed555dfc6f129602e5cf29f6b4e5f4c1a86d7973f8de04877a713",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-3d7f4e93eace9f4f",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "6ba66735bbf098f8f959e7123e9119d114d0dce012202ddf28f97dc88f3987a0",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/private-reference-3717cf85cdc3c147",
-        "kind": "omitted-private-or-superseded",
-        "beforeSha256": "f8aaa946fe9f948c20244c0cacf00a8945a1525cf5cad8dde1cf2681bb6c1d41",
-        "afterSha256": null,
-        "pathRedacted": true
-      },
-      {
-        "path": "prospeccao-drivedata/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "1e74de7bebc84681cec75f178654d9e963fbb8d06d386439169be64e499249dd",
-        "afterSha256": "9de15f50be9e4ae6ee804bd48133e46a81353a8fd36cfd105f33081588e925a8"
+        "beforeSha256": "c0a3699e8b13fdfce525966a78de9a4a67eda8613b522bbb14890c6e434dce38",
+        "afterSha256": "176f34908a7744a908e306e3a9d017f2d24408971b31d434bd30d4e67945afd8"
       },
       {
-        "path": "prospeccao-drivedata/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "c34b65237599e92b1ad3000cb3eee3889120900b2e8d772a50b91e3ccb896731"
-      },
-      {
-        "path": "prospeccao-drivedata/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "98dc9e3ef539c85356e5f213275ac796f2b6ba7c0d961ac58742e6dc7bfd8b86"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "872f316dc7d73a4ea12bab62c32f3b87c0e10f6a543c705db1386e4346250fcf",
-    "bytes": 6619,
-    "fileCount": 7
+    "sha256": "1c257963e5c8dd694d0fa77f8720b6c73b979955ebf10d8e38b16bb412f32d61",
+    "bytes": 6466,
+    "fileCount": 8
   },
   "prototipos-e-especificacao-funcional": {
     "schemaVersion": 1,
     "id": "prototipos-e-especificacao-funcional",
     "code": "DD-118",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -7486,47 +7208,43 @@ module.exports = {
     },
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "5be8cd34c1a04629798a7f414a0454bb78dcac72f433b52665bdff46f0ede6cd",
-    "baselineSourceSha256": "e8c96625e5f41c3491d13046c0c2955ff313fd5cc62d775c3f91a972e128c802",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448",
+    "baselineSourceSha256": "6b3d5b5a60897f52fb5b66d5d64b4608dcf01207cc46a726a54fa459b4c8a9b9",
     "sourceSha256": "6b3d5b5a60897f52fb5b66d5d64b4608dcf01207cc46a726a54fa459b4c8a9b9",
     "patchSetSha256": "d647b66c596325c0af5493761ec728ff4fff9544335459cb11b776cf833658e6",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "prototipos-e-especificacao-funcional/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "e8c96625e5f41c3491d13046c0c2955ff313fd5cc62d775c3f91a972e128c802",
-        "afterSha256": "6b3d5b5a60897f52fb5b66d5d64b4608dcf01207cc46a726a54fa459b4c8a9b9"
+        "beforeSha256": "492085b14bef1a813ab44d08e3d0b91ebf9caa663f636440f054883631bba409",
+        "afterSha256": "c9d755cb0f5402ae5855a0f7bcc2be26c62e86198d79fa7f5cab3e7daa23227c"
       },
       {
-        "path": "prototipos-e-especificacao-funcional/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "c75c78dbf6cc2ef7f785ba10459eb66416b10a03c206111a0aec466511403838"
-      },
-      {
-        "path": "prototipos-e-especificacao-funcional/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "aa6bd256ed874a09f8fd89f67376d74124f08502acd49a806ec0a161a33cf0a4"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "e67c6fffa8304a5af58053035d89ab3b65eff0073a08ae4c6d8385e15a085448",
-    "bytes": 34105,
-    "fileCount": 16
+    "sha256": "e290210cae8367b5a7524d0787bed42adc5c366f4bc13d5153b83760d9cf8a9f",
+    "bytes": 34575,
+    "fileCount": 17
   },
   "receipts": {
     "schemaVersion": 1,
     "id": "receipts",
     "code": "DD-119",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Node.js",
       "Claude específico",
@@ -7542,47 +7260,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "361d55d6338b748b17e7847df3666425676409048a97a214c30f8fbe6d29d480",
-    "baselineSourceSha256": "5b2f407ff40639727310236f4b34986cacd4bf616c07d2e4198846726842e346",
-    "sourceSha256": "d526fefd80af955f72604701d7c7f04e58acef379a019865f3ce6792ab0d0fd0",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "0f798c5197c241072cd7f565bbcbbf3c42101933407d49b6ac1fadb8bfb15020",
+    "baselineSourceSha256": "d526fefd80af955f72604701d7c7f04e58acef379a019865f3ce6792ab0d0fd0",
+    "sourceSha256": "8700114f0eaf317d1d2efefeca99855f1250c2fcd9270be732347359dcfcd245",
     "patchSetSha256": "27a5d2c4f1b2ae817f4c54d59bbddbc01dc204cd35c30b864adb43a1a8e30003",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "88848574d7ff775673f3f605db1748da86feaf6748b5064cad35fc91854055f1",
+        "afterSha256": "389ecffd8cbdabef6c6f090cb0ec343853365d20e437d81ff2b16252297db040"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "5ea7a81787238337d812506e44483e28799f2f8b1dbc6e822d51fec544acef10"
+      },
+      {
+        "path": "receipts/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "c1345e68750d0ae6752ce6e6159c220282222ab7d111e68e0a3356e1431d908c"
+      },
+      {
+        "path": "receipts/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "receipts/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "5b2f407ff40639727310236f4b34986cacd4bf616c07d2e4198846726842e346",
-        "afterSha256": "d526fefd80af955f72604701d7c7f04e58acef379a019865f3ce6792ab0d0fd0"
-      },
-      {
-        "path": "receipts/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "2d23bced43044c2803c746f21031a70969f16d59739e7de04450454e4183be71"
-      },
-      {
-        "path": "receipts/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "880ad05288311677da92fee8e6d78d81f31e024d080912adf49c5b2b540aea85"
+        "beforeSha256": "d526fefd80af955f72604701d7c7f04e58acef379a019865f3ce6792ab0d0fd0",
+        "afterSha256": "8700114f0eaf317d1d2efefeca99855f1250c2fcd9270be732347359dcfcd245"
       }
     ],
-    "sha256": "0f798c5197c241072cd7f565bbcbbf3c42101933407d49b6ac1fadb8bfb15020",
-    "bytes": 38666,
-    "fileCount": 8
+    "sha256": "61dff8793601cc30831ffe85bec977f1895f9563950b88e5d656103204126a62",
+    "bytes": 44482,
+    "fileCount": 11
   },
   "review-contract": {
     "schemaVersion": 1,
     "id": "review-contract",
     "code": "DD-120",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -7595,52 +7327,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "dae57fc84fd4974a8687fd8508589ddb00e3a0d11acb61130d7dec3864a28578",
-    "baselineSourceSha256": "3a6413475f51adedbff130f4d5aabbeeacfb2abd323e0338bc91c21937fbfb76",
-    "sourceSha256": "dbc76800da05e5267bc60d16dc6f67505afd9dfaa7d420b867bb251976a95c2b",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "b941c948b85473dc0711150be62918ad6004f026e70f0a9512393fc3cd220c72",
+    "baselineSourceSha256": "dbc76800da05e5267bc60d16dc6f67505afd9dfaa7d420b867bb251976a95c2b",
+    "sourceSha256": "c74c5217c9818e9b805c7877d51dc74eb706d4449394926146e5079b8795c8b1",
     "patchSetSha256": "f8048edf7cd9fb3e7ab1b8dc1a95236c11e93ed8115694b8de6dd7ad081baa65",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "fbca5786c86d5bc671186abed53005da6c2feaf2732dbd52ec6f4b5782563c64",
+        "afterSha256": "9f93e26c7137ec656293017def89217b2ffb09888c3c901856bf511f656b53cc"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "aee70777adbd29368b68d4ba9b05305482cbe229a91c54c3b5cb9a8ab759f536"
+      },
+      {
+        "path": "review-contract/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "7228e74a46997b3f3278ad3f52bc276bd71d8db9d975ec1fb8fa342f24fadd36"
+      },
+      {
+        "path": "review-contract/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "review-contract/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "3a6413475f51adedbff130f4d5aabbeeacfb2abd323e0338bc91c21937fbfb76",
-        "afterSha256": "dbc76800da05e5267bc60d16dc6f67505afd9dfaa7d420b867bb251976a95c2b"
-      },
-      {
-        "path": "review-contract/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "2ba7e883ea079e23e17037509c333203cba510b62458e82c2bcc1c6e0afb8864"
-      },
-      {
-        "path": "review-contract/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d2117493c0b59c068980e3bc0afcbe165bf4835f9177c7350bdfdb4f07edf81b"
-      },
-      {
-        "path": "review-contract/CONNECTORS.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d2259870c53c05017ec8ec917eb1a659674e15eb1e17a7a7210bab468efafc8a"
+        "beforeSha256": "dbc76800da05e5267bc60d16dc6f67505afd9dfaa7d420b867bb251976a95c2b",
+        "afterSha256": "c74c5217c9818e9b805c7877d51dc74eb706d4449394926146e5079b8795c8b1"
       }
     ],
-    "sha256": "b941c948b85473dc0711150be62918ad6004f026e70f0a9512393fc3cd220c72",
-    "bytes": 13362,
-    "fileCount": 8
+    "sha256": "af0b513b76d24989278c911477622a1218423fc3eb6edc9d516689668c1a9343",
+    "bytes": 19168,
+    "fileCount": 11
   },
   "saas-multi-tenant-supabase": {
     "schemaVersion": 1,
     "id": "saas-multi-tenant-supabase",
     "code": "DD-121",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -7657,46 +7395,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "657a83278bbd1bb6f30726122e87da13d621f7f8b29431024cced333b3674e43",
-    "baselineSourceSha256": "01f5fdb8c51117c3724b577763416329b333adf2f143a8cca96c467181def877",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "45ac796580822f5586bd797242388c3c1cc482899a06eab4c1b6650122ab7be0",
+    "baselineSourceSha256": "accbab754865c403a0e9a8c200cbc0b1da60c0c9a9685d8261d850105a89248b",
     "sourceSha256": "accbab754865c403a0e9a8c200cbc0b1da60c0c9a9685d8261d850105a89248b",
     "patchSetSha256": "f83b975c58a7c37eca7f3fcd200d5f1c5e72b64968efa0068e7e790f0882cf65",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "saas-multi-tenant-supabase/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "01f5fdb8c51117c3724b577763416329b333adf2f143a8cca96c467181def877",
-        "afterSha256": "accbab754865c403a0e9a8c200cbc0b1da60c0c9a9685d8261d850105a89248b"
+        "beforeSha256": "d1719f2671d4f0df7d00ceb28be303c7653336f35617ae47d8a93be1ef5f40d1",
+        "afterSha256": "ed3cdc32318e539731205634421fe8f39d9d5f70d8c86a6de03379748ef01d90"
       },
       {
-        "path": "saas-multi-tenant-supabase/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "ab99ec27dd36cc472092112248b5bbaec85949735c8dc32260088cc49b93f9fb"
-      },
-      {
-        "path": "saas-multi-tenant-supabase/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "6c9d28a1040e2da74341d9352aaca7f4b954f6416fa795ad0706a9b82bf62068"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "45ac796580822f5586bd797242388c3c1cc482899a06eab4c1b6650122ab7be0",
-    "bytes": 88088,
-    "fileCount": 21
+    "sha256": "497fb5de447a93d59cefd8dfcc4da3af7f7dbc0ab6b90d797561aff8c08cbef8",
+    "bytes": 88559,
+    "fileCount": 22
   },
   "security-and-hardening": {
     "schemaVersion": 1,
     "id": "security-and-hardening",
     "code": "DD-122",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "MIT e termos DriveData",
     "licenseFiles": [
       "LICENSE"
     ],
@@ -7713,46 +7445,40 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "07ec5162a0224ec9d00e5baf52c88750357cb2f2af8e511a475b612b88406a6c",
-    "baselineSourceSha256": "8b353920db3f170203180d16833226ce57a311681b689b77dc27865661566083",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "83512f0d95ea9e1a39a59ff0f4725514fd9377fed61ed12878d8be652914e49b",
+    "baselineSourceSha256": "d7ac5306429ce2aee188f82c9f74db8b206bb31ee82ca91e5f57c959d7639d38",
     "sourceSha256": "d7ac5306429ce2aee188f82c9f74db8b206bb31ee82ca91e5f57c959d7639d38",
     "patchSetSha256": "1dcd8619cf48615ad9accd52baf068362551046e8124a8876460e1b5d87fc110",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "security-and-hardening/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "8b353920db3f170203180d16833226ce57a311681b689b77dc27865661566083",
-        "afterSha256": "d7ac5306429ce2aee188f82c9f74db8b206bb31ee82ca91e5f57c959d7639d38"
+        "beforeSha256": "4f2adc2cffef42b3f8a78c4de509b7cf2cbc335cd947e469f14ac7c6a1710617",
+        "afterSha256": "3f7cef605972d2fa4d967da0f76e4ec039bcd1030c645b203132cd39a2ed1f1c"
       },
       {
-        "path": "security-and-hardening/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "cf773b6fef7a2fd9e73a2ae8ae471d77e1a969dbfafe906d5a1ffb98171ac572"
-      },
-      {
-        "path": "security-and-hardening/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "3456a4e1adec9df771e422ec3d90ab1092aeabe357ef4063fe27d9a40af9c9f3"
+        "afterSha256": "41ecb500305b3085ff45696a372a36c3f51a2449dfcc91389f7771b38a8df208"
       }
     ],
-    "sha256": "83512f0d95ea9e1a39a59ff0f4725514fd9377fed61ed12878d8be652914e49b",
-    "bytes": 28548,
-    "fileCount": 10
+    "sha256": "28f22a056a2e392175b59b7145d8d00713b802baa548edcab0f1fc2e29d117ec",
+    "bytes": 29182,
+    "fileCount": 11
   },
   "security-audit": {
     "schemaVersion": 1,
     "id": "security-audit",
     "code": "DD-123",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -7770,137 +7496,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "0be7b119c12a9b3c5556b628a087e855fab4d5f34a339c55e74ba6a3f8333433",
-    "baselineSourceSha256": "2a68ab5531dfccedac2b054e0814f2b6517daae9887b3ee40afcc5d8a7063c3a",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "3056791a835ff474e2feb40fbcaf032e4a1835356889e7692c1592549d8b6485",
+    "baselineSourceSha256": "eaa06b5360bfd782ad0912e123c99ce0da6bdb3d13b5e3cdbe36698ce2ca548f",
     "sourceSha256": "eaa06b5360bfd782ad0912e123c99ce0da6bdb3d13b5e3cdbe36698ce2ca548f",
     "patchSetSha256": "e560c56ea8a8763c1c88b1699520ee4e0eae54781a753400525a9e580f510a6c",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "security-audit/AI-AND-LLM.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "0d57a4d8b1ce05015e867bc89277aabf80f4a3031beba42df4481fc92027f83b",
-        "afterSha256": "7335a95c43554eadefcf03ece639291bb0e038c398a179299e3887ffe06bd2ef"
+        "beforeSha256": "8f9982370fe6e4c75b5dc418666436cb13d74b761ebeba2539d215c9b7e3e53e",
+        "afterSha256": "b646f15562c97716ac71933507f6dcc11ae4a30569fb1d0843c0af873f95d796"
       },
       {
-        "path": "security-audit/ATTACK-CLASSES.md",
-        "kind": "modified",
-        "beforeSha256": "fff6ce0269696d17bda38bfeb27410bdce820f2299cb68a7ceb81883204a3604",
-        "afterSha256": "3ee4f00c6e8c9dcf6dd02dd5ac2a4ceb322e2085f3e9fbe79cf0c6330bc7ef83"
-      },
-      {
-        "path": "security-audit/CLIENT-SIDE.md",
-        "kind": "modified",
-        "beforeSha256": "e9098dc5da89a996e28c25e9e3e3e976ec777a19c4f05c9a04cd4c0d4a3ce120",
-        "afterSha256": "613f6b98f86083e045525c5b60154ffdab122bac35f1e05eb17488e6e453370c"
-      },
-      {
-        "path": "security-audit/CLOUD-AND-DEPLOYMENT.md",
-        "kind": "modified",
-        "beforeSha256": "29514d7c3a9e83d48f1f519e70e8b2fde4e1d1ac92d2500737b6c8be718c3b2d",
-        "afterSha256": "3c80f3088be22345e07b057c056d6ed99fe2b0304f794398964f7ccd5a496ca3"
-      },
-      {
-        "path": "security-audit/DATA-ISOLATION-AND-LIFECYCLE.md",
-        "kind": "modified",
-        "beforeSha256": "5c546940150363cb4039038e2c00c080a8d302e7a2e50f72f3960e4c67801b5e",
-        "afterSha256": "307dcb3e24d292715c4a041190e7bb135646a37eb6187619ae01d000a634a4ad"
-      },
-      {
-        "path": "security-audit/DESKTOP-MOBILE-AND-LOCAL-IPC.md",
-        "kind": "modified",
-        "beforeSha256": "055fec61e744d5ba434cbf0c1f2994b1f83d961f5e43d89cc0bb690d16a11f3b",
-        "afterSha256": "58eae8ee0ca6a46611c501ec5a3ab47fdff88dd7db0d8d74789bbf8bb19d8cb2"
-      },
-      {
-        "path": "security-audit/HUNTING.md",
-        "kind": "modified",
-        "beforeSha256": "b980765f1a616a141044b00e3dcbb7c36ec4d7cf43740d85985d0bdbca9cfe91",
-        "afterSha256": "71c121decea1322c47c718f6e110f1a892980bb4266bd7ac55ef043a213ade09"
-      },
-      {
-        "path": "security-audit/MEMORY-SAFETY-AND-BINARY.md",
-        "kind": "modified",
-        "beforeSha256": "c88390b508fc86838b7b12889499fabf28acfe32ca34f2d4ff655a420264f44f",
-        "afterSha256": "7c8b0dccfb35315cca2455509674d49632b2fe37e1f3aac16c1a496a7e9924a7"
-      },
-      {
-        "path": "security-audit/PROTOCOLS-RPC-AND-MESSAGING.md",
-        "kind": "modified",
-        "beforeSha256": "2bc534260d9842cc9a6bb15615e58c5350201008880083da78969bdeb657a7ce",
-        "afterSha256": "8b73816fa5b3697c9c40977f0c836b40f01d6e81929ff2720fe83ce089e9a619"
-      },
-      {
-        "path": "security-audit/RECONNAISSANCE.md",
-        "kind": "modified",
-        "beforeSha256": "a02316fae383754621d312215170479685f85c1142b6c117a9a03c6ad8f907e4",
-        "afterSha256": "02ca887aca84de8ae137f1891bd2f0a54f28d3fa6da92a27f54734382b3381a2"
-      },
-      {
-        "path": "security-audit/RESOURCE-EXHAUSTION-AND-AVAILABILITY.md",
-        "kind": "modified",
-        "beforeSha256": "a9590f9966de194e51dd7c82f930bc910662f0275357e433e33758756755ec8d",
-        "afterSha256": "4326fab5c92a0b4c420a70196254040105cd794026562130b59bf1a6db3e4baa"
-      },
-      {
-        "path": "security-audit/SKILL.md",
-        "kind": "modified",
-        "beforeSha256": "2a68ab5531dfccedac2b054e0814f2b6517daae9887b3ee40afcc5d8a7063c3a",
-        "afterSha256": "eaa06b5360bfd782ad0912e123c99ce0da6bdb3d13b5e3cdbe36698ce2ca548f"
-      },
-      {
-        "path": "security-audit/SUPPLY-CHAIN-AND-RELEASE.md",
-        "kind": "modified",
-        "beforeSha256": "c1eb0a8b9a6ab1e979b214ee70fd8fff4c173d4063fd82df82fc5269cb115c17",
-        "afterSha256": "f372e919940e335468ba1ae09f99026c3986a345f7fe26f8068f132e199f52a5"
-      },
-      {
-        "path": "security-audit/VALIDATION-AND-REPORTING.md",
-        "kind": "modified",
-        "beforeSha256": "943e68578aa1d7031282837d1455cf64d1e95d032c9df09b3f182ce134e89072",
-        "afterSha256": "b892470cb89bb31f33403e050d4bdfbe2cdaef940ade1496fa65e32b2e129449"
-      },
-      {
-        "path": "security-audit/WEB-PROTOCOL-AND-AUTH.md",
-        "kind": "modified",
-        "beforeSha256": "757c5191cc397ad7145ffe5b6ffa438bdd36fefd351da640267630d05f01bfae",
-        "afterSha256": "4f3066dffa23c5635859187be9b96c32f2aff29a688186b91ff0c63e47d62b5c"
-      },
-      {
-        "path": "security-audit/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "512bdf44f64550bc47c5ac047ff320a06cc574487203d340babcc2955bddc4bd"
-      },
-      {
-        "path": "security-audit/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "b1f63d5a5bba40dbc385c374c20a08360a5f2baa7ccfb11f5c88c2acc5cae965"
-      },
-      {
-        "path": "security-audit/scripts/revision-tools.cjs",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a64ce5fda2548f624110aa677b55495b39c0787ab81b6705d08e19e203bb7750"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "3056791a835ff474e2feb40fbcaf032e4a1835356889e7692c1592549d8b6485",
-    "bytes": 119887,
-    "fileCount": 27
+    "sha256": "10852029d74d121cbf42e000a079ba2fb78718fddd6b42e6e6eb39dcaae875c1",
+    "bytes": 118815,
+    "fileCount": 28
   },
   "session-report": {
     "schemaVersion": 1,
     "id": "session-report",
     "code": "DD-124",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Node.js",
       "Claude específico"
@@ -7915,52 +7547,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "eb5a0bb3d6ffd513f4a3af388aaa9df4341057b27d0f579d5eb7b51733036de4",
-    "baselineSourceSha256": "ef0fbc4259a41b7fd61b517fb1c9a95f02b83ea3c79ba0b3afbeee4942570397",
-    "sourceSha256": "4c7f8eb5d5cd77d55d3cb40501b35ca60e4ecfc509d7b7a9763248f102db93ba",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "fe039b31692ea3a6c05e9254d2c62f8959d684fc91f0ba20b21812a8d4bf1b20",
+    "baselineSourceSha256": "4c7f8eb5d5cd77d55d3cb40501b35ca60e4ecfc509d7b7a9763248f102db93ba",
+    "sourceSha256": "8b92a72eb55211d1922aaddc4111230ab84545245c9fece902b8d8721cdeab8d",
     "patchSetSha256": "813e06757ab65fe41bb9243523dc96f58d0e0355b736c08d97374cf0c2b805f8",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "041e076a0f9554e5894e3d85658a8ac715aea252a11eccc12a4fb31afaf0e554",
+        "afterSha256": "4516609d10b7dbf6184e35f39b1370048707faecc209a5dbdcb1d58f2503e580"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "e4af4610903060ee71a88730af5e03476ac909e8f833c6ace1bada2f5374036c"
+      },
+      {
+        "path": "session-report/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "15160da719376c2704f45cafe3cbfe92a988a27583f229e1dcb3b43c1b8a91bc"
+      },
+      {
+        "path": "session-report/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "session-report/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "ef0fbc4259a41b7fd61b517fb1c9a95f02b83ea3c79ba0b3afbeee4942570397",
-        "afterSha256": "4c7f8eb5d5cd77d55d3cb40501b35ca60e4ecfc509d7b7a9763248f102db93ba"
-      },
-      {
-        "path": "session-report/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "2da1a87c75713d2effdaa2f2f593a73d6ea41871ddb1aaffe8e0f8991ac6b157"
-      },
-      {
-        "path": "session-report/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "78b041b9f6f79209179343fd0d1027974078d7ab17d76104406c188208798075"
-      },
-      {
-        "path": "session-report/scripts/revision-tools.cjs",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a64ce5fda2548f624110aa677b55495b39c0787ab81b6705d08e19e203bb7750"
+        "beforeSha256": "4c7f8eb5d5cd77d55d3cb40501b35ca60e4ecfc509d7b7a9763248f102db93ba",
+        "afterSha256": "8b92a72eb55211d1922aaddc4111230ab84545245c9fece902b8d8721cdeab8d"
       }
     ],
-    "sha256": "fe039b31692ea3a6c05e9254d2c62f8959d684fc91f0ba20b21812a8d4bf1b20",
-    "bytes": 27785,
-    "fileCount": 10
+    "sha256": "97bb74414c0afa2bd97bba93b9633dcbba20f1a85522fa8de7c9010be75ecc2b",
+    "bytes": 33579,
+    "fileCount": 13
   },
   "shipping-and-launch": {
     "schemaVersion": 1,
     "id": "shipping-and-launch",
     "code": "DD-125",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Termos encontrados; revisar distribuição",
+    "license": "MIT e termos DriveData",
     "licenseFiles": [
       "LICENSE"
     ],
@@ -7977,47 +7615,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "9afae199059f86dab49616da68e312962b985165fb8eebb7433b8f81098effe6",
-    "baselineSourceSha256": "1bf65108f873fea9e7e0a395af0b107cd00325913e298d2ba9df485d1b2b1bc3",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "e51d738ec0b969b816353833fdcccb789cd89f2c78333f6a88e689550778408b",
+    "baselineSourceSha256": "6ba97cf486c3eec3610e4a34b7ece3e0289a533bc1cc27bc50f8f30fedea37f3",
     "sourceSha256": "6ba97cf486c3eec3610e4a34b7ece3e0289a533bc1cc27bc50f8f30fedea37f3",
     "patchSetSha256": "d4be3358a48a71832cda3e89775c6de89bfb41dac28335324702a6f6f371bec5",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "shipping-and-launch/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "1bf65108f873fea9e7e0a395af0b107cd00325913e298d2ba9df485d1b2b1bc3",
-        "afterSha256": "6ba97cf486c3eec3610e4a34b7ece3e0289a533bc1cc27bc50f8f30fedea37f3"
+        "beforeSha256": "c5222236d4def4143785adcf5b29d3fb7eb09ee33797b4c4c06d580c7c6998f6",
+        "afterSha256": "ce69eb69934da6335b22c2fee90212ff3f45a4a1605f4675b45a7727908a8ee0"
       },
       {
-        "path": "shipping-and-launch/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "8245e64f9c9476fa5e3a3099b85780ea969f0adc5139284e95d14344f933b7d4"
-      },
-      {
-        "path": "shipping-and-launch/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c5d08ed733270c302d02e41aa76664099970046ce4f1dd5df970b8099eba1757"
+        "afterSha256": "54e07514dbda74a371ebd4b6dad181c01d12ff8f4724c26cc7a2565e2601688a"
       }
     ],
-    "sha256": "e51d738ec0b969b816353833fdcccb789cd89f2c78333f6a88e689550778408b",
-    "bytes": 19803,
-    "fileCount": 9
+    "sha256": "6a58b48100c00d8235bebc3bee1b538a9ccaa74f2dd579ceae552f3770bfb5dc",
+    "bytes": 20438,
+    "fileCount": 10
   },
   "siege": {
     "schemaVersion": 1,
     "id": "siege",
     "code": "DD-126",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Claude específico"
@@ -8033,53 +7667,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "750d0ebd1cb863ca14b0301d4220d8abbfbd483229efa3ceb1f17ea2b3ae5b3c",
-    "baselineSourceSha256": "f40134d3b418b256656777ad89d1cee93ad9b8a8a1aa84754262752e91d6b542",
-    "sourceSha256": "b707fb3dc15728f8b43fe332ee7792a92c2c920dce6ae1da46f7f07c03ca7b9d",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "2d7021b8ae6f3d5e9995a01347114e9ce311978fda8e05c4c0e80163d3122d71",
+    "baselineSourceSha256": "b707fb3dc15728f8b43fe332ee7792a92c2c920dce6ae1da46f7f07c03ca7b9d",
+    "sourceSha256": "5a7119a02a6aa8b81344be2032e4e7b0ee3a733185e810f172a75501bd98a60d",
     "patchSetSha256": "ea8e01b84c0fc74949f4cf0c36267fedd8a1732c4aa5fdd39ed76ab1f90e2ed0",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "7ef5f5342572c94d6d7475271c8e2a9fd22ed6d8feb00517623a802d672d3b89",
+        "afterSha256": "b3b7394449dd386b9f7e3268c9247602b33ca8987989f932dc7fabcdd98e9ca7"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "c85313d83ec16e2c0e9018d4ec10140c1df6a10e2de1c28969cdaf715cd23a74"
+      },
+      {
+        "path": "siege/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "15689b98304f796cabb90cd83b12a1b8843915cb22e6887dfdde125ef7335f48"
+      },
+      {
+        "path": "siege/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "siege/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "f40134d3b418b256656777ad89d1cee93ad9b8a8a1aa84754262752e91d6b542",
-        "afterSha256": "b707fb3dc15728f8b43fe332ee7792a92c2c920dce6ae1da46f7f07c03ca7b9d"
-      },
-      {
-        "path": "siege/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "5375d17e5b32a8cc5c841d7f0992aeb9510494b4fdcf40b116952abfe6ecdea5"
-      },
-      {
-        "path": "siege/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "605188e41f02a97ae3c0106406c4212eb2df3928f2abdd3d8236fcc352a7e8f2"
-      },
-      {
-        "path": "siege/references/revision-workflow.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "6e80990cab6240c73e6ed81bc57a8b4668c6257f95d6c23d751ebfd686ea8866"
+        "beforeSha256": "b707fb3dc15728f8b43fe332ee7792a92c2c920dce6ae1da46f7f07c03ca7b9d",
+        "afterSha256": "5a7119a02a6aa8b81344be2032e4e7b0ee3a733185e810f172a75501bd98a60d"
       }
     ],
-    "sha256": "2d7021b8ae6f3d5e9995a01347114e9ce311978fda8e05c4c0e80163d3122d71",
-    "bytes": 44728,
-    "fileCount": 9
+    "sha256": "b73abd3deaed6045ba4068263550eac57cc09ee7012bb715e925b05941e89991",
+    "bytes": 50487,
+    "fileCount": 12
   },
   "signature-request": {
     "schemaVersion": 1,
     "id": "signature-request",
     "code": "DD-127",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -8093,52 +7735,58 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "8cbe84f0c42c931bd0b40c15bbcb7ce7516a957c0ff48b82ffa0cfb14bd18ac9",
-    "baselineSourceSha256": "bf702fbe7d21073c3e6952ee2c72f66bf6c56fc806b3abb7e44d7863d7534682",
-    "sourceSha256": "0aa5c720ebd6ef6fddb804c4c75c4ad8709c654905f9ae33dee2d680f42bab13",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "cfeac3cbcf77c4b1653ac611bc0df4649b6bde7cd898f9d9f63719a4ad9a3024",
+    "baselineSourceSha256": "0aa5c720ebd6ef6fddb804c4c75c4ad8709c654905f9ae33dee2d680f42bab13",
+    "sourceSha256": "65a675c1f477ad012247db3f4ee7897c26dd5bf44095ce2da964dc1fba11187b",
     "patchSetSha256": "539901c841d291bc67fa04f7295e4c11e5b867e88953181460e1e426e5f77f5e",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "dab73c0a4887f1fdbc766bdcb99874446789767ba58bbd7a4e5f86dcbdad214e",
+        "afterSha256": "c651bfca12a7cc9ba2945607d44d8ca0fe5f662b8f7e1cc346ddfb8654176001"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "85689deed00fd1bb202db9a47d1e9088c8810002f56a4670d122ea8cdb6d3d2b"
+      },
+      {
+        "path": "signature-request/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "0953376c67f3885dc813866b67957f3a2f893fad7523d1271ca12e10e2dae6bd"
+      },
+      {
+        "path": "signature-request/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "signature-request/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "bf702fbe7d21073c3e6952ee2c72f66bf6c56fc806b3abb7e44d7863d7534682",
-        "afterSha256": "0aa5c720ebd6ef6fddb804c4c75c4ad8709c654905f9ae33dee2d680f42bab13"
-      },
-      {
-        "path": "signature-request/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "1d3c05938d3ca070bd9de868da1b5c691519d46580e5e302b285c7454189c349"
-      },
-      {
-        "path": "signature-request/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "5dedcaac3b9fe6a7ccefc9f89954b82c1bd0c55627f473ceb97932d967aa6e01"
-      },
-      {
-        "path": "signature-request/CONNECTORS.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d2259870c53c05017ec8ec917eb1a659674e15eb1e17a7a7210bab468efafc8a"
+        "beforeSha256": "0aa5c720ebd6ef6fddb804c4c75c4ad8709c654905f9ae33dee2d680f42bab13",
+        "afterSha256": "65a675c1f477ad012247db3f4ee7897c26dd5bf44095ce2da964dc1fba11187b"
       }
     ],
-    "sha256": "cfeac3cbcf77c4b1653ac611bc0df4649b6bde7cd898f9d9f63719a4ad9a3024",
-    "bytes": 8560,
-    "fileCount": 8
+    "sha256": "e494b2cb8f8bda0c5e5aa32b4f10149976f0719d12f79b9896681f4222bc636a",
+    "bytes": 14370,
+    "fileCount": 11
   },
   "sites-institucionais-e-seo": {
     "schemaVersion": 1,
     "id": "sites-institucionais-e-seo",
     "code": "DD-128",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Node.js",
@@ -8160,47 +7808,43 @@ module.exports = {
     },
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "1a56155adac55e666c34691db42f0498a675caf3b495e67b72ae1707ae3d4add",
-    "baselineSourceSha256": "6323eaa5d480c6518d5679047ffbdecfe0eccfd0de8b085e9e4deb6fa2915ec4",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "90d42c7c106ce92a69e3caf1f6362ce107b5688a29cb0f0482201284c8745eaf",
+    "baselineSourceSha256": "1b739b5b90090dbfabb636c6d7135470a0a5027056af508e9dd9599928993cdc",
     "sourceSha256": "1b739b5b90090dbfabb636c6d7135470a0a5027056af508e9dd9599928993cdc",
     "patchSetSha256": "6c6e35422634d252cf1596f94eb120f3a2fc34c2ca5bc441632c5c5ae51c98b2",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "sites-institucionais-e-seo/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "6323eaa5d480c6518d5679047ffbdecfe0eccfd0de8b085e9e4deb6fa2915ec4",
-        "afterSha256": "1b739b5b90090dbfabb636c6d7135470a0a5027056af508e9dd9599928993cdc"
+        "beforeSha256": "1754516dad541d0f8c9b521f212f2c65d8af8a7aa7a73ecfa0a1bfe67853e9f0",
+        "afterSha256": "d495aaf88b2ca710c582dee1c73a445294e1b9fe0ee5dec2fbf7c8ab26f0ce2f"
       },
       {
-        "path": "sites-institucionais-e-seo/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "adc70952709b4c4726ba290012a6bfc15942f0ec05b2d08d0f8bea85fabf8c74"
-      },
-      {
-        "path": "sites-institucionais-e-seo/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "4b47edf29f153d7d1f169bf116ff5a01f2a0be69fc30a53ff5cffc6cb640a00b"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "90d42c7c106ce92a69e3caf1f6362ce107b5688a29cb0f0482201284c8745eaf",
-    "bytes": 60189,
-    "fileCount": 22
+    "sha256": "3fbbbed9718b8f59535420e2f46c68bc8f16d198f59f8c16212da6f32f532e24",
+    "bytes": 60654,
+    "fileCount": 23
   },
   "skill-development": {
     "schemaVersion": 1,
     "id": "skill-development",
     "code": "DD-129",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python",
       "Conector MCP",
@@ -8216,47 +7860,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "9021a36736f4cf9495274976d0799347d835c0884d02dc300aef018b0dfd305a",
-    "baselineSourceSha256": "d51b4e20043b13e462aa86c47ea82d43e216eb292871538127f4b12a54e4944f",
-    "sourceSha256": "34d7020c893e168d12e495c0e8e980c645bd58b2837992549f3449b752aab375",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "d6bcafbda3a01881a2759990beaaf6e1d23e06e965e070777ebf527f938f7686",
+    "baselineSourceSha256": "34d7020c893e168d12e495c0e8e980c645bd58b2837992549f3449b752aab375",
+    "sourceSha256": "302f2e82033e8614fb71b187470ad830dd360a1141cbb4c0a2869b2886a62b84",
     "patchSetSha256": "5d623958c64ed2e944d8ababa79bef976d308824bf6d28d3905d745ccd16c9cf",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "a8acb394124b4f93cf83b0f63632324bb094d29361359775777555d7672a780d",
+        "afterSha256": "7c722b3f26fe037ed1a4bb839ec7e360ca3a57c85bf86549034cb0d0dfe4c642"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "e4689a37f0fd0e96bc71d25d9c4d925dd6029b35ad60c1fd692ee10461e3e724"
+      },
+      {
+        "path": "skill-development/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "666aadb7cd3ec1300dfc94beb60542fcae4d2a306a8b37d4acc72306c9457852"
+      },
+      {
+        "path": "skill-development/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "skill-development/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "d51b4e20043b13e462aa86c47ea82d43e216eb292871538127f4b12a54e4944f",
-        "afterSha256": "34d7020c893e168d12e495c0e8e980c645bd58b2837992549f3449b752aab375"
-      },
-      {
-        "path": "skill-development/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c3a8e1fcc102f381095db3c3e561331448e86d1d5c5616bfed0de677283dbfa7"
-      },
-      {
-        "path": "skill-development/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "db949557226bb8e78dd408c02962a41ed9d6832aed3b0b6872fffa2c9eee433c"
+        "beforeSha256": "34d7020c893e168d12e495c0e8e980c645bd58b2837992549f3449b752aab375",
+        "afterSha256": "302f2e82033e8614fb71b187470ad830dd360a1141cbb4c0a2869b2886a62b84"
       }
     ],
-    "sha256": "d6bcafbda3a01881a2759990beaaf6e1d23e06e965e070777ebf527f938f7686",
-    "bytes": 18330,
-    "fileCount": 8
+    "sha256": "0eb01c6e120d11c972df099396d7a384208b7bb8fc6e1d0a605dfadee370be80",
+    "bytes": 24191,
+    "fileCount": 11
   },
   "solo": {
     "schemaVersion": 1,
     "id": "solo",
     "code": "DD-130",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Enunciado completo",
@@ -8267,47 +7925,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "8c9abb9c721970b4337ea066e208015dd2c9a898c1b720a70b158c9d1a92723b",
-    "baselineSourceSha256": "2b6ecb93b01471142f928dd0fa4abd7e35782ed8f1058d498521039564387305",
-    "sourceSha256": "02b692fbd216aac5c1768b332edc81cbf8e5dc521afb793d2afda851849cfefb",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "8538bf63f58904895285ee29992ca3e35e59e75612b87e818a730c578737d593",
+    "baselineSourceSha256": "02b692fbd216aac5c1768b332edc81cbf8e5dc521afb793d2afda851849cfefb",
+    "sourceSha256": "b9b04e30c5f609abdb592752929db5c81571f1050b01e7ea731cbaccb8ab842d",
     "patchSetSha256": "8a2f272f9e9707ff696aee30238970377cf1b77cd574639f94707774c40e77c2",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "375679dc5b3d8f79be84f92e2e998aff670dd9f04ba2a74c8d2a676b02ffee2c",
+        "afterSha256": "ce666f9bc526e9b34bce1022175ab1789913ec958a25049613731ba8c18b9d2a"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "d846606660a476e7e1628b455675a30b8bb63229d34cc58d6f1a014fe892d2a3"
+      },
+      {
+        "path": "solo/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "e48a15b1abcfed7a7ab73e61995be44342ef4e6a2c8373e622da64f700f02d12"
+      },
+      {
+        "path": "solo/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "solo/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "2b6ecb93b01471142f928dd0fa4abd7e35782ed8f1058d498521039564387305",
-        "afterSha256": "02b692fbd216aac5c1768b332edc81cbf8e5dc521afb793d2afda851849cfefb"
-      },
-      {
-        "path": "solo/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "54abdd945763a3ed6e6c21820b375e062ff348a5984dfafa7eb125b64db976b6"
-      },
-      {
-        "path": "solo/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "03fb56e6e2ac542fb376b1532d557364633025a7c7b474c9d2eea72781ce6412"
+        "beforeSha256": "02b692fbd216aac5c1768b332edc81cbf8e5dc521afb793d2afda851849cfefb",
+        "afterSha256": "b9b04e30c5f609abdb592752929db5c81571f1050b01e7ea731cbaccb8ab842d"
       }
     ],
-    "sha256": "8538bf63f58904895285ee29992ca3e35e59e75612b87e818a730c578737d593",
-    "bytes": 8219,
-    "fileCount": 7
+    "sha256": "4aadf0f5e593096176fb00412ff7bf2ba9fb2681036f7626b541450dee0e0ea6",
+    "bytes": 14005,
+    "fileCount": 10
   },
   "telegram-access": {
     "schemaVersion": 1,
     "id": "telegram-access",
     "code": "DD-131",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Ambiente e plugin Claude Code/Cowork compatíveis; a importação no Codex não instala o runtime",
@@ -8320,53 +7992,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "bb66a8f51e7801c5f7c220db018644f6784c997bdd1f34e6344bba6d3d03ef0d",
-    "baselineSourceSha256": "a69adeb034413ddfa88392a217e7cb7d67eb5fcd393fd2429fe1e4f88506a46d",
-    "sourceSha256": "8692559bc0a4855820824e96d3c41a7f9fd0cdfc928c133589fc813509c2aecf",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "5792b811ab45ffd2235516b310249db5eb86ff156cf8388fd602a308cf0c03c9",
+    "baselineSourceSha256": "8692559bc0a4855820824e96d3c41a7f9fd0cdfc928c133589fc813509c2aecf",
+    "sourceSha256": "df5d3a5a952d311ed0b319a91346be780b575d38626c694c19ac62cdb2b5893b",
     "patchSetSha256": "ea23f79de13fe2c73a87ef63422fd8f28fb9bb2b4c7dea3190e3afead617931a",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "4fe911a3e3ec7ace1c0e33a40c52e6b51fca606fca1165cb75d7dcc7d67861ae",
+        "afterSha256": "c69d3f1af0a1007b84bc8094a485f559be97038756b32ef08d817fc430df06ae"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "7a92466a42be988326de6e383269f8922a39b9e434641f07862ed4f180221b0c"
+      },
+      {
+        "path": "telegram-access/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "5dd06025d8af4a6140262d72811fcfeac2c6ce2afe1fe12342dea128e96d3160"
+      },
+      {
+        "path": "telegram-access/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+      },
+      {
         "path": "telegram-access/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "a69adeb034413ddfa88392a217e7cb7d67eb5fcd393fd2429fe1e4f88506a46d",
-        "afterSha256": "8692559bc0a4855820824e96d3c41a7f9fd0cdfc928c133589fc813509c2aecf"
-      },
-      {
-        "path": "telegram-access/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "5be655e39d729033a1d69be5b911c9cfbad017a4d1460b5b1c95df189b5a8a89"
-      },
-      {
-        "path": "telegram-access/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ca373509c8bc4f1337902c8a11905aff0109309d2576643a3da6c5e0715201ee"
-      },
-      {
-        "path": "telegram-access/scripts/revision-tools.cjs",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "a64ce5fda2548f624110aa677b55495b39c0787ab81b6705d08e19e203bb7750"
+        "beforeSha256": "8692559bc0a4855820824e96d3c41a7f9fd0cdfc928c133589fc813509c2aecf",
+        "afterSha256": "df5d3a5a952d311ed0b319a91346be780b575d38626c694c19ac62cdb2b5893b"
       }
     ],
-    "sha256": "5792b811ab45ffd2235516b310249db5eb86ff156cf8388fd602a308cf0c03c9",
-    "bytes": 10867,
-    "fileCount": 8
+    "sha256": "cc757e394c5f1ddd2228b1c2bef4e6ff3f2e230f7f73705da2274459ebc032e9",
+    "bytes": 16682,
+    "fileCount": 11
   },
   "telegram-configure": {
     "schemaVersion": 1,
     "id": "telegram-configure",
     "code": "DD-132",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Ambiente e plugin Claude Code/Cowork compatíveis; a importação no Codex não instala o runtime",
@@ -8379,47 +8059,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "e66feefadb700967c18ad780a9597489fe526875bfdfc4c576483147a3fed1c8",
-    "baselineSourceSha256": "1bb834ccaf5f64d0190d6ee4cf9627fbf64d35bd2b6fd4d9b6fedc021293ac4a",
-    "sourceSha256": "5a6bb3c7e7987cf7ae33889edbee356bc36084dc95da5da88464b87f2c57c9fc",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "b1c35a893a3d5c57daf318977cb78a53ebb0f33cf81a77269105ff6553af48fc",
+    "baselineSourceSha256": "5a6bb3c7e7987cf7ae33889edbee356bc36084dc95da5da88464b87f2c57c9fc",
+    "sourceSha256": "f2af76f1c5f04d48c7cc080437b35dcdf98b59deee2f45d65ec0f3bca1faa2a9",
     "patchSetSha256": "99a0191319d62ef31878c0c342349853d757185ab839c37a82ba7ac81ab63df3",
     "sourcePolicy": "entry-replaced-original-retained-in-baseline",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "ae31a95def7834c0781668d99775f769f9466622d38770e1f51593d1e805d613",
+        "afterSha256": "2eb62fde7fa883900e862506c3b3309ee46902c1685bbb98272d1b20092dc4d6"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "4d582e308d626a4f94a9174336fca4bc24eda6b218cf156f9ed250f076f3594e"
+      },
+      {
+        "path": "telegram-configure/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "ef2793fb12da5d92a9e68315ed38937f3162e9d99aa1183df23d6f1d962b166e"
+      },
+      {
+        "path": "telegram-configure/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "dfd016a63459229ceb791be757c3bede084fb22303c36b61342db1b8f58cc450"
+      },
+      {
         "path": "telegram-configure/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "1bb834ccaf5f64d0190d6ee4cf9627fbf64d35bd2b6fd4d9b6fedc021293ac4a",
-        "afterSha256": "5a6bb3c7e7987cf7ae33889edbee356bc36084dc95da5da88464b87f2c57c9fc"
-      },
-      {
-        "path": "telegram-configure/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "e7830daaefe57fbb36a17819ccf3e317433906a824a7312ddfd6a0143d258a50"
-      },
-      {
-        "path": "telegram-configure/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "85078e537b93db8f4fcc5c766886a2d7956bc5f164e4143c8aa22fa59f8cccd2"
+        "beforeSha256": "5a6bb3c7e7987cf7ae33889edbee356bc36084dc95da5da88464b87f2c57c9fc",
+        "afterSha256": "f2af76f1c5f04d48c7cc080437b35dcdf98b59deee2f45d65ec0f3bca1faa2a9"
       }
     ],
-    "sha256": "b1c35a893a3d5c57daf318977cb78a53ebb0f33cf81a77269105ff6553af48fc",
-    "bytes": 5985,
-    "fileCount": 7
+    "sha256": "8c9a8b3a5b79b284dee6ee2b150bbf69746b1126c2ab3924a39f9819171ca3b7",
+    "bytes": 11857,
+    "fileCount": 10
   },
   "triage-nda": {
     "schemaVersion": 1,
     "id": "triage-nda",
     "code": "DD-133",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -8432,53 +8126,61 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "cd2b4619cc11080e83ed422637d478f6d3fe5178143a7fea1c436ac02cdeb929",
-    "baselineSourceSha256": "767a8f6759268e003ee882af8dfb56579aca2121b9dc49a2c65c4e77de93f768",
-    "sourceSha256": "a3bebaa30e640c9cdea29b907e25a4ebdabcba466b9fad840f8e26e29c28cb0c",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "1f9ab23c8acbc8a77f291c13ad34537e48cbb3167b4c685490f0a8685798248f",
+    "baselineSourceSha256": "a3bebaa30e640c9cdea29b907e25a4ebdabcba466b9fad840f8e26e29c28cb0c",
+    "sourceSha256": "979a4974cbc8cfa0158bfeb5be644a0ccff23f2b68109c2ca39b4e8169f2254b",
     "patchSetSha256": "0c8422ca737f322f42cd9012077be1794df7cc5fadc29694720e1fbf5955aff3",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "9090bc71b2cc96ba5a7cf7c58f5c2712e24a9ae24045164510e96a9dea788bc1",
+        "afterSha256": "54e97a350045546dd180a984b862647885cb5f363262fd5035cd35a391c10028"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "0b59b1ad4a710caa3ad063f09e54dfa01100efbe27054346088a6e744ff6e502"
+      },
+      {
+        "path": "triage-nda/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "bb9cbfe5ba7c6e2da1b778ad6bf644c2f674c2fac222d871e26666764c9c6459"
+      },
+      {
+        "path": "triage-nda/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "triage-nda/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "767a8f6759268e003ee882af8dfb56579aca2121b9dc49a2c65c4e77de93f768",
-        "afterSha256": "a3bebaa30e640c9cdea29b907e25a4ebdabcba466b9fad840f8e26e29c28cb0c"
-      },
-      {
-        "path": "triage-nda/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "fa5aba96815da476e6be3622bf6c71851ac46a049a64428b17a3b3c831bf466f"
-      },
-      {
-        "path": "triage-nda/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "c00a8152a0529effa5165537173b5248be1399d657cef877fd411a5f2b4f3dda"
-      },
-      {
-        "path": "triage-nda/CONNECTORS.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d2259870c53c05017ec8ec917eb1a659674e15eb1e17a7a7210bab468efafc8a"
+        "beforeSha256": "a3bebaa30e640c9cdea29b907e25a4ebdabcba466b9fad840f8e26e29c28cb0c",
+        "afterSha256": "979a4974cbc8cfa0158bfeb5be644a0ccff23f2b68109c2ca39b4e8169f2254b"
       }
     ],
-    "sha256": "1f9ab23c8acbc8a77f291c13ad34537e48cbb3167b4c685490f0a8685798248f",
-    "bytes": 12274,
-    "fileCount": 8
+    "sha256": "a0379a075fa52518f1f70bae2d32d570b19aa5c6d01b9dc9d027ad8dfbe2b0c4",
+    "bytes": 18059,
+    "fileCount": 11
   },
   "vendor-check": {
     "schemaVersion": 1,
     "id": "vendor-check",
     "code": "DD-134",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [],
     "requirements": [
       "Documentos e contexto fornecidos pela empresa",
@@ -8492,41 +8194,47 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "c6fac3b91c8310eb6da0d12d7206d264892bf69660cad5991faddd9c708c55ee",
-    "baselineSourceSha256": "38be57a5e9e959874d2cb78e8493211664bc452e6225cb5bdbb8b12e6f444d2e",
-    "sourceSha256": "92ecf85ff54e376e1d93d01a7f83fe908d98fc9304bc061ea024ff08e868287f",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "8627d115d5353ff6ef65dc9735767548f7e2fe481449c3f4117d20b911623e86",
+    "baselineSourceSha256": "92ecf85ff54e376e1d93d01a7f83fe908d98fc9304bc061ea024ff08e868287f",
+    "sourceSha256": "9bb0205cb2ff90f847a8ce8940ba0a02e339653bfb3aa8149327ce001bac5f23",
     "patchSetSha256": "261b2b1b933653adb3ec8ebcfcf821a2dabb00bfa7ddf3afccfc47a4ae7ce7b2",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "edf47a7a18d30969b52f21bb66875f2ffeb90d5d8f768903dc917060c59bf18a",
+        "afterSha256": "30138a8765df5ee826a8c3f9775c0bf8a5368a14ede1d12200411db46460417c"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "290889982a7e746a139863cc2f799cbb5c951e3802f584a3f302ba97601b76ca"
+      },
+      {
+        "path": "vendor-check/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "82e21804007deaadd3a168cd12ba15123498c3ccb3134bdfd865a3c20f95ced1"
+      },
+      {
+        "path": "vendor-check/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "vendor-check/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "38be57a5e9e959874d2cb78e8493211664bc452e6225cb5bdbb8b12e6f444d2e",
-        "afterSha256": "92ecf85ff54e376e1d93d01a7f83fe908d98fc9304bc061ea024ff08e868287f"
-      },
-      {
-        "path": "vendor-check/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "7853f5318e7fb2456eda5d81f0deb859a178e26307541c8e7254ee760d80985e"
-      },
-      {
-        "path": "vendor-check/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "73c80e8da78d1673c7fbe7afa3f506400155c22bb3226bc91400023a5ab8e8f8"
-      },
-      {
-        "path": "vendor-check/CONNECTORS.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "d2259870c53c05017ec8ec917eb1a659674e15eb1e17a7a7210bab468efafc8a"
+        "beforeSha256": "92ecf85ff54e376e1d93d01a7f83fe908d98fc9304bc061ea024ff08e868287f",
+        "afterSha256": "9bb0205cb2ff90f847a8ce8940ba0a02e339653bfb3aa8149327ce001bac5f23"
       }
     ],
-    "sha256": "8627d115d5353ff6ef65dc9735767548f7e2fe481449c3f4117d20b911623e86",
-    "bytes": 9443,
-    "fileCount": 8
+    "sha256": "d35c3c9a89a3da2b130c86cea184b04f0b438227ceea86522a11570dd0835ba4",
+    "bytes": 15240,
+    "fileCount": 11
   },
   "video-interaction-mapper": {
     "schemaVersion": 1,
@@ -8590,12 +8298,12 @@ module.exports = {
     "schemaVersion": 1,
     "id": "video-programatico-reels",
     "code": "DD-136",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
+    "license": "Termos DriveData",
     "licenseFiles": [],
     "tools": [
       "Python",
@@ -8613,47 +8321,43 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "c0ad815d27e133dd23660b879c3cb7b2aa3301d7d7c22c5445c0703d097e4a5e",
-    "baselineSourceSha256": "924559aaec77092dbfda8a520edf8a1eac69c7c60eb9997e0a1dc1154da549f9",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "d4932fd2a98ecaf556e6044aaab1d6dca29d5fcad8868adc7cb27cfe5c03eea0",
+    "baselineSourceSha256": "4861a0b1502caa07ff5b29fcddae3171b161b266617077da9154aef486f80477",
     "sourceSha256": "4861a0b1502caa07ff5b29fcddae3171b161b266617077da9154aef486f80477",
     "patchSetSha256": "f9e092065cc852a72e0b0e7d6212797e5badfc3ebcd3b2e77347ba8b367db70f",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
-        "path": "video-programatico-reels/SKILL.md",
+        "path": "COMO-USAR.md",
         "kind": "modified",
-        "beforeSha256": "924559aaec77092dbfda8a520edf8a1eac69c7c60eb9997e0a1dc1154da549f9",
-        "afterSha256": "4861a0b1502caa07ff5b29fcddae3171b161b266617077da9154aef486f80477"
+        "beforeSha256": "e58f3a8fccbee47e686354df641a83e80c861103fc9d67dfd27689a4129dd182",
+        "afterSha256": "ec16d7f35609d8b8d80718ff5bf95f7df79523549db5094a3be5dd722631a33d"
       },
       {
-        "path": "video-programatico-reels/revision-contract.md",
+        "path": "LICENCA-DRIVEDATA.txt",
         "kind": "added",
         "beforeSha256": null,
-        "afterSha256": "3bd4b485253c2799764ed3e9c820599e550184f16c190d2e6c92f4994b08e892"
-      },
-      {
-        "path": "video-programatico-reels/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "4027ffe58c2cd8a5b4f803ebeb3e73ebe69f23ee4d4148fea16c84106d89b41a"
+        "afterSha256": "87a2047088dc4d19cbd4af820504313f2c6cb448dc4d969ec13c4cf7bb63204f"
       }
     ],
-    "sha256": "d4932fd2a98ecaf556e6044aaab1d6dca29d5fcad8868adc7cb27cfe5c03eea0",
-    "bytes": 102088,
-    "fileCount": 37
+    "sha256": "13e25f53c1cca434ad980f5e3c62eddb11f1c3b078acfd660df7d940d99261aa",
+    "bytes": 102573,
+    "fileCount": 38
   },
   "writing-hookify-rules": {
     "schemaVersion": 1,
     "id": "writing-hookify-rules",
     "code": "DD-137",
-    "version": "1.2.0",
-    "date": "2026-11-06",
+    "version": "1.2.1",
+    "date": "2026-11-08",
     "format": "SKILL.md",
     "review": "structure-checked",
     "executionTested": false,
-    "license": "Licença de distribuição não identificada",
-    "licenseFiles": [],
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
     "tools": [
       "Python"
     ],
@@ -8667,34 +8371,46 @@ module.exports = {
     "example": null,
     "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "fde64c26f188c1d421a1b4b8c15762a59dd3a9d5361b951b11a5670b6a442227",
-    "baselineSourceSha256": "2994b5d3152243b1a1cbf8358e9d7c18f290f31a23920647f31053c3efdf990d",
-    "sourceSha256": "814fe185ce549bf8b1e6111ab36fbeba5764b27d87702a7a5705c769b6b2ecc4",
+    "baselineVersion": "1.2.0",
+    "baselinePackageSha256": "60dd5ebd597f8a3a032e572c7b8d4df84fc95deea10251535b55b0f193883916",
+    "baselineSourceSha256": "814fe185ce549bf8b1e6111ab36fbeba5764b27d87702a7a5705c769b6b2ecc4",
+    "sourceSha256": "62b00774dedf2691cd0b44c28ea08b02472ca61232e927aade29ba2394307b33",
     "patchSetSha256": "76512d8219da7df984a1b73abd0c38d2efb3d34627f0b8cd7a95ecaa235b6469",
     "sourcePolicy": "specific-amendments",
     "changes": [
       {
+        "path": "COMO-USAR.md",
+        "kind": "modified",
+        "beforeSha256": "6d5ec82126f237101093b1a494cad15643a2da8cf0ba6b5ee281e8663fe6865b",
+        "afterSha256": "69c2966798a8d150dbf9aba5b97029cd7a27cf09c8a295f57bbdfcf4fc8d7cb4"
+      },
+      {
+        "path": "LICENCA-DRIVEDATA.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "c86c733ade914e2446210e712269bd17baca3ceb732113e8773f4865859157f2"
+      },
+      {
+        "path": "writing-hookify-rules/ALTERACOES-E-AUTORIA.md",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "f18edd7d9ec9a42bea4001d5c9c56c6efc28ce7393ab45535d049f7846dad130"
+      },
+      {
+        "path": "writing-hookify-rules/LICENSE.txt",
+        "kind": "added",
+        "beforeSha256": null,
+        "afterSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
         "path": "writing-hookify-rules/SKILL.md",
         "kind": "modified",
-        "beforeSha256": "2994b5d3152243b1a1cbf8358e9d7c18f290f31a23920647f31053c3efdf990d",
-        "afterSha256": "814fe185ce549bf8b1e6111ab36fbeba5764b27d87702a7a5705c769b6b2ecc4"
-      },
-      {
-        "path": "writing-hookify-rules/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "967ebd7aad4b9fe414ce05b8e26e982410907cdba826ef05c8c2afd62e71d1e3"
-      },
-      {
-        "path": "writing-hookify-rules/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "8c376697ad687295726165eddd09a8cc24ab6f052fc82203619a76532dea3f5d"
+        "beforeSha256": "814fe185ce549bf8b1e6111ab36fbeba5764b27d87702a7a5705c769b6b2ecc4",
+        "afterSha256": "62b00774dedf2691cd0b44c28ea08b02472ca61232e927aade29ba2394307b33"
       }
     ],
-    "sha256": "60dd5ebd597f8a3a032e572c7b8d4df84fc95deea10251535b55b0f193883916",
-    "bytes": 9219,
-    "fileCount": 7
+    "sha256": "260c3b475792fdf7a4b5fcead8c75b6d96cd77e9d176153d2855319ebbabb51a",
+    "bytes": 15124,
+    "fileCount": 10
   }
 };

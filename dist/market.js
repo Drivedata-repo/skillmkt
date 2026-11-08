@@ -94,13 +94,19 @@ function save() {
   ]).size;
   return ok;
 }
+function deckLoginPath() {
+  try {
+    if (localStorage.getItem("deck-account") === "customer") return "/acesso";
+  } catch {}
+  return "/login";
+}
 async function api(url, options) {
   const r = await fetch(DeckI18n.url(url), {
     ...options,
     headers: DeckI18n.headers(options?.headers),
   });
   if (r.status === 401) {
-    location.assign(DeckI18n.url("/login"));
+    location.assign(DeckI18n.url(deckLoginPath()));
     throw new Error("Sua sessão expirou. Entre novamente.");
   }
   const data = await r.json();
@@ -894,7 +900,7 @@ async function download(id, button) {
       },
     );
     if (r.status === 401) {
-      location.assign(DeckI18n.url("/login"));
+      location.assign(DeckI18n.url(deckLoginPath()));
       return;
     }
     if (!r.ok) {
@@ -1659,7 +1665,7 @@ $("#logout").onclick = async () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ action: "logout" }),
     });
-    location.assign(DeckI18n.url("/login"));
+    location.assign(DeckI18n.url(deckLoginPath()));
   } catch {
     toast("Não foi possível sair. Tente novamente.");
   }

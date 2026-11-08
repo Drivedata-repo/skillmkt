@@ -12,6 +12,10 @@
   "rewrites": [
     { "source": "/app", "destination": "/api/app" },
     { "source": "/login", "destination": "/login.html" },
+    { "source": "/acesso", "destination": "/acesso.html" },
+    { "source": "/oferta", "destination": "/oferta.html" },
+    { "source": "/api/webhooks/hotmart", "destination": "/api/commerce?route=webhook" },
+    { "source": "/api/account/:route", "destination": "/api/commerce?route=:route" },
     { "source": "/privacidade", "destination": "/privacy.html" }
   ],
   "headers": [
@@ -31,6 +35,16 @@
         {
           "key": "Content-Security-Policy",
           "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'"
+        }
+      ]
+    },
+    {
+      "source": "/oferta",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' https: blob:; font-src 'self'; connect-src 'self' https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://pay.hotmart.com"
         }
       ]
     }

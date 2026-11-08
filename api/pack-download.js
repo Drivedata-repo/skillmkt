@@ -1,4 +1,4 @@
-const { requireSession } = require("../lib/auth.cjs");
+const { requireAccess, requireSkills } = require("../lib/access.cjs");
 const { send, failure, initializeLocale } = require("../lib/http.cjs");
 const { db } = require("../lib/db.cjs");
 const { limit } = require("../lib/limit.cjs");
@@ -12,7 +12,7 @@ const {
 module.exports = async (req, res) => {
   const locale = initializeLocale(req, res);
   try {
-    requireSession(req);
+    const access = await requireAccess(req);
     if (req.method !== "GET")
       return send(res, 405, { error: "Método não permitido." });
     if (!validatePackQuery(req, true))
@@ -21,6 +21,7 @@ module.exports = async (req, res) => {
       pack = getPack(id, locale);
     if (!pack)
       return send(res, 404, { error: packMessage("notFound", locale) });
+    requireSkills(access, pack.steps.map((step) => step.skillId));
     await limit(req, "demo-pack-download", 30);
     const archives = await loadPackArchives(pack, (sql, values) =>
       db().query(sql, values),

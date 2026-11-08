@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#070c13" />
+    <title>DriveData Deck: resultado que você consegue conferir</title>
+    <meta
+      name="description"
+      content="Veja por que a IA erra números com tanta confiança e como conferir o resultado antes de entregar."
+    />
+    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/oferta.css" />
+    <script src="/oferta-config.js" defer></script>
+    <script src="/oferta.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <h1>A IA te entregou um número errado com <em>toda a confiança?</em></h1>
+      <p class="lead">Aperte o play e veja por que isso acontece e como conferir o resultado antes de entregar.</p>
+
+      <section class="player" id="player" aria-label="Vídeo de apresentação">
+        <video id="video" playsinline preload="none"></video>
+        <button class="cover" id="cover" type="button" aria-label="Reproduzir o vídeo">
+          <span class="cover-title">O número<br />estava <strong>errado.</strong></span>
+          <span class="cover-sub">E ninguém avisou você.</span>
+          <svg class="arrow" viewBox="0 0 220 120" aria-hidden="true">
+            <path d="M6 22C58 4 132 12 176 82" />
+            <path d="M148 76l30 10 6-32" />
+          </svg>
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" /></svg></span>
+        </button>
+        <button class="toggle" id="toggle" type="button" aria-label="Pausar o vídeo" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path id="toggle-icon" d="M6 4h4v16H6zM14 4h4v16h-4z" /></svg>
+        </button>
+      </section>
+      <p class="status" id="status" role="status"></p>
+
+      <section class="proofs" id="proofs" aria-label="O que dizem" hidden></section>
+
+      <section class="offer" id="offer" aria-labelledby="offer-title" hidden>
+        <h2 id="offer-title"></h2>
+        <ol class="cards" id="cards"></ol>
+        <div class="buy">
+          <p class="price" id="price"></p>
+          <a class="cta" id="cta" rel="noopener">Quero meu deck</a>
+          <p class="note" id="note"></p>
+        </div>
+        <dl class="faq" id="faq"></dl>
+      </section>
+      <noscript><p class="status">Ative o JavaScript para assistir ao vídeo.</p></noscript>
+    </main>
+    <footer class="foot">
+      <span>DriveData</span>
+      <a href="/privacidade">Privacidade</a>
+    </footer>
+  </body>
+</html>

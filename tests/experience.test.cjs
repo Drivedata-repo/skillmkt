@@ -52,7 +52,7 @@ test("all ten reference examples preserve the declared facts", () => {
 test("catalog metadata is complete and does not claim untested execution or sales clearance", () => {
   assert.equal(skills.length, 137);
   for (const s of skills) {
-    assert.equal(s.version, "1.2.0");
+    assert.ok(["1.2.0", "1.2.1"].includes(s.version));
     assert.equal(s.release.review, "structure-checked");
     assert.equal(s.release.executionTested, false);
     assert.equal(s.release.commercialCleared, false);
@@ -213,10 +213,14 @@ test(
     const pool = db();
     try {
       const releases = await pool.query(
-        "SELECT skill_id,version,archive,sha256 FROM skillmkt.package_releases WHERE version='1.2.0'",
+        "SELECT skill_id,version,archive,sha256 FROM skillmkt.package_releases WHERE version IN ('1.2.0','1.2.1')",
       );
-      assert.equal(releases.rowCount, 137);
-      for (const row of releases.rows) {
+      const current = releases.rows.filter(
+        (row) =>
+          row.version === skills.find((s) => s.id === row.skill_id).release.version,
+      );
+      assert.equal(current.length, 137);
+      for (const row of current) {
         const s = skills.find((s) => s.id === row.skill_id);
         assert.equal(row.sha256, s.release.sha256);
         assert.equal(
@@ -225,7 +229,7 @@ test(
         );
         const files = unzipSync(row.archive),
           manifest = JSON.parse(Buffer.from(files["MANIFEST.json"]));
-        assert.equal(manifest.version, "1.2.0");
+        assert.equal(manifest.version, row.version);
         assert.ok(files["COMO-USAR.md"]);
         const hashes = JSON.parse(Buffer.from(files["INTEGRIDADE.json"]));
         for (const [name, digest] of Object.entries(hashes))

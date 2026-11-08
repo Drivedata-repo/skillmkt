@@ -1,4 +1,4 @@
-const { requireSession } = require("../lib/auth.cjs");
+const { requireAccess, requireSkill } = require("../lib/access.cjs");
 const { send, failure, initializeLocale } = require("../lib/http.cjs");
 const { db } = require("../lib/db.cjs");
 const { limit } = require("../lib/limit.cjs");
@@ -7,12 +7,13 @@ const releases = require("../data/releases.cjs");
 module.exports = async (req, res) => {
   initializeLocale(req, res);
   try {
-    requireSession(req);
+    const access = await requireAccess(req);
     if (req.method !== "GET")
       return send(res, 405, { error: "Método não permitido." });
     const id = new URL(req.url, "https://local.invalid").searchParams.get("id");
     const skill = skills.find((x) => x.id === id);
     if (!skill) return send(res, 404, { error: "Skill não encontrada." });
+    requireSkill(access, id);
     await limit(req, "demo-download", 150);
     const r = await db().query(
       "SELECT archive,sha256 FROM skillmkt.package_releases WHERE skill_id=$1 AND version=$2",

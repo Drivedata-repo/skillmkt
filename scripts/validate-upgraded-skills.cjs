@@ -22,7 +22,7 @@ function validateAll(){
   const releases=require('../data/releases.cjs'), failures=[], results=[];
   assert.deepEqual(specs.map(s=>s.id),skills.map(s=>s.id));
   for(const skill of skills){
-    const id=skill.id,meta=releases[id],baseline=fs.readFileSync(path.join(ROOT,'.local/releases/1.1.0',id+'.zip'));
+    const id=skill.id,meta=JSON.parse(fs.readFileSync(path.join(ROOT,'.local/releases/1.2.0',id+'.json'),'utf8')),baseline=fs.readFileSync(path.join(ROOT,'.local/releases/1.1.0',id+'.zip'));
     assert.equal(digest(baseline),audit.find(r=>r.id===id).source.packageSha256,'original archive preserved');
     const bytes=fs.readFileSync(path.join(ROOT,'.local/releases/1.2.0',id+'.zip'));
     assert.equal(digest(bytes),meta.sha256,id+' package hash');assert.equal(bytes.length,meta.bytes);assert.equal(meta.version,'1.2.0');

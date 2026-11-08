@@ -1,0 +1,5 @@
+# A CLI da Vercel não respeita o .gitignore. Pacotes privados e segredos não sobem.
+.local
+.env
+.env.*
+.claude

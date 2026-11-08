@@ -20,6 +20,13 @@ if (new Set(identities.map(i => i.id)).size !== 137 || new Set(identities.map(i 
 for (const file of [
   "index.html",
   "login.html",
+  "acesso.html",
+  "acesso.css",
+  "acesso.js",
+  "oferta.html",
+  "oferta.css",
+  "oferta.js",
+  "oferta-config.js",
   "landing.js",
   "landing.css",
   "landing-motion.css",
