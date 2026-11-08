@@ -141,6 +141,7 @@ const rules = [
     null,
   ],
   [/^project-artifact$/, ["artifact"], "claude"],
+  [/^orquestrador-de-modelos$/, ["terminal"], "claude"],
   [/^magnitude$/, ["magnitude", "terminal"], null],
   [/^(m5-onboard|cardputer-buddy)$/, ["usb", "python", "terminal"], null],
   [/^video-interaction-mapper$/, ["figma", "python", "ffmpeg"], null],

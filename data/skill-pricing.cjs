@@ -140,6 +140,7 @@ const rows = [
   ["video-interaction-mapper", "3343", "Transforma gravação em storyboard com frames, tempos e incerteza dos gatilhos no Figma."],
   ["video-programatico-reels", "4544", "Produz vídeo com cenas, áudio e legendas, incluindo prévia e verificação técnica da mídia."],
   ["writing-hookify-rules", "3234", "Cria regras por evento com testes de regex, falsos positivos e suporte real ao bloqueio."],
+  ["orquestrador-de-modelos", "3334", "Classifica pedidos por regras locais e orienta a delegação a agentes, sem chamar IA nem guardar o texto digitado."],
 ];
 const dimensions = ["depth", "scope", "verification", "reuse"];
 const byId = new Map(rows.map(row => [row[0], row]));

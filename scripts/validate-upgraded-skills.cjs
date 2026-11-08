@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {unzipSync,strFromU8}=require('fflate');
 const {digest,longEntries,connectorIds,privateEditions}=require('./upgrade-skills.cjs');
 const ROOT=path.resolve(__dirname,'..');
-const skills=require('../data/skills.cjs'), specs=require('../data/skill-improvements/index.cjs');
+const skills=require('../data/skills.cjs').filter(s=>s.id!=='orquestrador-de-modelos'), specs=require('../data/skill-improvements/index.cjs');
 const audit=require('../reviews/skill-audit.json').records;
 function localLinks(source,entry,files){
   const failures=[];

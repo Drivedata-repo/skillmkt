@@ -2856,5 +2856,26 @@ const SKILLS = [
     offers: [],
     variantOf: null,
   },
+  {
+    id: "orquestrador-de-modelos",
+    code: "DD-138",
+    title: "Modelo certo para cada tarefa no Claude Code",
+    category: "Automação & IA",
+    audience: "technical",
+    role: "platform-specific",
+    pain: "A equipe gasta modelo caro em tarefas simples e perde o controle do consumo.",
+    deliverables: [
+      "Classificação automática de cada pedido por complexidade",
+      "Indicação de modelo e esforço por tarefa",
+      "Agentes auxiliares de busca, execução e arquitetura",
+    ],
+    dependencies: [
+      "Claude Code com suporte a hooks e agentes",
+      "Node.js disponível na máquina",
+      "A troca do modelo principal continua manual",
+    ],
+    offers: [],
+    variantOf: null,
+  },
 ];
 if (typeof module !== "undefined") module.exports = SKILLS;

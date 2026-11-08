@@ -7,7 +7,7 @@ const base = require("../data/skills.cjs");
 const art = require("../dist/skill-art.js");
 
 test("all 137 skills have an individual composition with valid objects", () => {
-  assert.equal(art.scenes.length, 137);
+  assert.equal(art.scenes.length, 138);
   assert.deepEqual(
     art.scenes.map((s) => s.id).sort(),
     base.map((s) => s.id).sort(),
@@ -44,8 +44,8 @@ test("all 137 skills have an individual composition with valid objects", () => {
         .join("|"),
     );
   }
-  assert.equal(bodies.size, 137);
-  assert.equal(objectSets.size, 137);
+  assert.equal(bodies.size, 138);
+  assert.equal(objectSets.size, 138);
 });
 
 test("SVG artwork is bounded, deterministic and contains no active or external content", () => {

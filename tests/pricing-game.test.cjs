@@ -5,8 +5,8 @@ const {priceFor,getSkillPricing,getCombo,getCombos}=require("../lib/pricing.cjs"
 const review=require("../data/pricing-review.json"),{localizeCatalog}=require("../lib/catalog-i18n.cjs"),catalog=require("../lib/catalog.cjs");
 const {getCardGame}=require("../lib/card-game.cjs");
 test("all 137 editorial prices are bounded, tied to the current source, and never enable billing",()=>{
-  assert.equal(review.records.length,137);assert.equal(Object.keys(policy.assessments).length,137);
-  assert.equal(new Set(review.records.map(r=>r.id)).size,137);
+  assert.equal(review.records.length,138);assert.equal(Object.keys(policy.assessments).length,138);
+  assert.equal(new Set(review.records.map(r=>r.id)).size,138);
   const values=[];
   for(const s of base){const p=getSkillPricing(s.id),record=review.records.find(r=>r.id===s.id),release=releases[s.id];
     assert.ok(record,s.id);assert.equal(record.packageSha256,release.sha256,s.id);assert.equal(record.sourceSha256,release.sourceSha256,s.id);

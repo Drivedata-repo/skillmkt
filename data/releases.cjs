@@ -8412,5 +8412,34 @@ module.exports = {
     "sha256": "260c3b475792fdf7a4b5fcead8c75b6d96cd77e9d176153d2855319ebbabb51a",
     "bytes": 15124,
     "fileCount": 10
+  },
+  "orquestrador-de-modelos": {
+    "schemaVersion": 1,
+    "id": "orquestrador-de-modelos",
+    "code": "DD-138",
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "executionTested": false,
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "tools": [],
+    "requirements": [
+      "Claude Code com suporte a hooks e agentes",
+      "Node.js disponível na máquina",
+      "A troca do modelo principal continua manual"
+    ],
+    "normalizedFiles": 0,
+    "commercialCleared": false,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "distribution": "authenticated-demo",
+    "sourceSha256": "f92934b2418fe3788da8ad6f66cd822c867cebdcec4934de1dbfdb46f91e5080",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "03c1078f180e40125d2806e277b5f73f3d554306167a3900b57ac0d5546fce2b",
+    "bytes": 10827,
+    "fileCount": 10
   }
 };

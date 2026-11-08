@@ -3238,5 +3238,77 @@
       ],
       "boundary": "Requiere Hookify en Claude Code. Las expresiones usan la sintaxis del plugin; las reglas no sustituyen permisos, aislamiento ni controles del sistema operativo."
     }
+  },
+  {
+    "id": "orquestrador-de-modelos",
+    "pt": {
+      "alias": "Maestro de Modelos",
+      "tagline": "Cada tarefa no modelo que ela realmente precisa.",
+      "story": "No estúdio fictício de Lia, todo pedido ia para o modelo mais caro, até a busca por um arquivo. Maestro de Modelos lê cada mensagem antes do trabalho e separa consulta, rotina, impacto e caso crítico. A sugestão aparece em uma frase, e a parte pesada vai para um auxiliar próprio. Na história, economia não é usar o modelo mais barato, mas concluir a tarefa sem retrabalho.",
+      "purpose": "Classifica cada pedido no Claude Code por regras locais, sem chamar IA, e indica o modelo e o esforço adequados. Orienta a delegação a agentes auxiliares de busca, execução e arquitetura e registra apenas data, nível e se o aviso foi exibido.",
+      "useCases": [
+        "Reduzir o consumo em sessões longas sem perder qualidade nas decisões difíceis.",
+        "Definir quando delegar buscas e planos prontos a modelos mais baratos."
+      ],
+      "scenario": {
+        "title": "Busca barata, decisão cara",
+        "context": "Cenário fictício: [PROJETO] recebe [PEDIDO_SIMPLES] e [PEDIDO_CRITICO] na mesma sessão do Claude Code.",
+        "request": "Use esta skill para classificar [PEDIDO_SIMPLES] e [PEDIDO_CRITICO]. Indique modelo e esforço de cada um, diga o que pode ir para um agente auxiliar e explique o critério aplicado. Não troque o modelo da sessão por conta própria e não registre o texto dos pedidos.",
+        "output": "Classificação por pedido com modelo, esforço, delegação sugerida e critério.",
+        "check": "Os dois pedidos devem receber níveis coerentes com o critério, e o log não pode conter o texto digitado."
+      },
+      "steps": [
+        "Instale a skill, os agentes e o hook.",
+        "Classifique pedidos de exemplo.",
+        "Ajuste regras e modelos à sua rotina."
+      ],
+      "boundary": "Exige Claude Code com hooks. A classificação usa regras e pode errar, e a troca do modelo principal continua sendo feita pela pessoa."
+    },
+    "en": {
+      "alias": "Model Conductor",
+      "tagline": "Every task on the model it actually needs.",
+      "story": "In Lia's fictional studio, every request went to the most expensive model, even a file search. Model Conductor reads each message before the work starts and separates lookup, routine, impact and critical cases. The suggestion appears in one sentence, and the heavy part goes to a dedicated helper. In this story, saving is not using the cheapest model, but finishing the task without rework.",
+      "purpose": "Classifies each Claude Code request with local rules, without calling AI, and indicates the right model and effort. It guides delegation to search, execution and architecture helper agents and records only the date, the level and whether the notice was shown.",
+      "useCases": [
+        "Reduce usage in long sessions without losing quality on hard decisions.",
+        "Decide when to delegate searches and ready-made plans to cheaper models."
+      ],
+      "scenario": {
+        "title": "Cheap search, costly decision",
+        "context": "Fictional scenario: [PROJECT] receives [SIMPLE_REQUEST] and [CRITICAL_REQUEST] in the same Claude Code session.",
+        "request": "Use this skill to classify [SIMPLE_REQUEST] and [CRITICAL_REQUEST]. State the model and effort for each, say what can go to a helper agent and explain the criterion applied. Do not change the session model on your own and do not record the request text.",
+        "output": "Per-request classification with model, effort, suggested delegation and criterion.",
+        "check": "Both requests must receive levels consistent with the criterion, and the log must not contain the typed text."
+      },
+      "steps": [
+        "Install the skill, agents and hook.",
+        "Classify sample requests.",
+        "Adjust rules and models to your routine."
+      ],
+      "boundary": "Requires Claude Code with hooks. Classification uses rules and can be wrong, and changing the main model remains a manual step."
+    },
+    "es": {
+      "alias": "Director de Modelos",
+      "tagline": "Cada tarea en el modelo que realmente necesita.",
+      "story": "En el estudio ficticio de Lia, cada pedido iba al modelo más caro, incluso la búsqueda de un archivo. Director de Modelos lee cada mensaje antes del trabajo y separa consulta, rutina, impacto y caso crítico. La sugerencia aparece en una frase, y la parte pesada pasa a un auxiliar propio. En esta historia, ahorrar no es usar el modelo más barato, sino terminar la tarea sin rehacerla.",
+      "purpose": "Clasifica cada pedido en Claude Code con reglas locales, sin llamar a la IA, e indica el modelo y el esfuerzo adecuados. Orienta la delegación a agentes auxiliares de búsqueda, ejecución y arquitectura y registra solo la fecha, el nivel y si se mostró el aviso.",
+      "useCases": [
+        "Reducir el consumo en sesiones largas sin perder calidad en las decisiones difíciles.",
+        "Definir cuándo delegar búsquedas y planes listos a modelos más baratos."
+      ],
+      "scenario": {
+        "title": "Búsqueda barata, decisión cara",
+        "context": "Escenario ficticio: [PROYECTO] recibe [PEDIDO_SIMPLE] y [PEDIDO_CRITICO] en la misma sesión de Claude Code.",
+        "request": "Usa esta skill para clasificar [PEDIDO_SIMPLE] y [PEDIDO_CRITICO]. Indica el modelo y el esfuerzo de cada uno, di qué puede ir a un agente auxiliar y explica el criterio aplicado. No cambies el modelo de la sesión por tu cuenta y no registres el texto de los pedidos.",
+        "output": "Clasificación por pedido con modelo, esfuerzo, delegación sugerida y criterio.",
+        "check": "Ambos pedidos deben recibir niveles coherentes con el criterio, y el registro no puede contener el texto escrito."
+      },
+      "steps": [
+        "Instala la skill, los agentes y el hook.",
+        "Clasifica pedidos de ejemplo.",
+        "Ajusta reglas y modelos a tu rutina."
+      ],
+      "boundary": "Requiere Claude Code con hooks. La clasificación usa reglas y puede fallar, y el cambio del modelo principal sigue siendo manual."
+    }
   }
 ]

@@ -2605,6 +2605,25 @@
       "rationale": "Cria regras por evento com testes de regex, falsos positivos e suporte real ao bloqueio.",
       "assessmentType": "documentary",
       "executionVerified": false
+    },
+    {
+      "id": "orquestrador-de-modelos",
+      "code": "DD-138",
+      "version": "1.2.1",
+      "packageSha256": "03c1078f180e40125d2806e277b5f73f3d554306167a3900b57ac0d5546fce2b",
+      "sourceSha256": "f92934b2418fe3788da8ad6f66cd822c867cebdcec4934de1dbfdb46f91e5080",
+      "contractSha256": "f92934b2418fe3788da8ad6f66cd822c867cebdcec4934de1dbfdb46f91e5080",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Classifica pedidos por regras locais e orienta a delegação a agentes, sem chamar IA nem guardar o texto digitado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
     }
   ]
 }

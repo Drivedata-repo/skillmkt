@@ -1457,6 +1457,14 @@
       ["sliders", 132, 27, 0.44],
     ],
     [
+      "orquestrador-de-modelos",
+      "Regência de modelos por complexidade da tarefa",
+      "room",
+      ["metronome", 106, 58, 1.31],
+      ["sliders", 27, 127, 0.79],
+      ["chip", 233, 121, 0.68],
+    ],
+    [
       "marketing-de-conteudo-b2b",
       "Valor traduzido em uma mensagem verificável",
       "desk",

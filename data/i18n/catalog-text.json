@@ -3779,6 +3779,14 @@
     "Metrics checked against a sample provided by the client",
     "Indicadores comprobados con una muestra proporcionada por el cliente"
   ],
+  "Modelo certo para cada tarefa no Claude Code": ["The right model for each task in Claude Code", "El modelo correcto para cada tarea en Claude Code"],
+  "A equipe gasta modelo caro em tarefas simples e perde o controle do consumo.": ["The team spends expensive models on simple tasks and loses control of usage.", "El equipo gasta modelos caros en tareas simples y pierde el control del consumo."],
+  "Classificação automática de cada pedido por complexidade": ["Automatic classification of each request by complexity", "Clasificación automática de cada pedido por complejidad"],
+  "Indicação de modelo e esforço por tarefa": ["Model and effort recommendation per task", "Indicación de modelo y esfuerzo por tarea"],
+  "Agentes auxiliares de busca, execução e arquitetura": ["Search, execution and architecture helper agents", "Agentes auxiliares de búsqueda, ejecución y arquitectura"],
+  "Claude Code com suporte a hooks e agentes": ["Claude Code with hooks and agents support", "Claude Code con soporte de hooks y agentes"],
+  "Node.js disponível na máquina": ["Node.js available on the machine", "Node.js disponible en la máquina"],
+  "A troca do modelo principal continua manual": ["Changing the main model remains manual", "El cambio del modelo principal sigue siendo manual"],
   "Termos DriveData": [
     "DriveData terms",
     "Términos de DriveData"

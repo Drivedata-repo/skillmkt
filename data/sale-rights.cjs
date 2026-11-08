@@ -5,6 +5,7 @@
 
 // Sem marca de terceiro. Autoria declarada por João em 08/11/2026.
 const ownDeclared = [
+  "orquestrador-de-modelos",
   "ambiente-dev-windows",
   "automacao-documentos-office",
   "claude-bi-documentation",

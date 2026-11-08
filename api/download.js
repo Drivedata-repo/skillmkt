@@ -2,6 +2,7 @@ const { requireAccess, requireSkill } = require("../lib/access.cjs");
 const { send, failure, initializeLocale } = require("../lib/http.cjs");
 const { db } = require("../lib/db.cjs");
 const { limit } = require("../lib/limit.cjs");
+const { officialGuide } = require("../lib/official-guides.cjs");
 const skills = require("../data/skills.cjs");
 const releases = require("../data/releases.cjs");
 module.exports = async (req, res) => {
@@ -13,6 +14,10 @@ module.exports = async (req, res) => {
     const id = new URL(req.url, "https://local.invalid").searchParams.get("id");
     const skill = skills.find((x) => x.id === id);
     if (!skill) return send(res, 404, { error: "Skill não encontrada." });
+    if (officialGuide(id))
+      return send(res, 403, {
+        error: "Esta carta é entregue pela fonte oficial. Use o link indicado na carta.",
+      });
     requireSkill(access, id);
     await limit(req, "demo-download", 150);
     const r = await db().query(

@@ -1,4 +1,10 @@
 const { requireAccess, restrictCatalog } = require("../lib/access.cjs");
+const { officialGuide } = require("../lib/official-guides.cjs");
+function guideFields(skill, locale) {
+  const guide = officialGuide(skill.id, locale);
+  if (!guide) return {};
+  return { officialGuide: guide, pricing: skill.pricing ? { ...skill.pricing, officialGuide: true } : skill.pricing };
+}
 const { send, failure, initializeLocale } = require("../lib/http.cjs");
 module.exports = async (req, res) => {
   const locale = initializeLocale(req, res);
@@ -37,6 +43,7 @@ module.exports = async (req, res) => {
       combos: require("../lib/pricing.cjs").getCombos(locale),
       skills: catalog.skills.map((skill) => ({
         ...skill,
+        ...guideFields(skill, locale),
         compatibilityAssessment: assessCompatibility(skill, context, locale),
         lab: getLab(skill, locale),
       })),

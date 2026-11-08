@@ -48,7 +48,10 @@ module.exports = {
   "Entrega sugerida": ["Suggested deliverable", "Entrega sugerida"],
   "Verifique antes": ["Check first", "Comprueba antes"],
   "Experimentar a missão": ["Try the mission", "Probar la misión"],
-  "137 universos": ["137 universes", "137 universos"],
+  "Grátis pela fonte oficial": ["Free from the official source", "Gratis desde la fuente oficial"],
+  "Abrir fonte oficial: {publisher} ↗": ["Open official source: {publisher} ↗", "Abrir fuente oficial: {publisher} ↗"],
+  "Ative pela fonte oficial.": ["Enable it from the official source.", "Actívala desde la fuente oficial."],
+  "138 universos": ["138 universes", "138 universos"],
   "uma missão em cada carta": [
     "a mission in every card",
     "una misión en cada carta",
@@ -233,7 +236,7 @@ module.exports = {
     "to explore before downloading",
     "para explorar antes de descargar",
   ],
-  "137 capacidades": ["137 capabilities", "137 capacidades"],
+  "138 capacidades": ["138 capabilities", "138 capacidades"],
   "em uma coleção versionada": [
     "in a versioned collection",
     "en una colección con versiones",
