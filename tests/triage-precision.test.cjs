@@ -245,7 +245,7 @@ test("need filters use stable IDs, are localized and reject invalid input", () =
     { environment: "disable-auth" },
   ])
     assert.throws(() => validateProfile(invalid), /filtros/);
-  assert.equal(profiles.size, 138);
+  assert.equal(profiles.size, 147);
   assert.ok(!profiles.get("figma-generate-design").goals.includes("legal"));
 });
 test("specialist needs distinguish DAX optimization and useful support from internal templates", () => {

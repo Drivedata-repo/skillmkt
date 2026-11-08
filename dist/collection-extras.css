@@ -129,3 +129,5 @@
 @media(prefers-reduced-motion:reduce){.premium-card *,.premium-card *:before,.premium-card *:after{animation:none!important;transition:none!important}}
 @media(max-width:760px){.premium-card .card-heading{padding:3px;margin-bottom:3px}.premium-card .card-heading b{font-size:6px}.premium-card .card-rank{padding:3px;margin-bottom:3px}.premium-card .card-face{padding:10px}.premium-card .card-bottom,.premium-card .card-battle-stats{padding-left:4px;padding-right:4px}.premium-card .visual-label,.premium-card .card-codename{padding:2px 3px}}
 @media(max-width:760px){.premium-card .card-info h3{font-size:13px}}
+
+.free-card .card-face{border:2px solid #34d59a}.free-card .card-edge{border-color:#34d59a}.skill-valuation.is-free strong{color:#34d59a}

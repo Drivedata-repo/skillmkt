@@ -18,14 +18,14 @@ const ids = skills.map((s) => s.id);
 const UUID = "11111111-2222-4333-8444-555555555555";
 
 test("all 137 cards have exactly one rights class", () => {
-  const lists = ["ownDeclared", "mit", "apacheInPackage", "proprietary", "noLicense"];
+  const lists = ["ownDeclared", "mit", "apacheInPackage", "freeOffice", "proprietary", "noLicense"];
   const all = lists.flatMap((k) => rightsData[k]);
-  assert.equal(all.length, 138);
+  assert.equal(all.length, 147);
   assert.deepEqual([...new Set(all)].sort(), [...ids].sort());
   const s = rights.summary(ids);
-  assert.equal(s.rights, 96);
-  assert.equal(s.blocked, 42);
-  assert.equal(s.ready, 96);
+  assert.equal(s.rights, 109);
+  assert.equal(s.blocked, 38);
+  assert.equal(s.ready, 105);
 });
 
 test("proprietary and unlicensed cards cannot be sold", () => {
@@ -38,11 +38,11 @@ test("proprietary and unlicensed cards cannot be sold", () => {
 });
 
 test("a blocked card is unlocked only by a complete written authorization", () => {
-  rightsData.authorizations["claude-xlsx"] = { by: "Titular" };
-  assert.equal(rights.canSell("claude-xlsx"), false);
-  rightsData.authorizations["claude-xlsx"] = { by: "Titular", date: "2026-11-08", document: "ref" };
-  assert.equal(rights.canSell("claude-xlsx"), true);
-  delete rightsData.authorizations["claude-xlsx"];
+  rightsData.authorizations["claude-computer-use"] = { by: "Titular" };
+  assert.equal(rights.canSell("claude-computer-use"), false);
+  rightsData.authorizations["claude-computer-use"] = { by: "Titular", date: "2026-11-08", document: "ref" };
+  assert.equal(rights.canSell("claude-computer-use"), true);
+  delete rightsData.authorizations["claude-computer-use"];
 });
 
 test("every product contains only cards sellable today", () => {

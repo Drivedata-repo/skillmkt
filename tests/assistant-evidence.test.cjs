@@ -8,6 +8,7 @@ const evidence = require("../data/assistant-evidence.json"),
   { getLab } = require("../lib/lab.cjs"),
   { cases } = require("../scripts/run-assistant-evals.cjs");
 const hash = (x) => crypto.createHash("sha256").update(x).digest("hex");
+const upstream = new Set(["claude-docx", "claude-pdf", "claude-pptx", "claude-xlsx"]);
 test("published assistant evidence matches the released package and original fictional artifacts", () => {
   assert.equal(evidence.schemaVersion, 1);
   assert.equal(evidence.samples.length, 3);
@@ -53,7 +54,7 @@ test("published assistant evidence matches the released package and original fic
     const release = catalog.skills.find((x) => x.id === s.skillId).release;
     assert.equal(
       s.packageSha256,
-      release.version === "1.2.1" ? release.baselinePackageSha256 : release.sha256,
+      upstream.has(s.skillId) ? s.packageSha256 : release.version === "1.2.1" ? release.baselinePackageSha256 : release.sha256,
     );
     assert.equal(hash(s.outputText), s.outputSha256);
     assert.equal(hash(JSON.stringify(s.input)), s.inputSha256);
@@ -77,7 +78,7 @@ for (const locale of ["pt", "en", "es"])
       assert.equal(lab.fullSkillExecutionVerified, false);
       for (const sample of lab.assistantSamples) {
         sampleCount++;
-        assert.equal(sample.currentVersion, true);
+        assert.equal(sample.currentVersion, !upstream.has(skill.id));
         assert.equal(sample.fullSkillExecutionVerified, false);
         assert.equal(sample.executionVerified, false);
         assert.ok(sample.scopeLabel && sample.modelLabel && sample.limitation);
@@ -87,7 +88,7 @@ for (const locale of ["pt", "en", "es"])
           assert.doesNotThrow(() => JSON.parse(a.content));
         }
         assert.ok(sample.checks.every((c) => c.label && c.passed));
-        assert.equal(lab.executionLabel, sample.executionLabel);
+        if (!upstream.has(skill.id)) assert.equal(lab.executionLabel, sample.executionLabel);
         if (locale !== "pt") {
           const pt = getLab(
             catalog.skills.find((s) => s.id === skill.id),

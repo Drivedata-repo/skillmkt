@@ -20,7 +20,7 @@ const PublicPreview = ({
           "Conferência de fórmulas e resultados"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Oficina de Células",
           "tagline": "Uma planilha útil mostra a conta e permite conferir o resultado."
@@ -32,7 +32,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Preço proposto",
           "demoLabel": "Grátis na demo",
           "notice": "Valor planejado em dólares americanos. Nenhuma compra ou cobrança está ativa.",
@@ -89,10 +89,10 @@ const PublicPreview = ({
           "digest": "bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
           "serial": "DDK-042-BAD9-BC04-DBC7",
           "edition": {
-            "id": "dde_3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
-            "digest": "3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
-            "version": "1.2.0",
-            "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987"
+            "id": "dde_59e24582b61d276fefce8431553e8cef81a21576496199318dfe0905c0aff205",
+            "digest": "59e24582b61d276fefce8431553e8cef81a21576496199318dfe0905c0aff205",
+            "version": "1.2.1",
+            "packageSha256": "4c52f047756cf13c77526d3c4ca28059b219d15c168ff1ab2ca62fe26d067699"
           },
           "blockchain": {
             "status": "not-minted",
@@ -589,7 +589,7 @@ const PublicPreview = ({
           "Formula and result checks"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Cell Workshop",
           "tagline": "A useful spreadsheet shows the calculation and lets you check the result."
@@ -601,7 +601,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Proposed price",
           "demoLabel": "Free in the demo",
           "notice": "Planned value in US dollars. No purchase or billing is active.",
@@ -658,10 +658,10 @@ const PublicPreview = ({
           "digest": "bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
           "serial": "DDK-042-BAD9-BC04-DBC7",
           "edition": {
-            "id": "dde_3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
-            "digest": "3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
-            "version": "1.2.0",
-            "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987"
+            "id": "dde_59e24582b61d276fefce8431553e8cef81a21576496199318dfe0905c0aff205",
+            "digest": "59e24582b61d276fefce8431553e8cef81a21576496199318dfe0905c0aff205",
+            "version": "1.2.1",
+            "packageSha256": "4c52f047756cf13c77526d3c4ca28059b219d15c168ff1ab2ca62fe26d067699"
           },
           "blockchain": {
             "status": "not-minted",
@@ -1158,7 +1158,7 @@ const PublicPreview = ({
           "Comprobación de fórmulas y resultados"
         ],
         "featured": true,
-        "version": "1.2.0",
+        "version": "1.2.1",
         "universe": {
           "alias": "Taller de Celdas",
           "tagline": "Una hoja útil muestra la cuenta y permite comprobar el resultado."
@@ -1170,7 +1170,7 @@ const PublicPreview = ({
           "purchasable": false,
           "status": "proposed-free-demo",
           "revision": "2026-11-07",
-          "assessedVersion": "1.2.0",
+          "assessedVersion": "1.2.1",
           "label": "Precio propuesto",
           "demoLabel": "Gratis en la demo",
           "notice": "Valor previsto en dólares estadounidenses. No hay compras ni cobros activos.",
@@ -1227,10 +1227,10 @@ const PublicPreview = ({
           "digest": "bad9bc04dbc74b7e6bd47cce0845c7413b1a426c969b8f86b4775b7a8aafeaff",
           "serial": "DDK-042-BAD9-BC04-DBC7",
           "edition": {
-            "id": "dde_3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
-            "digest": "3635de4b15a016f3807cc8232f62a5e6663ddc10a03ef06f64c7e99e121a7209",
-            "version": "1.2.0",
-            "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987"
+            "id": "dde_59e24582b61d276fefce8431553e8cef81a21576496199318dfe0905c0aff205",
+            "digest": "59e24582b61d276fefce8431553e8cef81a21576496199318dfe0905c0aff205",
+            "version": "1.2.1",
+            "packageSha256": "4c52f047756cf13c77526d3c4ca28059b219d15c168ff1ab2ca62fe26d067699"
           },
           "blockchain": {
             "status": "not-minted",

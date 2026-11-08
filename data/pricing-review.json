@@ -348,10 +348,10 @@
     {
       "id": "claude-docx",
       "code": "DD-019",
-      "version": "1.2.0",
-      "packageSha256": "8bf3f058ad3914e56cfd0a50caaa1866eef0a8fe7825fdde0d962a8d86a44629",
-      "sourceSha256": "0100c3fd7980a83ab6bc984e87483f3d2703a7f5451c28c03ca8235e217fa573",
-      "contractSha256": "78e8c2a6e91aff8dbf81cfb259aca5b376ed807da477cbb82e57cdcfbcf47079",
+      "version": "1.2.1",
+      "packageSha256": "34f8feb43f2906f7ad12c1d92e23cee24b8f27f4bb33af41b2f58580450aa78c",
+      "sourceSha256": "9ad85e73ff21aa5a227c6f10613999f652c5d8d35ed532c26518e39771b84620",
+      "contractSha256": "9ad85e73ff21aa5a227c6f10613999f652c5d8d35ed532c26518e39771b84620",
       "priceCents": 3700,
       "scores": {
         "depth": 3,
@@ -576,10 +576,10 @@
     {
       "id": "claude-pdf",
       "code": "DD-031",
-      "version": "1.2.0",
-      "packageSha256": "3f28378af1f54d076e8e71ab6a33ffc909b729c566cee77dbd4bd0841d146c0c",
-      "sourceSha256": "91c90095a74ec33bae0f812f3a710da11dc6d4b29e42415d5237d9527b85f458",
-      "contractSha256": "440619fed2f6c44075cb806724c1293fa63bf52ceb11fc4b3e112ca8d82fe50a",
+      "version": "1.2.1",
+      "packageSha256": "228d1cedb18e75450da42fc8a85713208ea5ff05b9e3ae5c29a4e8cf09c8ee67",
+      "sourceSha256": "10f158ac9e24070fe88d7c31fbc3d2b515f2fb0b85baadc2838e2e2935ed9c9d",
+      "contractSha256": "10f158ac9e24070fe88d7c31fbc3d2b515f2fb0b85baadc2838e2e2935ed9c9d",
       "priceCents": 3200,
       "scores": {
         "depth": 3,
@@ -690,10 +690,10 @@
     {
       "id": "claude-pptx",
       "code": "DD-037",
-      "version": "1.2.0",
-      "packageSha256": "5aa06ae39463ac2677a5353c1a11f09de8c6a8f3a3be1b0b6d6b25e7e30b8298",
-      "sourceSha256": "802e6096fcb21c6c32508aa916190afe9b61c4bc72163eefd1b042a53d6cfb29",
-      "contractSha256": "8c5fe3e3e8edc8ffa362acf64df3932045d3c3adac6c89a2d94b7934cfd741eb",
+      "version": "1.2.1",
+      "packageSha256": "ee6d9ad56aad6be349b67752e9e7346b1098ab24d09382e30e516399a6c12e78",
+      "sourceSha256": "91d922b3ac10c6a70f4701f9cf7afc0c4806c3d12e1e690c7452a2ccb6784127",
+      "contractSha256": "91d922b3ac10c6a70f4701f9cf7afc0c4806c3d12e1e690c7452a2ccb6784127",
       "priceCents": 3200,
       "scores": {
         "depth": 3,
@@ -785,10 +785,10 @@
     {
       "id": "claude-xlsx",
       "code": "DD-042",
-      "version": "1.2.0",
-      "packageSha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987",
-      "sourceSha256": "2767ed541e84d1cd2f16fcc5bb7026f62e1762f69fa30dbdb351661bd9765500",
-      "contractSha256": "fa145134ea7f4b7558c44aacc94d7008400c747c7006add12b6083c271f51496",
+      "version": "1.2.1",
+      "packageSha256": "4c52f047756cf13c77526d3c4ca28059b219d15c168ff1ab2ca62fe26d067699",
+      "sourceSha256": "8ea4c55a2997dc8d2352eeb80c62ca40108ef68a52be377be26512c7d38ba40c",
+      "contractSha256": "8ea4c55a2997dc8d2352eeb80c62ca40108ef68a52be377be26512c7d38ba40c",
       "priceCents": 4200,
       "scores": {
         "depth": 4,
@@ -2119,11 +2119,11 @@
       "packageSha256": "72c88cfb1c423e5d070b9dc61ff4912e14460a8833d95ff05bcb35643292951c",
       "sourceSha256": "303f32228477193c8c5cfd81196f0e6070fdab0c4d6920518352e1c548306eb8",
       "contractSha256": "a7c93b0c854fd439b29aed1759f198368aa824cb4ab4f6fe71767d4497e3c21d",
-      "priceCents": 4200,
+      "priceCents": 4700,
       "scores": {
-        "depth": 4,
+        "depth": 5,
         "scope": 5,
-        "verification": 4,
+        "verification": 5,
         "reuse": 5
       },
       "family": null,
@@ -2622,6 +2622,177 @@
       },
       "family": null,
       "rationale": "Classifica pedidos por regras locais e orienta a delegação a agentes, sem chamar IA nem guardar o texto digitado.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "agent-builder",
+      "code": "DD-139",
+      "version": "1.2.1",
+      "packageSha256": "d2ffa3c2fed8664184dae68d6bedf47da9c294d8f79e83a53e19d4774f552b15",
+      "sourceSha256": "4100cd2461451945a43565bc92d662bc94e47cae10049b645e5d85c9a106f24f",
+      "contractSha256": "4100cd2461451945a43565bc92d662bc94e47cae10049b645e5d85c9a106f24f",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Decide se um agente é necessário e gera pacote com permissões, testes e adaptadores para três ambientes.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "human-authentic-writing-audit",
+      "code": "DD-140",
+      "version": "1.2.1",
+      "packageSha256": "4e93a32b4140cbda06ede9bb6730d907396e5dce3dd2ea07186885e390a60dce",
+      "sourceSha256": "4ebce4aa75860877085d66eb8d87635f33fb3ba4df74c279a7247efa202523fe",
+      "contractSha256": "4ebce4aa75860877085d66eb8d87635f33fb3ba4df74c279a7247efa202523fe",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Redige, revisa e pontua padrões de texto artificial, com verificador local e sem alegar prova de autoria.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "markdown-builder",
+      "code": "DD-141",
+      "version": "1.2.1",
+      "packageSha256": "94d4ce2ecdd6c176939eacd1c92bfe7e7f914f0b7065187c3a9b731ac5145680",
+      "sourceSha256": "510f00b97b302654c220bea67e6bf618036f04978be381fb9f8d6c195c238a68",
+      "contractSha256": "510f00b97b302654c220bea67e6bf618036f04978be381fb9f8d6c195c238a68",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Cria e audita notas com cabeçalho validado por verificador, preservando conteúdo e tratando dados pessoais.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "master-prompt-generator",
+      "code": "DD-142",
+      "version": "1.2.1",
+      "packageSha256": "7af967cf7b1fd28cc4197fc8b9a41369be91440beb5ac4b15806954e88a59804",
+      "sourceSha256": "252c27ff6fcd129f5c9dc9bb3b7dfe654a2288c2d7d09b0a123cd8ad2134bd2f",
+      "contractSha256": "252c27ff6fcd129f5c9dc9bb3b7dfe654a2288c2d7d09b0a123cd8ad2134bd2f",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Gera prompts adaptados ao modelo e à plataforma, com escolha de estrutura e verificação local antes da entrega.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "skill-builder",
+      "code": "DD-143",
+      "version": "1.2.1",
+      "packageSha256": "85106ee621c14e7dee7f97f504ff651fb0ba805856807aedce0cee76879ba789",
+      "sourceSha256": "306a88e888926430cd9dc4156237e343c2ae9bc986c45cb32974e0ef08869276",
+      "contractSha256": "306a88e888926430cd9dc4156237e343c2ae9bc986c45cb32974e0ef08869276",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Constrói, testa e audita pacotes de skill com verificador da lista de auditoria e empacotamento.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "arquitetura-de-contexto-e-rag",
+      "code": "DD-144",
+      "version": "1.2.1",
+      "packageSha256": "c973dfc955f1d89ef305b2b3973b5179e8c619fdab7050b7de956ff5adaa0ecb",
+      "sourceSha256": "0f926ea6a5f4a95d3ec3586a8061e0849f751fac5c18489b6b33b07f2e09d94f",
+      "contractSha256": "0f926ea6a5f4a95d3ec3586a8061e0849f751fac5c18489b6b33b07f2e09d94f",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Diagnostica e desenha contexto, ingestão e recuperação, escolhendo o menor mecanismo e definindo avaliação medida.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "revisao-de-agentes-para-producao",
+      "code": "DD-145",
+      "version": "1.2.1",
+      "packageSha256": "aee3ca54b29fbcf5f40c4cf55bd76995a1a6ef0122e0891db9d7d787e5869de6",
+      "sourceSha256": "0ef8b8325b7e4257e705627b914d9f7d3c58d5b31e151cff7f990f97088b48fd",
+      "contractSha256": "0ef8b8325b7e4257e705627b914d9f7d3c58d5b31e151cff7f990f97088b48fd",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Revisa necessidade, autoridade, estado e recuperação de falhas de agentes, com decisão baseada em evidência.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "prontidao-de-sistemas-de-ia",
+      "code": "DD-146",
+      "version": "1.2.1",
+      "packageSha256": "c9bef8e0be681e822f5011d9282e2cae84fb328dc34f9abf95a5f0bf12c28e7d",
+      "sourceSha256": "35b09125fa68550840936fe352a757798eb2ec7f306cf0e94ccc75b5a86c18fa",
+      "contractSha256": "35b09125fa68550840936fe352a757798eb2ec7f306cf0e94ccc75b5a86c18fa",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 5,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Avalia evidência de testes, riscos, governança e custo total de uma aplicação de IA, separando medido de presumido.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "escolha-tecnica-de-modelos",
+      "code": "DD-147",
+      "version": "1.2.1",
+      "packageSha256": "603bbcdee717e37853e858653adcf57aaa58ef40c42ecd8cf11579708dba1f44",
+      "sourceSha256": "b7910abf10158c56d5c0d0b1b305ece9dfa0c69f72c8d2836fc7fde00e08e89d",
+      "contractSha256": "b7910abf10158c56d5c0d0b1b305ece9dfa0c69f72c8d2836fc7fde00e08e89d",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Compara modelos e customização para uma tarefa concreta, com conta de tokens visível e teste de confirmação.",
       "assessmentType": "documentary",
       "executionVerified": false
     }

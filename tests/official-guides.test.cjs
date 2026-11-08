@@ -20,7 +20,7 @@ function call(handler, url) {
 }
 
 test("as cartas sem permissão viram guia e as vendáveis não", () => {
-  const blocked = [...rights.proprietary, ...rights.noLicense];
+  const blocked = [...rights.freeOffice, ...rights.proprietary, ...rights.noLicense];
   assert.equal(blocked.length, 42);
   for (const id of blocked) {
     for (const locale of ["pt", "en", "es"]) {
@@ -35,7 +35,7 @@ test("as cartas sem permissão viram guia e as vendáveis não", () => {
 
 test("o download da demo não entrega carta sem permissão", async () => {
   const download = require("../api/download.js");
-  for (const id of ["claude-xlsx", "figma-use", "claude-security"]) {
+  for (const id of ["claude-computer-use", "figma-use", "claude-security"]) {
     const r = await call(download, "/api/download?id=" + id);
     assert.equal(r.status, 403, id);
     assert.match(r.body, /fonte oficial/);

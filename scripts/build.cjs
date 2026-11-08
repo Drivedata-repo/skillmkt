@@ -3,7 +3,7 @@ const cards = require("../data/skills.cjs");
 const priceReview = require("../data/pricing-review.json");
 const releases = require("../data/releases.cjs");
 const {getSkillPricing} = require("../lib/pricing.cjs");
-if(priceReview.records.length!==138) throw Error("Pricing review must cover the complete collection");
+if(priceReview.records.length!==147) throw Error("Pricing review must cover the complete collection");
 for(const s of cards){
   const r=priceReview.records.find(r=>r.id===s.id);
   if(!r || r.packageSha256!==releases[s.id].sha256 || r.priceCents!==getSkillPricing(s.id).priceCents) throw Error("Pricing assessment needs review: "+s.id);
@@ -12,10 +12,10 @@ require("./build-i18n.cjs");
 require("./build-preview.cjs");
 require("./build-problem-pages.cjs");
 require("./build-deliverable-gallery.cjs");
-if (cards.length !== 138 || new Set(cards.map((s) => s.code)).size !== 138)
+if (cards.length !== 147 || new Set(cards.map((s) => s.code)).size !== 147)
   throw new Error("Invalid card collection");
 const identities = require("../lib/catalog.cjs").skills.map(s => s.identity);
-if (new Set(identities.map(i => i.id)).size !== 138 || new Set(identities.map(i => i.serial)).size !== 138)
+if (new Set(identities.map(i => i.id)).size !== 147 || new Set(identities.map(i => i.serial)).size !== 147)
   throw new Error("Card identities must be unique");
 for (const file of [
   "index.html",
@@ -67,5 +67,5 @@ for (const file of [
 ])
   if (!fs.existsSync("dist/" + file)) throw new Error("Missing asset: " + file);
 console.log(
-  "138 unique cards and site assets verified. CSS 3D needs no WebGL runtime.",
+  "147 unique cards and site assets verified. CSS 3D needs no WebGL runtime.",
 );

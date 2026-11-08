@@ -3779,14 +3779,38 @@
     "Metrics checked against a sample provided by the client",
     "Indicadores comprobados con una muestra proporcionada por el cliente"
   ],
-  "Modelo certo para cada tarefa no Claude Code": ["The right model for each task in Claude Code", "El modelo correcto para cada tarea en Claude Code"],
-  "A equipe gasta modelo caro em tarefas simples e perde o controle do consumo.": ["The team spends expensive models on simple tasks and loses control of usage.", "El equipo gasta modelos caros en tareas simples y pierde el control del consumo."],
-  "Classificação automática de cada pedido por complexidade": ["Automatic classification of each request by complexity", "Clasificación automática de cada pedido por complejidad"],
-  "Indicação de modelo e esforço por tarefa": ["Model and effort recommendation per task", "Indicación de modelo y esfuerzo por tarea"],
-  "Agentes auxiliares de busca, execução e arquitetura": ["Search, execution and architecture helper agents", "Agentes auxiliares de búsqueda, ejecución y arquitectura"],
-  "Claude Code com suporte a hooks e agentes": ["Claude Code with hooks and agents support", "Claude Code con soporte de hooks y agentes"],
-  "Node.js disponível na máquina": ["Node.js available on the machine", "Node.js disponible en la máquina"],
-  "A troca do modelo principal continua manual": ["Changing the main model remains manual", "El cambio del modelo principal sigue siendo manual"],
+  "Modelo certo para cada tarefa no Claude Code": [
+    "The right model for each task in Claude Code",
+    "El modelo correcto para cada tarea en Claude Code"
+  ],
+  "A equipe gasta modelo caro em tarefas simples e perde o controle do consumo.": [
+    "The team spends expensive models on simple tasks and loses control of usage.",
+    "El equipo gasta modelos caros en tareas simples y pierde el control del consumo."
+  ],
+  "Classificação automática de cada pedido por complexidade": [
+    "Automatic classification of each request by complexity",
+    "Clasificación automática de cada pedido por complejidad"
+  ],
+  "Indicação de modelo e esforço por tarefa": [
+    "Model and effort recommendation per task",
+    "Indicación de modelo y esfuerzo por tarea"
+  ],
+  "Agentes auxiliares de busca, execução e arquitetura": [
+    "Search, execution and architecture helper agents",
+    "Agentes auxiliares de búsqueda, ejecución y arquitectura"
+  ],
+  "Claude Code com suporte a hooks e agentes": [
+    "Claude Code with hooks and agents support",
+    "Claude Code con soporte de hooks y agentes"
+  ],
+  "Node.js disponível na máquina": [
+    "Node.js available on the machine",
+    "Node.js disponible en la máquina"
+  ],
+  "A troca do modelo principal continua manual": [
+    "Changing the main model remains manual",
+    "El cambio del modelo principal sigue siendo manual"
+  ],
   "Termos DriveData": [
     "DriveData terms",
     "Términos de DriveData"
@@ -4346,5 +4370,221 @@
   "Versão anterior preservada com rastreabilidade das alterações": [
     "Previous version preserved with traceable changes",
     "Versión anterior conservada con trazabilidad de los cambios"
+  ],
+  "Agentes de IA prontos para Claude Code, Codex e Kiro": [
+    "AI agents ready for Claude Code, Codex and Kiro",
+    "Agentes de IA listos para Claude Code, Codex y Kiro"
+  ],
+  "A equipe cria agentes sem saber se precisava de um e sem limites definidos.": [
+    "The team builds agents without knowing whether one was needed and without defined limits.",
+    "El equipo crea agentes sin saber si necesitaba uno y sin límites definidos."
+  ],
+  "Veredito sobre a necessidade de um agente": [
+    "Verdict on whether an agent is needed",
+    "Veredicto sobre la necesidad de un agente"
+  ],
+  "Pacote do agente com testes e permissões": [
+    "Agent package with tests and permissions",
+    "Paquete del agente con pruebas y permisos"
+  ],
+  "Python 3 para os verificadores": [
+    "Python 3 for the checkers",
+    "Python 3 para los verificadores"
+  ],
+  "Assistente compatível com agentes": [
+    "Assistant that supports agents",
+    "Asistente compatible con agentes"
+  ],
+  "Texto com voz humana e auditoria de cara de IA": [
+    "Human-sounding writing and AI-likeness audit",
+    "Texto con voz humana y auditoría de apariencia de IA"
+  ],
+  "Os textos saem genéricos e com aparência de inteligência artificial.": [
+    "Texts come out generic and look like artificial intelligence wrote them.",
+    "Los textos salen genéricos y con apariencia de inteligencia artificial."
+  ],
+  "Texto revisado com a voz de quem assina": [
+    "Revised text in the signer's voice",
+    "Texto revisado con la voz de quien firma"
+  ],
+  "Auditoria de padrões típicos de IA": [
+    "Audit of typical AI patterns",
+    "Auditoría de patrones típicos de IA"
+  ],
+  "Python 3 para o verificador de texto": [
+    "Python 3 for the text scanner",
+    "Python 3 para el verificador de texto"
+  ],
+  "Não prova autoria nem garante resultado em detector": [
+    "Does not prove authorship or guarantee a detector result",
+    "No prueba autoría ni garantiza el resultado en un detector"
+  ],
+  "Notas Markdown padronizadas para bases de conhecimento": [
+    "Standardized Markdown notes for knowledge bases",
+    "Notas Markdown estandarizadas para bases de conocimiento"
+  ],
+  "As notas da equipe viram uma pilha sem padrão, difícil de achar e de reusar.": [
+    "The team's notes become an unstandardized pile that is hard to find and reuse.",
+    "Las notas del equipo se vuelven una pila sin estándar, difícil de encontrar y reutilizar."
+  ],
+  "Nota com cabeçalho padronizado e dados anonimizados": [
+    "Note with a standard header and anonymized data",
+    "Nota con encabezado estándar y datos anonimizados"
+  ],
+  "Auditoria automática do padrão": [
+    "Automatic audit of the standard",
+    "Auditoría automática del estándar"
+  ],
+  "Python 3 para o verificador": [
+    "Python 3 for the checker",
+    "Python 3 para el verificador"
+  ],
+  "Padrão próprio, que pode exigir adaptação": [
+    "Own standard, which may need adapting",
+    "Estándar propio, que puede requerir adaptación"
+  ],
+  "Prompts profissionais para qualquer modelo de IA": [
+    "Professional prompts for any AI model",
+    "Prompts profesionales para cualquier modelo de IA"
+  ],
+  "Os prompts funcionam uma vez e falham quando a tarefa ou o modelo muda.": [
+    "Prompts work once and fail when the task or model changes.",
+    "Los prompts funcionan una vez y fallan cuando cambia la tarea o el modelo."
+  ],
+  "Prompt pronto para a plataforma escolhida": [
+    "Prompt ready for the chosen platform",
+    "Prompt listo para la plataforma elegida"
+  ],
+  "Verificação do prompt antes da entrega": [
+    "Prompt check before delivery",
+    "Verificación del prompt antes de la entrega"
+  ],
+  "Python 3 opcional para o verificador": [
+    "Optional Python 3 for the checker",
+    "Python 3 opcional para el verificador"
+  ],
+  "Confirmar os recursos atuais do modelo escolhido": [
+    "Confirm the current features of the chosen model",
+    "Confirmar las funciones actuales del modelo elegido"
+  ],
+  "Criação e auditoria de skills para IA": [
+    "Building and auditing AI skills",
+    "Creación y auditoría de skills para IA"
+  ],
+  "As skills criadas não são acionadas na hora certa ou mudam a cada execução.": [
+    "The skills built do not trigger at the right time or change on every run.",
+    "Las skills creadas no se activan en el momento correcto o cambian en cada ejecución."
+  ],
+  "Pacote de skill com testes e descrição de acionamento": [
+    "Skill package with tests and trigger description",
+    "Paquete de skill con pruebas y descripción de activación"
+  ],
+  "Auditoria e arquivo pronto para instalar": [
+    "Audit and install-ready archive",
+    "Auditoría y archivo listo para instalar"
+  ],
+  "Assistente compatível com Agent Skills": [
+    "Assistant that supports Agent Skills",
+    "Asistente compatible con Agent Skills"
+  ],
+  "Contexto e RAG que encontram a resposta certa": [
+    "Context and RAG that find the right answer",
+    "Contexto y RAG que encuentran la respuesta correcta"
+  ],
+  "A IA ignora os documentos da empresa ou traz o trecho errado.": [
+    "The AI ignores company documents or brings back the wrong passage.",
+    "La IA ignora los documentos de la empresa o trae el fragmento equivocado."
+  ],
+  "Diagnóstico por etapa da recuperação": [
+    "Stage-by-stage retrieval diagnosis",
+    "Diagnóstico por etapa de la recuperación"
+  ],
+  "Desenho da solução com plano de avaliação": [
+    "Solution design with an evaluation plan",
+    "Diseño de la solución con plan de evaluación"
+  ],
+  "Perguntas reais e documentos de exemplo": [
+    "Real questions and sample documents",
+    "Preguntas reales y documentos de ejemplo"
+  ],
+  "Preços e limites de fornecedores precisam ser reconferidos": [
+    "Vendor prices and limits must be re-checked",
+    "Los precios y límites de proveedores deben confirmarse"
+  ],
+  "Revisão de agentes de IA antes da produção": [
+    "Reviewing AI agents before production",
+    "Revisión de agentes de IA antes de producción"
+  ],
+  "Um agente repete ações, perde o estado ou age sem aprovação.": [
+    "An agent repeats actions, loses state or acts without approval.",
+    "Un agente repite acciones, pierde el estado o actúa sin aprobación."
+  ],
+  "Decisão de ir ou não para produção": [
+    "Go or no-go decision for production",
+    "Decisión de ir o no a producción"
+  ],
+  "Achados por gravidade com cenário de falha": [
+    "Findings by severity with failure scenario",
+    "Hallazgos por gravedad con escenario de fallo"
+  ],
+  "Código, configuração ou descrição do fluxo": [
+    "Code, configuration or a flow description",
+    "Código, configuración o descripción del flujo"
+  ],
+  "Revisão sem execução não comprova comportamento": [
+    "A review without execution does not prove behavior",
+    "Una revisión sin ejecución no comprueba el comportamiento"
+  ],
+  "Prontidão para lançar sistemas de IA": [
+    "Readiness to launch AI systems",
+    "Preparación para lanzar sistemas de IA"
+  ],
+  "O produto de IA vai ao ar sem prova de qualidade, dono dos riscos ou custo real.": [
+    "The AI product goes live with no proof of quality, risk owners or real cost.",
+    "El producto de IA sale sin prueba de calidad, responsables de riesgos ni costo real."
+  ],
+  "Registro de riscos com responsáveis": [
+    "Risk register with owners",
+    "Registro de riesgos con responsables"
+  ],
+  "Estimativa de custo e decisão de lançamento": [
+    "Cost estimate and launch decision",
+    "Estimación de costo y decisión de lanzamiento"
+  ],
+  "Resultados de teste, arquitetura e dados de custo": [
+    "Test results, architecture and cost data",
+    "Resultados de pruebas, arquitectura y datos de costo"
+  ],
+  "Não substitui parecer jurídico": [
+    "Does not replace legal advice",
+    "No sustituye asesoramiento jurídico"
+  ],
+  "Escolha de modelo de IA com conta e teste": [
+    "Choosing an AI model with math and testing",
+    "Elección de modelo de IA con cuentas y pruebas"
+  ],
+  "A equipe escolhe modelo por fama e descobre o custo depois.": [
+    "The team picks a model by reputation and finds out the cost later.",
+    "El equipo elige un modelo por fama y descubre el costo después."
+  ],
+  "Comparação de custo e capacidade com conta visível": [
+    "Cost and capability comparison with visible math",
+    "Comparación de costo y capacidad con cuentas visibles"
+  ],
+  "Plano de teste com critério de aprovação": [
+    "Test plan with pass criteria",
+    "Plan de prueba con criterio de aprobación"
+  ],
+  "Exemplos reais da tarefa e volume mensal": [
+    "Real task samples and monthly volume",
+    "Ejemplos reales de la tarea y volumen mensual"
+  ],
+  "Confirmar preços atuais no site do fornecedor": [
+    "Confirm current prices on the vendor's site",
+    "Confirmar los precios actuales en el sitio del proveedor"
+  ],
+  "Licença Apache 2.0 oficial": [
+    "Official Apache License 2.0",
+    "Licencia Apache 2.0 oficial"
   ]
 }

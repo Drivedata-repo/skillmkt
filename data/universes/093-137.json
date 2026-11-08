@@ -3310,5 +3310,653 @@
       ],
       "boundary": "Requiere Claude Code con hooks. La clasificación usa reglas y puede fallar, y el cambio del modelo principal sigue siendo manual."
     }
+  },
+  {
+    "id": "agent-builder",
+    "pt": {
+      "alias": "Juiz de Agentes",
+      "tagline": "Primeiro decide se precisa. Depois constrói.",
+      "story": "Na fábrica fictícia de Otávio, todo problema virava um agente novo, até os que cabiam em um script. Forja de Agentes começa com um veredito por escrito. Quando o agente se justifica, ele nasce com permissões, testes e um único texto de comportamento.",
+      "purpose": "Decide se um trabalho deve virar agente de IA e, quando deve, constrói, adapta ou audita o pacote para Claude Code, Codex e Kiro, com permissões explícitas e testes.",
+      "useCases": [
+        "Transformar um fluxo repetitivo em agente com limites claros.",
+        "Auditar por que um agente não é acionado ou passa do escopo."
+      ],
+      "scenario": {
+        "title": "Agente ou script",
+        "context": "Cenário fictício: [EQUIPE] quer automatizar [TAREFA] em [AMBIENTE].",
+        "request": "Use esta skill para avaliar se [TAREFA] precisa de um agente. Escreva o veredito antes de criar qualquer arquivo. Se a resposta for sim, gere o pacote com permissões mínimas e testes, e informe o que não foi executado.",
+        "output": "Veredito por escrito e, se aprovado, pacote do agente com permissões e testes.",
+        "check": "O veredito deve vir antes dos arquivos, e nada pode ser relatado como executado sem ter rodado."
+      },
+      "steps": [
+        "Descreva o trabalho e o ambiente.",
+        "Leia o veredito e escolha o nível.",
+        "Rode o verificador e os testes."
+      ],
+      "boundary": "Depende de um assistente compatível com agentes e de Python 3 para os verificadores. O pacote não substitui revisão de segurança antes de ações reais."
+    },
+    "en": {
+      "alias": "Agent Judge",
+      "tagline": "First decide if you need one. Then build it.",
+      "story": "In Otávio's fictional factory, every problem became a new agent, even those that fit in a script. Agent Forge starts with a written verdict. When an agent is justified, it is born with permissions, tests and one single behavior source.",
+      "purpose": "Decides whether a job should become an AI agent and, when it should, builds, ports or audits the package for Claude Code, Codex and Kiro, with explicit permissions and tests.",
+      "useCases": [
+        "Turn a repetitive flow into an agent with clear limits.",
+        "Audit why an agent is not triggered or exceeds its scope."
+      ],
+      "scenario": {
+        "title": "Agent or script",
+        "context": "Fictional scenario: [TEAM] wants to automate [TASK] in [ENVIRONMENT].",
+        "request": "Use this skill to assess whether [TASK] needs an agent. Write the verdict before creating any file. If the answer is yes, generate the package with minimal permissions and tests, and report what was not run.",
+        "output": "Written verdict and, if approved, an agent package with permissions and tests.",
+        "check": "The verdict must come before the files, and nothing may be reported as run without having run."
+      },
+      "steps": [
+        "Describe the job and environment.",
+        "Read the verdict and choose the level.",
+        "Run the checker and the tests."
+      ],
+      "boundary": "Requires an assistant that supports agents and Python 3 for the checkers. The package does not replace a security review before real actions."
+    },
+    "es": {
+      "alias": "Juez de Agentes",
+      "tagline": "Primero decide si lo necesitas. Después lo construye.",
+      "story": "En la fábrica ficticia de Otávio, cada problema se convertía en un agente nuevo, incluso los que cabían en un script. Forja de Agentes empieza con un veredicto por escrito. Cuando el agente se justifica, nace con permisos, pruebas y un único texto de comportamiento.",
+      "purpose": "Decide si un trabajo debe convertirse en agente de IA y, cuando debe, construye, adapta o audita el paquete para Claude Code, Codex y Kiro, con permisos explícitos y pruebas.",
+      "useCases": [
+        "Convertir un flujo repetitivo en un agente con límites claros.",
+        "Auditar por qué un agente no se activa o excede su alcance."
+      ],
+      "scenario": {
+        "title": "Agente o script",
+        "context": "Escenario ficticio: [EQUIPO] quiere automatizar [TAREA] en [ENTORNO].",
+        "request": "Usa esta skill para evaluar si [TAREA] necesita un agente. Escribe el veredicto antes de crear cualquier archivo. Si la respuesta es sí, genera el paquete con permisos mínimos y pruebas, e informa lo que no se ejecutó.",
+        "output": "Veredicto por escrito y, si se aprueba, paquete del agente con permisos y pruebas.",
+        "check": "El veredicto debe venir antes de los archivos, y nada puede informarse como ejecutado sin haberse ejecutado."
+      },
+      "steps": [
+        "Describe el trabajo y el entorno.",
+        "Lee el veredicto y elige el nivel.",
+        "Ejecuta el verificador y las pruebas."
+      ],
+      "boundary": "Requiere un asistente compatible con agentes y Python 3 para los verificadores. El paquete no sustituye una revisión de seguridad antes de acciones reales."
+    }
+  },
+  {
+    "id": "human-authentic-writing-audit",
+    "pt": {
+      "alias": "Pena Própria",
+      "tagline": "O texto volta a parecer de alguém.",
+      "story": "Na redação fictícia de Bruna, cada e-mail soava igual aos outros: seguro, longo e sem dono. Pena Própria pergunta quem assina, para quem e por quê. Depois corta o que qualquer um poderia ter escrito e aponta os padrões que denunciam o piloto automático.",
+      "purpose": "Redige, revisa e audita textos para que soem escritos por uma pessoa específica para um leitor específico, pontuando padrões típicos de IA sem alegar prova de autoria.",
+      "useCases": [
+        "Revisar um post ou e-mail antes de sair com o seu nome.",
+        "Auditar a aparência artificial de uma proposta comercial."
+      ],
+      "scenario": {
+        "title": "O e-mail sem dono",
+        "context": "Cenário fictício: [AUTOR] precisa enviar [TEXTO] para [LEITOR] com um objetivo definido.",
+        "request": "Use esta skill para revisar [TEXTO] na voz de [AUTOR], para [LEITOR]. Aponte os padrões típicos de IA encontrados, preserve os fatos e não invente experiências ou citações. Não afirme nada sobre quem escreveu o original.",
+        "output": "Texto revisado e lista dos padrões encontrados, com o que mudou.",
+        "check": "Nenhum fato novo pode surgir na revisão, e o resultado não pode alegar prova de autoria."
+      },
+      "steps": [
+        "Informe autor, leitor e objetivo.",
+        "Revise ou audite o texto.",
+        "Confira fatos e tom antes de enviar."
+      ],
+      "boundary": "Não prova quem escreveu um texto e não promete resultado em detectores. Fatos e experiências precisam vir de quem assina."
+    },
+    "en": {
+      "alias": "Own Quill",
+      "tagline": "The text sounds like someone again.",
+      "story": "In Bruna's fictional newsroom, every email sounded like the others: safe, long and ownerless. Own Quill asks who signs, for whom and why. Then it cuts what anyone could have written and points out the patterns that give away autopilot.",
+      "purpose": "Drafts, revises and audits texts so they read as written by a specific person for a specific reader, scoring typical AI patterns without claiming proof of authorship.",
+      "useCases": [
+        "Revise a post or email before it goes out under your name.",
+        "Audit how artificial a sales proposal sounds."
+      ],
+      "scenario": {
+        "title": "The ownerless email",
+        "context": "Fictional scenario: [AUTHOR] must send [TEXT] to [READER] with a defined goal.",
+        "request": "Use this skill to revise [TEXT] in [AUTHOR]'s voice for [READER]. Point out the typical AI patterns found, keep the facts and do not invent experiences or quotes. Say nothing about who wrote the original.",
+        "output": "Revised text and a list of the patterns found, with what changed.",
+        "check": "No new fact may appear in the revision, and the result may not claim proof of authorship."
+      },
+      "steps": [
+        "State author, reader and goal.",
+        "Revise or audit the text.",
+        "Check facts and tone before sending."
+      ],
+      "boundary": "It does not prove who wrote a text and promises no detector result. Facts and experiences must come from the person signing."
+    },
+    "es": {
+      "alias": "Pluma Propia",
+      "tagline": "El texto vuelve a parecer de alguien.",
+      "story": "En la redacción ficticia de Bruna, cada correo sonaba igual a los demás: seguro, largo y sin dueño. Pluma Propia pregunta quién firma, para quién y por qué. Después corta lo que cualquiera podría haber escrito y señala los patrones que delatan el piloto automático.",
+      "purpose": "Redacta, revisa y audita textos para que suenen escritos por una persona específica para un lector específico, puntuando patrones típicos de IA sin alegar prueba de autoría.",
+      "useCases": [
+        "Revisar una publicación o correo antes de salir con tu nombre.",
+        "Auditar la apariencia artificial de una propuesta comercial."
+      ],
+      "scenario": {
+        "title": "El correo sin dueño",
+        "context": "Escenario ficticio: [AUTOR] debe enviar [TEXTO] a [LECTOR] con un objetivo definido.",
+        "request": "Usa esta skill para revisar [TEXTO] con la voz de [AUTOR], para [LECTOR]. Señala los patrones típicos de IA encontrados, conserva los hechos y no inventes experiencias ni citas. No afirmes nada sobre quién escribió el original.",
+        "output": "Texto revisado y lista de los patrones encontrados, con lo que cambió.",
+        "check": "Ningún hecho nuevo puede aparecer en la revisión, y el resultado no puede alegar prueba de autoría."
+      },
+      "steps": [
+        "Indica autor, lector y objetivo.",
+        "Revisa o audita el texto.",
+        "Confirma hechos y tono antes de enviar."
+      ],
+      "boundary": "No prueba quién escribió un texto ni promete resultados en detectores. Los hechos y las experiencias deben venir de quien firma."
+    }
+  },
+  {
+    "id": "markdown-builder",
+    "pt": {
+      "alias": "Régua de Notas",
+      "tagline": "Toda nota encontrável, do mesmo jeito.",
+      "story": "No arquivo fictício de Dália, cada pessoa anotava de um modo e nada era achado duas vezes. Régua de Notas lê antes de escrever, aplica um cabeçalho único e confere os limites com um verificador. Nenhum conteúdo some no caminho.",
+      "purpose": "Cria, edita e audita notas Markdown em um padrão único de cabeçalho, com regras para idioma, pessoas e dados sensíveis, e um verificador dos limites.",
+      "useCases": [
+        "Transformar uma conversa ou pasta em uma nota reutilizável.",
+        "Padronizar uma base de notas para uso por IA."
+      ],
+      "scenario": {
+        "title": "A pasta sem padrão",
+        "context": "Cenário fictício: [PASTA] guarda notas soltas sobre [ASSUNTO], com [DADO_PESSOAL] em algumas.",
+        "request": "Use esta skill para converter as notas de [PASTA] em uma nota padronizada. Preserve todo o conteúdo, trate [DADO_PESSOAL] conforme a regra de anonimização e rode o verificador antes de entregar.",
+        "output": "Nota padronizada com cabeçalho válido e relatório do verificador.",
+        "check": "Nenhum trecho original pode ser perdido, e o verificador deve terminar sem erros."
+      },
+      "steps": [
+        "Aponte os arquivos de origem.",
+        "Gere ou corrija a nota.",
+        "Rode o verificador."
+      ],
+      "boundary": "O padrão é opinativo e pode exigir ajuste à sua base. O verificador precisa de Python 3 e não julga a qualidade do conteúdo."
+    },
+    "en": {
+      "alias": "Note Ruler",
+      "tagline": "Every note findable, the same way.",
+      "story": "In Dália's fictional archive, each person took notes differently and nothing was found twice. Note Ruler reads before writing, applies one header and checks the limits with a checker. No content gets lost along the way.",
+      "purpose": "Creates, edits and audits Markdown notes in a single header standard, with rules for language, people and sensitive data, and a checker for the limits.",
+      "useCases": [
+        "Turn a conversation or folder into a reusable note.",
+        "Standardize a note base for AI use."
+      ],
+      "scenario": {
+        "title": "The folder with no standard",
+        "context": "Fictional scenario: [FOLDER] holds loose notes about [TOPIC], with [PERSONAL_DATA] in some.",
+        "request": "Use this skill to convert the notes in [FOLDER] into one standard note. Keep all content, treat [PERSONAL_DATA] under the anonymization rule and run the checker before delivering.",
+        "output": "Standard note with a valid header and the checker report.",
+        "check": "No original passage may be lost, and the checker must finish without errors."
+      },
+      "steps": [
+        "Point to the source files.",
+        "Generate or fix the note.",
+        "Run the checker."
+      ],
+      "boundary": "The standard is opinionated and may need adjusting to your base. The checker needs Python 3 and does not judge content quality."
+    },
+    "es": {
+      "alias": "Regla de Notas",
+      "tagline": "Toda nota encontrable, de la misma forma.",
+      "story": "En el archivo ficticio de Dália, cada persona anotaba a su modo y nada se encontraba dos veces. Regla de Notas lee antes de escribir, aplica un encabezado único y confirma los límites con un verificador. Ningún contenido se pierde en el camino.",
+      "purpose": "Crea, edita y audita notas Markdown en un único estándar de encabezado, con reglas para idioma, personas y datos sensibles, y un verificador de los límites.",
+      "useCases": [
+        "Convertir una conversación o carpeta en una nota reutilizable.",
+        "Estandarizar una base de notas para uso con IA."
+      ],
+      "scenario": {
+        "title": "La carpeta sin estándar",
+        "context": "Escenario ficticio: [CARPETA] guarda notas sueltas sobre [ASUNTO], con [DATO_PERSONAL] en algunas.",
+        "request": "Usa esta skill para convertir las notas de [CARPETA] en una nota estandarizada. Conserva todo el contenido, trata [DATO_PERSONAL] según la regla de anonimización y ejecuta el verificador antes de entregar.",
+        "output": "Nota estandarizada con encabezado válido e informe del verificador.",
+        "check": "Ningún fragmento original puede perderse, y el verificador debe terminar sin errores."
+      },
+      "steps": [
+        "Indica los archivos de origen.",
+        "Genera o corrige la nota.",
+        "Ejecuta el verificador."
+      ],
+      "boundary": "El estándar es opinable y puede requerir ajustes a tu base. El verificador necesita Python 3 y no juzga la calidad del contenido."
+    }
+  },
+  {
+    "id": "master-prompt-generator",
+    "pt": {
+      "alias": "Escriba de Prompts",
+      "tagline": "Um pedido que outra IA executa como foi pensado.",
+      "story": "No ateliê fictício de Caio, o mesmo prompt servia para tudo e quebrava em silêncio. Escriba de Prompts entende a tarefa, escolhe a estrutura certa para o modelo e confere o texto antes de entregar. Ele entrega o prompt, nunca o resultado da tarefa.",
+      "purpose": "Transforma um pedido, seu contexto e suas restrições em um prompt que outro sistema de IA executa como entregue, adaptado ao modelo, à plataforma e ao risco.",
+      "useCases": [
+        "Criar instruções para um GPT personalizado ou projeto.",
+        "Depurar um prompt que muda de comportamento."
+      ],
+      "scenario": {
+        "title": "O prompt que quebrou",
+        "context": "Cenário fictício: [PROMPT_ATUAL] atende [TAREFA], mas falha com [ENTRADA_DIFICIL] em [MODELO].",
+        "request": "Use esta skill para corrigir [PROMPT_ATUAL] para [MODELO]. Explique a causa provável da falha com [ENTRADA_DIFICIL], entregue a nova versão e rode a verificação. Não execute a tarefa descrita no prompt.",
+        "output": "Prompt revisado, causa provável e resultado da verificação.",
+        "check": "A entrega deve conter o prompt e não o resultado da tarefa, e deve funcionar com [ENTRADA_DIFICIL]."
+      },
+      "steps": [
+        "Descreva a tarefa e o modelo.",
+        "Receba o prompt adaptado.",
+        "Teste com um caso difícil."
+      ],
+      "boundary": "A qualidade final depende do modelo usado e de testes reais. Recursos de cada plataforma mudam e precisam ser reconferidos."
+    },
+    "en": {
+      "alias": "Prompt Scribe",
+      "tagline": "A request another AI runs as intended.",
+      "story": "In Caio's fictional studio, the same prompt served for everything and broke silently. Prompt Scribe understands the task, picks the right structure for the model and checks the text before delivering. It delivers the prompt, never the result of the task.",
+      "purpose": "Turns a request, its context and constraints into a prompt another AI system runs as delivered, adapted to the model, the platform and the risk.",
+      "useCases": [
+        "Create instructions for a custom GPT or project.",
+        "Debug a prompt whose behavior keeps changing."
+      ],
+      "scenario": {
+        "title": "The prompt that broke",
+        "context": "Fictional scenario: [CURRENT_PROMPT] serves [TASK] but fails with [HARD_INPUT] on [MODEL].",
+        "request": "Use this skill to fix [CURRENT_PROMPT] for [MODEL]. Explain the likely cause of the failure with [HARD_INPUT], deliver the new version and run the check. Do not perform the task described in the prompt.",
+        "output": "Revised prompt, likely cause and check result.",
+        "check": "The delivery must contain the prompt rather than the task result, and must work with [HARD_INPUT]."
+      },
+      "steps": [
+        "Describe the task and model.",
+        "Receive the adapted prompt.",
+        "Test it on a hard case."
+      ],
+      "boundary": "Final quality depends on the model used and on real tests. Each platform's features change and must be re-checked."
+    },
+    "es": {
+      "alias": "Escriba de Prompts",
+      "tagline": "Un pedido que otra IA ejecuta como se pensó.",
+      "story": "En el taller ficticio de Caio, el mismo prompt servía para todo y se rompía en silencio. Escriba de Prompts entiende la tarea, elige la estructura correcta para el modelo y revisa el texto antes de entregar. Entrega el prompt, nunca el resultado de la tarea.",
+      "purpose": "Convierte un pedido, su contexto y sus restricciones en un prompt que otro sistema de IA ejecuta tal como se entrega, adaptado al modelo, la plataforma y el riesgo.",
+      "useCases": [
+        "Crear instrucciones para un GPT personalizado o proyecto.",
+        "Depurar un prompt que cambia de comportamiento."
+      ],
+      "scenario": {
+        "title": "El prompt que se rompió",
+        "context": "Escenario ficticio: [PROMPT_ACTUAL] atiende [TAREA], pero falla con [ENTRADA_DIFICIL] en [MODELO].",
+        "request": "Usa esta skill para corregir [PROMPT_ACTUAL] para [MODELO]. Explica la causa probable del fallo con [ENTRADA_DIFICIL], entrega la nueva versión y ejecuta la verificación. No realices la tarea descrita en el prompt.",
+        "output": "Prompt revisado, causa probable y resultado de la verificación.",
+        "check": "La entrega debe contener el prompt y no el resultado de la tarea, y debe funcionar con [ENTRADA_DIFICIL]."
+      },
+      "steps": [
+        "Describe la tarea y el modelo.",
+        "Recibe el prompt adaptado.",
+        "Pruébalo con un caso difícil."
+      ],
+      "boundary": "La calidad final depende del modelo usado y de pruebas reales. Las funciones de cada plataforma cambian y deben confirmarse."
+    }
+  },
+  {
+    "id": "skill-builder",
+    "pt": {
+      "alias": "Molde de Skills",
+      "tagline": "A skill certa, na hora certa, do mesmo jeito.",
+      "story": "No laboratório fictício de Iara, as skills funcionavam em um dia e sumiam no outro. Molde de Skills começa perguntando se uma skill é mesmo a resposta, escreve os testes primeiro e só termina com a auditoria e o arquivo para instalar.",
+      "purpose": "Constrói, melhora, traduz, empacota e audita Agent Skills, para que sejam acionadas quando devem e façam a tarefa do mesmo jeito em cada execução.",
+      "useCases": [
+        "Transformar um fluxo recorrente em uma skill testada.",
+        "Descobrir por que uma skill não é acionada."
+      ],
+      "scenario": {
+        "title": "A skill que não aparece",
+        "context": "Cenário fictício: [SKILL] existe para [TAREFA], mas o assistente não a usa quando [PEDIDO] chega.",
+        "request": "Use esta skill para auditar [SKILL]. Explique por que [PEDIDO] não a aciona, corrija a descrição, adicione casos de teste e rode o verificador. Informe o que não foi possível testar.",
+        "output": "Descrição corrigida, casos de acionamento e relatório do verificador.",
+        "check": "[PEDIDO] deve constar nos casos que acionam a skill, e o verificador deve terminar sem erros."
+      },
+      "steps": [
+        "Descreva o fluxo a transformar.",
+        "Escreva os testes e o pacote.",
+        "Rode a auditoria e empacote."
+      ],
+      "boundary": "O verificador cobre itens mecânicos. O comportamento real depende do assistente e precisa ser testado nele."
+    },
+    "en": {
+      "alias": "Skill Mold",
+      "tagline": "The right skill, at the right time, the same way.",
+      "story": "In Iara's fictional lab, skills worked one day and vanished the next. Skill Mold starts by asking whether a skill is really the answer, writes the tests first and finishes only with the audit and the install archive.",
+      "purpose": "Builds, improves, translates, packages and audits Agent Skills so they trigger when they should and do the task the same way on every run.",
+      "useCases": [
+        "Turn a recurring flow into a tested skill.",
+        "Find out why a skill does not trigger."
+      ],
+      "scenario": {
+        "title": "The skill that never shows up",
+        "context": "Fictional scenario: [SKILL] exists for [TASK], but the assistant does not use it when [REQUEST] arrives.",
+        "request": "Use this skill to audit [SKILL]. Explain why [REQUEST] does not trigger it, fix the description, add test cases and run the checker. Report what could not be tested.",
+        "output": "Fixed description, trigger cases and checker report.",
+        "check": "[REQUEST] must appear among the cases that trigger the skill, and the checker must finish without errors."
+      },
+      "steps": [
+        "Describe the flow to convert.",
+        "Write the tests and the package.",
+        "Run the audit and package it."
+      ],
+      "boundary": "The checker covers mechanical items. Real behavior depends on the assistant and must be tested there."
+    },
+    "es": {
+      "alias": "Molde de Skills",
+      "tagline": "La skill correcta, en el momento correcto, siempre igual.",
+      "story": "En el laboratorio ficticio de Iara, las skills funcionaban un día y desaparecían al otro. Molde de Skills empieza preguntando si una skill es realmente la respuesta, escribe primero las pruebas y solo termina con la auditoría y el archivo para instalar.",
+      "purpose": "Construye, mejora, traduce, empaqueta y audita Agent Skills, para que se activen cuando deben y hagan la tarea de la misma forma en cada ejecución.",
+      "useCases": [
+        "Convertir un flujo recurrente en una skill probada.",
+        "Descubrir por qué una skill no se activa."
+      ],
+      "scenario": {
+        "title": "La skill que no aparece",
+        "context": "Escenario ficticio: [SKILL] existe para [TAREA], pero el asistente no la usa cuando llega [PEDIDO].",
+        "request": "Usa esta skill para auditar [SKILL]. Explica por qué [PEDIDO] no la activa, corrige la descripción, agrega casos de prueba y ejecuta el verificador. Informa lo que no se pudo probar.",
+        "output": "Descripción corregida, casos de activación e informe del verificador.",
+        "check": "[PEDIDO] debe constar en los casos que activan la skill, y el verificador debe terminar sin errores."
+      },
+      "steps": [
+        "Describe el flujo a convertir.",
+        "Escribe las pruebas y el paquete.",
+        "Ejecuta la auditoría y empaqueta."
+      ],
+      "boundary": "El verificador cubre elementos mecánicos. El comportamiento real depende del asistente y debe probarse en él."
+    }
+  },
+  {
+    "id": "arquitetura-de-contexto-e-rag",
+    "pt": {
+      "alias": "Atlas de Evidências",
+      "tagline": "Antes de culpar o modelo, siga o trecho perdido.",
+      "story": "Na biblioteca fictícia de Renan, o assistente respondia bem e citava errado. Atlas de Evidências acompanha a pergunta em cada etapa até achar onde a evidência se perdeu. Às vezes a solução é um índice melhor. Às vezes é não usar RAG.",
+      "purpose": "Diagnostica e desenha como um sistema de IA recebe instruções, evidências e memória, comparando do contexto direto ao RAG completo e definindo como medir o resultado.",
+      "useCases": [
+        "Descobrir por que um RAG traz o trecho errado.",
+        "Escolher a forma mais simples de dar documentos a um assistente."
+      ],
+      "scenario": {
+        "title": "O trecho que sumiu",
+        "context": "Cenário fictício: [ASSISTENTE] responde sobre [BASE], mas erra [PERGUNTA] mesmo com a resposta em [DOCUMENTO].",
+        "request": "Use esta skill para diagnosticar por que [PERGUNTA] falha. Teste cada etapa até encontrar onde [DOCUMENTO] se perde, proponha a menor mudança e defina como medir a melhora. Não apresente métricas que não foram medidas.",
+        "output": "Diagnóstico por etapa, mudança proposta e conjunto de perguntas para avaliação.",
+        "check": "A primeira etapa que perde a evidência deve estar identificada, e cada número deve ter origem."
+      },
+      "steps": [
+        "Reúna perguntas e documentos.",
+        "Localize a etapa que falha.",
+        "Meça depois de mudar."
+      ],
+      "boundary": "Produz diagnóstico e desenho, sem implantar sozinha. Depende de perguntas reais, e dados de fornecedores mudam com frequência."
+    },
+    "en": {
+      "alias": "Evidence Atlas",
+      "tagline": "Before blaming the model, follow the lost passage.",
+      "story": "In Renan's fictional library, the assistant answered well and cited wrongly. Evidence Atlas follows the question through every stage until it finds where the evidence was lost. Sometimes the fix is a better index. Sometimes it is not using RAG at all.",
+      "purpose": "Diagnoses and designs how an AI system receives instructions, evidence and memory, comparing direct context up to full RAG and defining how to measure the result.",
+      "useCases": [
+        "Find out why a RAG returns the wrong passage.",
+        "Choose the simplest way to give documents to an assistant."
+      ],
+      "scenario": {
+        "title": "The passage that vanished",
+        "context": "Fictional scenario: [ASSISTANT] answers about [BASE] but gets [QUESTION] wrong even with the answer in [DOCUMENT].",
+        "request": "Use this skill to diagnose why [QUESTION] fails. Test each stage until you find where [DOCUMENT] is lost, propose the smallest change and define how to measure the improvement. Do not present metrics that were not measured.",
+        "output": "Stage-by-stage diagnosis, proposed change and an evaluation question set.",
+        "check": "The first stage that loses the evidence must be identified, and every number must have a source."
+      },
+      "steps": [
+        "Gather questions and documents.",
+        "Locate the failing stage.",
+        "Measure after changing."
+      ],
+      "boundary": "It produces a diagnosis and design and does not deploy on its own. It depends on real questions, and vendor data changes often."
+    },
+    "es": {
+      "alias": "Atlas de Evidencias",
+      "tagline": "Antes de culpar al modelo, sigue el fragmento perdido.",
+      "story": "En la biblioteca ficticia de Renan, el asistente respondía bien y citaba mal. Atlas de Evidencias acompaña la pregunta en cada etapa hasta hallar dónde se perdió la evidencia. A veces la solución es un índice mejor. A veces es no usar RAG.",
+      "purpose": "Diagnostica y diseña cómo un sistema de IA recibe instrucciones, evidencias y memoria, comparando desde el contexto directo hasta el RAG completo y definiendo cómo medir el resultado.",
+      "useCases": [
+        "Descubrir por qué un RAG trae el fragmento equivocado.",
+        "Elegir la forma más simple de dar documentos a un asistente."
+      ],
+      "scenario": {
+        "title": "El fragmento que desapareció",
+        "context": "Escenario ficticio: [ASISTENTE] responde sobre [BASE], pero falla en [PREGUNTA] aunque la respuesta está en [DOCUMENTO].",
+        "request": "Usa esta skill para diagnosticar por qué falla [PREGUNTA]. Prueba cada etapa hasta encontrar dónde se pierde [DOCUMENTO], propón el cambio más pequeño y define cómo medir la mejora. No presentes métricas que no se hayan medido.",
+        "output": "Diagnóstico por etapa, cambio propuesto y conjunto de preguntas para evaluación.",
+        "check": "La primera etapa que pierde la evidencia debe estar identificada, y cada número debe tener origen."
+      },
+      "steps": [
+        "Reúne preguntas y documentos.",
+        "Localiza la etapa que falla.",
+        "Mide después de cambiar."
+      ],
+      "boundary": "Produce diagnóstico y diseño, sin implantar por sí sola. Depende de preguntas reales, y los datos de proveedores cambian con frecuencia."
+    }
+  },
+  {
+    "id": "revisao-de-agentes-para-producao",
+    "pt": {
+      "alias": "Sentinela de Agentes",
+      "tagline": "O que acontece quando a chamada cai no meio.",
+      "story": "Na central fictícia de Heitor, um agente enviou a mesma cobrança três vezes e jurou ter enviado uma. Sentinela de Agentes percorre cada ação com efeito real e pergunta o que acontece em erro, repetição e queda. O resultado é uma decisão, não uma opinião.",
+      "purpose": "Revisa o desenho ou a implementação de um agente antes de operar: necessidade, estado, orçamento, repetição segura, aprovações e recuperação de falhas, com decisão baseada em evidência.",
+      "useCases": [
+        "Decidir se um agente pode operar com dados reais.",
+        "Investigar por que um agente repete ações."
+      ],
+      "scenario": {
+        "title": "A cobrança em triplo",
+        "context": "Cenário fictício: [AGENTE] executa [ACAO] em [SISTEMA] e a chamada expira antes da resposta.",
+        "request": "Use esta skill para revisar [AGENTE]. Para [ACAO], responda o que ocorre em erro, repetição e queda, verifique identificadores estáveis e aprovação, e dê uma decisão de ir ou não para produção. Separe o que foi observado do que não foi verificado.",
+        "output": "Decisão, achados por gravidade com cenário de falha e lista do que não foi verificado.",
+        "check": "Cada achado deve apontar o local e a falha concreta, e nada lido pode ser relatado como testado."
+      },
+      "steps": [
+        "Reúna código e ferramentas.",
+        "Percorra cada efeito colateral.",
+        "Receba a decisão e os ajustes."
+      ],
+      "boundary": "É uma revisão: comportamento real exige teste no ambiente do agente. Não substitui auditoria de segurança completa."
+    },
+    "en": {
+      "alias": "Agent Sentinel",
+      "tagline": "What happens when the call drops halfway.",
+      "story": "In Heitor's fictional center, an agent sent the same charge three times and swore it sent one. Agent Sentinel walks through each action with a real effect and asks what happens on error, retry and crash. The result is a decision, not an opinion.",
+      "purpose": "Reviews an agent's design or implementation before it operates: need, state, budget, safe retries, approvals and failure recovery, with an evidence-based decision.",
+      "useCases": [
+        "Decide whether an agent can operate on real data.",
+        "Investigate why an agent repeats actions."
+      ],
+      "scenario": {
+        "title": "The triple charge",
+        "context": "Fictional scenario: [AGENT] performs [ACTION] on [SYSTEM] and the call times out before the response.",
+        "request": "Use this skill to review [AGENT]. For [ACTION], answer what happens on error, retry and crash, check stable identifiers and approval, and give a go or no-go decision. Separate what was observed from what was not verified.",
+        "output": "Decision, findings by severity with failure scenario and a list of what was not verified.",
+        "check": "Each finding must point to the location and the concrete failure, and nothing merely read may be reported as tested."
+      },
+      "steps": [
+        "Gather code and tools.",
+        "Walk through each side effect.",
+        "Receive the decision and fixes."
+      ],
+      "boundary": "It is a review: real behavior requires testing in the agent's environment. It does not replace a full security audit."
+    },
+    "es": {
+      "alias": "Centinela de Agentes",
+      "tagline": "Qué ocurre cuando la llamada cae a mitad de camino.",
+      "story": "En la central ficticia de Heitor, un agente envió el mismo cobro tres veces y juró haber enviado uno. Centinela de Agentes recorre cada acción con efecto real y pregunta qué ocurre ante error, repetición y caída. El resultado es una decisión, no una opinión.",
+      "purpose": "Revisa el diseño o la implementación de un agente antes de operar: necesidad, estado, presupuesto, reintentos seguros, aprobaciones y recuperación de fallos, con decisión basada en evidencia.",
+      "useCases": [
+        "Decidir si un agente puede operar con datos reales.",
+        "Investigar por qué un agente repite acciones."
+      ],
+      "scenario": {
+        "title": "El cobro triple",
+        "context": "Escenario ficticio: [AGENTE] ejecuta [ACCION] en [SISTEMA] y la llamada expira antes de la respuesta.",
+        "request": "Usa esta skill para revisar [AGENTE]. Para [ACCION], responde qué ocurre ante error, repetición y caída, verifica identificadores estables y aprobación, y da una decisión de ir o no a producción. Separa lo observado de lo no verificado.",
+        "output": "Decisión, hallazgos por gravedad con escenario de fallo y lista de lo no verificado.",
+        "check": "Cada hallazgo debe señalar el lugar y el fallo concreto, y nada leído puede informarse como probado."
+      },
+      "steps": [
+        "Reúne código y herramientas.",
+        "Recorre cada efecto secundario.",
+        "Recibe la decisión y los ajustes."
+      ],
+      "boundary": "Es una revisión: el comportamiento real exige pruebas en el entorno del agente. No sustituye una auditoría de seguridad completa."
+    }
+  },
+  {
+    "id": "prontidao-de-sistemas-de-ia",
+    "pt": {
+      "alias": "Mesa de Decolagem",
+      "tagline": "Lançar com prova, dono e conta fechada.",
+      "story": "Na empresa fictícia de Marta, a data do lançamento chegou antes de alguém saber quem respondia por um erro. Torre de Lançamento separa o que foi medido do que foi prometido, dá um dono a cada risco e faz a conta de operar. Depois diz se dá para lançar.",
+      "purpose": "Avalia se uma aplicação de IA está pronta para operar: evidência de testes, segurança, governança, observabilidade e custo total, com registro de riscos e decisão de lançamento.",
+      "useCases": [
+        "Preparar um produto de IA para o lançamento.",
+        "Estimar o custo real de operar um sistema de IA."
+      ],
+      "scenario": {
+        "title": "A data antes da prova",
+        "context": "Cenário fictício: [PRODUTO] será lançado para [USUARIOS] e decide [DECISAO], com [TESTES] feitos até agora.",
+        "request": "Use esta skill para avaliar a prontidão de [PRODUTO]. Separe o medido do declarado em [TESTES], monte o registro de riscos com um responsável por item, estime o custo com hipóteses visíveis e decida se lança, lança limitado ou não lança. Não afirme que uma lei foi atendida.",
+        "output": "Relatório com evidências, registro de riscos, custo e decisão.",
+        "check": "Todo risco deve ter responsável, e toda hipótese de custo deve estar visível."
+      },
+      "steps": [
+        "Descreva o sistema e as decisões.",
+        "Reúna testes e custos.",
+        "Receba riscos e decisão."
+      ],
+      "boundary": "Não é parecer jurídico. Depende dos dados reais fornecidos, e preços e regulação precisam ser reconferidos na data."
+    },
+    "en": {
+      "alias": "Takeoff Desk",
+      "tagline": "Launch with proof, owners and closed numbers.",
+      "story": "At Marta's fictional company, the launch date arrived before anyone knew who answered for an error. Launch Tower separates what was measured from what was promised, gives each risk an owner and does the operating math. Then it says whether you can launch.",
+      "purpose": "Assesses whether an AI application is ready to operate: test evidence, security, governance, observability and total cost, with a risk register and a launch decision.",
+      "useCases": [
+        "Prepare an AI product for launch.",
+        "Estimate the real cost of running an AI system."
+      ],
+      "scenario": {
+        "title": "The date before the proof",
+        "context": "Fictional scenario: [PRODUCT] will launch to [USERS] and decides [DECISION], with [TESTS] done so far.",
+        "request": "Use this skill to assess the readiness of [PRODUCT]. Separate measured from declared in [TESTS], build the risk register with one owner per item, estimate the cost with visible assumptions and decide whether to launch, launch limited or not launch. Do not state that a law was satisfied.",
+        "output": "Report with evidence, risk register, cost and decision.",
+        "check": "Every risk must have an owner, and every cost assumption must be visible."
+      },
+      "steps": [
+        "Describe the system and decisions.",
+        "Gather tests and costs.",
+        "Receive risks and decision."
+      ],
+      "boundary": "It is not legal advice. It depends on the real data provided, and prices and regulation must be re-checked at the date."
+    },
+    "es": {
+      "alias": "Mesa de Despegue",
+      "tagline": "Lanzar con prueba, responsable y cuentas cerradas.",
+      "story": "En la empresa ficticia de Marta, la fecha de lanzamiento llegó antes de que alguien supiera quién respondía por un error. Torre de Lanzamiento separa lo medido de lo prometido, da un responsable a cada riesgo y hace la cuenta de operar. Después dice si se puede lanzar.",
+      "purpose": "Evalúa si una aplicación de IA está lista para operar: evidencia de pruebas, seguridad, gobernanza, observabilidad y costo total, con registro de riesgos y decisión de lanzamiento.",
+      "useCases": [
+        "Preparar un producto de IA para el lanzamiento.",
+        "Estimar el costo real de operar un sistema de IA."
+      ],
+      "scenario": {
+        "title": "La fecha antes de la prueba",
+        "context": "Escenario ficticio: [PRODUCTO] se lanzará a [USUARIOS] y decide [DECISION], con [PRUEBAS] hechas hasta ahora.",
+        "request": "Usa esta skill para evaluar la preparación de [PRODUCTO]. Separa lo medido de lo declarado en [PRUEBAS], arma el registro de riesgos con un responsable por elemento, estima el costo con supuestos visibles y decide si lanzar, lanzar limitado o no lanzar. No afirmes que una ley se cumplió.",
+        "output": "Informe con evidencias, registro de riesgos, costo y decisión.",
+        "check": "Todo riesgo debe tener responsable, y todo supuesto de costo debe estar visible."
+      },
+      "steps": [
+        "Describe el sistema y las decisiones.",
+        "Reúne pruebas y costos.",
+        "Recibe riesgos y decisión."
+      ],
+      "boundary": "No es asesoramiento jurídico. Depende de los datos reales entregados, y precios y regulación deben confirmarse en la fecha."
+    }
+  },
+  {
+    "id": "escolha-tecnica-de-modelos",
+    "pt": {
+      "alias": "Ábaco de Modelos",
+      "tagline": "O modelo certo sai da conta, não da fama.",
+      "story": "Na equipe fictícia de Nuno, o modelo mais comentado da semana sempre vencia a reunião. Ábaco de Modelos pega exemplos reais, conta os tokens e testa os candidatos às cegas. Só depois discute treinar qualquer coisa.",
+      "purpose": "Compara modelos e formas de customização para uma tarefa concreta, com conta de tokens e custo visível, sequência de prompt a fine-tuning e um teste que confirma a escolha.",
+      "useCases": [
+        "Escolher um modelo para uma tarefa recorrente.",
+        "Decidir se vale fazer fine-tuning."
+      ],
+      "scenario": {
+        "title": "O favorito da semana",
+        "context": "Cenário fictício: [EQUIPE] processa [VOLUME] de [TAREFA] por mês e quer trocar para [MODELO].",
+        "request": "Use esta skill para avaliar [MODELO] em [TAREFA]. Mostre a conta de tokens e o custo mensal, compare com dois candidatos usando preços confirmados no site do fornecedor e proponha um teste às cegas com critério de aprovação.",
+        "output": "Comparação com conta visível, recomendação e plano de teste.",
+        "check": "Cada preço deve ter a data e a fonte, e a recomendação deve dizer o que a mudaria."
+      },
+      "steps": [
+        "Reúna exemplos e volumes.",
+        "Faça a conta e compare.",
+        "Teste antes de decidir."
+      ],
+      "boundary": "Preços e modelos mudam com frequência. A recomendação só vale depois do teste com exemplos reais."
+    },
+    "en": {
+      "alias": "Model Abacus",
+      "tagline": "The right model comes from math, not fame.",
+      "story": "On Nuno's fictional team, the most talked-about model of the week always won the meeting. Model Abacus takes real samples, counts the tokens and tests the candidates blind. Only then does it discuss training anything.",
+      "purpose": "Compares models and customization options for a concrete task, with visible token and cost math, a ladder from prompting to fine-tuning and a test that confirms the choice.",
+      "useCases": [
+        "Choose a model for a recurring task.",
+        "Decide whether fine-tuning is worth it."
+      ],
+      "scenario": {
+        "title": "The favorite of the week",
+        "context": "Fictional scenario: [TEAM] processes [VOLUME] of [TASK] per month and wants to switch to [MODEL].",
+        "request": "Use this skill to assess [MODEL] for [TASK]. Show the token math and monthly cost, compare with two candidates using prices confirmed on the vendor's site and propose a blind test with pass criteria.",
+        "output": "Comparison with visible math, recommendation and test plan.",
+        "check": "Each price must carry its date and source, and the recommendation must say what would change it."
+      },
+      "steps": [
+        "Gather samples and volumes.",
+        "Do the math and compare.",
+        "Test before deciding."
+      ],
+      "boundary": "Prices and models change often. The recommendation only holds after testing with real samples."
+    },
+    "es": {
+      "alias": "Ábaco de Modelos",
+      "tagline": "El modelo correcto sale de las cuentas, no de la fama.",
+      "story": "En el equipo ficticio de Nuno, el modelo más comentado de la semana siempre ganaba la reunión. Ábaco de Modelos toma ejemplos reales, cuenta los tokens y prueba a los candidatos a ciegas. Solo después discute entrenar algo.",
+      "purpose": "Compara modelos y formas de personalización para una tarea concreta, con cuentas de tokens y costo visibles, una secuencia de prompt a fine-tuning y una prueba que confirma la elección.",
+      "useCases": [
+        "Elegir un modelo para una tarea recurrente.",
+        "Decidir si vale la pena hacer fine-tuning."
+      ],
+      "scenario": {
+        "title": "El favorito de la semana",
+        "context": "Escenario ficticio: [EQUIPO] procesa [VOLUMEN] de [TAREA] al mes y quiere cambiar a [MODELO].",
+        "request": "Usa esta skill para evaluar [MODELO] en [TAREA]. Muestra las cuentas de tokens y el costo mensual, compara con dos candidatos usando precios confirmados en el sitio del proveedor y propón una prueba a ciegas con criterio de aprobación.",
+        "output": "Comparación con cuentas visibles, recomendación y plan de prueba.",
+        "check": "Cada precio debe tener fecha y fuente, y la recomendación debe decir qué la cambiaría."
+      },
+      "steps": [
+        "Reúne ejemplos y volúmenes.",
+        "Haz las cuentas y compara.",
+        "Prueba antes de decidir."
+      ],
+      "boundary": "Los precios y modelos cambian con frecuencia. La recomendación solo vale después de probar con ejemplos reales."
+    }
   }
 ]

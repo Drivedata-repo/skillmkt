@@ -59,7 +59,7 @@ const DeckArt = (() => {
     const g=s.game, p=s.pricing, foil=finish(s);
     const money=p ? (typeof DeckCommerce!=="undefined" ? DeckCommerce.money(p.priceCents) : `US$ ${p.priceCents/100}`) : "";
     const level=g ? translated("Nível de coleção {level}").replace("{level}",g.level) : "";
-    return `<div class="holo-card ${g ? "has-game " : ""}${opts.spin ? "is-spinning " : ""}${foil ? `premium-card finish-${foil.key} ` : ""}${s.featured ? "featured-card" : ""}" style="--hue:${hue(s)};--foil-delay:-${(Number(s.code?.slice(3)) || 0)%9}s" data-card-id="${esc(s.id)}"${foil ? ` data-finish="${foil.key}"` : ""}>
+    return `<div class="holo-card ${g ? "has-game " : ""}${opts.spin ? "is-spinning " : ""}${foil ? `premium-card finish-${foil.key} ` : ""}${s.free ? "free-card " : ""}${s.featured ? "featured-card" : ""}" style="--hue:${s.free ? 158 : hue(s)};--foil-delay:-${(Number(s.code?.slice(3)) || 0)%9}s" data-card-id="${esc(s.id)}"${foil ? ` data-finish="${foil.key}"` : ""}>
       <div class="card-face front"><div class="card-edge"></div>
         <div class="card-heading"><img src="/assets/drivedata-logo.png" alt="" width="22" height="22"><span>${esc(s.code)}</span><b>${foil ? esc(translated(foil.label)) : s.featured ? "EXAMPLE EDITION" : "HOLO SERIES"}</b></div>
         ${g?`<div class="card-rank"><span>${esc(g.school)}</span><span class="rank-stars" aria-label="${esc(level)}"><em>LV ${g.level}</em><span aria-hidden="true">${"✦".repeat(g.level)}</span></span></div>`:""}

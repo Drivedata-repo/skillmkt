@@ -29,7 +29,7 @@ const LEGACY = [
 const WITH_LICENSE = ["claude-marketplace-skill-creator", "claude-skill-creator", "cowork-plugin-customizer", "frontend-design"];
 const APACHE = [...LEGACY, ...WITH_LICENSE];
 const { ownDeclared, mit: MIT } = require(path.join(ROOT, "data/sale-rights.cjs"));
-const OWN = ownDeclared.filter((id) => id !== "orquestrador-de-modelos"); // carta nova, sem base 1.2.0
+const OWN = ownDeclared.filter((id) => fs.existsSync(path.join(baseDir, id + ".zip"))); // cartas novas não têm base 1.2.0
 const IDS = [...APACHE, ...OWN, ...MIT];
 const kindOf = (id) => (MIT.includes(id) ? "mit" : OWN.includes(id) ? "own" : "apache");
 const EXTERNAL = {

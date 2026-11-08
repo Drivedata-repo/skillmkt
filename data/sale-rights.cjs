@@ -5,6 +5,15 @@
 
 // Sem marca de terceiro. Autoria declarada por João em 08/11/2026.
 const ownDeclared = [
+  "agent-builder",
+  "human-authentic-writing-audit",
+  "markdown-builder",
+  "master-prompt-generator",
+  "skill-builder",
+  "arquitetura-de-contexto-e-rag",
+  "revisao-de-agentes-para-producao",
+  "prontidao-de-sistemas-de-ia",
+  "escolha-tecnica-de-modelos",
   "orquestrador-de-modelos",
   "ambiente-dev-windows",
   "automacao-documentos-office",
@@ -113,16 +122,15 @@ const apacheInPackage = [
   "writing-hookify-rules",
 ];
 
+// Versão oficial Apache 2.0 (anthropics/skills). Distribuição gratuita decidida por João em 08/11/2026.
+const freeOffice = ["claude-docx", "claude-pdf", "claude-pptx", "claude-xlsx"];
+
 // Licença da própria carta reserva todos os direitos à Anthropic.
 const proprietary = [
   "claude-built-in-browser",
   "claude-chrome-browser",
   "claude-computer-use",
   "claude-computer-use-staging",
-  "claude-docx",
-  "claude-pdf",
-  "claude-pptx",
-  "claude-xlsx",
   "claude-xlsx-staging",
   "claude-security",
 ];
@@ -171,6 +179,7 @@ module.exports = {
   ownDeclared,
   mit,
   apacheInPackage,
+  freeOffice,
   proprietary,
   noLicense,
   authorizations,

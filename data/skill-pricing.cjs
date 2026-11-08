@@ -114,7 +114,7 @@ const rows = [
   ["portfolio-de-projetos", "1111", "Referência sanitizada de portfólio; o acervo privado e seus clientes não acompanham a edição."],
   ["power-bi-embedded-portais", "5554", "Integra portal, identidade e relatórios com teste de isolamento entre tenants e licenciamento separado."],
   ["power-bi-modelagem-dax-performance", "5455", "Combina reconciliação de negócio, modelagem e medição de DAX com múltiplos contextos."],
-  ["power-bi-relatorios-como-codigo", "4545", "Constrói relatórios versionados com temas, páginas e interações, verificando referências e números."],
+  ["power-bi-relatorios-como-codigo", "5555", "Constrói relatórios versionados com temas, páginas e interações, verificando referências e números."],
   ["power-platform-code-first", "4544", "Produz apps e fluxos Microsoft com importação, delegação e validação no Studio."],
   ["project-artifact", "2233", "Consolida status em página compartilhada; publicação depende do recurso Artifact externo."],
   ["propostas-comerciais-e-estimativas", "3434", "Estrutura escopo e estimativa com premissas e condições sujeitas à decisão comercial."],
@@ -141,6 +141,15 @@ const rows = [
   ["video-programatico-reels", "4544", "Produz vídeo com cenas, áudio e legendas, incluindo prévia e verificação técnica da mídia."],
   ["writing-hookify-rules", "3234", "Cria regras por evento com testes de regex, falsos positivos e suporte real ao bloqueio."],
   ["orquestrador-de-modelos", "3334", "Classifica pedidos por regras locais e orienta a delegação a agentes, sem chamar IA nem guardar o texto digitado."],
+  ["agent-builder", "4444", "Decide se um agente é necessário e gera pacote com permissões, testes e adaptadores para três ambientes."],
+  ["human-authentic-writing-audit", "3344", "Redige, revisa e pontua padrões de texto artificial, com verificador local e sem alegar prova de autoria."],
+  ["markdown-builder", "3334", "Cria e audita notas com cabeçalho validado por verificador, preservando conteúdo e tratando dados pessoais."],
+  ["master-prompt-generator", "3335", "Gera prompts adaptados ao modelo e à plataforma, com escolha de estrutura e verificação local antes da entrega."],
+  ["skill-builder", "4444", "Constrói, testa e audita pacotes de skill com verificador da lista de auditoria e empacotamento."],
+  ["arquitetura-de-contexto-e-rag", "4443", "Diagnostica e desenha contexto, ingestão e recuperação, escolhendo o menor mecanismo e definindo avaliação medida."],
+  ["revisao-de-agentes-para-producao", "4443", "Revisa necessidade, autoridade, estado e recuperação de falhas de agentes, com decisão baseada em evidência."],
+  ["prontidao-de-sistemas-de-ia", "4543", "Avalia evidência de testes, riscos, governança e custo total de uma aplicação de IA, separando medido de presumido."],
+  ["escolha-tecnica-de-modelos", "3333", "Compara modelos e customização para uma tarefa concreta, com conta de tokens visível e teste de confirmação."],
 ];
 const dimensions = ["depth", "scope", "verification", "reuse"];
 const byId = new Map(rows.map(row => [row[0], row]));

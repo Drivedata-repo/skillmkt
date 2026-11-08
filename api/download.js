@@ -14,11 +14,12 @@ module.exports = async (req, res) => {
     const id = new URL(req.url, "https://local.invalid").searchParams.get("id");
     const skill = skills.find((x) => x.id === id);
     if (!skill) return send(res, 404, { error: "Skill não encontrada." });
-    if (officialGuide(id))
+    const guide = officialGuide(id);
+    if (guide && !guide.packaged)
       return send(res, 403, {
         error: "Esta carta é entregue pela fonte oficial. Use o link indicado na carta.",
       });
-    requireSkill(access, id);
+    if (!guide) requireSkill(access, id);
     await limit(req, "demo-download", 150);
     const r = await db().query(
       "SELECT archive,sha256 FROM skillmkt.package_releases WHERE skill_id=$1 AND version=$2",

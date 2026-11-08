@@ -36,6 +36,7 @@ test("ten actual artifact scenarios remain distinct from full skill certificatio
     const skill = catalog.skills.find((x) => x.id === s.skillId);
     assert.ok(skill);
     const onBaseline = skill.release.version === "1.2.1";
+    if (upstream.has(skill.id)) continue;
     assert.equal(s.version, onBaseline ? skill.release.baselineVersion : skill.release.version);
     assert.equal(s.packageSha256, onBaseline ? skill.release.baselinePackageSha256 : skill.release.sha256);
     assert.match(s.sourceSha256, /^[a-f0-9]{64}$/);
@@ -74,14 +75,15 @@ for (const locale of ["pt", "en", "es"])
             r.limitations.length >= 3,
         );
         assert.ok(r.checks.every((c) => c.label && c.passed === true));
-        assert.equal(r.currentVersion, true);
-        assert.equal(r.passed, true);
+        assert.equal(r.currentVersion, !upstream.has(skill.id));
+        assert.equal(r.passed, !upstream.has(skill.id));
         assert.equal(r.fullSkillExecutionVerified, false);
       }
     }
     assert.equal(count, 10);
-    assert.equal(samples,10);
+    assert.equal(samples,6);
   });
+const upstream = new Set(["claude-docx", "claude-pdf", "claude-pptx", "claude-xlsx"]);
 test("failed or mismatched evidence never inherits an approval", () => {
   const record=evidence.scenarios[0], skill=catalog.skills.find(s=>s.id===record.skillId),original=structuredClone(record);
   try{

@@ -1078,63 +1078,40 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-docx",
     "code": "DD-019",
-    "version": "1.2.0",
-    "date": "2026-11-06",
     "format": "SKILL.md",
     "review": "structure-checked",
-    "executionTested": false,
-    "license": "Termos restritivos identificados",
-    "licenseFiles": [
-      "LICENSE.txt"
-    ],
     "tools": [
       "Python",
       "Node.js",
       "LibreOffice / Office"
     ],
-    "requirements": [
-      "Conteúdo e modelo de referência quando aplicável",
-      "Bibliotecas DOCX e ferramentas de renderização",
-      "Revisão dos dados e do texto pelo responsável do negócio"
-    ],
     "normalizedFiles": 0,
-    "commercialCleared": false,
     "example": {
       "title": "Organizar um documento de proposta",
       "kind": "document",
       "referenceVerified": true
     },
     "sourceReview": "applied-specific-static-checked",
-    "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "1a9ab3017453f81e3f310321998ef6f94faeb16410aa0fee16f8c83c5e9677c6",
-    "baselineSourceSha256": "b62988b03219a3ad80ddc04fbd493010370f9ff45fbd301a1193ae9598673454",
-    "sourceSha256": "0100c3fd7980a83ab6bc984e87483f3d2703a7f5451c28c03ca8235e217fa573",
-    "patchSetSha256": "a90a2f63cfa89227d37f68470805c9b70ea34831b2578d68c8158eae150c92f0",
-    "sourcePolicy": "specific-amendments",
-    "changes": [
-      {
-        "path": "claude-docx/SKILL.md",
-        "kind": "modified",
-        "beforeSha256": "b62988b03219a3ad80ddc04fbd493010370f9ff45fbd301a1193ae9598673454",
-        "afterSha256": "0100c3fd7980a83ab6bc984e87483f3d2703a7f5451c28c03ca8235e217fa573"
-      },
-      {
-        "path": "claude-docx/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "78e8c2a6e91aff8dbf81cfb259aca5b376ed807da477cbb82e57cdcfbcf47079"
-      },
-      {
-        "path": "claude-docx/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "ea4ac81a56ec21dfa96455a76b4ee40e21b09f2c112b992b98e69a97ec03b69a"
-      }
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "license": "Licença Apache 2.0 oficial",
+    "licenseFiles": [
+      "LICENSE.txt"
     ],
-    "sha256": "8bf3f058ad3914e56cfd0a50caaa1866eef0a8fe7825fdde0d962a8d86a44629",
-    "bytes": 179878,
-    "fileCount": 72
+    "requirements": [
+      "Conteúdo e modelo de referência quando aplicável",
+      "Bibliotecas DOCX e ferramentas de renderização",
+      "Revisão dos dados e do texto pelo responsável do negócio"
+    ],
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "sourceSha256": "9ad85e73ff21aa5a227c6f10613999f652c5d8d35ed532c26518e39771b84620",
+    "sourcePolicy": "upstream-apache",
+    "changes": [],
+    "sha256": "34f8feb43f2906f7ad12c1d92e23cee24b8f27f4bb33af41b2f58580450aa78c",
+    "bytes": 173802,
+    "fileCount": 65
   },
   "claude-google-workspace": {
     "schemaVersion": 1,
@@ -1717,57 +1694,34 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-pdf",
     "code": "DD-031",
-    "version": "1.2.0",
-    "date": "2026-11-06",
     "format": "SKILL.md",
     "review": "structure-checked",
-    "executionTested": false,
-    "license": "Termos restritivos identificados",
-    "licenseFiles": [
-      "LICENSE.txt"
-    ],
     "tools": [
       "Python"
+    ],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "license": "Licença Apache 2.0 oficial",
+    "licenseFiles": [
+      "LICENSE.txt"
     ],
     "requirements": [
       "Arquivos legíveis e autorização de acesso",
       "Bibliotecas PDF, ferramentas de renderização e OCR conforme o caso",
       "Qualidade de extração precisa ser conferida, principalmente em digitalizações e tabelas complexas"
     ],
-    "normalizedFiles": 0,
     "commercialCleared": false,
-    "example": null,
-    "sourceReview": "applied-specific-static-checked",
     "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "9f4736282edfb046ca2dc4cbf57e2651961d27526becc0f81348d4378c408dae",
-    "baselineSourceSha256": "9fe463ca615f24c8d9f0f66a013608a43a9f95e43125786b9613f8482c414c3d",
-    "sourceSha256": "91c90095a74ec33bae0f812f3a710da11dc6d4b29e42415d5237d9527b85f458",
-    "patchSetSha256": "f0295f929effd8794dda70c9802f0b06ae9bd27dccbcfb4fed21a2760f37fe7a",
-    "sourcePolicy": "specific-amendments",
-    "changes": [
-      {
-        "path": "claude-pdf/SKILL.md",
-        "kind": "modified",
-        "beforeSha256": "9fe463ca615f24c8d9f0f66a013608a43a9f95e43125786b9613f8482c414c3d",
-        "afterSha256": "91c90095a74ec33bae0f812f3a710da11dc6d4b29e42415d5237d9527b85f458"
-      },
-      {
-        "path": "claude-pdf/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "440619fed2f6c44075cb806724c1293fa63bf52ceb11fc4b3e112ca8d82fe50a"
-      },
-      {
-        "path": "claude-pdf/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "0b587db999ddd409bb4b104eca5339a5fe60dfa75557f78c0cb1d8a65d9df00a"
-      }
-    ],
-    "sha256": "3f28378af1f54d076e8e71ab6a33ffc909b729c566cee77dbd4bd0841d146c0c",
-    "bytes": 28423,
-    "fileCount": 18
+    "sourceSha256": "10f158ac9e24070fe88d7c31fbc3d2b515f2fb0b85baadc2838e2e2935ed9c9d",
+    "sourcePolicy": "upstream-apache",
+    "changes": [],
+    "sha256": "228d1cedb18e75450da42fc8a85713208ea5ff05b9e3ae5c29a4e8cf09c8ee67",
+    "bytes": 27846,
+    "fileCount": 16
   },
   "claude-power-bi-best-practices": {
     "schemaVersion": 1,
@@ -2020,63 +1974,40 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-pptx",
     "code": "DD-037",
-    "version": "1.2.0",
-    "date": "2026-11-06",
     "format": "SKILL.md",
     "review": "structure-checked",
-    "executionTested": false,
-    "license": "Termos restritivos identificados",
-    "licenseFiles": [
-      "LICENSE.txt"
-    ],
     "tools": [
       "Python",
       "Node.js",
       "LibreOffice / Office"
     ],
-    "requirements": [
-      "Conteúdo, objetivo, público e marca autorizada",
-      "Ferramentas de geração e renderização de PowerPoint",
-      "Validação de dados e afirmações pelo responsável do negócio"
-    ],
     "normalizedFiles": 0,
-    "commercialCleared": false,
     "example": {
       "title": "Dar uma sequência a uma apresentação",
       "kind": "slides",
       "referenceVerified": true
     },
     "sourceReview": "applied-specific-static-checked",
-    "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "a904c0ab6854bd0218d9ed08d4c32863c545a0fedbee70c06221371a2714fda3",
-    "baselineSourceSha256": "5be220830c48d24d04cbfb44f5c0be737942ac2f6089185d4b8bb03c36c65f46",
-    "sourceSha256": "802e6096fcb21c6c32508aa916190afe9b61c4bc72163eefd1b042a53d6cfb29",
-    "patchSetSha256": "55b15d73e8e73320a738ef7fc1e4058cf3626f5e151b2491cde9416ec6b044d2",
-    "sourcePolicy": "specific-amendments",
-    "changes": [
-      {
-        "path": "claude-pptx/SKILL.md",
-        "kind": "modified",
-        "beforeSha256": "5be220830c48d24d04cbfb44f5c0be737942ac2f6089185d4b8bb03c36c65f46",
-        "afterSha256": "802e6096fcb21c6c32508aa916190afe9b61c4bc72163eefd1b042a53d6cfb29"
-      },
-      {
-        "path": "claude-pptx/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "8c5fe3e3e8edc8ffa362acf64df3932045d3c3adac6c89a2d94b7934cfd741eb"
-      },
-      {
-        "path": "claude-pptx/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "e802f90168c6668c17ac7a0f38faea5b8ccb7a68914d3c2d731705eb6bda93ed"
-      }
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "license": "Licença Apache 2.0 oficial",
+    "licenseFiles": [
+      "LICENSE.txt"
     ],
-    "sha256": "5aa06ae39463ac2677a5353c1a11f09de8c6a8f3a3be1b0b6d6b25e7e30b8298",
-    "bytes": 191329,
-    "fileCount": 69
+    "requirements": [
+      "Conteúdo, objetivo, público e marca autorizada",
+      "Ferramentas de geração e renderização de PowerPoint",
+      "Validação de dados e afirmações pelo responsável do negócio"
+    ],
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "sourceSha256": "91d922b3ac10c6a70f4701f9cf7afc0c4806c3d12e1e690c7452a2ccb6784127",
+    "sourcePolicy": "upstream-apache",
+    "changes": [],
+    "sha256": "ee6d9ad56aad6be349b67752e9e7346b1098ab24d09382e30e516399a6c12e78",
+    "bytes": 178122,
+    "fileCount": 60
   },
   "claude-protheus-expert": {
     "schemaVersion": 1,
@@ -2300,63 +2231,40 @@ module.exports = {
     "schemaVersion": 1,
     "id": "claude-xlsx",
     "code": "DD-042",
-    "version": "1.2.0",
-    "date": "2026-11-06",
     "format": "SKILL.md",
     "review": "structure-checked",
-    "executionTested": false,
-    "license": "Termos restritivos identificados",
-    "licenseFiles": [
-      "LICENSE.txt"
-    ],
     "tools": [
       "Python",
       "Node.js",
       "LibreOffice / Office"
     ],
-    "requirements": [
-      "Arquivos e regras de cálculo do cliente",
-      "Bibliotecas de planilhas e mecanismo de recálculo",
-      "Macros, vínculos externos e funções avançadas exigem avaliação de compatibilidade"
-    ],
     "normalizedFiles": 0,
-    "commercialCleared": false,
     "example": {
       "title": "Conferir uma margem sem médias enganosas",
       "kind": "margin",
       "referenceVerified": true
     },
     "sourceReview": "applied-specific-static-checked",
-    "distribution": "authenticated-demo",
-    "baselineVersion": "1.1.0",
-    "baselinePackageSha256": "2ffbcbd43a6bb7f6e201e2d0fe4f966041ea43ba6a106d22bb6161c01c54ae24",
-    "baselineSourceSha256": "721494429ab9839b197f9d82ecb46cda58462e90455f7ab7e6df75d0030f177e",
-    "sourceSha256": "2767ed541e84d1cd2f16fcc5bb7026f62e1762f69fa30dbdb351661bd9765500",
-    "patchSetSha256": "944c0d4219045cae519ac327eae7fdd2a860097c22cb22cb8315ac233637440a",
-    "sourcePolicy": "specific-amendments",
-    "changes": [
-      {
-        "path": "claude-xlsx/SKILL.md",
-        "kind": "modified",
-        "beforeSha256": "721494429ab9839b197f9d82ecb46cda58462e90455f7ab7e6df75d0030f177e",
-        "afterSha256": "2767ed541e84d1cd2f16fcc5bb7026f62e1762f69fa30dbdb351661bd9765500"
-      },
-      {
-        "path": "claude-xlsx/revision-contract.md",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "fa145134ea7f4b7558c44aacc94d7008400c747c7006add12b6083c271f51496"
-      },
-      {
-        "path": "claude-xlsx/revision-cases.json",
-        "kind": "added",
-        "beforeSha256": null,
-        "afterSha256": "7182f7feb9321b878bcf2606732f221501a3b27d75dea9a93290d12479297808"
-      }
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "license": "Licença Apache 2.0 oficial",
+    "licenseFiles": [
+      "LICENSE.txt"
     ],
-    "sha256": "55c4e5e2db66da4dced132423ce65645eac18e7bb9efbe6d246963fcc8ece987",
-    "bytes": 172767,
-    "fileCount": 64
+    "requirements": [
+      "Arquivos e regras de cálculo do cliente",
+      "Bibliotecas de planilhas e mecanismo de recálculo",
+      "Macros, vínculos externos e funções avançadas exigem avaliação de compatibilidade"
+    ],
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "sourceSha256": "8ea4c55a2997dc8d2352eeb80c62ca40108ef68a52be377be26512c7d38ba40c",
+    "sourcePolicy": "upstream-apache",
+    "changes": [],
+    "sha256": "4c52f047756cf13c77526d3c4ca28059b219d15c168ff1ab2ca62fe26d067699",
+    "bytes": 165524,
+    "fileCount": 57
   },
   "claude-xlsx-staging": {
     "schemaVersion": 1,
@@ -8441,5 +8349,257 @@ module.exports = {
     "sha256": "03c1078f180e40125d2806e277b5f73f3d554306167a3900b57ac0d5546fce2b",
     "bytes": 10827,
     "fileCount": 10
+  },
+  "agent-builder": {
+    "schemaVersion": 1,
+    "id": "agent-builder",
+    "code": "DD-139",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Python 3 para os verificadores",
+      "Assistente compatível com agentes"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "4100cd2461451945a43565bc92d662bc94e47cae10049b645e5d85c9a106f24f",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "d2ffa3c2fed8664184dae68d6bedf47da9c294d8f79e83a53e19d4774f552b15",
+    "bytes": 74644,
+    "fileCount": 17
+  },
+  "human-authentic-writing-audit": {
+    "schemaVersion": 1,
+    "id": "human-authentic-writing-audit",
+    "code": "DD-140",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Python 3 para o verificador de texto",
+      "Não prova autoria nem garante resultado em detector"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "4ebce4aa75860877085d66eb8d87635f33fb3ba4df74c279a7247efa202523fe",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "4e93a32b4140cbda06ede9bb6730d907396e5dce3dd2ea07186885e390a60dce",
+    "bytes": 65546,
+    "fileCount": 14
+  },
+  "markdown-builder": {
+    "schemaVersion": 1,
+    "id": "markdown-builder",
+    "code": "DD-141",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Python 3 para o verificador",
+      "Padrão próprio, que pode exigir adaptação"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "510f00b97b302654c220bea67e6bf618036f04978be381fb9f8d6c195c238a68",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "94d4ce2ecdd6c176939eacd1c92bfe7e7f914f0b7065187c3a9b731ac5145680",
+    "bytes": 80590,
+    "fileCount": 14
+  },
+  "master-prompt-generator": {
+    "schemaVersion": 1,
+    "id": "master-prompt-generator",
+    "code": "DD-142",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Python 3 opcional para o verificador",
+      "Confirmar os recursos atuais do modelo escolhido"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "252c27ff6fcd129f5c9dc9bb3b7dfe654a2288c2d7d09b0a123cd8ad2134bd2f",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "7af967cf7b1fd28cc4197fc8b9a41369be91440beb5ac4b15806954e88a59804",
+    "bytes": 31814,
+    "fileCount": 12
+  },
+  "skill-builder": {
+    "schemaVersion": 1,
+    "id": "skill-builder",
+    "code": "DD-143",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Python 3 para os verificadores",
+      "Assistente compatível com Agent Skills"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "306a88e888926430cd9dc4156237e343c2ae9bc986c45cb32974e0ef08869276",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "85106ee621c14e7dee7f97f504ff651fb0ba805856807aedce0cee76879ba789",
+    "bytes": 63720,
+    "fileCount": 18
+  },
+  "arquitetura-de-contexto-e-rag": {
+    "schemaVersion": 1,
+    "id": "arquitetura-de-contexto-e-rag",
+    "code": "DD-144",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Perguntas reais e documentos de exemplo",
+      "Preços e limites de fornecedores precisam ser reconferidos"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "0f926ea6a5f4a95d3ec3586a8061e0849f751fac5c18489b6b33b07f2e09d94f",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "c973dfc955f1d89ef305b2b3973b5179e8c619fdab7050b7de956ff5adaa0ecb",
+    "bytes": 75989,
+    "fileCount": 7
+  },
+  "revisao-de-agentes-para-producao": {
+    "schemaVersion": 1,
+    "id": "revisao-de-agentes-para-producao",
+    "code": "DD-145",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Código, configuração ou descrição do fluxo",
+      "Revisão sem execução não comprova comportamento"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "0ef8b8325b7e4257e705627b914d9f7d3c58d5b31e151cff7f990f97088b48fd",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "aee3ca54b29fbcf5f40c4cf55bd76995a1a6ef0122e0891db9d7d787e5869de6",
+    "bytes": 71705,
+    "fileCount": 7
+  },
+  "prontidao-de-sistemas-de-ia": {
+    "schemaVersion": 1,
+    "id": "prontidao-de-sistemas-de-ia",
+    "code": "DD-146",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Resultados de teste, arquitetura e dados de custo",
+      "Não substitui parecer jurídico"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "35b09125fa68550840936fe352a757798eb2ec7f306cf0e94ccc75b5a86c18fa",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "c9bef8e0be681e822f5011d9282e2cae84fb328dc34f9abf95a5f0bf12c28e7d",
+    "bytes": 100189,
+    "fileCount": 7
+  },
+  "escolha-tecnica-de-modelos": {
+    "schemaVersion": 1,
+    "id": "escolha-tecnica-de-modelos",
+    "code": "DD-147",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Exemplos reais da tarefa e volume mensal",
+      "Confirmar preços atuais no site do fornecedor"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "b7910abf10158c56d5c0d0b1b305ece9dfa0c69f72c8d2836fc7fde00e08e89d",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "603bbcdee717e37853e858653adcf57aaa58ef40c42ecd8cf11579708dba1f44",
+    "bytes": 68050,
+    "fileCount": 7
   }
 };

@@ -3,7 +3,7 @@ const { officialGuide } = require("../lib/official-guides.cjs");
 function guideFields(skill, locale) {
   const guide = officialGuide(skill.id, locale);
   if (!guide) return {};
-  return { officialGuide: guide, pricing: skill.pricing ? { ...skill.pricing, officialGuide: true } : skill.pricing };
+  return { free: true, officialGuide: guide, pricing: skill.pricing ? { ...skill.pricing, priceCents: 0, officialGuide: true } : skill.pricing };
 }
 const { send, failure, initializeLocale } = require("../lib/http.cjs");
 module.exports = async (req, res) => {
