@@ -357,6 +357,12 @@
 .detail-card .quality-badge {
   line-height: 1.5;
 }
+/* Let the save control scroll into reach when the full card exceeds the dialog. */
+@media (min-width: 761px) and (max-height: 900px) {
+  .detail-card {
+    position: static;
+  }
+}
 @keyframes chapterReveal {
   from {
     opacity: 0;

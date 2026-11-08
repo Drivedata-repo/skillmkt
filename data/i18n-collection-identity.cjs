@@ -1,5 +1,12 @@
 "use strict";
 module.exports = {
+  "Nova carta no Meu Deck": ["New card in My Deck", "Nueva carta en Mi Deck"],
+  "{index} de {count}": ["{index} of {count}", "{index} de {count}"],
+  "Encerrar apresentação": ["End presentation", "Finalizar presentación"],
+  "Carta adicionada ao Meu Deck. Use Invocar carta para repetir.": ["Card added to My Deck. Use Summon card to replay.", "Carta añadida a Mi Deck. Usa Invocar carta para repetir."],
+  "ZIP conferido. Continue pelo Primeiro uso.": ["ZIP verified. Continue with First use.", "ZIP verificado. Continúa con Primer uso."],
+  "ZIP conferido. Download iniciado.": ["ZIP verified. Download started.", "ZIP verificado. Descarga iniciada."],
+  "{code} · ZIP conferido. Download iniciado.": ["{code} · ZIP verified. Download started.", "{code} · ZIP verificado. Descarga iniciada."],
   "Nome, ferramenta ou ID da carta": ["Name, tool or card ID", "Nombre, herramienta o ID de la carta"],
   "Voltar à carta": ["Back to card", "Volver a la carta"],
   "Pulso inicial": ["First pulse", "Pulso inicial"],

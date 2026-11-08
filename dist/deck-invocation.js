@@ -24,10 +24,10 @@ const DeckInvocation = (() => {
     return `<div class="summon-console summon-${p.key}${reduced() ? " invocation-reduced" : ""}" data-invocation="${p.key}" style="${style(p)}"><div class="summon-emblem">${field(p)}<span aria-hidden="true">${String(p.rank).padStart(2, "0")}</span></div><div class="summon-description"><p class="summon-label">${esc(t("Invocação desta carta"))} · ${esc(DeckCommerce.money(s.pricing.priceCents))}</p><h4>${esc(t(p.name))}</h4><p>${esc(t(p.description))}</p></div></div><div class="summon-preferences"><button class="text-button" data-invocation-sound aria-pressed="${DeckSound.enabled}">${esc(t(DeckSound.enabled ? "Som ativado" : "Som desativado"))}</button><button class="text-button" data-invocation-motion aria-pressed="${reduced()}" ${matchMedia("(prefers-reduced-motion: reduce)").matches ? "disabled" : ""}>${esc(t(reduced() ? "Efeitos suaves" : "Efeitos completos"))}</button></div>`;
   }
   function cancel() {
-    if (active) { clearTimeout(active.timer); active.cleanup(false); active = null; }
+    if (active) { const run = active; active = null; clearTimeout(run.timer); run.cleanup(false); run.onCancel?.(); }
     DeckSound.stop();
   }
-  function theater(s, p, root) {
+  function theater(s, p, root, options) {
     const dialog = root.closest?.("dialog");
     if (reduced() || !dialog) return null;
     const rect = dialog.getBoundingClientRect(), toolbar = dialog.querySelector(".detail-toolbar").getBoundingClientRect();
@@ -36,34 +36,40 @@ const DeckInvocation = (() => {
     el.className = `invocation-theater summon-stage summon-${p.key} is-invoked`;
     el.setAttribute("aria-label", t(p.name));
     el.setAttribute("style", `${style(p)};--theater-height:${height}px;top:${top}px;left:${rect.left + 1}px;width:${rect.width - 2}px;height:${height}px`);
-    el.innerHTML = `${field(p)}<header class="theater-title"><p>${esc(s.code)} · ${esc(DeckCommerce.money(s.pricing.priceCents))}</p><h3>${esc(t(p.name))}</h3></header><div class="theater-card summon-card-shell" aria-hidden="true">${DeckArt.card(s)}</div><footer class="theater-footer"><p>${esc(s.universe.alias)}</p><span>${esc(s.identity?.serial || s.code)}</span><div><button type="button" class="text-button" data-invocation-sound aria-pressed="${DeckSound.enabled}">${esc(t(DeckSound.enabled ? "Som ativado" : "Som desativado"))}</button><button type="button" class="text-button" data-cancel-invocation>${esc(t("Voltar à carta"))}</button></div></footer>`;
+    const caption = options.kind === "collection"
+      ? t("Nova carta no Meu Deck") + " · " + s.code + (options.count > 1 ? " · " + t("{index} de {count}", {index:options.index, count:options.count}) : "")
+      : s.code + " · " + DeckCommerce.money(s.pricing.priceCents);
+    el.dataset.invocationReason = options.kind === "collection" ? "collection" : "manual";
+    el.innerHTML = `${field(p)}<header class="theater-title"><p>${esc(caption)}</p><h3>${esc(t(p.name))}</h3></header><div class="theater-card summon-card-shell" aria-hidden="true">${DeckArt.card(s)}</div><footer class="theater-footer"><p>${esc(s.universe.alias)}</p><span>${esc(s.identity?.serial || s.code)}</span><div><button type="button" class="text-button" data-invocation-sound aria-pressed="${DeckSound.enabled}">${esc(t(DeckSound.enabled ? "Som ativado" : "Som desativado"))}</button><button type="button" class="text-button" data-cancel-invocation>${esc(t(options.count > 1 ? "Encerrar apresentação" : "Voltar à carta"))}</button></div></footer>`;
     root.inert = true; dialog.append(el);
     el.querySelector("[data-cancel-invocation]").onclick = cancel;
     el.querySelector("[data-cancel-invocation]").focus({preventScroll:true});
     return el;
   }
-  function start(s, root, button) {
+  function start(s, root, button, options = {}) {
     const p = profile(s); if (!p) return;
     cancel();
     const targets = [...root.querySelectorAll(".summon-stage,.summon-console")];
-    const cinematic = theater(s, p, root);
+    const cinematic = theater(s, p, root, options);
     const status = root.querySelector(".power-announcement");
     for (const target of targets) { target.classList.toggle("invocation-reduced", reduced()); target.classList.add("is-invoked"); }
-    button.disabled = true; button.textContent = t("Invocando…");
+    const originalText = button.textContent, originalDisabled = button.disabled;
+    button.disabled = true;
+    if (options.kind !== "collection") button.textContent = t("Invocando…");
     if (status) status.textContent = t("{name} em formação…", {name: t(p.name)});
-    const run = {timer: null, cleanup(done) {
+    const run = {timer: null, onCancel:options.onCancel, cleanup(done) {
       const restoreFocus = cinematic?.contains(document.activeElement);
       cinematic?.remove(); root.inert = false;
       targets.forEach(target => target.classList.remove("is-invoked"));
-      if (button.isConnected) { button.disabled = false; button.textContent = "✦ " + t("Invocar carta"); }
+      if (button.isConnected) { button.disabled = originalDisabled; button.textContent = originalText; }
       if (restoreFocus && button.isConnected) button.focus({preventScroll:true});
-      if (status?.isConnected) status.textContent = done ? t("{name} concluída. Leve esta carta para sua próxima missão.", {name: t(p.name)}) : "";
+      if (status?.isConnected) status.textContent = done ? t(options.kind === "collection" ? "Carta adicionada ao Meu Deck. Use Invocar carta para repetir." : "{name} concluída. Leve esta carta para sua próxima missão.", {name: t(p.name)}) : "";
     }};
     active = run;
     DeckSound.play("summon", p).then(played => {
       if (!played && active === run && DeckSound.enabled && status?.isConnected) status.textContent = t("Invocação visual ativa. O áudio não está disponível neste navegador.");
     });
-    run.timer = setTimeout(() => { if (active !== run) return; run.cleanup(true); active = null; }, p.durationMs);
+    run.timer = setTimeout(() => { if (active !== run) return; active = null; run.cleanup(true); options.onComplete?.(); }, p.durationMs);
   }
   function toggleMotion(root) {
     cancel(); soft = !soft;

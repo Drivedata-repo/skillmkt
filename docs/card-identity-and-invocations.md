@@ -14,7 +14,13 @@ As 137 skills continuam gratuitas na demonstração. Os nove valores em USD são
 | US$ 42 | Convergência orbital | Três órbitas de platina e acorde espacial | 3,5 s |
 | US$ 47 | Coroação solar | Carga, feixe, elevação, selos opostos, 24 raios, coroa e acorde de celebração | 4,2 s |
 
-Em **Poder da carta → Invocar carta**, os efeitos completos abrem uma apresentação dentro da carta. É possível sair pelo botão de retorno, Escape ou fechamento da carta. A mudança de idioma cancela a sequência antes de reconstruir o conteúdo. No modo suave ou com `prefers-reduced-motion`, a confirmação é estática e não abre a apresentação. O som tem controle independente e preferência persistente.
+A primeira inclusão de uma carta no **Meu Deck** abre automaticamente sua invocação, com o som da faixa de preço. Isso vale para salvar uma carta, adicionar combos, jornadas ou planos e registrar a primeira conferência. Seleções com várias cartas novas são apresentadas em sequência; **Encerrar apresentação** cancela as próximas animações, mantendo todas as cartas salvas.
+
+O registro da primeira inclusão é persistido no navegador e acompanha a exportação/importação do Deck. Remover dos favoritos e adicionar novamente não repete a invocação. Cartas que já estavam salvas ou baixadas antes desta atualização são consideradas conhecidas, sem reprodução na abertura do site. Não há sincronização entre dispositivos; apagar os dados do navegador sem restaurar o backup também apaga esse histórico.
+
+Em **Poder da carta → Invocar carta**, é possível repetir a apresentação livremente. Os efeitos completos abrem uma apresentação dentro da carta. É possível sair pelo botão de retorno, Escape ou fechamento da carta. A mudança de idioma cancela a sequência antes de reconstruir o conteúdo. No modo suave ou com `prefers-reduced-motion`, a confirmação é estática e não abre a apresentação. O som tem controle independente e preferência persistente.
+
+**Baixar um ZIP** usa uma confirmação com marca de verificação por 2,2 segundos e um som discreto de duas notas. Ela aparece apenas depois de validar o arquivo e iniciar o download no navegador. Downloads individuais e de pacotes registram as cartas como conhecidas sem abrir a invocação longa. Não é possível confirmar que o usuário salvou o arquivo no disco. Um download que termina durante uma invocação não interrompe seu áudio.
 
 O áudio é original, sintetizado por Web Audio após uma ação do usuário. Não há arquivos de terceiros, captura de microfone ou chamada a serviço de IA. Cada faixa tem partitura, timbre e duração próprios. Existe apenas um barramento ativo; cancelar, silenciar ou ocultar a aba desliga as fontes e cancela reproduções pendentes. Um compressor controla os picos. As animações duram no máximo 4,2 segundos e não usam estroboscopia.
 
@@ -49,7 +55,7 @@ Não é necessário blockchain para vender e entregar skills. O passaporte funci
 
 ## Verificação e reprodução
 
-`npm test` inclui unicidade das 137 identidades, estabilidade em PT/EN/ES, mudança de edição, adulteração de campos, nove partituras distintas, limites de duração e cancelamento de áudio durante uma retomada pendente. `npm run build` também verifica unicidade das identidades.
+`npm test` inclui unicidade das 137 identidades, estabilidade em PT/EN/ES, mudança de edição, adulteração de campos, nove partituras distintas, limites de duração e cancelamento de áudio durante uma retomada pendente. Também cobre primeira inclusão persistente, migração de Decks antigos, cancelamento da apresentação, repetição manual e confirmação de download somente após validar hash e versão. `npm run build` também verifica unicidade das identidades.
 
 Para a comparação visual local e renderização dos nove sons pelo mesmo sintetizador do site:
 

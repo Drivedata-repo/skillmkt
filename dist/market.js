@@ -30,7 +30,8 @@ let skills = [],
 const feedbackStates = new Map();
 const downloadStates = new Map();
 let queuedFind = false,
-  insightsVersion = 0;
+  insightsVersion = 0,
+  collectionRevision = 0;
 const norm = (s) =>
   String(s || "")
     .normalize("NFD")
@@ -53,16 +54,22 @@ const progress = (id) =>
     promptCopied: false,
     tested: false,
   };
-function toast(text) {
+function toast(text, options = {}) {
   const target = $("#skill-dialog").open ? $("#detail-toast") : $("#toast");
   for (const region of [$("#toast"), $("#detail-toast")]) {
     region.hidden = region !== target;
     if (region !== target) region.textContent = "";
   }
   target.hidden = false;
+  target.classList.toggle("download-confirmation", options.kind === "download");
   target.textContent = t(text);
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => (target.hidden = true), 5000);
+  toastTimer = setTimeout(() => (target.hidden = true), options.duration || 5000);
+}
+function confirmDownload(code = "") {
+  toast(code ? t("{code} · ZIP conferido. Download iniciado.", {code}) : "ZIP conferido. Download iniciado.", {kind:"download", duration:2200});
+  // A download finishing in the background must not cut a collection ceremony short.
+  if (!DeckInvocation.running) DeckSound.play("download");
 }
 function errorText(error, fallback = "Não foi possível concluir.") {
   if (error?.name === "TypeError")
@@ -74,6 +81,8 @@ function errorText(error, fallback = "Não foi possível concluir.") {
   return t(error?.message || fallback);
 }
 function save() {
+  const stored = DeckStore.load(deckStorage, skills.map(s => s.id), journeys.map(j => j.id));
+  deck.collectionHistory = [...new Set([...(deck.collectionHistory || []), ...stored.collectionHistory])];
   const ok = DeckStore.save(deckStorage, deck);
   $("#storage-error").textContent = ok
     ? ""
@@ -475,7 +484,7 @@ function openSkill(id, tab, state = {}) {
   const wasOpen = $("#skill-dialog").open;
   if (!wasOpen) {
     const opener = state.opener || document.activeElement;
-    const attr = ["data-open", "data-start", "data-mission"].find((key) =>
+    const attr = ["data-open", "data-start", "data-mission", "data-favorite", "data-save-combo", "data-save-journey", "data-save-plan"].find((key) =>
       opener?.hasAttribute?.(key),
     );
     detailOrigin = attr
@@ -501,7 +510,7 @@ function openSkill(id, tab, state = {}) {
   renderDetail(wasOpen ? "#detail-title" : undefined);
   if (!wasOpen) $("#skill-dialog").showModal();
   $("#skill-dialog").scrollTop = 0;
-  DeckSound.play("reveal");
+  if (!state.silent) DeckSound.play("reveal");
   syncDetailURL();
 }
 function syncDetailURL() {
@@ -723,25 +732,67 @@ motionPreference.addEventListener("change", () => {
     syncDetailURL();
   }
 });
-function toggleFavorite(id) {
-  deck.favorites = favorite(id)
-    ? deck.favorites.filter((x) => x !== id)
-    : [...deck.favorites, id];
-  save();
-  render();
-  renderDeck();
-  if (selected?.id === id)
-    document.querySelectorAll(`[data-favorite="${id}"]`).forEach((b) => {
-      b.setAttribute("aria-pressed", favorite(id));
-      if (b.classList.contains("save-detail"))
-        b.textContent = t(
-          favorite(id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck",
-        );
+function claimCollection(ids) {
+  // Merge first-arrival history from another open tab before claiming these cards.
+  const stored = DeckStore.load(deckStorage, skills.map(s => s.id), journeys.map(j => j.id));
+  deck.collectionHistory = [...new Set([...(deck.collectionHistory || []), ...stored.collectionHistory])];
+  return DeckStore.collect(deck, [...new Set(ids)].filter(id => byId(id)));
+}
+function refreshFavorites() {
+  render(); renderDeck();
+  document.querySelectorAll("[data-favorite]").forEach(b => {
+    const id = b.dataset.favorite, s = byId(id); if (!s) return;
+    b.setAttribute("aria-pressed", favorite(id));
+    if (b.classList.contains("save-detail")) b.textContent = t(favorite(id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck");
+    else b.setAttribute("aria-label", t(favorite(id) ? "Remover {code} do Meu Deck" : "Salvar {code} no Meu Deck", {code:s.code}));
+  });
+}
+function invokeSelected(button, options = {}) {
+  const card = $("#skill-detail .holo-card");
+  if (!selected || !card || !button) return;
+  detailSpin = false; detailFlipped = false; syncDetailURL();
+  card.classList.remove("is-spinning", "flipped");
+  $("#spin-card").setAttribute("aria-pressed", "false");
+  $("#spin-card").textContent = t(motionPreference.matches ? "Giro desativado: movimento reduzido" : "Ativar giro");
+  $("#turn-card").setAttribute("aria-pressed", "false"); $("#turn-card").textContent = t("Ver verso");
+  DeckInvocation.start(selected, $("#skill-detail"), button, options);
+}
+function celebrateCollection(ids, message, opener) {
+  if (!ids.length) { toast(message); return; }
+  DeckInvocation.cancel();
+  const revision = ++collectionRevision;
+  function next(index) {
+    if (revision !== collectionRevision) return;
+    const s = byId(ids[index]); if (!s) return;
+    if (!$("#skill-dialog").open || selected?.id !== s.id)
+      openSkill(s.id, "power", {spin:"off", face:"front", silent:true, opener});
+    const button = $("#skill-detail [data-summon]") || $("#skill-detail .save-detail");
+    invokeSelected(button, {
+      kind:"collection", index:index + 1, count:ids.length,
+      onCancel:() => { if (revision === collectionRevision) collectionRevision++; },
+      onComplete:() => {
+        if (revision !== collectionRevision) return;
+        if (index + 1 < ids.length) next(index + 1);
+        else toast(message);
+      },
     });
-  toast(
-    favorite(id) ? "Carta salva no Meu Deck." : "Carta removida dos favoritos.",
-  );
-  DeckSound.play("save");
+  }
+  next(0);
+}
+function addFavorites(ids, message, opener) {
+  const valid = [...new Set(ids)].filter(id => byId(id));
+  const firstArrivals = claimCollection(valid);
+  deck.favorites = [...new Set([...deck.favorites, ...valid])];
+  save(); refreshFavorites();
+  celebrateCollection(firstArrivals, message, opener);
+}
+function toggleFavorite(id, opener) {
+  if (!byId(id)) return;
+  if (!favorite(id)) { addFavorites([id], "Carta salva no Meu Deck.", opener); return; }
+  // Keep the historical claim so removing and re-adding cannot replay the first arrival.
+  claimCollection([id]);
+  deck.favorites = deck.favorites.filter(x => x !== id);
+  save(); refreshFavorites(); toast("Carta removida dos favoritos.");
 }
 function saveFile(name, text, type = "application/json") {
   const url = URL.createObjectURL(new Blob([text], { type })),
@@ -877,6 +928,7 @@ async function download(id, button) {
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 60000);
+    claimCollection([id]);
     deck.downloads.push({
       id,
       version: s.version,
@@ -888,10 +940,9 @@ async function download(id, button) {
     renderDeck();
     downloadStates.set(id, {
       pending: false,
-      message: "Pacote íntegro baixado. Continue pelo Primeiro uso.",
+      message: "ZIP conferido. Continue pelo Primeiro uso.",
     });
-    toast("ZIP conferido e baixado. O histórico está no Meu Deck.");
-    DeckSound.play("save");
+    confirmDownload(s.code);
   } catch (e) {
     const message =
       e.name === "TimeoutError"
@@ -1058,15 +1109,7 @@ document.addEventListener("click", async (e) => {
         skillIds: currentPlan.steps.map((s) => s.skillId),
       },
     ].slice(-20);
-    deck.favorites = [
-      ...new Set([
-        ...deck.favorites,
-        ...currentPlan.steps.map((s) => s.skillId),
-      ]),
-    ];
-    save();
-    renderDeck();
-    toast("Plano e cartas adicionados ao Meu Deck.");
+    addFavorites(currentPlan.steps.map(s => s.skillId), "Plano e cartas adicionados ao Meu Deck.", b);
   }
   if (b.dataset.removePlan) {
     deck.plans = (deck.plans || []).filter(
@@ -1121,7 +1164,7 @@ document.addEventListener("click", async (e) => {
   if (b.dataset.open) openSkill(b.dataset.open, undefined, { opener: b });
   if (b.dataset.start) openSkill(b.dataset.start, "start", { opener: b });
   if (b.dataset.mission) openSkill(b.dataset.mission, "example", { opener: b });
-  if (b.dataset.favorite) toggleFavorite(b.dataset.favorite);
+  if (b.dataset.favorite) toggleFavorite(b.dataset.favorite, b);
   if (b.dataset.download) download(b.dataset.download, b);
   if (b.dataset.guide) downloadGuide(byId(b.dataset.guide));
   if (b.dataset.copyMission)
@@ -1157,18 +1200,10 @@ document.addEventListener("click", async (e) => {
   if (b.id === "clear-combo") { comboFilter=null; render(); $("#search").focus({preventScroll:true}); }
   if (b.dataset.saveCombo) {
     const combo=combos.find(c=>c.id===b.dataset.saveCombo);
-    if(combo){deck.favorites=[...new Set([...deck.favorites,...combo.skillIds])];save();renderDeck();render();toast("As cartas do combo estão no seu Deck.");}
+    if (combo) addFavorites(combo.skillIds, "As cartas do combo estão no seu Deck.", b);
   }
   if (b.dataset.summon && selected?.id===b.dataset.summon) {
-    const arena=$("#skill-detail .power-arena"),card=$("#skill-detail .detail-card");
-    if(arena && card){
-      detailSpin=false;detailFlipped=false;syncDetailURL();
-      card.querySelector(".holo-card").classList.remove("is-spinning","flipped");
-      $("#spin-card").setAttribute("aria-pressed","false");
-      $("#spin-card").textContent=t(motionPreference.matches?"Giro desativado: movimento reduzido":"Ativar giro");
-      $("#turn-card").setAttribute("aria-pressed","false");$("#turn-card").textContent=t("Ver verso");
-      DeckInvocation.start(selected, $("#skill-detail"), b);
-    }
+    invokeSelected(b);
   }
   if (b.dataset.detailTab) {
     detailTab = b.dataset.detailTab;
@@ -1220,12 +1255,9 @@ document.addEventListener("click", async (e) => {
       return;
     }
     persistProgress(selected.id, { tested: true });
-    deck.favorites = [...new Set([...deck.favorites, selected.id])];
-    save();
-    renderDeck();
     renderJourneys();
-    toast("Sua conferência foi registrada no Meu Deck.");
     b.textContent = t("Conferido por você ✓");
+    addFavorites([selected.id], "Sua conferência foi registrada no Meu Deck.", b);
   }
   if (b.dataset.copyExample) {
     const s = byId(b.dataset.copyExample);
@@ -1260,13 +1292,8 @@ document.addEventListener("click", async (e) => {
   if (b.dataset.saveJourney) {
     const j = journeys.find((j) => j.id === b.dataset.saveJourney);
     deck.journeys = [...new Set([...deck.journeys, j.id])];
-    deck.favorites = [
-      ...new Set([...deck.favorites, ...j.steps.map((s) => s.id)]),
-    ];
-    save();
     renderJourneys();
-    render();
-    toast("As cartas da jornada estão no seu Deck.");
+    addFavorites(j.steps.map(s => s.id), "As cartas da jornada estão no seu Deck.", b);
   }
   if (b.dataset.exportJourney) {
     const j = journeys.find((j) => j.id === b.dataset.exportJourney);
@@ -1593,6 +1620,7 @@ $("#import-file").onchange = async (e) => {
     deck = DeckStore.clean(
       {
         schema: 1,
+        collectionHistory: [...(deck.collectionHistory || []), ...incoming.collectionHistory],
         favorites: [...deck.favorites, ...incoming.favorites],
         journeys: [...deck.journeys, ...incoming.journeys],
         plans: [...(deck.plans || []), ...(incoming.plans || [])],
@@ -1663,6 +1691,7 @@ $("#logout").onclick = async () => {
         },
         packDownloaded: (pack) => {
           const at = new Date().toISOString();
+          claimCollection(pack.steps.map(s => s.skillId));
           deck.downloads.push(
             ...pack.steps.map((s) => ({
               id: s.skillId,
@@ -1673,6 +1702,7 @@ $("#logout").onclick = async () => {
           deck.downloads = deck.downloads.slice(-300);
           save();
           renderDeck();
+          confirmDownload();
         },
       },
       data,

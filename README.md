@@ -135,7 +135,7 @@ Se `GROQ_API_KEY` estiver configurada e o visitante optar por IA, **Qwen3.8-27B 
 
 ## Invocações e passaportes
 
-As nove faixas de US$ 7 a US$ 47 têm coreografias e sons originais próprios em **Poder da carta → Invocar carta**. A dourada recebe a Coroação solar. A apresentação pode ser encerrada a qualquer momento e respeita movimento reduzido e silêncio. Trocar o idioma com a carta aberta encerra a sequência sem perder a carta.
+As nove faixas de US$ 7 a US$ 47 têm coreografias e sons originais próprios. A primeira inclusão no **Meu Deck** inicia a invocação automaticamente; remover e recolocar a carta não repete a apresentação. **Poder da carta → Invocar carta** permite repetir quando quiser. Combos e jornadas apresentam apenas as cartas novas, em sequência cancelável. A dourada recebe a Coroação solar. A apresentação respeita movimento reduzido e silêncio. Trocar o idioma com a carta aberta encerra a sequência sem perder a carta. Downloads de ZIPs individuais e de pacotes usam uma confirmação curta de 2,2 segundos, após validar o arquivo e iniciar o download. O histórico de primeira inclusão fica no navegador e acompanha o backup do Deck.
 
 Cada uma das 137 cartas tem ID permanente `ddk_…`, serial visual, selo e impressão SHA-256 da edição. **Ficha técnica → Passaporte da carta** permite copiar, baixar o JSON, conferir a identidade e comparar um ZIP local sem upload. O ID completo ou o serial também podem ser usados na busca do catálogo. É identidade do registro, não de uma cópia adquirida. Blockchain não está ativada; o caminho técnico e os limites estão em [Invocações e identidade](docs/card-identity-and-invocations.md).
 

@@ -51,6 +51,7 @@
 .theater-footer>div{display:flex;justify-content:center;gap:24px;margin-top:10px}
 .theater-footer button{font-size:11px;min-height:30px;color:#d9e7ef;text-decoration:underline;text-underline-offset:4px}
 .theater-footer button:focus-visible{outline:2px solid var(--summon-color);outline-offset:3px}
+.theater-title p{line-height:1.5}
 .theater-title p,.theater-title h3,.theater-footer>p,.theater-footer>span,.theater-footer>div{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;background:#070d16ed;padding:3px 9px;border-radius:3px}
 @media(max-height:620px){.theater-card .card-info p,.theater-card .card-type{display:none}.theater-card .card-info h3{font-size:10px}.theater-card .card-rank{font-size:6px}.theater-card .rank-stars>span{display:none}.theater-card .card-heading{font-size:6px}.theater-card .card-heading b{font-size:5px}.theater-card .card-heading img{width:14px;height:14px}.theater-card .card-price b{font-size:10px}.theater-card .card-battle-stats b{font-size:10px}}
 @media(max-height:500px) and (min-width:600px){.theater-card{width:calc((var(--theater-height) - 28px)*.63);max-width:205px;margin:0 42% 0 0}.theater-title{left:50%;top:22%}.theater-footer{left:50%;bottom:18%}.invocation-theater .summon-disc{left:29%;width:410px;height:410px}.theater-footer>div{flex-wrap:wrap;gap:4px 18px}.theater-title h3{font-size:20px}}
@@ -159,3 +160,11 @@
 .card-identity-link:hover{color:#fff}
 .back .back-identity{color:#d2e8e8;font:8px/1.6 var(--mono,monospace);border-top:1px solid #64939266;padding-top:9px;margin-top:6px;overflow-wrap:anywhere}
 @media(max-width:460px){.card-passport{padding:15px}.passport-heading{gap:10px}.passport-heading h3{font-size:18px}.identity-mark{width:48px}.passport-heading p{font-size:9px}.back .back-identity{font-size:6px}}
+
+/* The download acknowledgement is brief; the collection ceremony remains separate. */
+.toast.download-confirmation,.detail-toast.download-confirmation{display:flex;align-items:center;gap:10px;background:#102c29;border-color:#6bbaab;color:#e5fff7}
+.download-confirmation:before{content:"✓";display:grid;place-items:center;flex:0 0 25px;height:25px;border:1px solid #76c8b4;border-radius:50%;color:#baffea;font-size:15px}
+.toast.download-confirmation[hidden],.detail-toast.download-confirmation[hidden]{display:none}
+@media(prefers-reduced-motion:no-preference){.download-confirmation:before{animation:download-check .48s ease-out both}}
+@keyframes download-check{from{opacity:0;scale:.7}65%{opacity:1;scale:1.07}to{opacity:1;scale:1}}
+.motion-off .download-confirmation:before{animation:none!important}

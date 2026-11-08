@@ -56,6 +56,8 @@ const DeckSound = (() => {
       if (!enabled || ticket !== revision) return false;
       const events = kind === "summon" && profile && typeof DeckInvocationProfiles !== "undefined"
         ? DeckInvocationProfiles.score(profile)
+        : kind === "download"
+        ? [{hz:783.99,at:0,duration:.14,gain:.35,type:"sine"},{hz:1046.5,at:.09,duration:.22,gain:.3,type:"sine"}]
         : (kind === "save" ? [523.25, 783.99] : [164.8, 329.6, 493.9]).map((hz, i) => ({hz, at: i * .07, duration: .3, gain: .5, type: "sine"}));
       if (!events.length) return false;
       const master = ctx.createGain(), compressor = ctx.createDynamicsCompressor();

@@ -11,6 +11,7 @@
   const empty = () => ({
     schema: 1,
     favorites: [],
+    collectionHistory: [],
     downloads: [],
     progress: {},
     journeys: [],
@@ -74,6 +75,12 @@
         version: x.version,
         at: new Date(x.at).toISOString(),
       }));
+    // Legacy and restored Decks already own their collection history. Never replay it on load.
+    out.collectionHistory = [...new Set([
+      ...(Array.isArray(raw.collectionHistory) ? raw.collectionHistory.filter(id => allowed.has(id)) : []),
+      ...out.favorites,
+      ...out.downloads.map(x => x.id),
+    ])];
     for (const id of ids) {
       const p = raw.progress?.[id];
       if (!p || typeof p !== "object") continue;
@@ -111,5 +118,12 @@
         .sort((a, b) => Date.parse(b.at) - Date.parse(a.at))[0] || null
     );
   }
-  return { KEY, empty, clean, load, save, latest };
+  // Claim before inserting favorites/downloads. Removal never erases the first arrival.
+  function collect(state, ids) {
+    const known = new Set([...(state.collectionHistory || []), ...state.favorites, ...state.downloads.map(x => x.id)]);
+    const fresh = [...new Set(ids)].filter(id => !known.has(id));
+    state.collectionHistory = [...new Set([...known, ...ids])];
+    return fresh;
+  }
+  return { KEY, empty, clean, load, save, latest, collect };
 });
