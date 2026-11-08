@@ -5,6 +5,20 @@
 
 // Sem marca de terceiro. Autoria declarada por João em 08/11/2026.
 const ownDeclared = [
+  "modelagem-de-ameacas",
+  "revisao-de-permissoes-e-acesso",
+  "priorizacao-de-vulnerabilidades",
+  "cadeia-de-suprimentos-de-software",
+  "resposta-a-incidentes-de-seguranca",
+  "incidente-de-dados-lgpd",
+  "mapa-de-dados-lgpd",
+  "recuperacao-testada-de-backups",
+  "seguranca-de-aplicacoes-com-llm",
+  "decisoes-de-arquitetura-adr",
+  "revisao-de-arquitetura-por-atributos",
+  "modernizacao-de-sistemas-legados",
+  "migracao-de-banco-sem-parada",
+  "observabilidade-e-slos",
   "agent-builder",
   "human-authentic-writing-audit",
   "markdown-builder",

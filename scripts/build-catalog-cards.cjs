@@ -40,7 +40,7 @@ function build(card) {
   const entries = {};
   for (const [name, bytes] of Object.entries(files)) entries[`${id}/${name}`] = bytes;
   entries["COMO-USAR.md"] = strToU8(`# ${code}\n\nEdição ${VERSION}. Coleção DriveData Deck.\n\n## Instale\n\nCopie a pasta \`${id}\` para a pasta de skills do seu assistente (no Claude Code, \`~/.claude/skills/\`) e abra um novo chat.\n\n## Confira\n\nDescreva uma tarefa real e veja se a skill foi reconhecida. Confira cada entrega antes de usá-la.\n`);
-  entries["REVISAO.md"] = strToU8(`# Revisão aplicada ${VERSION}\n\n${card.note}\n\nExecução integral por IA: não testada.\n\nTermos: ${open ? `Apache License 2.0 (${id}/LICENSE.txt), obra de ${card.upstream}.` : "Licença DriveData (LICENCA-DRIVEDATA.txt)."}\n`);
+  entries["REVISAO.md"] = strToU8(`# Revisão aplicada ${VERSION}\n\n${card.note}\n\n${card.testNote || "Execução integral por IA: não testada."}\n\nTermos: ${open ? `Apache License 2.0 (${id}/LICENSE.txt), obra de ${card.upstream}.` : "Licença DriveData (LICENCA-DRIVEDATA.txt)."}\n`);
   if (!open) entries["LICENCA-DRIVEDATA.txt"] = strToU8(TERMS);
   for (const [name, bytes] of Object.entries(entries))
     if (/\.(md|txt|json|py)$/i.test(name) && PRIVATE.test(Buffer.from(bytes).toString("utf8"))) throw Error("Dado pessoal no pacote: " + name);

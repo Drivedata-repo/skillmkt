@@ -138,7 +138,7 @@ test("localized catalogs preserve IDs, checksums and permissions metadata", asyn
     assert.equal(res.status, 200);
     const result = JSON.parse(res.body);
     assert.equal(result.locale, locale);
-    assert.equal(result.skills.length, 147);
+    assert.equal(result.skills.length, 161);
     assert.deepEqual(
       result.skills.map((skill) => skill.id),
       original.skills.map((skill) => skill.id),

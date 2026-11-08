@@ -50,7 +50,7 @@ test("all ten reference examples preserve the declared facts", () => {
   );
 });
 test("catalog metadata is complete and does not claim untested execution or sales clearance", () => {
-  assert.equal(skills.length, 147);
+  assert.equal(skills.length, 161);
   for (const s of skills) {
     assert.ok(["1.2.0", "1.2.1"].includes(s.version));
     assert.equal(s.release.review, "structure-checked");
@@ -219,7 +219,7 @@ test(
         (row) =>
           row.version === skills.find((s) => s.id === row.skill_id).release.version,
       );
-      assert.equal(current.length, 147);
+      assert.equal(current.length, 161);
       for (const row of current) {
         const s = skills.find((s) => s.id === row.skill_id);
         assert.equal(row.sha256, s.release.sha256);

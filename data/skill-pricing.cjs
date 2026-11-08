@@ -150,6 +150,20 @@ const rows = [
   ["revisao-de-agentes-para-producao", "4443", "Revisa necessidade, autoridade, estado e recuperação de falhas de agentes, com decisão baseada em evidência."],
   ["prontidao-de-sistemas-de-ia", "4543", "Avalia evidência de testes, riscos, governança e custo total de uma aplicação de IA, separando medido de presumido."],
   ["escolha-tecnica-de-modelos", "3333", "Compara modelos e customização para uma tarefa concreta, com conta de tokens visível e teste de confirmação."],
+  ["modelagem-de-ameacas", "4444", "Mapeia fluxos e fronteiras, aplica matriz fixa de risco e exige teste observável por controle."],
+  ["revisao-de-permissoes-e-acesso", "4454", "Rastreia cada regra até o código, separa filtro de tela de proteção real e bloqueia aprovação sem teste de negação."],
+  ["priorizacao-de-vulnerabilidades", "3444", "Aplica régua determinística de exploração, alcance e exposição, e confere desvios contra o plano."],
+  ["cadeia-de-suprimentos-de-software", "4444", "Audita dependências, CI e segredos sem executar o repositório e recompõe a verificação após as correções."],
+  ["resposta-a-incidentes-de-seguranca", "4444", "Conduz da preservação de evidência à recuperação, com papéis, decisões registradas e causa só com evidência."],
+  ["incidente-de-dados-lgpd", "4344", "Aplica os critérios da Resolução 15/2024, calcula prazos e barra afirmações sem confirmação nas minutas."],
+  ["mapa-de-dados-lgpd", "3444", "Mapeia operações e rejeita base legal inválida para dado sensível, retenção vaga e transferência sem mecanismo."],
+  ["recuperacao-testada-de-backups", "3444", "Compara RTO e RPO com medições reais, exige isolamento de cópias e chaves e deriva as lacunas."],
+  ["seguranca-de-aplicacoes-com-llm", "4444", "Avalia autoridade de ferramentas e fluxo de dados pelos dez riscos da OWASP, com testes inofensivos e veredito bloqueado por risco aberto."],
+  ["decisoes-de-arquitetura-adr", "3334", "Registra decisões com alternativas reais, consequências negativas e gatilho de revisão, e confere vínculos da pasta."],
+  ["revisao-de-arquitetura-por-atributos", "4443", "Converte atributos de qualidade em cenários medíveis ligados a decisões, riscos, trocas e checagens."],
+  ["modernizacao-de-sistemas-legados", "4443", "Divide o legado por capacidades e monta fatias pequenas com coexistência de dados, reversão e desligamento."],
+  ["migracao-de-banco-sem-parada", "4354", "Audita migrações PostgreSQL por padrões de bloqueio e exige plano em fases com reversão e sinal de aborto."],
+  ["observabilidade-e-slos", "3444", "Define SLIs por jornada, calcula orçamento de erro e janelas de consumo, e audita o ruído dos alertas."],
 ];
 const dimensions = ["depth", "scope", "verification", "reuse"];
 const byId = new Map(rows.map(row => [row[0], row]));

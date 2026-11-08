@@ -2795,6 +2795,272 @@
       "rationale": "Compara modelos e customização para uma tarefa concreta, com conta de tokens visível e teste de confirmação.",
       "assessmentType": "documentary",
       "executionVerified": false
+    },
+    {
+      "id": "modelagem-de-ameacas",
+      "code": "DD-148",
+      "version": "1.2.1",
+      "packageSha256": "0b0ef8fb04b278212977a60d1d0c379e0cec96d79cafe602935e79b0e6056fb5",
+      "sourceSha256": "1da5c831cfe5f0daafd8a875d7602aba000a31c42cb2f7c0c0da697e1abd98ac",
+      "contractSha256": "1da5c831cfe5f0daafd8a875d7602aba000a31c42cb2f7c0c0da697e1abd98ac",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Mapeia fluxos e fronteiras, aplica matriz fixa de risco e exige teste observável por controle.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "revisao-de-permissoes-e-acesso",
+      "code": "DD-149",
+      "version": "1.2.1",
+      "packageSha256": "bef7669918d4b7ddaa2736609bdd8c8a55778b56474f0d1578acc0f8bdb2062c",
+      "sourceSha256": "f3ce30a48b7aca862ac592483008d409205b2b5d627f502601688136f0da0641",
+      "contractSha256": "f3ce30a48b7aca862ac592483008d409205b2b5d627f502601688136f0da0641",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Rastreia cada regra até o código, separa filtro de tela de proteção real e bloqueia aprovação sem teste de negação.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "priorizacao-de-vulnerabilidades",
+      "code": "DD-150",
+      "version": "1.2.1",
+      "packageSha256": "8b6dee4ce9a04a96d889e73af7354755bc43feb8f6f9f625543b38abeceed8cd",
+      "sourceSha256": "cee68ae9a73b44d0d8a79ff25c8987db8aa65f35bc0f223adfda359e2cb834df",
+      "contractSha256": "cee68ae9a73b44d0d8a79ff25c8987db8aa65f35bc0f223adfda359e2cb834df",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Aplica régua determinística de exploração, alcance e exposição, e confere desvios contra o plano.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "cadeia-de-suprimentos-de-software",
+      "code": "DD-151",
+      "version": "1.2.1",
+      "packageSha256": "07a5d5f0ae83ea132c20587f01d9b65386488c481e24b534051cf622f9d617f6",
+      "sourceSha256": "534421e35c2c3acead9976b23c0bb54f2c312dd73f55e94889d47b277fcfea3d",
+      "contractSha256": "534421e35c2c3acead9976b23c0bb54f2c312dd73f55e94889d47b277fcfea3d",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Audita dependências, CI e segredos sem executar o repositório e recompõe a verificação após as correções.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "resposta-a-incidentes-de-seguranca",
+      "code": "DD-152",
+      "version": "1.2.1",
+      "packageSha256": "5cb2c30f3b369190ff544bd75f21352ab8aaffb30105793973ad4d8f3fe71c39",
+      "sourceSha256": "a544c21e1e47a77a2bab629913aeb87a213e3e98759b9a60e5a4905f20b9bdb3",
+      "contractSha256": "a544c21e1e47a77a2bab629913aeb87a213e3e98759b9a60e5a4905f20b9bdb3",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Conduz da preservação de evidência à recuperação, com papéis, decisões registradas e causa só com evidência.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "incidente-de-dados-lgpd",
+      "code": "DD-153",
+      "version": "1.2.1",
+      "packageSha256": "8720f11b34e852ba69b99ea7bebdc30381acf3656abb6c75a8a77ff074aae767",
+      "sourceSha256": "809c9daade346b5aa4f94c02b76c86ba6a68dbee85197b665fb07b3fa1d023d4",
+      "contractSha256": "809c9daade346b5aa4f94c02b76c86ba6a68dbee85197b665fb07b3fa1d023d4",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Aplica os critérios da Resolução 15/2024, calcula prazos e barra afirmações sem confirmação nas minutas.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "mapa-de-dados-lgpd",
+      "code": "DD-154",
+      "version": "1.2.1",
+      "packageSha256": "15c5f0ae3766c62a37cd8d0c19272e31f2fb019c93feb71a481e03a1da7390d5",
+      "sourceSha256": "7fb247f2c4d9d9c2a4a884befd8b79db644b44d2b228cc9c2c75f3d3b5a3026d",
+      "contractSha256": "7fb247f2c4d9d9c2a4a884befd8b79db644b44d2b228cc9c2c75f3d3b5a3026d",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Mapeia operações e rejeita base legal inválida para dado sensível, retenção vaga e transferência sem mecanismo.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "recuperacao-testada-de-backups",
+      "code": "DD-155",
+      "version": "1.2.1",
+      "packageSha256": "ab2f239c5d7636083c0156b69a205e7242774f2a00b339ba070b3a3df391ceb3",
+      "sourceSha256": "eb57eaa9b3e61e3f7ab76c1310d979c9c4adfbce142e603a501bc8ac1fa84762",
+      "contractSha256": "eb57eaa9b3e61e3f7ab76c1310d979c9c4adfbce142e603a501bc8ac1fa84762",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Compara RTO e RPO com medições reais, exige isolamento de cópias e chaves e deriva as lacunas.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "seguranca-de-aplicacoes-com-llm",
+      "code": "DD-156",
+      "version": "1.2.1",
+      "packageSha256": "ac852be152f805afe90b4ec43a2075c24f111d4a63d880b086aefacdfce723c7",
+      "sourceSha256": "506b8163506d18983f464394472df9b2df56b6d8fbb8f5de407fde9185a9e20a",
+      "contractSha256": "506b8163506d18983f464394472df9b2df56b6d8fbb8f5de407fde9185a9e20a",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Avalia autoridade de ferramentas e fluxo de dados pelos dez riscos da OWASP, com testes inofensivos e veredito bloqueado por risco aberto.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "decisoes-de-arquitetura-adr",
+      "code": "DD-157",
+      "version": "1.2.1",
+      "packageSha256": "71231aa2cd4bb27757648508e422d050b482c42c678f2d3de61b36e30d55f29e",
+      "sourceSha256": "f6b2a07dee0a3509a60b917570cf6fa97c0122c4c41e57620dc5681b4e64b3ef",
+      "contractSha256": "f6b2a07dee0a3509a60b917570cf6fa97c0122c4c41e57620dc5681b4e64b3ef",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Registra decisões com alternativas reais, consequências negativas e gatilho de revisão, e confere vínculos da pasta.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "revisao-de-arquitetura-por-atributos",
+      "code": "DD-158",
+      "version": "1.2.1",
+      "packageSha256": "02ee89ecd0b06eed27962079c0f45d31ea54fd55fd88bfe2648e3c739d3a872d",
+      "sourceSha256": "952ee7b8b320ca4ddafcf9575af5e7c7c239d2958e7085836d9006cf75683bcc",
+      "contractSha256": "952ee7b8b320ca4ddafcf9575af5e7c7c239d2958e7085836d9006cf75683bcc",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Converte atributos de qualidade em cenários medíveis ligados a decisões, riscos, trocas e checagens.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "modernizacao-de-sistemas-legados",
+      "code": "DD-159",
+      "version": "1.2.1",
+      "packageSha256": "abef4779ca757d5640f2d34ddced9fce44bcaa2a5b4d2bf1370052b72ebb6eb5",
+      "sourceSha256": "7de43c200eeaac76a4f024eed3e539a588fdca69ff7304283afcd70df6a73d4d",
+      "contractSha256": "7de43c200eeaac76a4f024eed3e539a588fdca69ff7304283afcd70df6a73d4d",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 3
+      },
+      "family": null,
+      "rationale": "Divide o legado por capacidades e monta fatias pequenas com coexistência de dados, reversão e desligamento.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "migracao-de-banco-sem-parada",
+      "code": "DD-160",
+      "version": "1.2.1",
+      "packageSha256": "b4e5db611b132df7938d050d881abd1ac826a83ff8897b85c9f33a943d954d87",
+      "sourceSha256": "bf8a27a1fdd49bf19b975b0f517e47b5800c61350f44ece276e380dcb080dc70",
+      "contractSha256": "bf8a27a1fdd49bf19b975b0f517e47b5800c61350f44ece276e380dcb080dc70",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 3,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Audita migrações PostgreSQL por padrões de bloqueio e exige plano em fases com reversão e sinal de aborto.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "observabilidade-e-slos",
+      "code": "DD-161",
+      "version": "1.2.1",
+      "packageSha256": "c0c516ead841c836a5d5ffc3781e4582048223a5d884c879050bc64518b175c7",
+      "sourceSha256": "b6d2138f73db83009536cf5d118e9131650235fa0ac04a1cff8dc56bf67b3502",
+      "contractSha256": "b6d2138f73db83009536cf5d118e9131650235fa0ac04a1cff8dc56bf67b3502",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Define SLIs por jornada, calcula orçamento de erro e janelas de consumo, e audita o ruído dos alertas.",
+      "assessmentType": "documentary",
+      "executionVerified": false
     }
   ]
 }

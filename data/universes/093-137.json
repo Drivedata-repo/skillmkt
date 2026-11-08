@@ -3958,5 +3958,1013 @@
       ],
       "boundary": "Los precios y modelos cambian con frecuencia. La recomendación solo vale después de probar con ejemplos reales."
     }
+  },
+  {
+    "id": "modelagem-de-ameacas",
+    "pt": {
+      "alias": "Cartógrafo de Ameaças",
+      "tagline": "Desenha por onde o perigo entra antes de ele chegar.",
+      "story": "No portal fictício da Clínica Aurora, qualquer um mudava um número na URL e abria o exame de outra pessoa. Ninguém tinha pensado nisso até a reclamação chegar. Cartógrafo de Ameaças percorre cada fluxo, faz as seis perguntas certas e só aceita um controle quando existe um teste que prova que ele funciona.",
+      "purpose": "Constrói o modelo de ameaças de uma funcionalidade, com fluxos, fronteiras de confiança, risco por matriz fixa, controle, responsável e teste observável.",
+      "useCases": [
+        "Analisar login, pagamento ou webhook antes de construir.",
+        "Definir o que testar primeiro em uma funcionalidade nova."
+      ],
+      "scenario": {
+        "title": "O que pode dar errado",
+        "context": "Cenário fictício: [EQUIPE] vai liberar [FUNCIONALIDADE], que recebe dados de [ORIGEM].",
+        "request": "Use esta skill para montar o modelo de ameaças de [FUNCIONALIDADE]. Liste os fluxos e fronteiras, pontue cada ameaça pela matriz, defina controle, dono e um teste com resultado esperado, e diga o que não foi avaliado.",
+        "output": "Modelo de ameaças com fluxos, riscos, controles e testes.",
+        "check": "Todo fluxo que cruza fronteira precisa de ameaça, e todo controle precisa de teste observável."
+      },
+      "steps": [
+        "Descreva o fluxo e os dados.",
+        "Revise riscos e controles propostos.",
+        "Rode o verificador da entrega."
+      ],
+      "boundary": "Organiza o que testar, mas não prova ausência de falhas nem substitui teste de invasão autorizado."
+    },
+    "en": {
+      "alias": "Threat Cartographer",
+      "tagline": "Draws where danger enters before it arrives.",
+      "story": "At the fictional Aurora Clinic portal, anyone could change a number in the URL and open someone else's exam. Nobody had thought about it until the complaint arrived. Threat Cartographer walks through each flow, asks the six right questions and only accepts a control when a test proves it works.",
+      "purpose": "Builds the threat model of a feature, with flows, trust boundaries, risk from a fixed matrix, control, owner and an observable test.",
+      "useCases": [
+        "Analyze login, payment or a webhook before building.",
+        "Define what to test first in a new feature."
+      ],
+      "scenario": {
+        "title": "What can go wrong",
+        "context": "Fictional scenario: [TEAM] will release [FEATURE], which receives data from [SOURCE].",
+        "request": "Use this skill to build the threat model of [FEATURE]. List flows and boundaries, score each threat with the matrix, define a control, an owner and a test with an expected result, and say what was not assessed.",
+        "output": "Threat model with flows, risks, controls and tests.",
+        "check": "Every flow crossing a boundary needs a threat, and every control needs an observable test."
+      },
+      "steps": [
+        "Describe the flow and the data.",
+        "Review the proposed risks and controls.",
+        "Run the delivery checker."
+      ],
+      "boundary": "It organizes what to test, but does not prove the absence of flaws or replace an authorized penetration test."
+    },
+    "es": {
+      "alias": "Cartógrafo de Amenazas",
+      "tagline": "Dibuja por dónde entra el peligro antes de que llegue.",
+      "story": "En el portal ficticio de la Clínica Aurora, cualquiera cambiaba un número en la URL y abría el examen de otra persona. Nadie lo había pensado hasta que llegó la queja. Cartógrafo de Amenazas recorre cada flujo, hace las seis preguntas correctas y solo acepta un control cuando una prueba demuestra que funciona.",
+      "purpose": "Construye el modelo de amenazas de una funcionalidad, con flujos, fronteras de confianza, riesgo por matriz fija, control, responsable y prueba observable.",
+      "useCases": [
+        "Analizar inicio de sesión, pago o webhook antes de construir.",
+        "Definir qué probar primero en una funcionalidad nueva."
+      ],
+      "scenario": {
+        "title": "Qué puede salir mal",
+        "context": "Escenario ficticio: [EQUIPO] va a lanzar [FUNCIONALIDAD], que recibe datos de [ORIGEN].",
+        "request": "Usa esta skill para montar el modelo de amenazas de [FUNCIONALIDAD]. Enumera flujos y fronteras, puntúa cada amenaza con la matriz, define control, responsable y una prueba con resultado esperado, e indica lo que no se evaluó.",
+        "output": "Modelo de amenazas con flujos, riesgos, controles y pruebas.",
+        "check": "Todo flujo que cruza una frontera necesita una amenaza, y todo control necesita una prueba observable."
+      },
+      "steps": [
+        "Describe el flujo y los datos.",
+        "Revisa los riesgos y controles propuestos.",
+        "Ejecuta el verificador de la entrega."
+      ],
+      "boundary": "Organiza qué probar, pero no demuestra la ausencia de fallos ni sustituye una prueba de intrusión autorizada."
+    }
+  },
+  {
+    "id": "revisao-de-permissoes-e-acesso",
+    "pt": {
+      "alias": "Porteiro das Permissões",
+      "tagline": "Pergunta a cada porta quem pode entrar de verdade.",
+      "story": "Na fictícia Contas Claras, o botão de excluir só aparecia para o administrador, mas a API aceitava o pedido de qualquer pessoa logada. A tela parecia protegida, e não estava. Porteiro das Permissões monta a matriz de quem faz o quê, vai até o código de cada regra e nunca aceita um passou sem teste de negação.",
+      "purpose": "Revisa autenticação e autorização com uma matriz de papel, recurso e ação, localizando cada regra e encontrando acesso cruzado, proteção só na tela e alteração indevida de campos.",
+      "useCases": [
+        "Conferir se um cliente consegue ver dados de outro.",
+        "Revisar a área administrativa antes de liberar novos papéis."
+      ],
+      "scenario": {
+        "title": "A porta aberta",
+        "context": "Cenário fictício: [PRODUTO] atende várias empresas e tem os papéis [PAPÉIS].",
+        "request": "Use esta skill para revisar as permissões de [PRODUTO]. Monte a matriz incluindo o papel anônimo e um usuário de outra empresa, aponte onde cada regra é aplicada e marque como não testado tudo o que não foi executado.",
+        "output": "Matriz de permissões, achados e veredito.",
+        "check": "Toda regra restritiva sem aplicação real precisa de achado, e não há aprovação com negação sem teste."
+      },
+      "steps": [
+        "Liste papéis, recursos e ações.",
+        "Revise achados e correções.",
+        "Rode o verificador da entrega."
+      ],
+      "boundary": "Vale para os papéis e rotas analisados. Leitura de código não comprova o comportamento em produção."
+    },
+    "en": {
+      "alias": "Permission Gatekeeper",
+      "tagline": "Asks every door who can really come in.",
+      "story": "At the fictional Contas Claras, the delete button only appeared for the administrator, but the API accepted the request from anyone logged in. The screen looked protected, and it was not. Permission Gatekeeper builds the matrix of who does what, goes to the code of each rule and never accepts a pass without a deny test.",
+      "purpose": "Reviews authentication and authorization with a role, resource and action matrix, locating each rule and finding cross access, screen-only protection and improper field changes.",
+      "useCases": [
+        "Check whether one customer can see another customer's data.",
+        "Review the admin area before releasing new roles."
+      ],
+      "scenario": {
+        "title": "The open door",
+        "context": "Fictional scenario: [PRODUCT] serves several companies and has the roles [ROLES].",
+        "request": "Use this skill to review the permissions of [PRODUCT]. Build the matrix including the anonymous role and a user from another company, point out where each rule is applied and mark as not tested everything that was not run.",
+        "output": "Permission matrix, findings and verdict.",
+        "check": "Every restrictive rule without real enforcement needs a finding, and there is no approval with untested denials."
+      },
+      "steps": [
+        "List roles, resources and actions.",
+        "Review findings and fixes.",
+        "Run the delivery checker."
+      ],
+      "boundary": "It applies to the roles and routes analyzed. Reading code does not prove production behavior."
+    },
+    "es": {
+      "alias": "Portero de Permisos",
+      "tagline": "Pregunta en cada puerta quién puede entrar de verdad.",
+      "story": "En la ficticia Contas Claras, el botón de eliminar solo aparecía para el administrador, pero la API aceptaba la petición de cualquier persona conectada. La pantalla parecía protegida y no lo estaba. Portero de Permisos monta la matriz de quién hace qué, va al código de cada regla y nunca acepta un aprobado sin prueba de denegación.",
+      "purpose": "Revisa autenticación y autorización con una matriz de rol, recurso y acción, localizando cada regla y encontrando acceso cruzado, protección solo en pantalla y cambios indebidos de campos.",
+      "useCases": [
+        "Comprobar si un cliente puede ver datos de otro.",
+        "Revisar el área administrativa antes de liberar nuevos roles."
+      ],
+      "scenario": {
+        "title": "La puerta abierta",
+        "context": "Escenario ficticio: [PRODUCTO] atiende a varias empresas y tiene los roles [ROLES].",
+        "request": "Usa esta skill para revisar los permisos de [PRODUCTO]. Monta la matriz incluyendo el rol anónimo y un usuario de otra empresa, indica dónde se aplica cada regla y marca como no probado todo lo que no se ejecutó.",
+        "output": "Matriz de permisos, hallazgos y veredicto.",
+        "check": "Toda regla restrictiva sin aplicación real necesita un hallazgo, y no hay aprobación con denegaciones sin probar."
+      },
+      "steps": [
+        "Enumera roles, recursos y acciones.",
+        "Revisa hallazgos y correcciones.",
+        "Ejecuta el verificador de la entrega."
+      ],
+      "boundary": "Vale para los roles y rutas analizados. Leer el código no demuestra el comportamiento en producción."
+    }
+  },
+  {
+    "id": "priorizacao-de-vulnerabilidades",
+    "pt": {
+      "alias": "Fila das Brechas",
+      "tagline": "Põe na frente o que estão explorando, não o que tem a maior nota.",
+      "story": "O relatório fictício do time de Renata apontava uma nota máxima em uma biblioteca que nem chegava à produção, enquanto uma falha de nota média no acesso remoto já estava sendo explorada. Fila das Brechas olha exploração, alcance e exposição, e entrega uma lista curta em que cada item tem prazo, dono e motivo.",
+      "purpose": "Transforma a exportação de um scanner em uma fila de correção usando exploração confirmada, EPSS, alcance, exposição e criticidade, com script determinístico e conferência do plano.",
+      "useCases": [
+        "Definir por onde começar em um backlog de vulnerabilidades.",
+        "Defender o plano de correção para a gestão."
+      ],
+      "scenario": {
+        "title": "Nota alta, risco baixo",
+        "context": "Cenário fictício: [EQUIPE] recebeu do scanner [QUANTIDADE] achados em [AMBIENTE].",
+        "request": "Use esta skill para priorizar os achados de [AMBIENTE]. Complete os sinais de exploração em fonte oficial, registre a data da consulta, rode a régua e justifique qualquer desvio. Não invente sinais que não encontrar.",
+        "output": "Plano com classe, prazo, dono, motivo e fontes.",
+        "check": "Cada item precisa estar no plano, e todo desvio em relação à régua precisa de justificativa."
+      },
+      "steps": [
+        "Exporte os achados em CSV.",
+        "Rode a régua e revise exceções.",
+        "Confira o plano com o script."
+      ],
+      "boundary": "O script não acessa a internet e depende dos sinais fornecidos. Os limites da régua são ponto de partida."
+    },
+    "en": {
+      "alias": "Breach Queue",
+      "tagline": "Puts first what is being exploited, not what scores highest.",
+      "story": "The fictional report from Renata's team showed a maximum score on a library that never reached production, while a medium score flaw in remote access was already being exploited. Breach Queue looks at exploitation, reachability and exposure, and delivers a short list where each item has a due date, an owner and a reason.",
+      "purpose": "Turns a scanner export into a remediation queue using confirmed exploitation, EPSS, reachability, exposure and criticality, with a deterministic script and a plan check.",
+      "useCases": [
+        "Decide where to start in a vulnerability backlog.",
+        "Defend the remediation plan to management."
+      ],
+      "scenario": {
+        "title": "High score, low risk",
+        "context": "Fictional scenario: [TEAM] received [QUANTITY] scanner findings in [ENVIRONMENT].",
+        "request": "Use this skill to prioritize the findings in [ENVIRONMENT]. Complete the exploitation signals from an official source, record the lookup date, run the rule set and justify any deviation. Do not invent signals you cannot find.",
+        "output": "Plan with class, due date, owner, reason and sources.",
+        "check": "Each item must be in the plan, and every deviation from the rule set needs a justification."
+      },
+      "steps": [
+        "Export the findings as CSV.",
+        "Run the rule set and review exceptions.",
+        "Check the plan with the script."
+      ],
+      "boundary": "The script does not access the internet and depends on the supplied signals. The thresholds are a starting point."
+    },
+    "es": {
+      "alias": "Fila de Brechas",
+      "tagline": "Pone primero lo que se está explotando, no lo que tiene la nota más alta.",
+      "story": "El informe ficticio del equipo de Renata mostraba una nota máxima en una biblioteca que ni llegaba a producción, mientras un fallo de nota media en el acceso remoto ya se estaba explotando. Fila de Brechas mira explotación, alcance y exposición, y entrega una lista corta en la que cada elemento tiene plazo, responsable y motivo.",
+      "purpose": "Convierte la exportación de un escáner en una cola de corrección usando explotación confirmada, EPSS, alcance, exposición y criticidad, con script determinista y comprobación del plan.",
+      "useCases": [
+        "Decidir por dónde empezar en un backlog de vulnerabilidades.",
+        "Defender el plan de corrección ante la dirección."
+      ],
+      "scenario": {
+        "title": "Nota alta, riesgo bajo",
+        "context": "Escenario ficticio: [EQUIPO] recibió del escáner [CANTIDAD] hallazgos en [ENTORNO].",
+        "request": "Usa esta skill para priorizar los hallazgos de [ENTORNO]. Completa las señales de explotación en una fuente oficial, registra la fecha de consulta, ejecuta la regla y justifica cualquier desviación. No inventes señales que no encuentres.",
+        "output": "Plan con clase, plazo, responsable, motivo y fuentes.",
+        "check": "Cada elemento debe estar en el plan, y toda desviación respecto a la regla necesita justificación."
+      },
+      "steps": [
+        "Exporta los hallazgos en CSV.",
+        "Ejecuta la regla y revisa las excepciones.",
+        "Comprueba el plan con el script."
+      ],
+      "boundary": "El script no accede a internet y depende de las señales aportadas. Los umbrales son un punto de partida."
+    }
+  },
+  {
+    "id": "cadeia-de-suprimentos-de-software",
+    "pt": {
+      "alias": "Alfândega de Pacotes",
+      "tagline": "Nada entra no produto sem passar pela conferência.",
+      "story": "No repositório fictício da Loja Pinhal, um workflow rodava código de qualquer pull request com os segredos da empresa, e a imagem base mudava sem aviso. Alfândega de Pacotes lê tudo sem executar nada, aponta as portas abertas e deixa um plano com versões fixas, permissões mínimas e lista de componentes.",
+      "purpose": "Audita dependências, imagens, workflows de integração contínua e segredos com um script que só lê arquivos, e monta o plano de correção com SBOM e política de atualização.",
+      "useCases": [
+        "Revisar o pipeline antes de atender exigência de cliente.",
+        "Agir depois da notícia de um pacote comprometido."
+      ],
+      "scenario": {
+        "title": "A porta dos terceiros",
+        "context": "Cenário fictício: o repositório [REPOSITÓRIO] publica [PRODUTO] sem revisão de dependências.",
+        "request": "Use esta skill para auditar a cadeia de suprimentos de [REPOSITÓRIO]. Só leia os arquivos, nunca instale nem execute nada do projeto. Mostre os achados por gravidade e monte o plano com dono e prazo, sem exibir valor de segredo.",
+        "output": "Resultado da auditoria e plano com SBOM e política de atualização.",
+        "check": "Só conta como corrigido o que o script deixou de apontar, e exceção sem motivo não vale."
+      },
+      "steps": [
+        "Aponte o repositório.",
+        "Revise os achados por gravidade.",
+        "Corrija e rode a auditoria de novo."
+      ],
+      "boundary": "Cobre npm, pnpm, yarn, bun, pip, Docker e GitHub Actions. A exigência legal de SBOM varia por mercado."
+    },
+    "en": {
+      "alias": "Package Customs",
+      "tagline": "Nothing enters the product without inspection.",
+      "story": "In the fictional Loja Pinhal repository, a workflow ran code from any pull request with the company's secrets, and the base image changed without notice. Package Customs reads everything without running anything, points out the open doors and leaves a plan with pinned versions, minimal permissions and a component list.",
+      "purpose": "Audits dependencies, images, continuous integration workflows and secrets with a script that only reads files, and builds the remediation plan with SBOM and update policy.",
+      "useCases": [
+        "Review the pipeline before meeting a customer requirement.",
+        "Act after news of a compromised package."
+      ],
+      "scenario": {
+        "title": "The third party door",
+        "context": "Fictional scenario: the repository [REPOSITORY] publishes [PRODUCT] with no dependency review.",
+        "request": "Use this skill to audit the supply chain of [REPOSITORY]. Only read the files, never install or run anything from the project. Show findings by severity and build the plan with owner and due date, without displaying any secret value.",
+        "output": "Audit result and plan with SBOM and update policy.",
+        "check": "Only what the script stops flagging counts as fixed, and an exception without a reason is not valid."
+      },
+      "steps": [
+        "Point to the repository.",
+        "Review findings by severity.",
+        "Fix and run the audit again."
+      ],
+      "boundary": "It covers npm, pnpm, yarn, bun, pip, Docker and GitHub Actions. Legal SBOM requirements vary by market."
+    },
+    "es": {
+      "alias": "Aduana de Paquetes",
+      "tagline": "Nada entra en el producto sin pasar la inspección.",
+      "story": "En el repositorio ficticio de Loja Pinhal, un workflow ejecutaba código de cualquier pull request con los secretos de la empresa, y la imagen base cambiaba sin aviso. Aduana de Paquetes lee todo sin ejecutar nada, señala las puertas abiertas y deja un plan con versiones fijas, permisos mínimos y lista de componentes.",
+      "purpose": "Audita dependencias, imágenes, workflows de integración continua y secretos con un script que solo lee archivos, y monta el plan de corrección con SBOM y política de actualización.",
+      "useCases": [
+        "Revisar el pipeline antes de atender una exigencia de un cliente.",
+        "Actuar tras la noticia de un paquete comprometido."
+      ],
+      "scenario": {
+        "title": "La puerta de terceros",
+        "context": "Escenario ficticio: el repositorio [REPOSITORIO] publica [PRODUCTO] sin revisar dependencias.",
+        "request": "Usa esta skill para auditar la cadena de suministro de [REPOSITORIO]. Solo lee los archivos, nunca instales ni ejecutes nada del proyecto. Muestra los hallazgos por gravedad y monta el plan con responsable y plazo, sin mostrar valores de secretos.",
+        "output": "Resultado de la auditoría y plan con SBOM y política de actualización.",
+        "check": "Solo cuenta como corregido lo que el script deja de señalar, y una excepción sin motivo no vale."
+      },
+      "steps": [
+        "Indica el repositorio.",
+        "Revisa los hallazgos por gravedad.",
+        "Corrige y ejecuta la auditoría de nuevo."
+      ],
+      "boundary": "Cubre npm, pnpm, yarn, bun, pip, Docker y GitHub Actions. La exigencia legal de SBOM varía según el mercado."
+    }
+  },
+  {
+    "id": "resposta-a-incidentes-de-seguranca",
+    "pt": {
+      "alias": "Plantão de Crise",
+      "tagline": "Na hora do susto, primeiro preserva. Depois corrige.",
+      "story": "Na fictícia Loja Pinhal, uma chave vazou e alguém sugeriu apagar tudo e reiniciar o servidor antes de entender o que tinha acontecido. Plantão de Crise distribui os papéis, guarda a evidência, coloca os horários em um só fuso e não deixa acusar ninguém sem prova. Quando a poeira baixa, sobra um registro que aguenta perguntas.",
+      "purpose": "Conduz um incidente de segurança da primeira hora às lições aprendidas, com papéis, preservação de evidência, contenção validada, linha do tempo e registro de decisões.",
+      "useCases": [
+        "Organizar a resposta quando há invasão ou chave vazada.",
+        "Fazer uma simulação de mesa com a equipe."
+      ],
+      "scenario": {
+        "title": "A chave no repositório",
+        "context": "Cenário fictício: [EQUIPE] recebeu um alerta sobre [EVENTO] em [SISTEMA].",
+        "request": "Use esta skill para conduzir a resposta a [EVENTO]. Defina papéis, preserve evidências antes de alterar qualquer coisa, monte a linha do tempo com fuso e separe fato de hipótese. Não acuse ninguém sem evidência e diga o que ainda é desconhecido.",
+        "output": "Registro do incidente com decisões, evidências, contenção e lições.",
+        "check": "Toda hora precisa de fuso, e a causa só pode ser confirmada citando uma evidência registrada."
+      },
+      "steps": [
+        "Abra o registro e defina papéis.",
+        "Preserve, contenha e investigue.",
+        "Rode o verificador do registro."
+      ],
+      "boundary": "Organiza e confere o registro. Quem executa as ações é a equipe, e o material não substitui perícia."
+    },
+    "en": {
+      "alias": "Crisis Watch",
+      "tagline": "In the moment of panic, preserve first. Then fix.",
+      "story": "At the fictional Loja Pinhal, a key leaked and someone suggested deleting everything and restarting the server before understanding what had happened. Crisis Watch assigns the roles, keeps the evidence, puts the times in a single time zone and lets no one be accused without proof. When the dust settles, a record remains that can withstand questions.",
+      "purpose": "Guides a security incident from the first hour to lessons learned, with roles, evidence preservation, validated containment, timeline and a decision log.",
+      "useCases": [
+        "Organize the response to a break-in or leaked key.",
+        "Run a tabletop exercise with the team."
+      ],
+      "scenario": {
+        "title": "The key in the repository",
+        "context": "Fictional scenario: [TEAM] received an alert about [EVENT] in [SYSTEM].",
+        "request": "Use this skill to lead the response to [EVENT]. Define roles, preserve evidence before changing anything, build the timeline with time zones and separate fact from hypothesis. Accuse no one without evidence and say what is still unknown.",
+        "output": "Incident record with decisions, evidence, containment and lessons.",
+        "check": "Every time needs a time zone, and the cause can only be confirmed by citing recorded evidence."
+      },
+      "steps": [
+        "Open the record and define roles.",
+        "Preserve, contain and investigate.",
+        "Run the record checker."
+      ],
+      "boundary": "It organizes and checks the record. The team performs the actions, and the material does not replace forensics."
+    },
+    "es": {
+      "alias": "Guardia de Crisis",
+      "tagline": "En el momento del susto, primero preserva. Después corrige.",
+      "story": "En la ficticia Loja Pinhal se filtró una clave y alguien propuso borrar todo y reiniciar el servidor antes de entender qué había pasado. Guardia de Crisis reparte los papeles, guarda la evidencia, pone las horas en una sola zona horaria y no deja acusar a nadie sin prueba. Cuando pasa la tormenta, queda un registro que aguanta preguntas.",
+      "purpose": "Conduce un incidente de seguridad desde la primera hora hasta las lecciones aprendidas, con roles, preservación de evidencias, contención validada, cronología y registro de decisiones.",
+      "useCases": [
+        "Organizar la respuesta ante una intrusión o una clave filtrada.",
+        "Hacer un simulacro de mesa con el equipo."
+      ],
+      "scenario": {
+        "title": "La clave en el repositorio",
+        "context": "Escenario ficticio: [EQUIPO] recibió una alerta sobre [EVENTO] en [SISTEMA].",
+        "request": "Usa esta skill para conducir la respuesta a [EVENTO]. Define roles, preserva las evidencias antes de cambiar nada, monta la cronología con zona horaria y separa hecho de hipótesis. No acuses a nadie sin evidencia e indica lo que aún se desconoce.",
+        "output": "Registro del incidente con decisiones, evidencias, contención y lecciones.",
+        "check": "Toda hora necesita zona horaria, y la causa solo puede confirmarse citando una evidencia registrada."
+      },
+      "steps": [
+        "Abre el registro y define los roles.",
+        "Preserva, contén e investiga.",
+        "Ejecuta el verificador del registro."
+      ],
+      "boundary": "Organiza y comprueba el registro. Las acciones las ejecuta el equipo, y el material no sustituye un peritaje."
+    }
+  },
+  {
+    "id": "incidente-de-dados-lgpd",
+    "pt": {
+      "alias": "Relógio da ANPD",
+      "tagline": "O prazo começa quando você soube. Não quando resolveu.",
+      "story": "Na fictícia Escola Horizonte, a planilha dos alunos ficou aberta por uma semana e o diretor queria avisar que nenhum dado tinha sido acessado, mesmo com dezenas de downloads registrados. Relógio da ANPD confere os critérios, conta os dias úteis e escreve as minutas dizendo só o que se sabe. A decisão continua com o encarregado.",
+      "purpose": "Faz a triagem de um incidente com dados pessoais pela LGPD e pela Resolução CD/ANPD 15/2024, calcula os prazos e prepara as minutas para a ANPD e para os titulares.",
+      "useCases": [
+        "Decidir se um vazamento precisa ser comunicado.",
+        "Preparar a comunicação preliminar dentro do prazo."
+      ],
+      "scenario": {
+        "title": "A planilha aberta",
+        "context": "Cenário fictício: [EMPRESA] soube em [DATA] de um incidente com dados de [TITULARES].",
+        "request": "Use esta skill para fazer a triagem do incidente de [EMPRESA]. Responda aos critérios da ANPD, calcule os prazos a partir de [DATA] e redija as minutas sem afirmar o que não foi confirmado. Marque tudo que o encarregado precisa validar.",
+        "output": "Triagem, decisão sugerida, prazos e minutas.",
+        "check": "As datas precisam bater com o cálculo, e as minutas não podem afirmar o que não foi confirmado."
+      },
+      "steps": [
+        "Informe os fatos e a data de ciência.",
+        "Revise triagem e prazos.",
+        "Leve as minutas ao encarregado."
+      ],
+      "boundary": "Não é aconselhamento jurídico. Regras conferidas em 2026 e sujeitas a mudança. O texto oficial prevalece."
+    },
+    "en": {
+      "alias": "ANPD Clock",
+      "tagline": "The deadline starts when you learned of it. Not when you solved it.",
+      "story": "At the fictional Horizonte School, the student spreadsheet stayed open for a week and the principal wanted to announce that no data had been accessed, despite dozens of recorded downloads. ANPD Clock checks the criteria, counts the business days and writes the drafts saying only what is known. The decision stays with the data protection officer.",
+      "purpose": "Triages an incident involving personal data under Brazil's LGPD and ANPD Resolution 15/2024, calculates the deadlines and prepares the drafts for the ANPD and for data subjects.",
+      "useCases": [
+        "Decide whether a leak must be reported.",
+        "Prepare the preliminary notification on time."
+      ],
+      "scenario": {
+        "title": "The open spreadsheet",
+        "context": "Fictional scenario: [COMPANY] learned on [DATE] of an incident with data from [DATA SUBJECTS].",
+        "request": "Use this skill to triage the incident at [COMPANY]. Answer the ANPD criteria, calculate the deadlines from [DATE] and write the drafts without stating what has not been confirmed. Mark everything the data protection officer must validate.",
+        "output": "Triage, suggested decision, deadlines and drafts.",
+        "check": "The dates must match the calculation, and the drafts cannot state what was not confirmed."
+      },
+      "steps": [
+        "Provide the facts and the date of knowledge.",
+        "Review the triage and deadlines.",
+        "Take the drafts to the data protection officer."
+      ],
+      "boundary": "It is not legal advice. Rules checked in 2026 and subject to change. The official text prevails."
+    },
+    "es": {
+      "alias": "Reloj de la ANPD",
+      "tagline": "El plazo empieza cuando lo supiste. No cuando lo resolviste.",
+      "story": "En la ficticia Escuela Horizonte, la hoja de los alumnos quedó abierta durante una semana y el director quería avisar de que nadie había accedido a los datos, pese a las decenas de descargas registradas. Reloj de la ANPD comprueba los criterios, cuenta los días hábiles y redacta los borradores diciendo solo lo que se sabe. La decisión sigue siendo del encargado.",
+      "purpose": "Evalúa un incidente con datos personales según la LGPD de Brasil y la Resolución 15/2024 de la ANPD, calcula los plazos y prepara los borradores para la ANPD y para los titulares.",
+      "useCases": [
+        "Decidir si una filtración debe comunicarse.",
+        "Preparar la comunicación preliminar dentro del plazo."
+      ],
+      "scenario": {
+        "title": "La hoja abierta",
+        "context": "Escenario ficticio: [EMPRESA] supo el [FECHA] de un incidente con datos de [TITULARES].",
+        "request": "Usa esta skill para evaluar el incidente de [EMPRESA]. Responde a los criterios de la ANPD, calcula los plazos desde [FECHA] y redacta los borradores sin afirmar lo que no se ha confirmado. Marca todo lo que el encargado debe validar.",
+        "output": "Evaluación, decisión sugerida, plazos y borradores.",
+        "check": "Las fechas deben coincidir con el cálculo, y los borradores no pueden afirmar lo que no se confirmó."
+      },
+      "steps": [
+        "Aporta los hechos y la fecha de conocimiento.",
+        "Revisa la evaluación y los plazos.",
+        "Lleva los borradores al encargado."
+      ],
+      "boundary": "No es asesoramiento jurídico. Reglas comprobadas en 2026 y sujetas a cambios. Prevalece el texto oficial."
+    }
+  },
+  {
+    "id": "mapa-de-dados-lgpd",
+    "pt": {
+      "alias": "Mapa dos Titulares",
+      "tagline": "Cada dado com motivo, dono e data para sair.",
+      "story": "Na fictícia Academia Movimento, a catraca lia o rosto dos alunos sob o argumento de legítimo interesse, e tudo era guardado para sempre porque um dia poderia servir. Mapa dos Titulares separa as operações, rejeita a base que a lei não admite e transforma cada problema em uma correção com dono e prazo.",
+      "purpose": "Monta o mapa de dados pessoais de um sistema, com finalidade, categoria, base legal, compartilhamento, transferência, retenção e descarte, e lista as lacunas e o fluxo dos direitos dos titulares.",
+      "useCases": [
+        "Preparar um sistema para a adequação à LGPD.",
+        "Responder a questionário de privacidade de um cliente."
+      ],
+      "scenario": {
+        "title": "Guardado para sempre",
+        "context": "Cenário fictício: [EMPRESA] coleta dados de [TITULARES] no sistema [SISTEMA].",
+        "request": "Use esta skill para montar o mapa de dados de [SISTEMA]. Liste uma linha por finalidade, sugira a base legal, defina retenção com prazo e gatilho, e registre cada problema como lacuna com dono. A base legal fica para o encarregado validar.",
+        "output": "Mapa de dados, direitos dos titulares, lacunas e indicadores de RIPD.",
+        "check": "Dado sensível não aceita legítimo interesse, e retenção vaga precisa aparecer como lacuna."
+      },
+      "steps": [
+        "Informe sistema, formulários e fornecedores.",
+        "Revise bases legais e lacunas.",
+        "Leve o mapa ao encarregado."
+      ],
+      "boundary": "Não é aconselhamento jurídico. Mostra só o que foi informado e pode não refletir dado tratado fora dos sistemas."
+    },
+    "en": {
+      "alias": "Data Subject Map",
+      "tagline": "Each piece of data with a reason, an owner and a date to leave.",
+      "story": "At the fictional Movimento Gym, the turnstile read students' faces on the grounds of legitimate interest, and everything was kept forever because it might be useful someday. Data Subject Map separates the operations, rejects the basis the law does not allow and turns each problem into a fix with an owner and a due date.",
+      "purpose": "Builds the personal data map of a system, with purpose, category, legal basis, sharing, transfer, retention and disposal, and lists the gaps and the data subject rights workflow.",
+      "useCases": [
+        "Prepare a system for LGPD compliance.",
+        "Answer a customer's privacy questionnaire."
+      ],
+      "scenario": {
+        "title": "Kept forever",
+        "context": "Fictional scenario: [COMPANY] collects data from [DATA SUBJECTS] in the system [SYSTEM].",
+        "request": "Use this skill to build the data map of [SYSTEM]. List one row per purpose, suggest the legal basis, define retention with a period and trigger, and record each problem as a gap with an owner. The legal basis is for the data protection officer to validate.",
+        "output": "Data map, data subject rights, gaps and DPIA indicators.",
+        "check": "Sensitive data does not accept legitimate interest, and vague retention must appear as a gap."
+      },
+      "steps": [
+        "Provide the system, forms and vendors.",
+        "Review legal bases and gaps.",
+        "Take the map to the data protection officer."
+      ],
+      "boundary": "It is not legal advice. It shows only what was provided and may not reflect data handled outside the systems."
+    },
+    "es": {
+      "alias": "Mapa de Titulares",
+      "tagline": "Cada dato con motivo, responsable y fecha de salida.",
+      "story": "En la ficticia Academia Movimento, el torniquete leía la cara de los alumnos alegando interés legítimo, y todo se guardaba para siempre porque algún día podría servir. Mapa de Titulares separa las operaciones, rechaza la base que la ley no admite y convierte cada problema en una corrección con responsable y plazo.",
+      "purpose": "Monta el mapa de datos personales de un sistema, con finalidad, categoría, base legal, comunicación, transferencia, retención y eliminación, y enumera las brechas y el flujo de derechos de los titulares.",
+      "useCases": [
+        "Preparar un sistema para la adecuación a la LGPD.",
+        "Responder a un cuestionario de privacidad de un cliente."
+      ],
+      "scenario": {
+        "title": "Guardado para siempre",
+        "context": "Escenario ficticio: [EMPRESA] recoge datos de [TITULARES] en el sistema [SISTEMA].",
+        "request": "Usa esta skill para montar el mapa de datos de [SISTEMA]. Enumera una fila por finalidad, sugiere la base legal, define la retención con plazo y evento, y registra cada problema como brecha con responsable. La base legal queda para que el encargado la valide.",
+        "output": "Mapa de datos, derechos de los titulares, brechas e indicadores de evaluación de impacto.",
+        "check": "Los datos sensibles no admiten interés legítimo, y la retención vaga debe aparecer como brecha."
+      },
+      "steps": [
+        "Aporta el sistema, formularios y proveedores.",
+        "Revisa bases legales y brechas.",
+        "Lleva el mapa al encargado."
+      ],
+      "boundary": "No es asesoramiento jurídico. Muestra solo lo informado y puede no reflejar datos tratados fuera de los sistemas."
+    }
+  },
+  {
+    "id": "recuperacao-testada-de-backups",
+    "pt": {
+      "alias": "Cofre que Volta",
+      "tagline": "Backup só vale depois de restaurado e cronometrado.",
+      "story": "Na fictícia Transportes Serra, o painel mostrava sucesso todo dia, mas o último teste levou mais que o dobro do tempo combinado e perdeu quase um dia de fretes. Pior, quem administrava a produção também podia apagar as cópias. Cofre que Volta compara o medido com o prometido e só aprova o que voltou de verdade.",
+      "purpose": "Avalia se os backups conseguem recuperar o negócio, comparando RTO e RPO com medições reais, conferindo cópias isoladas e chaves separadas, e planejando o próximo teste de restauração.",
+      "useCases": [
+        "Descobrir se a empresa volta depois de um ransomware.",
+        "Definir RTO e RPO com os donos dos processos."
+      ],
+      "scenario": {
+        "title": "O painel verde",
+        "context": "Cenário fictício: [EMPRESA] faz backup de [ATIVOS], mas não restaura há meses.",
+        "request": "Use esta skill para avaliar a recuperação de [ATIVOS]. Registre objetivos e o que foi medido, marque como não medido o que não existe, e aponte cópias que um administrador de produção conseguiria apagar. Nunca estime tempo como se tivesse medido.",
+        "output": "Tabela de ativos, lacunas, dependências e próximo teste.",
+        "check": "Só aprova o ativo com tempo e perda dentro do objetivo, e todo ativo com lacuna precisa estar no plano."
+      },
+      "steps": [
+        "Liste ativos, objetivos e testes.",
+        "Revise lacunas por ativo.",
+        "Agende e meça o próximo teste."
+      ],
+      "boundary": "Não executa restaurações. Um teste bem-sucedido vale para aquele cenário e aquela data."
+    },
+    "en": {
+      "alias": "The Vault That Returns",
+      "tagline": "A backup only counts once it is restored and timed.",
+      "story": "At the fictional Transportes Serra, the dashboard showed success every day, but the last test took more than twice the agreed time and lost almost a day of freight. Worse, whoever ran production could also delete the copies. The Vault That Returns compares what was measured with what was promised and approves only what really came back.",
+      "purpose": "Assesses whether backups can recover the business, comparing RTO and RPO with real measurements, checking isolated copies and separate keys, and planning the next restore test.",
+      "useCases": [
+        "Find out whether the company recovers after ransomware.",
+        "Set RTO and RPO with the process owners."
+      ],
+      "scenario": {
+        "title": "The green dashboard",
+        "context": "Fictional scenario: [COMPANY] backs up [ASSETS], but has not restored in months.",
+        "request": "Use this skill to assess the recovery of [ASSETS]. Record the targets and what was measured, mark as not measured what does not exist, and point out copies a production administrator could delete. Never estimate a time as if it were measured.",
+        "output": "Asset table, gaps, dependencies and next test.",
+        "check": "An asset passes only with time and loss within target, and every asset with a gap must be in the plan."
+      },
+      "steps": [
+        "List assets, targets and tests.",
+        "Review gaps by asset.",
+        "Schedule and measure the next test."
+      ],
+      "boundary": "It does not perform restores. A successful test applies to that scenario and that date."
+    },
+    "es": {
+      "alias": "Cofre que Regresa",
+      "tagline": "Una copia solo vale cuando se restaura y se cronometra.",
+      "story": "En la ficticia Transportes Serra, el panel mostraba éxito cada día, pero la última prueba tardó más del doble del tiempo acordado y perdió casi un día de portes. Peor aún, quien administraba producción también podía borrar las copias. Cofre que Regresa compara lo medido con lo prometido y solo aprueba lo que volvió de verdad.",
+      "purpose": "Evalúa si las copias pueden recuperar el negocio, comparando RTO y RPO con mediciones reales, comprobando copias aisladas y claves separadas, y planificando la próxima prueba de restauración.",
+      "useCases": [
+        "Averiguar si la empresa se recupera tras un ransomware.",
+        "Definir RTO y RPO con los responsables de los procesos."
+      ],
+      "scenario": {
+        "title": "El panel verde",
+        "context": "Escenario ficticio: [EMPRESA] hace copias de [ACTIVOS], pero no restaura desde hace meses.",
+        "request": "Usa esta skill para evaluar la recuperación de [ACTIVOS]. Registra los objetivos y lo medido, marca como no medido lo que no exista y señala las copias que un administrador de producción podría borrar. Nunca estimes un tiempo como si estuviera medido.",
+        "output": "Tabla de activos, brechas, dependencias y próxima prueba.",
+        "check": "Un activo solo se aprueba con tiempo y pérdida dentro del objetivo, y todo activo con brecha debe estar en el plan."
+      },
+      "steps": [
+        "Enumera activos, objetivos y pruebas.",
+        "Revisa las brechas por activo.",
+        "Programa y mide la próxima prueba."
+      ],
+      "boundary": "No ejecuta restauraciones. Una prueba correcta vale para ese escenario y esa fecha."
+    }
+  },
+  {
+    "id": "seguranca-de-aplicacoes-com-llm",
+    "pt": {
+      "alias": "Muralha do Modelo",
+      "tagline": "Parte do princípio de que o modelo será enganado.",
+      "story": "O assistente fictício da Cooperativa Vale Verde lia e-mails de qualquer um, tinha acesso de administrador ao banco e podia enviar mensagem para fora sem perguntar. Bastava um anexo bem escrito. Muralha do Modelo mapeia o que o modelo alcança, corta a autoridade desnecessária e testa tudo com sinalizadores inofensivos.",
+      "purpose": "Revisa a segurança de aplicações com modelos de linguagem pelos dez riscos da OWASP para LLM, analisando entradas não confiáveis, ferramentas, credenciais, saída, vazamento e custo.",
+      "useCases": [
+        "Revisar um chatbot ou copiloto antes de usar dados reais.",
+        "Limitar o que um agente pode fazer com ferramentas."
+      ],
+      "scenario": {
+        "title": "O anexo bem escrito",
+        "context": "Cenário fictício: [PRODUTO] usa um modelo que lê [CONTEÚDO] e chama [FERRAMENTAS].",
+        "request": "Use esta skill para revisar a segurança de [PRODUTO]. Mapeie entradas não confiáveis e a autoridade de cada ferramenta, percorra os dez riscos e use só testes inofensivos com sinalizadores. Marque como não executado tudo o que não rodou.",
+        "output": "Mapa de entradas e ferramentas, riscos, testes, achados e veredito.",
+        "check": "Efeito externo exige aprovação humana ou achado, e não há aprovação com teste não executado."
+      },
+      "steps": [
+        "Descreva entradas e ferramentas.",
+        "Revise os dez riscos e os achados.",
+        "Rode o verificador da entrega."
+      ],
+      "boundary": "Reduz o risco, mas não há garantia contra injeção de prompt. Repita os testes a cada troca de modelo ou de prompt."
+    },
+    "en": {
+      "alias": "Model Rampart",
+      "tagline": "Assumes the model will be fooled.",
+      "story": "The fictional assistant at the Vale Verde Cooperative read anyone's e-mails, had administrator access to the database and could send messages outside without asking. One well-written attachment was enough. Model Rampart maps what the model can reach, cuts unnecessary authority and tests everything with harmless markers.",
+      "purpose": "Reviews the security of language model applications against the ten OWASP risks for LLMs, analyzing untrusted inputs, tools, credentials, output, leakage and cost.",
+      "useCases": [
+        "Review a chatbot or copilot before using real data.",
+        "Limit what an agent can do with tools."
+      ],
+      "scenario": {
+        "title": "The well-written attachment",
+        "context": "Fictional scenario: [PRODUCT] uses a model that reads [CONTENT] and calls [TOOLS].",
+        "request": "Use this skill to review the security of [PRODUCT]. Map untrusted inputs and the authority of each tool, walk through the ten risks and use only harmless tests with markers. Mark as not run everything that did not run.",
+        "output": "Map of inputs and tools, risks, tests, findings and verdict.",
+        "check": "External effects require human approval or a finding, and there is no approval with tests not run."
+      },
+      "steps": [
+        "Describe inputs and tools.",
+        "Review the ten risks and findings.",
+        "Run the delivery checker."
+      ],
+      "boundary": "It reduces risk, but there is no guarantee against prompt injection. Repeat the tests with each model or prompt change."
+    },
+    "es": {
+      "alias": "Muralla del Modelo",
+      "tagline": "Parte de la idea de que el modelo será engañado.",
+      "story": "El asistente ficticio de la Cooperativa Vale Verde leía correos de cualquiera, tenía acceso de administrador a la base de datos y podía enviar mensajes al exterior sin preguntar. Bastaba un adjunto bien escrito. Muralla del Modelo mapea lo que el modelo alcanza, corta la autoridad innecesaria y lo prueba todo con marcadores inofensivos.",
+      "purpose": "Revisa la seguridad de aplicaciones con modelos de lenguaje según los diez riesgos de OWASP para LLM, analizando entradas no confiables, herramientas, credenciales, salida, filtraciones y coste.",
+      "useCases": [
+        "Revisar un chatbot o copiloto antes de usar datos reales.",
+        "Limitar lo que un agente puede hacer con herramientas."
+      ],
+      "scenario": {
+        "title": "El adjunto bien escrito",
+        "context": "Escenario ficticio: [PRODUCTO] usa un modelo que lee [CONTENIDO] y llama a [HERRAMIENTAS].",
+        "request": "Usa esta skill para revisar la seguridad de [PRODUCTO]. Mapea las entradas no confiables y la autoridad de cada herramienta, recorre los diez riesgos y usa solo pruebas inofensivas con marcadores. Marca como no ejecutado todo lo que no se ejecutó.",
+        "output": "Mapa de entradas y herramientas, riesgos, pruebas, hallazgos y veredicto.",
+        "check": "Un efecto externo exige aprobación humana o un hallazgo, y no hay aprobación con pruebas sin ejecutar."
+      },
+      "steps": [
+        "Describe entradas y herramientas.",
+        "Revisa los diez riesgos y los hallazgos.",
+        "Ejecuta el verificador de la entrega."
+      ],
+      "boundary": "Reduce el riesgo, pero no hay garantía contra la inyección de prompts. Repite las pruebas con cada cambio de modelo o de prompt."
+    }
+  },
+  {
+    "id": "decisoes-de-arquitetura-adr",
+    "pt": {
+      "alias": "Diário de Decisões",
+      "tagline": "Guarda o porquê, não só o resultado.",
+      "story": "Na fictícia Frete Já, o desenvolvedor mais experiente queria Kafka porque as empresas grandes usam, e a equipe tinha quatro pessoas. Dois anos depois, ninguém saberia explicar a escolha. Diário de Decisões compara opções reais nos mesmos critérios, escreve o que vai piorar e define o gatilho que reabre o assunto.",
+      "purpose": "Escreve e mantém registros de decisão de arquitetura, com uma decisão por arquivo, alternativas reais, consequências honestas e critério de revisão observável.",
+      "useCases": [
+        "Registrar uma escolha técnica difícil de desfazer.",
+        "Recuperar o motivo de decisões antigas."
+      ],
+      "scenario": {
+        "title": "Porque as grandes usam",
+        "context": "Cenário fictício: [EQUIPE] precisa decidir [DECISÃO] com as restrições [RESTRIÇÕES].",
+        "request": "Use esta skill para registrar [DECISÃO] em um ADR. Compare ao menos duas opções reais nos mesmos critérios, inclua o caminho mais simples, escreva as consequências negativas e um gatilho de revisão observável. Não invente números sem fonte.",
+        "output": "ADR completo pronto para o repositório.",
+        "check": "Toda decisão precisa de consequência negativa, e o gatilho de revisão precisa ser observável."
+      },
+      "steps": [
+        "Enquadre a decisão como pergunta.",
+        "Compare opções e decida.",
+        "Rode o verificador do ADR."
+      ],
+      "boundary": "Confere a estrutura e os vínculos. A qualidade do raciocínio continua sendo das pessoas."
+    },
+    "en": {
+      "alias": "Decision Journal",
+      "tagline": "Keeps the why, not just the result.",
+      "story": "At the fictional Frete Já, the most experienced developer wanted Kafka because big companies use it, and the team had four people. Two years later, nobody could have explained the choice. Decision Journal compares real options on the same criteria, writes down what will get worse and defines the trigger that reopens the subject.",
+      "purpose": "Writes and maintains architecture decision records, with one decision per file, real alternatives, honest consequences and an observable revisit criterion.",
+      "useCases": [
+        "Record a technical choice that is hard to undo.",
+        "Recover the reason for old decisions."
+      ],
+      "scenario": {
+        "title": "Because the big ones use it",
+        "context": "Fictional scenario: [TEAM] must decide [DECISION] under the constraints [CONSTRAINTS].",
+        "request": "Use this skill to record [DECISION] in an ADR. Compare at least two real options on the same criteria, include the simplest path, write the negative consequences and an observable revisit trigger. Do not invent numbers without a source.",
+        "output": "Complete ADR ready for the repository.",
+        "check": "Every decision needs a negative consequence, and the revisit trigger must be observable."
+      },
+      "steps": [
+        "Frame the decision as a question.",
+        "Compare options and decide.",
+        "Run the ADR checker."
+      ],
+      "boundary": "It checks structure and links. The quality of the reasoning remains with the people."
+    },
+    "es": {
+      "alias": "Diario de Decisiones",
+      "tagline": "Guarda el porqué, no solo el resultado.",
+      "story": "En la ficticia Frete Já, el desarrollador con más experiencia quería Kafka porque lo usan las grandes empresas, y el equipo tenía cuatro personas. Dos años después, nadie sabría explicar la elección. Diario de Decisiones compara opciones reales con los mismos criterios, escribe lo que va a empeorar y define el activador que reabre el tema.",
+      "purpose": "Escribe y mantiene registros de decisiones de arquitectura, con una decisión por archivo, alternativas reales, consecuencias honestas y criterio de revisión observable.",
+      "useCases": [
+        "Registrar una elección técnica difícil de deshacer.",
+        "Recuperar el motivo de decisiones antiguas."
+      ],
+      "scenario": {
+        "title": "Porque las grandes lo usan",
+        "context": "Escenario ficticio: [EQUIPO] debe decidir [DECISIÓN] con las restricciones [RESTRICCIONES].",
+        "request": "Usa esta skill para registrar [DECISIÓN] en un ADR. Compara al menos dos opciones reales con los mismos criterios, incluye el camino más simple, escribe las consecuencias negativas y un activador de revisión observable. No inventes números sin fuente.",
+        "output": "ADR completo listo para el repositorio.",
+        "check": "Toda decisión necesita una consecuencia negativa, y el activador de revisión debe ser observable."
+      },
+      "steps": [
+        "Plantea la decisión como pregunta.",
+        "Compara opciones y decide.",
+        "Ejecuta el verificador del ADR."
+      ],
+      "boundary": "Comprueba la estructura y los vínculos. La calidad del razonamiento sigue siendo de las personas."
+    }
+  },
+  {
+    "id": "revisao-de-arquitetura-por-atributos",
+    "pt": {
+      "alias": "Balança de Atributos",
+      "tagline": "Troca escalável por um número que dá para medir.",
+      "story": "Na fictícia Agenda Clínica, o CTO queria catorze microsserviços porque era preciso escalar, enquanto o maior problema era uma chamada sem tempo limite dentro de uma transação. Balança de Atributos escreve cenários com número, mostra quais decisões os ameaçam e começa pela menor mudança que resolve o maior risco.",
+      "purpose": "Revisa uma arquitetura contra cenários medíveis de qualidade, ligando cada um às decisões que o sustentam ou ameaçam, com riscos, trocas, responsáveis e checagens automáticas.",
+      "useCases": [
+        "Avaliar se a arquitetura sustenta o próximo objetivo do negócio.",
+        "Tirar a discussão de monolito e microsserviços do campo da opinião."
+      ],
+      "scenario": {
+        "title": "Precisamos escalar",
+        "context": "Cenário fictício: [PRODUTO] precisa alcançar [OBJETIVO] com a arquitetura atual [ARQUITETURA].",
+        "request": "Use esta skill para revisar a arquitetura de [PRODUTO]. Escreva cenários com número e unidade, priorize com o negócio, mapeie as decisões, registre riscos e trocas. Não recomende nenhuma tecnologia sem o cenário que a justifique e não invente medições.",
+        "output": "Cenários, decisões, riscos, trocas e checagens.",
+        "check": "Todo cenário precisa de número e unidade, e risco alto precisa de checagem definida."
+      },
+      "steps": [
+        "Explique o objetivo do negócio.",
+        "Revise cenários e riscos.",
+        "Rode o verificador da entrega."
+      ],
+      "boundary": "Revisão baseada em documentos não mede o sistema real. Confirme com testes antes de investir."
+    },
+    "en": {
+      "alias": "Attribute Scales",
+      "tagline": "Trades scalable for a number you can measure.",
+      "story": "At the fictional Agenda Clínica, the CTO wanted fourteen microservices because the company needed to scale, while the biggest problem was a call without a timeout inside a transaction. Attribute Scales writes scenarios with numbers, shows which decisions threaten them and starts with the smallest change that solves the biggest risk.",
+      "purpose": "Reviews an architecture against measurable quality scenarios, linking each one to the decisions that support or threaten it, with risks, tradeoffs, owners and automated checks.",
+      "useCases": [
+        "Assess whether the architecture supports the next business goal.",
+        "Take the monolith and microservices debate out of opinion."
+      ],
+      "scenario": {
+        "title": "We need to scale",
+        "context": "Fictional scenario: [PRODUCT] must reach [GOAL] with the current architecture [ARCHITECTURE].",
+        "request": "Use this skill to review the architecture of [PRODUCT]. Write scenarios with number and unit, prioritize with the business, map the decisions, record risks and tradeoffs. Do not recommend any technology without the scenario that justifies it and do not invent measurements.",
+        "output": "Scenarios, decisions, risks, tradeoffs and checks.",
+        "check": "Every scenario needs a number and a unit, and a high risk needs a defined check."
+      },
+      "steps": [
+        "Explain the business goal.",
+        "Review scenarios and risks.",
+        "Run the delivery checker."
+      ],
+      "boundary": "A document-based review does not measure the real system. Confirm with tests before investing."
+    },
+    "es": {
+      "alias": "Balanza de Atributos",
+      "tagline": "Cambia escalable por un número que se pueda medir.",
+      "story": "En la ficticia Agenda Clínica, el CTO quería catorce microservicios porque había que escalar, mientras el mayor problema era una llamada sin tiempo límite dentro de una transacción. Balanza de Atributos escribe escenarios con número, muestra qué decisiones los amenazan y empieza por el menor cambio que resuelve el mayor riesgo.",
+      "purpose": "Revisa una arquitectura frente a escenarios medibles de calidad, vinculando cada uno a las decisiones que lo sostienen o amenazan, con riesgos, compromisos, responsables y comprobaciones automáticas.",
+      "useCases": [
+        "Evaluar si la arquitectura sostiene el próximo objetivo del negocio.",
+        "Sacar el debate de monolito y microservicios del terreno de la opinión."
+      ],
+      "scenario": {
+        "title": "Necesitamos escalar",
+        "context": "Escenario ficticio: [PRODUCTO] debe alcanzar [OBJETIVO] con la arquitectura actual [ARQUITECTURA].",
+        "request": "Usa esta skill para revisar la arquitectura de [PRODUCTO]. Escribe escenarios con número y unidad, prioriza con el negocio, mapea las decisiones, registra riesgos y compromisos. No recomiendes ninguna tecnología sin el escenario que la justifique y no inventes mediciones.",
+        "output": "Escenarios, decisiones, riesgos, compromisos y comprobaciones.",
+        "check": "Todo escenario necesita número y unidad, y un riesgo alto necesita una comprobación definida."
+      },
+      "steps": [
+        "Explica el objetivo del negocio.",
+        "Revisa escenarios y riesgos.",
+        "Ejecuta el verificador de la entrega."
+      ],
+      "boundary": "Una revisión basada en documentos no mide el sistema real. Confirma con pruebas antes de invertir."
+    }
+  },
+  {
+    "id": "modernizacao-de-sistemas-legados",
+    "pt": {
+      "alias": "Figueira do Legado",
+      "tagline": "Substitui o sistema aos poucos, sem derrubar a casa.",
+      "story": "A cooperativa fictícia Vale Alto ouviu da diretoria que precisava reescrever o ERP em um ano, com um único desenvolvedor prestes a se aposentar e a safra chegando. Figueira do Legado separa o que manter, o que extrair e o que aposentar, começa por uma fatia pequena e só avança com reversão testada e algo desligado no sistema antigo.",
+      "purpose": "Planeja a modernização gradual de um sistema legado, com inventário de capacidades, estratégia para cada uma, fatias com costura, coexistência de dados, reversão, critério de saída e desligamento.",
+      "useCases": [
+        "Trocar uma proposta de reescrita total por um plano incremental.",
+        "Definir a ordem de migração de um ERP antigo."
+      ],
+      "scenario": {
+        "title": "Reescrever em um ano",
+        "context": "Cenário fictício: [EMPRESA] depende do sistema [SISTEMA] e quer sair dele sem parar a operação.",
+        "request": "Use esta skill para planejar a modernização de [SISTEMA]. Divida por capacidade de negócio, escolha a estratégia de cada uma e monte fatias de até três meses, com reversão, fonte da verdade e critério de saída medível. Não prometa data final antes da primeira fatia.",
+        "output": "Capacidades, estratégias, fatias e riscos.",
+        "check": "Toda fatia precisa de reversão e critério medível, e deve remover algo do sistema antigo."
+      },
+      "steps": [
+        "Descreva o sistema e o motivo.",
+        "Revise capacidades e estratégias.",
+        "Rode o verificador do plano."
+      ],
+      "boundary": "É um plano e não migra código. A estimativa total só fica confiável depois da primeira fatia."
+    },
+    "en": {
+      "alias": "Legacy Fig",
+      "tagline": "Replaces the system bit by bit, without bringing the house down.",
+      "story": "The fictional Vale Alto cooperative heard from its board that it had to rewrite the ERP in one year, with a single developer about to retire and the harvest approaching. Legacy Fig separates what to keep, what to extract and what to retire, starts with a small slice and only moves forward with a tested rollback and something switched off in the old system.",
+      "purpose": "Plans the gradual modernization of a legacy system, with a capability inventory, a strategy for each one, slices with seams, data coexistence, rollback, exit criteria and decommissioning.",
+      "useCases": [
+        "Replace a total rewrite proposal with an incremental plan.",
+        "Define the migration order of an old ERP."
+      ],
+      "scenario": {
+        "title": "Rewrite in a year",
+        "context": "Fictional scenario: [COMPANY] depends on the system [SYSTEM] and wants to leave it without stopping operations.",
+        "request": "Use this skill to plan the modernization of [SYSTEM]. Divide by business capability, choose a strategy for each one and build slices of up to three months, with rollback, source of truth and a measurable exit criterion. Do not promise a final date before the first slice.",
+        "output": "Capabilities, strategies, slices and risks.",
+        "check": "Every slice needs a rollback and a measurable criterion, and must remove something from the old system."
+      },
+      "steps": [
+        "Describe the system and the reason.",
+        "Review capabilities and strategies.",
+        "Run the plan checker."
+      ],
+      "boundary": "It is a plan and does not migrate code. The total estimate only becomes reliable after the first slice."
+    },
+    "es": {
+      "alias": "Higuera del Legado",
+      "tagline": "Sustituye el sistema poco a poco, sin derribar la casa.",
+      "story": "La cooperativa ficticia Vale Alto oyó de su dirección que debía reescribir el ERP en un año, con un único desarrollador a punto de jubilarse y la cosecha acercándose. Higuera del Legado separa lo que se mantiene, lo que se extrae y lo que se retira, empieza por una porción pequeña y solo avanza con reversión probada y algo apagado en el sistema antiguo.",
+      "purpose": "Planifica la modernización gradual de un sistema heredado, con inventario de capacidades, estrategia para cada una, porciones con punto de corte, coexistencia de datos, reversión, criterio de salida y desconexión.",
+      "useCases": [
+        "Cambiar una propuesta de reescritura total por un plan incremental.",
+        "Definir el orden de migración de un ERP antiguo."
+      ],
+      "scenario": {
+        "title": "Reescribir en un año",
+        "context": "Escenario ficticio: [EMPRESA] depende del sistema [SISTEMA] y quiere salir de él sin parar la operación.",
+        "request": "Usa esta skill para planificar la modernización de [SISTEMA]. Divide por capacidad de negocio, elige la estrategia de cada una y monta porciones de hasta tres meses, con reversión, fuente de verdad y criterio de salida medible. No prometas una fecha final antes de la primera porción.",
+        "output": "Capacidades, estrategias, porciones y riesgos.",
+        "check": "Toda porción necesita reversión y criterio medible, y debe retirar algo del sistema antiguo."
+      },
+      "steps": [
+        "Describe el sistema y el motivo.",
+        "Revisa capacidades y estrategias.",
+        "Ejecuta el verificador del plan."
+      ],
+      "boundary": "Es un plan y no migra código. La estimación total solo es fiable después de la primera porción."
+    }
+  },
+  {
+    "id": "migracao-de-banco-sem-parada",
+    "pt": {
+      "alias": "Troca em Movimento",
+      "tagline": "Muda o banco com o trem andando.",
+      "story": "O time fictício do Varejo Aurora quis renomear uma coluna e criar um índice em uma tabela de quarenta milhões de linhas, tudo em uma transação só, no meio do expediente. Troca em Movimento aponta cada comando que trava, divide a mudança em fases que convivem com o código no ar e define quando parar.",
+      "purpose": "Planeja alterações em PostgreSQL sem indisponibilidade pelo método de expandir e contrair, e audita o SQL da migração em busca de bloqueios, reescritas e remoções perigosas.",
+      "useCases": [
+        "Revisar uma migração antes do deploy.",
+        "Renomear ou trocar o tipo de coluna em tabela grande."
+      ],
+      "scenario": {
+        "title": "A coluna renomeada",
+        "context": "Cenário fictício: [EQUIPE] precisa alterar [TABELA] com [VOLUME] linhas e tráfego contínuo.",
+        "request": "Use esta skill para auditar a migração de [TABELA] e transformá-la em fases de expandir, preencher, gravar nos dois, trocar e contrair. Para cada fase, informe reversão, verificação e sinal de aborto. Não execute nada em nenhum banco de dados.",
+        "output": "Auditoria do SQL e plano em fases.",
+        "check": "As três primeiras fases precisam ser compatíveis com a versão anterior, e toda fase precisa de reversão."
+      },
+      "steps": [
+        "Envie o SQL e o contexto.",
+        "Revise os comandos apontados.",
+        "Confira o plano com o script."
+      ],
+      "boundary": "Análise por texto, sem ver tamanho de tabela nem SQL dinâmico. Confirme na documentação da sua versão."
+    },
+    "en": {
+      "alias": "Change in Motion",
+      "tagline": "Changes the database while the train is running.",
+      "story": "The fictional Varejo Aurora team wanted to rename a column and create an index on a table with forty million rows, all in a single transaction, in the middle of the workday. Change in Motion flags every command that locks, splits the change into phases that coexist with live code and defines when to stop.",
+      "purpose": "Plans PostgreSQL changes without downtime using the expand and contract method, and audits migration SQL for dangerous locks, rewrites and removals.",
+      "useCases": [
+        "Review a migration before deploying.",
+        "Rename or change the type of a column in a large table."
+      ],
+      "scenario": {
+        "title": "The renamed column",
+        "context": "Fictional scenario: [TEAM] must change [TABLE] with [VOLUME] rows and continuous traffic.",
+        "request": "Use this skill to audit the migration of [TABLE] and turn it into phases of expand, backfill, dual write, switch and contract. For each phase, give the rollback, verification and abort signal. Do not run anything on any database.",
+        "output": "SQL audit and phased plan.",
+        "check": "The first three phases must be compatible with the previous version, and every phase needs a rollback."
+      },
+      "steps": [
+        "Send the SQL and the context.",
+        "Review the flagged commands.",
+        "Check the plan with the script."
+      ],
+      "boundary": "Text analysis that cannot see table sizes or dynamic SQL. Confirm in the documentation for your version."
+    },
+    "es": {
+      "alias": "Cambio en Movimiento",
+      "tagline": "Cambia la base de datos con el tren en marcha.",
+      "story": "El equipo ficticio de Varejo Aurora quiso renombrar una columna y crear un índice en una tabla de cuarenta millones de filas, todo en una sola transacción y en plena jornada. Cambio en Movimiento señala cada comando que bloquea, divide el cambio en fases que conviven con el código en producción y define cuándo parar.",
+      "purpose": "Planifica cambios en PostgreSQL sin interrupción con el método de expandir y contraer, y audita el SQL de la migración en busca de bloqueos, reescrituras y eliminaciones peligrosas.",
+      "useCases": [
+        "Revisar una migración antes del despliegue.",
+        "Renombrar o cambiar el tipo de una columna en una tabla grande."
+      ],
+      "scenario": {
+        "title": "La columna renombrada",
+        "context": "Escenario ficticio: [EQUIPO] debe cambiar [TABLA] con [VOLUMEN] filas y tráfico continuo.",
+        "request": "Usa esta skill para auditar la migración de [TABLA] y convertirla en fases de expandir, rellenar, escribir en ambas, cambiar y contraer. Para cada fase, indica reversión, verificación y señal de cancelación. No ejecutes nada en ninguna base de datos.",
+        "output": "Auditoría del SQL y plan por fases.",
+        "check": "Las tres primeras fases deben ser compatibles con la versión anterior, y toda fase necesita reversión."
+      },
+      "steps": [
+        "Envía el SQL y el contexto.",
+        "Revisa los comandos señalados.",
+        "Comprueba el plan con el script."
+      ],
+      "boundary": "Análisis de texto que no ve el tamaño de las tablas ni el SQL dinámico. Confírmalo en la documentación de tu versión."
+    }
+  },
+  {
+    "id": "observabilidade-e-slos",
+    "pt": {
+      "alias": "Guardião do Orçamento",
+      "tagline": "Só chama alguém quando o usuário sente.",
+      "story": "No checkout fictício da PagFácil, o alerta de CPU acordava o plantão centenas de vezes por mês e quase nunca havia o que fazer. Enquanto isso, ninguém sabia quanto podia errar no mês. Guardião do Orçamento define o que é funcionando para quem compra, calcula o orçamento de erro e separa o sinal do barulho.",
+      "purpose": "Define SLIs e SLOs por jornada, calcula orçamento de erro e janelas de alerta por consumo, audita os alertas atuais e planeja a instrumentação mínima.",
+      "useCases": [
+        "Reduzir o ruído de alertas do plantão.",
+        "Definir objetivos de confiabilidade de um serviço."
+      ],
+      "scenario": {
+        "title": "O alerta de CPU",
+        "context": "Cenário fictício: [EQUIPE] recebe alertas demais sobre [SERVIÇO] e não sabe o que importa.",
+        "request": "Use esta skill para definir SLI e SLO de [JORNADA] e auditar os alertas de [SERVIÇO]. Use numerador e denominador, calcule o orçamento de erro e decida manter, ajustar ou remover cada alerta. Não invente medições que não existem.",
+        "output": "SLIs, SLOs, auditoria de alertas e plano de instrumentação.",
+        "check": "Todo SLI precisa de numerador e denominador, e alerta que chama alguém precisa de runbook e dono."
+      },
+      "steps": [
+        "Escolha as jornadas principais.",
+        "Calcule o orçamento de erro.",
+        "Revise os alertas e rode o verificador."
+      ],
+      "boundary": "Os multiplicadores são ponto de partida. Serviço com pouco tráfego precisa de janelas maiores ou sondas sintéticas."
+    },
+    "en": {
+      "alias": "Budget Keeper",
+      "tagline": "Only calls someone when the user feels it.",
+      "story": "At the fictional PagFácil checkout, the CPU alert woke on-call hundreds of times a month and there was almost never anything to do. Meanwhile, nobody knew how much failure the month could take. Budget Keeper defines what working means for the buyer, calculates the error budget and separates the signal from the noise.",
+      "purpose": "Defines SLIs and SLOs per journey, calculates error budget and burn rate alert windows, audits current alerts and plans the minimum instrumentation.",
+      "useCases": [
+        "Reduce on-call alert noise.",
+        "Set reliability targets for a service."
+      ],
+      "scenario": {
+        "title": "The CPU alert",
+        "context": "Fictional scenario: [TEAM] gets too many alerts about [SERVICE] and does not know what matters.",
+        "request": "Use this skill to define the SLI and SLO of [JOURNEY] and audit the alerts of [SERVICE]. Use numerator and denominator, calculate the error budget and decide to keep, adjust or remove each alert. Do not invent measurements that do not exist.",
+        "output": "SLIs, SLOs, alert audit and instrumentation plan.",
+        "check": "Every SLI needs a numerator and a denominator, and an alert that calls someone needs a runbook and an owner."
+      },
+      "steps": [
+        "Choose the main journeys.",
+        "Calculate the error budget.",
+        "Review the alerts and run the checker."
+      ],
+      "boundary": "The multipliers are a starting point. Low traffic services need longer windows or synthetic probes."
+    },
+    "es": {
+      "alias": "Guardián del Presupuesto",
+      "tagline": "Solo llama a alguien cuando el usuario lo nota.",
+      "story": "En el checkout ficticio de PagFácil, la alerta de CPU despertaba a la guardia cientos de veces al mes y casi nunca había nada que hacer. Mientras tanto, nadie sabía cuánto se podía fallar en el mes. Guardián del Presupuesto define qué significa funcionar para quien compra, calcula el presupuesto de error y separa la señal del ruido.",
+      "purpose": "Define SLI y SLO por recorrido, calcula el presupuesto de error y las ventanas de alerta por consumo, audita las alertas actuales y planifica la instrumentación mínima.",
+      "useCases": [
+        "Reducir el ruido de alertas de la guardia.",
+        "Definir objetivos de fiabilidad de un servicio."
+      ],
+      "scenario": {
+        "title": "La alerta de CPU",
+        "context": "Escenario ficticio: [EQUIPO] recibe demasiadas alertas sobre [SERVICIO] y no sabe qué importa.",
+        "request": "Usa esta skill para definir el SLI y el SLO de [RECORRIDO] y auditar las alertas de [SERVICIO]. Usa numerador y denominador, calcula el presupuesto de error y decide mantener, ajustar o eliminar cada alerta. No inventes mediciones que no existan.",
+        "output": "SLI, SLO, auditoría de alertas y plan de instrumentación.",
+        "check": "Todo SLI necesita numerador y denominador, y una alerta que llama a alguien necesita runbook y responsable."
+      },
+      "steps": [
+        "Elige los recorridos principales.",
+        "Calcula el presupuesto de error.",
+        "Revisa las alertas y ejecuta el verificador."
+      ],
+      "boundary": "Los multiplicadores son un punto de partida. Los servicios con poco tráfico necesitan ventanas mayores o sondas sintéticas."
+    }
   }
 ]

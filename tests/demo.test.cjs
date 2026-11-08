@@ -10,8 +10,8 @@ process.env.DEMO_PASSWORD_HASH =
   salt + ":" + crypto.scryptSync(testPassword, salt, 64).toString("hex");
 process.env.DEMO_SESSION_SECRET = crypto.randomBytes(32).toString("hex");
 test("137 unique card codes, no local source paths", () => {
-  assert.equal(skills.length, 147);
-  assert.equal(new Set(skills.map((s) => s.code)).size, 147);
+  assert.equal(skills.length, 161);
+  assert.equal(new Set(skills.map((s) => s.code)).size, 161);
   assert.ok(!JSON.stringify(skills).match(/[CD]:\\|sourceManifest|AppData/));
 });
 test("password is checked on server and signed sessions expire or reject tampering", async () => {

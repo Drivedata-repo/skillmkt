@@ -4586,5 +4586,317 @@
   "Licença Apache 2.0 oficial": [
     "Official Apache License 2.0",
     "Licencia Apache 2.0 oficial"
+  ],
+  "Modelagem de ameaças que vira teste": [
+    "Threat modeling that becomes tests",
+    "Modelado de amenazas que se convierte en pruebas"
+  ],
+  "A equipe descobre o risco de uma funcionalidade só depois que ela está no ar.": [
+    "The team only finds a feature's risk after it is live.",
+    "El equipo descubre el riesgo de una funcionalidad solo cuando ya está en producción."
+  ],
+  "Mapa de fluxos e fronteiras de confiança": [
+    "Map of flows and trust boundaries",
+    "Mapa de flujos y fronteras de confianza"
+  ],
+  "Ameaças priorizadas com controle, dono e teste": [
+    "Prioritized threats with control, owner and test",
+    "Amenazas priorizadas con control, responsable y prueba"
+  ],
+  "Não substitui teste de invasão autorizado": [
+    "Does not replace an authorized penetration test",
+    "No sustituye una prueba de intrusión autorizada"
+  ],
+  "Revisão de permissões e controle de acesso": [
+    "Permissions and access control review",
+    "Revisión de permisos y control de acceso"
+  ],
+  "Um usuário consegue ver ou alterar dados que não são dele, e ninguém sabe onde a regra está.": [
+    "A user can see or change data that is not theirs, and nobody knows where the rule lives.",
+    "Un usuario puede ver o cambiar datos que no son suyos, y nadie sabe dónde está la regla."
+  ],
+  "Matriz de papel, recurso e ação com o local de cada regra": [
+    "Role, resource and action matrix with the location of each rule",
+    "Matriz de rol, recurso y acción con la ubicación de cada regla"
+  ],
+  "Achados com teste de regressão e veredito": [
+    "Findings with regression test and verdict",
+    "Hallazgos con prueba de regresión y veredicto"
+  ],
+  "Código de rotas ou lista de endpoints e papéis": [
+    "Route code or a list of endpoints and roles",
+    "Código de rutas o lista de endpoints y roles"
+  ],
+  "Sem ambiente de teste, o resultado fica como não testado": [
+    "Without a test environment, results stay as not tested",
+    "Sin entorno de prueba, el resultado queda como no probado"
+  ],
+  "O que corrigir primeiro entre as vulnerabilidades": [
+    "What to fix first among vulnerabilities",
+    "Qué corregir primero entre las vulnerabilidades"
+  ],
+  "O scanner devolve centenas de falhas e a equipe corrige pela nota, não pelo risco real.": [
+    "The scanner returns hundreds of flaws and the team fixes by score, not by real risk.",
+    "El escáner devuelve cientos de fallos y el equipo corrige por puntuación, no por riesgo real."
+  ],
+  "Fila de correção com classe, prazo, dono e motivo": [
+    "Remediation queue with class, due date, owner and reason",
+    "Cola de corrección con clase, plazo, responsable y motivo"
+  ],
+  "Conferência automática do plano contra a régua": [
+    "Automatic check of the plan against the rule set",
+    "Comprobación automática del plan frente a la regla"
+  ],
+  "Python 3 para o script": [
+    "Python 3 for the script",
+    "Python 3 para el script"
+  ],
+  "Sinais de exploração precisam ser consultados em fonte oficial": [
+    "Exploitation signals must be looked up in an official source",
+    "Las señales de explotación deben consultarse en una fuente oficial"
+  ],
+  "Cadeia de suprimentos de software protegida": [
+    "Protected software supply chain",
+    "Cadena de suministro de software protegida"
+  ],
+  "Código de terceiros entra no produto sem controle e um pacote comprometido alcança a produção.": [
+    "Third party code enters the product without control and a compromised package reaches production.",
+    "El código de terceros entra en el producto sin control y un paquete comprometido llega a producción."
+  ],
+  "Auditoria estática de dependências, pipeline e segredos": [
+    "Static audit of dependencies, pipeline and secrets",
+    "Auditoría estática de dependencias, pipeline y secretos"
+  ],
+  "Plano com correções, SBOM e política de atualização": [
+    "Plan with fixes, SBOM and update policy",
+    "Plan con correcciones, SBOM y política de actualización"
+  ],
+  "Python 3 e acesso de leitura ao repositório": [
+    "Python 3 and read access to the repository",
+    "Python 3 y acceso de lectura al repositorio"
+  ],
+  "Análise por padrões não detecta todo pacote malicioso": [
+    "Pattern analysis does not detect every malicious package",
+    "El análisis por patrones no detecta todo paquete malicioso"
+  ],
+  "Resposta a incidentes de segurança": [
+    "Security incident response",
+    "Respuesta a incidentes de seguridad"
+  ],
+  "No susto, a equipe apaga evidências, decide sem registro e perde o controle da crise.": [
+    "In a panic, the team deletes evidence, decides without records and loses control of the crisis.",
+    "Con el susto, el equipo borra evidencias, decide sin registro y pierde el control de la crisis."
+  ],
+  "Registro do incidente com linha do tempo em um só fuso": [
+    "Incident record with a timeline in a single time zone",
+    "Registro del incidente con cronología en una sola zona horaria"
+  ],
+  "Contenção validada, decisões e lições com dono": [
+    "Validated containment, decisions and lessons with owners",
+    "Contención validada, decisiones y lecciones con responsable"
+  ],
+  "Não substitui perícia nem aconselhamento jurídico": [
+    "Does not replace forensics or legal advice",
+    "No sustituye un peritaje ni asesoramiento jurídico"
+  ],
+  "Incidente de dados e comunicação à ANPD": [
+    "Data incident and ANPD notification",
+    "Incidente de datos y comunicación a la ANPD"
+  ],
+  "Vaza dado pessoal e a empresa não sabe se precisa comunicar nem quando o prazo vence.": [
+    "Personal data leaks and the company does not know whether it must report or when the deadline ends.",
+    "Se filtran datos personales y la empresa no sabe si debe comunicarlo ni cuándo vence el plazo."
+  ],
+  "Triagem do risco e prazos calculados em dias úteis": [
+    "Risk triage and deadlines calculated in business days",
+    "Evaluación del riesgo y plazos calculados en días hábiles"
+  ],
+  "Minutas para a ANPD e para os titulares": [
+    "Drafts for the ANPD and for data subjects",
+    "Borradores para la ANPD y para los titulares"
+  ],
+  "Python 3 para o cálculo de prazos": [
+    "Python 3 for the deadline calculation",
+    "Python 3 para el cálculo de plazos"
+  ],
+  "Não é parecer jurídico e depende do encarregado": [
+    "It is not legal advice and depends on the data protection officer",
+    "No es asesoramiento jurídico y depende del encargado"
+  ],
+  "Mapa de dados pessoais para a LGPD": [
+    "Personal data map for LGPD",
+    "Mapa de datos personales para la LGPD"
+  ],
+  "Ninguém sabe que dado pessoal o sistema guarda, com qual base legal e até quando.": [
+    "Nobody knows what personal data the system keeps, on which legal basis and until when.",
+    "Nadie sabe qué datos personales guarda el sistema, con qué base legal y hasta cuándo."
+  ],
+  "Mapa de operações com base legal, retenção e compartilhamento": [
+    "Map of operations with legal basis, retention and sharing",
+    "Mapa de operaciones con base legal, retención y comunicación a terceros"
+  ],
+  "Lacunas com correção, dono e prazo": [
+    "Gaps with fix, owner and due date",
+    "Brechas con corrección, responsable y plazo"
+  ],
+  "A base legal precisa da validação do encarregado": [
+    "The legal basis must be validated by the data protection officer",
+    "La base legal debe ser validada por el encargado"
+  ],
+  "Backup com recuperação comprovada": [
+    "Backups with proven recovery",
+    "Copias de seguridad con recuperación comprobada"
+  ],
+  "O painel diz que o backup rodou, mas ninguém sabe se a empresa volta a funcionar.": [
+    "The dashboard says the backup ran, but nobody knows whether the company can come back.",
+    "El panel dice que la copia se hizo, pero nadie sabe si la empresa puede volver a funcionar."
+  ],
+  "Comparação entre tempo e perda medidos e os objetivos": [
+    "Comparison of measured time and loss against the targets",
+    "Comparación del tiempo y la pérdida medidos con los objetivos"
+  ],
+  "Lacunas e próximo teste com responsável": [
+    "Gaps and next test with an owner",
+    "Brechas y próxima prueba con responsable"
+  ],
+  "Quem executa e mede a restauração é a equipe": [
+    "The team performs and measures the restore",
+    "La restauración la ejecuta y mide el equipo"
+  ],
+  "Segurança de aplicações com IA generativa": [
+    "Security for generative AI applications",
+    "Seguridad de aplicaciones con IA generativa"
+  ],
+  "O chatbot lê conteúdo externo, chama ferramentas e pode vazar dados ou agir sem permissão.": [
+    "The chatbot reads external content, calls tools and may leak data or act without permission.",
+    "El chatbot lee contenido externo, llama a herramientas y puede filtrar datos o actuar sin permiso."
+  ],
+  "Revisão pelos dez riscos da OWASP para LLM": [
+    "Review against the ten OWASP risks for LLMs",
+    "Revisión según los diez riesgos de OWASP para LLM"
+  ],
+  "Mapa de ferramentas, testes inofensivos e veredito": [
+    "Tool map, harmless tests and verdict",
+    "Mapa de herramientas, pruebas inofensivas y veredicto"
+  ],
+  "Não existe garantia total contra injeção de prompt": [
+    "There is no complete guarantee against prompt injection",
+    "No existe garantía total contra la inyección de prompts"
+  ],
+  "Decisões técnicas registradas em ADR": [
+    "Technical decisions recorded as ADRs",
+    "Decisiones técnicas registradas en ADR"
+  ],
+  "A equipe esquece por que escolheu uma solução e repete a mesma discussão a cada ano.": [
+    "The team forgets why it chose a solution and repeats the same debate every year.",
+    "El equipo olvida por qué eligió una solución y repite el mismo debate cada año."
+  ],
+  "ADR com opções comparadas nos mesmos critérios": [
+    "ADR with options compared on the same criteria",
+    "ADR con opciones comparadas según los mismos criterios"
+  ],
+  "Consequências negativas e gatilho de revisão": [
+    "Negative consequences and revisit trigger",
+    "Consecuencias negativas y activador de revisión"
+  ],
+  "O ADR registra, mas não obriga a seguir": [
+    "The ADR records, but does not enforce",
+    "El ADR registra, pero no obliga a seguir"
+  ],
+  "Revisão de arquitetura com cenários medidos": [
+    "Architecture review with measured scenarios",
+    "Revisión de arquitectura con escenarios medidos"
+  ],
+  "A arquitetura é defendida por opinião e ninguém sabe se aguenta o que o negócio pede.": [
+    "The architecture is defended by opinion and nobody knows whether it can handle what the business needs.",
+    "La arquitectura se defiende con opiniones y nadie sabe si aguanta lo que pide el negocio."
+  ],
+  "Cenários de qualidade com número e unidade": [
+    "Quality scenarios with number and unit",
+    "Escenarios de calidad con número y unidad"
+  ],
+  "Riscos ligados às decisões, com dono e checagem": [
+    "Risks tied to decisions, with owner and check",
+    "Riesgos vinculados a las decisiones, con responsable y comprobación"
+  ],
+  "Diagramas, código ou descrição do sistema": [
+    "Diagrams, code or a system description",
+    "Diagramas, código o descripción del sistema"
+  ],
+  "Revisão por documentos não mede o sistema real": [
+    "A document review does not measure the real system",
+    "Una revisión documental no mide el sistema real"
+  ],
+  "Modernização de sistemas legados por etapas": [
+    "Step-by-step legacy system modernization",
+    "Modernización de sistemas heredados por etapas"
+  ],
+  "O sistema antigo trava o negócio e a única proposta é reescrever tudo de uma vez.": [
+    "The old system blocks the business and the only proposal is to rewrite everything at once.",
+    "El sistema antiguo frena el negocio y la única propuesta es reescribirlo todo de una vez."
+  ],
+  "Estratégia por capacidade de negócio": [
+    "Strategy per business capability",
+    "Estrategia por capacidad de negocio"
+  ],
+  "Fatias com costura, reversão e critério de saída": [
+    "Slices with seam, rollback and exit criteria",
+    "Porciones con punto de corte, reversión y criterio de salida"
+  ],
+  "Código, banco ou descrição do sistema": [
+    "Code, database or a system description",
+    "Código, base de datos o descripción del sistema"
+  ],
+  "Estimativa total só depois da primeira fatia": [
+    "Total estimate only after the first slice",
+    "Estimación total solo después de la primera porción"
+  ],
+  "Alterações de banco PostgreSQL sem parada": [
+    "PostgreSQL schema changes without downtime",
+    "Cambios en bases PostgreSQL sin interrupción"
+  ],
+  "Uma alteração de tabela trava a produção e não existe caminho de volta.": [
+    "A table change locks production and there is no way back.",
+    "Un cambio en una tabla bloquea producción y no hay camino de vuelta."
+  ],
+  "Auditoria de comandos perigosos na migração": [
+    "Audit of dangerous commands in the migration",
+    "Auditoría de comandos peligrosos en la migración"
+  ],
+  "Plano em fases com reversão e sinal de aborto": [
+    "Phased plan with rollback and abort signal",
+    "Plan por fases con reversión y señal de cancelación"
+  ],
+  "Python 3 e PostgreSQL 12 ou superior": [
+    "Python 3 and PostgreSQL 12 or later",
+    "Python 3 y PostgreSQL 12 o superior"
+  ],
+  "Análise por texto não enxerga o tamanho das tabelas": [
+    "Text analysis cannot see table sizes",
+    "El análisis de texto no ve el tamaño de las tablas"
+  ],
+  "SLOs e alertas que merecem acordar alguém": [
+    "SLOs and alerts worth waking someone up",
+    "SLO y alertas que merecen despertar a alguien"
+  ],
+  "O plantão recebe centenas de alertas e ainda assim é o cliente quem avisa do problema.": [
+    "On-call gets hundreds of alerts and the customer is still the one who reports the problem.",
+    "La guardia recibe cientos de alertas y aun así es el cliente quien avisa del problema."
+  ],
+  "SLIs e SLOs por jornada do usuário": [
+    "SLIs and SLOs per user journey",
+    "SLI y SLO por recorrido del usuario"
+  ],
+  "Auditoria de alertas com decisão para cada um": [
+    "Alert audit with a decision for each one",
+    "Auditoría de alertas con una decisión para cada una"
+  ],
+  "Python 3 para os cálculos": [
+    "Python 3 for the calculations",
+    "Python 3 para los cálculos"
+  ],
+  "Histórico de disparos e métricas reais do serviço": [
+    "Alert history and real service metrics",
+    "Historial de disparos y métricas reales del servicio"
   ]
 }
