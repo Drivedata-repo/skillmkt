@@ -4966,5 +4966,581 @@
       ],
       "boundary": "Los multiplicadores son un punto de partida. Los servicios con poco tráfico necesitan ventanas mayores o sondas sintéticas."
     }
+  },
+  {
+    "id": "qualidade-de-dados-e-contratos",
+    "pt": {
+      "alias": "Contrato dos Dados",
+      "tagline": "Escreve o combinado antes que o número chegue à diretoria.",
+      "story": "Na fictícia Distribuidora Norte, o faturamento do painel não batia com o ERP, e cada área culpava a outra. Havia pedido duplicado, valor negativo e data no futuro. Contrato dos Dados escreve as regras que o negócio espera, confere o arquivo e aponta o defeito sem mostrar nenhum dado de cliente.",
+      "purpose": "Escreve o contrato de uma tabela ou arquivo e valida o CSV por tipo, obrigatoriedade, unicidade, faixa, frescor e reconciliação com uma fonte independente.",
+      "useCases": [
+        "Validar uma base antes de publicar um painel.",
+        "Preparar dados para alimentar um modelo de IA."
+      ],
+      "scenario": {
+        "title": "O faturamento que não fecha",
+        "context": "Cenário fictício: [EMPRESA] usa o arquivo [ARQUIVO] no painel de [INDICADOR].",
+        "request": "Use esta skill para escrever o contrato de [ARQUIVO] a partir das regras do negócio e validá-lo. Reconcilie com um total de fonte independente, indique o dono na origem e nunca copie registros reais para a entrega.",
+        "output": "Contrato, resultado da validação e plano de correção.",
+        "check": "A reconciliação precisa usar fonte independente, e nenhuma célula pode aparecer na saída."
+      },
+      "steps": [
+        "Informe uso, dono e regras.",
+        "Rode a validação do arquivo.",
+        "Corrija na origem e valide de novo."
+      ],
+      "boundary": "Trabalha com CSV. Passar nas regras não prova que o dado é verdadeiro, só que cumpre o que foi escrito."
+    },
+    "en": {
+      "alias": "Data Contract Keeper",
+      "tagline": "Writes down the agreement before the number reaches the board.",
+      "story": "At the fictional Distribuidora Norte, revenue on the dashboard did not match the ERP, and each area blamed the other. There were duplicate orders, negative values and dates in the future. Data Contract Keeper writes the rules the business expects, checks the file and points out the defect without showing any customer data.",
+      "purpose": "Writes the contract of a table or file and validates the CSV by type, required fields, uniqueness, range, freshness and reconciliation with an independent source.",
+      "useCases": [
+        "Validate a dataset before publishing a dashboard.",
+        "Prepare data to feed an AI model."
+      ],
+      "scenario": {
+        "title": "The revenue that does not match",
+        "context": "Fictional scenario: [COMPANY] uses the file [FILE] in the dashboard for [INDICATOR].",
+        "request": "Use this skill to write the contract of [FILE] from the business rules and validate it. Reconcile with a total from an independent source, name the owner at the source and never copy real records into the delivery.",
+        "output": "Contract, validation result and fix plan.",
+        "check": "The reconciliation must use an independent source, and no cell may appear in the output."
+      },
+      "steps": [
+        "Provide use, owner and rules.",
+        "Run the file validation.",
+        "Fix at the source and validate again."
+      ],
+      "boundary": "It works with CSV. Passing the rules does not prove the data is true, only that it meets what was written."
+    },
+    "es": {
+      "alias": "Contrato de los Datos",
+      "tagline": "Escribe lo acordado antes de que el número llegue a la dirección.",
+      "story": "En la ficticia Distribuidora Norte, la facturación del panel no coincidía con el ERP y cada área culpaba a la otra. Había pedidos duplicados, valores negativos y fechas en el futuro. Contrato de los Datos escribe las reglas que espera el negocio, comprueba el archivo y señala el defecto sin mostrar ningún dato de cliente.",
+      "purpose": "Escribe el contrato de una tabla o archivo y valida el CSV por tipo, obligatoriedad, unicidad, rango, frescura y conciliación con una fuente independiente.",
+      "useCases": [
+        "Validar una base antes de publicar un panel.",
+        "Preparar datos para alimentar un modelo de IA."
+      ],
+      "scenario": {
+        "title": "La facturación que no cuadra",
+        "context": "Escenario ficticio: [EMPRESA] usa el archivo [ARCHIVO] en el panel de [INDICADOR].",
+        "request": "Usa esta skill para escribir el contrato de [ARCHIVO] a partir de las reglas del negocio y validarlo. Concilia con un total de una fuente independiente, indica el responsable en origen y nunca copies registros reales en la entrega.",
+        "output": "Contrato, resultado de la validación y plan de corrección.",
+        "check": "La conciliación debe usar una fuente independiente, y ninguna celda puede aparecer en la salida."
+      },
+      "steps": [
+        "Indica uso, responsable y reglas.",
+        "Ejecuta la validación del archivo.",
+        "Corrige en origen y valida de nuevo."
+      ],
+      "boundary": "Funciona con CSV. Superar las reglas no demuestra que el dato sea verdadero, solo que cumple lo escrito."
+    }
+  },
+  {
+    "id": "reducao-de-custos-de-nuvem",
+    "pt": {
+      "alias": "Caçador de Desperdício",
+      "tagline": "Acha o que está ligado sem ninguém usar.",
+      "story": "Na fictícia Editora Sol, a diretoria pediu um corte, e o banco que parecia parado era a contingência exigida em contrato. Caçador de Desperdício separa o que é desperdício do que só parece, não conta a mesma economia duas vezes e deixa o desligamento para quem responde pelo recurso.",
+      "purpose": "Analisa uma exportação de custos para achar órfãos, ociosos, ambientes sempre ligados, gasto sem dono e custo de IA, e monta um plano com economia estimada, risco e reversão.",
+      "useCases": [
+        "Descobrir por que a fatura subiu.",
+        "Liberar orçamento para IA cortando desperdício."
+      ],
+      "scenario": {
+        "title": "O banco que parecia parado",
+        "context": "Cenário fictício: [EMPRESA] precisa reduzir [PERCENTUAL] da fatura de [PROVEDOR].",
+        "request": "Use esta skill para analisar a exportação de custos de [PROVEDOR]. Confirme com os donos antes de sugerir qualquer remoção, não conte a mesma economia duas vezes e registre risco e reversão de cada ação. Nada deve ser alterado na conta.",
+        "output": "Análise de custos e plano de economia.",
+        "check": "A economia do plano não pode passar da calculada, e recurso de produção sem dono não pode ser aprovado."
+      },
+      "steps": [
+        "Exporte os custos em CSV.",
+        "Confirme os candidatos com os donos.",
+        "Confira o plano com o script."
+      ],
+      "boundary": "Só analisa o custo exportado e nunca altera recursos. Os percentuais são hipóteses até a próxima fatura."
+    },
+    "en": {
+      "alias": "Waste Hunter",
+      "tagline": "Finds what is running with nobody using it.",
+      "story": "At the fictional Editora Sol, the board asked for a cut, and the database that looked idle was the contingency required by contract. Waste Hunter separates what is waste from what only looks like it, never counts the same saving twice and leaves the shutdown to whoever owns the resource.",
+      "purpose": "Analyzes a cost export to find orphans, idle resources, always-on environments, spend without an owner and AI cost, and builds a plan with estimated savings, risk and rollback.",
+      "useCases": [
+        "Find out why the bill went up.",
+        "Free up budget for AI by cutting waste."
+      ],
+      "scenario": {
+        "title": "The database that looked idle",
+        "context": "Fictional scenario: [COMPANY] must cut [PERCENTAGE] of the bill from [PROVIDER].",
+        "request": "Use this skill to analyze the cost export from [PROVIDER]. Confirm with owners before suggesting any removal, do not count the same saving twice and record the risk and rollback of each action. Nothing should be changed in the account.",
+        "output": "Cost analysis and savings plan.",
+        "check": "Plan savings cannot exceed the calculated amount, and a production resource without an owner cannot be approved."
+      },
+      "steps": [
+        "Export the costs as CSV.",
+        "Confirm candidates with owners.",
+        "Check the plan with the script."
+      ],
+      "boundary": "It only analyzes the exported cost and never changes resources. The percentages are hypotheses until the next bill."
+    },
+    "es": {
+      "alias": "Cazador de Desperdicio",
+      "tagline": "Encuentra lo que está encendido sin que nadie lo use.",
+      "story": "En la ficticia Editora Sol, la dirección pidió un recorte, y la base de datos que parecía parada era la contingencia exigida por contrato. Cazador de Desperdicio separa lo que es desperdicio de lo que solo lo parece, no cuenta dos veces el mismo ahorro y deja el apagado a quien responde por el recurso.",
+      "purpose": "Analiza una exportación de costes para encontrar huérfanos, recursos ociosos, entornos siempre encendidos, gasto sin responsable y coste de IA, y monta un plan con ahorro estimado, riesgo y reversión.",
+      "useCases": [
+        "Descubrir por qué subió la factura.",
+        "Liberar presupuesto para IA recortando desperdicio."
+      ],
+      "scenario": {
+        "title": "La base que parecía parada",
+        "context": "Escenario ficticio: [EMPRESA] debe reducir [PORCENTAJE] de la factura de [PROVEEDOR].",
+        "request": "Usa esta skill para analizar la exportación de costes de [PROVEEDOR]. Confirma con los responsables antes de sugerir cualquier eliminación, no cuentes dos veces el mismo ahorro y registra el riesgo y la reversión de cada acción. No debe cambiarse nada en la cuenta.",
+        "output": "Análisis de costes y plan de ahorro.",
+        "check": "El ahorro del plan no puede superar el calculado, y un recurso de producción sin responsable no puede aprobarse."
+      },
+      "steps": [
+        "Exporta los costes en CSV.",
+        "Confirma los candidatos con los responsables.",
+        "Comprueba el plan con el script."
+      ],
+      "boundary": "Solo analiza el coste exportado y nunca cambia recursos. Los porcentajes son hipótesis hasta la próxima factura."
+    }
+  },
+  {
+    "id": "auditoria-de-acessibilidade-web",
+    "pt": {
+      "alias": "Porta para Todos",
+      "tagline": "Abre o site para quem não usa mouse nem enxerga a tela.",
+      "story": "No site fictício do Instituto Aprender, o botão de enviar era um ícone sem nome e o campo principal só tinha um texto de exemplo. Quem usa leitor de tela não conseguia se inscrever. Porta para Todos aponta as barreiras, cobra os testes que a máquina não faz e não deixa ninguém dizer que o site é acessível sem prova.",
+      "purpose": "Audita páginas HTML pela WCAG 2.2, encontrando imagens sem texto, campos sem rótulo, botões sem nome, baixo contraste e bloqueio de zoom, e organiza os testes manuais obrigatórios.",
+      "useCases": [
+        "Revisar o site antes de publicar um fluxo importante.",
+        "Responder a exigências da Lei Brasileira de Inclusão."
+      ],
+      "scenario": {
+        "title": "O botão sem nome",
+        "context": "Cenário fictício: [EMPRESA] publica a página [PÁGINA], usada para [TAREFA].",
+        "request": "Use esta skill para auditar [PÁGINA]. Rode a verificação automática, liste os testes manuais de teclado, foco, leitor de tela, zoom e erros de formulário, e marque como não testado o que ninguém executou. Não declare conformidade total.",
+        "output": "Achados por critério, plano de correção e verificação manual.",
+        "check": "Toda regra apontada precisa estar no plano, e a declaração não pode ser conforme com testes pendentes."
+      },
+      "steps": [
+        "Salve o HTML renderizado.",
+        "Rode a auditoria e os testes manuais.",
+        "Confira o plano com o script."
+      ],
+      "boundary": "Análise estática, sem JavaScript nem CSS externo. Não é certificado nem parecer jurídico."
+    },
+    "en": {
+      "alias": "Door for Everyone",
+      "tagline": "Opens the site to people who do not use a mouse or see the screen.",
+      "story": "On the fictional Instituto Aprender site, the submit button was a nameless icon and the main field only had placeholder text. People using a screen reader could not sign up. Door for Everyone points out the barriers, demands the tests a machine cannot do and lets no one say the site is accessible without proof.",
+      "purpose": "Audits HTML pages against WCAG 2.2, finding images without text, unlabeled fields, nameless buttons, low contrast and zoom blocking, and organizes the required manual tests.",
+      "useCases": [
+        "Review the site before releasing an important flow.",
+        "Meet the requirements of Brazil's Inclusion Law."
+      ],
+      "scenario": {
+        "title": "The nameless button",
+        "context": "Fictional scenario: [COMPANY] publishes the page [PAGE], used for [TASK].",
+        "request": "Use this skill to audit [PAGE]. Run the automatic check, list the manual tests for keyboard, focus, screen reader, zoom and form errors, and mark as not tested what nobody performed. Do not declare full conformance.",
+        "output": "Findings by criterion, fix plan and manual verification.",
+        "check": "Every flagged rule must be in the plan, and the statement cannot be conformant with pending tests."
+      },
+      "steps": [
+        "Save the rendered HTML.",
+        "Run the audit and manual tests.",
+        "Check the plan with the script."
+      ],
+      "boundary": "Static analysis, without JavaScript or external CSS. It is not a certificate or legal advice."
+    },
+    "es": {
+      "alias": "Puerta para Todos",
+      "tagline": "Abre el sitio a quienes no usan ratón ni ven la pantalla.",
+      "story": "En el sitio ficticio del Instituto Aprender, el botón de enviar era un icono sin nombre y el campo principal solo tenía un texto de ejemplo. Quien usa lector de pantalla no podía inscribirse. Puerta para Todos señala las barreras, exige las pruebas que la máquina no hace y no deja que nadie diga que el sitio es accesible sin prueba.",
+      "purpose": "Audita páginas HTML según WCAG 2.2, encontrando imágenes sin texto, campos sin etiqueta, botones sin nombre, bajo contraste y bloqueo de zoom, y organiza las pruebas manuales obligatorias.",
+      "useCases": [
+        "Revisar el sitio antes de publicar un flujo importante.",
+        "Responder a las exigencias de la Ley Brasileña de Inclusión."
+      ],
+      "scenario": {
+        "title": "El botón sin nombre",
+        "context": "Escenario ficticio: [EMPRESA] publica la página [PÁGINA], usada para [TAREA].",
+        "request": "Usa esta skill para auditar [PÁGINA]. Ejecuta la comprobación automática, enumera las pruebas manuales de teclado, foco, lector de pantalla, zoom y errores de formulario, y marca como no probado lo que nadie ejecutó. No declares conformidad total.",
+        "output": "Hallazgos por criterio, plan de corrección y verificación manual.",
+        "check": "Toda regla señalada debe estar en el plan, y la declaración no puede ser conforme con pruebas pendientes."
+      },
+      "steps": [
+        "Guarda el HTML renderizado.",
+        "Ejecuta la auditoría y las pruebas manuales.",
+        "Comprueba el plan con el script."
+      ],
+      "boundary": "Análisis estático, sin JavaScript ni CSS externo. No es un certificado ni asesoramiento jurídico."
+    }
+  },
+  {
+    "id": "contratos-de-api-e-mudancas",
+    "pt": {
+      "alias": "Tratado das APIs",
+      "tagline": "Avisa antes de mudar o que os outros usam.",
+      "story": "Na fictícia Logística Rumo, um identificador mudou de número para texto e um relatório sumiu da nova versão, embora um contrato ainda o citasse. Tratado das APIs compara as versões, aponta o que quebra, exige saber quem consome e só aceita desligar algo com aviso e data combinados.",
+      "purpose": "Compara duas versões de OpenAPI, separa mudanças incompatíveis das seguras e organiza versionamento, comunicação aos consumidores e datas de desligamento.",
+      "useCases": [
+        "Revisar uma versão de API antes de publicar.",
+        "Descontinuar um endpoint sem surpreender parceiros."
+      ],
+      "scenario": {
+        "title": "O relatório que sumiu",
+        "context": "Cenário fictício: [EQUIPE] vai publicar a versão [VERSÃO] da API [API].",
+        "request": "Use esta skill para comparar as versões de [API]. Classifique as quebras, identifique consumidores por logs e contratos, e decida compatibilizar, versionar, adiar ou aceitar cada uma, com aviso e data de desligamento. Consumidor desconhecido impede aceitar a quebra.",
+        "output": "Quebras classificadas e plano de transição.",
+        "check": "Toda quebra precisa de decisão, e o aviso precisa vir antes do desligamento."
+      },
+      "steps": [
+        "Reúna as duas versões em JSON.",
+        "Identifique quem consome a API.",
+        "Confira o plano com o script."
+      ],
+      "boundary": "Compara esquemas em JSON e não prova que a API real segue o documento. Mudança de comportamento não aparece."
+    },
+    "en": {
+      "alias": "API Treaty",
+      "tagline": "Gives notice before changing what others use.",
+      "story": "At the fictional Logística Rumo, an identifier changed from number to text and a report vanished from the new version, even though a contract still cited it. API Treaty compares the versions, points out what breaks, demands to know who consumes and only accepts shutting something down with agreed notice and date.",
+      "purpose": "Compares two OpenAPI versions, separates breaking changes from safe ones and organizes versioning, consumer communication and sunset dates.",
+      "useCases": [
+        "Review an API version before publishing.",
+        "Retire an endpoint without surprising partners."
+      ],
+      "scenario": {
+        "title": "The vanished report",
+        "context": "Fictional scenario: [TEAM] will publish version [VERSION] of the API [API].",
+        "request": "Use this skill to compare the versions of [API]. Classify the breaks, identify consumers through logs and contracts, and decide to make compatible, version, postpone or accept each one, with notice and a sunset date. An unknown consumer prevents accepting the break.",
+        "output": "Classified breaks and transition plan.",
+        "check": "Every break needs a decision, and the notice must come before the sunset."
+      },
+      "steps": [
+        "Gather both versions in JSON.",
+        "Identify who consumes the API.",
+        "Check the plan with the script."
+      ],
+      "boundary": "It compares JSON schemas and does not prove the real API follows the document. Behavior changes do not appear."
+    },
+    "es": {
+      "alias": "Tratado de las API",
+      "tagline": "Avisa antes de cambiar lo que otros usan.",
+      "story": "En la ficticia Logística Rumo, un identificador pasó de número a texto y un informe desapareció de la nueva versión, aunque un contrato aún lo citaba. Tratado de las API compara las versiones, señala lo que se rompe, exige saber quién consume y solo acepta desconectar algo con aviso y fecha acordados.",
+      "purpose": "Compara dos versiones de OpenAPI, separa los cambios incompatibles de los seguros y organiza el versionado, la comunicación a los consumidores y las fechas de desconexión.",
+      "useCases": [
+        "Revisar una versión de API antes de publicar.",
+        "Retirar un endpoint sin sorprender a los socios."
+      ],
+      "scenario": {
+        "title": "El informe que desapareció",
+        "context": "Escenario ficticio: [EQUIPO] va a publicar la versión [VERSIÓN] de la API [API].",
+        "request": "Usa esta skill para comparar las versiones de [API]. Clasifica las roturas, identifica a los consumidores por registros y contratos, y decide compatibilizar, versionar, aplazar o aceptar cada una, con aviso y fecha de desconexión. Un consumidor desconocido impide aceptar la rotura.",
+        "output": "Roturas clasificadas y plan de transición.",
+        "check": "Toda rotura necesita una decisión, y el aviso debe preceder a la desconexión."
+      },
+      "steps": [
+        "Reúne las dos versiones en JSON.",
+        "Identifica quién consume la API.",
+        "Comprueba el plan con el script."
+      ],
+      "boundary": "Compara esquemas JSON y no demuestra que la API real siga el documento. Los cambios de comportamiento no aparecen."
+    }
+  },
+  {
+    "id": "revisao-de-infraestrutura-como-codigo",
+    "pt": {
+      "alias": "Vistoria da Nuvem",
+      "tagline": "Acha a porta aberta antes do apply.",
+      "story": "Na infraestrutura fictícia da Rede Vida, o site era público de propósito, mas o bucket dos laudos tinha o bloqueio desligado e o banco aceitava conexão de qualquer lugar. Vistoria da Nuvem lê os arquivos sem executar nada, separa a exceção legítima do risco real e exige que o segredo exposto seja trocado.",
+      "purpose": "Revisa arquivos Terraform de AWS, Azure e GCP, encontrando armazenamento público, portas de administração abertas, permissões amplas, bancos públicos e segredos no código.",
+      "useCases": [
+        "Revisar mudanças antes de aplicar o Terraform.",
+        "Avaliar uma infraestrutura herdada."
+      ],
+      "scenario": {
+        "title": "O bucket dos laudos",
+        "context": "Cenário fictício: [EQUIPE] vai aplicar mudanças na infraestrutura de [PRODUTO].",
+        "request": "Use esta skill para revisar os arquivos Terraform de [PRODUTO]. Só leia os arquivos, nunca rode terraform. Separe exceção justificada de risco real, sem exibir o valor de segredos, e monte o plano com impacto e dono de cada mudança.",
+        "output": "Achados por gravidade, plano de correção e exceções.",
+        "check": "Só conta como corrigido o que o script deixou de apontar, e exceção precisa de motivo."
+      },
+      "steps": [
+        "Aponte a pasta do Terraform.",
+        "Revise achados e exceções.",
+        "Corrija e rode de novo."
+      ],
+      "boundary": "Análise por padrões. Módulos remotos e o que foi alterado direto na nuvem não aparecem."
+    },
+    "en": {
+      "alias": "Cloud Inspection",
+      "tagline": "Finds the open door before the apply.",
+      "story": "In the fictional Rede Vida infrastructure, the site was public on purpose, but the bucket with medical reports had its block turned off and the database accepted connections from anywhere. Cloud Inspection reads the files without running anything, separates the legitimate exception from the real risk and demands that exposed secrets be replaced.",
+      "purpose": "Reviews Terraform files for AWS, Azure and GCP, finding public storage, open admin ports, broad permissions, public databases and secrets in code.",
+      "useCases": [
+        "Review changes before applying Terraform.",
+        "Assess an inherited infrastructure."
+      ],
+      "scenario": {
+        "title": "The medical reports bucket",
+        "context": "Fictional scenario: [TEAM] will apply changes to the infrastructure of [PRODUCT].",
+        "request": "Use this skill to review the Terraform files of [PRODUCT]. Only read the files, never run terraform. Separate justified exceptions from real risk, without displaying secret values, and build the plan with the impact and owner of each change.",
+        "output": "Findings by severity, fix plan and exceptions.",
+        "check": "Only what the script stops flagging counts as fixed, and an exception needs a reason."
+      },
+      "steps": [
+        "Point to the Terraform folder.",
+        "Review findings and exceptions.",
+        "Fix and run again."
+      ],
+      "boundary": "Pattern analysis. Remote modules and direct changes made in the cloud do not appear."
+    },
+    "es": {
+      "alias": "Inspección de la Nube",
+      "tagline": "Encuentra la puerta abierta antes del apply.",
+      "story": "En la infraestructura ficticia de Rede Vida, el sitio era público a propósito, pero el bucket de los informes médicos tenía el bloqueo desactivado y la base de datos aceptaba conexiones desde cualquier lugar. Inspección de la Nube lee los archivos sin ejecutar nada, separa la excepción legítima del riesgo real y exige que se sustituya el secreto expuesto.",
+      "purpose": "Revisa archivos Terraform de AWS, Azure y GCP, encontrando almacenamiento público, puertos de administración abiertos, permisos amplios, bases de datos públicas y secretos en el código.",
+      "useCases": [
+        "Revisar cambios antes de aplicar Terraform.",
+        "Evaluar una infraestructura heredada."
+      ],
+      "scenario": {
+        "title": "El bucket de los informes",
+        "context": "Escenario ficticio: [EQUIPO] va a aplicar cambios en la infraestructura de [PRODUCTO].",
+        "request": "Usa esta skill para revisar los archivos Terraform de [PRODUCTO]. Solo lee los archivos, nunca ejecutes terraform. Separa la excepción justificada del riesgo real, sin mostrar valores de secretos, y monta el plan con el impacto y responsable de cada cambio.",
+        "output": "Hallazgos por gravedad, plan de corrección y excepciones.",
+        "check": "Solo cuenta como corregido lo que el script deja de señalar, y una excepción necesita motivo."
+      },
+      "steps": [
+        "Indica la carpeta de Terraform.",
+        "Revisa hallazgos y excepciones.",
+        "Corrige y ejecuta de nuevo."
+      ],
+      "boundary": "Análisis por patrones. Los módulos remotos y los cambios directos en la nube no aparecen."
+    }
+  },
+  {
+    "id": "estrategia-de-testes-por-risco",
+    "pt": {
+      "alias": "Laboratório do Risco",
+      "tagline": "Testa primeiro o que custa caro quando falha.",
+      "story": "Na fictícia Loja Verde, havia testes de cupom, mas nada cobria a operadora de pagamento, e um pedido já tinha sido cobrado duas vezes. Laboratório do Risco ordena o esforço pelo prejuízo possível, exige o caso que dá errado e separa o teste instável do defeito de verdade.",
+      "purpose": "Monta a estratégia de testes por risco de uma funcionalidade, com nível, casos negativos e critério de liberação, e analisa o histórico de execuções para achar testes instáveis e lentos.",
+      "useCases": [
+        "Definir o que testar antes de uma versão crítica.",
+        "Testar código gerado por IA com critério."
+      ],
+      "scenario": {
+        "title": "A cobrança em dobro",
+        "context": "Cenário fictício: [EQUIPE] vai liberar [FUNCIONALIDADE], escrita em parte por IA.",
+        "request": "Use esta skill para montar a estratégia de testes de [FUNCIONALIDADE]. Pontue o risco, escolha o nível mais baixo que detecta a falha, inclua casos negativos e analise o histórico de execuções. Não apague teste para o pipeline passar.",
+        "output": "Plano por risco, decisões sobre testes instáveis e critério de liberação.",
+        "check": "Risco alto precisa de caso negativo, e o critério de liberação precisa de número."
+      },
+      "steps": [
+        "Liste o que pode dar errado.",
+        "Analise o histórico de execuções.",
+        "Rode o verificador do plano."
+      ],
+      "boundary": "Não executa os testes do projeto. Instabilidade só aparece se o mesmo commit rodou mais de uma vez."
+    },
+    "en": {
+      "alias": "Risk Lab",
+      "tagline": "Tests first what costs a lot when it fails.",
+      "story": "At the fictional Loja Verde, there were coupon tests, but nothing covered the payment processor, and one order had already been charged twice. Risk Lab orders the effort by possible damage, demands the case where things go wrong and separates the flaky test from the real defect.",
+      "purpose": "Builds the risk-based test strategy for a feature, with level, negative cases and release criteria, and analyzes run history to find flaky and slow tests.",
+      "useCases": [
+        "Define what to test before a critical release.",
+        "Test AI-generated code with criteria."
+      ],
+      "scenario": {
+        "title": "The double charge",
+        "context": "Fictional scenario: [TEAM] will release [FEATURE], partly written by AI.",
+        "request": "Use this skill to build the test strategy for [FEATURE]. Score the risk, choose the lowest level that detects the failure, include negative cases and analyze the run history. Do not delete tests to make the pipeline pass.",
+        "output": "Risk-based plan, decisions on flaky tests and release criteria.",
+        "check": "A high risk needs a negative case, and the release criterion needs a number."
+      },
+      "steps": [
+        "List what can go wrong.",
+        "Analyze the run history.",
+        "Run the plan checker."
+      ],
+      "boundary": "It does not run the project's tests. Flakiness only appears if the same commit ran more than once."
+    },
+    "es": {
+      "alias": "Laboratorio del Riesgo",
+      "tagline": "Prueba primero lo que sale caro cuando falla.",
+      "story": "En la ficticia Loja Verde había pruebas de cupones, pero nada cubría la pasarela de pago, y un pedido ya se había cobrado dos veces. Laboratorio del Riesgo ordena el esfuerzo por el perjuicio posible, exige el caso en que algo sale mal y separa la prueba inestable del defecto real.",
+      "purpose": "Monta la estrategia de pruebas por riesgo de una funcionalidad, con nivel, casos negativos y criterio de lanzamiento, y analiza el historial de ejecuciones para encontrar pruebas inestables y lentas.",
+      "useCases": [
+        "Definir qué probar antes de una versión crítica.",
+        "Probar con criterio el código generado por IA."
+      ],
+      "scenario": {
+        "title": "El cobro doble",
+        "context": "Escenario ficticio: [EQUIPO] va a lanzar [FUNCIONALIDAD], escrita en parte por IA.",
+        "request": "Usa esta skill para montar la estrategia de pruebas de [FUNCIONALIDAD]. Puntúa el riesgo, elige el nivel más bajo que detecta el fallo, incluye casos negativos y analiza el historial de ejecuciones. No elimines pruebas para que el pipeline pase.",
+        "output": "Plan por riesgo, decisiones sobre pruebas inestables y criterio de lanzamiento.",
+        "check": "Un riesgo alto necesita un caso negativo, y el criterio de lanzamiento necesita un número."
+      },
+      "steps": [
+        "Enumera lo que puede salir mal.",
+        "Analiza el historial de ejecuciones.",
+        "Ejecuta el verificador del plan."
+      ],
+      "boundary": "No ejecuta las pruebas del proyecto. La inestabilidad solo aparece si el mismo commit se ejecutó más de una vez."
+    }
+  },
+  {
+    "id": "mapa-de-divida-tecnica",
+    "pt": {
+      "alias": "Radar de Dívida",
+      "tagline": "Mostra onde o código cobra juros.",
+      "story": "Na fictícia Papelaria Central, todos queriam reescrever o módulo mais antigo, que ninguém mexia havia anos, enquanto dois arquivos fiscais mudavam sempre juntos e travavam cada entrega. Radar de Dívida lê o histórico, mostra onde a mudança dói e pede uma métrica para provar que a refatoração valeu.",
+      "purpose": "Ordena os arquivos por frequência de mudança e linhas alteradas a partir do histórico do git, aponta arquivos que mudam juntos e monta um plano com ação, dono e métrica.",
+      "useCases": [
+        "Escolher por onde começar a refatorar.",
+        "Justificar tempo de refatoração para a gestão."
+      ],
+      "scenario": {
+        "title": "O módulo que ninguém mexe",
+        "context": "Cenário fictício: [EQUIPE] quer pagar a dívida técnica de [SISTEMA].",
+        "request": "Use esta skill para mapear a dívida técnica de [SISTEMA] a partir do histórico exportado. Confirme com a equipe o que é mudança normal, decida uma ação para os principais pontos e defina uma métrica. Não use o ranking para avaliar pessoas.",
+        "output": "Ranking de pontos críticos e plano de ação.",
+        "check": "Os principais pontos precisam estar no plano, e nenhum autor pode ser citado."
+      },
+      "steps": [
+        "Exporte o histórico do git.",
+        "Confirme os pontos com a equipe.",
+        "Confira o plano com o script."
+      ],
+      "boundary": "Linhas alteradas são aproximação de esforço, não de complexidade. A pontuação indica onde olhar, não o que fazer."
+    },
+    "en": {
+      "alias": "Debt Radar",
+      "tagline": "Shows where the code charges interest.",
+      "story": "At the fictional Papelaria Central, everyone wanted to rewrite the oldest module, which nobody had touched in years, while two tax files always changed together and held up every delivery. Debt Radar reads the history, shows where change hurts and asks for a metric to prove the refactoring was worth it.",
+      "purpose": "Ranks files by change frequency and changed lines from the git history, points out files that change together and builds a plan with action, owner and metric.",
+      "useCases": [
+        "Choose where to start refactoring.",
+        "Justify refactoring time to management."
+      ],
+      "scenario": {
+        "title": "The module nobody touches",
+        "context": "Fictional scenario: [TEAM] wants to pay down the technical debt of [SYSTEM].",
+        "request": "Use this skill to map the technical debt of [SYSTEM] from the exported history. Confirm with the team what is normal change, decide an action for the main points and define a metric. Do not use the ranking to evaluate people.",
+        "output": "Ranking of critical points and action plan.",
+        "check": "The main points must be in the plan, and no author may be named."
+      },
+      "steps": [
+        "Export the git history.",
+        "Confirm the points with the team.",
+        "Check the plan with the script."
+      ],
+      "boundary": "Changed lines approximate effort, not complexity. The score shows where to look, not what to do."
+    },
+    "es": {
+      "alias": "Radar de Deuda",
+      "tagline": "Muestra dónde el código cobra intereses.",
+      "story": "En la ficticia Papelaria Central, todos querían reescribir el módulo más antiguo, que nadie tocaba desde hacía años, mientras dos archivos fiscales cambiaban siempre juntos y frenaban cada entrega. Radar de Deuda lee el historial, muestra dónde duele el cambio y pide una métrica para demostrar que la refactorización valió la pena.",
+      "purpose": "Ordena los archivos por frecuencia de cambio y líneas modificadas a partir del historial de git, señala los archivos que cambian juntos y monta un plan con acción, responsable y métrica.",
+      "useCases": [
+        "Elegir por dónde empezar a refactorizar.",
+        "Justificar el tiempo de refactorización ante la dirección."
+      ],
+      "scenario": {
+        "title": "El módulo que nadie toca",
+        "context": "Escenario ficticio: [EQUIPO] quiere pagar la deuda técnica de [SISTEMA].",
+        "request": "Usa esta skill para mapear la deuda técnica de [SISTEMA] a partir del historial exportado. Confirma con el equipo qué es un cambio normal, decide una acción para los puntos principales y define una métrica. No uses la clasificación para evaluar a personas.",
+        "output": "Clasificación de puntos críticos y plan de acción.",
+        "check": "Los puntos principales deben estar en el plan, y no se puede citar a ningún autor."
+      },
+      "steps": [
+        "Exporta el historial de git.",
+        "Confirma los puntos con el equipo.",
+        "Comprueba el plan con el script."
+      ],
+      "boundary": "Las líneas modificadas aproximan el esfuerzo, no la complejidad. La puntuación indica dónde mirar, no qué hacer."
+    }
+  },
+  {
+    "id": "postmortem-sem-culpa",
+    "pt": {
+      "alias": "Lição sem Culpa",
+      "tagline": "Pergunta o que permitiu a falha, não quem errou.",
+      "story": "Na fictícia Mercearia Online, um erro de digitação derrubou o checkout, e o gerente logo apontou o nome de quem publicou. A mudança nem passava pelo pipeline, e o alerta só olhava CPU. Lição sem Culpa troca o dedo apontado por fatos, mede o impacto e só aceita ações que mudam o sistema.",
+      "purpose": "Escreve o postmortem de uma falha operacional, com impacto medido, linha do tempo, fatores contribuintes e ações de prevenção e detecção com dono e prazo, sem culpa pessoal.",
+      "useCases": [
+        "Analisar uma queda que afetou clientes.",
+        "Evitar que a mesma falha aconteça de novo."
+      ],
+      "scenario": {
+        "title": "O erro de digitação",
+        "context": "Cenário fictício: [SISTEMA] ficou fora do ar por [DURAÇÃO] e afetou [CLIENTES].",
+        "request": "Use esta skill para escrever o postmortem da queda de [SISTEMA]. Meça o impacto, monte a linha do tempo com fuso, liste ao menos dois fatores e defina ações que mudam o sistema, com dono e prazo. Não aponte pessoas como causa.",
+        "output": "Postmortem com impacto, fatores, o que funcionou e ações.",
+        "check": "Nenhuma pessoa pode aparecer como causa, e ação vaga como ter mais atenção não é aceita."
+      },
+      "steps": [
+        "Reúna logs e relatos.",
+        "Analise fatores sem citar culpados.",
+        "Rode o verificador do documento."
+      ],
+      "boundary": "Depende de logs e relatos. Em caso de invasão, a resposta de segurança vem antes do postmortem."
+    },
+    "en": {
+      "alias": "Blameless Lesson",
+      "tagline": "Asks what allowed the failure, not who got it wrong.",
+      "story": "At the fictional Mercearia Online, a typo took down the checkout, and the manager quickly named who had published it. The change did not even go through the pipeline, and the alert only watched CPU. Blameless Lesson replaces the pointed finger with facts, measures the impact and only accepts actions that change the system.",
+      "purpose": "Writes the postmortem of an operational failure, with measured impact, timeline, contributing factors and prevention and detection actions with owner and due date, without personal blame.",
+      "useCases": [
+        "Analyze an outage that affected customers.",
+        "Keep the same failure from happening again."
+      ],
+      "scenario": {
+        "title": "The typo",
+        "context": "Fictional scenario: [SYSTEM] was down for [DURATION] and affected [CUSTOMERS].",
+        "request": "Use this skill to write the postmortem of the [SYSTEM] outage. Measure the impact, build the timeline with time zones, list at least two factors and define actions that change the system, with owner and due date. Do not point to people as the cause.",
+        "output": "Postmortem with impact, factors, what worked and actions.",
+        "check": "No person may appear as the cause, and a vague action such as paying more attention is not accepted."
+      },
+      "steps": [
+        "Gather logs and accounts.",
+        "Analyze factors without naming culprits.",
+        "Run the document checker."
+      ],
+      "boundary": "It depends on logs and accounts. In a breach, the security response comes before the postmortem."
+    },
+    "es": {
+      "alias": "Lección sin Culpa",
+      "tagline": "Pregunta qué permitió el fallo, no quién se equivocó.",
+      "story": "En la ficticia Mercearia Online, un error de tecleo tumbó el checkout, y el gerente enseguida señaló a quien lo publicó. El cambio ni siquiera pasaba por el pipeline, y la alerta solo miraba la CPU. Lección sin Culpa cambia el dedo acusador por hechos, mide el impacto y solo acepta acciones que cambian el sistema.",
+      "purpose": "Escribe el postmortem de un fallo operativo, con impacto medido, cronología, factores contribuyentes y acciones de prevención y detección con responsable y plazo, sin culpa personal.",
+      "useCases": [
+        "Analizar una caída que afectó a clientes.",
+        "Evitar que el mismo fallo vuelva a ocurrir."
+      ],
+      "scenario": {
+        "title": "El error de tecleo",
+        "context": "Escenario ficticio: [SISTEMA] estuvo caído durante [DURACIÓN] y afectó a [CLIENTES].",
+        "request": "Usa esta skill para escribir el postmortem de la caída de [SISTEMA]. Mide el impacto, monta la cronología con zona horaria, enumera al menos dos factores y define acciones que cambien el sistema, con responsable y plazo. No señales a personas como causa.",
+        "output": "Postmortem con impacto, factores, lo que funcionó y acciones.",
+        "check": "Ninguna persona puede aparecer como causa, y una acción vaga como prestar más atención no se acepta."
+      },
+      "steps": [
+        "Reúne registros y relatos.",
+        "Analiza factores sin citar culpables.",
+        "Ejecuta el verificador del documento."
+      ],
+      "boundary": "Depende de registros y relatos. En una intrusión, la respuesta de seguridad va antes del postmortem."
+    }
   }
 ]

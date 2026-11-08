@@ -164,6 +164,14 @@ const rows = [
   ["modernizacao-de-sistemas-legados", "4443", "Divide o legado por capacidades e monta fatias pequenas com coexistência de dados, reversão e desligamento."],
   ["migracao-de-banco-sem-parada", "4354", "Audita migrações PostgreSQL por padrões de bloqueio e exige plano em fases com reversão e sinal de aborto."],
   ["observabilidade-e-slos", "3444", "Define SLIs por jornada, calcula orçamento de erro e janelas de consumo, e audita o ruído dos alertas."],
+  ["qualidade-de-dados-e-contratos", "4444", "Escreve contrato verificável, valida tipos, unicidade, frescor e reconciliação com fonte independente, sem expor valores."],
+  ["reducao-de-custos-de-nuvem", "3444", "Analisa exportação de custos, separa categorias sem dupla contagem e confere o plano de economia."],
+  ["auditoria-de-acessibilidade-web", "3454", "Detecta barreiras por critério WCAG, exige testes manuais e bloqueia declaração de conformidade sem eles."],
+  ["contratos-de-api-e-mudancas", "3444", "Compara versões de OpenAPI, classifica quebras e exige decisão, consumidores e datas de desligamento."],
+  ["revisao-de-infraestrutura-como-codigo", "3444", "Revisa Terraform sem executar nada e aponta armazenamento público, portas abertas, IAM amplo e segredos."],
+  ["estrategia-de-testes-por-risco", "3444", "Prioriza testes por risco, exige casos negativos e usa o histórico para achar instáveis e lentos."],
+  ["mapa-de-divida-tecnica", "3334", "Combina frequência de mudança e linhas alteradas para achar pontos críticos e exige plano com métrica."],
+  ["postmortem-sem-culpa", "2334", "Conduz a análise da queda com impacto, fatores e ações que mudam o sistema, rejeitando culpa pessoal."],
 ];
 const dimensions = ["depth", "scope", "verification", "reuse"];
 const byId = new Map(rows.map(row => [row[0], row]));

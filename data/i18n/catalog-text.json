@@ -4898,5 +4898,193 @@
   "Histórico de disparos e métricas reais do serviço": [
     "Alert history and real service metrics",
     "Historial de disparos y métricas reales del servicio"
+  ],
+  "Dados conferidos antes do painel e da IA": [
+    "Data checked before the dashboard and AI",
+    "Datos comprobados antes del panel y la IA"
+  ],
+  "O painel mostra um número errado e ninguém descobre onde o dado se perdeu.": [
+    "The dashboard shows a wrong number and nobody finds where the data went wrong.",
+    "El panel muestra un número erróneo y nadie descubre dónde se perdió el dato."
+  ],
+  "Contrato de dados com regras verificáveis": [
+    "Data contract with verifiable rules",
+    "Contrato de datos con reglas verificables"
+  ],
+  "Validação do arquivo e plano de correção na origem": [
+    "File validation and a fix plan at the source",
+    "Validación del archivo y plan de corrección en origen"
+  ],
+  "Python 3 e arquivo CSV": [
+    "Python 3 and a CSV file",
+    "Python 3 y archivo CSV"
+  ],
+  "Passar nas regras não prova que o dado é verdadeiro": [
+    "Passing the rules does not prove the data is true",
+    "Superar las reglas no demuestra que el dato sea verdadero"
+  ],
+  "Redução de custos de nuvem e IA": [
+    "Cloud and AI cost reduction",
+    "Reducción de costes de nube e IA"
+  ],
+  "A fatura da nuvem e da IA sobe todo mês e ninguém sabe o que dá para cortar.": [
+    "The cloud and AI bill grows every month and nobody knows what can be cut.",
+    "La factura de nube e IA sube cada mes y nadie sabe qué se puede recortar."
+  ],
+  "Análise de desperdício sem dupla contagem": [
+    "Waste analysis with no double counting",
+    "Análisis de desperdicio sin doble conteo"
+  ],
+  "Plano com economia, dono, risco e reversão": [
+    "Plan with savings, owner, risk and rollback",
+    "Plan con ahorro, responsable, riesgo y reversión"
+  ],
+  "Python 3 e exportação de custos em CSV": [
+    "Python 3 and a cost export as CSV",
+    "Python 3 y exportación de costes en CSV"
+  ],
+  "A economia é estimada até a fatura seguinte": [
+    "Savings are estimates until the next bill",
+    "El ahorro es una estimación hasta la siguiente factura"
+  ],
+  "Auditoria de acessibilidade web WCAG": [
+    "WCAG web accessibility audit",
+    "Auditoría de accesibilidad web WCAG"
+  ],
+  "Pessoas com deficiência não conseguem concluir tarefas no site e a empresa nem sabe.": [
+    "People with disabilities cannot complete tasks on the site and the company does not even know.",
+    "Las personas con discapacidad no pueden completar tareas en el sitio y la empresa ni lo sabe."
+  ],
+  "Barreiras apontadas por critério WCAG 2.2": [
+    "Barriers flagged by WCAG 2.2 criterion",
+    "Barreras señaladas por criterio WCAG 2.2"
+  ],
+  "Plano de correção e roteiro de testes manuais": [
+    "Fix plan and manual test script",
+    "Plan de corrección y guion de pruebas manuales"
+  ],
+  "Python 3 e HTML da página": [
+    "Python 3 and the page HTML",
+    "Python 3 y HTML de la página"
+  ],
+  "Não é certificado e exige testes manuais": [
+    "It is not a certificate and requires manual tests",
+    "No es un certificado y exige pruebas manuales"
+  ],
+  "Mudanças de API sem quebrar parceiros": [
+    "API changes without breaking partners",
+    "Cambios de API sin romper a los socios"
+  ],
+  "Uma nova versão da API sai no ar e os parceiros descobrem a mudança quando tudo falha.": [
+    "A new API version goes live and partners find out about the change when everything fails.",
+    "Sale una nueva versión de la API y los socios descubren el cambio cuando todo falla."
+  ],
+  "Comparação de versões com as mudanças que quebram": [
+    "Version comparison with the breaking changes",
+    "Comparación de versiones con los cambios incompatibles"
+  ],
+  "Plano de versão, aviso e desligamento": [
+    "Versioning, notice and sunset plan",
+    "Plan de versión, aviso y desconexión"
+  ],
+  "Python 3 e OpenAPI em JSON": [
+    "Python 3 and OpenAPI in JSON",
+    "Python 3 y OpenAPI en JSON"
+  ],
+  "Mudança de comportamento sem mudança de esquema não é detectada": [
+    "Behavior changes without schema changes are not detected",
+    "No detecta cambios de comportamiento sin cambio de esquema"
+  ],
+  "Revisão de segurança de Terraform": [
+    "Terraform security review",
+    "Revisión de seguridad de Terraform"
+  ],
+  "Um bucket público ou uma porta aberta chega à produção sem ninguém perceber.": [
+    "A public bucket or open port reaches production without anyone noticing.",
+    "Un bucket público o un puerto abierto llega a producción sin que nadie lo note."
+  ],
+  "Revisão estática dos arquivos Terraform": [
+    "Static review of Terraform files",
+    "Revisión estática de los archivos Terraform"
+  ],
+  "Plano de correção e exceções justificadas": [
+    "Fix plan and justified exceptions",
+    "Plan de corrección y excepciones justificadas"
+  ],
+  "Python 3 e arquivos .tf": [
+    "Python 3 and .tf files",
+    "Python 3 y archivos .tf"
+  ],
+  "Não vê o que foi alterado direto na nuvem": [
+    "Cannot see what was changed directly in the cloud",
+    "No ve lo que se cambió directamente en la nube"
+  ],
+  "Estratégia de testes por risco": [
+    "Risk-based test strategy",
+    "Estrategia de pruebas por riesgo"
+  ],
+  "Os testes são lentos, falham sem motivo e deixam passar o que realmente importa.": [
+    "Tests are slow, fail for no reason and miss what really matters.",
+    "Las pruebas son lentas, fallan sin motivo y dejan pasar lo que de verdad importa."
+  ],
+  "Plano de testes por risco com casos negativos": [
+    "Risk-based test plan with negative cases",
+    "Plan de pruebas por riesgo con casos negativos"
+  ],
+  "Análise de testes instáveis e lentos": [
+    "Analysis of flaky and slow tests",
+    "Análisis de pruebas inestables y lentas"
+  ],
+  "Python 3 e histórico de execuções em CSV": [
+    "Python 3 and run history as CSV",
+    "Python 3 e historial de ejecuciones en CSV"
+  ],
+  "Não executa os testes do projeto": [
+    "Does not run the project's tests",
+    "No ejecuta las pruebas del proyecto"
+  ],
+  "Mapa de dívida técnica pelo histórico do código": [
+    "Technical debt map from code history",
+    "Mapa de deuda técnica por el historial del código"
+  ],
+  "A equipe quer refatorar tudo, mas não sabe onde a dívida realmente custa.": [
+    "The team wants to refactor everything, but does not know where the debt really costs.",
+    "El equipo quiere refactorizarlo todo, pero no sabe dónde la deuda cuesta de verdad."
+  ],
+  "Ranking de arquivos que mais custam mudar": [
+    "Ranking of the files that cost most to change",
+    "Clasificación de los archivos que más cuesta cambiar"
+  ],
+  "Plano de ação com dono e métrica": [
+    "Action plan with owner and metric",
+    "Plan de acción con responsable y métrica"
+  ],
+  "Python 3 e exportação do git log": [
+    "Python 3 and a git log export",
+    "Python 3 y exportación de git log"
+  ],
+  "Linhas alteradas são aproximação de esforço": [
+    "Changed lines are an approximation of effort",
+    "Las líneas cambiadas son una aproximación del esfuerzo"
+  ],
+  "Postmortem sem culpa que muda o sistema": [
+    "Blameless postmortem that changes the system",
+    "Postmortem sin culpa que cambia el sistema"
+  ],
+  "Depois de cada queda alguém leva a culpa, nada muda e a mesma falha volta.": [
+    "After every outage someone takes the blame, nothing changes and the same failure returns.",
+    "Tras cada caída alguien carga con la culpa, nada cambia y el mismo fallo vuelve."
+  ],
+  "Linha do tempo com impacto e fatores": [
+    "Timeline with impact and contributing factors",
+    "Cronología con impacto y factores"
+  ],
+  "Ações de prevenção e detecção com dono e prazo": [
+    "Prevention and detection actions with owner and due date",
+    "Acciones de prevención y detección con responsable y plazo"
+  ],
+  "Depende de logs e relatos do ocorrido": [
+    "Depends on logs and accounts of what happened",
+    "Depende de registros y relatos de lo ocurrido"
   ]
 }

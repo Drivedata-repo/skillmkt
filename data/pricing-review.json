@@ -3061,6 +3061,158 @@
       "rationale": "Define SLIs por jornada, calcula orçamento de erro e janelas de consumo, e audita o ruído dos alertas.",
       "assessmentType": "documentary",
       "executionVerified": false
+    },
+    {
+      "id": "qualidade-de-dados-e-contratos",
+      "code": "DD-162",
+      "version": "1.2.1",
+      "packageSha256": "3b476791f60be02c05af943ebe91669c9ad8aa042662d54714e230db037b8784",
+      "sourceSha256": "8482137165deda1160b366efcbfd4c9e541e855c33df9bfa2a0c2ee82399bc03",
+      "contractSha256": "8482137165deda1160b366efcbfd4c9e541e855c33df9bfa2a0c2ee82399bc03",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Escreve contrato verificável, valida tipos, unicidade, frescor e reconciliação com fonte independente, sem expor valores.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "reducao-de-custos-de-nuvem",
+      "code": "DD-163",
+      "version": "1.2.1",
+      "packageSha256": "f9280c56da84b4ebf577a66b64128694af65ec57e041a2e8ca710cfbe7c5a777",
+      "sourceSha256": "f1b43d7b093e220423251b43c8fe417bebef6816b2bf8a82318d0f9762ac3c2b",
+      "contractSha256": "f1b43d7b093e220423251b43c8fe417bebef6816b2bf8a82318d0f9762ac3c2b",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Analisa exportação de custos, separa categorias sem dupla contagem e confere o plano de economia.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "auditoria-de-acessibilidade-web",
+      "code": "DD-164",
+      "version": "1.2.1",
+      "packageSha256": "b3a79ddeebb05accdc03310625d46d122d51f29b6fbb87c44f326bdda8968bd9",
+      "sourceSha256": "f14e00963e97eaeface74d49e94ec36986c50ffdfb1ff7f66e632d3645c3f83d",
+      "contractSha256": "f14e00963e97eaeface74d49e94ec36986c50ffdfb1ff7f66e632d3645c3f83d",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 5,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Detecta barreiras por critério WCAG, exige testes manuais e bloqueia declaração de conformidade sem eles.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "contratos-de-api-e-mudancas",
+      "code": "DD-165",
+      "version": "1.2.1",
+      "packageSha256": "655002f07e98028a1ed916ac52f6ee260893a6133409a0f44c8bc1729848b0a9",
+      "sourceSha256": "125d277c46ca545f39a7d89b7ac0beb4d6d81677a7bccf7c913ad6bfb8683834",
+      "contractSha256": "125d277c46ca545f39a7d89b7ac0beb4d6d81677a7bccf7c913ad6bfb8683834",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Compara versões de OpenAPI, classifica quebras e exige decisão, consumidores e datas de desligamento.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "revisao-de-infraestrutura-como-codigo",
+      "code": "DD-166",
+      "version": "1.2.1",
+      "packageSha256": "7ca6aaf418d37c840116476727d35dd0f4f5f88aa9f2120bd724d011c5283489",
+      "sourceSha256": "8b050644fd12a802aa2aa9370fdae603e04f531fd53b27c43db185c85457b9b1",
+      "contractSha256": "8b050644fd12a802aa2aa9370fdae603e04f531fd53b27c43db185c85457b9b1",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Revisa Terraform sem executar nada e aponta armazenamento público, portas abertas, IAM amplo e segredos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "estrategia-de-testes-por-risco",
+      "code": "DD-167",
+      "version": "1.2.1",
+      "packageSha256": "34520d81d32bc5ea689ec87ec68328698351ce62e42cf911ffe95eca583eea65",
+      "sourceSha256": "f9d59c76e35ad9ee6df018c1e138d1438d7b9f5dcd8a456c2708cfc74efb7602",
+      "contractSha256": "f9d59c76e35ad9ee6df018c1e138d1438d7b9f5dcd8a456c2708cfc74efb7602",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Prioriza testes por risco, exige casos negativos e usa o histórico para achar instáveis e lentos.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "mapa-de-divida-tecnica",
+      "code": "DD-168",
+      "version": "1.2.1",
+      "packageSha256": "2283726dfef87929586afa7eb17deb212f7a68d4ab176f176351d6356494d5f3",
+      "sourceSha256": "ed5dc77994ce516922f1727315cefe768e1ee84518219c5c9c119cc377ec0a6b",
+      "contractSha256": "ed5dc77994ce516922f1727315cefe768e1ee84518219c5c9c119cc377ec0a6b",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Combina frequência de mudança e linhas alteradas para achar pontos críticos e exige plano com métrica.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "postmortem-sem-culpa",
+      "code": "DD-169",
+      "version": "1.2.1",
+      "packageSha256": "7295bff8521c1d0bfc1884b049703290a50e26600c6d73fa5407e0fb61339ea5",
+      "sourceSha256": "7d376c4a945ebe8d798731367fc829fdaafd7e1a42d26c197813e4de33e210e2",
+      "contractSha256": "7d376c4a945ebe8d798731367fc829fdaafd7e1a42d26c197813e4de33e210e2",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 2,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Conduz a análise da queda com impacto, fatores e ações que mudam o sistema, rejeitando culpa pessoal.",
+      "assessmentType": "documentary",
+      "executionVerified": false
     }
   ]
 }

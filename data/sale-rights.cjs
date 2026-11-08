@@ -5,6 +5,14 @@
 
 // Sem marca de terceiro. Autoria declarada por João em 08/11/2026.
 const ownDeclared = [
+  "qualidade-de-dados-e-contratos",
+  "reducao-de-custos-de-nuvem",
+  "auditoria-de-acessibilidade-web",
+  "contratos-de-api-e-mudancas",
+  "revisao-de-infraestrutura-como-codigo",
+  "estrategia-de-testes-por-risco",
+  "mapa-de-divida-tecnica",
+  "postmortem-sem-culpa",
   "modelagem-de-ameacas",
   "revisao-de-permissoes-e-acesso",
   "priorizacao-de-vulnerabilidades",
