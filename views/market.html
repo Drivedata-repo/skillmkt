@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/work.css" />
     <link rel="stylesheet" href="/collection-extras.css" />
     <link rel="stylesheet" href="/invocation.css" />
+    <link rel="stylesheet" href="/nexo.css" />
     <script src="/translations.js"></script>
     <script src="/i18n-core.js"></script>
     <script src="/i18n.js"></script>
@@ -29,6 +30,8 @@
     <script src="/deck-invocation.js" defer></script>
     <script src="/evolution.js" defer></script>
     <script src="/work.js" defer></script>
+    <script src="/nexo-core.js" defer></script>
+    <script src="/nexo.js" defer></script>
     <script src="/market.js" defer></script>
   </head>
   <body>
@@ -465,6 +468,7 @@
     >
       <div class="detail-toolbar">
         <div data-language-copy></div>
+        <button type="button" class="nexo-toolbar" data-nexo-launch aria-label="Perguntar ao NEXO sobre esta carta" title="Perguntar ao NEXO sobre esta carta" hidden><img src="/assets/nexo-avatar-v1.webp" alt="" width="34" height="34" /><span>NEXO</span></button>
         <button class="close" id="close-detail" aria-label="Fechar carta">
           ×
         </button>
@@ -480,6 +484,38 @@
       ></div>
     </dialog>
     <div id="toast" class="toast" role="status" hidden></div>
+    <button type="button" class="nexo-launcher" id="nexo-launcher" data-nexo-launch aria-label="Conversar com NEXO, o guia do Deck" aria-haspopup="dialog" hidden>
+      <img src="/assets/nexo-avatar-v1.webp" alt="" width="105" height="105" /><span><strong>NEXO</strong><small>Qual é sua próxima missão?</small></span>
+    </button>
+    <dialog id="nexo-dialog" class="nexo-dialog" aria-labelledby="nexo-title">
+      <header class="nexo-header">
+        <div class="nexo-topbar"><div data-language-copy></div><button type="button" id="nexo-close" aria-label="Fechar conversa">×</button></div>
+        <p class="nexo-name">NEXO · DRIVEDATA DECK</p>
+        <h2 id="nexo-title">Sua próxima jogada começa aqui.</h2>
+        <figure aria-hidden="true"><img src="/assets/nexo-avatar-v1.webp" alt="" width="150" height="150" /></figure>
+      </header>
+      <div class="nexo-scroll" id="nexo-scroll">
+        <section class="nexo-welcome" id="nexo-welcome">
+          <p>Me conte o que está travando seu trabalho. Eu ajudo você a encontrar uma carta e a dar o primeiro passo.</p>
+          <div class="nexo-prompts">
+            <button type="button" data-nexo-prompt="Encontrar uma skill">Encontrar a carta certa</button>
+            <button type="button" id="nexo-prompt-context" data-nexo-prompt="Me explique esta carta" hidden>Entender esta carta</button>
+            <button type="button" data-nexo-prompt="Como instalar uma skill?">Instalar minha primeira skill</button>
+            <button type="button" data-nexo-prompt="Quero comparar cartas">Comparar duas cartas</button>
+          </div>
+        </section>
+        <div id="nexo-conversation" class="nexo-conversation" role="log" aria-label="Conversa com NEXO" aria-live="polite" aria-relevant="additions text" data-no-i18n></div>
+        <div class="nexo-busy" id="nexo-busy" aria-hidden="true" hidden><i></i><i></i><i></i></div>
+      </div>
+      <footer class="nexo-compose">
+        <form id="nexo-form">
+          <textarea id="nexo-message" rows="2" maxlength="2000" aria-label="Sua mensagem para NEXO" placeholder="Qual tarefa você quer resolver?" required></textarea>
+          <button type="submit" id="nexo-send" aria-label="Enviar mensagem">↑</button>
+        </form>
+        <p class="nexo-status" id="nexo-status" role="status" data-no-i18n></p>
+        <div class="nexo-compose-footer"><p>Orientação pelo catálogo. Histórico só nesta aba.</p><button type="button" id="nexo-clear">Nova conversa</button></div>
+      </footer>
+    </dialog>
     <noscript>Ative JavaScript para explorar as cartas.</noscript>
   </body>
 </html>

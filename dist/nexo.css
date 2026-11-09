@@ -1,0 +1,95 @@
+.nexo-launcher{position:fixed;right:24px;bottom:22px;z-index:30;width:228px;height:82px;border:1px solid #435e6d;border-radius:18px;background:#10202ded;backdrop-filter:blur(18px);display:flex;align-items:center;text-align:left;padding:12px 12px 12px 92px;color:#edf9ff;box-shadow:0 10px 40px #0008;cursor:pointer;isolation:isolate}
+.nexo-launcher[hidden],.nexo-toolbar[hidden]{display:none}
+.nexo-launcher>img{position:absolute;width:105px;height:105px;object-fit:contain;left:-7px;bottom:2px;filter:drop-shadow(0 7px 8px #0007);transform-origin:50% 82%}
+.nexo-launcher strong{display:block;font:650 16px/1.4 Inter,sans-serif;letter-spacing:.06em}
+.nexo-launcher small{display:block;color:#b3d1dc;font:11px/1.5 Inter,sans-serif;margin-top:3px}
+.nexo-launcher:hover{border-color:#88dfd0;background:#163041}
+.nexo-launcher:focus-visible,.nexo-dialog button:focus-visible,.nexo-toolbar:focus-visible{outline:2px solid #91f5dd;outline-offset:4px}
+body:has(#skill-dialog[open])>.nexo-launcher{visibility:hidden}
+.nexo-toolbar{display:flex;align-items:center;gap:4px;background:#122532;border:1px solid #3f6170;border-radius:9px;padding:1px 9px 1px 2px;font-size:10px;margin-left:auto;min-height:36px;color:#d6f5fa}
+.nexo-toolbar img{width:34px;height:34px;object-fit:contain}
+.detail-toolbar .nexo-toolbar+.close{margin-left:12px}
+.nexo-dialog{position:fixed;inset:auto 24px 24px auto;margin:0;width:min(480px,calc(100vw - 40px));height:min(790px,calc(100dvh - 48px));max-width:none;max-height:none;padding:0;border:1px solid #4a6676;border-radius:22px;background:#0b1721;color:#e9f4f9;overflow:hidden;box-shadow:0 24px 90px #000a}
+.nexo-dialog[open]{display:flex;flex-direction:column}
+.nexo-dialog::backdrop{background:#0007;backdrop-filter:blur(3px)}
+.nexo-header{position:relative;flex-shrink:0;padding:15px 20px 22px;border-bottom:1px solid #34505f;background:linear-gradient(125deg,#152c3c,#0b1925);min-height:177px;isolation:isolate}
+.nexo-topbar{display:flex;align-items:center;justify-content:space-between;gap:8px;position:relative;z-index:3;margin-bottom:20px}
+.nexo-topbar .language-switcher{margin:0}
+.nexo-topbar>button{border:1px solid #486372;border-radius:50%;width:32px;height:32px;background:#0b1925;color:#f2f7fa;font-size:22px;display:grid;place-items:center;padding:0;line-height:1}
+.nexo-name{margin:0 0 3px;color:#9be9d7;font:650 11px/1.5 var(--mono);letter-spacing:.14em}
+.nexo-header h2{font:600 26px/1.15 Inter,sans-serif;letter-spacing:-.04em;margin:0;max-width:255px}
+.nexo-header figure{margin:0;position:absolute;right:7px;bottom:-3px;width:150px;height:150px;pointer-events:none;z-index:-1}
+.nexo-header figure img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 9px 9px #0007)}
+.nexo-scroll{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#426173 #0b1721;padding:22px 20px;flex:1;min-height:90px}
+.nexo-welcome>p{font-size:14px;line-height:1.7;margin:0 0 20px;color:#ccdde7}
+.nexo-prompts{display:flex;flex-direction:column;gap:0}
+.nexo-prompts>button{display:flex;justify-content:space-between;align-items:center;text-align:left;background:transparent;border:0;border-top:1px solid #304b5a;padding:14px 0;min-height:49px;color:#e8f4fa;font-size:13px}
+.nexo-prompts>button:after{content:"↗";color:#8ee8d3;margin-left:12px}
+.nexo-prompts>button:hover{color:#9ef0df}
+.nexo-prompts>button[hidden]{display:none}
+.nexo-message{margin:0 0 23px;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.nexo-message p{margin:0 0 12px}
+.nexo-user{margin-left:35px;background:#1b3545;border-radius:14px 14px 3px 14px;padding:12px 15px;color:#edf6fa;white-space:pre-wrap}
+.nexo-user p{margin:0}
+.nexo-speaker{display:block;font:10px/1.4 var(--mono);letter-spacing:.1em;color:#9cd8cd;margin-bottom:9px}
+.nexo-choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.nexo-choices button,.nexo-message>button{border:1px solid #506e7e;border-radius:8px;background:#172b39;padding:11px 12px;color:#e8f4fa;font-size:12px;text-align:left;line-height:1.5}
+.nexo-choices button:hover:not(:disabled){border-color:#8adecb;background:#1b3c46}
+.nexo-choices button:disabled{opacity:.5;cursor:default}
+.nexo-followup{font-weight:600;color:#f0f8fc}
+.nexo-result{display:flex;gap:14px;padding:20px 0;border-top:1px solid #34505e;margin-top:18px;align-items:flex-start}
+.nexo-result-art{flex:0 0 74px;width:74px;pointer-events:none;padding:8px 0;perspective:900px}
+.nexo-result-art .holo-card{width:100%;aspect-ratio:.63;transform:rotate(-5deg)!important;filter:drop-shadow(0 4px 9px #0006)}
+.nexo-result-art .card-face{border-radius:6px;padding:5px!important;border-width:1px}
+.nexo-result-art .card-heading,.nexo-result-art .card-rank,.nexo-result-art .card-type,.nexo-result-art .card-info,.nexo-result-art .card-battle-stats,.nexo-result-art .card-bottom{display:none}
+.nexo-result-art .card-visual{height:100%;border-radius:3px}
+.nexo-result-art .visual-label,.nexo-result-art .card-codename,.nexo-result-art .visual-stars,.nexo-result-art .edition-seal,.nexo-result-art .back{display:none}
+.nexo-result-copy{flex:1;min-width:0}
+.nexo-result .nexo-card-code{font:9px/1.5 var(--mono);color:#94dcca;margin:0 0 7px}
+.nexo-result h3{font:600 16px/1.35 Inter,sans-serif;letter-spacing:-.02em;color:#edf6fb;margin:0 0 10px}
+.nexo-result p{font-size:12px;line-height:1.65;color:#c8dbe5}
+.nexo-result dl{font-size:11px;line-height:1.6;margin:12px 0}
+.nexo-result dt{color:#a0ddcf;font-weight:600;margin-top:10px}
+.nexo-result dd{margin:3px 0 0;color:#cfdee7}
+.nexo-result .nexo-boundary{font-size:10px;line-height:1.6;color:#b1c3cf}
+.nexo-result .nexo-card-price{font:10px/1.6 var(--mono);color:#ead09c}
+.nexo-requirements{font-size:11px;color:#c0dedb;margin:12px 0}
+.nexo-requirements>summary{cursor:pointer;padding:5px 0}
+.nexo-requirements>p{font-size:11px}
+.nexo-card-actions{display:flex;flex-wrap:wrap;gap:9px 13px;margin-top:13px}
+.nexo-card-actions button{border:0;border-bottom:1px solid #83cfbc;background:transparent;padding:5px 0;color:#b4f3e2;font-size:11px;line-height:1.5;min-height:32px}
+.nexo-card-actions button:disabled{color:#a8b9c3;border-color:transparent;cursor:default}
+.nexo-result .nexo-source{font:8px/1.5 var(--mono);color:#9db1bd;margin:13px 0 0}
+.nexo-alternative{border-top:1px solid #34505e;padding:14px 0;margin-top:10px}
+.nexo-alternative>summary{cursor:pointer;font-size:12px;line-height:1.6;color:#c1e6e4}
+.nexo-alternative .nexo-result{border:0;margin:0;padding-bottom:0}
+.nexo-plan{margin:18px 0;padding:16px;border-left:2px solid #a4edda;background:#152b36}
+.nexo-plan h3{font-size:14px;line-height:1.4;margin:0 0 12px;color:#e5f8f4}
+.nexo-plan ol{padding-left:18px;font-size:12px}
+.nexo-plan li{padding:3px 0}
+.nexo-plan>p{font-size:11px;color:#c0d6df}
+.nexo-plan>button{border:1px solid #7eb4ae;border-radius:7px;padding:10px;background:#163f45;color:#d3faf0;font-size:11px}
+.nexo-compose{padding:14px 20px 12px;border-top:1px solid #34505f;background:#101f2b;flex-shrink:0}
+.nexo-compose form{display:flex;gap:9px;align-items:flex-end}
+.nexo-compose textarea{display:block;resize:none;min-height:62px;max-height:130px;border:1px solid #507181;border-radius:10px;background:#091621;color:#ecf6fb;padding:12px;flex:1;width:100%;font-size:13px;line-height:1.5}
+.nexo-compose textarea::placeholder{color:#a5bbc8}
+.nexo-compose textarea:focus{outline:2px solid #75cbb9;outline-offset:1px}
+.nexo-compose form>button{width:43px;height:43px;border:0;border-radius:11px;background:#a4edda;color:#102b34;font-size:22px;flex-shrink:0}
+.nexo-compose form>button:disabled{opacity:.45;cursor:wait}
+.nexo-compose-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:9px}
+.nexo-compose-footer p{font-size:9px;line-height:1.5;color:#b1c6d1;margin:0;max-width:310px}
+.nexo-compose-footer button{border:0;background:transparent;color:#c6e2e9;font-size:9px;padding:6px 0;flex-shrink:0;text-decoration:underline;text-underline-offset:3px}
+.nexo-status{font-size:11px;line-height:1.5;color:#afecdc;margin:8px 0 0;min-height:0}
+.nexo-status:empty{display:none}
+.nexo-busy{display:flex;align-items:center;gap:5px;color:#a4edd7;padding:5px 0}
+.nexo-busy[hidden]{display:none}
+.nexo-busy i{height:5px;width:5px;border-radius:50%;background:currentColor}
+@media(prefers-reduced-motion:no-preference){.nexo-launcher:hover>img{animation:nexo-greet 1.4s ease-in-out 1}.nexo-thinking .nexo-header figure{animation:nexo-attentive 2.5s ease-in-out infinite}.nexo-busy i{animation:nexo-wait 1.2s ease-in-out infinite}.nexo-busy i:nth-child(2){animation-delay:.15s}.nexo-busy i:nth-child(3){animation-delay:.3s}}
+@keyframes nexo-greet{0%,100%{transform:translateY(0) rotate(0)}40%{transform:translateY(-6px) rotate(-5deg)}70%{transform:translateY(-3px) rotate(3deg)}}
+@keyframes nexo-attentive{50%{transform:translateY(-4px) rotate(2deg)}}
+@keyframes nexo-wait{50%{transform:translateY(-4px);opacity:.4}}
+.motion-off .nexo-dialog *,.motion-off .nexo-launcher>*{animation:none!important}
+@media(max-width:600px){.nexo-launcher{width:72px;height:72px;right:16px;bottom:18px;border-radius:20px;padding:0}.nexo-launcher>img{width:93px;height:93px;left:-12px;bottom:-2px}.nexo-launcher>span{display:none}.nexo-dialog{inset:auto 10px 10px;width:calc(100vw - 20px);height:calc(100dvh - 20px);border-radius:18px}.nexo-header{padding:12px 17px 20px;min-height:166px}.nexo-header h2{font-size:24px;max-width:210px}.nexo-header figure{width:130px;height:130px;right:0}.nexo-scroll{padding:20px 17px}.nexo-compose{padding:12px 13px 9px}.nexo-result{gap:11px}.nexo-result-art{flex-basis:56px;width:56px}.nexo-toolbar{padding:0 3px;min-height:34px}.nexo-toolbar span{display:none}.detail-toolbar .nexo-toolbar+.close{margin-left:7px}}
+@media(max-height:580px){.nexo-header{min-height:126px;padding-bottom:12px}.nexo-topbar{margin-bottom:9px}.nexo-header h2{font-size:21px}.nexo-header figure{width:105px;height:105px}.nexo-scroll{padding-top:14px}.nexo-compose textarea{min-height:44px}.nexo-compose-footer p{font-size:8px}}
+@media(max-width:600px){.nexo-header h2{max-width:min(210px,calc(100% - 110px))}}
+@media(max-height:580px){.nexo-scroll{min-height:35px}}
