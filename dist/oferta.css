@@ -247,6 +247,20 @@ a:focus-visible {
 .cta:hover {
   background: #0a4fb8;
 }
+button.cta {
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button.cta:disabled {
+  background: #33475c;
+  cursor: not-allowed;
+}
+.note.error {
+  min-height: 1.5em;
+  color: #ff8d86;
+}
 .cta[aria-disabled="true"] {
   background: #33475c;
   cursor: not-allowed;

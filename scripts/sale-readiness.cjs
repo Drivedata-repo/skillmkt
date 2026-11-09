@@ -6,7 +6,7 @@ const path = require("node:path");
 const skills = require("../data/skills.cjs");
 const products = require("../data/sale-products.cjs");
 const { productProblems, summary } = require("../lib/sale-rights.cjs");
-const { productMap } = require("../lib/commerce.cjs");
+const catalog = require("../lib/sale-catalog.cjs");
 
 const results = [];
 const check = (ok, label) => results.push({ ok, label });
@@ -14,14 +14,12 @@ const check = (ok, label) => results.push({ ok, label });
 const env = process.env;
 check((env.DATABASE_URL || "").length > 0, "DATABASE_URL configurada");
 check((env.RATE_LIMIT_SECRET || "").length >= 32, "RATE_LIMIT_SECRET com 32 caracteres ou mais");
-check((env.HOTMART_HOTTOK || "").length >= 16, "HOTMART_HOTTOK configurado");
+check(/^sk_(live|test)_/.test(env.STRIPE_SECRET_KEY || ""), "STRIPE_SECRET_KEY configurada");
+check((env.STRIPE_WEBHOOK_SECRET || "").length >= 16, "STRIPE_WEBHOOK_SECRET configurado (whsec_...)");
+check(/^sk_live_/.test(env.STRIPE_SECRET_KEY || ""), "Chave do Stripe em modo ao vivo (hoje: " + (/^sk_test_/.test(env.STRIPE_SECRET_KEY || "") ? "teste" : "ausente") + ")");
 check((env.CUSTOMER_SESSION_SECRET || "").length >= 32, "CUSTOMER_SESSION_SECRET com 32 caracteres ou mais");
 check(Boolean(env.MAIL_API_KEY && env.MAIL_FROM), "MAIL_API_KEY e MAIL_FROM configurados");
 check(env.DEMO_ENABLED === "false", "Demo gratuita fechada (DEMO_ENABLED=false)");
-
-const map = productMap();
-for (const product of products)
-  check([...map.values()].includes(product.key), `Produto ${product.key} ligado a um ID da Hotmart`);
 
 const problems = productProblems(products);
 check(problems.length === 0, `Produtos só com cartas vendáveis${problems.length ? ": " + problems.join("; ") : ""}`);
@@ -35,13 +33,15 @@ const sandbox = { window: {} };
 new Function("window", offer)(sandbox.window);
 const config = sandbox.window.DeckOffer;
 check(Boolean(config.videoSrc), "Vídeo da VSL configurado");
-check(/^https:\/\/pay\.hotmart\.com\//.test(config.checkoutUrl), "Link do checkout da Hotmart configurado");
+const main = catalog.get(config.checkoutKey);
+check(Boolean(main), "Oferta aponta para um produto do catálogo (checkoutKey)");
+check(Boolean(main) && main.status !== "draft", "Produto da oferta aprovado (hoje é rascunho, e o pagamento não abre)");
 check(Number(config.guaranteeDays) >= 15, "Garantia definida (Europa exige 15 dias ou mais)");
 
 async function database() {
   if (!process.argv.includes("--db") || !env.DATABASE_URL) return;
   const { db } = require("../lib/db.cjs");
-  for (const table of ["customers", "webhook_events", "purchases", "entitlements", "access_tokens"]) {
+  for (const table of ["customers", "webhook_events", "purchases", "entitlements", "access_tokens", "orders"]) {
     const r = await db().query("SELECT to_regclass($1) AS found", ["skillmkt." + table]);
     check(Boolean(r.rows[0].found), `Tabela skillmkt.${table} criada`);
   }
@@ -49,14 +49,17 @@ async function database() {
 }
 
 const manual = [
+  "Rodar as três migrações no banco, nesta ordem: 20261108120000_commerce_accounts, 20261108180000_stripe_orders e 20261109120000_orders_brl",
   "Importar a edição 1.2.1 no banco antes de publicar (node .local/admin.cjs releases), senão 44 downloads devolvem 503",
+  "Conta Stripe ativada (dados da empresa e conta bancária) e chave restrita só a Checkout e Pix, sem permissão de saque",
+  "Stripe ativado e, em Meios de pagamento, Pix, boleto e parcelamento ligados (valem só para cobrança em reais, que é o que o Brasil recebe)",
+  "Conferir a cotação em reais: PTAX de venda do Banco Central, arredondada para cima ao real inteiro; BRL_MARGIN_PERCENT define uma margem, se quiser",
+  "Webhook no Stripe para https://deck.drivedata.com.br/api/webhooks/stripe com 5 eventos: checkout.session.completed, checkout.session.async_payment_succeeded, checkout.session.expired, charge.refunded, charge.dispute.created",
+  "Compra de teste com cartão 4242 em modo teste: pagar, receber o e-mail, criar a senha, baixar, reembolsar e perder o acesso",
+  "Compra de teste em reais, vista do Brasil, para conferir Pix e parcelas; e em dólar, vista de fora, para conferir o cartão",
+  "Imposto sobre venda para o exterior: Stripe Tax (STRIPE_AUTOMATIC_TAX=true) ou outro caminho, com o contador",
+  "Recibo por e-mail ligado no Stripe e nome que aparece na fatura do cartão",
   "Vercel em plano Pro: o Hobby não permite uso comercial",
-  "Produto na Hotmart com área de membros externa e login de teste",
-  "Webhook da Hotmart apontando para /api/webhooks/hotmart, versão 2.0.0",
-  "Evento de teste da Hotmart conferido no banco (formato real do payload)",
-  "Compra real ou de teste: liberar, entrar, baixar, reembolsar e perder o acesso",
-  "Conversão de moeda conferida no checkout",
-  "CSP de /oferta conferida em preview da Vercel",
   "Política de privacidade atualizada para compradores",
   "Afirmações da VSL com prova: parceria, marcas, resultados",
 ];

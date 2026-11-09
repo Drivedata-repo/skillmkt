@@ -269,6 +269,8 @@ test("offer page: only play and pause, proof never invented, card list matches t
   new Function("window", fs.readFileSync(path.join(root, "dist/oferta-config.js"), "utf8"))(window);
   assert.deepEqual(window.DeckOffer.proofs, []);
   assert.equal(window.DeckOffer.revealAt, 720);
+  assert.equal(window.DeckOffer.priceLabel, "US$ 47");
+  assert.match(window.DeckOffer.currencyNote, /dólar do dia/);
   const main = products.find((p) => p.role === "main");
   assert.deepEqual(
     window.DeckOffer.cards.map((c) => c.code).sort(),

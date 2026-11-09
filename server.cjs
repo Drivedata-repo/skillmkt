@@ -44,9 +44,12 @@ http
       const commerceRoute =
         url.pathname === "/api/webhooks/hotmart"
           ? "webhook"
-          : url.pathname.match(/^\/api\/account\/([a-z-]+)$/)?.[1];
+          : url.pathname === "/api/webhooks/stripe"
+            ? "stripe-webhook"
+            : url.pathname.match(/^\/api\/account\/([a-z-]+)$/)?.[1];
       if (commerceRoute) {
-        req.url = "/api/commerce?route=" + commerceRoute;
+        req.url =
+          "/api/commerce?route=" + commerceRoute + (url.search ? "&" + url.search.slice(1) : "");
         return await routes["/api/commerce"](req, res);
       }
       if (url.pathname === "/api/nexo") {
@@ -64,8 +67,10 @@ http
                 ? "/login.html"
                 : url.pathname === "/acesso"
                   ? "/acesso.html"
-                  : url.pathname === "/oferta"
-                    ? "/oferta.html"
+                  : url.pathname === "/loja"
+                    ? "/loja.html"
+                    : url.pathname === "/oferta"
+                      ? "/oferta.html"
                 : url.pathname === "/privacidade"
                   ? "/privacy.html"
                   : url.pathname,

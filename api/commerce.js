@@ -2,10 +2,12 @@ const { body, send, failure, initializeLocale } = require("../lib/http.cjs");
 const { db, transaction } = require("../lib/db.cjs");
 const { limit } = require("../lib/limit.cjs");
 const commerce = require("../lib/commerce.cjs");
+const stripe = require("../lib/stripe.cjs");
+const fx = require("../lib/fx.cjs");
 const customerAuth = require("../lib/customer-auth.cjs");
 const mailer = require("../lib/mailer.cjs");
 const access = require("../lib/access.cjs");
-const products = require("../data/sale-products.cjs");
+const catalog = require("../lib/sale-catalog.cjs");
 
 // Uma função só: o plano da Vercel limita a quantidade de funções por projeto.
 const run = (sql, values) => db().query(sql, values);
@@ -38,6 +40,53 @@ async function webhook(req, res) {
     if (!mail.sent) console.error("commerce.mail_failed", mail.reason);
   }
   return send(res, 200, { ok: true, outcome: result.outcome });
+}
+
+// Pagamento recebido: a assinatura confere o corpo exato; só depois o evento é lido.
+async function stripeWebhook(req, res) {
+  const secret = process.env.STRIPE_WEBHOOK_SECRET || "";
+  if (secret.length < 16) return send(res, 503, { error: "Webhook ainda não configurado." });
+  const raw = await commerce.readRawBody(req);
+  if (!stripe.verifySignature(raw, req.headers["stripe-signature"], secret))
+    return send(res, 400, { error: "Assinatura inválida." });
+  const result = await transaction((tx) => stripe.processEvent(commerce.parseJson(raw), tx));
+  if (result.notify) {
+    const mail = await mailer.sendAccessEmail(result.notify);
+    if (!mail.sent) console.error("commerce.mail_failed", mail.reason);
+  }
+  return send(res, 200, { ok: true, outcome: result.outcome });
+}
+
+// O catálogo é em dólar. Quem está no Brasil paga em reais, pela cotação do dia;
+// se não houver cotação confiável, cai para o dólar em vez de errar o valor.
+async function quoteFor(req) {
+  const country = fx.countryOf(req);
+  const quote = country === "BR" ? await fx.getRate() : null;
+  return { country, quote };
+}
+
+async function rate(req, res) {
+  if (req.method !== "GET") return send(res, 405, { error: "Método não permitido." });
+  const { country, quote } = await quoteFor(req);
+  return send(res, 200, {
+    country,
+    currency: quote ? "brl" : "usd",
+    rate: quote ? quote.rate : null,
+    asOf: quote ? quote.asOf : null,
+    // Sem a chave do Stripe, a página mostra "Em breve" em vez de um botão que falha.
+    payments: stripe.configured(),
+  });
+}
+
+async function checkout(req, res) {
+  const input = await body(req);
+  await limit(req, "checkout", 20);
+  const { quote } = await quoteFor(req);
+  const session = await stripe.createCheckout(input, run, {
+    currency: quote ? "brl" : "usd",
+    rate: quote ? quote.rate : null,
+  });
+  return send(res, 200, { url: session.url });
 }
 
 async function login(req, res) {
@@ -135,8 +184,9 @@ async function me(req, res) {
     return send(res, 401, { error: "Entre com o e-mail e a senha da sua compra." });
   return send(res, 200, {
     email: current.email,
-    products: products
-      .filter((p) => current.products.includes(p.key))
+    products: current.products
+      .map((key) => catalog.get(key))
+      .filter(Boolean)
       .map((p) => ({ key: p.key, title: p.title })),
     cards: current.skillIds.size,
   });
@@ -144,13 +194,18 @@ async function me(req, res) {
 
 const routes = {
   webhook,
+  "stripe-webhook": stripeWebhook,
+  checkout,
+  rate,
   login,
   "request-access": requestAccess,
   "set-password": setPassword,
   me,
 };
 
-module.exports = async (req, res) => {
+// Sem leitor automático de JSON: o Stripe exige o corpo bruto para conferir a assinatura.
+// As demais rotas leem o corpo pelo fluxo (lib/http.cjs).
+const handler = async (req, res) => {
   initializeLocale(req, res);
   try {
     const route = new URL(req.url, "http://local.invalid").searchParams.get("route");
@@ -162,3 +217,6 @@ module.exports = async (req, res) => {
     return failure(res, error);
   }
 };
+
+module.exports = handler;
+module.exports.config = { api: { bodyParser: false } };

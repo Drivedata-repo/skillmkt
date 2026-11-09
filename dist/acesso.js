@@ -61,6 +61,14 @@
     show("create");
   }
   readToken();
+  // Volta do pagamento: explica o próximo passo e deixa o pedido de link à mão.
+  if (!token && new URLSearchParams(location.search).get("compra") === "ok") {
+    history.replaceState(null, "", location.pathname);
+    show("request");
+    say(
+      "Pagamento recebido. Enviamos um link para criar a sua senha ao e-mail da compra. No Pix, o link chega assim que o banco confirmar. Se não chegar, peça de novo abaixo.",
+    );
+  }
   // O link pode ser aberto com esta página já na mesma aba.
   addEventListener("hashchange", readToken);
 

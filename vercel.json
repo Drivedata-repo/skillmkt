@@ -14,7 +14,9 @@
     { "source": "/login", "destination": "/login.html" },
     { "source": "/acesso", "destination": "/acesso.html" },
     { "source": "/oferta", "destination": "/oferta.html" },
+    { "source": "/loja", "destination": "/loja.html" },
     { "source": "/api/webhooks/hotmart", "destination": "/api/commerce?route=webhook" },
+    { "source": "/api/webhooks/stripe", "destination": "/api/commerce?route=stripe-webhook" },
     { "source": "/api/account/:route", "destination": "/api/commerce?route=:route" },
     { "source": "/api/nexo", "destination": "/api/triage?route=chat" },
     { "source": "/privacidade", "destination": "/privacy.html" }

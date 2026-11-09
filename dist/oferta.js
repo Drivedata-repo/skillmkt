@@ -25,21 +25,6 @@
   }
   const state = load();
 
-  function checkoutLink() {
-    if (!config.checkoutUrl) return null;
-    let url;
-    try {
-      url = new URL(config.checkoutUrl);
-    } catch {
-      return null;
-    }
-    if (url.protocol !== "https:" || url.hostname !== "pay.hotmart.com") return null;
-    const from = new URLSearchParams(location.search);
-    for (const key of ["src", "sck", "xcod", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"])
-      if (from.get(key)) url.searchParams.set(key, from.get(key));
-    return url.href;
-  }
-
   function buildOffer() {
     $("offer-title").textContent = config.deckTitle + ": o que vem nele";
     for (const card of config.cards) {
@@ -50,14 +35,22 @@
       $("cards").append(li);
     }
     $("price").textContent = config.priceLabel;
-    const parts = ["Pagamento processado pela Hotmart."];
+    // No Brasil, o real aparece ao lado do dólar e é o valor cobrado.
+    if (window.DeckBuy)
+      window.DeckBuy.quote().then((q) => {
+        const reais = q && window.DeckBuy.reais(config.priceUsd, q);
+        if (!reais) return;
+        $("price").textContent = config.priceLabel + " · " + window.DeckBuy.reaisText(reais);
+        $("fx").textContent = "Cotação do dia: " + window.DeckBuy.rateText(q) + ".";
+      });
+    const parts = [config.currencyNote, "Pagamento processado pela Stripe."].filter(Boolean);
     if (config.guaranteeDays) parts.push(`Garantia de ${config.guaranteeDays} dias.`);
     $("note").textContent = parts.join(" ");
-    const link = checkoutLink(),
-      cta = $("cta");
-    if (link) cta.href = link;
+    const cta = $("cta");
+    if (config.checkoutKey && window.DeckBuy)
+      window.DeckBuy.bind(cta, $("buy-error"), [config.checkoutKey], "/oferta");
     else {
-      cta.setAttribute("aria-disabled", "true");
+      cta.disabled = true;
       cta.textContent = "Checkout ainda não configurado";
     }
     for (const item of config.faq) {

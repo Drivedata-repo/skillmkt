@@ -7,9 +7,11 @@ window.DeckOffer = {
   poster: "",
   // Segundo do vídeo em que o botão de compra e o resto do conteúdo aparecem.
   revealAt: 720,
-  // Link do checkout da Hotmart (https://pay.hotmart.com/...).
-  checkoutUrl: "",
+  // Chave do produto em lib/sale-catalog.cjs. O pagamento só abre se o produto estiver aprovado.
+  checkoutKey: "deck-lancamento",
+  priceUsd: 47,
   priceLabel: "US$ 47",
+  currencyNote: "Preço em dólar. No Brasil, o valor em reais acompanha o dólar do dia, e você paga em reais.",
   deckTitle: "Deck de lançamento",
   cards: [
     { code: "DD-003", title: "Documentos e planilhas sem retrabalho" },

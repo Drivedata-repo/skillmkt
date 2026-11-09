@@ -13,6 +13,7 @@
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/oferta.css" />
     <script src="/oferta-config.js" defer></script>
+    <script src="/buy.js" defer></script>
     <script src="/oferta.js" defer></script>
   </head>
   <body>
@@ -44,7 +45,9 @@
         <ol class="cards" id="cards"></ol>
         <div class="buy">
           <p class="price" id="price"></p>
-          <a class="cta" id="cta" rel="noopener">Quero meu deck</a>
+          <button class="cta" id="cta" type="button">Quero meu deck</button>
+          <p class="note" id="fx"></p>
+          <p class="note error" id="buy-error" role="alert"></p>
           <p class="note" id="note"></p>
         </div>
         <dl class="faq" id="faq"></dl>

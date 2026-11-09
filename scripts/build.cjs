@@ -17,6 +17,7 @@ require("./build-deliverable-gallery.cjs");
 require("./build-tema-papel.cjs");
 // Índice público da home (código, nome, grupo e acabamento de cada carta).
 require("./build-home-fable-data.cjs");
+require("./build-store.cjs");
 if (cards.length !== 184 || new Set(cards.map((s) => s.code)).size !== 184)
   throw new Error("Invalid card collection");
 const identities = require("../lib/catalog.cjs").skills.map(s => s.identity);
@@ -36,6 +37,11 @@ for (const file of [
   "acesso.html",
   "acesso.css",
   "acesso.js",
+  "buy.js",
+  "loja.html",
+  "loja.css",
+  "loja.js",
+  "loja-data.js",
   "oferta.html",
   "oferta.css",
   "oferta.js",
