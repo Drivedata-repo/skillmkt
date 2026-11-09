@@ -359,6 +359,16 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+.hero {
+  position: relative;
+}
+.hero-orbit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 /* Existing sections participate in the same scroll sequence, without hiding content. */
 .scroll-effects .hero .card-stage {
   translate: 0 var(--hero-lift, 0px);

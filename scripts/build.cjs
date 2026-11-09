@@ -31,6 +31,7 @@ for (const file of [
   "landing.css",
   "landing-motion.css",
   "landing-motion.js",
+  "hero-particles.js",
   "public-preview.js",
   "privacy.html",
   "experience.css",
