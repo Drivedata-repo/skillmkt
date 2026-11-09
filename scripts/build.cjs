@@ -12,6 +12,9 @@ require("./build-i18n.cjs");
 require("./build-preview.cjs");
 require("./build-problem-pages.cjs");
 require("./build-deliverable-gallery.cjs");
+// O tema claro da área logada é derivado das folhas do app: regerar a cada build
+// evita que ele fique para trás quando uma cor do app mudar.
+require("./build-tema-papel.cjs");
 if (cards.length !== 183 || new Set(cards.map((s) => s.code)).size !== 183)
   throw new Error("Invalid card collection");
 const identities = require("../lib/catalog.cjs").skills.map(s => s.identity);
@@ -52,6 +55,7 @@ for (const file of [
   "card-identity.js",
   "invocation.css",
   "nexo.css",
+  "tema-papel.css",
   "nexo-core.js",
   "nexo.js",
   "assets/nexo-avatar-v1.webp",

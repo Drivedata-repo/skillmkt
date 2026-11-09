@@ -1,0 +1,411 @@
+/* Tema Papel: a paleta da home-fable aplicada ao Deck.
+   Gerado por scripts/build-tema-papel.cjs. Não edite à mão.
+   Camada opcional, carregada depois das folhas do app. Nenhuma página usa ainda.
+   Regra de ouro: o que está DENTRO da carta não muda. Só muda a mesa em volta. */
+:root {
+  color-scheme: light;
+  --bg: #dcd8d1;
+  --panel: #f4f1ea;
+  --text: #14243a;
+  --muted: #3e4e64;
+  --mint: #0a6a4c;
+  --line: rgb(20 36 58 / 0.2);
+  --tp-ground: #dcd8d1;
+  --tp-paper: #f4f1ea;
+  --tp-ink: #14243a;
+  --tp-ink-2: #3e4e64;
+  --tp-green: #34d59a;
+  --tp-green-ink: #0a6a4c;
+}
+/* As cartas e os palcos de carta continuam no escuro original, com todo o efeito. */
+.holo-card,
+.summon-stage,
+.summon-emblem,
+.invocation-theater {
+  color-scheme: dark;
+  --bg: #050709;
+  --panel: #0c1015;
+  --text: #f1f5f6;
+  --muted: #a3adb8;
+  --mint: #65ecc1;
+  --line: #29333e;
+  color: #f1f5f6;
+}
+
+/* deck.css */
+.brand small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.btn:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#f0ede7}
+.btn:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#0d5a40;border-color:#0d5a40}
+.btn.secondary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#a9b2be}
+.btn.secondary:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e7e1d8}
+.text-button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354357}
+.error:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#650f0f}
+.site-header:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid rgb(19 33 52 / 0.07)}
+.site-header nav:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#39485d}
+.mode-label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #c1c7d0;color:#294f3e}
+.site-footer:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.toast:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e8e3da;border:1px solid #bedace}
+.skip:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#132134;color:#f4f2ee}
+.login-page:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:radial-gradient(ellipse at 31% 51%, rgb(234 229 220 / 0.33), transparent 49%), #f3f0eb}
+.sound-button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #bdc4cd;color:#334053}
+.sound-bars i:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#10684b}
+.login-scene:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):after{background:radial-gradient(ellipse, rgb(16 104 89 / 0.13), transparent 65%)}
+.portal:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid rgb(16 104 87 / 0.21);box-shadow:0 0 60px rgb(54 161 155 / 0.02),
+    inset 0 0 35px rgb(54 161 155 / 0.01)}
+.portal:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):before{border:1px dashed rgb(26 94 82 / 0.19)}
+.portal:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):after{border:1px solid rgb(16 104 92 / 0.16);border-left-color:#106855;box-shadow:-4px 0 14px rgb(54 161 127 / 0.06)}
+.orbit-label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#647285}
+.starfield:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background-image:radial-gradient(circle, rgb(27 90 92 / 0.5) 1px, transparent 1.5px),
+    radial-gradient(circle, rgb(66 83 108 / 0.31) 0.6px, transparent 1px)}
+.access-kicker:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3c4b61}
+.access-kicker:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):before{background:#10684b}
+.password-label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#334053}
+.password-box:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b3bbc6;background:#ede9e2}
+.password-box:focus-within:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#186047;box-shadow:0 0 0 3px rgb(54 161 127 / 0.01)}
+.password-box input:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#132134}
+.password-box button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3e4f66}
+.access-note:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.login-footer:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#717f94}
+.entry-flash:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:radial-gradient(ellipse at 35% 50%, #106848, transparent 65%)}
+.entry-status:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#0b4933}
+.intro-aside:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-left:1px solid #bbc2cc;color:#3d4d64}
+.finder:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b9c0ca;background:#eeebe4}
+.finder:focus-within:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#255243}
+.finder textarea:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#132134}
+.finder textarea:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *))::placeholder{color:#687689}
+.audience-switch:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e8e3da;border:1px solid #c4cad2}
+.audience-switch button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3e4e65}
+.audience-switch button[aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#d9d1c2;color:#12442e}
+.examples:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.examples button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #c3c9d2;color:#334154}
+.examples button:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#738296}
+.ai-choice:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.match-item:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #bddbd2}
+.match-item .mini-heading:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1d5b45}
+.filters input:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.filters select:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#eeeae3;border:1px solid #bfc5cf;color:#132134}
+.skill-actions .download:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #9fa9b7;color:#126647}
+.skill-actions .download:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e0d9cc}
+.empty:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px dashed #bdc4cd;color:#364458}
+.download-dialog:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#eeeae3;color:#132134;border:1px solid #a5afbb}
+.download-dialog:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *))::backdrop{background:rgb(244 242 238 / 0.8)}
+.close:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b3bbc6}
+.detail-content .code:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1c5c48}
+.detail-content p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.detail-content li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3c4c62}
+.download-main:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#0e613d;border-color:#0e613d}
+.install-guide:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #c4cad3;color:#3e4e65}
+.install-guide summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1e2d43}
+.download-status:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#176144}
+.download-success:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#176144}
+.availability:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+
+/* experience.css */
+.workspace-bar:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #dbd3c5}
+.view-switch button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.view-switch button[aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e8e3da;color:#106846}
+.edition-line:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.intro-aside strong:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#213147}
+.finder > label:first-child:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#344154}
+.collection-options:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.collection-options select:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#eeeae3;color:#2a3a4f;border:1px solid #bec5ce}
+.collection-options input:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.check-line input:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){accent-color:#10684c}
+.quality-badge:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#225645;border:1px solid #b6bec8}
+.favorite:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.favorite[aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#106844}
+.slot-state:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#294e40}
+.local-note:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #c1c7d0}
+.deck-summary strong:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#125c3e}
+.deck-summary span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.deck-filters:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #dbd2c4}
+.deck-filters button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.deck-filters [aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#0f6140;border-bottom:2px solid #176143}
+.history-row:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #ded7ca}
+.history-row small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#647285}
+.journey:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:linear-gradient(150deg, rgb(235 230 222 / 0.4), transparent 60%);border:1px solid #dad1c2}
+.journey li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):before{border-left:1px solid #b5bdc7}
+.step-number:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #a4adba;color:#166246}
+.step-complete .step-number:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#b9dfcc}
+.journey .code:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#637083}
+.clarification:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #bddbce;background:#ede9e1}
+.download-dialog .close:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#eae5dd;border-color:#8a96a6}
+.save-detail:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b7bec9;color:#21563f}
+.detail-tabs:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #c0c6cf}
+.detail-tabs button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.detail-tabs button[aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#136541;border-bottom:2px solid #16613f}
+.detail-tab-body pre:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#f0ede7;border:1px solid #dcd3c5;color:#334053}
+.sample-columns summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.release-notes summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#225642}
+.scope-note:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-left:2px solid #738195;background:rgb(229 223 213 / 0.18);color:#3f4f67 !important}
+.spec-sheet > div:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #dfd8cb}
+.spec-sheet dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.spec-sheet dd:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2d3c51}
+.wizard-steps button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c;border-bottom:1px solid #d9d0c1}
+.wizard-steps button[aria-current="step"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#0f6338;border-color:#10683b;background:rgb(225 218 206 / 0.3)}
+.platform-picker button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b3bbc6}
+.platform-picker button[aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#bcddcd;border-color:#1f593d}
+.wizard-body code:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#195947}
+.check-line:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3c4c63}
+
+/* evolution.css */
+.runtime-field select:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.capability-options select:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.skill-feedback select:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.insights-access input:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#25344a;background:#e8e3d9;border:1px solid #a4adba}
+.capability-settings:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b9c0ca}
+.capability-settings summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#213147}
+.compatibility-panel:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.lab-panel:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.support-panel:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.skill-feedback:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.personal-plan:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b9c0ca}
+.evidence-heading > span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3d4d64;border-left:2px solid #176145}
+.is-blocked .evidence-heading > span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#684110;color:#684110}
+.requirements-list li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #c4cad3}
+.requirements-list strong:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354357}
+.lab-evidence dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.personal-plan dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1c2c41}
+.lab-evidence dd:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.personal-plan dd:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354256}
+.support-choices [aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#1c5c49;background:#e0d9cd}
+.personal-plan li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #b9c0ca}
+.plan-number:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3c4c62}
+.insights-table th:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.insights-table td:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #b9c0ca}
+.insights-kpis:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #b9c0ca}
+.evidence-empty:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354256}
+.feedback-status:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#24533c}
+.runtime-field select:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.capability-options select:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.skill-feedback select:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){outline:2px solid #3f4f66}
+.assistant-evidence:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b9c0ca}
+.assistant-evidence summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#215649}
+.assistant-evidence pre:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b9c0ca;background:#ede9e2;color:#2d3c51}
+
+/* universes.css */
+.detail-toolbar:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:rgb(237 233 226 / 0.96);border-bottom:1px solid #bbc2cc}
+.detail-toast:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e4ded4;color:#0b4c31;border:1px solid #687689}
+.detail-controls button:disabled:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3e4e65}
+.finder-refiners:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #bac1cb}
+.need-filters label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2f3e52}
+.need-filters select:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1b2a40;background:#e7e1d7;border:1px solid #9fa9b7}
+.match-evidence:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #afb7c2}
+.match-evidence dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#223147}
+.match-evidence dd:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#39485d}
+.download-dialog:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#ede9e2;border-color:#98a2b1}
+.detail-tabs:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#bbc2cc}
+.story-index:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-right:1px solid #a5aebb}
+.story-index span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3e4e65}
+.detail-content .universe-label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#39485e}
+.detail-content .story-prose:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#25344a}
+.detail-content .story-caption:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3f5067}
+.universe-turn:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #bbc2cc}
+.universe-route:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #bbc2cc}
+.universe-route li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #96a1b0}
+.universe-neighbors button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #bbc2cc}
+.universe-neighbors button:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e4ded4}
+.universe-neighbors small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3d4d64}
+.detail-content .application-purpose:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#25344a}
+.use-case-list li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #bbc2cc}
+.detail-content .mission-notice:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#313f53}
+.mission-section:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #bbc2cc}
+.detail-content .mission-section p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2d3c51}
+.verified-reference:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #96a1b0}
+
+/* i18n.css */
+.language-switcher:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #929dad;background:#e9e4db}
+.language-switcher .language-option:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2a394e}
+.language-option img:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){box-shadow:0 2px 5px rgb(20 36 58 / 0.14)}
+.language-switcher .language-option:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#dad1c3;color:#132134}
+.language-switcher .language-option[aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#136449;background:#e0d9cd;color:#132134}
+.language-option[aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):after{background:#136449}
+.language-switcher .language-option:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){outline:2px solid #103e68}
+
+/* work.css */
+.experience-bar:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #b9c0ca}
+.experience-bar > p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#38475c}
+.experience-switch:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e9e3db;border:1px solid #adb5c1}
+.experience-switch button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2e3d51}
+.experience-switch [aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#1f2e44;color:#ece7e0;box-shadow:inset 0 -3px rgb(60 155 126 / 0.3)}
+.explore-packs .section-title p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354256}
+.pack-tile:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:2px solid #20584a}
+.pack-tile:nth-child(2):where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#103b68}
+.pack-number:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#205847}
+.pack-number span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#313f54}
+.pack-tile > p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#313f53}
+.pack-outcome:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-left:1px solid #939eae}
+.pack-outcome > span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#18283d}
+.pack-signatures span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #a3adba}
+.pack-tile small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3e4e65}
+.work-pack-tabs:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #b9c0ca}
+.work-pack-tabs button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354357}
+.work-pack-tabs [aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#1f5949;color:#1b2b41}
+.work-kicker:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#37465a}
+.work-header > div > p:last-child:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354256}
+.work-package-actions small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3d4d64}
+.work-return:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3c4c62}
+.work-progress:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b1b9c4}
+.work-progress button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2f3e52;background:#eae6dd}
+.work-progress [aria-current="step"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e3dcd1;border-color:#215747;color:#174435}
+.work-stage-head > span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.work-stage-head p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#364458}
+#work-stage summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#284e48}
+#work-stage select:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),#work-stage input[type="number"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1f2f45;background:#e7e1d8;border:1px solid #8c98a9}
+.work-warning:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#684310;border-left:3px solid #574221}
+.work-before-after section:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b0b8c3}
+.work-before-after pre:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.work-prompt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#26524c;background:#ede9e2;border-left:2px solid #9ea8b6}
+.work-task-list > li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #b0b8c3}
+.work-task-id:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#285045}
+.work-task-id small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3d4d63}
+.work-task-list dl:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354256}
+.work-task-list dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1d2d43}
+.work-checklist label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #b6bdc8}
+.work-status:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-left:3px solid #1e5a3d;background:#e1dbcf;color:#1b2a40}
+.work-readiness:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#38475c}
+.pilot-record:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #a0aab8;color:#313f54}
+.pilot-record summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#19283d}
+.work-skill:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #98a3b1}
+.work-skill-heading:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3d4d64}
+.work-skill > p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#313f54}
+.work-skill dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1d2d43}
+.work-skill dd:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354357}
+.work-evidence:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-left:2px solid #285042}
+.experience-switch button:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.work-progress button:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.work-pack-tabs button:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){outline:2px solid #166156}
+
+/* collection-extras.css */
+.skill-valuation:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354357}
+.skill-valuation strong:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#143f33}
+.demo-price:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #929dad;color:#10653a;background:#eae5dc}
+.pricing-assessment:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #acb4c0}
+.pricing-dimensions dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2b3a50}
+.pricing-dimensions meter:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){accent-color:#1b5d42}
+.bundle-price:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #a5afbb}
+.bundle-price>span:first-child:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3d4d64}
+.bundle-price>strong:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#124735}
+.bundle-discount:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1b5d45}
+.bundle-price small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3b4a60}
+.bundle-price>p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#10653a}
+.more-combos:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #abb4c0}
+.more-combos>summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1b2a40}
+.more-combos>p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3b4a60}
+.combo-tile:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:2px solid #39294e}
+.combo-tile>p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2d3c51}
+.combo-tile li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #c3c9d2}
+.combo-tile li span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#41526a}
+.combo-focus:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #97a2b0;background:#eae6dd}
+.combo-focus span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1d5134}
+.power-arena:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:radial-gradient(ellipse at 90% 0%,hsl(var(--power-hue) 55% 20% / .5),transparent 65%),#eeeae3}
+.power-school:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#584420}
+.power-flavor:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#344255}
+.power-meters span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#405168}
+.power-meters strong:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#674a11}
+.power-meters meter:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){accent-color:#5e491a}
+.power-technique:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #a0aab8;border-bottom:1px solid #a0aab8}
+.power-technique h4:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#344154}
+.power-technique p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#25344a}
+.power-boundary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#37455a;border-top:1px solid #b6bec8}
+.power-announcement:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#144d31}
+.power-summon:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#5e4a1a!important;color:#e8e3d9!important}
+.skill-valuation.is-free strong:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#156346}
+.discover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#eeebe4}
+
+/* invocation.css */
+.card-passport:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #a1aab8;background:linear-gradient(125deg,#e8e2d9,#ede9e2 72%)}
+.identity-mark:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1b5c59}
+.passport-heading h3:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#134340}
+.passport-heading p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1c5c57}
+.card-passport dl>div:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b5bdc7}
+.card-passport dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3c4c62}
+.card-passport dd:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1d2d43}
+.card-passport .identity-result:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.card-passport .zip-result:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#125032}
+.card-passport details:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b5bdc7}
+.card-passport summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#17443c}
+.zip-check-label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#243349}
+.card-passport .passport-scope:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b5bdc7;color:#364458}
+.card-identity-link:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #acb4c0;color:#313f54}
+.card-identity-link span:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.card-identity-link:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#132134}
+.toast.download-confirmation:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.detail-toast.download-confirmation:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e8e3d9;border-color:#265249;color:#0b4a37}
+.download-confirmation:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):before{border:1px solid #225649;color:#0e5e46}
+
+/* nexo.css */
+.nexo-launcher:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #a1abb8;background:rgb(232 226 217 / 0.93);color:#0b3246;box-shadow:0 10px 40px rgb(20 36 58 / 0.18)}
+.nexo-launcher>img:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){filter:drop-shadow(0 7px 8px rgb(20 36 58 / 0.16))}
+.nexo-launcher small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#354357}
+.nexo-launcher:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#195e53;background:#e0d9cd}
+.nexo-launcher:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.nexo-dialog button:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.nexo-toolbar:focus-visible:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){outline:2px solid #106853}
+.nexo-toolbar:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e6e0d6;border:1px solid #a2abb9;color:#0c4a53}
+.nexo-dialog:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #98a3b1;background:#ece7e0;color:#19283e;box-shadow:0 24px 90px rgb(20 36 58 / 0.23)}
+.nexo-dialog:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *))::backdrop{background:rgb(244 242 238 / 0.47)}
+.nexo-header:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #b2bac5;background:linear-gradient(125deg,#e2dcd0,#ebe6de)}
+.nexo-topbar>button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #9ca6b4;background:#ebe6de;color:#17263a}
+.nexo-name:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#166251}
+.nexo-header figure img:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){filter:drop-shadow(0 9px 9px rgb(20 36 58 / 0.16))}
+.nexo-scroll:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){scrollbar-color:#9ea8b6 #ece7e0}
+.nexo-welcome>p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#25354a}
+.nexo-prompts>button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b7bfc9;color:#0f3447}
+.nexo-prompts>button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):after{color:#146451}
+.nexo-prompts>button:hover:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#106856}
+.nexo-user:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#ded6c8;color:#18273c}
+.nexo-speaker:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#22564c}
+.nexo-choices button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)),.nexo-message>button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #909bab;background:#e3dcd1;color:#0f3447}
+.nexo-choices button:hover:not(:disabled):where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#1a5d4e;background:#ddd5c8}
+.nexo-followup:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#0d3244}
+.nexo-result:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b3bbc6}
+.nexo-result .nexo-card-code:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#1e5a4b}
+.nexo-result h3:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#0f3144}
+.nexo-result p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#27374c}
+.nexo-result dt:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#20584b}
+.nexo-result dd:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#24344a}
+.nexo-result .nexo-boundary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3a495e}
+.nexo-result .nexo-card-price:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#634915}
+.nexo-requirements:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#294f4b}
+.nexo-card-actions button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #215649;color:#116750}
+.nexo-card-actions button:disabled:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#405169}
+.nexo-result .nexo-source:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.nexo-alternative:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b3bbc6}
+.nexo-alternative>summary:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#225553}
+.nexo-plan:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-left:2px solid #14644f;background:#e4ded3}
+.nexo-plan h3:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#13463b}
+.nexo-plan>p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#2e3d51}
+.nexo-plan>button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #2c4c48;background:#dfd8cb;color:#0d5542}
+.nexo-compose:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-top:1px solid #b2bac5;background:#e8e3da}
+.nexo-compose textarea:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #8e9aaa;background:#ece8e0;color:#0f3345}
+.nexo-compose textarea:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *))::placeholder{color:#3f5068}
+.nexo-compose textarea:focus:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){outline:2px solid #21574c}
+.nexo-compose form>button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#14644f;color:#e6e0d6}
+.nexo-compose-footer p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#39485d}
+.nexo-compose-footer button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#27364c}
+.nexo-status:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#17614d}
+.nexo-busy:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#14644c}
+
+/* Ajustes feitos à mão (scripts/tema-papel-ajustes.css) */
+/* O acento do detalhe vem do matiz do universo da carta: mesma cor, em tinta. */
+.detail-content {
+  --accent: hsl(var(--universe-hue) 52% 25%);
+}
+
+/* Poder da carta: a ficha passa para o papel, com um véu do matiz da carta no canto.
+   Só a miniatura da invocação continua escura, como uma janela para o palco. */
+.power-arena {
+  border: 1px solid hsl(var(--power-hue) 28% 40% / 0.5);
+  border-radius: 10px;
+  background:
+    radial-gradient(
+      ellipse at 92% 0%,
+      hsl(var(--power-hue) 46% 58% / 0.2),
+      transparent 60%
+    ),
+    #f7f4ee;
+}
+.power-sigil {
+  color: hsl(var(--power-hue) 40% 30% / 0.1);
+}
+.power-arena .summon-console {
+  border-top: 1px solid rgb(20 36 58 / 0.28);
+  border-bottom: 1px solid rgb(20 36 58 / 0.16);
+}
+.power-arena .summon-emblem {
+  border-radius: 12px;
+  background: #09121b;
+  box-shadow: 0 8px 20px rgb(20 36 58 / 0.2);
+}
+.power-arena .summon-description .summon-label {
+  color: #3e4e64;
+}
+.power-arena .summon-description h4 {
+  color: #14243a;
+}
+.power-arena .summon-description p:last-child {
+  color: #3e4e64;
+}
+
+/* A barra do detalhe fica fixa no topo: opaca, para o conteúdo não aparecer por trás. */
+.detail-toolbar {
+  background: #ede9e2;
+}

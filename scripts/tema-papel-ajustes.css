@@ -1,0 +1,44 @@
+/* O acento do detalhe vem do matiz do universo da carta: mesma cor, em tinta. */
+.detail-content {
+  --accent: hsl(var(--universe-hue) 52% 25%);
+}
+
+/* Poder da carta: a ficha passa para o papel, com um véu do matiz da carta no canto.
+   Só a miniatura da invocação continua escura, como uma janela para o palco. */
+.power-arena {
+  border: 1px solid hsl(var(--power-hue) 28% 40% / 0.5);
+  border-radius: 10px;
+  background:
+    radial-gradient(
+      ellipse at 92% 0%,
+      hsl(var(--power-hue) 46% 58% / 0.2),
+      transparent 60%
+    ),
+    #f7f4ee;
+}
+.power-sigil {
+  color: hsl(var(--power-hue) 40% 30% / 0.1);
+}
+.power-arena .summon-console {
+  border-top: 1px solid rgb(20 36 58 / 0.28);
+  border-bottom: 1px solid rgb(20 36 58 / 0.16);
+}
+.power-arena .summon-emblem {
+  border-radius: 12px;
+  background: #09121b;
+  box-shadow: 0 8px 20px rgb(20 36 58 / 0.2);
+}
+.power-arena .summon-description .summon-label {
+  color: #3e4e64;
+}
+.power-arena .summon-description h4 {
+  color: #14243a;
+}
+.power-arena .summon-description p:last-child {
+  color: #3e4e64;
+}
+
+/* A barra do detalhe fica fixa no topo: opaca, para o conteúdo não aparecer por trás. */
+.detail-toolbar {
+  background: #ede9e2;
+}
