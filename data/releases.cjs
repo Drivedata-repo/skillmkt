@@ -9634,5 +9634,34 @@ module.exports = {
     "sha256": "f79c741979e1eb89b78d0b46084e966e9f9e7bf6c6b948fa6742369fa3dc85e9",
     "bytes": 14716,
     "fileCount": 8
+  },
+  "organizador-de-discos": {
+    "schemaVersion": 1,
+    "id": "organizador-de-discos",
+    "code": "DD-184",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Windows com PowerShell 5.1",
+      "Tenha backup: a skill move e nunca apaga por conta própria",
+      "Autoteste só em árvore descartável; mover em discos reais não foi testado pela DriveData"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-09",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Termos DriveData",
+    "licenseFiles": [],
+    "sourceSha256": "425a9567cdceeeb994b656224208edce12780f0c08a6df0f62a31c8e56035276",
+    "sourcePolicy": "specific-amendments",
+    "changes": [],
+    "sha256": "82b0a65a8bd32ba79eee6b9721161e8ed4d9c6cc196a2c7950fbcdcde4f6645e",
+    "bytes": 68949,
+    "fileCount": 20
   }
 };

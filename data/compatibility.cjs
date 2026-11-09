@@ -177,6 +177,7 @@ const rules = [
   [/^movimento-acessivel-em-sites$/, ["python"], null],
   [/^licenca-antes-de-copiar-componente$/, ["python"], null],
   [/^landing-rapida-e-core-web-vitals$/, ["python"], null],
+  [/^organizador-de-discos$/, ["terminal"], null],
   [/^canvas-design$/, ["pdf"], null],
   [/^web-artifacts-builder$/, ["terminal","node","artifact"], null],
   [/^webapp-testing$/, ["python","browser","terminal"], null],

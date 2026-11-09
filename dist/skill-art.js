@@ -1825,6 +1825,14 @@
       ["needle", 233, 123, 0.67],
     ],
     [
+      "organizador-de-discos",
+      "Arquivo que muda de prateleira sem perder nada",
+      "field",
+      ["archive", 104, 58, 1.3],
+      ["scanner", 27, 127, 0.79],
+      ["sync", 233, 123, 0.67],
+    ],
+    [
       "marketing-de-conteudo-b2b",
       "Valor traduzido em uma mensagem verificável",
       "desk",

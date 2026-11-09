@@ -6550,5 +6550,77 @@
       ],
       "boundary": "Es una guía de oficio sin herramienta propia. Edición independiente, sin vínculo con el autor de la obra."
     }
+  },
+  {
+    "id": "organizador-de-discos",
+    "pt": {
+      "alias": "Zelador de Prateleiras",
+      "tagline": "Mostra o que ocupa o disco e só move o que você aprovar.",
+      "story": "No fictício Escritório Mirante, o disco principal vivia sem espaço e ninguém ousava mexer, com medo de quebrar o Windows. Zelador de Prateleiras mede cada pasta sem alterar nada, separa o que é do sistema, propõe o que pode mudar de lugar e só move depois da simulação aprovada.",
+      "purpose": "Analisa os discos de um PC Windows, mostra onde o espaço está sendo gasto, propõe o que remanejar e move os arquivos aprovados com simulação, manifesto, conferência por hash e desfazer.",
+      "useCases": [
+        "Descobrir o que está enchendo o disco principal.",
+        "Levar arquivos esquecidos para outro disco com segurança."
+      ],
+      "scenario": {
+        "title": "O disco que ninguém ousava tocar",
+        "context": "Cenário fictício: o computador de [PESSOA] está com o disco [UNIDADE] quase cheio e há outro disco com espaço.",
+        "request": "Use esta skill para analisar os discos de [PESSOA]. Faça o inventário somente leitura, mostre onde o espaço está, proponha lotes do que pode ir para [UNIDADE], simule o lote escolhido e só execute depois da minha aprovação.",
+        "output": "Inventário, plano por lotes, simulação e manifesto.",
+        "check": "Nada se move sem simulação e aprovação, e item do sistema ou com segredo fica recusado."
+      },
+      "steps": [
+        "Faça o inventário somente leitura.",
+        "Escolha um lote pequeno do plano.",
+        "Simule, aprove e confira o manifesto."
+      ],
+      "boundary": "Move e nunca apaga por conta própria. Tenha backup. A DriveData testou em árvore descartável, não movendo em discos reais."
+    },
+    "en": {
+      "alias": "Shelf Keeper",
+      "tagline": "Shows what fills the disk and only moves what you approve.",
+      "story": "At the fictional Escritório Mirante, the main disk was always out of space and nobody dared touch it, for fear of breaking Windows. Shelf Keeper measures each folder without changing anything, separates what belongs to the system, proposes what can change place and only moves after an approved dry run.",
+      "purpose": "Analyzes the disks of a Windows PC, shows where space is going, proposes what to relocate and moves approved files with a dry run, manifest, hash check and undo.",
+      "useCases": [
+        "Find out what is filling the main disk.",
+        "Take forgotten files to another disk safely."
+      ],
+      "scenario": {
+        "title": "The disk nobody dared touch",
+        "context": "Fictional scenario: the computer of [PERSON] has drive [DRIVE] almost full and another disk with room.",
+        "request": "Use this skill to analyze the disks of [PERSON]. Run the read-only inventory, show where the space is, propose batches of what can go to [DRIVE], simulate the chosen batch and only run it after my approval.",
+        "output": "Inventory, plan by batches, dry run and manifest.",
+        "check": "Nothing moves without a dry run and approval, and system items or secrets stay refused."
+      },
+      "steps": [
+        "Run the read-only inventory.",
+        "Choose a small batch from the plan.",
+        "Simulate, approve and check the manifest."
+      ],
+      "boundary": "It moves and never deletes on its own. Keep a backup. DriveData tested it on a disposable tree, not moving on real disks."
+    },
+    "es": {
+      "alias": "Guardián de Estantes",
+      "tagline": "Muestra lo que llena el disco y solo mueve lo que apruebes.",
+      "story": "En la ficticia Oficina Mirante, el disco principal siempre estaba sin espacio y nadie se atrevía a tocarlo, por miedo a romper Windows. Guardián de Estantes mide cada carpeta sin cambiar nada, separa lo que es del sistema, propone lo que puede cambiar de lugar y solo mueve tras una simulación aprobada.",
+      "purpose": "Analiza los discos de un PC con Windows, muestra en qué se gasta el espacio, propone qué reubicar y mueve los archivos aprobados con simulación, manifiesto, comprobación por hash y deshacer.",
+      "useCases": [
+        "Descubrir qué está llenando el disco principal.",
+        "Llevar archivos olvidados a otro disco con seguridad."
+      ],
+      "scenario": {
+        "title": "El disco que nadie se atrevía a tocar",
+        "context": "Escenario ficticio: el equipo de [PERSONA] tiene el disco [UNIDAD] casi lleno y hay otro disco con espacio.",
+        "request": "Usa esta skill para analizar los discos de [PERSONA]. Haz el inventario de solo lectura, muestra dónde está el espacio, propón lotes de lo que puede ir a [UNIDAD], simula el lote elegido y ejecútalo solo después de mi aprobación.",
+        "output": "Inventario, plan por lotes, simulación y manifiesto.",
+        "check": "Nada se mueve sin simulación y aprobación, y los elementos del sistema o con secretos quedan rechazados."
+      },
+      "steps": [
+        "Haz el inventario de solo lectura.",
+        "Elige un lote pequeño del plan.",
+        "Simula, aprueba y comprueba el manifiesto."
+      ],
+      "boundary": "Mueve y nunca borra por su cuenta. Ten copia de seguridad. DriveData lo probó en un árbol desechable, no moviendo en discos reales."
+    }
   }
 ]

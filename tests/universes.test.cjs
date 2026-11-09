@@ -15,7 +15,7 @@ function leaves(value, prefix = "") {
       );
 }
 test("all 137 skills have individually authored universes in all three languages", () => {
-  assert.equal(records.length, 183);
+  assert.equal(records.length, 184);
   assert.deepEqual(
     records.map((r) => r.id).sort(),
     base.map((s) => s.id).sort(),
@@ -60,8 +60,8 @@ test("all 137 skills have individually authored universes in all three languages
       stories.add(u.story);
       missions.add(u.scenario.request);
     }
-    assert.equal(stories.size, 183, locale + " unique stories");
-    assert.equal(missions.size, 183, locale + " unique missions");
+    assert.equal(stories.size, 184, locale + " unique stories");
+    assert.equal(missions.size, 184, locale + " unique missions");
   }
 });
 test("localized universe paths and numerical facts match, with no silent PT fallback", () => {
@@ -103,7 +103,7 @@ test("edition signatures are unique, stable across locales and escape authored c
     context,
   );
   const marks = base.map((s) => context.art.signature(s.code));
-  assert.equal(new Set(marks).size, 183);
+  assert.equal(new Set(marks).size, 184);
   for (const s of catalog.skills) {
     const html = context.art.card(s);
     assert.ok(html.includes('class="card-codename"'));
