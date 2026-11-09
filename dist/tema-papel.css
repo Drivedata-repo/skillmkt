@@ -54,7 +54,9 @@
     inset 0 0 35px rgb(54 161 155 / 0.01)}
 .portal:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):before{border:1px dashed rgb(26 94 82 / 0.19)}
 .portal:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):after{border:1px solid rgb(16 104 92 / 0.16);border-left-color:#106855;box-shadow:-4px 0 14px rgb(54 161 127 / 0.06)}
-.orbit-label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#647285}
+.orbit-label:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#485870}
+.scene-coordinate:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
+.scene-coordinate:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):before,.scene-coordinate:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):after{background:#abb4c0}
 .starfield:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background-image:radial-gradient(circle, rgb(27 90 92 / 0.5) 1px, transparent 1.5px),
     radial-gradient(circle, rgb(66 83 108 / 0.31) 0.6px, transparent 1px)}
 .access-kicker:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3c4b61}
@@ -65,14 +67,15 @@
 .password-box input:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#132134}
 .password-box button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3e4f66}
 .access-note:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
-.login-footer:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#717f94}
+.login-footer:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#485870}
 .entry-flash:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:radial-gradient(ellipse at 35% 50%, #106848, transparent 65%)}
 .entry-status:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#0b4933}
+.scene-motion:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
 .intro-aside:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-left:1px solid #bbc2cc;color:#3d4d64}
 .finder:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b9c0ca;background:#eeebe4}
 .finder:focus-within:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-color:#255243}
 .finder textarea:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#132134}
-.finder textarea:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *))::placeholder{color:#687689}
+.finder textarea:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *))::placeholder{color:#485870}
 .audience-switch:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#e8e3da;border:1px solid #c4cad2}
 .audience-switch button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#3e4e65}
 .audience-switch button[aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#d9d1c2;color:#12442e}
@@ -119,12 +122,12 @@
 .deck-filters button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
 .deck-filters [aria-pressed="true"]:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#0f6140;border-bottom:2px solid #176143}
 .history-row:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-bottom:1px solid #ded7ca}
-.history-row small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#647285}
+.history-row small:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#485870}
 .journey:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:linear-gradient(150deg, rgb(235 230 222 / 0.4), transparent 60%);border:1px solid #dad1c2}
 .journey li:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)):before{border-left:1px solid #b5bdc7}
 .step-number:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #a4adba;color:#166246}
 .step-complete .step-number:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#b9dfcc}
-.journey .code:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#637083}
+.journey .code:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#485870}
 .clarification:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #bddbce;background:#ede9e1}
 .download-dialog .close:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){background:#eae5dd;border-color:#8a96a6}
 .save-detail:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border:1px solid #b7bec9;color:#21563f}
@@ -408,4 +411,54 @@
 /* A barra do detalhe fica fixa no topo: opaca, para o conteúdo não aparecer por trás. */
 .detail-toolbar {
   background: #ede9e2;
+}
+
+/* Login: a mesma mesa de papel da home, com luz em diagonal.
+   As cartas da cena são as de sempre; muda o que está em volta. */
+.login-page {
+  background:
+    linear-gradient(
+      114deg,
+      transparent 6%,
+      rgb(255 251 243 / 0.5) 18% 26%,
+      transparent 38% 47%,
+      rgb(255 251 243 / 0.42) 58% 67%,
+      transparent 80%
+    ),
+    #dcd8d1;
+}
+/* No escuro as cartas de trás ficavam translúcidas. No papel isso vira carta
+   desbotada: elas ficam inteiras, só um pouco mais escuras e mais ao fundo. */
+.scene-side,
+.scene-side.left {
+  opacity: 1;
+  filter: brightness(0.84) saturate(0.92);
+}
+/* Poeira de estrelas não faz sentido no papel. O chão vira sombra de contato. */
+.starfield {
+  display: none;
+}
+.login-scene:after {
+  background: radial-gradient(ellipse, rgb(20 36 58 / 0.2), transparent 66%);
+}
+.portal {
+  border-color: rgb(20 36 58 / 0.16);
+  box-shadow: none;
+}
+.portal:before {
+  border-color: rgb(20 36 58 / 0.14);
+}
+.portal:after {
+  border-color: rgb(20 36 58 / 0.1);
+  border-left-color: #1f8f68;
+  box-shadow: none;
+}
+/* Ao entrar: clarão claro, como abrir a persiana, em vez de um borrão escuro. */
+.entry-flash {
+  background: radial-gradient(ellipse at 35% 50%, #fffdf6, transparent 68%);
+}
+/* No celular, o verso de uma carta inclinada passava da borda e a página
+   rolava alguns pixels para o lado. Já acontecia no tema escuro. */
+html:has(.login-page) {
+  overflow-x: clip;
 }

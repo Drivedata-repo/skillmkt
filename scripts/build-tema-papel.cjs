@@ -28,7 +28,7 @@ function outsideStages(selector) {
 }
 // Seletores que pertencem à carta ou ao palco dela: nunca são convertidos.
 const CARD =
-  /\.holo-card|\.card-(face|edge|heading|rank|visual|info|type|bottom|battle|price|codename)|\.premium-|\.finish-|\.foil-|\.holo-shine|\.edition-seal|\.visual-(label|stars)|\.rank-stars|\.skill-scene|\.scene-|\.back-|\.back\b|\.front\b|\.featured-card|\.free-card|\.summon|\.theater|\.invocation|\.is-invoked|\.ring-|\.is-spinning|\.flipped/;
+  /\.holo-card|\.card-(face|edge|heading|rank|visual|info|type|bottom|battle|price|codename)|\.premium-|\.finish-|\.foil-|\.holo-shine|\.edition-seal|\.visual-(label|stars)|\.rank-stars|\.skill-scene|\.scene-(ink|solid|tint|light|floor|room|lift|turn|breathe|trace)|\.back-|\.back\b|\.front\b|\.featured-card|\.free-card|\.summon|\.theater|\.invocation|\.is-invoked|\.ring-|\.is-spinning|\.flipped/;
 const COLOR_PROPS =
   /^(color|background|background-color|background-image|border|border-(top|right|bottom|left|color|block|inline)(-color)?|outline|outline-color|box-shadow|text-shadow|filter|fill|stroke|caret-color|accent-color|text-decoration|text-decoration-color|column-rule|scrollbar-color)$/;
 const SHADOW_PROPS = /^(box-shadow|text-shadow|filter)$/;
@@ -127,6 +127,8 @@ function convert(token, prop) {
       // tinta azul-marinho; quanto mais clara, menos azul, para não virar texto colorido
       return out(fromHsl(215, 0.46 - 0.2 * Math.min(1, Math.max(0, (L - 0.15) / 0.11)), L), a);
     if (L <= 0.45) return out(fromHsl(215, 0.24, Math.min(L, 0.34)), a); // tinta secundária
+    // cinza médio: em texto fica fraco sobre o papel, então desce para a tinta secundária
+    if (TEXT_PROPS.test(prop) && a > 0.6) return out(fromHsl(215, 0.22, 0.36), a);
     return out(fromHsl(215, 0.14, L), a);
   }
   // cor de verdade (verde, âmbar, erro): mantém o matiz, escura o bastante para ler

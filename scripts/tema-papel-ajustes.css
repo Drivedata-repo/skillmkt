@@ -42,3 +42,53 @@
 .detail-toolbar {
   background: #ede9e2;
 }
+
+/* Login: a mesma mesa de papel da home, com luz em diagonal.
+   As cartas da cena são as de sempre; muda o que está em volta. */
+.login-page {
+  background:
+    linear-gradient(
+      114deg,
+      transparent 6%,
+      rgb(255 251 243 / 0.5) 18% 26%,
+      transparent 38% 47%,
+      rgb(255 251 243 / 0.42) 58% 67%,
+      transparent 80%
+    ),
+    #dcd8d1;
+}
+/* No escuro as cartas de trás ficavam translúcidas. No papel isso vira carta
+   desbotada: elas ficam inteiras, só um pouco mais escuras e mais ao fundo. */
+.scene-side,
+.scene-side.left {
+  opacity: 1;
+  filter: brightness(0.84) saturate(0.92);
+}
+/* Poeira de estrelas não faz sentido no papel. O chão vira sombra de contato. */
+.starfield {
+  display: none;
+}
+.login-scene:after {
+  background: radial-gradient(ellipse, rgb(20 36 58 / 0.2), transparent 66%);
+}
+.portal {
+  border-color: rgb(20 36 58 / 0.16);
+  box-shadow: none;
+}
+.portal:before {
+  border-color: rgb(20 36 58 / 0.14);
+}
+.portal:after {
+  border-color: rgb(20 36 58 / 0.1);
+  border-left-color: #1f8f68;
+  box-shadow: none;
+}
+/* Ao entrar: clarão claro, como abrir a persiana, em vez de um borrão escuro. */
+.entry-flash {
+  background: radial-gradient(ellipse at 35% 50%, #fffdf6, transparent 68%);
+}
+/* No celular, o verso de uma carta inclinada passava da borda e a página
+   rolava alguns pixels para o lado. Já acontecia no tema escuro. */
+html:has(.login-page) {
+  overflow-x: clip;
+}
