@@ -4,6 +4,7 @@ const $ = (s) => document.querySelector(s),
   t = DeckI18n.t,
   motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 let painMap = [],
+  catalogMode = "demo",
   discover = { area: null, symptom: null },
   skills = [],
   combos = [],
@@ -601,6 +602,7 @@ function catalogURL(locale = DeckI18n.locale) {
   return "/api/catalog?" + params;
 }
 function applyCatalog(data) {
+  catalogMode = data.mode || "demo";
   const group = $("#group").value;
   skills = data.skills;
   journeys = data.journeys;
@@ -1749,6 +1751,13 @@ $("#logout").onclick = async () => {
       journeys.map((j) => j.id),
     );
     save();
+    window.DeckNexo?.start({
+      context: () => ({skills, selectedId:selected?.id, audience, profile:triageProfile(), favoriteIds:deck.favorites, mode:catalogMode}),
+      find: (request, signal) => api("/api/triage", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(request), signal}),
+      openSkill: (id, chapter) => openSkill(id, chapter, {opener:$("#nexo-launcher")}),
+      saveSkill: id => addFavorites([id], "Carta salva no Meu Deck.", $("#nexo-launcher")),
+      saveSkills: ids => addFavorites(ids, "As cartas da sequência estão no Meu Deck.", $("#nexo-launcher")),
+    });
     DeckWork.start(
       {
         deck: () => deck,
