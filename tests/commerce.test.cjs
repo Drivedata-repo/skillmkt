@@ -20,12 +20,12 @@ const UUID = "11111111-2222-4333-8444-555555555555";
 test("all 137 cards have exactly one rights class", () => {
   const lists = ["ownDeclared", "mit", "apacheInPackage", "freeOffice", "proprietary", "noLicense"];
   const all = lists.flatMap((k) => rightsData[k]);
-  assert.equal(all.length, 183);
+  assert.equal(all.length, 184);
   assert.deepEqual([...new Set(all)].sort(), [...ids].sort());
   const s = rights.summary(ids);
-  assert.equal(s.rights, 145);
+  assert.equal(s.rights, 146);
   assert.equal(s.blocked, 38);
-  assert.equal(s.ready, 141);
+  assert.equal(s.ready, 142);
 });
 
 test("proprietary and unlicensed cards cannot be sold", () => {

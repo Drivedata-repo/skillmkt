@@ -5,6 +5,7 @@
 
 // Sem marca de terceiro. Autoria declarada por João em 08/11/2026.
 const ownDeclared = [
+  "organizador-de-discos",
   "cena-de-hero-em-canvas",
   "movimento-acessivel-em-sites",
   "licenca-antes-de-copiar-componente",

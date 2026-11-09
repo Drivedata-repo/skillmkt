@@ -366,6 +366,10 @@
 .nexo-compose-footer button:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#27364c}
 .nexo-status:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#17614d}
 .nexo-busy:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#14644c}
+.nexo-license:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){border-left:2px solid #195e53;background:#e8e2d9}
+.nexo-license strong:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#166251}
+.nexo-license p:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#233248}
+.nexo-ai-note:where(:not(.holo-card, .summon-stage, .summon-emblem, .invocation-theater, :is(.holo-card, .summon-stage, .summon-emblem, .invocation-theater) *)){color:#42536c}
 
 /* Ajustes feitos à mão (scripts/tema-papel-ajustes.css) */
 /* O acento do detalhe vem do matiz do universo da carta: mesma cor, em tinta. */

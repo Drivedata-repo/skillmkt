@@ -3462,5 +3462,18 @@ const SKILLS = [
     offers: [],
     variantOf: null,
   },
+  {
+    id: "organizador-de-discos",
+    code: "DD-184",
+    title: "Organizador de discos do Windows",
+    category: "Documentos & operação",
+    audience: "both",
+    role: "offer",
+    pain: "O disco C vive cheio e ninguém sabe o que dá para tirar sem quebrar o Windows.",
+    deliverables: ["Inventário dos discos e plano do que remanejar","Movimentação com simulação, conferência e desfazer"],
+    dependencies: ["Windows com PowerShell 5.1","Tenha backup: a skill move e nunca apaga por conta própria","Autoteste só em árvore descartável; mover em discos reais não foi testado pela DriveData"],
+    offers: [],
+    variantOf: null,
+  },
 ];
 if (typeof module !== "undefined") module.exports = SKILLS;

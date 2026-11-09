@@ -5430,5 +5430,33 @@
   "Apache License 2.0, SIL OFL 1.1 e termos DriveData": [
     "Apache License 2.0, SIL OFL 1.1 and DriveData terms",
     "Apache License 2.0, SIL OFL 1.1 y términos de DriveData"
+  ],
+  "Organizador de discos do Windows": [
+    "Windows disk organizer",
+    "Organizador de discos de Windows"
+  ],
+  "O disco C vive cheio e ninguém sabe o que dá para tirar sem quebrar o Windows.": [
+    "Drive C is always full and nobody knows what can go without breaking Windows.",
+    "El disco C siempre está lleno y nadie sabe qué se puede quitar sin romper Windows."
+  ],
+  "Inventário dos discos e plano do que remanejar": [
+    "Disk inventory and a plan of what to relocate",
+    "Inventario de los discos y plan de lo que reubicar"
+  ],
+  "Movimentação com simulação, conferência e desfazer": [
+    "Moves with dry run, verification and undo",
+    "Movimiento con simulación, comprobación y deshacer"
+  ],
+  "Windows com PowerShell 5.1": [
+    "Windows with PowerShell 5.1",
+    "Windows con PowerShell 5.1"
+  ],
+  "Tenha backup: a skill move e nunca apaga por conta própria": [
+    "Keep a backup: the skill moves and never deletes on its own",
+    "Ten copia de seguridad: la skill mueve y nunca borra por su cuenta"
+  ],
+  "Autoteste só em árvore descartável; mover em discos reais não foi testado pela DriveData": [
+    "Self-test only on a disposable tree; moving on real disks was not tested by DriveData",
+    "Autoprueba solo en un árbol desechable; mover en discos reales no fue probado por DriveData"
   ]
 }

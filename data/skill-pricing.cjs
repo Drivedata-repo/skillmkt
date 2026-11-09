@@ -186,6 +186,7 @@ const rows = [
   ["tokens-de-design-do-zero-ao-tema", "3344", "Reúne três guias abertos para gerar, organizar em camadas W3C e tematizar tokens, com roteiro de qual usar."],
   ["design-system-governance", "2234", "Define quem decide, como contribuir, versionar e descontinuar em um design system; guia organizacional curto."],
   ["emil-design-eng", "3235", "Reúne critérios de acabamento de interface e decisão de animação; guia de ofício sem ferramenta própria."],
+  ["organizador-de-discos", "4444", "Vai do inventário dos discos à movimentação com simulação, conferência por hash e desfazer; mover em discos reais não foi testado pela DriveData."],
 ];
 const dimensions = ["depth", "scope", "verification", "reuse"];
 const byId = new Map(rows.map(row => [row[0], row]));

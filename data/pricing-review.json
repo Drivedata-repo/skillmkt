@@ -3479,6 +3479,25 @@
       "rationale": "Reúne critérios de acabamento de interface e decisão de animação; guia de ofício sem ferramenta própria.",
       "assessmentType": "documentary",
       "executionVerified": false
+    },
+    {
+      "id": "organizador-de-discos",
+      "code": "DD-184",
+      "version": "1.2.1",
+      "packageSha256": "82b0a65a8bd32ba79eee6b9721161e8ed4d9c6cc196a2c7950fbcdcde4f6645e",
+      "sourceSha256": "425a9567cdceeeb994b656224208edce12780f0c08a6df0f62a31c8e56035276",
+      "contractSha256": "425a9567cdceeeb994b656224208edce12780f0c08a6df0f62a31c8e56035276",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Vai do inventário dos discos à movimentação com simulação, conferência por hash e desfazer; mover em discos reais não foi testado pela DriveData.",
+      "assessmentType": "documentary",
+      "executionVerified": false
     }
   ]
 }
