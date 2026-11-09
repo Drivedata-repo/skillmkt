@@ -15,6 +15,8 @@ require("./build-deliverable-gallery.cjs");
 // O tema claro da área logada é derivado das folhas do app: regerar a cada build
 // evita que ele fique para trás quando uma cor do app mudar.
 require("./build-tema-papel.cjs");
+// Índice público da home (código, nome, grupo e acabamento de cada carta).
+require("./build-home-fable-data.cjs");
 if (cards.length !== 183 || new Set(cards.map((s) => s.code)).size !== 183)
   throw new Error("Invalid card collection");
 const identities = require("../lib/catalog.cjs").skills.map(s => s.identity);
@@ -22,6 +24,14 @@ if (new Set(identities.map(i => i.id)).size !== 183 || new Set(identities.map(i 
   throw new Error("Card identities must be unique");
 for (const file of [
   "index.html",
+  "home-fable.css",
+  "home-fable.js",
+  "home-fable-data.js",
+  "home-fable-idioma.js",
+  "home-classica.html",
+  "home-classica-idioma.js",
+  "fonts/inter.woff2",
+  "fonts/geist-mono.woff2",
   "login.html",
   "acesso.html",
   "acesso.css",

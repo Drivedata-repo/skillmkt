@@ -155,8 +155,9 @@ test("nine complete public documents have independent language metadata and cano
       assert.ok(page.content[locale].task.length > 200);
     }
 });
-test("new landing content retains demo, art and waitlist contracts and links to three open samples", () => {
-  const html = fs.readFileSync(path.join(dist, "index.html"), "utf8");
+test("translated landing retains demo, art and waitlist contracts and links to three open samples", () => {
+  // Desde a home nova, a landing traduzida (EN e ES) é dist/home-classica.html.
+  const html = fs.readFileSync(path.join(dist, "home-classica.html"), "utf8");
   for (const id of [
     "fan-main",
     "fan-left",
