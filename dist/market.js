@@ -5,6 +5,7 @@ const $ = (s) => document.querySelector(s),
   motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 let painMap = [],
   catalogMode = "demo",
+  nexoAI = false,
   discover = { area: null, symptom: null },
   skills = [],
   combos = [],
@@ -603,6 +604,7 @@ function catalogURL(locale = DeckI18n.locale) {
 }
 function applyCatalog(data) {
   catalogMode = data.mode || "demo";
+  nexoAI = Boolean(data.nexoAI);
   const group = $("#group").value;
   skills = data.skills;
   journeys = data.journeys;
@@ -1752,7 +1754,12 @@ $("#logout").onclick = async () => {
     );
     save();
     window.DeckNexo?.start({
-      context: () => ({skills, selectedId:selected?.id, audience, profile:triageProfile(), favoriteIds:deck.favorites, mode:catalogMode}),
+      context: () => ({skills, selectedId:selected?.id, audience, profile:triageProfile(), favoriteIds:deck.favorites, mode:catalogMode, ai:nexoAI}),
+      chat: async (payload, signal) => {
+        const r = await fetch(DeckI18n.url("/api/nexo"), {method:"POST", headers:DeckI18n.headers({"Content-Type":"application/json"}), body:JSON.stringify(payload), signal});
+        if (r.status === 401) { location.assign(DeckI18n.url(deckLoginPath())); throw new Error("expired"); }
+        return {status:r.status, data:await r.json().catch(() => ({}))};
+      },
       find: (request, signal) => api("/api/triage", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(request), signal}),
       openSkill: (id, chapter) => openSkill(id, chapter, {opener:$("#nexo-launcher")}),
       saveSkill: id => addFavorites([id], "Carta salva no Meu Deck.", $("#nexo-launcher")),

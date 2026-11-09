@@ -93,3 +93,8 @@ body:has(#skill-dialog[open])>.nexo-launcher{visibility:hidden}
 @media(max-height:580px){.nexo-header{min-height:126px;padding-bottom:12px}.nexo-topbar{margin-bottom:9px}.nexo-header h2{font-size:21px}.nexo-header figure{width:105px;height:105px}.nexo-scroll{padding-top:14px}.nexo-compose textarea{min-height:44px}.nexo-compose-footer p{font-size:8px}}
 @media(max-width:600px){.nexo-header h2{max-width:min(210px,calc(100% - 110px))}}
 @media(max-height:580px){.nexo-scroll{min-height:35px}}
+.nexo-license{margin:0 0 14px;padding:10px 12px;border-left:2px solid #88dfd0;background:#10202d;border-radius:0 8px 8px 0}
+.nexo-license strong{display:block;color:#9be9d7;font:650 11px/1.5 var(--mono);letter-spacing:.08em;margin-bottom:4px}
+.nexo-license p{margin:0;font-size:12px;line-height:1.6;color:#cfe3ec}
+.nexo-ai-note{font-size:11px;line-height:1.5;color:#9fb8c4}
+.nexo-compose-footer #nexo-ai-footnote{max-width:310px}

@@ -3,6 +3,9 @@ const { requireAccess, restrictTriage } = require("../lib/access.cjs");
 const { limit } = require("../lib/limit.cjs");
 const { findSkills, analyzeSkills } = require("../lib/match.cjs");
 module.exports = async (req, res) => {
+  // /api/nexo (rewrite em vercel.json): chat de ajuda do NEXO. Fica aqui porque a Vercel limita as funções.
+  if (new URL(req.url || "/", "http://local.invalid").searchParams.get("route") === "chat")
+    return require("../lib/nexo-chat.cjs").handle(req, res);
   const locale = initializeLocale(req, res);
   try {
     const access = await requireAccess(req);

@@ -49,6 +49,10 @@ http
         req.url = "/api/commerce?route=" + commerceRoute;
         return await routes["/api/commerce"](req, res);
       }
+      if (url.pathname === "/api/nexo") {
+        req.url = "/api/triage?route=chat";
+        return await routes["/api/triage"](req, res);
+      }
       if (routes[url.pathname]) return await routes[url.pathname](req, res);
       let file = path.resolve(
         root,
