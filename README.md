@@ -135,7 +135,7 @@ Se `GROQ_API_KEY` estiver configurada e o visitante optar por IA, **Qwen3.8-27B 
 
 ## Invocações e passaportes
 
-O **NEXO** é o guia visual da área autenticada: conversa sobre a tarefa, consulta a triagem, explica e compara cartas, apresenta percursos reconhecidos e orienta o primeiro uso. A primeira versão usa o catálogo e respostas de ajuda escritas, com PT/EN/ES e histórico apenas na aba; não exige uma nova API de IA. Escopo, limites e arquivos em [NEXO — guia do Deck](docs/nexo-assistant.md).
+O **NEXO** é o guia visual da área autenticada: conversa sobre a tarefa, consulta a triagem, explica e compara cartas, apresenta percursos reconhecidos e orienta o primeiro uso. A primeira versão usa o catálogo e respostas de ajuda escritas, com PT/EN/ES e histórico apenas na aba; não exige uma nova API de IA. Escopo, limites e arquivos em [NEXO — guia do Deck](docs/nexo-assistant.md). Existe também um chat com IA, desligado por padrão, descrito no mesmo documento.
 
 As nove faixas de US$ 7 a US$ 47 têm coreografias e sons originais próprios. A primeira inclusão no **Meu Deck** inicia a invocação automaticamente; remover e recolocar a carta não repete a apresentação. **Poder da carta → Invocar carta** permite repetir quando quiser. Combos e jornadas apresentam apenas as cartas novas, em sequência cancelável. A dourada recebe a Coroação solar. A apresentação respeita movimento reduzido e silêncio. Trocar o idioma com a carta aberta encerra a sequência sem perder a carta. Downloads de ZIPs individuais e de pacotes usam uma confirmação curta de 2,2 segundos, após validar o arquivo e iniciar o download. O histórico de primeira inclusão fica no navegador e acompanha o backup do Deck.
 

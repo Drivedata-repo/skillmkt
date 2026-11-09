@@ -16,6 +16,7 @@
     { "source": "/oferta", "destination": "/oferta.html" },
     { "source": "/api/webhooks/hotmart", "destination": "/api/commerce?route=webhook" },
     { "source": "/api/account/:route", "destination": "/api/commerce?route=:route" },
+    { "source": "/api/nexo", "destination": "/api/triage?route=chat" },
     { "source": "/privacidade", "destination": "/privacy.html" }
   ],
   "headers": [

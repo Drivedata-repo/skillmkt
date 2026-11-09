@@ -3,6 +3,8 @@
   const normalize=value=>String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim().replace(/^[¿¡]+/,"");
   const guides={
     welcome:["Sou o NEXO. Me conte o que você precisa entregar. Eu ajudo a encontrar uma carta e a entender o primeiro passo."],
+    aboutAI:["Eu sou o guia do catálogo do Deck. Uso as informações das cartas e a ajuda escrita do Deck e, para perguntas livres, respondo com ajuda de IA. Posso errar: confira licenças e requisitos na carta e no pacote. As skills são executadas no seu ambiente."],
+    privacyAI:["Privacidade da conversa. Para responder perguntas livres, o NEXO envia sua mensagem, as últimas mensagens da conversa, o código da carta aberta e o idioma a um provedor de IA nos Estados Unidos. Não envia seu e-mail nem seu identificador de cliente. O Deck não guarda a conversa no servidor; o histórico fica só na aba e some ao recarregar. Não escreva senhas, dados de pagamento ou dados de clientes."],
     find:["O que precisa sair pronto? Conte a tarefa, a ferramenta que você usa e o que está dificultando o trabalho."],
     choose:["Abra uma carta e converse comigo por ela, ou escreva seu código, como DD-042. Assim posso explicar aquela skill com precisão."],
     compare:["Escreva os códigos das cartas que quer comparar, por exemplo DD-019 e DD-042. Eu mostro a finalidade, a entrega e os requisitos de cada uma."],
@@ -26,8 +28,8 @@
     const id=listed[0]?.id||selected?.id;
     const guide=topic=>({type:"guide",topic,id});
     if(/^(oi|ola|bom dia|boa tarde|boa noite|hello|hi|hey|hola|buenos dias|buenas tardes)[!.\s]*$/.test(text))return guide("welcome");
-    if(/quem (e|eh) voce|quem e o nexo|who are you|quien eres|voce (e|eh) (uma )?ia|are you (an? )?ai|eres (una )?ia/.test(text))return guide("about");
-    if(/privacidade|privacy|privacidad|salva.*conversa|save.*chat|guarda.*conversa/.test(text))return guide("privacy");
+    if(/quem (e|eh) voce|quem e o nexo|who are you|quien eres|voce (e|eh) (uma )?ia|are you (an? )?ai|eres (una )?ia/.test(text))return guide(context.ai?"aboutAI":"about");
+    if(/privacidade|privacy|privacidad|salva.*conversa|save.*chat|guarda.*conversa/.test(text))return guide(context.ai?"privacyAI":"privacy");
     if(/(download|baixar|descargar).*(erro|error|falh|fail|nao funciona|doesn.t work|no funciona)|(nao consigo|cannot|can.t|no puedo).*(baixar|download|descargar)/.test(text))return guide("downloadError");
     if(/^(como|onde|how|where|como puedo|donde).*(baixar (a |uma |esta |essa )?skill|baixar (a |uma |esta |essa )?carta|download (a |the |this )?(skill|card)|descargar (una |la |esta )?(skill|carta))/.test(text)||/^(baixar|download|descargar)(\s+dd[- ]?\d{3})?[?.!]*$/.test(text))return guide("download");
     if(/^(como|onde|how|where|como puedo|donde).*(instal|install)|^instala[cç]ao|^installation|^instalacion/.test(text))return guide("install");
@@ -35,12 +37,16 @@
     if(/passaporte|passport|pasaporte|\bnft\b|blockchain|id da carta|card id|id de la carta/.test(text))return guide("identity");
     if(/(preco|custa|price|cost|precio|cuesta|comprar|buy).*(carta|card|skill|deck|combo)|^(precos|prices|precios|e gratis|is it free|es gratis)[?!.]*$/.test(text))return guide(context.mode==="customer"?"pricingCustomer":"pricingDemo");
     if(/(esqueci|forgot|olvide).*(senha|password|contrasena)|(nao consigo|can.t|cannot|no puedo).*(entrar|log in|sign in|acceder)/.test(text))return guide("access");
+    if(/pagamento|cobranca|fatura|reembolso|estorno|boleto|nota fiscal|payment|refund|invoice|\bcharge\b|factura|cobro|(minha|my|mi) (compra|purchase)|compra de (ontem|hoje)|\bcomprei\b/.test(text))return guide("access");
     if(listed.length)return {type:"cards",ids:listed.map(s=>s.id)};
     if(/esta carta|essa carta|esta skill|essa skill|this (card|skill)|esta (carta|skill)|primeiro passo|next step|siguiente paso/.test(text))return id?{type:"cards",ids:[id]}:guide("choose");
     if(/comparar|compare|comparacion|diferenca entre.*cartas|difference between.*cards/.test(text))return guide("compare");
     if(/^(ajuda|help|ayuda|encontrar uma skill|find a skill|encontrar una skill)[?!.]*$/.test(text)||text.length<12)return guide("find");
     return {type:"search"};
   }
+  // Com IA ligada: citar uma carta e perguntar algo (licença, cliente, grátis) vai ao chat, não só ao cartão.
+  const QUESTION=/[?]|licen|cliente|client|revend|resell|vender|\bsell\b|grat|\bfree\b|posso|\bpode |can i|puedo|puede /;
+  const wantsAI=(message,response)=>response.type==="cards"&&QUESTION.test(normalize(message));
   function canonicalizer(dictionary){
     const reverse=new Map();for(const [source,translations] of Object.entries(dictionary||{}))for(const s of translations)if(!reverse.has(s))reverse.set(s,source);
     return text=>Object.prototype.hasOwnProperty.call(dictionary||{},text)?text:reverse.get(text)||text;
@@ -53,5 +59,5 @@
       plan,
       clarification:data.clarification?{id:data.clarification.id,question:canonical(data.clarification.question),options:(data.clarification.options||[]).slice(0,8).map(o=>({id:o.id,label:canonical(o.label)}))}:null};
   }
-  return {resolve,result,canonicalizer,guides,normalize};
+  return {resolve,result,canonicalizer,guides,normalize,wantsAI};
 });

@@ -2,7 +2,8 @@
 window.DeckNexo=(()=>{
   const $=s=>document.querySelector(s),t=(s,p)=>DeckI18n.t(s,p),esc=s=>DeckArt.esc(s);
   const canonical=DeckNexoCore.canonicalizer(window.DeckTranslations);
-  let bridge,entries=[],busy=false,revision=0,controller,opener,lastClarification=null,serial=0;
+  const MAX_AI=8;
+  let bridge,entries=[],busy=false,revision=0,controller,opener,lastClarification=null,serial=0,aiCount=0;
   const context=()=>bridge.context(),skill=id=>context().skills.find(s=>s.id===id);
   const art=s=>`<div class="nexo-result-art" aria-hidden="true">${DeckArt.card(s)}</div>`;
   const action=(label,attr,id,extra="")=>`<button type="button" ${attr}="${esc(id)}" ${extra}>${esc(t(label))}</button>`;
@@ -14,6 +15,9 @@ window.DeckNexo=(()=>{
   }
   function reply(entry){
     const r=entry.reply;
+    if(r.type==="ai")return `<p>${esc(r.answer)}</p>${r.licenseNote?`<aside class="nexo-license"><strong>${esc(t("Sobre a licença"))}</strong>${r.licenseNote.split("\n\n").map(p=>`<p>${esc(p)}</p>`).join("")}</aside>`:""}${(r.cardIds||[]).map((id,i)=>card(id,i)).join("")}${r.inScope===false?"":`<p class="nexo-ai-note">${esc(t("Resposta gerada por IA a partir do catálogo e da ajuda do Deck. Confira a licença no pacote."))}</p>`}`;
+    if(r.type==="blocked")return `<p>${esc(r.answer)}</p>`;
+    if(r.type==="notice")return `<p>${esc(t(r.message))}</p>`;
     if(r.type==="guide"){
       const body=(DeckNexoCore.guides[r.topic]||[]).map(p=>`<p>${esc(t(p))}</p>`).join("");
       const target=skill(r.id);
@@ -41,6 +45,8 @@ window.DeckNexo=(()=>{
     $("#nexo-send").disabled=busy;
     $("#nexo-dialog").classList.toggle("nexo-thinking",busy);
     $("#nexo-prompt-context").hidden=!context().selectedId;
+    $("#nexo-footnote").hidden=Boolean(context().ai);
+    $("#nexo-ai-footnote").hidden=!context().ai;
     $("#nexo-status").textContent=busy?t("Estou comparando sua tarefa com o catálogo…"):"";
     if(focusKey&&focusChoice)$("#nexo-conversation").querySelector(`[data-nexo-entry="${CSS.escape(focusKey)}"][data-nexo-refine="${CSS.escape(focusChoice)}"]`)?.focus({preventScroll:true});
     const scroller=$("#nexo-scroll"),last=$("#nexo-conversation").lastElementChild;
@@ -59,13 +65,31 @@ window.DeckNexo=(()=>{
       append("assistant",{reply:{type:"error",message:error.name==="TimeoutError"?"A busca demorou mais que o esperado. Tente novamente.":"Não consegui consultar o catálogo agora. Tente novamente; as orientações de instalação continuam disponíveis."},request});
     }finally{if(ticket===revision){busy=false;render();}}
   }
+  const history=()=>entries.slice(0,-1).filter(e=>e.role==="user").map(e=>({role:"user",text:e.text})).slice(-4);
+  async function ask(message,request){
+    const ticket=++revision;busy=true;lastClarification=null;controller=new AbortController();render();
+    let outcome=null;
+    try{outcome=await bridge.chat({message,history:history(),selectedId:context().selectedId||null,locale:DeckI18n.locale},AbortSignal.any([controller.signal,AbortSignal.timeout(25000)]));}catch{outcome=null;}
+    if(ticket!==revision)return;
+    const data=outcome?.data;
+    if(outcome?.status===200&&data?.mode==="ai"){aiCount+=1;append("assistant",{reply:{type:"ai",...data}});busy=false;render();return;}
+    if(outcome?.status===200&&data?.mode==="blocked"){const at=entries.findLastIndex(e=>e.role==="user"&&e.text===message);if(at>=0)entries.splice(at,1);append("assistant",{reply:{type:"blocked",answer:data.answer}});busy=false;render();return;}
+    if(outcome?.status===429)append("assistant",{reply:{type:"notice",message:"Você atingiu o limite de mensagens com IA por agora. O guia do catálogo continua disponível."}});
+    busy=false;
+    return search(request);
+  }
   function submit(text){
     const message=text.trim();if(!message||busy)return;
     if(message.length>2000){$("#nexo-status").textContent=t("Use até 2.000 caracteres por mensagem.");return;}
     lastClarification=null;append("user",{text:message});$("#nexo-message").value="";
     const response=DeckNexoCore.resolve(message,context());
-    if(response.type!=="search"){append("assistant",{reply:response});render();return;}
-    search({problem:message,audience:context().audience,profile:context().profile,refinement:null});
+    const toAI=context().ai&&DeckNexoCore.wantsAI(message,response)&&aiCount<MAX_AI&&message.length<=800;
+    if(response.type!=="search"&&!toAI){append("assistant",{reply:response});render();return;}
+    const request={problem:message,audience:context().audience,profile:context().profile,refinement:null};
+    if(context().ai&&message.length>800){append("assistant",{reply:{type:"notice",message:"Para a resposta com IA, use até 800 caracteres. Usei o guia do catálogo."}});render();search(request);return;}
+    if(context().ai&&aiCount<MAX_AI){ask(message,request);return;}
+    if(context().ai){append("assistant",{reply:{type:"notice",message:"Chegamos ao limite de respostas com IA desta conversa. Comece uma nova conversa para continuar; o guia do catálogo continua disponível."}});render();}
+    search(request);
   }
   function open(source){
     if(!bridge)return;opener=source;DeckInvocation.cancel();
@@ -79,7 +103,7 @@ window.DeckNexo=(()=>{
     document.querySelectorAll("[data-nexo-launch]").forEach(b=>{b.hidden=false;b.onclick=()=>open(b);});
     $("#nexo-close").onclick=close;
     $("#nexo-dialog").addEventListener("close",()=>{if(opener?.isConnected)opener.focus({preventScroll:true});});
-    $("#nexo-clear").onclick=()=>{revision++;controller?.abort();busy=false;entries=[];lastClarification=null;render();$("#nexo-message").focus();};
+    $("#nexo-clear").onclick=()=>{revision++;controller?.abort();busy=false;aiCount=0;entries=[];lastClarification=null;render();$("#nexo-message").focus();};
     $("#nexo-form").onsubmit=e=>{e.preventDefault();submit($("#nexo-message").value);};
     $("#nexo-message").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing){e.preventDefault();submit(e.currentTarget.value);}});
     $("#nexo-dialog").addEventListener("click",e=>{

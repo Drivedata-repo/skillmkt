@@ -36,3 +36,45 @@ O avatar não tem narração automática nesta versão. Conversação generativa
 - `tests/nexo.test.cjs`: idiomas, contexto, preços por modo de acesso, restrição de IDs, respostas sem correspondência e ordem dos percursos.
 
 Prévia local: `http://127.0.0.1:4340/app?lang=pt`. O servidor precisa estar iniciado nessa porta. A primeira revisão fica na branch `feat/nexo-assistant`.
+
+## Chat com IA (desligado por padrão)
+
+A v1 acima continua sendo o comportamento padrão. O chat com IA responde perguntas livres (por que uma carta é grátis, se dá para usar com cliente, erros de instalação) e fica **inerte** até ser ligado.
+
+### Como liga
+
+Variáveis de ambiente na Vercel: `NEXO_AI=on` e `GROQ_API_KEY` ligam para compradores. A demo só com `NEXO_AI_DEMO=on` (a senha da demo é compartilhada e gastaria a cota). `NEXO_MODEL` troca o modelo (padrão `openai/gpt-oss-120b`) e `NEXO_AI_DAILY_CAP` muda o teto global diário dos compradores (padrão 300 respostas) e `NEXO_AI_DEMO_DAILY_CAP` o da demo (padrão 60). O catálogo informa ao navegador, por sessão, se o chat está ligado (`nexoAI`).
+
+### Como funciona
+
+- Rota: `/api/nexo`, reescrita para `/api/triage?route=chat` em `vercel.json`. Fica dentro de `api/triage.js` porque a pasta `api/` já tem as 12 funções permitidas pela Vercel.
+- `lib/nexo-chat.cjs`: filtro de dados sensíveis (senha, cartão com Luhn, CPF válido, chaves) antes de qualquer envio; candidatas (até 5 cartas, pelo mesmo acesso da sessão); prompt com mensagem, histórico e catálogo como dados; schema que só aceita IDs candidatos e temas conhecidos; nota de licença sempre vinda da base escrita, nunca do modelo.
+- `data/nexo-help.cjs`: base de ajuda em PT, EN e ES e notas de licença por classe de direito (`lib/sale-rights.cjs`). É a única fonte de fatos de ajuda do modelo. Os textos de licença são rascunho e precisam de aprovação antes de ligar.
+- Limites: 800 caracteres por mensagem, 4 falas de usuário no histórico, 12 respostas por hora e 30 por dia por pessoa (comprador por cliente, demo por IP), teto global diário (a demo tem teto próprio, para não esgotar a cota dos compradores), 8 respostas por conversa no navegador e 900 caracteres por resposta.
+- Histórico: o navegador pode forjar falas do NEXO, então só falas do usuário chegam ao modelo, e a carta aberta só vale se passou pelo filtro de acesso.
+- Saída: código DD citado na resposta tem de ser de carta candidata, e valor em dólar tem de ser igual a um preço candidato (ou 0, 7 ou 47 da regra de preços); links são removidos. Se falar de licença ou de uso com cliente sem carta em questão, o texto escrito da base acompanha a resposta.
+- Falhou, estourou o limite ou o modelo errou o formato: o navegador volta ao guia da v1, sem expor o motivo.
+- Privacidade: saem do navegador a mensagem, as últimas mensagens, o código da carta aberta e o idioma. Não saem e-mail nem identificador de cliente. Nada é guardado no servidor nem registrado em log.
+- Com a IA ligada, as respostas locais sobre privacidade e "quem é você" mudam (`privacyAI`, `aboutAI` em `dist/nexo-core.js`), porque as da v1 afirmam que a conversa não vai a um modelo externo.
+
+### Avaliação
+
+`data/nexo-evals.json` tem 38 casos em PT, EN e ES (triagem, ajuda, licença por classe, segurança, recusa, acesso). `node scripts/run-nexo-evals.cjs --mock` valida o executor sem custo e **não avalia qualidade**. Com `GROQ_API_KEY` roda no modelo real. Meta para ligar: 100% em segurança, licença, recusa e acesso; 90% ou mais em triagem e ajuda.
+
+### Antes de ligar
+
+1. Rodar a avaliação no modelo real e atingir a meta.
+2. João aprovar os textos de licença de `data/nexo-help.cjs` e o aviso de privacidade.
+3. Ativar a retenção zero de dados na conta da Groq (ação no painel deles).
+4. Atualizar `dist/privacy.html`: hoje não menciona IA nem provedor.
+5. Definir o orçamento mensal e o teto diário.
+6. Decidir se a demo participa (`NEXO_AI_DEMO`).
+
+### Limitações conhecidas
+
+A busca de candidatas é por palavras. Termos ambíguos podem trazer cartas sem relação (por exemplo, "fonte" de dados e fonte tipográfica). A IA só escolhe entre as candidatas, então não corrige isso. A qualidade do modelo em português ainda não foi medida.
+O histórico enviado ao modelo só tem falas do usuário, então perguntas de continuação perdem o contexto das respostas anteriores do NEXO. O teto de saída (`maxOutputTokens` 1400) e o schema sem `not` para o caso sem candidatas precisam ser confirmados com uma chamada real, porque o modelo gasta tokens raciocinando antes do JSON.
+
+### Revisão
+
+Uma revisão independente (agente de arquitetura, só leitura) achou sete problemas que bloqueavam ligar a flag e vários menores. Todos foram corrigidos e têm teste: fala forjada do NEXO no histórico, carta aberta forjada, "minha senha é x" e cartão seguido de validade que passavam pelo filtro, schema sem candidatas, texto de licença impreciso para cartas MIT e Apache, teto global esgotável pela demo. Também: a mensagem barrada sai da conversa, o limite de 800 caracteres avisa, e o cabeçalho de IP só vale na Vercel.
