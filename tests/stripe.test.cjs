@@ -204,3 +204,21 @@ test("the second migration widens providers, adds orders and still gives no DELE
   assert.doesNotMatch(sql, /GRANT[^;]*DELETE/i);
   assert.doesNotMatch(sql, /\b(cpf|phone|telefone|card_number)\b/i);
 });
+
+test("the payment key may be a secret or a restricted key, never a publishable one", () => {
+  const original = process.env.STRIPE_SECRET_KEY;
+  for (const [value, expected] of [
+    ["sk_test_" + "a".repeat(24), true],
+    ["sk_live_" + "a".repeat(24), true],
+    ["rk_live_" + "a".repeat(24), true],
+    ["rk_test_" + "a".repeat(24), true],
+    ["pk_live_" + "a".repeat(24), false],
+    ["whsec_" + "a".repeat(24), false],
+    ["", false],
+  ]) {
+    process.env.STRIPE_SECRET_KEY = value;
+    assert.equal(stripe.configured(), expected, value.slice(0, 8));
+  }
+  if (original === undefined) delete process.env.STRIPE_SECRET_KEY;
+  else process.env.STRIPE_SECRET_KEY = original;
+});
