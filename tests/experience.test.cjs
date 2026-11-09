@@ -52,7 +52,7 @@ test("all ten reference examples preserve the declared facts", () => {
 test("catalog metadata is complete and does not claim untested execution or sales clearance", () => {
   assert.equal(skills.length, 183);
   for (const s of skills) {
-    assert.ok(["1.2.0", "1.2.1"].includes(s.version));
+    assert.ok(["1.2.0", "1.2.1", "1.2.2"].includes(s.version));
     assert.equal(s.release.review, "structure-checked");
     assert.equal(s.release.executionTested, false);
     assert.equal(s.release.commercialCleared, false);
