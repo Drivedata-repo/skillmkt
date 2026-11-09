@@ -36,6 +36,21 @@ async function mockGenerate({ prompt }) {
   };
 }
 
+// No nível gratuito da Groq o limite é de poucos milhares de tokens por minuto. Quando o provedor
+// diz "try again in Ns", espera e tenta de novo; a tentativa recusada não gasta tokens.
+async function retryOnRateLimit(fn, tries = 6) {
+  for (let i = 0; ; i += 1) {
+    try {
+      return await fn();
+    } catch (error) {
+      const message = String(error && error.message ? error.message : error);
+      if (!/rate limit/i.test(message) || i >= tries) throw error;
+      const wait = /try again in ([\d.]+)s/i.exec(message);
+      await new Promise((r) => setTimeout(r, Math.ceil((wait ? Number(wait[1]) : 15) * 1000) + 1500));
+    }
+  }
+}
+
 function accessFor(spec) {
   if (spec && spec.kind === "customer")
     return { kind: "customer", customerId: "eval", skillIds: new Set(spec.skillIds || []) };
@@ -52,6 +67,14 @@ async function runCase(c) {
   const out = { id: c.id, category: c.category, checks: [], ms: 0 };
   const note = (name, ok, detail) => out.checks.push({ name, ok: Boolean(ok), detail });
   try {
+    if (c.expect.localTopic) {
+      const core = require("../dist/nexo-core.js");
+      const skills = require("../lib/catalog.cjs").skills;
+      const got = core.resolve(c.message, { skills, audience: "business", mode: "customer", ai: true }).topic;
+      note("roteado no navegador para o guia " + c.expect.localTopic, got === c.expect.localTopic, got);
+      out.ms = Date.now() - started;
+      return out;
+    }
     const sensitive = chat.screen(c.message).sensitive;
     if (c.expect.outcome === "blocked") {
       note("barrado antes do modelo", sensitive);
@@ -59,13 +82,15 @@ async function runCase(c) {
       return out;
     }
     note("não deveria ser barrado", !sensitive);
-    const result = await chat.answer(
-      { message: c.message, history: c.history, selectedId: c.selectedId || null, locale, access: accessFor(c.access) },
-      mock ? { generate: mockGenerate } : {},
+    const result = await retryOnRateLimit(() =>
+      chat.answer(
+        { message: c.message, history: c.history, selectedId: c.selectedId || null, locale, access: accessFor(c.access) },
+        mock ? { generate: mockGenerate } : {},
+      ),
     );
     const text = [result.answer, result.licenseNote].filter(Boolean).join(" ");
     if (c.expect.outcome === "refusal") note("recusou fora do escopo", isRefusal(result, locale));
-    else note("respondeu no escopo", result.inScope);
+    else if (c.expect.outcome !== "any") note("respondeu no escopo", result.inScope);
     const e = c.expect;
     if (e.cardIdsInclude) note("traz as cartas esperadas", e.cardIdsInclude.every((id) => result.cardIds.includes(id)), result.cardIds.join(","));
     if (e.cardIdsAnyOf) note("traz alguma carta esperada", e.cardIdsAnyOf.some((id) => result.cardIds.includes(id)), result.cardIds.join(","));
@@ -73,15 +98,16 @@ async function runCase(c) {
     if (e.topicsInclude) note("cita os temas esperados", e.topicsInclude.every((t) => result.topics.includes(t)), result.topics.join(","));
     if (e.licenseClass) {
       const expected = help.licenseNotes[e.licenseClass][locale];
-      note("nota de licença da classe certa", result.licenseNote === expected, result.licenseNote ? "nota presente" : "sem nota");
+      note("nota de licença da classe certa", Boolean(result.licenseNote) && result.licenseNote.includes(expected), result.licenseNote ? "nota presente" : "sem nota");
     }
     for (const re of e.mustMatch || []) note("deve conter /" + re + "/", new RegExp(re, "i").test(text));
     for (const re of e.mustNotMatch || []) note("não pode conter /" + re + "/", !new RegExp(re, "i").test(text));
     if (e.language === "en") note("responde em inglês", !/[ãõç]|\b(você|não|para)\b/i.test(result.answer || ""));
-    if (e.language === "es") note("responde em espanhol", !/[ãõ]|\b(você|não|para)\b/i.test(result.answer || ""));
+    if (e.language === "es") note("responde em espanhol", !/[ãõ]|\b(você|não)\b/i.test(result.answer || ""));
     note("sem links", !/https?:\/\/|www\./i.test(text));
   } catch (error) {
-    note("sem erro de execução ou de schema", false, String(error.message || error).slice(0, 160));
+    if (c.expect.rejectOk && String(error && error.message) === "claim") note("descartada por citar carta fora do acesso", true);
+    else note("sem erro de execução ou de schema", false, String(error.message || error).replace(/gsk_[A-Za-z0-9]+/g, "[chave]").slice(0, 220));
   }
   out.ms = Date.now() - started;
   return out;
@@ -90,7 +116,7 @@ async function runCase(c) {
 (async () => {
   let cases = suite.cases;
   if (args.only) cases = cases.filter((c) => c.category === args.only);
-  if (args.id) cases = cases.filter((c) => c.id === args.id);
+  if (args.id) cases = cases.filter((c) => String(args.id).split(",").includes(c.id));
   if (args.limit) cases = cases.slice(0, Number(args.limit));
   const results = [];
   for (const c of cases) results.push(await runCase(c));

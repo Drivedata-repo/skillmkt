@@ -98,3 +98,4 @@ body:has(#skill-dialog[open])>.nexo-launcher{visibility:hidden}
 .nexo-license p{margin:0;font-size:12px;line-height:1.6;color:#cfe3ec}
 .nexo-ai-note{font-size:11px;line-height:1.5;color:#9fb8c4}
 .nexo-compose-footer #nexo-ai-footnote{max-width:310px}
+.nexo-license p+p{margin-top:8px}

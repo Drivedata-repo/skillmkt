@@ -133,14 +133,50 @@ test("afirmações verificáveis precisam bater com o catálogo: código DD e va
   await assert.doesNotReject(run("Esta carta é grátis, US$ 0."));
 });
 
-test("falou de licença ou de cliente sem carta em questão: o texto escrito pela DriveData acompanha", async () => {
-  for (const topic of ["client-use", "licenses"]) {
-    const result = await chat.answer(
-      { message: "posso usar com clientes?", locale: "pt", access: demo },
-      { generate: async () => ({ inScope: true, answer: "Depende da licença.", cardIds: [], topics: [topic], licenseClass: "none" }) },
+test("pergunta de licença sem carta em questão: resposta fixa e texto escrito pela DriveData", async () => {
+  const ask = (message, topics) =>
+    chat.answer(
+      { message, locale: "pt", access: demo },
+      { generate: async () => ({ inScope: true, answer: "Depende da licença.", cardIds: [], topics }) },
     );
-    assert.equal(result.licenseNote, help.topics[topic].pt);
+  const client = await ask("posso usar com clientes?", ["licenses"]);
+  assert.equal(client.answer, help.licenseLead.pt);
+  assert.equal(client.licenseNote, help.topics["client-use"].pt);
+  const general = await ask("como funcionam as licenças das cartas?", ["licenses"]);
+  assert.equal(general.answer, help.licenseLead.pt);
+  assert.equal(general.licenseNote, help.topics.licenses.pt);
+  // O modelo marcou o tema, mas a pergunta não é de licença: vale o texto dele, sem nota.
+  const other = await ask("como instalo uma skill?", ["install"]);
+  assert.equal(other.answer, "Depende da licença.");
+  assert.equal(other.licenseNote, null);
+});
+
+test("o que o modelo escrever sobre licença nunca é mostrado", async () => {
+  const bold = "Sim, pode tudo. Não há restrições adicionais e você está juridicamente seguro.";
+  for (const message of [
+    "posso revender a carta DD-050 dentro de um curso meu?",
+    "meu contrato com o cliente permite usar a DD-050? estou seguro juridicamente?",
+    "qual a licença desta carta?",
+  ]) {
+    const result = await chat.answer(
+      { message, selectedId: "design-de-interface-autoral", locale: "pt", access: demo },
+      { generate: async () => ({ inScope: true, answer: bold, cardIds: [], topics: [] }) },
+    );
+    assert.equal(result.answer, help.licenseLead.pt, message);
+    assert.ok(!/Sim, pode tudo|restrições adicionais|seguro/.test(result.answer + result.licenseNote), message);
+    assert.ok(result.licenseNote.includes(help.licenseNotes["own-declared"].pt), message);
+    // Com o código na pergunta o cartão aparece; com a carta só aberta no painel, a nota vale mas não repete o cartão.
+    assert.deepEqual(result.cardIds, /DD-050/.test(message) ? ["design-de-interface-autoral"] : [], message);
   }
+});
+
+test("perguntas que não são de licença mantêm o texto do modelo, sem nota", async () => {
+  const result = await chat.answer(
+    { message: "o que a DD-042 entrega?", locale: "pt", access: demo },
+    { generate: async () => ({ inScope: true, answer: "Entrega planilhas editáveis.", cardIds: ["claude-xlsx"], topics: [] }) },
+  );
+  assert.equal(result.answer, "Entrega planilhas editáveis.");
+  assert.equal(result.licenseNote, null);
 });
 
 test("sem candidatas o schema aceita só lista vazia e não usa 'not' no JSON Schema (modo estrito)", async () => {
@@ -222,14 +258,14 @@ test("IDs fora das candidatas são rejeitados pelo schema e a classe de licença
       { generate: async () => ({ inScope: true, answer: "ok", cardIds: ["carta-inventada"], topics: [], licenseClass: "none" }) },
     ),
   );
+  // A classe de licença é a real da carta, nunca a que o modelo disser.
   const real = classify("claude-xlsx").class;
-  const wrong = real === "mit" ? "apache-2.0" : "mit";
   const result = await chat.answer(
     { message: "explique a DD-042 e posso usar no cliente?", locale: "pt", access: demo },
-    { generate: async () => ({ inScope: true, answer: "Veja a licença.", cardIds: ["claude-xlsx"], topics: ["client-use"], licenseClass: wrong }) },
+    { generate: async () => ({ inScope: true, answer: "Veja a licença.", cardIds: ["claude-xlsx"], topics: ["client-use"], licenseClass: real === "mit" ? "apache-2.0" : "mit" }) },
   );
   assert.deepEqual(result.cardIds, ["claude-xlsx"]);
-  assert.equal(result.licenseNote, help.licenseNotes[real].pt);
+  assert.equal(result.licenseNote, help.licenseNotes[real].pt + "\n\n" + help.topics["client-use"].pt);
 });
 
 test("sem carta em questão não há nota de licença inventada", async () => {
@@ -418,4 +454,27 @@ test("rota: o limite por IP fora da Vercel ignora o cabeçalho forjado", async (
     assert.equal((await call(forged(i), mem)).status, 200, "chamada " + i);
   // Mesmo socket, cabeçalho diferente a cada vez: continua sendo a mesma pessoa e cai no limite.
   assert.equal((await call(forged(99), mem)).status, 429);
+});
+
+test("pedir o arquivo de uma carta que o Deck não entrega traz a nota de licença fixa", async () => {
+  for (const [message, id] of [
+    ["posso baixar o pacote da DD-078 do Figma?", "figma-use"],
+    ["a DD-013 vem com os arquivos da skill?", "claude-chrome-browser"],
+  ]) {
+    const result = await chat.answer(
+      { message, locale: "pt", access: demo },
+      { generate: async () => ({ inScope: true, answer: "Baixe o ZIP aqui, é grátis e livre.", cardIds: [], topics: [] }) },
+    );
+    assert.equal(result.answer, help.licenseLead.pt, message);
+    assert.equal(result.licenseNote, help.licenseNotes[classify(id).class].pt, message);
+    assert.ok(!/ZIP aqui/.test(result.answer + result.licenseNote));
+    assert.deepEqual(result.cardIds, [id]);
+  }
+  // Carta com pacote: pedir o arquivo continua sendo ajuda comum, sem trocar a resposta.
+  const normal = await chat.answer(
+    { message: "como baixo o pacote da DD-180?", locale: "pt", access: demo },
+    { generate: async () => ({ inScope: true, answer: "Abra Primeiro uso.", cardIds: ["shadcn"], topics: ["install"] }) },
+  );
+  assert.equal(normal.answer, "Abra Primeiro uso.");
+  assert.equal(normal.licenseNote, null);
 });

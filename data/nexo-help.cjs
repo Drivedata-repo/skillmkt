@@ -113,6 +113,13 @@ const licenseNotes = {
   },
 };
 
+// Frase que abre a resposta quando a pergunta é de licença: o texto que vale vem logo abaixo, escrito pela DriveData.
+const licenseLead = {
+  pt: "Sobre licença, vale o que está escrito abaixo. É uma orientação do Deck, não aconselhamento jurídico.",
+  en: "On licensing, what is written below applies. It is Deck guidance, not legal advice.",
+  es: "Sobre licencias, vale lo que está escrito abajo. Es una orientación del Deck, no asesoría jurídica.",
+};
+
 const refusal = {
   pt: "Eu ajudo com o Deck: encontrar cartas, entender licenças, instalar e usar skills. Esse assunto está fora do que posso responder aqui.",
   en: "I help with the Deck: finding cards, understanding licenses, installing and using skills. That subject is outside what I can answer here.",
@@ -125,4 +132,4 @@ const sensitive = {
   es: "El mensaje parece contener una contraseña, un dato de pago o un documento personal, y no debo recibirlos. No envié el mensaje a ningún servicio y lo quité de la conversación. Para acceso y cuenta, usa la página de acceso; no consulto cuentas, contraseñas ni pagos.",
 };
 
-module.exports = { topics, licenseNotes, refusal, sensitive };
+module.exports = { topics, licenseNotes, licenseLead, refusal, sensitive };

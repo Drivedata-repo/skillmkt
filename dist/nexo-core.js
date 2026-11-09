@@ -37,6 +37,7 @@
     if(/passaporte|passport|pasaporte|\bnft\b|blockchain|id da carta|card id|id de la carta/.test(text))return guide("identity");
     if(/(preco|custa|price|cost|precio|cuesta|comprar|buy).*(carta|card|skill|deck|combo)|^(precos|prices|precios|e gratis|is it free|es gratis)[?!.]*$/.test(text))return guide(context.mode==="customer"?"pricingCustomer":"pricingDemo");
     if(/(esqueci|forgot|olvide).*(senha|password|contrasena)|(nao consigo|can.t|cannot|no puedo).*(entrar|log in|sign in|acceder)/.test(text))return guide("access");
+    if(/pagamento|cobranca|fatura|reembolso|estorno|boleto|nota fiscal|payment|refund|invoice|\bcharge\b|factura|cobro|(minha|my|mi) (compra|purchase)|compra de (ontem|hoje)|\bcomprei\b/.test(text))return guide("access");
     if(listed.length)return {type:"cards",ids:listed.map(s=>s.id)};
     if(/esta carta|essa carta|esta skill|essa skill|this (card|skill)|esta (carta|skill)|primeiro passo|next step|siguiente paso/.test(text))return id?{type:"cards",ids:[id]}:guide("choose");
     if(/comparar|compare|comparacion|diferenca entre.*cartas|difference between.*cards/.test(text))return guide("compare");

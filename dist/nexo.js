@@ -15,7 +15,7 @@ window.DeckNexo=(()=>{
   }
   function reply(entry){
     const r=entry.reply;
-    if(r.type==="ai")return `<p>${esc(r.answer)}</p>${r.licenseNote?`<aside class="nexo-license"><strong>${esc(t("Sobre a licença"))}</strong><p>${esc(r.licenseNote)}</p></aside>`:""}${(r.cardIds||[]).map((id,i)=>card(id,i)).join("")}${r.inScope===false?"":`<p class="nexo-ai-note">${esc(t("Resposta gerada por IA a partir do catálogo e da ajuda do Deck. Confira a licença no pacote."))}</p>`}`;
+    if(r.type==="ai")return `<p>${esc(r.answer)}</p>${r.licenseNote?`<aside class="nexo-license"><strong>${esc(t("Sobre a licença"))}</strong>${r.licenseNote.split("\n\n").map(p=>`<p>${esc(p)}</p>`).join("")}</aside>`:""}${(r.cardIds||[]).map((id,i)=>card(id,i)).join("")}${r.inScope===false?"":`<p class="nexo-ai-note">${esc(t("Resposta gerada por IA a partir do catálogo e da ajuda do Deck. Confira a licença no pacote."))}</p>`}`;
     if(r.type==="blocked")return `<p>${esc(r.answer)}</p>`;
     if(r.type==="notice")return `<p>${esc(t(r.message))}</p>`;
     if(r.type==="guide"){

@@ -91,3 +91,16 @@ test("o catálogo só diz nexoAI:true quando o chat está ligado para a sessão"
   assert.equal(chat.enabled({ kind: "customer", skillIds: new Set() }, {}), false);
   assert.equal(chat.enabled({ kind: "customer", skillIds: new Set() }, { NEXO_AI: "on", GROQ_API_KEY: "k" }), true);
 });
+
+test("perguntas de pagamento e de compra vão ao guia de acesso, sem gastar IA", () => {
+  const ctx = { skills: [], audience: "business", mode: "customer", ai: true };
+  for (const text of [
+    "confirme se o meu pagamento da compra de ontem foi aprovado",
+    "preciso de reembolso da minha compra",
+    "my payment failed, can you check the invoice?",
+    "quiero un reembolso por mi compra",
+  ])
+    assert.equal(core.resolve(text, ctx).topic, "access", text);
+  // Perguntas de preço de carta continuam no guia de preços, não no de acesso.
+  assert.equal(core.resolve("quanto custa a carta DD-042 no deck?", { ...ctx, skills: require("../lib/catalog.cjs").skills }).topic, "pricingCustomer");
+});
