@@ -84,7 +84,7 @@ for (const [i, locale] of ["pt", "en", "es"].entries()) {
   test(`${locale}: compatibility and lab metadata cover every skill without inventing AI runs`, () => {
     const localized = localizeCatalog(catalog, locale),
       references = [];
-    assert.equal(localized.skills.length, 173);
+    assert.equal(localized.skills.length, 183);
     for (const skill of localized.skills) {
       const c = assessCompatibility(skill, { runtime: "codex" }, locale);
       assert.equal(c.executionVerified, false);
@@ -291,7 +291,7 @@ test("catalog runtime context stays authenticated, validated and localized", asy
       good,
     );
     assert.equal(good.status, 200);
-    assert.equal(good.data.skills.length, 173);
+    assert.equal(good.data.skills.length, 183);
     assert.equal(good.data.compatibilityContext.runtime, "codex");
     assert.equal(
       good.data.skills.find((s) => s.id === "figma-generate-design")

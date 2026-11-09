@@ -176,6 +176,16 @@ const rows = [
   ["movimento-acessivel-em-sites", "3444", "Audita CSS, JavaScript e HTML por barreiras de movimento e custo no celular, e exige testes manuais antes de publicar."],
   ["licenca-antes-de-copiar-componente", "3345", "Separa licença por camada, bloqueia cópia sem licença e exige evidência datada, sem substituir parecer jurídico."],
   ["landing-rapida-e-core-web-vitals", "3445", "Cruza medições de campo e laboratório com causas no HTML e só aceita melhora com comparação equivalente."],
+  ["theme-factory", "2234", "Aplica dez temas prontos de cor e fonte a páginas, slides e documentos; escopo de apoio visual, sem novo sistema de design."],
+  ["canvas-design", "3334", "Define uma filosofia visual e a expressa em peça estática PNG ou PDF, com fontes abertas no pacote."],
+  ["web-artifacts-builder", "3344", "Monta artefatos HTML com React, Tailwind e componentes, em arquivo único; instala dependências no ambiente do usuário."],
+  ["webapp-testing", "3344", "Testa aplicações web locais com Playwright, captura de tela e logs; exige navegador e servidor no ambiente do usuário."],
+  ["impeccable", "4435", "Conduz direção de design, crítica e acabamento de interface por comandos e referências; edição sem o motor original."],
+  ["ui-ux-pro-max", "3445", "Consulta base local de estilos, paletas, fontes e regras de experiência por script, com prioridades de acessibilidade e desempenho."],
+  ["shadcn", "3334", "Orienta composição, formulários e estilo com componentes shadcn/ui; depende da CLI oficial e da rede do usuário."],
+  ["tokens-de-design-do-zero-ao-tema", "3344", "Reúne três guias abertos para gerar, organizar em camadas W3C e tematizar tokens, com roteiro de qual usar."],
+  ["design-system-governance", "2234", "Define quem decide, como contribuir, versionar e descontinuar em um design system; guia organizacional curto."],
+  ["emil-design-eng", "3235", "Reúne critérios de acabamento de interface e decisão de animação; guia de ofício sem ferramenta própria."],
 ];
 const dimensions = ["depth", "scope", "verification", "reuse"];
 const byId = new Map(rows.map(row => [row[0], row]));

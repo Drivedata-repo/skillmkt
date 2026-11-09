@@ -9329,5 +9329,310 @@ module.exports = {
     "sha256": "307982a9e711363a1d26f7f0f3bb7efc3081685f461d12ef742166d8d5c2fd02",
     "bytes": 13634,
     "fileCount": 11
+  },
+  "theme-factory": {
+    "schemaVersion": 1,
+    "id": "theme-factory",
+    "code": "DD-174",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Obra da Anthropic sob Apache 2.0",
+      "As fontes citadas ficam a cargo do projeto"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
+    "sourceSha256": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "f70c17bfc574cd56b7b688eef4cfdc48a75a058e4ac4d6b917cde680db5b2409",
+    "bytes": 127257,
+    "fileCount": 19
+  },
+  "canvas-design": {
+    "schemaVersion": 1,
+    "id": "canvas-design",
+    "code": "DD-175",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Obra da Anthropic sob Apache 2.0, com fontes OFL",
+      "Geração de imagem depende do ambiente"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Apache License 2.0, SIL OFL 1.1 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
+    "sourceSha256": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "c1ae0dc8f99e72121e019d35dd0f05975c6a0d6cf515afc5b2a0c9f0936000ca",
+    "bytes": 2354299,
+    "fileCount": 83
+  },
+  "web-artifacts-builder": {
+    "schemaVersion": 1,
+    "id": "web-artifacts-builder",
+    "code": "DD-176",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Node, terminal Unix e instalação de pacotes",
+      "Scripts não executados nesta revisão"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Apache License 2.0, MIT e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt",
+      "LICENSE-shadcn-ui.md"
+    ],
+    "sourceSha256": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "00a23f8a5d44aa01312d4331d896749c41302e269a7c2834ff19d51c0c663f0d",
+    "bytes": 34589,
+    "fileCount": 12
+  },
+  "webapp-testing": {
+    "schemaVersion": 1,
+    "id": "webapp-testing",
+    "code": "DD-177",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Python e Playwright instalados",
+      "Testa só o ambiente local"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Apache License 2.0 e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
+    "sourceSha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "af243206c8bc05c9453b8a314211d5e4e1f4f213e58371930c9b5bfefb21332f",
+    "bytes": 12986,
+    "fileCount": 12
+  },
+  "impeccable": {
+    "schemaVersion": 1,
+    "id": "impeccable",
+    "code": "DD-178",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Edição sem o motor original",
+      "Comandos ao vivo e detector não acompanham"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Apache License 2.0, MIT e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt",
+      "NOTICE.md",
+      "LICENSE-platform-design-skills.txt"
+    ],
+    "sourceSha256": "e2503cc6c86376b8a58ce5799291a5bfd06aead23de5908f9d4b57cc09bc4dee",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "952794069d34cf7d4dfc7718a39b4a26bf4f6f3fda186998b30a28f066276cf9",
+    "bytes": 214619,
+    "fileCount": 55
+  },
+  "ui-ux-pro-max": {
+    "schemaVersion": 1,
+    "id": "ui-ux-pro-max",
+    "code": "DD-179",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Python 3 para a busca local",
+      "Sugestões precisam de revisão de quem desenha"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "MIT e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
+    "sourceSha256": "14f43337edfbf7822e091428e4ae0c6f92f86e3353deda6a30f6613121e2cf2d",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "b04b4b213c194a90b2bb4b3d7359ffa29bc1029db128cb3383cfa5dd6a786e67",
+    "bytes": 594008,
+    "fileCount": 54
+  },
+  "shadcn": {
+    "schemaVersion": 1,
+    "id": "shadcn",
+    "code": "DD-180",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "CLI oficial do shadcn e acesso à rede",
+      "Edição independente, sem vínculo com o projeto"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "MIT e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
+    "sourceSha256": "93951e5e83f616a3e046491c00d770bd54c0a64164706cd1191822a233d27592",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "bec8c7491d443da60331a63c3fdd9232565f7cdf67732f61ad81e6c3a23ffe78",
+    "bytes": 57403,
+    "fileCount": 24
+  },
+  "tokens-de-design-do-zero-ao-tema": {
+    "schemaVersion": 1,
+    "id": "tokens-de-design-do-zero-ao-tema",
+    "code": "DD-181",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Três obras abertas com autorias preservadas",
+      "Style Dictionary é opcional"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "Apache License 2.0, MIT e termos DriveData",
+    "licenseFiles": [
+      "origens/gerar-tokens/LICENSE.txt",
+      "origens/arquitetura-w3c/LICENSE.txt",
+      "origens/temas-multimarca/LICENSE.txt"
+    ],
+    "sourceSha256": "1096095e933215a552e9939b97a2538b7b81c72d48dc66ef33f8b877d4bb5e45",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "11c64ad063de4a38c60ebeb33120294c680e954b2d6c35ec5f84fe3bfbcb25ac",
+    "bytes": 37655,
+    "fileCount": 26
+  },
+  "design-system-governance": {
+    "schemaVersion": 1,
+    "id": "design-system-governance",
+    "code": "DD-182",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Obra de MC Dean sob MIT",
+      "Depende de decisão das equipes"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "MIT e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
+    "sourceSha256": "2e2eb92a3ec28e47632e2b13bcce7ab3187a61c258c07151925ed20289bd4bf5",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "17272e15dc7c948d8fdd698dc92e8d9c02412c95ee1df808939776001fc0f4f6",
+    "bytes": 6330,
+    "fileCount": 8
+  },
+  "emil-design-eng": {
+    "schemaVersion": 1,
+    "id": "emil-design-eng",
+    "code": "DD-183",
+    "format": "SKILL.md",
+    "review": "structure-checked",
+    "tools": [],
+    "normalizedFiles": 0,
+    "example": null,
+    "sourceReview": "applied-specific-static-checked",
+    "requirements": [
+      "Obra de Emil Kowalski sob MIT",
+      "Guia sem ferramenta própria"
+    ],
+    "version": "1.2.1",
+    "date": "2026-11-08",
+    "executionTested": false,
+    "commercialCleared": false,
+    "distribution": "authenticated-demo",
+    "license": "MIT e termos DriveData",
+    "licenseFiles": [
+      "LICENSE.txt"
+    ],
+    "sourceSha256": "965cc3108047a1f68e504977ae7816c66115b202a32e7509c0b8305314839c54",
+    "sourcePolicy": "third-party-preserved",
+    "changes": [],
+    "sha256": "f79c741979e1eb89b78d0b46084e966e9f9e7bf6c6b948fa6742369fa3dc85e9",
+    "bytes": 14716,
+    "fileCount": 8
   }
 };

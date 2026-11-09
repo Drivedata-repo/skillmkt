@@ -5830,5 +5830,725 @@
       ],
       "boundary": "No recoge las métricas ni ejecuta JavaScript. No promete nota ni posición en buscadores."
     }
+  },
+  {
+    "id": "theme-factory",
+    "pt": {
+      "alias": "Guarda-Roupa de Temas",
+      "tagline": "Dá uma roupa coerente a qualquer página em poucos minutos.",
+      "story": "Na fictícia Editora Margem, cada relatório saía com uma cor e uma fonte, e a marca parecia mudar de ideia a cada envio. Guarda-Roupa de Temas abre o mostruário, deixa a pessoa escolher entre 10 combinações e aplica a mesma paleta e o mesmo par de fontes no material inteiro.",
+      "purpose": "Aplica um tema profissional de cores e fontes a páginas, slides e documentos, a partir de 10 temas prontos ou de um tema novo descrito pela pessoa.",
+      "useCases": [
+        "Padronizar um relatório ou página sem designer.",
+        "Testar a aparência de um material antes de decidir."
+      ],
+      "scenario": {
+        "title": "O relatório de cada cor",
+        "context": "Cenário fictício: [EMPRESA] precisa publicar [MATERIAL] e cada versão saiu com cores diferentes.",
+        "request": "Use esta skill para dar uma identidade coerente a [MATERIAL] de [EMPRESA]. Mostre os temas disponíveis, espere a escolha, aplique a paleta e o par de fontes em todo o material e confira o contraste do texto.",
+        "output": "Material com tema aplicado de forma consistente.",
+        "check": "O tema precisa ser escolhido pela pessoa e aplicado em todas as partes do material."
+      },
+      "steps": [
+        "Veja o mostruário de temas.",
+        "Escolha uma combinação.",
+        "Aplique e confira o contraste."
+      ],
+      "boundary": "Não cria identidade de marca. As fontes citadas precisam estar disponíveis no projeto."
+    },
+    "en": {
+      "alias": "Theme Wardrobe",
+      "tagline": "Dresses any page in a coherent look within minutes.",
+      "story": "At the fictional Editora Margem, every report came out with a different color and font, and the brand seemed to change its mind with each send. Theme Wardrobe opens the sample book, lets people choose among 10 combinations and applies the same palette and font pairing to the whole material.",
+      "purpose": "Applies a professional color and font theme to pages, slides and documents, from 10 ready-made themes or from a new theme the person describes.",
+      "useCases": [
+        "Standardize a report or page without a designer.",
+        "Try out the look of a material before deciding."
+      ],
+      "scenario": {
+        "title": "The report of many colors",
+        "context": "Fictional scenario: [COMPANY] needs to publish [MATERIAL] and each version came out with different colors.",
+        "request": "Use this skill to give [MATERIAL] from [COMPANY] a coherent identity. Show the available themes, wait for the choice, apply the palette and font pairing across the whole material and check text contrast.",
+        "output": "Material with a consistently applied theme.",
+        "check": "The theme must be chosen by the person and applied to every part of the material."
+      },
+      "steps": [
+        "See the theme sample book.",
+        "Choose a combination.",
+        "Apply it and check contrast."
+      ],
+      "boundary": "It does not create a brand identity. The named fonts must be available in the project."
+    },
+    "es": {
+      "alias": "Armario de Temas",
+      "tagline": "Viste cualquier página con un aspecto coherente en pocos minutos.",
+      "story": "En la ficticia Editora Margem, cada informe salía con un color y una fuente, y la marca parecía cambiar de idea en cada envío. Armario de Temas abre el muestrario, deja elegir entre 10 combinaciones y aplica la misma paleta y el mismo par de fuentes a todo el material.",
+      "purpose": "Aplica un tema profesional de colores y fuentes a páginas, diapositivas y documentos, a partir de 10 temas listos o de un tema nuevo descrito por la persona.",
+      "useCases": [
+        "Estandarizar un informe o página sin diseñador.",
+        "Probar el aspecto de un material antes de decidir."
+      ],
+      "scenario": {
+        "title": "El informe de cada color",
+        "context": "Escenario ficticio: [EMPRESA] necesita publicar [MATERIAL] y cada versión salió con colores distintos.",
+        "request": "Usa esta skill para dar una identidad coherente a [MATERIAL] de [EMPRESA]. Muestra los temas disponibles, espera la elección, aplica la paleta y el par de fuentes en todo el material y comprueba el contraste del texto.",
+        "output": "Material con tema aplicado de forma coherente.",
+        "check": "El tema debe ser elegido por la persona y aplicado en todas las partes del material."
+      },
+      "steps": [
+        "Mira el muestrario de temas.",
+        "Elige una combinación.",
+        "Aplica y comprueba el contraste."
+      ],
+      "boundary": "No crea identidad de marca. Las fuentes citadas deben estar disponibles en el proyecto."
+    }
+  },
+  {
+    "id": "canvas-design",
+    "pt": {
+      "alias": "Ateliê de Uma Ideia",
+      "tagline": "Primeiro escreve o movimento estético, depois faz a peça.",
+      "story": "No fictício Festival Maré, os cartazes pareciam saídos de um banco de imagens. Ateliê de Uma Ideia começa escrevendo uma filosofia visual própria para o evento e só então compõe a peça, com forma, espaço e fontes escolhidas para sustentar aquela ideia até o último detalhe.",
+      "purpose": "Cria peças visuais estáticas em PNG ou PDF, como pôsteres e capas, partindo de uma filosofia visual escrita e usando as fontes abertas que acompanham o pacote.",
+      "useCases": [
+        "Criar um pôster ou capa com personalidade.",
+        "Transformar um conceito em peça estática."
+      ],
+      "scenario": {
+        "title": "O cartaz sem cara",
+        "context": "Cenário fictício: [EVENTO] precisa de uma peça para [CANAL] e as opções anteriores ficaram genéricas.",
+        "request": "Use esta skill para criar a peça visual de [EVENTO]. Escreva primeiro uma filosofia visual curta e própria, depois componha a peça em PNG ou PDF com pouco texto e confira cada elemento no tamanho final.",
+        "output": "Filosofia visual escrita e peça em PNG ou PDF.",
+        "check": "A peça precisa seguir a filosofia escrita, e nenhum texto pode ficar cortado ou sobreposto."
+      },
+      "steps": [
+        "Escreva a filosofia visual.",
+        "Componha a peça.",
+        "Confira no tamanho final."
+      ],
+      "boundary": "Faz peças estáticas, não páginas de site. Não copie o estilo de artistas vivos nem logotipos de terceiros."
+    },
+    "en": {
+      "alias": "One Idea Studio",
+      "tagline": "First it writes the aesthetic movement, then it makes the piece.",
+      "story": "At the fictional Festival Maré, the posters looked straight out of an image bank. One Idea Studio starts by writing a visual philosophy of its own for the event and only then composes the piece, with form, space and fonts chosen to sustain that idea down to the last detail.",
+      "purpose": "Creates static visual pieces in PNG or PDF, such as posters and covers, starting from a written visual philosophy and using the open fonts included in the package.",
+      "useCases": [
+        "Create a poster or cover with personality.",
+        "Turn a concept into a static piece."
+      ],
+      "scenario": {
+        "title": "The faceless poster",
+        "context": "Fictional scenario: [EVENT] needs a piece for [CHANNEL] and the earlier options came out generic.",
+        "request": "Use this skill to create the visual piece for [EVENT]. First write a short visual philosophy of its own, then compose the piece in PNG or PDF with little text and check each element at final size.",
+        "output": "Written visual philosophy and a piece in PNG or PDF.",
+        "check": "The piece must follow the written philosophy, and no text may be cut off or overlapping."
+      },
+      "steps": [
+        "Write the visual philosophy.",
+        "Compose the piece.",
+        "Check it at final size."
+      ],
+      "boundary": "It makes static pieces, not website pages. Do not copy the style of living artists or third-party logos."
+    },
+    "es": {
+      "alias": "Taller de Una Idea",
+      "tagline": "Primero escribe el movimiento estético y después hace la pieza.",
+      "story": "En el ficticio Festival Maré, los carteles parecían salidos de un banco de imágenes. Taller de Una Idea empieza escribiendo una filosofía visual propia para el evento y solo entonces compone la pieza, con forma, espacio y fuentes elegidas para sostener esa idea hasta el último detalle.",
+      "purpose": "Crea piezas visuales estáticas en PNG o PDF, como pósteres y portadas, partiendo de una filosofía visual escrita y usando las fuentes abiertas que acompañan al paquete.",
+      "useCases": [
+        "Crear un póster o portada con personalidad.",
+        "Convertir un concepto en una pieza estática."
+      ],
+      "scenario": {
+        "title": "El cartel sin rostro",
+        "context": "Escenario ficticio: [EVENTO] necesita una pieza para [CANAL] y las opciones anteriores quedaron genéricas.",
+        "request": "Usa esta skill para crear la pieza visual de [EVENTO]. Escribe primero una filosofía visual breve y propia, después compón la pieza en PNG o PDF con poco texto y comprueba cada elemento en el tamaño final.",
+        "output": "Filosofía visual escrita y pieza en PNG o PDF.",
+        "check": "La pieza debe seguir la filosofía escrita, y ningún texto puede quedar cortado o superpuesto."
+      },
+      "steps": [
+        "Escribe la filosofía visual.",
+        "Compón la pieza.",
+        "Comprueba en el tamaño final."
+      ],
+      "boundary": "Hace piezas estáticas, no páginas de sitio. No copies el estilo de artistas vivos ni logotipos de terceros."
+    }
+  },
+  {
+    "id": "web-artifacts-builder",
+    "pt": {
+      "alias": "Oficina de Arquivo Único",
+      "tagline": "Monta a tela com React e entrega tudo em um HTML só.",
+      "story": "Na fictícia Cooperativa Vale Verde, a equipe queria um simulador interativo para mandar por link, sem servidor. Oficina de Arquivo Único prepara o projeto com React, Tailwind e componentes prontos, deixa construir com estado e navegação e no fim junta tudo em um único arquivo HTML.",
+      "purpose": "Cria artefatos web complexos com React, Tailwind e componentes, usando estado e rotas, e empacota o resultado em um único arquivo HTML para compartilhar.",
+      "useCases": [
+        "Criar um simulador ou painel interativo em um arquivo.",
+        "Prototipar uma tela com componentes reais."
+      ],
+      "scenario": {
+        "title": "O simulador sem servidor",
+        "context": "Cenário fictício: [EQUIPE] precisa compartilhar [FERRAMENTA] interativa sem publicar um sistema.",
+        "request": "Use esta skill para construir [FERRAMENTA] de [EQUIPE]. Inicie o projeto com o script, desenvolva os componentes com estado, gere o HTML único com o script de empacotamento e confira a tela antes de compartilhar.",
+        "output": "Um arquivo HTML com a tela interativa completa.",
+        "check": "O arquivo final precisa abrir sozinho, sem servidor, e cada interação precisa ser conferida."
+      },
+      "steps": [
+        "Inicie o projeto.",
+        "Construa os componentes.",
+        "Empacote e confira o arquivo."
+      ],
+      "boundary": "Os scripts instalam pacotes da internet e pedem terminal Unix. Não foram executados nesta revisão."
+    },
+    "en": {
+      "alias": "Single File Workshop",
+      "tagline": "Builds the screen with React and delivers everything in one HTML.",
+      "story": "At the fictional Cooperativa Vale Verde, the team wanted an interactive simulator to send by link, with no server. Single File Workshop sets up the project with React, Tailwind and ready-made components, lets you build with state and navigation and finally joins everything into one HTML file.",
+      "purpose": "Creates complex web artifacts with React, Tailwind and components, using state and routes, and bundles the result into a single HTML file to share.",
+      "useCases": [
+        "Create an interactive simulator or dashboard in one file.",
+        "Prototype a screen with real components."
+      ],
+      "scenario": {
+        "title": "The serverless simulator",
+        "context": "Fictional scenario: [TEAM] needs to share an interactive [TOOL] without publishing a system.",
+        "request": "Use this skill to build the [TOOL] for [TEAM]. Start the project with the script, develop the components with state, generate the single HTML with the bundling script and check the screen before sharing.",
+        "output": "One HTML file with the complete interactive screen.",
+        "check": "The final file must open on its own, with no server, and each interaction must be checked."
+      },
+      "steps": [
+        "Start the project.",
+        "Build the components.",
+        "Bundle and check the file."
+      ],
+      "boundary": "The scripts install packages from the internet and require a Unix terminal. They were not run in this review."
+    },
+    "es": {
+      "alias": "Taller de Archivo Único",
+      "tagline": "Monta la pantalla con React y entrega todo en un solo HTML.",
+      "story": "En la ficticia Cooperativa Vale Verde, el equipo quería un simulador interactivo para enviar por enlace, sin servidor. Taller de Archivo Único prepara el proyecto con React, Tailwind y componentes listos, permite construir con estado y navegación y al final une todo en un único archivo HTML.",
+      "purpose": "Crea artefactos web complejos con React, Tailwind y componentes, usando estado y rutas, y empaqueta el resultado en un único archivo HTML para compartir.",
+      "useCases": [
+        "Crear un simulador o panel interactivo en un archivo.",
+        "Prototipar una pantalla con componentes reales."
+      ],
+      "scenario": {
+        "title": "El simulador sin servidor",
+        "context": "Escenario ficticio: [EQUIPO] necesita compartir [HERRAMIENTA] interactiva sin publicar un sistema.",
+        "request": "Usa esta skill para construir [HERRAMIENTA] de [EQUIPO]. Inicia el proyecto con el script, desarrolla los componentes con estado, genera el HTML único con el script de empaquetado y comprueba la pantalla antes de compartir.",
+        "output": "Un archivo HTML con la pantalla interactiva completa.",
+        "check": "El archivo final debe abrirse solo, sin servidor, y cada interacción debe comprobarse."
+      },
+      "steps": [
+        "Inicia el proyecto.",
+        "Construye los componentes.",
+        "Empaqueta y comprueba el archivo."
+      ],
+      "boundary": "Los scripts instalan paquetes de internet y piden terminal Unix. No se ejecutaron en esta revisión."
+    }
+  },
+  {
+    "id": "webapp-testing",
+    "pt": {
+      "alias": "Clique Vigiado",
+      "tagline": "Abre o navegador, clica por você e mostra o que aconteceu.",
+      "story": "Na fictícia Loja Bem Te Vi, cada ajuste no carrinho exigia alguém refazendo a compra à mão, e os erros só apareciam no console. Clique Vigiado sobe o servidor local, percorre a tela com Playwright, tira fotos e guarda os logs para mostrar o que quebrou e em qual passo.",
+      "purpose": "Testa e depura aplicações web locais com Playwright, verificando o funcionamento da tela, capturando imagens e lendo os logs do navegador.",
+      "useCases": [
+        "Conferir um fluxo depois de uma alteração.",
+        "Investigar um erro que só aparece no navegador."
+      ],
+      "scenario": {
+        "title": "O carrinho refeito à mão",
+        "context": "Cenário fictício: [APLICAÇÃO] roda em ambiente local e o fluxo de [TAREFA] quebra às vezes.",
+        "request": "Use esta skill para testar o fluxo de [TAREFA] em [APLICAÇÃO]. Suba o servidor local, percorra a tela no navegador, capture imagens dos passos principais e leia os logs para apontar onde a falha acontece.",
+        "output": "Roteiro executado, capturas de tela e logs do fluxo.",
+        "check": "Cada falha apontada precisa vir com captura ou log, e nada é dado como aprovado sem rodar."
+      },
+      "steps": [
+        "Suba o servidor local.",
+        "Percorra o fluxo no navegador.",
+        "Leia as capturas e os logs."
+      ],
+      "boundary": "Pede Python e Playwright instalados. Use em ambiente local, nunca em produção sem autorização."
+    },
+    "en": {
+      "alias": "Watched Click",
+      "tagline": "Opens the browser, clicks for you and shows what happened.",
+      "story": "At the fictional Loja Bem Te Vi, each change to the cart meant someone redoing the purchase by hand, and errors only showed up in the console. Watched Click starts the local server, walks through the screen with Playwright, takes pictures and keeps the logs to show what broke and at which step.",
+      "purpose": "Tests and debugs local web applications with Playwright, verifying how the screen works, capturing images and reading browser logs.",
+      "useCases": [
+        "Check a flow after a change.",
+        "Investigate an error that only appears in the browser."
+      ],
+      "scenario": {
+        "title": "The cart redone by hand",
+        "context": "Fictional scenario: [APPLICATION] runs locally and the [TASK] flow sometimes breaks.",
+        "request": "Use this skill to test the [TASK] flow in [APPLICATION]. Start the local server, walk through the screen in the browser, capture images of the main steps and read the logs to point out where the failure happens.",
+        "output": "Script run, screenshots and logs of the flow.",
+        "check": "Every failure reported must come with a screenshot or log, and nothing is approved without running."
+      },
+      "steps": [
+        "Start the local server.",
+        "Walk the flow in the browser.",
+        "Read the screenshots and logs."
+      ],
+      "boundary": "It requires Python and Playwright installed. Use it locally, never in production without authorization."
+    },
+    "es": {
+      "alias": "Clic Vigilado",
+      "tagline": "Abre el navegador, hace clic por ti y muestra lo que pasó.",
+      "story": "En la ficticia Loja Bem Te Vi, cada ajuste en el carrito obligaba a alguien a rehacer la compra a mano, y los errores solo aparecían en la consola. Clic Vigilado levanta el servidor local, recorre la pantalla con Playwright, toma capturas y guarda los registros para mostrar qué se rompió y en qué paso.",
+      "purpose": "Prueba y depura aplicaciones web locales con Playwright, verificando el funcionamiento de la pantalla, capturando imágenes y leyendo los registros del navegador.",
+      "useCases": [
+        "Comprobar un flujo después de un cambio.",
+        "Investigar un error que solo aparece en el navegador."
+      ],
+      "scenario": {
+        "title": "El carrito rehecho a mano",
+        "context": "Escenario ficticio: [APLICACIÓN] funciona en entorno local y el flujo de [TAREA] a veces se rompe.",
+        "request": "Usa esta skill para probar el flujo de [TAREA] en [APLICACIÓN]. Levanta el servidor local, recorre la pantalla en el navegador, captura imágenes de los pasos principales y lee los registros para señalar dónde ocurre el fallo.",
+        "output": "Guion ejecutado, capturas de pantalla y registros del flujo.",
+        "check": "Cada fallo señalado debe venir con captura o registro, y nada se da por aprobado sin ejecutar."
+      },
+      "steps": [
+        "Levanta el servidor local.",
+        "Recorre el flujo en el navegador.",
+        "Lee las capturas y los registros."
+      ],
+      "boundary": "Pide Python y Playwright instalados. Úsalo en entorno local, nunca en producción sin autorización."
+    }
+  },
+  {
+    "id": "impeccable",
+    "pt": {
+      "alias": "Diretor de Arte de Plantão",
+      "tagline": "Olha a tela com exigência e diz o que precisa mudar.",
+      "story": "Na fictícia Fintech Ponte, o site tinha o mesmo gradiente e os mesmos cartões de todos os concorrentes. Diretor de Arte de Plantão define para que serve cada tela, critica com critério, ajusta layout, tipografia, cor e texto e recusa os atalhos que deixam tudo com a mesma cara.",
+      "purpose": "Dirige o design de interfaces web com comandos para planejar, criticar, auditar e refinar layout, tipografia, cor, movimento e texto, a partir de referências de ofício.",
+      "useCases": [
+        "Dar personalidade a um site com cara de modelo.",
+        "Fazer crítica e acabamento antes de publicar."
+      ],
+      "scenario": {
+        "title": "O gradiente de todo mundo",
+        "context": "Cenário fictício: o site de [EMPRESA] funciona, mas parece igual aos de [CONCORRENTES].",
+        "request": "Use esta skill para melhorar o design do site de [EMPRESA]. Defina o modo da página, faça uma crítica com critérios, escolha os ajustes de layout, tipografia e cor e confira o resultado renderizado nos tamanhos reais.",
+        "output": "Crítica, direção visual e interface refinada.",
+        "check": "O resultado precisa ser conferido na tela renderizada, e o que já está definido no pedido prevalece."
+      },
+      "steps": [
+        "Defina o modo da página.",
+        "Critique com critérios.",
+        "Refine e confira na tela."
+      ],
+      "boundary": "Edição sem o motor original: comandos ao vivo, detector e atalhos não funcionam neste pacote."
+    },
+    "en": {
+      "alias": "On-Call Art Director",
+      "tagline": "Looks at the screen with high standards and says what must change.",
+      "story": "At the fictional Fintech Ponte, the website had the same gradient and the same cards as every competitor. On-Call Art Director defines what each screen is for, critiques with criteria, adjusts layout, typography, color and copy and refuses the shortcuts that make everything look alike.",
+      "purpose": "Directs the design of web interfaces with commands to plan, critique, audit and refine layout, typography, color, motion and copy, based on craft references.",
+      "useCases": [
+        "Give personality to a site that looks like a template.",
+        "Do critique and polish before publishing."
+      ],
+      "scenario": {
+        "title": "Everyone's gradient",
+        "context": "Fictional scenario: the [COMPANY] website works, but it looks the same as those of [COMPETITORS].",
+        "request": "Use this skill to improve the design of the [COMPANY] website. Define the page mode, make a critique with criteria, choose the layout, typography and color adjustments and check the rendered result at real sizes.",
+        "output": "Critique, visual direction and refined interface.",
+        "check": "The result must be checked on the rendered screen, and whatever the request already defines prevails."
+      },
+      "steps": [
+        "Define the page mode.",
+        "Critique with criteria.",
+        "Refine and check on screen."
+      ],
+      "boundary": "Edition without the original engine: live commands, the detector and shortcuts do not work in this package."
+    },
+    "es": {
+      "alias": "Director de Arte de Guardia",
+      "tagline": "Mira la pantalla con exigencia y dice qué debe cambiar.",
+      "story": "En la ficticia Fintech Ponte, el sitio tenía el mismo degradado y las mismas tarjetas que todos sus competidores. Director de Arte de Guardia define para qué sirve cada pantalla, critica con criterio, ajusta maquetación, tipografía, color y texto y rechaza los atajos que dejan todo con la misma cara.",
+      "purpose": "Dirige el diseño de interfaces web con comandos para planificar, criticar, auditar y refinar maquetación, tipografía, color, movimiento y texto, a partir de referencias de oficio.",
+      "useCases": [
+        "Dar personalidad a un sitio con aspecto de plantilla.",
+        "Hacer crítica y acabado antes de publicar."
+      ],
+      "scenario": {
+        "title": "El degradado de todos",
+        "context": "Escenario ficticio: el sitio de [EMPRESA] funciona, pero parece igual a los de [COMPETIDORES].",
+        "request": "Usa esta skill para mejorar el diseño del sitio de [EMPRESA]. Define el modo de la página, haz una crítica con criterios, elige los ajustes de maquetación, tipografía y color y comprueba el resultado renderizado en los tamaños reales.",
+        "output": "Crítica, dirección visual e interfaz refinada.",
+        "check": "El resultado debe comprobarse en la pantalla renderizada, y lo ya definido en el pedido prevalece."
+      },
+      "steps": [
+        "Define el modo de la página.",
+        "Critica con criterios.",
+        "Refina y comprueba en pantalla."
+      ],
+      "boundary": "Edición sin el motor original: los comandos en vivo, el detector y los atajos no funcionan en este paquete."
+    }
+  },
+  {
+    "id": "ui-ux-pro-max",
+    "pt": {
+      "alias": "Enciclopédia de Vitrines",
+      "tagline": "Consulta estilos e paletas antes de escolher por impulso.",
+      "story": "Na fictícia Clínica Girassol, a página parecia uma loja de tecnologia porque ninguém tinha perguntado o que combinava com saúde. Enciclopédia de Vitrines busca em uma base local o estilo, a paleta e as fontes indicadas para o tipo de produto e lembra as regras de acessibilidade primeiro.",
+      "purpose": "Sugere estilos, paletas, pares de fontes e regras de experiência para o tipo de produto, com busca local em uma base de dados e prioridade para acessibilidade e toque.",
+      "useCases": [
+        "Escolher estilo e paleta para um produto novo.",
+        "Revisar uma interface por regras de experiência."
+      ],
+      "scenario": {
+        "title": "A clínica com cara de loja",
+        "context": "Cenário fictício: [EMPRESA] de [SETOR] vai criar [PÁGINA] e não sabe qual linguagem visual combina.",
+        "request": "Use esta skill para definir a linguagem visual de [PÁGINA] de [EMPRESA]. Consulte a base local pelo tipo de produto, proponha estilo, paleta e fontes, aplique as regras de acessibilidade e explique cada escolha.",
+        "output": "Sistema de design sugerido, com estilo, paleta e fontes.",
+        "check": "Cada escolha precisa vir da consulta à base, e contraste e área de toque são conferidos primeiro."
+      },
+      "steps": [
+        "Informe o tipo de produto.",
+        "Consulte a base local.",
+        "Revise as regras de experiência."
+      ],
+      "boundary": "As sugestões são ponto de partida e precisam de revisão de quem desenha. A busca pede Python 3."
+    },
+    "en": {
+      "alias": "Storefront Encyclopedia",
+      "tagline": "Looks up styles and palettes before you choose on impulse.",
+      "story": "At the fictional Clínica Girassol, the page looked like a technology store because nobody had asked what suited healthcare. Storefront Encyclopedia searches a local database for the style, palette and fonts recommended for the product type and puts accessibility rules first.",
+      "purpose": "Suggests styles, palettes, font pairings and experience rules for the product type, with local search over a database and priority for accessibility and touch.",
+      "useCases": [
+        "Choose style and palette for a new product.",
+        "Review an interface against experience rules."
+      ],
+      "scenario": {
+        "title": "The clinic that looked like a store",
+        "context": "Fictional scenario: [COMPANY] in [SECTOR] will create [PAGE] and does not know which visual language fits.",
+        "request": "Use this skill to define the visual language of [PAGE] for [COMPANY]. Query the local database by product type, propose style, palette and fonts, apply the accessibility rules and explain each choice.",
+        "output": "Suggested design system, with style, palette and fonts.",
+        "check": "Each choice must come from the database query, and contrast and touch area are checked first."
+      },
+      "steps": [
+        "Give the product type.",
+        "Query the local database.",
+        "Review the experience rules."
+      ],
+      "boundary": "Suggestions are a starting point and need review by whoever designs. The search requires Python 3."
+    },
+    "es": {
+      "alias": "Enciclopedia de Escaparates",
+      "tagline": "Consulta estilos y paletas antes de elegir por impulso.",
+      "story": "En la ficticia Clínica Girassol, la página parecía una tienda de tecnología porque nadie había preguntado qué encajaba con la salud. Enciclopedia de Escaparates busca en una base local el estilo, la paleta y las fuentes indicadas para el tipo de producto y pone primero las reglas de accesibilidad.",
+      "purpose": "Sugiere estilos, paletas, pares de fuentes y reglas de experiencia para el tipo de producto, con búsqueda local en una base de datos y prioridad para accesibilidad y toque.",
+      "useCases": [
+        "Elegir estilo y paleta para un producto nuevo.",
+        "Revisar una interfaz con reglas de experiencia."
+      ],
+      "scenario": {
+        "title": "La clínica con cara de tienda",
+        "context": "Escenario ficticio: [EMPRESA] de [SECTOR] va a crear [PÁGINA] y no sabe qué lenguaje visual encaja.",
+        "request": "Usa esta skill para definir el lenguaje visual de [PÁGINA] de [EMPRESA]. Consulta la base local por tipo de producto, propón estilo, paleta y fuentes, aplica las reglas de accesibilidad y explica cada elección.",
+        "output": "Sistema de diseño sugerido, con estilo, paleta y fuentes.",
+        "check": "Cada elección debe venir de la consulta a la base, y el contraste y el área de toque se comprueban primero."
+      },
+      "steps": [
+        "Indica el tipo de producto.",
+        "Consulta la base local.",
+        "Revisa las reglas de experiencia."
+      ],
+      "boundary": "Las sugerencias son un punto de partida y necesitan revisión de quien diseña. La búsqueda pide Python 3."
+    }
+  },
+  {
+    "id": "shadcn",
+    "pt": {
+      "alias": "Caixa de Peças Conferidas",
+      "tagline": "Usa o componente que já existe antes de inventar outro.",
+      "story": "Na fictícia Agenda Fácil, cada tela tinha um botão diferente, escrito do zero com cores soltas. Caixa de Peças Conferidas consulta o que o projeto já instalou, busca o componente certo no registro e aplica as regras de composição, formulário e estilo sem criar variações desnecessárias.",
+      "purpose": "Orienta o uso de componentes shadcn/ui em um projeto, com regras de composição, formulários, ícones e estilo, e o uso da CLI oficial para adicionar e corrigir componentes.",
+      "useCases": [
+        "Montar uma tela com os componentes do projeto.",
+        "Corrigir componentes usados de forma errada."
+      ],
+      "scenario": {
+        "title": "O botão de cada tela",
+        "context": "Cenário fictício: o projeto [PROJETO] usa shadcn/ui, mas [TELA] foi escrita com estilos soltos.",
+        "request": "Use esta skill para refazer [TELA] de [PROJETO]. Veja o que já está instalado, procure os componentes certos, componha com as variantes existentes, use cores semânticas e confira a documentação antes de adicionar algo novo.",
+        "output": "Tela composta com componentes do projeto e cores semânticas.",
+        "check": "Nada de cor crua nem componente reinventado quando já existe equivalente no projeto."
+      },
+      "steps": [
+        "Veja o que o projeto já tem.",
+        "Busque o componente certo.",
+        "Componha e confira a tela."
+      ],
+      "boundary": "Depende da CLI oficial e de acesso à rede. Edição independente, sem vínculo com o projeto shadcn/ui."
+    },
+    "en": {
+      "alias": "Checked Parts Box",
+      "tagline": "Uses the component that already exists before inventing another.",
+      "story": "At the fictional Agenda Fácil, each screen had a different button, written from scratch with loose colors. Checked Parts Box looks at what the project has installed, finds the right component in the registry and applies composition, form and styling rules without creating needless variations.",
+      "purpose": "Guides the use of shadcn/ui components in a project, with rules for composition, forms, icons and styling, and the official CLI to add and fix components.",
+      "useCases": [
+        "Build a screen with the project's components.",
+        "Fix components used the wrong way."
+      ],
+      "scenario": {
+        "title": "A button for each screen",
+        "context": "Fictional scenario: the [PROJECT] project uses shadcn/ui, but [SCREEN] was written with loose styles.",
+        "request": "Use this skill to redo [SCREEN] of [PROJECT]. See what is already installed, look for the right components, compose with existing variants, use semantic colors and check the documentation before adding anything new.",
+        "output": "Screen composed with project components and semantic colors.",
+        "check": "No raw color and no reinvented component when the project already has an equivalent."
+      },
+      "steps": [
+        "See what the project has.",
+        "Find the right component.",
+        "Compose and check the screen."
+      ],
+      "boundary": "It depends on the official CLI and network access. Independent edition, not affiliated with the shadcn/ui project."
+    },
+    "es": {
+      "alias": "Caja de Piezas Comprobadas",
+      "tagline": "Usa el componente que ya existe antes de inventar otro.",
+      "story": "En la ficticia Agenda Fácil, cada pantalla tenía un botón distinto, escrito desde cero con colores sueltos. Caja de Piezas Comprobadas consulta lo que el proyecto ya instaló, busca el componente correcto en el registro y aplica las reglas de composición, formulario y estilo sin crear variaciones innecesarias.",
+      "purpose": "Orienta el uso de componentes shadcn/ui en un proyecto, con reglas de composición, formularios, iconos y estilo, y el uso de la CLI oficial para añadir y corregir componentes.",
+      "useCases": [
+        "Montar una pantalla con los componentes del proyecto.",
+        "Corregir componentes usados de forma errónea."
+      ],
+      "scenario": {
+        "title": "El botón de cada pantalla",
+        "context": "Escenario ficticio: el proyecto [PROYECTO] usa shadcn/ui, pero [PANTALLA] se escribió con estilos sueltos.",
+        "request": "Usa esta skill para rehacer [PANTALLA] de [PROYECTO]. Mira lo que ya está instalado, busca los componentes correctos, compón con las variantes existentes, usa colores semánticos y consulta la documentación antes de añadir algo nuevo.",
+        "output": "Pantalla compuesta con componentes del proyecto y colores semánticos.",
+        "check": "Nada de color crudo ni componente reinventado cuando ya existe un equivalente en el proyecto."
+      },
+      "steps": [
+        "Mira lo que tiene el proyecto.",
+        "Busca el componente correcto.",
+        "Compón y comprueba la pantalla."
+      ],
+      "boundary": "Depende de la CLI oficial y de acceso a la red. Edición independiente, sin vínculo con el proyecto shadcn/ui."
+    }
+  },
+  {
+    "id": "tokens-de-design-do-zero-ao-tema",
+    "pt": {
+      "alias": "Raiz das Medidas",
+      "tagline": "Uma decisão de cor ou espaço vale para o produto inteiro.",
+      "story": "Na fictícia Rede Farol, trocar o azul da marca exigia caçar valores em dezenas de arquivos, e o tema escuro nunca ficava pronto. Raiz das Medidas cria o primeiro arquivo de tokens, organiza as camadas no formato W3C e mostra como cada marca e cada tema sobrescrevem só o que precisam.",
+      "purpose": "Cria e organiza tokens de design, do primeiro arquivo com tema claro e escuro à arquitetura em camadas no formato W3C e aos temas para várias marcas, unindo três guias abertos.",
+      "useCases": [
+        "Criar os tokens de um projeto novo.",
+        "Preparar um produto para várias marcas e tema escuro."
+      ],
+      "scenario": {
+        "title": "O azul em dezenas de arquivos",
+        "context": "Cenário fictício: [PRODUTO] tem cores e espaçamentos soltos e precisa de [NOVO TEMA].",
+        "request": "Use esta skill para organizar os tokens de [PRODUTO]. Procure o que já existe, gere ou reorganize os tokens em camadas, defina os temas necessários e meça o contraste de cada par de texto e fundo nos dois temas.",
+        "output": "Arquivo de tokens em camadas e plano de temas.",
+        "check": "Componente nenhum usa valor cru, e cada par de texto e fundo tem o contraste medido."
+      },
+      "steps": [
+        "Procure tokens que já existem.",
+        "Gere ou organize as camadas.",
+        "Defina os temas e meça o contraste."
+      ],
+      "boundary": "Os guias descrevem o trabalho e não executam ferramentas. Conferência visual em tela real continua necessária."
+    },
+    "en": {
+      "alias": "Root of Measures",
+      "tagline": "One color or spacing decision holds for the whole product.",
+      "story": "At the fictional Rede Farol, changing the brand blue meant hunting values through dozens of files, and the dark theme was never finished. Root of Measures creates the first token file, organizes the tiers in the W3C format and shows how each brand and theme overrides only what it needs.",
+      "purpose": "Creates and organizes design tokens, from the first file with light and dark themes to the tiered W3C format architecture and themes for several brands, joining three open guides.",
+      "useCases": [
+        "Create the tokens for a new project.",
+        "Prepare a product for several brands and a dark theme."
+      ],
+      "scenario": {
+        "title": "The blue in dozens of files",
+        "context": "Fictional scenario: [PRODUCT] has loose colors and spacing and needs [NEW THEME].",
+        "request": "Use this skill to organize the tokens of [PRODUCT]. Look for what already exists, generate or reorganize the tokens in tiers, define the themes needed and measure the contrast of each text and background pair in both themes.",
+        "output": "Tiered token file and theme plan.",
+        "check": "No component uses a raw value, and each text and background pair has its contrast measured."
+      },
+      "steps": [
+        "Look for existing tokens.",
+        "Generate or organize the tiers.",
+        "Define themes and measure contrast."
+      ],
+      "boundary": "The guides describe the work and do not run tools. Visual checking on a real screen is still needed."
+    },
+    "es": {
+      "alias": "Raíz de las Medidas",
+      "tagline": "Una decisión de color o espacio vale para todo el producto.",
+      "story": "En la ficticia Rede Farol, cambiar el azul de la marca obligaba a cazar valores en decenas de archivos, y el tema oscuro nunca quedaba listo. Raíz de las Medidas crea el primer archivo de tokens, organiza las capas en formato W3C y muestra cómo cada marca y tema sobrescriben solo lo que necesitan.",
+      "purpose": "Crea y organiza tokens de diseño, desde el primer archivo con tema claro y oscuro hasta la arquitectura en capas en formato W3C y los temas para varias marcas, uniendo tres guías abiertas.",
+      "useCases": [
+        "Crear los tokens de un proyecto nuevo.",
+        "Preparar un producto para varias marcas y tema oscuro."
+      ],
+      "scenario": {
+        "title": "El azul en decenas de archivos",
+        "context": "Escenario ficticio: [PRODUCTO] tiene colores y espaciados sueltos y necesita [NUEVO TEMA].",
+        "request": "Usa esta skill para organizar los tokens de [PRODUCTO]. Busca lo que ya existe, genera o reorganiza los tokens en capas, define los temas necesarios y mide el contraste de cada par de texto y fondo en ambos temas.",
+        "output": "Archivo de tokens en capas y plan de temas.",
+        "check": "Ningún componente usa un valor crudo, y cada par de texto y fondo tiene su contraste medido."
+      },
+      "steps": [
+        "Busca los tokens que ya existen.",
+        "Genera u organiza las capas.",
+        "Define los temas y mide el contraste."
+      ],
+      "boundary": "Las guías describen el trabajo y no ejecutan herramientas. La comprobación visual en pantalla real sigue siendo necesaria."
+    }
+  },
+  {
+    "id": "design-system-governance",
+    "pt": {
+      "alias": "Conselho dos Componentes",
+      "tagline": "Decide quem muda o quê antes que cada um mude do seu jeito.",
+      "story": "Na fictícia Seguradora Âncora, três equipes criaram três versões do mesmo botão, e nenhuma avisou a outra. Conselho dos Componentes define quem é dono do sistema, como uma proposta entra, como cada versão é comunicada e quanto tempo um componente antigo continua vivo antes de sair.",
+      "purpose": "Define o modelo de governança de um design system, com responsáveis, processo de contribuição, versionamento, descontinuação e política de mudanças que quebram.",
+      "useCases": [
+        "Organizar um design system usado por várias equipes.",
+        "Definir como descontinuar componentes antigos."
+      ],
+      "scenario": {
+        "title": "Três versões do mesmo botão",
+        "context": "Cenário fictício: [EMPRESA] tem [NÚMERO DE EQUIPES] equipes mexendo no mesmo design system sem regra.",
+        "request": "Use esta skill para definir a governança do design system de [EMPRESA]. Responda quem é dono, quem contribui, como as mudanças são decididas, como cada versão é comunicada e qual é o prazo para retirar o que ficou antigo.",
+        "output": "Modelo de responsáveis, contribuição, versão e retirada.",
+        "check": "Cada regra precisa ter um responsável, e toda mudança que quebra precisa de aviso e migração."
+      },
+      "steps": [
+        "Escolha o modelo de responsáveis.",
+        "Defina o processo de contribuição.",
+        "Combine versão e retirada."
+      ],
+      "boundary": "É um guia organizacional curto. O resultado depende da decisão e do tempo das equipes envolvidas."
+    },
+    "en": {
+      "alias": "Component Council",
+      "tagline": "Decides who changes what before everyone changes it their own way.",
+      "story": "At the fictional Seguradora Âncora, three teams created three versions of the same button, and none told the others. Component Council defines who owns the system, how a proposal gets in, how each version is announced and how long an old component stays alive before it goes.",
+      "purpose": "Defines the governance model of a design system, with owners, contribution process, versioning, deprecation and a policy for breaking changes.",
+      "useCases": [
+        "Organize a design system used by several teams.",
+        "Define how to deprecate old components."
+      ],
+      "scenario": {
+        "title": "Three versions of the same button",
+        "context": "Fictional scenario: [COMPANY] has [NUMBER OF TEAMS] teams changing the same design system with no rule.",
+        "request": "Use this skill to define the governance of the [COMPANY] design system. Answer who owns it, who contributes, how changes are decided, how each version is announced and the deadline for removing what became outdated.",
+        "output": "Model of owners, contribution, versioning and removal.",
+        "check": "Each rule must have an owner, and every breaking change needs notice and migration."
+      },
+      "steps": [
+        "Choose the ownership model.",
+        "Define the contribution process.",
+        "Agree on versioning and removal."
+      ],
+      "boundary": "It is a short organizational guide. The result depends on the decisions and time of the teams involved."
+    },
+    "es": {
+      "alias": "Consejo de Componentes",
+      "tagline": "Decide quién cambia qué antes de que cada uno cambie a su manera.",
+      "story": "En la ficticia Seguradora Âncora, tres equipos crearon tres versiones del mismo botón, y ninguno avisó a los otros. Consejo de Componentes define quién es dueño del sistema, cómo entra una propuesta, cómo se comunica cada versión y cuánto tiempo sigue vivo un componente antiguo antes de salir.",
+      "purpose": "Define el modelo de gobernanza de un sistema de diseño, con responsables, proceso de contribución, versionado, retirada y política de cambios que rompen.",
+      "useCases": [
+        "Organizar un sistema de diseño usado por varios equipos.",
+        "Definir cómo retirar componentes antiguos."
+      ],
+      "scenario": {
+        "title": "Tres versiones del mismo botón",
+        "context": "Escenario ficticio: [EMPRESA] tiene [NÚMERO DE EQUIPOS] equipos tocando el mismo sistema de diseño sin regla.",
+        "request": "Usa esta skill para definir la gobernanza del sistema de diseño de [EMPRESA]. Responde quién es dueño, quién contribuye, cómo se deciden los cambios, cómo se comunica cada versión y cuál es el plazo para retirar lo que quedó antiguo.",
+        "output": "Modelo de responsables, contribución, versión y retirada.",
+        "check": "Cada regla debe tener un responsable, y todo cambio que rompe necesita aviso y migración."
+      },
+      "steps": [
+        "Elige el modelo de responsables.",
+        "Define el proceso de contribución.",
+        "Acuerda versión y retirada."
+      ],
+      "boundary": "Es una guía organizativa breve. El resultado depende de la decisión y el tiempo de los equipos implicados."
+    }
+  },
+  {
+    "id": "emil-design-eng",
+    "pt": {
+      "alias": "Ourives de Interface",
+      "tagline": "Cuida do detalhe que ninguém nota e todo mundo sente.",
+      "story": "No fictício aplicativo Caderno Leve, nada estava errado, mas abrir um menu parecia pesado e os botões não respondiam ao toque. Ourives de Interface pergunta se aquela animação precisa existir, escolhe a curva e o tempo certos e revisa os detalhes que somados fazem a tela parecer cuidada.",
+      "purpose": "Orienta o acabamento de interfaces, com critérios para decidir se e como animar, curvas e tempos, resposta ao toque e detalhes de componente, a partir de um guia de ofício.",
+      "useCases": [
+        "Decidir se uma animação deve existir.",
+        "Revisar o acabamento de um componente."
+      ],
+      "scenario": {
+        "title": "O menu pesado",
+        "context": "Cenário fictício: [APLICATIVO] está correto, mas [INTERAÇÃO] parece lenta e sem cuidado.",
+        "request": "Use esta skill para revisar o acabamento de [INTERAÇÃO] em [APLICATIVO]. Pergunte se o movimento precisa existir, ajuste curva e duração, cuide da resposta ao toque e aponte cada detalhe com o motivo da mudança.",
+        "output": "Revisão de detalhes com o motivo de cada ajuste.",
+        "check": "Cada ajuste precisa ter motivo, e ações muito frequentes não recebem animação."
+      },
+      "steps": [
+        "Pergunte se o movimento é necessário.",
+        "Ajuste curva e duração.",
+        "Revise o toque e os detalhes."
+      ],
+      "boundary": "É um guia de ofício sem ferramenta própria. Edição independente, sem vínculo com o autor da obra."
+    },
+    "en": {
+      "alias": "Interface Goldsmith",
+      "tagline": "Tends to the detail nobody notices and everybody feels.",
+      "story": "In the fictional Caderno Leve app, nothing was wrong, but opening a menu felt heavy and the buttons did not respond to touch. Interface Goldsmith asks whether that animation needs to exist, picks the right curve and timing and reviews the details that together make a screen feel cared for.",
+      "purpose": "Guides interface polish, with criteria for deciding whether and how to animate, curves and timing, touch response and component details, based on a craft guide.",
+      "useCases": [
+        "Decide whether an animation should exist.",
+        "Review the polish of a component."
+      ],
+      "scenario": {
+        "title": "The heavy menu",
+        "context": "Fictional scenario: [APP] is correct, but [INTERACTION] feels slow and careless.",
+        "request": "Use this skill to review the polish of [INTERACTION] in [APP]. Ask whether the motion needs to exist, adjust curve and duration, take care of touch response and point out each detail with the reason for the change.",
+        "output": "Review of details with the reason for each adjustment.",
+        "check": "Each adjustment needs a reason, and very frequent actions do not get animation."
+      },
+      "steps": [
+        "Ask whether the motion is needed.",
+        "Adjust curve and duration.",
+        "Review touch and details."
+      ],
+      "boundary": "It is a craft guide with no tool of its own. Independent edition, not affiliated with the author of the work."
+    },
+    "es": {
+      "alias": "Orfebre de Interfaz",
+      "tagline": "Cuida el detalle que nadie nota y todos sienten.",
+      "story": "En la ficticia aplicación Caderno Leve, nada estaba mal, pero abrir un menú parecía pesado y los botones no respondían al toque. Orfebre de Interfaz pregunta si esa animación debe existir, elige la curva y el tiempo correctos y revisa los detalles que juntos hacen que la pantalla parezca cuidada.",
+      "purpose": "Orienta el acabado de interfaces, con criterios para decidir si animar y cómo, curvas y tiempos, respuesta al toque y detalles de componente, a partir de una guía de oficio.",
+      "useCases": [
+        "Decidir si una animación debe existir.",
+        "Revisar el acabado de un componente."
+      ],
+      "scenario": {
+        "title": "El menú pesado",
+        "context": "Escenario ficticio: [APLICACIÓN] es correcta, pero [INTERACCIÓN] parece lenta y descuidada.",
+        "request": "Usa esta skill para revisar el acabado de [INTERACCIÓN] en [APLICACIÓN]. Pregunta si el movimiento debe existir, ajusta curva y duración, cuida la respuesta al toque y señala cada detalle con el motivo del cambio.",
+        "output": "Revisión de detalles con el motivo de cada ajuste.",
+        "check": "Cada ajuste necesita un motivo, y las acciones muy frecuentes no reciben animación."
+      },
+      "steps": [
+        "Pregunta si el movimiento es necesario.",
+        "Ajusta curva y duración.",
+        "Revisa el toque y los detalles."
+      ],
+      "boundary": "Es una guía de oficio sin herramienta propia. Edición independiente, sin vínculo con el autor de la obra."
+    }
   }
 ]

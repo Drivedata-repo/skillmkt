@@ -92,6 +92,11 @@ const ownDeclared = [
 
 // MIT (Addy Osmani). Permite venda mantendo o aviso de licença, que já está no ZIP.
 const mit = [
+  // Conferidas em 09/11/2026: aviso MIT dentro do ZIP.
+  "ui-ux-pro-max",
+  "shadcn",
+  "design-system-governance",
+  "emil-design-eng",
   "code-review-and-quality",
   "debugging-and-error-recovery",
   "git-workflow-and-versioning",
@@ -101,6 +106,13 @@ const mit = [
 
 // Apache 2.0 com LICENSE já dentro do ZIP.
 const apacheInPackage = [
+  // Conferidas em 09/11/2026: licença e autoria dentro do ZIP. A carta de tokens reúne obras Apache e MIT.
+  "theme-factory",
+  "canvas-design",
+  "web-artifacts-builder",
+  "webapp-testing",
+  "impeccable",
+  "tokens-de-design-do-zero-ao-tema",
   "claude-marketplace-skill-creator",
   "claude-skill-creator",
   "cowork-plugin-customizer",

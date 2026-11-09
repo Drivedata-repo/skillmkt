@@ -1,7 +1,8 @@
 "use strict";
 // Empacota cartas a partir de .local/skill-sources (fora do Git) e grava os metadados em data/.
 // Uso: node scripts/build-catalog-cards.cjs CARDS.json
-// Cada item: { id, code, requirements, license?, sourceDir?, policy?, upstream?, note }.
+// Cada item: { id, code, requirements, license?, sourceDir?, policy?, upstream?, terceiros?, note }.
+// terceiros: { rotulo, arquivos } para obra aberta com arquivos de licença e ALTERACOES-E-AUTORIA.md na fonte.
 const fs = require("node:fs"), path = require("node:path"), crypto = require("node:crypto");
 const { zipSync, strToU8 } = require("fflate");
 
@@ -22,6 +23,25 @@ Sem garantia
 O material é fornecido no estado em que se encontra, sem garantia de resultado. O comprador deve conferir cada entrega antes de usá-la.
 `;
 
+const thirdPartyTerms = (id, t) => `LICENÇA DRIVEDATA DECK
+Copyright (c) 2026 DriveData.
+
+1. O que esta licença cobre
+Somente o material criado pela DriveData neste pacote, conforme ${id}/ALTERACOES-E-AUTORIA.md.
+
+2. O que esta licença não cobre
+A obra original continua sob ${t.rotulo}, com os textos em ${t.arquivos.map((a) => id + "/" + a).join(", ")}. Nada nesta licença limita os direitos que essas licenças concedem sobre a obra original.
+
+3. O que o comprador pode fazer
+Usar, copiar e adaptar o material da DriveData nas próprias atividades e nas da empresa em que trabalha.
+
+4. O que o comprador não pode fazer
+Revender, sublicenciar ou redistribuir o material da DriveData a terceiros, isolado ou dentro de outro produto.
+
+5. Sem garantia
+O material é fornecido no estado em que se encontra, sem garantia de resultado. O comprador deve conferir cada entrega antes de usá-la.
+`;
+
 function walk(dir, base = dir, out = {}) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, e.name);
@@ -37,11 +57,13 @@ function build(card) {
   const source = card.sourceDir || path.join(ROOT, ".local/skill-sources", id);
   const files = walk(source);
   if (!files["SKILL.md"]) throw Error("SKILL.md ausente: " + id);
+  const third = card.terceiros;
+  if (third) for (const a of [...third.arquivos, "ALTERACOES-E-AUTORIA.md"]) if (!files[a]) throw Error("Arquivo de licença ausente: " + id + "/" + a);
   const entries = {};
   for (const [name, bytes] of Object.entries(files)) entries[`${id}/${name}`] = bytes;
   entries["COMO-USAR.md"] = strToU8(`# ${code}\n\nEdição ${VERSION}. Coleção DriveData Deck.\n\n## Instale\n\nCopie a pasta \`${id}\` para a pasta de skills do seu assistente (no Claude Code, \`~/.claude/skills/\`) e abra um novo chat.\n\n## Confira\n\nDescreva uma tarefa real e veja se a skill foi reconhecida. Confira cada entrega antes de usá-la.\n`);
-  entries["REVISAO.md"] = strToU8(`# Revisão aplicada ${VERSION}\n\n${card.note}\n\n${card.testNote || "Execução integral por IA: não testada."}\n\nTermos: ${open ? `Apache License 2.0 (${id}/LICENSE.txt), obra de ${card.upstream}.` : "Licença DriveData (LICENCA-DRIVEDATA.txt)."}\n`);
-  if (!open) entries["LICENCA-DRIVEDATA.txt"] = strToU8(TERMS);
+  entries["REVISAO.md"] = strToU8(`# Revisão aplicada ${VERSION}\n\n${card.note}\n\n${card.testNote || "Execução integral por IA: não testada."}\n\nTermos: ${open ? `Apache License 2.0 (${id}/LICENSE.txt), obra de ${card.upstream}.` : third ? `${third.rotulo} sobre a obra original (${third.arquivos.map((a) => id + "/" + a).join(", ")}) e Licença DriveData sobre o material novo (LICENCA-DRIVEDATA.txt). Autoria em ${id}/ALTERACOES-E-AUTORIA.md.` : "Licença DriveData (LICENCA-DRIVEDATA.txt)."}\n`);
+  if (!open) entries["LICENCA-DRIVEDATA.txt"] = strToU8(third ? thirdPartyTerms(id, third) : TERMS);
   for (const [name, bytes] of Object.entries(entries))
     if (/\.(md|txt|json|py)$/i.test(name) && PRIVATE.test(Buffer.from(bytes).toString("utf8"))) throw Error("Dado pessoal no pacote: " + name);
   const sourceSha256 = digest(entries[`${id}/SKILL.md`]);
@@ -51,7 +73,7 @@ function build(card) {
     schemaVersion: 1, id, code, format: "SKILL.md", review: "structure-checked", tools: [], normalizedFiles: 0,
     example: null, sourceReview: "applied-specific-static-checked", ...kept,
     requirements: card.requirements || kept.requirements, version: VERSION, date: DATE, executionTested: false, commercialCleared: false,
-    distribution: "authenticated-demo", license: open ? "Licença Apache 2.0 oficial" : "Termos DriveData", licenseFiles: open ? ["LICENSE.txt"] : [],
+    distribution: "authenticated-demo", license: open ? "Licença Apache 2.0 oficial" : third ? third.selo || third.rotulo + " e termos DriveData" : "Termos DriveData", licenseFiles: open ? ["LICENSE.txt"] : third ? third.arquivos : [],
     sourceSha256, sourcePolicy: card.policy || "specific-amendments", changes: [],
   };
   entries["MANIFEST.json"] = strToU8(JSON.stringify(manifest, null, 2) + "\n");

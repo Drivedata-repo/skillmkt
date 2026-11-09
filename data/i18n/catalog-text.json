@@ -5182,5 +5182,253 @@
   "As medições vêm das suas ferramentas": [
     "Measurements come from your own tools",
     "Las mediciones vienen de tus herramientas"
+  ],
+  "Temas prontos de cor e fonte": [
+    "Ready-made color and font themes",
+    "Temas listos de color y fuente"
+  ],
+  "Cada página e apresentação sai com cores e fontes diferentes, sem identidade.": [
+    "Every page and presentation comes out with different colors and fonts, with no identity.",
+    "Cada página y presentación sale con colores y fuentes distintos, sin identidad."
+  ],
+  "Dez temas com paleta e par de fontes": [
+    "Ten themes with palette and font pairing",
+    "Diez temas con paleta y par de fuentes"
+  ],
+  "Tema aplicado ao artefato escolhido": [
+    "Theme applied to the chosen artifact",
+    "Tema aplicado al artefacto elegido"
+  ],
+  "Obra da Anthropic sob Apache 2.0": [
+    "Anthropic work under Apache 2.0",
+    "Obra de Anthropic bajo Apache 2.0"
+  ],
+  "As fontes citadas ficam a cargo do projeto": [
+    "The named fonts are up to the project",
+    "Las fuentes citadas quedan a cargo del proyecto"
+  ],
+  "Pôsteres e peças visuais em PNG e PDF": [
+    "Posters and visual pieces in PNG and PDF",
+    "Pósteres y piezas visuales en PNG y PDF"
+  ],
+  "Preciso de uma peça visual com personalidade e só saem imagens genéricas.": [
+    "I need a visual piece with personality and only generic images come out.",
+    "Necesito una pieza visual con personalidad y solo salen imágenes genéricas."
+  ],
+  "Filosofia visual escrita para a peça": [
+    "Written visual philosophy for the piece",
+    "Filosofía visual escrita para la pieza"
+  ],
+  "Peça final em PNG ou PDF": [
+    "Final piece in PNG or PDF",
+    "Pieza final en PNG o PDF"
+  ],
+  "Obra da Anthropic sob Apache 2.0, com fontes OFL": [
+    "Anthropic work under Apache 2.0, with OFL fonts",
+    "Obra de Anthropic bajo Apache 2.0, con fuentes OFL"
+  ],
+  "Geração de imagem depende do ambiente": [
+    "Image generation depends on the environment",
+    "La generación de imagen depende del entorno"
+  ],
+  "Artefatos web com React em arquivo único": [
+    "Web artifacts with React in a single file",
+    "Artefactos web con React en un solo archivo"
+  ],
+  "Quero uma tela interativa completa em um arquivo só e o HTML simples não dá conta.": [
+    "I want a complete interactive screen in one file and plain HTML can't handle it.",
+    "Quiero una pantalla interactiva completa en un solo archivo y el HTML simple no alcanza."
+  ],
+  "Projeto inicial com React, Tailwind e componentes": [
+    "Starter project with React, Tailwind and components",
+    "Proyecto inicial con React, Tailwind y componentes"
+  ],
+  "Artefato empacotado em um único HTML": [
+    "Artifact bundled into a single HTML",
+    "Artefacto empaquetado en un único HTML"
+  ],
+  "Node, terminal Unix e instalação de pacotes": [
+    "Node, a Unix terminal and package installation",
+    "Node, terminal Unix e instalación de paquetes"
+  ],
+  "Scripts não executados nesta revisão": [
+    "Scripts not run in this review",
+    "Scripts no ejecutados en esta revisión"
+  ],
+  "Teste de aplicações web no navegador": [
+    "Web application testing in the browser",
+    "Pruebas de aplicaciones web en el navegador"
+  ],
+  "Cada alteração no site exige clicar em tudo de novo para ver se quebrou.": [
+    "Every change to the site means clicking through everything again to see if it broke.",
+    "Cada cambio en el sitio obliga a hacer clic en todo otra vez para ver si se rompió."
+  ],
+  "Roteiro de teste no navegador com Playwright": [
+    "Browser test script with Playwright",
+    "Guion de prueba en el navegador con Playwright"
+  ],
+  "Capturas de tela e logs do que aconteceu": [
+    "Screenshots and logs of what happened",
+    "Capturas de pantalla y registros de lo ocurrido"
+  ],
+  "Python e Playwright instalados": [
+    "Python and Playwright installed",
+    "Python y Playwright instalados"
+  ],
+  "Testa só o ambiente local": [
+    "It only tests the local environment",
+    "Solo prueba el entorno local"
+  ],
+  "Direção de design para interfaces web": [
+    "Design direction for web interfaces",
+    "Dirección de diseño para interfaces web"
+  ],
+  "O site até funciona, mas parece feito por IA e igual a todos os outros.": [
+    "The website works, but it looks made by AI and just like all the others.",
+    "El sitio funciona, pero parece hecho por IA e igual a todos los demás."
+  ],
+  "Crítica, auditoria e direção visual por comando": [
+    "Critique, audit and visual direction by command",
+    "Crítica, auditoría y dirección visual por comando"
+  ],
+  "Refinamento de layout, tipografia, cor e texto": [
+    "Refinement of layout, typography, color and copy",
+    "Refinamiento de maquetación, tipografía, color y texto"
+  ],
+  "Edição sem o motor original": [
+    "Edition without the original engine",
+    "Edición sin el motor original"
+  ],
+  "Comandos ao vivo e detector não acompanham": [
+    "Live commands and the detector are not included",
+    "Los comandos en vivo y el detector no se incluyen"
+  ],
+  "Base de consulta de UI e experiência": [
+    "UI and experience reference base",
+    "Base de consulta de UI y experiencia"
+  ],
+  "Não sei qual estilo, paleta ou fonte combina com o tipo de produto que estou criando.": [
+    "I don't know which style, palette or font fits the kind of product I'm building.",
+    "No sé qué estilo, paleta o fuente encaja con el tipo de producto que estoy creando."
+  ],
+  "Sistema de design sugerido para o tipo de produto": [
+    "Design system suggested for the product type",
+    "Sistema de diseño sugerido para el tipo de producto"
+  ],
+  "Consulta local de estilos, paletas e fontes": [
+    "Local lookup of styles, palettes and fonts",
+    "Consulta local de estilos, paletas y fuentes"
+  ],
+  "Python 3 para a busca local": [
+    "Python 3 for the local search",
+    "Python 3 para la búsqueda local"
+  ],
+  "Sugestões precisam de revisão de quem desenha": [
+    "Suggestions need review by whoever designs",
+    "Las sugerencias necesitan revisión de quien diseña"
+  ],
+  "Componentes shadcn/ui com regras de uso": [
+    "shadcn/ui components with usage rules",
+    "Componentes shadcn/ui con reglas de uso"
+  ],
+  "A IA inventa componentes e estilos soltos em vez de usar o que o projeto já tem.": [
+    "The AI invents loose components and styles instead of using what the project already has.",
+    "La IA inventa componentes y estilos sueltos en lugar de usar lo que el proyecto ya tiene."
+  ],
+  "Regras de composição, formulário e estilo": [
+    "Composition, form and styling rules",
+    "Reglas de composición, formulario y estilo"
+  ],
+  "Fluxo para adicionar e corrigir componentes": [
+    "Workflow to add and fix components",
+    "Flujo para añadir y corregir componentes"
+  ],
+  "CLI oficial do shadcn e acesso à rede": [
+    "Official shadcn CLI and network access",
+    "CLI oficial de shadcn y acceso a la red"
+  ],
+  "Edição independente, sem vínculo com o projeto": [
+    "Independent edition, not affiliated with the project",
+    "Edición independiente, sin vínculo con el proyecto"
+  ],
+  "Tokens de design do zero ao tema": [
+    "Design tokens from scratch to theme",
+    "Tokens de diseño desde cero hasta el tema"
+  ],
+  "Cor e espaçamento estão espalhados no código e trocar o tema vira retrabalho.": [
+    "Color and spacing are scattered through the code and changing the theme becomes rework.",
+    "El color y el espaciado están dispersos en el código y cambiar el tema se vuelve retrabajo."
+  ],
+  "Arquivo de tokens com tema claro e escuro": [
+    "Token file with light and dark themes",
+    "Archivo de tokens con tema claro y oscuro"
+  ],
+  "Camadas no formato W3C e plano de temas": [
+    "W3C format tiers and theme plan",
+    "Capas en formato W3C y plan de temas"
+  ],
+  "Três obras abertas com autorias preservadas": [
+    "Three open works with authorship preserved",
+    "Tres obras abiertas con autorías conservadas"
+  ],
+  "Style Dictionary é opcional": [
+    "Style Dictionary is optional",
+    "Style Dictionary es opcional"
+  ],
+  "Governança de design system": [
+    "Design system governance",
+    "Gobernanza de sistema de diseño"
+  ],
+  "Cada equipe mexe no design system do seu jeito e ninguém sabe o que mudou.": [
+    "Each team changes the design system its own way and nobody knows what changed.",
+    "Cada equipo toca el sistema de diseño a su manera y nadie sabe qué cambió."
+  ],
+  "Modelo de responsáveis e de contribuição": [
+    "Ownership and contribution model",
+    "Modelo de responsables y de contribución"
+  ],
+  "Regras de versão, mudança e descontinuação": [
+    "Versioning, change and deprecation rules",
+    "Reglas de versión, cambio y retirada"
+  ],
+  "Obra de MC Dean sob MIT": [
+    "Work by MC Dean under MIT",
+    "Obra de MC Dean bajo MIT"
+  ],
+  "Depende de decisão das equipes": [
+    "It depends on decisions by the teams",
+    "Depende de la decisión de los equipos"
+  ],
+  "Acabamento fino de interface": [
+    "Fine interface polish",
+    "Acabado fino de interfaz"
+  ],
+  "A interface está correta, mas falta aquele acabamento que faz parecer bem cuidada.": [
+    "The interface is correct, but it lacks the polish that makes it feel well cared for.",
+    "La interfaz es correcta, pero le falta el acabado que la hace parecer cuidada."
+  ],
+  "Critérios para decidir cada animação": [
+    "Criteria for deciding each animation",
+    "Criterios para decidir cada animación"
+  ],
+  "Revisão de detalhes de componente e interação": [
+    "Review of component and interaction details",
+    "Revisión de detalles de componente e interacción"
+  ],
+  "Obra de Emil Kowalski sob MIT": [
+    "Work by Emil Kowalski under MIT",
+    "Obra de Emil Kowalski bajo MIT"
+  ],
+  "Guia sem ferramenta própria": [
+    "A guide with no tool of its own",
+    "Guía sin herramienta propia"
+  ],
+  "Apache License 2.0, MIT e termos DriveData": [
+    "Apache License 2.0, MIT and DriveData terms",
+    "Apache License 2.0, MIT y términos de DriveData"
+  ],
+  "Apache License 2.0, SIL OFL 1.1 e termos DriveData": [
+    "Apache License 2.0, SIL OFL 1.1 and DriveData terms",
+    "Apache License 2.0, SIL OFL 1.1 y términos de DriveData"
   ]
 }

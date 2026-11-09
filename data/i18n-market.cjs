@@ -72,7 +72,7 @@ module.exports = {
   "Grátis pela fonte oficial": ["Free from the official source", "Gratis desde la fuente oficial"],
   "Abrir fonte oficial: {publisher} ↗": ["Open official source: {publisher} ↗", "Abrir fuente oficial: {publisher} ↗"],
   "Ative pela fonte oficial.": ["Enable it from the official source.", "Actívala desde la fuente oficial."],
-  "173 universos": ["173 universes", "173 universos"],
+  "183 universos": ["183 universes", "183 universos"],
   "uma missão em cada carta": [
     "a mission in every card",
     "una misión en cada carta",
@@ -257,7 +257,7 @@ module.exports = {
     "to explore before downloading",
     "para explorar antes de descargar",
   ],
-  "173 capacidades": ["173 capabilities", "173 capacidades"],
+  "183 capacidades": ["183 capabilities", "183 capacidades"],
   "em uma coleção versionada": [
     "in a versioned collection",
     "en una colección con versiones",

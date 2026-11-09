@@ -533,9 +533,9 @@ module.exports = {
     "DRIVEDATA DECK COLLECTION",
     "COLECCIÓN DRIVEDATA DECK",
   ],
-  "173 CAPACIDADES / 10 UNIVERSOS": [
-    "173 CAPABILITIES / 10 UNIVERSES",
-    "173 CAPACIDADES / 10 UNIVERSOS",
+  "183 CAPACIDADES / 10 UNIVERSOS": [
+    "183 CAPABILITIES / 10 UNIVERSES",
+    "183 CAPACIDADES / 10 UNIVERSOS",
   ],
   "Conhecimento em movimento.": [
     "Knowledge in motion.",

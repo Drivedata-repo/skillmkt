@@ -3289,6 +3289,196 @@
       "rationale": "Cruza medições de campo e laboratório com causas no HTML e só aceita melhora com comparação equivalente.",
       "assessmentType": "documentary",
       "executionVerified": false
+    },
+    {
+      "id": "theme-factory",
+      "code": "DD-174",
+      "version": "1.2.1",
+      "packageSha256": "f70c17bfc574cd56b7b688eef4cfdc48a75a058e4ac4d6b917cde680db5b2409",
+      "sourceSha256": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
+      "contractSha256": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Aplica dez temas prontos de cor e fonte a páginas, slides e documentos; escopo de apoio visual, sem novo sistema de design.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "canvas-design",
+      "code": "DD-175",
+      "version": "1.2.1",
+      "packageSha256": "c1ae0dc8f99e72121e019d35dd0f05975c6a0d6cf515afc5b2a0c9f0936000ca",
+      "sourceSha256": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b",
+      "contractSha256": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Define uma filosofia visual e a expressa em peça estática PNG ou PDF, com fontes abertas no pacote.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "web-artifacts-builder",
+      "code": "DD-176",
+      "version": "1.2.1",
+      "packageSha256": "00a23f8a5d44aa01312d4331d896749c41302e269a7c2834ff19d51c0c663f0d",
+      "sourceSha256": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
+      "contractSha256": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Monta artefatos HTML com React, Tailwind e componentes, em arquivo único; instala dependências no ambiente do usuário.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "webapp-testing",
+      "code": "DD-177",
+      "version": "1.2.1",
+      "packageSha256": "af243206c8bc05c9453b8a314211d5e4e1f4f213e58371930c9b5bfefb21332f",
+      "sourceSha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "contractSha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Testa aplicações web locais com Playwright, captura de tela e logs; exige navegador e servidor no ambiente do usuário.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "impeccable",
+      "code": "DD-178",
+      "version": "1.2.1",
+      "packageSha256": "952794069d34cf7d4dfc7718a39b4a26bf4f6f3fda186998b30a28f066276cf9",
+      "sourceSha256": "e2503cc6c86376b8a58ce5799291a5bfd06aead23de5908f9d4b57cc09bc4dee",
+      "contractSha256": "e2503cc6c86376b8a58ce5799291a5bfd06aead23de5908f9d4b57cc09bc4dee",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 4,
+        "scope": 4,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Conduz direção de design, crítica e acabamento de interface por comandos e referências; edição sem o motor original.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "code": "DD-179",
+      "version": "1.2.1",
+      "packageSha256": "b04b4b213c194a90b2bb4b3d7359ffa29bc1029db128cb3383cfa5dd6a786e67",
+      "sourceSha256": "14f43337edfbf7822e091428e4ae0c6f92f86e3353deda6a30f6613121e2cf2d",
+      "contractSha256": "14f43337edfbf7822e091428e4ae0c6f92f86e3353deda6a30f6613121e2cf2d",
+      "priceCents": 3700,
+      "scores": {
+        "depth": 3,
+        "scope": 4,
+        "verification": 4,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Consulta base local de estilos, paletas, fontes e regras de experiência por script, com prioridades de acessibilidade e desempenho.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "shadcn",
+      "code": "DD-180",
+      "version": "1.2.1",
+      "packageSha256": "bec8c7491d443da60331a63c3fdd9232565f7cdf67732f61ad81e6c3a23ffe78",
+      "sourceSha256": "93951e5e83f616a3e046491c00d770bd54c0a64164706cd1191822a233d27592",
+      "contractSha256": "93951e5e83f616a3e046491c00d770bd54c0a64164706cd1191822a233d27592",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Orienta composição, formulários e estilo com componentes shadcn/ui; depende da CLI oficial e da rede do usuário.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "tokens-de-design-do-zero-ao-tema",
+      "code": "DD-181",
+      "version": "1.2.1",
+      "packageSha256": "11c64ad063de4a38c60ebeb33120294c680e954b2d6c35ec5f84fe3bfbcb25ac",
+      "sourceSha256": "1096095e933215a552e9939b97a2538b7b81c72d48dc66ef33f8b877d4bb5e45",
+      "contractSha256": "1096095e933215a552e9939b97a2538b7b81c72d48dc66ef33f8b877d4bb5e45",
+      "priceCents": 3200,
+      "scores": {
+        "depth": 3,
+        "scope": 3,
+        "verification": 4,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Reúne três guias abertos para gerar, organizar em camadas W3C e tematizar tokens, com roteiro de qual usar.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "design-system-governance",
+      "code": "DD-182",
+      "version": "1.2.1",
+      "packageSha256": "17272e15dc7c948d8fdd698dc92e8d9c02412c95ee1df808939776001fc0f4f6",
+      "sourceSha256": "2e2eb92a3ec28e47632e2b13bcce7ab3187a61c258c07151925ed20289bd4bf5",
+      "contractSha256": "2e2eb92a3ec28e47632e2b13bcce7ab3187a61c258c07151925ed20289bd4bf5",
+      "priceCents": 2200,
+      "scores": {
+        "depth": 2,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 4
+      },
+      "family": null,
+      "rationale": "Define quem decide, como contribuir, versionar e descontinuar em um design system; guia organizacional curto.",
+      "assessmentType": "documentary",
+      "executionVerified": false
+    },
+    {
+      "id": "emil-design-eng",
+      "code": "DD-183",
+      "version": "1.2.1",
+      "packageSha256": "f79c741979e1eb89b78d0b46084e966e9f9e7bf6c6b948fa6742369fa3dc85e9",
+      "sourceSha256": "965cc3108047a1f68e504977ae7816c66115b202a32e7509c0b8305314839c54",
+      "contractSha256": "965cc3108047a1f68e504977ae7816c66115b202a32e7509c0b8305314839c54",
+      "priceCents": 2700,
+      "scores": {
+        "depth": 3,
+        "scope": 2,
+        "verification": 3,
+        "reuse": 5
+      },
+      "family": null,
+      "rationale": "Reúne critérios de acabamento de interface e decisão de animação; guia de ofício sem ferramenta própria.",
+      "assessmentType": "documentary",
+      "executionVerified": false
     }
   ]
 }
