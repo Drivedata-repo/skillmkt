@@ -8700,18 +8700,18 @@ module.exports = {
       "Python 3 e acesso de leitura ao repositório",
       "Análise por padrões não detecta todo pacote malicioso"
     ],
-    "version": "1.2.1",
-    "date": "2026-11-08",
+    "version": "1.2.2",
+    "date": "2026-11-09",
     "executionTested": false,
     "commercialCleared": false,
     "distribution": "authenticated-demo",
     "license": "Termos DriveData",
     "licenseFiles": [],
-    "sourceSha256": "534421e35c2c3acead9976b23c0bb54f2c312dd73f55e94889d47b277fcfea3d",
+    "sourceSha256": "bb8eb0a4615d07bb145415c0599f6de823b959e45eddfe32e94b229dd64f7ce6",
     "sourcePolicy": "specific-amendments",
     "changes": [],
-    "sha256": "07a5d5f0ae83ea132c20587f01d9b65386488c481e24b534051cf622f9d617f6",
-    "bytes": 15514,
+    "sha256": "8de8432e5d752b929f2c594cd1472b39e71b32d8a9193651bc1a3789d009081e",
+    "bytes": 15896,
     "fileCount": 14
   },
   "resposta-a-incidentes-de-seguranca": {

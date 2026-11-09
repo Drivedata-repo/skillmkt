@@ -2856,10 +2856,10 @@
     {
       "id": "cadeia-de-suprimentos-de-software",
       "code": "DD-151",
-      "version": "1.2.1",
-      "packageSha256": "07a5d5f0ae83ea132c20587f01d9b65386488c481e24b534051cf622f9d617f6",
-      "sourceSha256": "534421e35c2c3acead9976b23c0bb54f2c312dd73f55e94889d47b277fcfea3d",
-      "contractSha256": "534421e35c2c3acead9976b23c0bb54f2c312dd73f55e94889d47b277fcfea3d",
+      "version": "1.2.2",
+      "packageSha256": "8de8432e5d752b929f2c594cd1472b39e71b32d8a9193651bc1a3789d009081e",
+      "sourceSha256": "bb8eb0a4615d07bb145415c0599f6de823b959e45eddfe32e94b229dd64f7ce6",
+      "contractSha256": "bb8eb0a4615d07bb145415c0599f6de823b959e45eddfe32e94b229dd64f7ce6",
       "priceCents": 3700,
       "scores": {
         "depth": 4,

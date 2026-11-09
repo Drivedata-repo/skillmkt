@@ -7,7 +7,7 @@ const fs = require("node:fs"), path = require("node:path"), crypto = require("no
 const { zipSync, strToU8 } = require("fflate");
 
 const ROOT = path.join(__dirname, "..");
-const VERSION = "1.2.1", DATE = "2026-11-08";
+const BASE_VERSION = "1.2.1", BASE_DATE = "2026-11-08";
 const digest = (b) => crypto.createHash("sha256").update(b).digest("hex");
 const PRIVATE = /joaol|silvestrim|[A-Z]:\\Users\\/i;
 const TERMS = `LICENÇA DRIVEDATA DECK
@@ -53,6 +53,7 @@ function walk(dir, base = dir, out = {}) {
 
 function build(card) {
   const { id, code } = card;
+  const VERSION = card.version || BASE_VERSION, DATE = card.date || BASE_DATE;
   const open = Boolean(card.upstream);
   const source = card.sourceDir || path.join(ROOT, ".local/skill-sources", id);
   const files = walk(source);
@@ -85,7 +86,7 @@ function build(card) {
 }
 
 const cards = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
-const out = path.join(ROOT, ".local/releases", VERSION);
+
 const releasesPath = path.join(ROOT, "data/releases.cjs"), reviewPath = path.join(ROOT, "data/pricing-review.json");
 const releases = require(releasesPath);
 const review = JSON.parse(fs.readFileSync(reviewPath, "utf8"));
@@ -93,12 +94,14 @@ const { assessments } = require(path.join(ROOT, "data/skill-pricing.cjs"));
 const { priceFor } = require(path.join(ROOT, "lib/pricing.cjs"));
 const built = cards.map((card) => [card, build(card)]);
 for (const [card, { zip, metadata }] of built) {
+  const out = path.join(ROOT, ".local/releases", metadata.version);
+  fs.mkdirSync(out, { recursive: true });
   fs.writeFileSync(path.join(out, card.id + ".zip"), zip);
   fs.writeFileSync(path.join(out, card.id + ".json"), JSON.stringify(metadata, null, 2) + "\n");
   releases[card.id] = metadata;
   const a = assessments[card.id];
   const record = {
-    id: card.id, code: card.code, version: VERSION, packageSha256: metadata.sha256, sourceSha256: metadata.sourceSha256,
+    id: card.id, code: card.code, version: metadata.version, packageSha256: metadata.sha256, sourceSha256: metadata.sourceSha256,
     contractSha256: metadata.sourceSha256, priceCents: priceFor(a.scores), scores: a.scores, family: a.family, rationale: a.rationale,
     assessmentType: "documentary", executionVerified: false,
   };
