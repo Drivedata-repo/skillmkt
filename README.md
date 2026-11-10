@@ -48,6 +48,8 @@ Node 24. Execute `npm ci`, configure `.env.local` conforme `.env.example`, `npm 
 
 Contas: `POST /api/account/register` cria a conta (e-mail e senha de 10 a 256 caracteres, hash scrypt) e já entra. Conta antiga criada por uma compra, sem senha, não é assumida pelo e-mail digitado: o dono recebe um link. `CUSTOMER_SESSION_SECRET` assina as sessões. Nenhuma senha ou chave vai para arquivos públicos.
 
+Conta de demonstração: a coluna `access_all` de `skillmkt.customers` libera todas as cartas à venda sem compra. Só o dono do banco liga, com UPDATE direto (`UPDATE skillmkt.customers SET access_all = true WHERE email = $1`); o papel do app não tem permissão de escrever essa coluna. A conta é criada normalmente em `/acesso`, e a senha é de quem a criou. Carta sem direito de venda continua fora.
+
 ## Acesso
 
 A sessão assinada dura 7 dias, em cookie HttpOnly/SameSite=Lax. Na Vercel, usa Secure e prefixo `__Host-`. Trocar a senha invalida as sessões anteriores. Quem tem conta mas ainda não comprou vê o catálogo e o preço, e pode comprar; as rotas de download e de pacotes respondem 403 para cartas não compradas.

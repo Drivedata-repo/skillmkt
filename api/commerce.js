@@ -217,6 +217,7 @@ async function me(req, res) {
   return send(res, 200, {
     email: current.email,
     name: current.name,
+    fullAccess: current.fullAccess === true,
     products: current.products
       .map((key) => catalog.get(key))
       .filter(Boolean)

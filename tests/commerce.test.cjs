@@ -302,3 +302,42 @@ test("offer page: only play and pause, proof never invented, card list matches t
   );
   assert.ok(weight < 30000, String(weight));
 });
+
+test("a demonstration account uses every card on sale without buying, and an ordinary account does not", async () => {
+  const saleCatalog = require("../lib/sale-catalog.cjs");
+  const onSale = saleCatalog.list().filter((p) => p.kind === "card" && saleCatalog.sellable(p.key));
+  const row = (access_all) => async () => ({ rows: [{ email: "demo@example.com", name: "Demo", session_version: 1, access_all, products: [] }] });
+  const demo = await access.resolveAccess(customerRequest(), row(true));
+  assert.equal(demo.fullAccess, true);
+  assert.equal(demo.skillIds.size, onSale.length);
+  assert.equal(access.allowsSkill(demo, "automacao-documentos-office"), true);
+  // Carta sem direito de venda nunca é liberada, nem para a conta de demonstração.
+  assert.equal(access.allowsSkill(demo, "claude-xlsx"), false);
+  const ordinary = await access.resolveAccess(customerRequest(), row(false));
+  assert.equal(ordinary.fullAccess, false);
+  assert.equal(ordinary.skillIds.size, 0);
+  const missing = await access.resolveAccess(customerRequest(), async () => ({ rows: [{ email: "x@y.co", name: "", session_version: 1, products: [] }] }));
+  assert.equal(missing.fullAccess, false);
+  const catalog = access.restrictCatalog(
+    { skills: [{ id: "automacao-documentos-office", pricing: {}, universe: {} }], journeys: [], combos: [{ id: "power-bi-sob-controle", skillIds: ["claude-power-query-best-practices", "power-bi-modelagem-dax-performance", "claude-power-bi-best-practices", "claude-bi-documentation"], priceCents: 1 }], packs: [] },
+    demo,
+    "pt",
+  );
+  assert.equal(catalog.skills[0].owned, true);
+  assert.equal(catalog.combos[0].owned, true);
+});
+
+test("the demonstration switch can only be turned on by the database owner", () => {
+  const sql = fs.readFileSync(path.join(root, "supabase/migrations/20261110180000_demo_account.sql"), "utf8");
+  assert.match(sql, /ADD COLUMN access_all boolean NOT NULL DEFAULT false/);
+  assert.match(sql, /REVOKE INSERT, UPDATE ON skillmkt\.customers FROM skillmkt_app/);
+  const grants = [...sql.matchAll(/GRANT (INSERT|UPDATE) \(([^)]*)\)/g)];
+  assert.equal(grants.length, 2);
+  for (const [, , columns] of grants) assert.doesNotMatch(columns, /access_all|\bid\b|created_at/);
+  // Nada no app liga o interruptor: a coluna só é lida, nunca escrita.
+  for (const file of ["api/commerce.js", "lib/commerce.cjs", "lib/access.cjs", "lib/stripe.cjs"]) {
+    const source = fs.readFileSync(path.join(root, file), "utf8");
+    assert.doesNotMatch(source, /SET[^`]*access_all/);
+    assert.doesNotMatch(source, /INSERT INTO skillmkt\.customers\([^)]*access_all/);
+  }
+});
