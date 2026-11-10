@@ -11,7 +11,7 @@
   },
   "rewrites": [
     { "source": "/app", "destination": "/api/app" },
-    { "source": "/login", "destination": "/login.html" },
+    { "source": "/login", "destination": "/acesso.html" },
     { "source": "/acesso", "destination": "/acesso.html" },
     { "source": "/oferta", "destination": "/oferta.html" },
     { "source": "/loja", "destination": "/loja.html" },

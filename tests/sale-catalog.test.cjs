@@ -55,27 +55,6 @@ test("access follows what was bought: one card, one combo, never a blocked card"
   assert.equal(both.size, 5);
 });
 
-test("a buyer never reads demo or proposal wording on the cards they own", () => {
-  const owned = new Set(["automacao-documentos-office"]);
-  const out = access.restrictCatalog(
-    {
-      skills: [{ id: "automacao-documentos-office", pricing: { label: "Preço proposto", demoLabel: "Grátis na demo", notice: "Nenhuma compra ou cobrança está ativa.", basis: "x" } }],
-      journeys: [],
-      combos: [{ skillIds: ["automacao-documentos-office"], label: "Combo" }],
-      packs: [],
-    },
-    { kind: "customer", skillIds: owned },
-    "pt",
-  );
-  const p = out.skills[0].pricing;
-  assert.equal(p.label, "Valor da carta");
-  assert.equal(p.demoLabel, "Incluída na sua compra");
-  assert.doesNotMatch(p.notice, /cobrança está ativa/);
-  assert.equal(out.combos[0].demoLabel, "Incluída na sua compra");
-  const en = access.restrictCatalog({ skills: [{ id: "a", pricing: {} }], journeys: [], combos: [], packs: [] }, { kind: "customer", skillIds: new Set(["a"]) }, "en");
-  assert.equal(en.skills[0].pricing.demoLabel, "Included in your purchase");
-});
-
 test("the client reads the labels the server sends and keeps the demo wording as fallback", () => {
   const source = fs.readFileSync(path.join(root, "dist/commerce.js"), "utf8");
   assert.match(source, /p\.demoLabel\|\|t\("Grátis na demo"\)/);
@@ -103,6 +82,8 @@ test("the buy script only sends product keys and only follows a Stripe address",
   const source = fs.readFileSync(path.join(root, "dist/buy.js"), "utf8");
   // O corpo enviado ao servidor leva só as chaves e a página de volta; o valor nunca sai do navegador.
   assert.ok(source.includes("body: JSON.stringify({ items: keys, back }),"));
+  // Sem conta, a pessoa vai criar a dela e volta para comprar.
+  assert.match(source, /\/acesso\?cadastro=1/);
   assert.equal(source.split("JSON.stringify").length - 1, 1);
   assert.match(source, /endsWith\("stripe\.com"\)/);
 });

@@ -70,12 +70,12 @@ test("checkout session: dollars from the catalog, order id tying it back, adapti
   const out = await stripe.createCheckout(
     { items: ["combo:power-bi-sob-controle"], email: "A@B.com", back: "/loja", price: 1, amount: 1 },
     run,
-    { fetch: fakeFetch, origin: "https://deck.example" },
+    { fetch: fakeFetch, origin: "https://deck.example", customer: { id: "99999999-8888-4777-8666-555555555555", email: "conta@example.com" } },
   );
   assert.equal(out.url, "https://checkout.stripe.com/c/pay/cs_test_1");
   const expected = Math.round(catalog.get("combo:power-bi-sob-controle").priceUsd * 100);
   assert.equal(out.amountCents, expected);
-  assert.deepEqual(calls[0][1], [["combo:power-bi-sob-controle"], expected, "usd", expected, null]);
+  assert.deepEqual(calls[0][1], [["combo:power-bi-sob-controle"], expected, "usd", expected, null, "99999999-8888-4777-8666-555555555555"]);
   assert.equal(request.url, "https://api.stripe.com/v1/checkout/sessions");
   assert.match(request.options.headers.Authorization, /^Bearer sk_test_/);
   assert.equal(request.options.headers["Idempotency-Key"], "order-" + ORDER);
@@ -87,8 +87,9 @@ test("checkout session: dollars from the catalog, order id tying it back, adapti
   assert.equal(form.get("metadata[order_id]"), ORDER);
   assert.equal(form.get("payment_intent_data[metadata][order_id]"), ORDER);
   assert.equal(form.get("adaptive_pricing[enabled]"), "true");
-  assert.equal(form.get("customer_email"), "a@b.com");
-  assert.equal(form.get("success_url"), "https://deck.example/acesso?compra=ok");
+  // O e-mail da conta vale mais que o digitado no pedido.
+  assert.equal(form.get("customer_email"), "conta@example.com");
+  assert.equal(form.get("success_url"), "https://deck.example/app?compra=ok");
   assert.equal(form.get("cancel_url"), "https://deck.example/loja");
   assert.equal(form.get("automatic_tax[enabled]"), null);
   // O voltar só vai para páginas nossas.
@@ -189,12 +190,13 @@ test("raw body reader keeps bytes exactly and falls back only when the stream is
   await assert.rejects(commerce.readRawBody({ method: "GET" }), (e) => e.status === 405);
 });
 
-test("the page the buyer returns to explains what happens next", () => {
-  const source = fs.readFileSync(path.join(root, "dist/acesso.js"), "utf8");
-  assert.match(source, /compra"\) === "ok"/);
+test("the buyer returns to the app, already signed in, and waits for the access to be released", () => {
+  const source = fs.readFileSync(path.join(root, "dist/buy.js"), "utf8");
+  assert.match(source, /compra"\) !== "ok"/);
+  assert.match(source, /\/api\/account\/me/);
   assert.match(source, /Pix/);
+  assert.match(source, /location\.reload\(\)/);
 });
-
 test("the second migration widens providers, adds orders and still gives no DELETE", () => {
   const sql = fs.readFileSync(path.join(root, "supabase/migrations/20261108180000_stripe_orders.sql"), "utf8");
   assert.match(sql, /CHECK \(provider IN \('hotmart','stripe'\)\)/);

@@ -110,7 +110,7 @@ test("the order records the amount charged, the dollar value and the rate used",
   const usdCents = Math.round(catalog.get("card:automacao-documentos-office").priceUsd * 100);
   assert.equal(out.currency, "brl");
   assert.equal(out.amountCents, fx.brlCents(usdCents, 5.5146));
-  assert.deepEqual(calls[0][1], [["card:automacao-documentos-office"], out.amountCents, "brl", usdCents, 5.5146]);
+  assert.deepEqual(calls[0][1], [["card:automacao-documentos-office"], out.amountCents, "brl", usdCents, 5.5146, null]);
   await assert.rejects(
     stripe.createCheckout({ items: ["card:automacao-documentos-office"] }, run, { fetch: fetched, currency: "brl", rate: null }),
     (e) => e.status === 503,
@@ -119,7 +119,7 @@ test("the order records the amount charged, the dollar value and the rate used",
 });
 
 test("the browser computes the same reais the server charges, for every product on sale", () => {
-  const context = { window: {}, fetch: async () => ({}), AbortSignal, Intl };
+  const context = { window: {}, fetch: async () => ({}), AbortSignal, Intl, document: { addEventListener() {} }, location: { search: "" } };
   vm.createContext(context);
   vm.runInContext(fs.readFileSync(path.join(root, "dist/buy.js"), "utf8"), context);
   const buy = context.window.DeckBuy;

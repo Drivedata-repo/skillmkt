@@ -64,7 +64,7 @@ http
             url.pathname === "/"
               ? "/index.html"
               : url.pathname === "/login"
-                ? "/login.html"
+                ? "/acesso.html"
                 : url.pathname === "/acesso"
                   ? "/acesso.html"
                   : url.pathname === "/loja"

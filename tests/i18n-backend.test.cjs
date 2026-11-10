@@ -3,11 +3,10 @@ const assert = require("node:assert/strict");
 const crypto = require("node:crypto");
 const { getLocale, translateError } = require("../lib/locale.cjs");
 const { findSkills } = require("../lib/match.cjs");
-const auth = require("../lib/auth.cjs");
+const customer = require("./support/customer.cjs");
 
-const salt = crypto.randomBytes(16).toString("hex");
-process.env.DEMO_PASSWORD_HASH = `${salt}:${crypto.scryptSync(crypto.randomUUID(), salt, 64).toString("hex")}`;
-process.env.DEMO_SESSION_SECRET = crypto.randomBytes(32).toString("hex");
+// Conta de teste que comprou um combo, sem banco real.
+const session = customer.install({ products: ["combo:power-bi-sob-controle"] });
 
 function response() {
   return {
@@ -35,7 +34,7 @@ function request(
     headers: {
       "content-type": "application/json",
       ...(authenticated
-        ? { cookie: auth.cookie(auth.issue()).split(";")[0] }
+        ? { cookie: session.cookie }
         : {}),
     },
     ...(body === undefined ? {} : { body }),
@@ -82,7 +81,7 @@ test("protected APIs keep authentication requirements and localize failures", as
       assert.equal(res.headers["Content-Language"], locale);
       assert.equal(
         JSON.parse(res.body).error,
-        translateError("Entre com a senha da demonstração.", locale),
+        translateError("Entre ou crie a sua conta.", locale),
       );
     }
   }
@@ -90,7 +89,7 @@ test("protected APIs keep authentication requirements and localize failures", as
   await require("../api/status.js")(request("pt"), res);
   assert.equal(
     JSON.parse(res.body).error,
-    "Entre com a senha da demonstração.",
+    "Entre ou crie a sua conta.",
   );
 });
 

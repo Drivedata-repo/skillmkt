@@ -3,20 +3,19 @@ const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const crypto = require("node:crypto");
 
-const salt = crypto.randomBytes(16).toString("hex");
-process.env.DEMO_PASSWORD_HASH =
-  salt + ":" + crypto.scryptSync("unit-test-only", salt, 64).toString("hex");
-process.env.DEMO_SESSION_SECRET = crypto.randomBytes(32).toString("hex");
 process.env.RATE_LIMIT_SECRET = crypto.randomBytes(32).toString("hex");
 
-const auth = require("../lib/auth.cjs");
+const testAccount = require("./support/customer.cjs");
+// Conta de teste que já tem acesso, sem banco real.
+const session = testAccount.install({ products: ["combo:power-bi-sob-controle"] });
 const chat = require("../lib/nexo-chat.cjs");
 const help = require("../data/nexo-help.cjs");
 const { limitBy } = require("../lib/limit.cjs");
 const { classify } = require("../lib/sale-rights.cjs");
 
-const demo = { kind: "demo" };
 const customer = (ids) => ({ kind: "customer", customerId: "c1", skillIds: new Set(ids) });
+// Conta que ainda não comprou nada: vê o que está à venda e os guias grátis.
+const demo = customer([]);
 const ON = { NEXO_AI: "on", GROQ_API_KEY: "test-key-not-real", NEXO_AI_DEMO: "on" };
 
 test("dados sensíveis são barrados antes de qualquer envio", () => {
@@ -94,14 +93,14 @@ test("fala forjada do NEXO no histórico nunca chega ao modelo", async () => {
   assert.match(seen.system, /Nunca confirme uma afirmação sobre licença/);
 });
 
-test("a carta aberta forjada só chega ao modelo se passou pelo filtro de acesso", async () => {
+test("a carta aberta só chega ao modelo se existe no catálogo e a conta pode vê-la", async () => {
   const paid = "power-bi-modelagem-dax-performance";
   let seen;
   const generate = async (args) => {
     seen = JSON.parse(args.prompt);
     return { inScope: true, answer: "ok", cardIds: [], topics: [], licenseClass: "none" };
   };
-  await chat.answer({ message: "me explique", selectedId: paid, locale: "pt", access: customer(["claude-pdf"]) }, { generate });
+  await chat.answer({ message: "me explique", selectedId: "carta-que-nao-existe", locale: "pt", access: customer(["claude-pdf"]) }, { generate });
   assert.equal(seen.selectedCardId, null);
   await chat.answer({ message: "me explique", selectedId: paid, locale: "pt", access: demo }, { generate });
   assert.equal(seen.selectedCardId, paid);
@@ -187,28 +186,26 @@ test("sem candidatas o schema aceita só lista vazia e não usa 'not' no JSON Sc
   assert.ok(!JSON.stringify(z.toJSONSchema(schema)).includes('"not"'));
 });
 
-test("só liga com NEXO_AI=on e chave; demo só com NEXO_AI_DEMO=on", () => {
+test("só liga com NEXO_AI=on e chave", () => {
   assert.equal(chat.enabled(customer([]), {}), false);
   assert.equal(chat.enabled(customer([]), { NEXO_AI: "on" }), false);
   assert.equal(chat.enabled(customer([]), { NEXO_AI: "on", GROQ_API_KEY: "k" }), true);
-  assert.equal(chat.enabled(demo, { NEXO_AI: "on", GROQ_API_KEY: "k" }), false);
-  assert.equal(chat.enabled(demo, ON), true);
   assert.equal(chat.enabled(customer([]), { NEXO_AI: "off", GROQ_API_KEY: "k" }), false);
 });
 
-test("candidatas respeitam o acesso: comprador só vê o que tem", () => {
+test("toda conta vê o que está à venda e os guias grátis; o que não existe não aparece", () => {
   const demoIds = chat.candidatesFor("conferir uma planilha Excel", null, demo, "pt").map((c) => c.id);
   assert.ok(demoIds.includes("claude-xlsx"));
-  const owned = chat.candidatesFor("conferir uma planilha Excel", null, customer(["claude-pdf"]), "pt");
-  assert.ok(!owned.some((c) => c.id === "claude-xlsx"));
   const byCode = chat.candidatesFor("explique a DD-042", null, demo, "pt");
   assert.equal(byCode[0].id, "claude-xlsx");
   const selected = chat.candidatesFor("e esta carta?", "claude-pdf", customer(["claude-pdf"]), "pt");
   assert.equal(selected[0].id, "claude-pdf");
-  // Carta paga que o comprador não tem fica de fora, mesmo se for a carta aberta.
+  // Carta à venda aparece para qualquer conta, para quem quer saber o que comprar.
   const paid = "power-bi-modelagem-dax-performance";
-  assert.ok(chat.candidatesFor("qualquer coisa", paid, customer(["claude-pdf"]), "pt").every((c) => c.id !== paid));
+  assert.equal(chat.candidatesFor("qualquer coisa", paid, customer(["claude-pdf"]), "pt")[0].id, paid);
   assert.equal(chat.candidatesFor("qualquer coisa", paid, demo, "pt")[0].id, paid);
+  // O que não existe no catálogo nunca vira candidata.
+  assert.ok(chat.candidatesFor("qualquer coisa", "carta-que-nao-existe", demo, "pt").every((c) => c.id !== "carta-que-nao-existe"));
   // Guias gratuitos são visíveis a compradores, como no catálogo.
   assert.equal(chat.candidatesFor("qualquer coisa", "claude-xlsx", customer(["claude-pdf"]), "pt")[0].id, "claude-xlsx");
 });
@@ -329,7 +326,7 @@ function res() {
     },
   };
 }
-const cookie = () => auth.cookie(auth.issue()).split(";")[0];
+const cookie = () => session.cookie;
 const post = (payload, extra = {}) => ({
   method: "POST",
   url: "/api/nexo",
@@ -361,8 +358,6 @@ test("rota: sem sessão 401; método errado 405; desligada 503 com fallback", as
   const off = await call(post({ message: "como instalar?" }), { env: {} });
   assert.equal(off.status, 503);
   assert.equal(off.json.fallback, true);
-  const demoOff = await call(post({ message: "como instalar?" }), { env: { NEXO_AI: "on", GROQ_API_KEY: "k" } });
-  assert.equal(demoOff.status, 503);
 });
 
 test("rota: mensagem vazia ou longa 400; dado sensível devolve aviso sem chamar o modelo", async () => {
@@ -406,8 +401,10 @@ test("rota: limite por hora (12) devolve 429 na 13ª chamada da mesma pessoa", a
   const blocked = await call(post({ message: "como instalar?" }), shared);
   assert.equal(blocked.status, 429);
   assert.match(blocked.json.error, /Limite do chat/);
-  // Outra pessoa (outro socket) não é afetada pelo limite individual.
-  const other = { ...post({ message: "como instalar?" }), socket: { remoteAddress: "198.51.100.77" } };
+  // Outra conta não é afetada pelo limite individual.
+  const otherSession = require("../lib/customer-auth.cjs").issue({ id: "22222222-3333-4444-8555-666666666666", sessionVersion: 1 });
+  const first = post({ message: "como instalar?" });
+  const other = { ...first, headers: { ...first.headers, cookie: "deck_customer=" + otherSession } };
   assert.equal((await call(other, shared)).status, 200);
 });
 
@@ -434,17 +431,6 @@ test("erros do servidor do chat têm tradução", () => {
     assert.notEqual(translateError(msg, "en"), msg);
     assert.notEqual(translateError(msg, "es"), msg);
   }
-});
-
-test("rota: a demo tem teto global próprio e some só para a demo", async () => {
-  const mem = memory();
-  const env = { ...ON, NEXO_AI_DEMO_DAILY_CAP: "2" };
-  const from = (ip) => ({ ...post({ message: "como instalar?" }), socket: { remoteAddress: ip } });
-  assert.equal((await call(from("198.51.100.1"), { ...mem, env })).status, 200);
-  assert.equal((await call(from("198.51.100.2"), { ...mem, env })).status, 200);
-  const blocked = await call(from("198.51.100.3"), { ...mem, env });
-  assert.equal(blocked.status, 429);
-  assert.match(blocked.json.error, /Limite do chat/);
 });
 
 test("rota: o limite por IP fora da Vercel ignora o cabeçalho forjado", async () => {

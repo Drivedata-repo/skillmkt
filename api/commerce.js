@@ -13,7 +13,7 @@ const catalog = require("../lib/sale-catalog.cjs");
 const run = (sql, values) => db().query(sql, values);
 const GENERIC_LOGIN = "E-mail ou senha incorretos.";
 const REQUEST_SENT =
-  "Se houver uma compra aprovada neste e-mail, enviamos um link para criar sua senha.";
+  "Se houver uma conta com este e-mail, enviamos um link para criar ou trocar a senha.";
 
 const ensureConfigured = () => {
   if (!customerAuth.configured())
@@ -21,14 +21,6 @@ const ensureConfigured = () => {
       status: 503,
     });
 };
-
-async function hasActiveEntitlement(customerId) {
-  const r = await run(
-    "SELECT 1 FROM skillmkt.entitlements WHERE customer_id=$1 AND revoked_at IS NULL LIMIT 1",
-    [customerId],
-  );
-  return r.rowCount > 0;
-}
 
 async function webhook(req, res) {
   const payload = await commerce.readWebhookBody(req);
@@ -80,11 +72,15 @@ async function rate(req, res) {
 
 async function checkout(req, res) {
   const input = await body(req);
+  // Comprar exige conta: o pedido fica ligado a ela, e é ela quem recebe o acesso.
+  const who = await access.resolveAccess(req);
+  if (!who) return send(res, 401, { error: "Entre ou crie a sua conta para comprar." });
   await limit(req, "checkout", 20);
   const { quote } = await quoteFor(req);
   const session = await stripe.createCheckout(input, run, {
     currency: quote ? "brl" : "usd",
     rate: quote ? quote.rate : null,
+    customer: { id: who.customerId, email: who.email },
   });
   return send(res, 200, { url: session.url });
 }
@@ -103,8 +99,6 @@ async function login(req, res) {
   const customer = found.rows[0];
   if (!(await customerAuth.verifyPassword(input.password, customer?.password_hash)))
     return send(res, 401, { error: GENERIC_LOGIN });
-  if (!(await hasActiveEntitlement(customer.id)))
-    return send(res, 403, { error: "Não encontramos acesso ativo para este e-mail." });
   res.setHeader(
     "Set-Cookie",
     customerAuth.cookie(
@@ -112,6 +106,44 @@ async function login(req, res) {
     ),
   );
   return send(res, 200, { ok: true });
+}
+
+// Cadastro aberto: qualquer pessoa cria a conta e entra. Comprar é o que libera o uso.
+async function register(req, res) {
+  ensureConfigured();
+  const input = await body(req);
+  const email = customerAuth.normalizeEmail(input.email);
+  if (!email) return send(res, 400, { error: "Informe um e-mail válido." });
+  if (!customerAuth.validPassword(input.password))
+    return send(res, 400, { error: "Use uma senha com 10 a 256 caracteres." });
+  await limit(req, "customer-register", 10);
+  const name = typeof input.name === "string" ? input.name.trim().slice(0, 120) : "";
+  const passwordHash = await customerAuth.hashPassword(input.password);
+  const created = await run(
+    `INSERT INTO skillmkt.customers(email,name,password_hash) VALUES($1,$2,$3)
+     ON CONFLICT(email) DO NOTHING RETURNING id,session_version`,
+    [email, name, passwordHash],
+  );
+  if (created.rowCount) {
+    const customer = created.rows[0];
+    res.setHeader(
+      "Set-Cookie",
+      customerAuth.cookie(customerAuth.issue({ id: customer.id, sessionVersion: customer.session_version })),
+    );
+    return send(res, 200, { ok: true });
+  }
+  const existing = (
+    await run("SELECT id,name,password_hash IS NOT NULL AS has_password FROM skillmkt.customers WHERE email=$1", [email])
+  ).rows[0];
+  // Conta antiga criada por uma compra, sem senha: ninguém assume só digitando o e-mail.
+  // O dono prova que é dele recebendo o link.
+  if (existing && !existing.has_password) {
+    const token = await customerAuth.createAccessToken(run, existing.id, "first-access");
+    const mail = await mailer.sendAccessEmail({ email, name: existing.name, token, purpose: "first-access" });
+    if (!mail.sent) console.error("commerce.mail_failed", mail.reason);
+    return send(res, 200, { ok: true, emailed: true, message: "Enviamos um link para o seu e-mail criar a senha." });
+  }
+  return send(res, 409, { error: "Este e-mail já tem conta. Entre ou peça a troca da senha." });
 }
 
 async function requestAccess(req, res) {
@@ -127,7 +159,7 @@ async function requestAccess(req, res) {
       [email],
     );
     const customer = found.rows[0];
-    if (customer && customer.recent < 3 && (await hasActiveEntitlement(customer.id))) {
+    if (customer && customer.recent < 3) {
       const purpose = customer.has_password ? "reset" : "first-access";
       const token = await customerAuth.createAccessToken(run, customer.id, purpose);
       const mail = await mailer.sendAccessEmail({ email, name: customer.name, token, purpose });
@@ -184,6 +216,7 @@ async function me(req, res) {
     return send(res, 401, { error: "Entre com o e-mail e a senha da sua compra." });
   return send(res, 200, {
     email: current.email,
+    name: current.name,
     products: current.products
       .map((key) => catalog.get(key))
       .filter(Boolean)
@@ -199,6 +232,7 @@ const routes = {
   rate,
   login,
   "request-access": requestAccess,
+  register,
   "set-password": setPassword,
   me,
 };

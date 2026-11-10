@@ -480,9 +480,9 @@ module.exports = {
     "Empezar con esta skill ↗",
   ],
   "Baixar ZIP direto": ["Download ZIP directly", "Descargar ZIP directamente"],
-  "Downloads liberados na demo. O pacote será usado no seu assistente.": [
-    "Downloads are enabled in the demo. You use the package in your assistant.",
-    "Las descargas están habilitadas en la demo. El paquete se utiliza en tu asistente.",
+  "Download liberado para quem comprou a carta. O pacote será usado no seu assistente.": [
+    "Download is unlocked for those who bought the card. You use the package in your assistant.",
+    "La descarga se habilita para quien compró la carta. El paquete se utiliza en tu asistente.",
   ],
   "Monte seu primeiro teste.": [
     "Set up your first test.",
@@ -811,6 +811,17 @@ module.exports = {
     "KNOWLEDGE TO PUT INTO PRACTICE",
     "CONOCIMIENTO PARA PONER EN PRÁCTICA",
   ],
+  "Esta carta ainda não é sua.": ["This card is not yours yet.", "Esta carta todavía no es tuya."],
+  "Compre para baixar, abrir a missão prática e usar no seu trabalho.": ["Buy it to download it, open the practical mission and use it in your work.", "Cómprala para descargarla, abrir la misión práctica y usarla en tu trabajo."],
+  "Comprar por {price}": ["Buy for {price}", "Comprar por {price}"],
+  "Compre esta carta para liberar.": ["Buy this card to unlock it.", "Compra esta carta para desbloquearla."],
+  "Missão prática, primeiro uso e ajuda ficam disponíveis depois da compra. O que a carta faz, o universo e a ficha técnica você pode ler antes.": ["The practical mission, first use and help unlock after you buy. You can read what the card does, its universe and the technical sheet beforehand.", "La misión práctica, el primer uso y la ayuda se habilitan después de la compra. Antes puedes leer qué hace la carta, su universo y la ficha técnica."],
+  "Minha conta": ["My account", "Mi cuenta"],
+  "Veja o que está à venda e o que já é seu.": ["See what is on sale and what is already yours.", "Mira lo que está a la venta y lo que ya es tuyo."],
+  "Valores em USD. No Brasil, o real acompanha o dólar do dia.": ["Prices in USD. In Brazil, the real follows the day dollar rate.", "Precios en USD. En Brasil, el real sigue el dólar del día."],
+  "Descontos sobre os preços individuais. O combo libera todas as cartas dele de uma vez.": ["Discounts on the individual prices. A bundle unlocks all its cards at once.", "Descuentos sobre los precios individuales. El combo desbloquea todas sus cartas a la vez."],
+  "O uso das cartas começa com a compra.": ["Using the cards starts with a purchase.", "El uso de las cartas empieza con la compra."],
+  "Pacote da sua compra": ["Pack from your purchase", "Paquete de tu compra"],
 };
 Object.assign(module.exports, require("./i18n-evolution.cjs"));
 Object.assign(module.exports, require("./i18n-work.cjs"));

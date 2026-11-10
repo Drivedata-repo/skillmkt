@@ -5,6 +5,7 @@ const test = require("node:test"),
   path = require("node:path");
 const { getPack, sha256 } = require("../lib/packs.cjs");
 const { sourceReleases } = require("../data/packs.cjs");
+const releases = require("../data/releases.cjs");
 // Isolated test-worker dependencies; no database or rate-limit writes.
 let databaseCalls = 0,
   limitCalls = 0,
@@ -19,7 +20,10 @@ require.cache[dbPath] = {
   loaded: true,
   exports: {
     db: () => ({
-      query: async () => {
+      query: async (sql) => {
+        // A consulta de acesso da conta não conta como acesso ao armazenamento dos pacotes.
+        if (/FROM skillmkt\.customers c/.test(sql))
+          return { rows: [{ email: "t@example.com", name: "T", session_version: 1, products: ["combo:power-bi-sob-controle"] }] };
         databaseCalls++;
         if (dbError) throw dbError;
         return { rows };
@@ -40,17 +44,16 @@ require.cache[limitPath] = {
     },
   },
 };
-process.env.DEMO_PASSWORD_HASH = "a".repeat(32) + ":" + "b".repeat(128);
-process.env.DEMO_SESSION_SECRET = "isolated-pack-session-test-secret-000000000";
+process.env.CUSTOMER_SESSION_SECRET = "isolated-pack-session-test-secret-000000000";
 delete process.env.VERCEL;
-const auth = require("../lib/auth.cjs"),
+const customerAuth = require("../lib/customer-auth.cjs"),
   list = require("../api/packs.js"),
   download = require("../api/pack-download.js");
 function req(url, authenticated = true, method = "GET") {
   return {
     url,
     method,
-    headers: { cookie: authenticated ? "drive_demo=" + auth.issue() : "" },
+    headers: { cookie: authenticated ? "deck_customer=" + customerAuth.issue({ id: "11111111-2222-4333-8444-555555555555", sessionVersion: 1 }) : "" },
     socket: { remoteAddress: "127.0.0.1" },
   };
 }
@@ -68,33 +71,34 @@ function response() {
     },
   };
 }
-test("both APIs require the demo session before returning catalog or touching storage", async () => {
+test("both APIs require an account before returning catalog or touching storage", async () => {
   for (const handler of [list, download]) {
     const res = response();
     await handler(req("/api/packs?lang=en", false), res);
     assert.equal(res.status, 401);
-    assert.match(JSON.parse(res.payload).error, /password|demo/i);
+    assert.match(JSON.parse(res.payload).error, /account/i);
   }
   assert.equal(databaseCalls, 0);
   assert.equal(limitCalls, 0);
 });
-test("authenticated pack list is an array in the selected language with no cache", async () => {
+test("a buyer sees only the packs whose cards were all bought, in the selected language, with no cache", async () => {
   const res = response();
   await list(req("/api/packs?lang=es"), res);
   assert.equal(res.status, 200);
   const data = JSON.parse(res.payload);
   assert.ok(Array.isArray(data));
-  assert.equal(data.length, 2);
+  assert.equal(data.length, 1);
+  assert.equal(data[0].id, "power-bi-sob-controle");
   assert.equal(data[0].locale, "es");
-  assert.equal(data[0].title, "Hojas de cálculo fiables");
+  assert.equal(data[0].title, getPack("power-bi-sob-controle", "es").title);
   assert.equal(res.headers["Cache-Control"], "private, no-store");
 });
 test("invalid method, parameters and unknown pack fail before loading archives", async () => {
   for (const [url, method, status] of [
-    ["/api/pack-download?id=planilhas-confiaveis", "POST", 405],
+    ["/api/pack-download?id=power-bi-sob-controle", "POST", 405],
     ["/api/pack-download?id=../../x", "GET", 400],
     ["/api/pack-download?id=unknown&lang=en", "GET", 404],
-    ["/api/pack-download?id=planilhas-confiaveis&lang=fr", "GET", 400],
+    ["/api/pack-download?id=power-bi-sob-controle&lang=fr", "GET", 400],
   ]) {
     const res = response();
     await download(req(url, true, method), res);
@@ -111,7 +115,7 @@ test("rate limiting returns localized error without fetching archives", async ()
   try {
     const res = response();
     await download(
-      req("/api/pack-download?id=planilhas-confiaveis&lang=en"),
+      req("/api/pack-download?id=power-bi-sob-controle&lang=en"),
       res,
     );
     assert.equal(res.status, 429);
@@ -125,7 +129,7 @@ test("storage failure reveals neither schema, credentials nor source content", a
   try {
     const res = response();
     await download(
-      req("/api/pack-download?id=planilhas-confiaveis&lang=es"),
+      req("/api/pack-download?id=power-bi-sob-controle&lang=es"),
       res,
     );
     assert.equal(res.status, 503);
@@ -138,23 +142,25 @@ test("storage failure reveals neither schema, credentials nor source content", a
 test(
   "successful download headers match actual assembled bytes and corrupted data is refused",
   {
-    skip: fs.existsSync(path.join(__dirname, "../.local/releases/1.2.0"))
+    skip: getPack("power-bi-sob-controle", "en").steps.every((s) =>
+      fs.existsSync(path.join(__dirname, "../.local/releases", releases[s.skillId].version, s.skillId + ".zip")),
+    )
       ? false
       : "Private archive fixtures unavailable",
   },
   async () => {
-    const pack = getPack("planilhas-confiaveis", "en");
+    const pack = getPack("power-bi-sob-controle", "en");
     rows = pack.steps.map((s) => ({
       skill_id: s.skillId,
-      version: "1.2.0",
+      version: releases[s.skillId].version,
       archive: fs.readFileSync(
-        path.join(__dirname, "../.local/releases/1.2.0", s.skillId + ".zip"),
+        path.join(__dirname, "../.local/releases", releases[s.skillId].version, s.skillId + ".zip"),
       ),
       sha256: sourceReleases[s.skillId],
     }));
     const res = response();
     await download(
-      req("/api/pack-download?id=planilhas-confiaveis&lang=en"),
+      req("/api/pack-download?id=power-bi-sob-controle&lang=en"),
       res,
     );
     assert.equal(res.status, 200);
@@ -163,14 +169,14 @@ test(
     assert.equal(res.headers["Content-Length"], res.payload.length);
     assert.match(
       res.headers["Content-Disposition"],
-      /planilhas-confiaveis-1\.0\.0-en\.zip/,
+      /power-bi-sob-controle-1\.0\.0-en\.zip/,
     );
     assert.equal(res.headers["Cache-Control"], "private, no-store");
     rows[0] = { ...rows[0], archive: Buffer.from(rows[0].archive) };
     rows[0].archive[0] ^= 1;
     const rejected = response();
     await download(
-      req("/api/pack-download?id=planilhas-confiaveis&lang=en"),
+      req("/api/pack-download?id=power-bi-sob-controle&lang=en"),
       rejected,
     );
     assert.equal(rejected.status, 503);

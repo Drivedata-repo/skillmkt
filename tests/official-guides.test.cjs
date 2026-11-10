@@ -1,9 +1,7 @@
 "use strict";
-const { test } = require("node:test"), assert = require("node:assert/strict"), crypto = require("node:crypto");
-const salt = crypto.randomBytes(16).toString("hex");
-process.env.DEMO_PASSWORD_HASH = salt + ":" + crypto.scryptSync("guide-test", salt, 64).toString("hex");
-process.env.DEMO_SESSION_SECRET = crypto.randomBytes(32).toString("hex");
-const auth = require("../lib/auth.cjs");
+const { test } = require("node:test"), assert = require("node:assert/strict");
+// Conta que ainda não comprou nada, sem banco real.
+const session = require("./support/customer.cjs").install();
 const rights = require("../data/sale-rights.cjs");
 const skills = require("../data/skills.cjs");
 const { officialGuide } = require("../lib/official-guides.cjs");
@@ -15,7 +13,7 @@ function call(handler, url) {
       writeHead(s, h) { this.status = s; this.headers = h || {}; },
       end(b) { resolve({ status: this.status, body: String(b || "") }); },
     };
-    handler({ method: "GET", url, headers: { cookie: "drive_demo=" + auth.issue() }, socket: {} }, res);
+    handler({ method: "GET", url, headers: { cookie: session.cookie }, socket: {} }, res);
   });
 }
 

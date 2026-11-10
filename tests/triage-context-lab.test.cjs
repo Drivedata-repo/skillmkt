@@ -235,17 +235,11 @@ test("reference checks detect changed fixture facts rather than blessing any suc
   assert.equal(verifyReference(changed).passed, false);
 });
 test("catalog runtime context stays authenticated, validated and localized", async () => {
-  const auth = require("../lib/auth.cjs"),
-    handler = require("../api/catalog.js");
-  const previousHash = process.env.DEMO_PASSWORD_HASH,
-    previousSecret = process.env.DEMO_SESSION_SECRET;
+  const handler = require("../api/catalog.js");
+  // Conta que ainda não comprou nada, sem banco real.
+  const session = require("./support/customer.cjs").install();
   try {
-    process.env.DEMO_PASSWORD_HASH =
-      crypto.randomBytes(16).toString("hex") +
-      ":" +
-      crypto.randomBytes(64).toString("hex");
-    process.env.DEMO_SESSION_SECRET = crypto.randomBytes(32).toString("hex");
-    const cookie = auth.cookie(auth.issue()).split(";")[0];
+    const cookie = session.cookie;
     function response() {
       return {
         headers: {},
@@ -291,7 +285,13 @@ test("catalog runtime context stays authenticated, validated and localized", asy
       good,
     );
     assert.equal(good.status, 200);
-    assert.equal(good.data.skills.length, 184);
+    // Quem tem conta vê tudo o que está à venda e os guias grátis, não importa o que comprou.
+    const saleCatalog = require("../lib/sale-catalog.cjs"),
+      { officialGuide } = require("../lib/official-guides.cjs");
+    const visible = require("../data/skills.cjs").filter((s) => saleCatalog.sellable("card:" + s.id) || officialGuide(s.id));
+    assert.equal(good.data.skills.length, visible.length);
+    assert.ok(good.data.skills.every((s) => typeof s.owned === "boolean"));
+    assert.equal(good.data.mode, "customer");
     assert.equal(good.data.compatibilityContext.runtime, "codex");
     assert.equal(
       good.data.skills.find((s) => s.id === "figma-generate-design")
@@ -300,9 +300,6 @@ test("catalog runtime context stays authenticated, validated and localized", asy
     );
     assert.equal(good.data.skills.filter((s) => s.lab.reference).length, 10);
   } finally {
-    if (previousHash === undefined) delete process.env.DEMO_PASSWORD_HASH;
-    else process.env.DEMO_PASSWORD_HASH = previousHash;
-    if (previousSecret === undefined) delete process.env.DEMO_SESSION_SECRET;
-    else process.env.DEMO_SESSION_SECRET = previousSecret;
+    session.restore();
   }
 });

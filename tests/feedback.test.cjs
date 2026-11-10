@@ -5,7 +5,9 @@ const { test } = require("node:test"),
   fs = require("node:fs"),
   path = require("node:path");
 const feedback = require("../lib/feedback.cjs"),
-  auth = require("../lib/auth.cjs");
+  customerAuth = require("../lib/customer-auth.cjs"),
+  customer = require("./support/customer.cjs");
+const SESSION = { id: customer.ID, sessionVersion: 1 };
 const skillId = require("../data/skills.cjs")[0].id;
 const payload = (extra = {}) => ({
   kind: "feedback",
@@ -20,21 +22,20 @@ const payload = (extra = {}) => ({
 });
 function setup() {
   const keys = [
-      "DEMO_PASSWORD_HASH",
-      "DEMO_SESSION_SECRET",
+      "CUSTOMER_SESSION_SECRET",
+      "DATABASE_URL",
       "RATE_LIMIT_SECRET",
       "INSIGHTS_KEY",
       "VERCEL",
     ],
     before = Object.fromEntries(keys.map((k) => [k, process.env[k]]));
-  process.env.DEMO_PASSWORD_HASH =
-    crypto.randomBytes(16).toString("hex") +
-    ":" +
-    crypto.randomBytes(64).toString("hex");
-  for (const k of ["DEMO_SESSION_SECRET", "RATE_LIMIT_SECRET", "INSIGHTS_KEY"])
+  for (const k of ["CUSTOMER_SESSION_SECRET", "RATE_LIMIT_SECRET", "INSIGHTS_KEY"])
     process.env[k] = crypto.randomBytes(32).toString("hex");
   delete process.env.VERCEL;
+  // A conta de teste responde a consulta de acesso sem banco real.
+  const session = customer.install();
   return () => {
+    session.restore();
     for (const [k, v] of Object.entries(before)) {
       if (v === undefined) delete process.env[k];
       else process.env[k] = v;
@@ -70,7 +71,7 @@ function request({
       host: "deck.example.invalid",
       origin: "https://deck.example.invalid",
       "content-type": "application/json",
-      ...(logged ? { cookie: auth.cookie(auth.issue()).split(";")[0] } : {}),
+      ...(logged ? { cookie: customerAuth.cookie(customerAuth.issue(SESSION)).split(";")[0] } : {}),
       ...headers,
     },
     body,
@@ -153,9 +154,9 @@ test("session hashing is anchored and follows the same cookie name as authentica
     for (const production of [false, true]) {
       if (production) process.env.VERCEL = "1";
       else delete process.env.VERCEL;
-      const token = auth.issue(),
-        realName = production ? "__Host-drive_demo" : "drive_demo",
-        otherName = production ? "drive_demo" : "__Host-drive_demo";
+      const token = customerAuth.issue(SESSION),
+        realName = production ? "__Host-deck_customer" : "deck_customer",
+        otherName = production ? "deck_customer" : "__Host-deck_customer";
       const req = { headers: { cookie: `${realName}=${token}` } },
         stable = feedback.sessionKey(req);
       assert.match(stable, /^[a-f0-9]{64}$/);
@@ -169,7 +170,7 @@ test("session hashing is anchored and follows the same cookie name as authentica
       const forged = {
         headers: { cookie: `${otherName}=forged-prefix; ${realName}=${token}` },
       };
-      assert.equal(auth.authenticated(forged), true);
+      assert.notEqual(customerAuth.fromRequest(forged), null);
       assert.equal(feedback.sessionKey(forged), stable);
       assert.throws(
         () =>
@@ -195,7 +196,7 @@ test("insights requires its own exact secret and never accepts a session token o
     for (const value of [
       undefined,
       "",
-      auth.issue(),
+      customerAuth.issue(SESSION),
       process.env.INSIGHTS_KEY + "x",
       [process.env.INSIGHTS_KEY],
       "x".repeat(257),

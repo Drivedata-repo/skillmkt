@@ -24,6 +24,11 @@ window.DeckBuy = (() => {
       body: JSON.stringify({ items: keys, back }),
       signal: AbortSignal.timeout(20000),
     });
+    // Comprar exige conta: quem ainda não tem vai criar a dele e volta para comprar.
+    if (response.status === 401) {
+      location.assign("/acesso?cadastro=1");
+      return new Promise(() => {});
+    }
     const result = await response.json().catch(() => ({}));
     if (!response.ok || typeof result.url !== "string")
       throw new Error(result.error || "Não foi possível abrir o pagamento. Tente novamente.");
@@ -62,5 +67,33 @@ window.DeckBuy = (() => {
       }
     });
   }
+  // Volta do pagamento para dentro do app: o acesso chega por webhook, então espera e recarrega.
+  function afterReturn() {
+    const params = new URLSearchParams(location.search);
+    if (params.get("compra") !== "ok") return;
+    // Tira só o aviso da URL; a carta aberta e o modo continuam onde estavam.
+    params.delete("compra");
+    history.replaceState(null, "", location.pathname + (params.size ? "?" + params : "") + location.hash);
+    const bar = document.createElement("p");
+    bar.className = "buy-return";
+    bar.setAttribute("role", "status");
+    bar.textContent = "Pagamento recebido. Estamos liberando a sua compra. No Pix, a liberação acontece quando o banco confirmar.";
+    document.body.prepend(bar);
+    const count = () =>
+      fetch("/api/account/me")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((j) => (j ? j.cards : null))
+        .catch(() => null);
+    count().then(async (before) => {
+      for (let i = 0; i < 15; i += 1) {
+        await new Promise((done) => setTimeout(done, 4000));
+        const now = await count();
+        if (now !== null && before !== null && now > before) return location.reload();
+      }
+      bar.textContent = "Ainda confirmando o pagamento. Atualize esta página em alguns instantes.";
+    });
+  }
+  document.addEventListener("DOMContentLoaded", afterReturn);
+
   return { start, bind, quote, reais, reaisText, rateText };
 })();

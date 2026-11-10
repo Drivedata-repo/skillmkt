@@ -4,7 +4,7 @@ const $ = (s) => document.querySelector(s),
   t = DeckI18n.t,
   motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 let painMap = [],
-  catalogMode = "demo",
+  catalogMode = "customer",
   nexoAI = false,
   discover = { area: null, symptom: null },
   skills = [],
@@ -99,10 +99,7 @@ function save() {
   return ok;
 }
 function deckLoginPath() {
-  try {
-    if (localStorage.getItem("deck-account") === "customer") return "/acesso";
-  } catch {}
-  return "/login";
+  return "/acesso";
 }
 async function api(url, options) {
   const r = await fetch(DeckI18n.url(url), {
@@ -402,7 +399,7 @@ function missionView(s) {
   return `<section class="mission"><p class="mission-notice">Cenário fictício para praticar; substitua pelos seus dados ao aplicar.</p><h3 class="mission-title">${esc(x.title)}</h3><div class="mission-section"><span class="mission-number" aria-hidden="true">01</span><div><h4>Contexto da missão</h4><p>${esc(x.context)}</p></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">02</span><div><h4>Seu comando de partida</h4><p>${esc(x.request)}</p><button class="btn secondary" data-copy-mission="${esc(s.id)}">Copiar missão completa</button><details class="mission-command"><summary>Inspecionar comando completo</summary><pre>${esc(missionPrompt(s))}</pre></details></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">03</span><div><h4>Entrega esperada</h4><p>${esc(x.output)}</p></div></div><div class="mission-section"><span class="mission-number" aria-hidden="true">04</span><div><h4>Como conferir</h4><p>${esc(x.check)}</p></div></div><p class="scope-note">${esc(u.boundary)}</p><p class="fine">Esta missão é um roteiro ilustrativo. Não representa uma execução ou um resultado já validado.</p><div class="universe-actions"><button class="btn" data-detail-tab="start">Preparar meu ambiente ↗</button><button class="text-button" data-guide="${esc(s.id)}">Levar o universo em Markdown</button></div></section>${s.example ? `<details class="verified-reference"><summary>Também há um exemplo reproduzível nesta carta</summary>${exampleView(s)}</details>` : ""}`;
 }
 function overview(s) {
-  return `<p class="application-purpose">${esc(s.universe.purpose)}</p><h3>Quando tirar esta carta do Deck</h3><ol class="use-case-list">${s.universe.useCases.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><h3>${audience === "technical" ? "Entregas e escopo" : "O que você pode produzir"}</h3>${list(s.deliverables)}<h3>O que você precisa ter</h3>${list(s.dependencies)}${DeckEvolution.compatibility(s)}<h3>Antes de usar</h3><p>${esc(s.universe.boundary)}</p><div class="detail-primary"><button class="btn" data-detail-tab="start">Começar com esta skill ↗</button>${s.officialGuide && !s.officialGuide.packaged ? officialLink(s) : `<button class="text-button" data-download="${esc(s.id)}">Baixar ZIP direto</button>`}<button class="text-button" data-guide="${esc(s.id)}">Baixar guia no meu idioma</button></div><p class="fine">Downloads liberados na demo. O pacote será usado no seu assistente.</p><p class="fine">Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.</p>`;
+  return `<p class="application-purpose">${esc(s.universe.purpose)}</p><h3>Quando tirar esta carta do Deck</h3><ol class="use-case-list">${s.universe.useCases.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><h3>${audience === "technical" ? "Entregas e escopo" : "O que você pode produzir"}</h3>${list(s.deliverables)}<h3>O que você precisa ter</h3>${list(s.dependencies)}${DeckEvolution.compatibility(s)}<h3>Antes de usar</h3><p>${esc(s.universe.boundary)}</p><div class="detail-primary"><button class="btn" data-detail-tab="start">Começar com esta skill ↗</button>${s.officialGuide && !s.officialGuide.packaged ? officialLink(s) : isLocked(s) ? "" : `<button class="text-button" data-download="${esc(s.id)}">Baixar ZIP direto</button>`}<button class="text-button" data-guide="${esc(s.id)}">Baixar guia no meu idioma</button></div><p class="fine">Download liberado para quem comprou a carta. O pacote será usado no seu assistente.</p><p class="fine">Os arquivos originais da skill mantêm o idioma de origem. A interface, os exemplos e o guia de primeiro uso acompanham o idioma escolhido.</p>`;
 }
 function exampleView(s) {
   if (!s.example)
@@ -444,6 +441,46 @@ function wizard(s) {
     content = `<h3>Confira antes de considerar pronto.</h3><p>Registre sua própria conferência. Isso não altera o selo de homologação da skill.</p>${s.acceptance.map((c, i) => `<label class="check-line"><input class="result-check" type="checkbox" ${p.tested ? "checked" : ""}>${esc(c)}</label>`).join("")}<button class="btn" id="mark-tested">${p.tested ? "Atualizar minha conferência" : "Marcar como conferido por mim"}</button><p class="fine">Se algo falhou, volte ao comando e informe a diferença entre o esperado e o observado.</p><button class="text-button" data-wizard-step="2">Rever meu comando</button>`;
   return `<div class="wizard"><ol class="wizard-steps">${["Ambiente", "Instalação", "Primeiro comando", "Conferência"].map((x, i) => `<li><button data-wizard-step="${i}" aria-current="${wizardStep === i ? "step" : "false"}"><span>${i + 1}</span>${x}</button></li>`).join("")}</ol><div class="wizard-body">${wizardStep === 0 ? DeckEvolution.compatibility(s) : ""}${content}<button class="text-button" data-detail-tab="help">Preciso de ajuda para usar</button>${wizardStep === 3 ? DeckEvolution.feedback(s) : ""}</div></div>`;
 }
+// Quem ainda não comprou a carta vê o que ela faz e o preço; o que serve para trabalhar abre depois da compra.
+const LOCKED_TABS = new Set(["example", "start", "help"]);
+const isLocked = (s) => s.owned === false;
+function buyBar(s) {
+  if (!isLocked(s)) return "";
+  const cents = s.pricing?.priceCents || 0;
+  return `<div class="buy-bar"><div><strong>${esc(t("Esta carta ainda não é sua."))}</strong><span>${esc(t("Compre para baixar, abrir a missão prática e usar no seu trabalho."))}</span></div><button class="btn" data-buy="card:${esc(s.id)}">${esc(t("Comprar por {price}", { price: DeckCommerce.money(cents) }))}<span class="brl" data-brl="${cents}"></span></button></div>`;
+}
+function purchasePanel(s) {
+  const cents = s.pricing?.priceCents || 0;
+  return `<div class="locked-panel"><h3>${esc(t("Compre esta carta para liberar."))}</h3><p>${esc(t("Missão prática, primeiro uso e ajuda ficam disponíveis depois da compra. O que a carta faz, o universo e a ficha técnica você pode ler antes."))}</p><button class="btn" data-buy="card:${esc(s.id)}">${esc(t("Comprar por {price}", { price: DeckCommerce.money(cents) }))}<span class="brl" data-brl="${cents}"></span></button></div>`;
+}
+// No Brasil o real aparece ao lado do dólar e é o que será cobrado.
+function fillReais(root) {
+  if (!root || !window.DeckBuy) return;
+  window.DeckBuy.quote().then((q) => {
+    if (!q) return;
+    root.querySelectorAll("[data-brl]").forEach((node) => {
+      const reais = window.DeckBuy.reais(Number(node.dataset.brl) / 100, q);
+      if (reais) node.textContent = window.DeckBuy.reaisText(reais);
+    });
+  });
+}
+async function buyClick(button) {
+  if (button.disabled) return;
+  button.disabled = true;
+  try {
+    await window.DeckBuy.start([button.dataset.buy], "/app");
+  } catch (error) {
+    button.disabled = false;
+    toast(error.name === "TimeoutError" || error.name === "TypeError" ? "Não foi possível conectar. Tente de novo." : error.message);
+  }
+}
+document.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-buy]");
+  if (button) {
+    event.preventDefault();
+    buyClick(button);
+  }
+});
 function renderDetail(focusTarget) {
   const s = selected;
   if (!s) return;
@@ -465,7 +502,7 @@ function renderDetail(focusTarget) {
   }
   if (motionPreference.matches) detailSpin = false;
   $("#skill-detail").innerHTML =
-    `<div class="detail-layout" style="--universe-hue:${DeckArt.hue(s)}"><aside class="detail-card">${DeckInvocation.stage(s, DeckArt.card(s, { spin: detailSpin }))}${s.identity ? `<button class="card-identity-link" data-detail-tab="technical"><span>${esc(t("ID da carta"))}</span>${esc(s.identity.serial)}</button>` : ""}<div class="detail-controls"><button class="text-button" id="turn-card" aria-pressed="${detailFlipped}">${detailFlipped ? "Ver frente" : "Ver verso"}</button><button class="text-button" id="spin-card" aria-pressed="${detailSpin}" ${motionPreference.matches ? "disabled" : ""}>${motionPreference.matches ? "Giro desativado: movimento reduzido" : detailSpin ? "Pausar giro" : "Ativar giro"}</button></div><button class="save-detail" data-favorite="${s.id}" aria-pressed="${favorite(s.id)}">${favorite(s.id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck"}</button><span class="quality-badge">${esc(badge(s))}</span></aside><div class="detail-content"><p class="code">${esc(s.code)} · v${s.version} · ${esc(s.category)}</p><h2 id="detail-title" tabindex="-1">${esc(s.title)}</h2>${DeckCommerce.stamp(s.pricing)}<div class="detail-tabs" aria-label="Detalhes da skill">${[
+    `<div class="detail-layout" style="--universe-hue:${DeckArt.hue(s)}"><aside class="detail-card">${DeckInvocation.stage(s, DeckArt.card(s, { spin: detailSpin }))}${s.identity ? `<button class="card-identity-link" data-detail-tab="technical"><span>${esc(t("ID da carta"))}</span>${esc(s.identity.serial)}</button>` : ""}<div class="detail-controls"><button class="text-button" id="turn-card" aria-pressed="${detailFlipped}">${detailFlipped ? "Ver frente" : "Ver verso"}</button><button class="text-button" id="spin-card" aria-pressed="${detailSpin}" ${motionPreference.matches ? "disabled" : ""}>${motionPreference.matches ? "Giro desativado: movimento reduzido" : detailSpin ? "Pausar giro" : "Ativar giro"}</button></div><button class="save-detail" data-favorite="${s.id}" aria-pressed="${favorite(s.id)}">${favorite(s.id) ? "♥ Salva no Meu Deck" : "♡ Salvar no Meu Deck"}</button><span class="quality-badge">${esc(badge(s))}</span></aside><div class="detail-content"><p class="code">${esc(s.code)} · v${s.version} · ${esc(s.category)}</p><h2 id="detail-title" tabindex="-1">${esc(s.title)}</h2>${DeckCommerce.stamp(s.pricing)}${buyBar(s)}<div class="detail-tabs" aria-label="Detalhes da skill">${[
       ["universe", "Universo"],
       ["power", "Poder da carta"],
       ["overview", "Aplicações"],
@@ -481,10 +518,11 @@ function renderDetail(focusTarget) {
       )
       .join(
         "",
-      )}</div><div class="detail-tab-body">${detailTab === "power" ? DeckCommerce.power(s) : detailTab === "universe" ? universeView(s) : detailTab === "overview" ? overview(s) : detailTab === "example" ? missionView(s) : detailTab === "technical" ? technical(s) : detailTab === "lab" ? DeckEvolution.lab(s) : detailTab === "help" ? DeckEvolution.support(s, helpIssue) : wizard(s)}</div><p id="download-status" class="download-status" role="status"></p></div></div>`;
+      )}</div><div class="detail-tab-body">${isLocked(s) && LOCKED_TABS.has(detailTab) ? purchasePanel(s) : detailTab === "power" ? DeckCommerce.power(s) : detailTab === "universe" ? universeView(s) : detailTab === "overview" ? overview(s) : detailTab === "example" ? missionView(s) : detailTab === "technical" ? technical(s) : detailTab === "lab" ? DeckEvolution.lab(s) : detailTab === "help" ? DeckEvolution.support(s, helpIssue) : wizard(s)}</div><p id="download-status" class="download-status" role="status"></p></div></div>`;
   DeckArt.tilt($("#skill-detail"));
   restoreFeedbackState();
   restoreDownloadState();
+  fillReais($("#skill-detail"));
   DeckI18n.apply($("#skill-detail"));
   $("#skill-detail .holo-card").classList.toggle("flipped", detailFlipped);
   if (restoreFocus || focusTarget)
@@ -603,7 +641,7 @@ function catalogURL(locale = DeckI18n.locale) {
   return "/api/catalog?" + params;
 }
 function applyCatalog(data) {
-  catalogMode = data.mode || "demo";
+  catalogMode = data.mode || "customer";
   nexoAI = Boolean(data.nexoAI);
   const group = $("#group").value;
   skills = data.skills;
@@ -612,6 +650,7 @@ function applyCatalog(data) {
   painMap = data.painMap || [];
   renderDiscover();
   $("#combo-tiles").innerHTML = combos.filter(c=>!c.packId).map(c=>DeckCommerce.combo(c,skills)).join("");
+  fillReais($("#combo-tiles"));
   const context = environmentContext();
   $("#need-runtime").innerHTML = (data.runtimeOptions || [])
     .map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`)

@@ -1,6 +1,6 @@
 # DriveData Deck — Explorar, Trabalhar e pacotes gratuitos
 
-**Problema → skill recomendada → download.** A landing pública apresenta missões e recebe inscrições na lista de espera. A demonstração continua gratuita: a pessoa entra com a senha compartilhada, escolhe uma das 137 cartas e baixa o pacote. Não há cobrança ou checkout.
+**Problema → skill recomendada → compra → download.** Não existe mais demonstração com senha compartilhada. Qualquer pessoa cria a conta em `/acesso`, entra e vê tudo o que está à venda dentro do app. Para usar uma carta (baixar, abrir a missão prática, o primeiro uso e a ajuda), é preciso comprá-la. O catálogo é em dólar; no Brasil o valor em reais acompanha o dólar do dia (PTAX do Banco Central) e a cobrança é em reais.
 
 ## Percursos focados em tarefas
 
@@ -21,7 +21,7 @@ Os acabamentos visuais acompanham o preço proposto em USD a partir de US$ 30: C
 
 Detalhes dos pacotes: `reviews/PACOTES-DECK.md`. URLs públicas: `/problemas/conferir-planilhas/`, `/problemas/conciliar-indicadores-power-bi/` e `/problemas/revisar-power-bi-lento/`, com versões `/en/` e `/es/`.
 
-Publicado em https://deck.drivedata.com.br . A raiz é pública; `/login` abre a entrada da demo; `/app` exige sessão; `/privacidade` explica o uso dos dados. O endereço técnico `skillmkt-beta.vercel.app` permanece disponível.
+Publicado em https://deck.drivedata.com.br . A raiz é pública; `/acesso` cria a conta ou entra (`/login` leva para o mesmo lugar); `/app` exige conta; `/loja` e `/oferta` vendem; `/privacidade` explica o uso dos dados. O endereço técnico `skillmkt-beta.vercel.app` permanece disponível.
 
 Produto: **DriveData Deck**. Subdomínio `deck.drivedata.com.br` configurado e verificado na Vercel, com CNAME no Cloudflare. O domínio principal da DriveData é preservado.
 
@@ -35,7 +35,7 @@ Produto: **DriveData Deck**. Subdomínio `deck.drivedata.com.br` configurado e v
 - Movimento pode ser pausado e respeita `prefers-reduced-motion`.
 - Português, inglês e espanhol em todo o produto: seletor com bandeiras SVG, escolha persistida, catálogo, triagem, exemplos, primeiro uso, Meu Deck, jornadas, login, privacidade e mensagens. Guias Markdown podem ser baixados no idioma selecionado.
 - Catálogo: 137 IDs permanentes `DD-001` a `DD-137`, 10 grupos, busca, filtros e frente/verso.
-- A recomendação explica a capacidade da skill e os requisitos para começar. Downloads estão liberados aos participantes da demo.
+- A recomendação explica a capacidade da skill e os requisitos para começar. Download, missão prática, primeiro uso e ajuda ficam liberados só para quem comprou a carta.
 - Pedidos ambíguos recebem até duas perguntas contextuais. A seleção respeita assistente, requisitos e ferramentas indisponíveis e apresenta até três indicações. Tarefas compostas podem receber um plano de duas ou três etapas.
 - Dez exemplos com dados fictícios, resultado de referência e critérios de conferência. São referências determinísticas, não execuções homologadas das skills por IA.
 - Primeiro uso guiado: ambiente, instalação, comando e conferência. Meu Deck guarda favoritos, downloads, versões e progresso neste navegador, com exportação/importação JSON. Não sincroniza dados entre usuários.
@@ -44,13 +44,13 @@ Produto: **DriveData Deck**. Subdomínio `deck.drivedata.com.br` configurado e v
 
 ## Rodar localmente
 
-Node 24. Execute `npm ci`, configure `.env.local` conforme `.env.example`, `npm run build` e `npm start`. Landing em http://127.0.0.1:4317/ e login em http://127.0.0.1:4317/login . O servidor local escuta apenas nesta máquina.
+Node 24. Execute `npm ci`, configure `.env.local` conforme `.env.example`, `npm run build` e `npm start`. Landing em http://127.0.0.1:4317/ e acesso em http://127.0.0.1:4317/acesso . O servidor local escuta apenas nesta máquina.
 
-Para definir/trocar a senha: `node scripts/set-demo-password.cjs`. A entrada é oculta; o script grava apenas o hash scrypt e uma chave aleatória em `.env.local`, ignorado pelo Git. Reinicie o servidor após a troca. Não copie a senha nem os valores das variáveis para arquivos públicos.
+Contas: `POST /api/account/register` cria a conta (e-mail e senha de 10 a 256 caracteres, hash scrypt) e já entra. Conta antiga criada por uma compra, sem senha, não é assumida pelo e-mail digitado: o dono recebe um link. `CUSTOMER_SESSION_SECRET` assina as sessões. Nenhuma senha ou chave vai para arquivos públicos.
 
 ## Acesso
 
-`POST /api/session` valida a senha no servidor. A sessão assinada dura 8 horas, em cookie HttpOnly/SameSite=Strict. Na Vercel, usa Secure e prefixo `__Host-`. Mudar o hash ou a chave invalida todas as sessões anteriores. Sair remove o cookie do navegador; esta demo não oferece administração individual de sessões nem contas por comprador.
+A sessão assinada dura 7 dias, em cookie HttpOnly/SameSite=Lax. Na Vercel, usa Secure e prefixo `__Host-`. Trocar a senha invalida as sessões anteriores. Quem tem conta mas ainda não comprou vê o catálogo e o preço, e pode comprar; as rotas de download e de pacotes respondem 403 para cartas não compradas.
 
 Página `/app`, catálogo, recomendações, status e downloads exigem sessão. Falta de configuração bloqueia o acesso. Login usa limite persistido no banco de 25 tentativas/hora por IP; downloads, 150/hora por IP. O IP é armazenado apenas como hash HMAC no contador. As chaves e pacotes nunca estão no JavaScript público. O antigo endpoint de leads retorna 410; registros anteriores não foram apagados.
 
@@ -147,7 +147,6 @@ Importe `Drivedata-repo/skillmkt`, framework **Other**, build `npm run build`, o
 
 - `DATABASE_URL`: conexão do papel restrito, sem parâmetros que desativem a validação TLS.
 - `RATE_LIMIT_SECRET`: segredo HMAC dos limites.
-- `DEMO_PASSWORD_HASH` e `DEMO_SESSION_SECRET`: valores gerados pelo script local.
 - `INSIGHTS_KEY`: chave administrativa separada para consultar indicadores agregados.
 - `GROQ_API_KEY` e `GROQ_MODEL`: opcionais.
 
@@ -159,4 +158,4 @@ As variáveis locais não são enviadas pelo Git. Não use prefixos públicos. C
 
 ## Evolução para venda
 
-Esta demo libera todos os pacotes após a senha. A versão comercial precisa de contas individuais, checkout, confirmação de pagamento no servidor e autorização de download por compra. Não reutilize a senha compartilhada como controle de compra. A preparação do catálogo comercial também deve definir quais originais e licenças podem ser distribuídos para cada público; o acervo atual foi preparado para demonstração interna autorizada.
+A compra é feita dentro da conta: o pedido guarda quem comprou, o valor cobrado, o valor em dólar e a cotação. O acesso vai para a conta que abriu o pedido e é revogado em reembolso total ou disputa. Cada carta só é vendida se tiver direito de venda confirmado em `data/sale-rights.cjs`.

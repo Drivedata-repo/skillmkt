@@ -157,7 +157,7 @@ window.DeckWork = (() => {
   }
   function packTile(p) {
     const count = p.steps.length;
-    return `<article class="pack-tile"><div class="pack-number">${p.id === "planilhas-confiaveis" ? "01" : "02"}<span>${esc(t("Pacote gratuito"))}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.tagline)}</p><p class="pack-outcome"><span>${esc(t("Sua entrega"))}</span>${esc(p.outcome)}</p><div class="pack-signatures" aria-hidden="true">${p.steps
+    return `<article class="pack-tile"><div class="pack-number">${p.id === "planilhas-confiaveis" ? "01" : "02"}<span>${esc(t("Pacote da sua compra"))}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.tagline)}</p><p class="pack-outcome"><span>${esc(t("Sua entrega"))}</span>${esc(p.outcome)}</p><div class="pack-signatures" aria-hidden="true">${p.steps
       .map((x) => {
         const s = items.find((s) => s.id === x.skillId);
         return `<span>${esc(s?.code || "")}</span>`;

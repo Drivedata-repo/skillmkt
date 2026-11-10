@@ -89,7 +89,6 @@ test("public and authenticated HTML text and accessible labels are covered", () 
     "views/market.html",
     // A home traduzida (EN e ES) mora aqui; a página inicial nova é só em português.
     "dist/home-classica.html",
-    "dist/login.html",
     "dist/privacy.html",
   ];
   for (const file of files) {

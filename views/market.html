@@ -23,6 +23,7 @@
     <script src="/i18n.js"></script>
     <script src="/skill-art.js" defer></script>
     <script src="/commerce.js" defer></script>
+    <script src="/buy.js" defer></script>
     <script src="/deck-art.js" defer></script>
     <script src="/work-store.js" defer></script>
     <script src="/deck-store.js" defer></script>
@@ -45,7 +46,7 @@
         ></a
       >
       <nav aria-label="Principal">
-        <span class="mode-label">Demo gratuita</span
+        <span class="mode-label">Minha conta</span
         ><button id="market-sound" aria-pressed="true" class="text-button">
           Som ativado</button
         ><button id="logout">Sair</button>
@@ -102,7 +103,7 @@
                 Baixar pacote completo</button
               ><button id="work-download-guide" class="text-button">
                 Baixar meu roteiro</button
-              ><small>Demo gratuita. Sem compra ou cobrança.</small>
+              ><small>Veja o que está à venda e o que já é seu.</small>
             </div>
           </header>
           <p id="work-return" class="work-return"></p>
@@ -163,11 +164,11 @@
             </div>
           </div>
           <div id="pack-tiles" class="pack-tiles"></div>
-          <p class="fine">Demo gratuita. Valores propostos em USD; nenhuma cobrança ativa.</p>
+          <p class="fine">Valores em USD. No Brasil, o real acompanha o dólar do dia.</p>
           <details class="more-combos">
             <summary>Outros combos por objetivo</summary>
             <p>Escolha uma sequência que faça sentido para o seu trabalho.</p>
-            <p class="fine">Descontos sobre os preços individuais propostos. Todos continuam gratuitos na demo.</p>
+            <p class="fine">Descontos sobre os preços individuais. O combo libera todas as cartas dele de uma vez.</p>
             <div id="combo-tiles" class="combo-tiles"></div>
           </details>
         </section>
@@ -429,7 +430,7 @@
       </section>
       <footer class="site-footer">
         <span>DriveData Deck · Coleção 1.2</span
-        ><span>Demonstração gratuita. Sem compra ou cobrança.</span
+        ><span>O uso das cartas começa com a compra.</span
         ><a href="https://drivedata.com.br" target="_blank" rel="noopener"
           >Conheça a DriveData ↗</a
         >

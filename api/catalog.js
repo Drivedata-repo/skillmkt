@@ -53,7 +53,7 @@ module.exports = async (req, res) => {
       runtimeOptions: runtimeOptions(locale),
       capabilityOptions: capabilityOptions(locale),
       compatibilityContext: context,
-      mode: "demo",
+      mode: "customer",
       // Só diz se o chat com IA do NEXO está ligado para esta sessão; não expõe chave nem modelo.
       nexoAI: require("../lib/nexo-chat.cjs").enabled(access),
       edition:

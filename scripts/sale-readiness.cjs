@@ -19,7 +19,6 @@ check((env.STRIPE_WEBHOOK_SECRET || "").length >= 16, "STRIPE_WEBHOOK_SECRET con
 check(/^(sk|rk)_live_/.test(env.STRIPE_SECRET_KEY || ""), "Chave do Stripe em modo ao vivo (hoje: " + (/^(sk|rk)_test_/.test(env.STRIPE_SECRET_KEY || "") ? "teste" : "ausente") + ")");
 check((env.CUSTOMER_SESSION_SECRET || "").length >= 32, "CUSTOMER_SESSION_SECRET com 32 caracteres ou mais");
 check(Boolean(env.MAIL_API_KEY && env.MAIL_FROM), "MAIL_API_KEY e MAIL_FROM configurados");
-check(env.DEMO_ENABLED === "false", "Demo gratuita fechada (DEMO_ENABLED=false)");
 
 const problems = productProblems(products);
 check(problems.length === 0, `Produtos só com cartas vendáveis${problems.length ? ": " + problems.join("; ") : ""}`);

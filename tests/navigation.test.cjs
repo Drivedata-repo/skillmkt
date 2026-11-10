@@ -139,7 +139,7 @@ test("unauthenticated app redirects preserve the work destination and language t
       assert.ok(response.ended);
       const login = new URL(response.headers.Location, "https://deck.invalid");
       assert.equal(login.origin, "https://deck.invalid");
-      assert.equal(login.pathname, "/login");
+      assert.equal(login.pathname, "/acesso");
       assert.equal(login.searchParams.get("lang"), lang === "pt" ? null : lang);
       const next = new URL(
         appPath(login.searchParams.get("next")),
@@ -155,15 +155,15 @@ test("unauthenticated app redirects preserve the work destination and language t
 });
 
 test("default app login redirect is minimal and cookie locale remains available without a next destination", () => {
-  assert.equal(responseFor("/app").headers.Location, "/login");
+  assert.equal(responseFor("/app").headers.Location, "/acesso");
   assert.equal(
     responseFor("/app?next=https://evil.example&token=private").headers
       .Location,
-    "/login",
+    "/acesso",
   );
   assert.equal(
     responseFor("/app", { cookie: "deck_locale=es" }).headers.Location,
-    "/login?lang=es",
+    "/acesso?lang=es",
   );
   const response = responseFor(
     "/app?mode=work&lang=en&next=https://evil.example",

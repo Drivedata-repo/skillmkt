@@ -173,49 +173,69 @@ test("no cookie means 401 without touching the database", async () => {
   assert.equal(called, false);
 });
 
-test("closing the demo rejects demo sessions and changes the login message", async () => {
-  const auth = require("../lib/auth.cjs");
-  const crypto = require("node:crypto");
-  const salt = crypto.randomBytes(16).toString("hex");
-  process.env.DEMO_PASSWORD_HASH = salt + ":" + crypto.scryptSync("x", salt, 64).toString("hex");
-  process.env.DEMO_SESSION_SECRET = "d".repeat(40);
-  const req = { headers: { cookie: "drive_demo=" + auth.issue() } };
-  assert.equal((await access.resolveAccess(req)).kind, "demo");
-  process.env.DEMO_ENABLED = "false";
-  await assert.rejects(access.requireAccess(req), /sua compra/);
-  delete process.env.DEMO_ENABLED;
-});
-
-test("catalog and triage show a customer only the owned cards", () => {
-  const a = { kind: "customer", skillIds: new Set(["a"]) };
+test("a buyer sees everything on sale, owns only what was bought, and never reads demo or proposal wording", () => {
+  const owned = new Set(["automacao-documentos-office"]);
+  const card = (id) => ({ id, pricing: { label: "Preço proposto", demoLabel: "Grátis na demo", notice: "Nenhuma compra ou cobrança está ativa.", basis: "x" }, firstPrompt: "SEGREDO", acceptance: ["x"], example: { a: 1 }, universe: { scenario: { title: "T", context: "C", request: "PEDIDO", check: "CONFERE" } } });
   const out = access.restrictCatalog(
     {
-      skills: [{ id: "a", pricing: { demoLabel: "Grátis na demo" } }, { id: "b" }],
-      journeys: [{ steps: [{ id: "a" }, { id: "b" }] }, { steps: [{ id: "a" }] }],
-      combos: [{ skillIds: ["a", "b"] }],
-      packs: [{ steps: [{ skillId: "a" }] }],
+      skills: [card("automacao-documentos-office"), card("claude-power-query-best-practices"), card("claude-xlsx")],
+      journeys: [],
+      combos: [{ id: "power-bi-sob-controle", skillIds: ["claude-power-query-best-practices"], priceCents: 100 }, { id: "planilhas-confiaveis", skillIds: ["claude-xlsx"], priceCents: 100 }],
+      packs: [{ steps: [{ skillId: "automacao-documentos-office" }] }, { steps: [{ skillId: "claude-power-query-best-practices" }] }],
     },
-    a,
+    { kind: "customer", skillIds: owned },
     "pt",
   );
   assert.equal(out.mode, "customer");
-  assert.deepEqual(out.skills.map((s) => s.id), ["a"]);
-  assert.equal(out.skills[0].pricing.demoLabel, "Incluída na sua compra");
-  assert.equal(out.journeys.length, 1);
-  assert.equal(out.combos.length, 0);
+  // claude-xlsx tem direito travado: não é oferecido.
+  assert.deepEqual(out.skills.map((s) => s.id), ["automacao-documentos-office", "claude-power-query-best-practices"]);
+  const mine = out.skills[0],
+    other = out.skills[1];
+  assert.equal(mine.owned, true);
+  assert.equal(mine.firstPrompt, "SEGREDO");
+  assert.equal(mine.pricing.demoLabel, "Incluída na sua compra");
+  assert.equal(mine.pricing.label, "Valor da carta");
+  assert.doesNotMatch(mine.pricing.notice, /cobrança está ativa/);
+  assert.equal(other.owned, false);
+  assert.equal(other.pricing.demoLabel, "Disponível para compra");
+  // O que serve para trabalhar só aparece depois da compra.
+  assert.equal(other.firstPrompt, "");
+  assert.deepEqual(other.acceptance, []);
+  assert.equal(other.example, null);
+  assert.equal(other.universe.scenario.title, "T");
+  assert.equal(other.universe.scenario.request, "");
+  assert.equal(other.universe.scenario.check, "");
+  // Combo só aparece se todas as cartas podem ser vendidas, com a chave de compra.
+  assert.deepEqual(out.combos.map((c) => c.id), ["power-bi-sob-controle"]);
+  assert.equal(out.combos[0].owned, false);
+  assert.equal(out.combos[0].buyKey, "combo:power-bi-sob-controle");
+  // Pacote só aparece inteiro para quem comprou todas as cartas dele.
   assert.equal(out.packs.length, 1);
-  const t = access.restrictTriage(
-    { matches: [{ id: "a" }, { id: "b" }], candidateIds: ["b", "a"], plan: { steps: [{ skillId: "b" }] } },
-    a,
-  );
-  assert.deepEqual(t.matches, [{ id: "a" }]);
-  assert.deepEqual(t.candidateIds, ["a"]);
-  assert.equal(t.plan, null);
+  assert.equal(access.allowsSkill({ skillIds: owned }, "claude-power-query-best-practices"), false);
+  assert.equal(access.canSee({ skillIds: owned }, "claude-power-query-best-practices"), true);
+  assert.equal(access.canSee({ skillIds: owned }, "carta-que-nao-existe"), false);
 });
 
-test("demo keeps the full catalog", () => {
-  const c = { skills: [1, 2], journeys: [], combos: [], packs: [] };
-  assert.equal(access.restrictCatalog(c, { kind: "demo" }, "pt"), c);
+test("triage helps choose what to buy: it keeps on-sale and free cards and drops what cannot be offered", () => {
+  const out = access.restrictTriage(
+    { matches: [{ id: "claude-power-query-best-practices" }, { id: "claude-xlsx" }, { id: "carta-que-nao-existe" }], candidateIds: ["carta-que-nao-existe", "claude-power-query-best-practices"], plan: { steps: [{ skillId: "claude-power-query-best-practices" }] } },
+    { kind: "customer", skillIds: new Set() },
+  );
+  assert.deepEqual(out.matches.map((m) => m.id), ["claude-power-query-best-practices", "claude-xlsx"]);
+  assert.deepEqual(out.candidateIds, ["claude-power-query-best-practices"]);
+  assert.ok(out.plan);
+  const none = access.restrictTriage({ matches: [], candidateIds: [], plan: { steps: [{ skillId: "carta-que-nao-existe" }] } }, { kind: "customer", skillIds: new Set() });
+  assert.equal(none.plan, null);
+});
+
+test("no demo remains: the shared-password module, page and script are gone", () => {
+  for (const gone of ["lib/auth.cjs", "scripts/set-demo-password.cjs", "dist/login.html", "dist/login.js"])
+    assert.equal(fs.existsSync(path.join(root, gone)), false, gone);
+  const session = fs.readFileSync(path.join(root, "api/session.js"), "utf8");
+  assert.doesNotMatch(session, /password|DEMO|demo/i);
+  const vercel = JSON.parse(fs.readFileSync(path.join(root, "vercel.json"), "utf8"));
+  assert.equal(vercel.rewrites.find((r) => r.source === "/login").destination, "/acesso.html");
+  assert.doesNotMatch(fs.readFileSync(path.join(root, ".env.example"), "utf8"), /DEMO_/);
 });
 
 test("mail without provider reports it and never throws; failures are absorbed", async () => {

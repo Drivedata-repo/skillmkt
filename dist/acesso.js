@@ -2,7 +2,7 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const message = $("message");
-  const forms = ["login", "request", "create"];
+  const forms = ["register", "login", "request", "create"];
 
   function show(id) {
     for (const form of forms) $(form).hidden = form !== id;
@@ -60,21 +60,41 @@
     history.replaceState(null, "", location.pathname);
     show("create");
   }
-  readToken();
-  // Volta do pagamento: explica o próximo passo e deixa o pedido de link à mão.
-  if (!token && new URLSearchParams(location.search).get("compra") === "ok") {
-    history.replaceState(null, "", location.pathname);
-    show("request");
-    say(
-      "Pagamento recebido. Enviamos um link para criar a sua senha ao e-mail da compra. No Pix, o link chega assim que o banco confirmar. Se não chegar, peça de novo abaixo.",
-    );
+
+  // Quem já criou conta neste aparelho vê a entrada; quem chega pela primeira vez vê o cadastro.
+  function firstView() {
+    const params = new URLSearchParams(location.search);
+    if (params.has("entrar")) return "login";
+    if (params.has("cadastro")) return "register";
+    try {
+      return localStorage.getItem("deck-account") === "customer" ? "login" : "register";
+    } catch {
+      return "register";
+    }
   }
+  show(firstView());
+  readToken();
   // O link pode ser aberto com esta página já na mesma aba.
   addEventListener("hashchange", readToken);
 
+  $("go-register").onclick = () => show("register");
+  $("go-login-from-register").onclick = () => show("login");
   $("go-request").onclick = () => show("request");
   $("go-login").onclick = () => show("login");
 
+  $("register").onsubmit = (event) => {
+    event.preventDefault();
+    submit($("register"), async () => {
+      const result = await post("register", {
+        name: $("reg-name").value,
+        email: $("reg-email").value,
+        password: $("reg-password").value,
+      });
+      // Conta antiga sem senha: o dono recebe um link no e-mail em vez de entrar direto.
+      if (result.emailed) return say(result.message);
+      enterDeck();
+    });
+  };
   $("login").onsubmit = (event) => {
     event.preventDefault();
     submit($("login"), async () => {

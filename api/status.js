@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
     const access = await requireAccess(req);
     send(res, 200, {
       aiConfigured: !!process.env.GROQ_API_KEY,
-      mode: access.kind === "demo" ? "demo" : "customer",
+      mode: "customer",
       locale,
     });
   } catch (e) {

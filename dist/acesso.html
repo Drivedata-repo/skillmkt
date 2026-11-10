@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
     <meta name="theme-color" content="#070c13" />
-    <title>Entrar no DriveData Deck</title>
+    <title>Entrar ou criar conta no DriveData Deck</title>
     <link rel="stylesheet" href="/acesso.css" />
     <script src="/navigation.js" defer></script>
     <script src="/acesso.js" defer></script>
@@ -14,20 +14,34 @@
     <main class="box">
       <p class="brand">DriveData Deck</p>
 
-      <form id="login" novalidate>
+      <form id="register" novalidate>
+        <h1>Crie a sua conta</h1>
+        <p>É grátis. Com a conta você vê todas as cartas e o preço de cada uma. Comprar libera o uso.</p>
+        <label for="reg-name">Nome</label>
+        <input id="reg-name" type="text" autocomplete="name" maxlength="120" />
+        <label for="reg-email">E-mail</label>
+        <input id="reg-email" type="email" autocomplete="username" required maxlength="254" />
+        <label for="reg-password">Senha, com pelo menos 10 caracteres</label>
+        <input id="reg-password" type="password" autocomplete="new-password" required minlength="10" maxlength="256" />
+        <button type="submit">Criar conta</button>
+        <button class="link" id="go-login-from-register" type="button">Já tenho conta. Entrar</button>
+      </form>
+
+      <form id="login" novalidate hidden>
         <h1>Entre no seu Deck</h1>
-        <label for="email">E-mail da compra</label>
+        <label for="email">E-mail</label>
         <input id="email" type="email" autocomplete="username" required maxlength="254" />
         <label for="password">Senha</label>
         <input id="password" type="password" autocomplete="current-password" required maxlength="256" />
         <button type="submit">Entrar</button>
-        <button class="link" id="go-request" type="button">Primeiro acesso ou esqueci a senha</button>
+        <button class="link" id="go-request" type="button">Esqueci a senha</button>
+        <button class="link" id="go-register" type="button">Ainda não tenho conta. Criar conta</button>
       </form>
 
       <form id="request" novalidate hidden>
-        <h1>Receba seu link de acesso</h1>
-        <p>Enviamos para o e-mail usado na compra um link para criar ou trocar a senha.</p>
-        <label for="request-email">E-mail da compra</label>
+        <h1>Troque a sua senha</h1>
+        <p>Enviamos um link para o e-mail da conta, para criar ou trocar a senha.</p>
+        <label for="request-email">E-mail da conta</label>
         <input id="request-email" type="email" autocomplete="username" required maxlength="254" />
         <button type="submit">Enviar link</button>
         <button class="link" id="go-login" type="button">Voltar para entrar</button>
